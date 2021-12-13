@@ -2,7 +2,7 @@
 
 @section('title','Home') <!-- name title -->
 
-@section('css-eksternal')
+@section('css-internal')
 <!-- Add tag css in here -->
 
 @endsection
@@ -13,7 +13,7 @@
 
 @endsection
 
-@section('js-eksternal')
+@section('js-internal')
 <!-- add tag js in here -->
 
 @endsection

@@ -4,21 +4,31 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- css Internal -->
-    @include('layout-komponen.css-list')
     <!-- css Eksternal -->
-    @yield('css-eksternal')
+    @include('layout-komponen.css-eksternal')
+    <!-- css Internal -->
+    
     <title>@yield('title')</title>
   </head>
+  @yield('css-internal')
+  <style>
+  .navbar-nav{
+    margin-left:auto;
+  }
+  .navbar-nav {
+    color:white;
+  }
+  .navbar{
+    background-color:#2d1923;
+  }
+</style>
   <body>
-      <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       @include('layout-komponen.navbar')
         @include('layout-komponen.layout-konten')
         @include('layout-komponen.footer')
-        <!-- javascript internal -->
-        @include('layout-komponen.js-list')
-        <!-- Javascript Eksternal -->
-        @yield('js-eksternal')
-    </div>
+        <!-- javascript Eksternal -->
+        @include('layout-komponen.js-eksternal')
+        <!-- Javascript Internal -->
+        @yield('js-internal')
   </body>
 </html>
