@@ -10,7 +10,6 @@
 @section('konten')
 <!-- add konten in here -->
 
-
 @endsection
 
 @section('js-internal')
