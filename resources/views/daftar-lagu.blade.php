@@ -1,6 +1,6 @@
 @extends('layout-komponen.master')
 
-@section('title','Home') <!-- name title -->
+@section('title','Profile') <!-- name title -->
 
 @section('css-internal')
 <!-- Add tag css in here -->
@@ -9,11 +9,10 @@
 
 @section('konten')
 <!-- add konten in here -->
-<h1>isi dari home</h1>
+<h1>ini halaman Daftar lagu</h1>
 @endsection
 
 @section('js-internal')
 <!-- add tag js in here -->
 
 @endsection
-

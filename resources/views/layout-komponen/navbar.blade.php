@@ -12,19 +12,19 @@
             <div>|</div>
             <a href="" style="margin-left:5px;">ENG</a>
           </div>
-          <div class="dropright">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="dropdown">
+            <a class="nav-link" style="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">News</a>
-              <a class="dropdown-item" href="#">Lokasi</a>
-              <a class="dropdown-item" href="#">Daftar Lagu</a>
-              <a class="dropdown-item" href="#">Profil</a>
-              <a class="dropdown-item" href="#">Waralaba</a>
-              <a class="dropdown-item" href="#">Karir</a>
-              <a class="dropdown-item" href="#">FAQ</a>
-              <a class="dropdown-item" href="#">Kontak</a>
+            <div class="dropdown-menu" style="right: -20px; left: auto;background-color:#2d1923;" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ url('/news') }}">News</a>
+              <a class="dropdown-item" href="{{ url('/lokasi') }}">Lokasi</a>
+              <a class="dropdown-item" href="{{ url('/daftar-lagu') }}">Daftar Lagu</a>
+              <a class="dropdown-item" href="{{ url('/profile') }}">Profil</a>
+              <a class="dropdown-item" href="{{ url('/waralaba') }}">Waralaba</a>
+              <a class="dropdown-item" href="{{ url('/karir') }}">Karir</a>
+              <a class="dropdown-item" href="{{ url('/FAQ') }}">FAQ</a>
+              <a class="dropdown-item" href="{{ url('/kontak') }}">Kontak</a>
             </div>
           </div>
         </div>
@@ -32,26 +32,26 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0 justify-content-end">
           <li class="nav-item mx-1">
-            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('') }}">News</a>
+            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('/news') }}">News</a>
           </li>
           <li class="nav-item mx-1">
-            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('') }}">Lokasi</a>
+            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('/lokasi') }}">Lokasi</a>
           </li>
           <li class="nav-item mx-1">
-            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('') }}">Daftar Lagu</a>
+            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('/daftar-lagu') }}">Daftar Lagu</a>
           </li>
           <li class="nav-item mx-1">
-            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('') }}">Profile</a>
+            <a class="nav-link @yield('navbar-home')" aria-current="page" href="{{ url('/profile') }}">Profile</a>
           </li>
           <li class="nav-item mx-1 dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Waralaba</a>
-              <a class="dropdown-item" href="#">Karir</a>
-              <a class="dropdown-item" href="#">FAQ</a>
-              <a class="dropdown-item" href="#">Kontak</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#2d1923;">
+              <a class="dropdown-item" href="{{ url('/waralaba') }}">Waralaba</a>
+              <a class="dropdown-item" href="{{ url('/karir') }}">Karir</a>
+              <a class="dropdown-item" href="{{ url('/FAQ') }}">FAQ</a>
+              <a class="dropdown-item" href="{{ url('/kontak') }}">Kontak</a>
             </div>
           </li>
           <li class="nav-item mx-1">

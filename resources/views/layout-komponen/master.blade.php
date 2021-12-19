@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
   </head>
   @yield('css-internal')
-  <style>
+<style>
   .navbar-nav{
     margin-left:auto;
   }
@@ -20,6 +20,17 @@
   }
   .navbar{
     background-color:#2d1923;
+  }
+  .dropdown-item{
+    color:white;
+  }
+  @media (min-width: 576px) { 
+    #footer-right{
+      text-align:center;
+    }
+    #footer-left{
+      text-align:center
+    } 
   }
 </style>
   <body>

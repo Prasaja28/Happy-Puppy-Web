@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-md-6 py-2">
-          <div class="text-right">
+          <div class="text-center">
               <a class="btn btn-primary" style="width:150px;font-size:10px" role="button" href="">Become a member</a>
             <a class="m-1" style="display: inline-block; color:white;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
               <i class="fab fa-facebook-f fa-lg"></i>
