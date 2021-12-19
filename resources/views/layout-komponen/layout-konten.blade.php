@@ -1,5 +1,4 @@
-
-<div class="container" style="min-height:650px">
+<div class="main" style="min-height:650px">
     @yield('konten')
 </div>       
 
