@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWaralabacontentTable extends Migration
+class CreateProfilTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateWaralabacontentTable extends Migration
      */
     public function up()
     {
-        Schema::create('waralabacontent', function (Blueprint $table) {
-            $table->id();
+        Schema::create('profil', function (Blueprint $table) {
+            $table->increments('profil_id');
+            $table->string('title',50)->nullable();
+            $table->string('content',250)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateWaralabacontentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('waralabacontent');
+        Schema::dropIfExists('profil');
     }
 }

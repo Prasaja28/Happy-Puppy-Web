@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilTable extends Migration
+class CreateSubkotaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateProfilTable extends Migration
      */
     public function up()
     {
-        Schema::create('profil', function (Blueprint $table) {
-            $table->id();
+        Schema::create('subkota', function (Blueprint $table) {
+            $table->increments('subkota_id');
+            $table->string('nama_subkota',50)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateProfilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil');
+        Schema::dropIfExists('subkota');
     }
 }
