@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDaftarlaguTable extends Migration
+class CreateOutlettempatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateDaftarlaguTable extends Migration
      */
     public function up()
     {
-        Schema::create('daftarlagu', function (Blueprint $table) {
-            $table->id();
+        Schema::create('outlettempat', function (Blueprint $table) {
+            $table->increments('outlet_id');
+            $table->string('outlet_picture',100);
+            $table->string('title_outlet',30);
+            $table->string('alamat_outlet',50);
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateDaftarlaguTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('daftarlagu');
+        Schema::dropIfExists('outlettempat');
     }
 }
