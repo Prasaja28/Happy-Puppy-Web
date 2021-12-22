@@ -21,7 +21,7 @@
         visibility: visible;
     }
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 768px){
     .carousel-item {
         margin-right: 0;
     }
@@ -66,7 +66,7 @@
     }
 }
 /* MD */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 768px) {
     /* show 3rd of 3 item slide */
     .carousel-inner .active + .carousel-item + .carousel-item {
         display: block;
@@ -98,9 +98,14 @@
   height:100%;
   background-color:rgb(0,0,0,0.5);
   border-radius: 25px;
-  
+  /* position:relative;
+  visibility: visible;
+  display: block; */
 }
-.header{
+.container-fluid center a{
+    
+}
+/* .header{
   min-height: 70vh;
   background: no-repeat center scroll;
   -webkit-background-size: cover;
@@ -109,7 +114,7 @@
   background-size: cover;
   background-position: rightl;
   background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg')
-}
+} */
 .valueNews{
     font-size:8px;
     padding-left:15px;
@@ -131,13 +136,52 @@
 #readless{
     display:none;
 }
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  
+}
+.carousel-indicators{
+    top:125px;
+}
+.C-background{
+    height: 70vh;
+  min-height: 250px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#corousel-background{
+    z-index: -1;
+}
 </style>
 @endsection
 
 @section('konten')
-<div class="header p-5 p-md-5 mb-5">
-<!-- add konten in here -->
+<div id="corousel-background" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#corousel-background" data-slide-to="0" class="active"></li>
+    <li data-target="#corousel-background" data-slide-to="1"></li>
+    <li data-target="#corousel-background" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item C-background active" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg')">
+    
+    </div>
+    <div class="carousel-item C-background" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg')">
+
+    </div>
+    <div class="carousel-item C-background" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg')">
+
+    </div>
+  </div>
 </div>
+<!-- <div class="header p-5 p-md-5 mb-5">
+add konten in here
+</div> -->
     <!-- mobile view -->
     <div class="container-fluid" id="mobile-news">
         <div id="carousel-example" class="carousel slide" data-ride="carousel" style="margin-top:-225px;">
@@ -268,7 +312,7 @@
         </div>
     </div>
     <!-- Dekstop view -->
-    <div class="container-fluid" id="dekstop-news" style="margin-top:-250px;padding:20px">
+    <div class="container-fluid" id="dekstop-news" style="margin-top:-250px;padding:20px; ">
         <div class="container text-white">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-4">
@@ -280,7 +324,7 @@
                             <div class="valueNews">
                                 <h6>Hello world</h6>
                                 <p>hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy. hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy</p>
-                                <p>Desember 20,2021 <a href="#" style="margin-left:20px;color:white">read more &rarr;</a></p>
+                                <p>Desember 20,2021 <a href="{{ url('/news') }}" style="margin-left:20px;color:white">read more &rarr;</a></p>
                             </div>
                         </div>
                     </div>
@@ -314,11 +358,11 @@
                             </div>
                         </div>
                     </div>
-                            <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->
+                    <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->
                 </div>
             </div>
             <center>
-                <a class="text-white" href="{{ url('/news') }}" class="btn btn-primary" style="text-decoration: none;padding: 0; border: none;background: none;" onclick="myFunction()" id="btnread">Lihat Semua</a>
+                <a class="text-white" href="{{ url('/news') }}" class="btn btn-primary" style="text-decoration: none;padding: 0; border: none;background: none; " onclick="myFunction()" id="btnread">Lihat Semua</a>
             </center>
         </div>
     </div>
