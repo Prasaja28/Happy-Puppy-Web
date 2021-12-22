@@ -127,6 +127,30 @@
   /* truncate to 4 lines */
   -webkit-line-clamp: 4;
 }
+.img-back {
+    background: no-repeat center scroll;
+    background-position: rightl;
+    width: 1349px;
+    height: 500px;
+    background-image: url('/img/karaoke.jpg');
+    
+}
+#txt1 {
+    text-align: center;
+    color: white;
+    padding-top: 90px;
+}
+#container1 {
+    display: table;
+    margin: 0 auto;
+    padding-top: 110px;
+}
+.nav-link{
+    color: white;
+}
+.tab-content{
+    color: white;
+}
 .img-corousel{
     position:left; 
     width: 80px;
@@ -365,12 +389,58 @@ add konten in here
                 <a class="text-white" href="{{ url('/news') }}" class="btn btn-primary" style="text-decoration: none;padding: 0; border: none;background: none; " onclick="myFunction()" id="btnread">Lihat Semua</a>
             </center>
         </div>
-    </div>
-
-
-
+    </div><br><br>
 
 <!-- daftar lagu in here -->
+<div class="img-back">
+    <h3 id="txt1">Lagu Terbaru</h3>
+    <div class="container" id="container1">
+        <!-- Nav tabs -->
+        <ul class="nav nav-pills flex-column flex-sm-row justify-content-center" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#terbaru">Lagu Terbaru</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#terlarisMandarin">Terlaris Mandarin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#terlarisBarat">Terlaris Barat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#terlarisIndonesia">Terlaris Indonesia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#terlarisInternasional">Terlaris Internasional</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="terbaru" class="container tab-pane active"><br>
+                <h3>Lagu Terbaru</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div id="terlarisMandarin" class="container tab-pane fade"><br>
+                <h3>Terlaris Mandarin</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div id="terlarisBarat" class="container tab-pane fade"><br>
+                <h3>Terlaris Barat</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            </div>
+            <div id="terlarisIndonesia" class="container tab-pane fade"><br>
+                <h3>Terlaris Indonesia</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            </div>
+            <div id="terlarisInternasional" class="container tab-pane fade"><br>
+                <h3>Terlaris Internasional</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
 
 @section('js-internal')
