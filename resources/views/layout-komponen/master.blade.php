@@ -35,8 +35,11 @@
 </style>
   <body>
       @include('layout-komponen.navbar')
+      
         @include('layout-komponen.layout-konten')
+
         @include('layout-komponen.footer')
+
         <!-- javascript Eksternal -->
         @include('layout-komponen.js-eksternal')
         <!-- Javascript Internal -->

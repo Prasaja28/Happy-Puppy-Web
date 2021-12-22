@@ -268,7 +268,7 @@
         </div>
     </div>
     <!-- Dekstop view -->
-    <div class="container-fluid" id="dekstop-news" style="margin-top:-225px;padding:20px">
+    <div class="container-fluid" id="dekstop-news" style="margin-top:-250px;padding:20px">
         <div class="container text-white">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-4">
@@ -317,57 +317,8 @@
                             <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->
                 </div>
             </div>
-            <div id="readless">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img src="{{ asset('/img/example-logo.jpg')}}" class="img-corousel" alt="" style="">         
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="valueNews">
-                                    <h6>Hello world</h6>
-                                    <p>hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy. hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy</p>
-                                    <p>Desember 20,2021 <a href="#" style="margin-left:20px;color:white">read more &rarr;</a></p>
-                                </div>
-                            </div>
-                        </div>
-                                <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->                
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img src="{{ asset('/img/example-logo.jpg')}}" class="img-corousel" alt="" style="">         
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="valueNews">
-                                    <h6>Hello world</h6>
-                                    <p>hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy. hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy</p>
-                                    <p>Desember 20,2021 <a href="#" style="margin-left:20px;color:white">read more &rarr;</a></p>
-                                </div>
-                            </div>
-                        </div>
-                                <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->                
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img src="{{ asset('/img/example-logo.jpg')}}" class="img-corousel" alt="" style="">         
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="valueNews">
-                                    <h6>Hello world</h6>
-                                    <p>hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy. hello its is may news update today maybe you cah see more in here discripte maybe this is first you can read this text and hello world. and good bye boy</p>
-                                    <p>Desember 20,2021 <a href="#" style="margin-left:20px;color:white">read more &rarr;</a></p>
-                                </div>
-                            </div>
-                        </div>
-                                <!-- <img src="{{ asset('/img/example-logo.jpg')}}" class="img-fluid mx-auto d-block" alt="img1"> -->                
-                    </div>
-                </div>
-            </div>
             <center>
-                <button class="text-white" style="padding: 0; border: none;background: none;" onclick="myFunction()" id="btnread">Lihat Semua</button>
+                <a class="text-white" href="{{ url('/news') }}" class="btn btn-primary" style="text-decoration: none;padding: 0; border: none;background: none;" onclick="myFunction()" id="btnread">Lihat Semua</a>
             </center>
         </div>
     </div>
@@ -389,6 +340,7 @@ var width = screen.width;
             document.getElementById('mobile-news').style.display='none';
             document.getElementById('dekstop-news').style.display='block';
         }
+    /*
 function myFunction() {
   var readless = document.getElementById("readless");
   var btnread = document.getElementById("btnread");
@@ -401,6 +353,7 @@ function myFunction() {
     readless.style.display = "none";
   }
 }
+*/
     /*
     Carousel
 */
