@@ -92,7 +92,7 @@
 				
 					<img class="trigger" src="img/9.jpg" width=200 class = "hotspot" onmouseover="tooltip.show('<table><tr>	<td><table>	<tr>		<td><table width=450 height=120 cellpadding=5 cellspacing=5>			<tr>				<td valign=top rowspan=2><img src=img/9.jpg width=140/></td>				<td>					<div style =font-weight:bold;font-family:arial;font-size:16px;text-align:justify;color:#ffffff;>Volume Suara Ternormalisasi					</div>				</td>			</tr>			<tr>				<td valign=top>					<div style =font-family:arial;font-size:12px;text-align:justify;color:#ffffff;line-height:18px;>Volume suara semua lagu telah dinormalisasi, sehingga antara satu lagu dengan lagu yang lain volume terdengar stabil.					</div>				</td>			</tr>			</table>		</td>	</tr>    </table></td></tr></table>');" onmouseout="tooltip.hide();"/>
 				</div>
-				<br><br>
+				<br><br><br>
 				</div>
 
           </section>
