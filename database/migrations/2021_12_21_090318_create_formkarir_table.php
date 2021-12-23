@@ -14,7 +14,7 @@ class CreateFormkarirTable extends Migration
     public function up()
     {
         Schema::create('formkarir', function (Blueprint $table) {
-            $table->increments('formkarir_id');
+            $table->id();
             $table->string('status_penguasaan',25);
             $table->string('nama_pelamar',75);
             $table->string('pendidikan_formal',75);

@@ -14,7 +14,7 @@ class CreateTempatdiminatiTable extends Migration
     public function up()
     {
         Schema::create('tempatdiminati', function (Blueprint $table) {
-            $table->increments('tempat_id');
+            $table->id();
             $table->string('status_penguasaan');
             $table->string('alamat');
             $table->string('kota');

@@ -14,9 +14,14 @@ class CreateSubkotaTable extends Migration
     public function up()
     {
         Schema::create('subkota', function (Blueprint $table) {
-            $table->increments('subkota_id');
+            $table->id();
             $table->string('nama_subkota',50)->nullable();
-            $table->timestamps();
+            // $table->foreignId('kota_id')
+            //     ->nullable()
+            //     ->constrained('kota')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
+            // $table->timestamps();
         });
     }
 

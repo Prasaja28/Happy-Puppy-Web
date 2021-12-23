@@ -14,7 +14,7 @@ class CreateBakatTable extends Migration
     public function up()
     {
         Schema::create('bakat', function (Blueprint $table) {
-            $table->increments('bakat_id');
+            $table->id();
             $table->text('alat_musik');
             $table->text('komputer');
             $table->text('lainlain');

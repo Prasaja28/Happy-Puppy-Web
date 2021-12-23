@@ -14,7 +14,7 @@ class CreateOutlettempatTable extends Migration
     public function up()
     {
         Schema::create('outlettempat', function (Blueprint $table) {
-            $table->increments('outlet_id');
+            $table->id();
             $table->string('outlet_picture',100);
             $table->string('title_outlet',30);
             $table->string('alamat_outlet',50);

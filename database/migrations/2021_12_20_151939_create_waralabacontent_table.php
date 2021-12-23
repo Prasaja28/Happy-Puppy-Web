@@ -14,7 +14,7 @@ class CreateWaralabacontentTable extends Migration
     public function up()
     {
         Schema::create('waralabacontent', function (Blueprint $table) {
-            $table->increments('waralabacontent_id');
+            $table->id();
             $table->string('title',50);
             $table->string('content',255);
             $table->boolean('status');

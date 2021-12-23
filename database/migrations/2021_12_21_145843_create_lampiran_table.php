@@ -14,7 +14,7 @@ class CreateLampiranTable extends Migration
     public function up()
     {
         Schema::create('lampiran', function (Blueprint $table) {
-            $table->increments('lampiran_id');
+            $table->id();
             $table->string('foto_pribadi');
             $table->string('ijazah');
             $table->timestamps();

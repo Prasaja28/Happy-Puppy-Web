@@ -14,7 +14,7 @@ class CreateDaftarlaguTable extends Migration
     public function up()
     {
         Schema::create('daftarlagu', function (Blueprint $table) {
-            $table->increments('daftarlagu_id');
+            $table->id();
             $table->string('judul',100);
             $table->string('penyanyi',100);
             $table->string('pencipta',255);

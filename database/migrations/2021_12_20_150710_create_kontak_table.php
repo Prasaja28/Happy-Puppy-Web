@@ -14,7 +14,7 @@ class CreateKontakTable extends Migration
     public function up()
     {
         Schema::create('kontak', function (Blueprint $table) {
-            $table->increments('kontak_id');
+            $table->id();
             $table->string('country_name',64);
             $table->string('member',32);
             $table->string('no_member',32);

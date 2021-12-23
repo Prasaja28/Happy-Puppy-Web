@@ -14,7 +14,7 @@ class CreateFormpendaftaranwaralabaTable extends Migration
     public function up()
     {
         Schema::create('formpendaftaranwaralaba', function (Blueprint $table) {
-            $table->increments('waralaba_id');
+            $table->id();
             $table->string('nama',50);
             $table->boolean('jenis_kelamin');
             $table->integer('umur');
