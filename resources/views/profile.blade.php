@@ -12,7 +12,7 @@
 
 
 @endsection
-
+@section('navbar-profile','active')
 @section('konten')
 <!-- add konten in here -->
 <br><br><br>

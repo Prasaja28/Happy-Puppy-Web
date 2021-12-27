@@ -15,11 +15,17 @@
   .navbar-nav{
     margin-left:auto;
   }
-  .navbar-nav {
-    color:white;
+  .navbar-nav .nav-link {
+		    color: white ;
+  }
+  .navbar-nav .nav-link:hover {
+		    color: #3792cb;
+  }
+  .navbar-nav .active {
+		    color: #3792cb !important;
   }
   .navbar{
-    background-color:#2d1923;
+    background-color:#000000;
   }
   .dropdown-item{
     color:white;
