@@ -97,6 +97,10 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+.btn{
+    color: white;
+    background-color: #221E40;
+}
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -149,7 +153,7 @@
     </div>
     <div class="container" id="txt-foot">
         <p>Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang diisi secara lengkap, untuk mengisi formulir pendaftaran waralaba.</p><br><br>
-        <button type="button" class="btn btn-dark">Klik Disini</button>
+        <button type="button" class="btn">Klik Disini</button>
     </div>
 </div>
 @endsection
