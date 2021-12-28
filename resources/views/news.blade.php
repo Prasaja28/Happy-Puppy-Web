@@ -6,7 +6,7 @@
 <!-- Add tag css in here -->
 
 @endsection
-
+@section('navbar-news','active')
 @section('konten')
 <!-- add konten in here -->
 <h1>ini halaman News</h1>
