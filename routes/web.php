@@ -44,4 +44,7 @@ Route::get('/waralaba', function () {
 Route::get('/kontak', function () {
     return view('kontak');
 });
+Route::get('/formkarir', function () {
+    return view('formkarir');
+});
 
