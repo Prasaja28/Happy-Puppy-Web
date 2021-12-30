@@ -91,7 +91,7 @@ font-size:12px;
   margin-bottom: 10px;
 }
 .card-img-news{
-  height:150px;
+  height:130px;
 }
 .news-time{
   margin-bottom:-10px;
@@ -102,16 +102,18 @@ font-size:12px;
 }
 .card-news-popular{
   width: 32rem;
+  height: 130px;
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px;
   margin-top:10px;
 }
+
 .news-popular-title{
     color:#106ec3;
     font-size:12px;
     margin-top:-15px;
-    margin-bottom:75px;
+    margin-bottom:40px;
     font-weight:bold
 }
 @media (max-width: 900px) {
@@ -196,10 +198,10 @@ font-size:12px;
     margin-top: 24px;
   }
   .news-popular-title{
-    color:#221E40;
+    color:#106ec3;
     font-size:8px;
     margin-top:-15px;
-    margin-bottom:18px;
+    margin-bottom:5px;
   }
 }
 </style>
@@ -423,25 +425,7 @@ font-size:12px;
                   </div>
                   <div class="col-6">
                     <div class="card-body text-bottom">
-                      <p class="news-popular-title">news</p>
-                      <h5 class="card-title">Card title</h5>
-                      <p class="news-time"><?=now()?>
-                        <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card card-news-popular">
-                <div class="row no-gutters">
-                  <div class="col-6">
-                    <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
-                  </div>
-                  <div class="col-6">
-                    <div class="card-body text-bottom">
-                      <p class="news-popular-title">news</p>
+                      <p class="news-popular-title">News</p>
                       <h5 class="card-title">Card title</h5>
                       <p class="news-time"><?=now()?>
                         <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
@@ -477,7 +461,25 @@ font-size:12px;
                   </div>
                   <div class="col-6">
                     <div class="card-body text-bottom">
-                      <p class="news-popular-title">news</p>
+                      <p class="news-popular-title">News</p>
+                      <h5 class="card-title">Card title</h5>
+                      <p class="news-time"><?=now()?>
+                        <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card card-news-popular">
+                <div class="row no-gutters">
+                  <div class="col-6">
+                    <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                  </div>
+                  <div class="col-6">
+                    <div class="card-body text-bottom">
+                      <p class="news-popular-title">News</p>
                       <h5 class="card-title">Card title</h5>
                       <p class="news-time"><?=now()?>
                         <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
