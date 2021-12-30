@@ -16,16 +16,6 @@
   background-position: rightl;
   background-image: url('/img/karaoke.jpg')
 }
-.search-kota{
-    background-color:#221E40;
-}
-.top-artis{
-  background-color:#FFF;
-}
-.rounded-circle{
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
 #txt1{
     color: white;
     position: absolute;
