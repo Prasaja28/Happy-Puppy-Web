@@ -2,9 +2,34 @@
 @section('title','Form Karir') <!-- name title -->
 @section('css-internal')
 <!-- Add tag css in here -->
+<style>
+.header{
+  min-height: 50vh;
+  background: no-repeat center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: rightl;
+  background-image: url('/img/karaoke.jpg')
+}
+/* 
+.btn{
+    color: white;
+    background-color: #221E40; */
+}
+</style>
+<link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @endsection
 
 @section('konten')
+<div class="header">
+    <div id="txt1" class="container">
+        <p>Lowongan</p>
+    </div>
+</div>
+
     <section class="content">
     <div class="container-fluid"><br>
         <div>
@@ -99,15 +124,10 @@
                 <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="No. KTP">
             </div>    
             
-
     </div>
-        <!-- /.col -->
     </div>
-        <!-- /.row -->
     </div>
-        <!-- /.col -->
     </div>
-        <!-- /.row -->
 
     
 
@@ -150,7 +170,6 @@
                 </div>
             </div>
             
-            <!-- /.col -->
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Jabatan">
@@ -160,13 +179,9 @@
                     <text>Dalam IDR</text>
                 </div> -->
             </div>
-        <!-- /.col -->
     </div>
-        <!-- /.row -->
     </div>
-        <!-- /.col -->
-    
-        <!-- /.row -->
+
 
 
     <div class="card-header">
@@ -195,19 +210,15 @@
                 </div>
             </div>
     </div>
-    
     </div>
-
-
 
     <div class="card-header">
             <h4>Lampiran</h4>
     </div>       
-           
-        <div class="card-body">
+    <br>       
+        <class="card-body">
           
-        <div class="row">
-                
+        <div class="row">    
                 <div class="col-lg-6">
                 <h6>Upload CV</h6>          
                   <div class="btn-group w-50">
@@ -242,8 +253,8 @@
             </div>
     </div>
 
-    <br>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <br><br>
 
     </div>
     
