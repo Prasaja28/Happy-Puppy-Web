@@ -4,7 +4,151 @@
 
 @section('css-internal')
 <!-- Add tag css in here -->
+<style>
+ 
+.header1{
+  min-height: 29vh;
+  background: no-repeat center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: rightl;
+  background-image: url('/img/PROFILE.jpg')
+}
+#txt2{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: justify;
+    margin: 0;
+    font-size: 35px;
+    min-height: 550px;
+}
+#txt1{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: justify;
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+    min-height: 500px;
+}
 
+
+
+.header{
+  min-height: 18vh;
+  background: no-repeat center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: rightl;
+  background-color: #1f1f1f;
+}
+.rounded-circle{
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l1{
+  width: 135px;
+  height: 135px;
+  background: #FA8072;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l2{
+  width: 135px;
+  height: 135px;
+  background: #87CEFA;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l3{
+  width: 135px;
+  height: 135px;
+  background: #ADFF2F;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l4{
+  width: 135px;
+  height: 135px;
+  background: grey;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l5{
+  width: 135px;
+  height: 135px;
+  background: #FFD700;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.h1 {
+  color: #ffffff;
+  font-size:25px;
+}
+
+.h2 {
+  color: #ffffff;
+  font-size:15px;
+  font-style: italic
+}
+
+.h3 {
+  color: #000000;
+  font-size:15px;
+}
+.ratakiri { text-align: left; }
+.ratakanan { text-align: right; }
+.ratatengah { text-align: center; }
+.ratakirikanan { 
+  text-align: justify;
+   }
+
+.center {
+    margin: auto;
+    margin-top: 50px;
+    width: 82%;
+    padding: 15px;
+    color: black;
+    background-color:#D3D3D3;
+}
+.bold { font-weight: bold; }
+  .img-artis-content{
+    margin-top:-50px
+  }
+
+      .border {
+        border-width: 10px;
+        border-style: solid;
+        border-top-color: red;
+        border-bottom-color: blue;
+        border-left-color: green;
+        border-right-color: yellow;
+    }
+
+     .card-body{
+  min-height:5rem;
+  text-align: right;
+  width: 30%;
+  }
+}
+</style>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -15,79 +159,80 @@
 @section('navbar-profile','active')
 @section('konten')
 <!-- add konten in here -->
+<!-- background Home -->
+<div class="header1">
+  <div id="txt2" class="container" style="text-align: justify; text-indent: 1in;">
+        <p >PROFIL</p>
+    </div>
+    <div id="txt1" class="container" style="text-align: justify; text-indent: 1in;">
+        <p>PERUSAHAAN</p>
+    </div>
+</div>
+<div class="header">
+  <br>
+        <h3 class="h1" style="text-align: justify; text-indent: 1.2in;">PT.IMPERIUM HAPPY PUPPY</h3>
+        <h3 class="h2" style="text-align: justify; text-indent: 1.2in;">Let the world sing in harmony</h3>
+</div>
+
+
+<br><br>
+<div class="container"style="text-align: justify; "> 
+  Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan
+
+  
+</div>
+    <div class="center">
+      <div class="container"style="text-align: justify; "> 
+        <br><p class="bold">SEJARAH PERUSAHAAN</p><br>
+    </div>
+
+  
+<br><br>
+<div class="container">
+<center>
+  <div class="l1">
+    <br><br>
+    <h4 class="h1">2009</h4>
+  </div>  
+</center> 
+</div>
 <br><br><br>
- <main id="main">
-    <!-- ======= Story Intro Section ======= -->
-    <section id="story-intro" class="story-intro">
-      <div class="container">
 
-        <div class="row">
-                     	
-            <div class="col-lg-4 d-flex " data-aos="fade-right" data-aos-delay="100">
-           	         
-            <img src="img/hp2.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>PROFIL PERUSAHAAN</h3>
-            <p class="fst-italic">
-              HAPPY PUPPY - PELOPOR KARAOKE KELUARGA DI INDONESIA
-            </p>
+  <div class="container">
+<center>
+  <div class="l2">
+    <br><br>
+    <h4 class="h1">2010</h4>
+  </div></center> </div>
+  <br><br><br>
 
-            <p>
-              Masyarakat Indonesia adalah masyarakat religius yang gemar bernyanyi, berhak untuk mendapatkan sarana hiburan bernyanyi yang bebas dari simbol-simbol hiburan malam. Pasar inilah yang kemudian ditangkap dengan jeli oleh wirausahawan Santoso Setyadji.
-<br><br>
-              Konsep Karaoke Keluarga untuk pertama kalinya diperkenalkan di Indonesia oleh Santoso dengan didirikannya Happy Puppy Self-Service Family Karaoke Box pada tanggal 14 Nopember 1992 di Surabaya.
-<br><br>
-              Oleh karena konotasi "Karaoke" di Indonesia sudah demikian identiknya dengan hiburan malam, Santoso menambahkan kata "Family" di depan kata Karaoke Box sebagai upaya penekanan bahwa hiburan yang disediakan adalah hiburan yang baik untuk keluarga atau hiburan untuk orang yang baik-baik.
-<br><br>
-              Karaoke Keluarga mendapat sambutan yang baik dari masyarakat Indonesia. Dari Surabaya, Santoso mengembangkan jaringan Karaoke Keluarga ke Jakarta, Semarang, Samarinda, Balikpapan, Makassar, Yogjakarta, Cibubur, Pontianak, Manado, Serpong dan sebentar lagi Banjarmasin.
-<br><br>
-              Pada bulan Januari 2004, Santoso Setyadji dan Happy Puppy Karaoke Keluarga dianugerahi Sertifikat Museum Rekor Indonesia (MURI) sebagai Pelopor Karaoke Keluarga di Indonesia.
-            </p>
-          </div>
+  <div class="container">
+<center>
+  <div class="l3">
+    <br><br>
+    <h4 class="h1">2015</h4>
+  </div></center> </div>
+  <br><br><br>
 
-        </div>
+  <div class="container">
+<center>
+  <div class="l4">
+    <br><br>
+    <h4 class="h1">2017</h4>
+  </div></center> </div>
+  <br><br><br>
 
-      </div>
-    </section><!-- End Story Intro Section -->
-
-    <!-- ======= Members Section ======= -->
-    <br><br><br><br>
-          <section id="members" class="members">
-      <div class="container">
-      	 <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content center">
-            <h3>FASILITAS</h3><br>
-            <p>
-              Happy Puppy menghadirkan hiburan karaoke keluarga sejak 1992. Dilengkapi dengan kualitas audio video yg prima, koleksi lagu yang lengkap, peralatan yg canggih, sistem layar sentuh, desain ruangan yang modern dan berbagai fasilitas lainnya untuk memberikan pengalaman bernyanyi yang tak terlupakan..
-<br><br>
-
-	<div class="bubbleInfo1">
-				
-					<img class="trigger" src="img/1.jpg" width=200 class = "hotspot" onmouseover="tooltip.show('<table><tr>	<td><table>	<tr>		<td><table width=450 height=120 cellpadding=5 cellspacing=5>			<tr>				<td valign=top rowspan=2><img src=img/1.jpg width=140/></td>				<td>					<div style =font-weight:bold;font-family:arial;font-size:16px;text-align:justify;color:#ffffff;>Video Berkualitas Full HD					</div>				</td>			</tr>			<tr>				<td valign=top>					<div style =font-family:arial;font-size:12px;text-align:justify;color:#ffffff;line-height:18px;>Setiap video klip dari lagu-lagu yang tersedia, ditampilkan dalam video dengan gambar yang baik dan berkualitas Full HD.					</div>				</td>			</tr>			</table>		</td>	</tr>    </table></td></tr></table>');" onmouseout="tooltip.hide();"/>
-				
-				
-				
-					<img class="trigger" src="img/2.jpg" width=200 class = "hotspot" onmouseover="tooltip.show('<table><tr>	<td><table>	<tr>		<td><table width=450 height=120 cellpadding=5 cellspacing=5>			<tr>				<td valign=top rowspan=2><img src=img/2.jpg width=140/></td>				<td>					<div style =font-weight:bold;font-family:arial;font-size:16px;text-align:justify;color:#ffffff;>Sistem Suara					</div>				</td>			</tr>			<tr>				<td valign=top>					<div style =font-family:arial;font-size:12px;text-align:justify;color:#ffffff;line-height:18px;>Setiap ruangan dilengkapi dengan sistem suara terbaik buatan Jepang dan kualitas suara yang prima.					</div>				</td>			</tr>			</table>		</td>	</tr>    </table></td></tr></table>');" onmouseout="tooltip.hide();"/>
-				
-				
-				
-					<img class="trigger" src="img/3.jpg" width=200 class = "hotspot" onmouseover="tooltip.show('<table><tr>	<td><table>	<tr>		<td><table width=450 height=120 cellpadding=5 cellspacing=5>			<tr>				<td valign=top rowspan=2><img src=img/3.jpg width=140/></td>				<td>					<div style =font-weight:bold;font-family:arial;font-size:16px;text-align:justify;color:#ffffff;>Minimart					</div>				</td>			</tr>			<tr>				<td valign=top>					<div style =font-family:arial;font-size:12px;text-align:justify;color:#ffffff;line-height:18px;>Belanja makanan ringan, minuman dan suvenir  di Minimart untuk belanja lebih hemat.					</div>				</td>			</tr>			</table>		</td>	</tr>    </table></td></tr></table>');" onmouseout="tooltip.hide();"/>
-				
-				
-					<img class="trigger" src="img/4.jpg" width=200 class = "hotspot" onmouseover="tooltip.show('<table><tr>	<td><table>	<tr>		<td><table width=450 height=120 cellpadding=5 cellspacing=5>			<tr>				<td valign=top rowspan=2><img src=img/4.jpg width=140/></td>				<td>					<div style =font-weight:bold;font-family:arial;font-size:16px;text-align:justify;color:#ffffff;>TV Lebih Lebar					</div>				</td>			</tr>			<tr>				<td valign=top>					<div style =font-family:arial;font-size:12px;text-align:justify;color:#ffffff;line-height:18px;>Setiap ruangan menggunakan TV LED layar lebar, antara lain TV 42 inch &amp; TV 65 Inch dengan jumlah TV yang disesuaikan dengan kapasitas ruangan.					</div>				</td>			</tr>			</table>		</td>	</tr>    </table></td></tr></table>');" onmouseout="tooltip.hide();"/>
-				
-				
-					
-				</div>
-				<br><br>
-				</div>
-
-          </section>
-<!-- End Members Section -->
- </main><!-- End #main -->
-
-
+  <div class="container">
+<center>
+  <div class="l5">
+    <br><br>
+    <h4 class="h1">2019</h4>
+  </div></center> </div>
+  <br><br>
+</div>
+<br><br><br><br>
 @endsection
+
 
 @section('js-internal')
 <!-- add tag js in here -->
