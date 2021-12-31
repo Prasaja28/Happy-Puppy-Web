@@ -49,7 +49,7 @@
         text-align: justify;
     }
     .back {
-        height: 700px;
+        height: 730px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -209,13 +209,43 @@
         </div>
     
         <div id="Request" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p> 
+            <div class="container" id="form1">
+                <form action="/action_page.php">
+                    <label for="Nama">Nama</label>
+                        <input type="text" id="Nama" name="Nama" placeholder="Nama">
+                    <label for="MID">Member ID</label>
+                        <input type="text" id="MID" name="lastname" placeholder="Member ID">
+                    <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    <label for="telp">Telp.</label>
+                        <input type="text" id="telp" name="telp" placeholder="Telp."></input>
+                    <label for="telp">Request Lagu</label>
+                        <input type="text" id="req" name="req" placeholder="Request Lagu"></input>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div> 
         </div>
     
         <div id="keluhan" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <div class="container" id="form1">
+                <form action="/action_page.php">
+                    <label for="Nama">Nama</label>
+                        <input type="text" id="Nama" name="Nama" placeholder="Nama">
+                    <label for="MID">Member ID</label>
+                        <input type="text" id="MID" name="lastname" placeholder="Member ID">
+                    <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    <label for="telp">Telp.</label>
+                        <input type="text" id="telp" name="telp" placeholder="Telp."></input>
+                    <label for="telp">Outlet</label>
+                        <input type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
+                    <label for="telp">Keluhan</label>
+                        <input type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
     </div>
 </div>
