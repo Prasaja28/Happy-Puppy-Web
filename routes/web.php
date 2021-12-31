@@ -35,9 +35,6 @@ Route::get('/lokasi', function () {
 Route::get('/karir', function () {
     return view('karir');
 });
-Route::get('/FAQ', function () {
-    return view('FAQ');
-});
 Route::get('/waralaba', function () {
     return view('waralaba');
 });
