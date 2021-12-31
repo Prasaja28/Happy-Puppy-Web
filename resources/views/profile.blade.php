@@ -36,8 +36,6 @@
     min-height: 500px;
 }
 
-
-
 .header{
   min-height: 18vh;
   background: no-repeat center scroll;
@@ -113,6 +111,29 @@
   color: #000000;
   font-size:15px;
 }
+.h4 {
+  color: #808080;
+  font-size:15px;
+  position: absolute;
+    width: 400px;
+    height: 200px;
+padding-top: 0px;
+padding-right: 30px;
+padding-bottom: 10px;
+padding-left: 60px;
+}
+
+.h5 {
+  color: #808080;
+  font-size:15px;
+  position: absolute;
+    width: 600px;
+    height: 200px;
+padding-top: 0px;
+padding-right: 60px;
+padding-bottom: 0px;
+padding-left: 240px;
+}
 .ratakiri { text-align: left; }
 .ratakanan { text-align: right; }
 .ratatengah { text-align: center; }
@@ -128,25 +149,35 @@
     color: black;
     background-color:#D3D3D3;
 }
-.bold { font-weight: bold; }
+.bold { font-weight: bold; 
+  font-size:20px;}
   .img-artis-content{
     margin-top:-50px
+
   }
 
-      .border {
-        border-width: 10px;
-        border-style: solid;
-        border-top-color: red;
-        border-bottom-color: blue;
-        border-left-color: green;
-        border-right-color: yellow;
-    }
+.border {
+  border-width: 10px;
+  border-style: solid;
+  border-top-color: red;
+  border-bottom-color: blue;
+  border-left-color: green;
+  border-right-color: yellow;
+  }
 
-     .card-body{
+.card-body{
   min-height:5rem;
   text-align: right;
   width: 30%;
   }
+.vl {
+  border-left: 6px solid white;
+  min-height: 6vh;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 5;
+}
 }
 </style>
   <!-- Google Fonts -->
@@ -182,52 +213,70 @@
   
 </div>
     <div class="center">
-      <div class="container"style="text-align: justify; "> 
-        <br><p class="bold">SEJARAH PERUSAHAAN</p><br>
-    </div>
-
-  
-<br><br>
-<div class="container">
-<center>
-  <div class="l1">
-    <br><br>
-    <h4 class="h1">2009</h4>
-  </div>  
-</center> 
+       <br>
+          <div class="container"style="text-align: justify; text-indent: 0.4in; "> 
+        <br>
+    <p class="bold">SEJARAH PERUSAHAAN</p><br>
 </div>
+
 <br><br><br>
 
-  <div class="container">
-<center>
-  <div class="l2">
-    <br><br>
-    <h4 class="h1">2010</h4>
-  </div></center> </div>
-  <br><br><br>
+<div class="p-4 font-weight-bold">
+  <center>
+    <div class="l1">
+      <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
+      <br><br>
+    <h4 class="h1">2009</h4>  
+  </div> 
+</center> 
+        <div class="vl"></div>
+  </div>
+<br>
 
-  <div class="container">
+  <div class="h4" data-aos="fade-right" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>
+    <div class="p-4 font-weight-bold">
+        <center>
+            <div class="l2">
+                <br><br>
+                  <h4 class="h1">2010</h4>
+                </div>
+            </center> 
+        <div class="vl">
+    </div>
+</div>
+<br>
+
+  <div class="p-4 font-weight-bold">
 <center>
   <div class="l3">
+    <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
     <br><br>
     <h4 class="h1">2015</h4>
-  </div></center> </div>
-  <br><br><br>
+  </div></center><div class="vl"></div>
+</div>
+<br>
 
-  <div class="container">
-<center>
-  <div class="l4">
-    <br><br>
-    <h4 class="h1">2017</h4>
-  </div></center> </div>
-  <br><br><br>
+  <div class="h4" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>
+    <div class="p-4 font-weight-bold">
+        <center>
+            <div class="l4">
+              <br><br>
+            <h4 class="h1">2017</h4>
+        </div>
+    </center>
+  <div class="vl"></div>
+</div>
+<br>
 
-  <div class="container">
-<center>
-  <div class="l5">
-    <br><br>
-    <h4 class="h1">2019</h4>
-  </div></center> </div>
+  <div class="p-4 font-weight-bold">
+      <center>
+          <div class="l5">
+            <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
+              <br><br>
+          <h4 class="h1">2019</h4>
+        </div>
+      </center>
+    </div>
   <br><br>
 </div>
 <br><br><br><br>
