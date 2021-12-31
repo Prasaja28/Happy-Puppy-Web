@@ -14,7 +14,6 @@
 -->
 
 <style>
- 
 .header{
   min-height: 50vh;
   background: no-repeat center scroll;
@@ -124,7 +123,7 @@ font-size:12px;
 @media (max-width: 576px) {
   .btn-search{
   border-radius:8px;
-  width:60px;
+  width:65px;
   font-size:8px;
   margin: 5px;
   }
@@ -239,9 +238,10 @@ font-size:12px;
           <div class="row pt-3">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-              <?php for($i=0;$i<4;$i++){?>
-                  <a href="" class="btn btn-primary btn-search" style="">Surabaya</a>
-                <?php };?>
+                  <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
+                  <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
+                  <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
+                  <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
             </div>
             <div class="col-lg-2"></div>
           </div>

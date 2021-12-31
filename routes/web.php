@@ -47,4 +47,10 @@ Route::get('/kontak', function () {
 Route::get('/formkarir', function () {
     return view('formkarir');
 });
+Route::get('/lokasi-not-found', function () {
+    return view('lokasi-not-found');
+});
+Route::get('/lokasi-outlet', function () {
+    return view('lokasi-outlet');
+});
 
