@@ -15,6 +15,9 @@ class CreateTopartistTable extends Migration
     {
         Schema::create('topartist', function (Blueprint $table) {
             $table->id();
+            $table->string('name',50);
+            $table->string('thumbnail');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

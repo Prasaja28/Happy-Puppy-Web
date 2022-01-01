@@ -15,6 +15,7 @@ class CreateCitysubTable extends Migration
     {
         Schema::create('citysub', function (Blueprint $table) {
             $table->id();
+            $table->string('csub_name',50);
             $table->timestamps();
         });
     }

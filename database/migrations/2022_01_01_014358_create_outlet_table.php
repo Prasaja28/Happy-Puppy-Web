@@ -15,6 +15,13 @@ class CreateOutletTable extends Migration
     {
         Schema::create('outlet', function (Blueprint $table) {
             $table->id();
+            $table->string('thumbnail');
+            $table->string('name',50);
+            $table->string('address');
+            $table->string('phone',15);
+            $table->string('fax',15);
+            $table->text('link_ig');
+            $table->text('link_2');
             $table->timestamps();
         });
     }

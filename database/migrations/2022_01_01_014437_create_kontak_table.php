@@ -15,6 +15,12 @@ class CreateKontakTable extends Migration
     {
         Schema::create('kontak', function (Blueprint $table) {
             $table->id();
+            $table->string('name',50);
+            $table->string('member_id',32);
+            $table->string('email',50);
+            $table->string('phone',15);
+            $table->text('complaint')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

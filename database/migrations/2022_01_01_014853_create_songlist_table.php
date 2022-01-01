@@ -15,6 +15,11 @@ class CreateSonglistTable extends Migration
     {
         Schema::create('songlist', function (Blueprint $table) {
             $table->id();
+            $table->text('title_song');
+            $table->text('artist');
+            $table->string('thumbnail');
+            $table->string('kategori_lagu',20);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

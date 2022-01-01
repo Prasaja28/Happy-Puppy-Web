@@ -15,6 +15,9 @@ class CreateJobexpertiseTable extends Migration
     {
         Schema::create('jobexpertise', function (Blueprint $table) {
             $table->id();
+            $table->string('company_name',50);
+            $table->string('length_work',2);
+            $table->string('position',30);
             $table->timestamps();
         });
     }

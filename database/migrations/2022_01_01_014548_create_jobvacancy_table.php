@@ -15,6 +15,9 @@ class CreateJobvacancyTable extends Migration
     {
         Schema::create('jobvacancy', function (Blueprint $table) {
             $table->id();
+            $table->string('name_job',30);
+            $table->string('location',100);
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }
