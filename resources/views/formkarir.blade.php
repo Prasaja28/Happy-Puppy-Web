@@ -84,7 +84,7 @@
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div class="form-group">
                     <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Tinggi">
                 </div>
@@ -128,7 +128,6 @@
     </div>
     </div>
     </div>
-
     
 
     <div class="card-header">
