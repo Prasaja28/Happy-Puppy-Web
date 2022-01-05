@@ -116,10 +116,10 @@
             <div class="container-fluid pb-4 text-center">
               <div class="row py-3">
                 <div class="col-12">
-                      <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
-                      <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
-                      <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
-                      <a href="" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
+                      <a href="{{ url('/lokasi-outlet') }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
+                      <a href="{{ url('/lokasi-outlet') }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
+                      <a href="{{ url('/lokasi-outlet') }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
+                      <a href="{{ url('/lokasi-outlet') }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
                 </div>
               </div>
             </div>
@@ -161,7 +161,8 @@ $(function () {
     //redirect after selecting
     $('.select2bs4').on('change', function() {
       var data = $(".select2bs4 option:selected").val();
-      window.location.href = '/lokasi/'+data;
+      // window.location.href = '/lokasi-outlet/'+data;
+      window.location.href = '/lokasi-outlet/';
     })
 
     function formatState (state) {
