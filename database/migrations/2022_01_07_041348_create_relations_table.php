@@ -85,13 +85,37 @@ class CreateRelationsTable extends Migration
         //         ->onDelete('cascade');
         // });
 
-        Schema::table('city', function (Blueprint $table) {
-            $table->foreignId('citysub_id')
-                ->nullable()
-                ->constrained('citysub')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-        });
+        // Schema::table('city', function (Blueprint $table) {
+        //     $table->foreignId('citysub_id')
+        //         ->nullable()
+        //         ->constrained('citysub')
+        //         ->onUpdate('cascade')
+        //         ->onDelete('cascade');
+        // });
+
+        // Schema::table('outlet', function (Blueprint $table) {
+        //     $table->foreignId('users_id')
+        //         ->nullable()
+        //         ->constrained('users')
+        //         ->onUpdate('cascade')
+        //         ->onDelete('cascade');
+        // });
+
+        // Schema::table('outlet', function (Blueprint $table) {
+        //     $table->foreignId('city_id')
+        //         ->nullable()
+        //         ->constrained('city')
+        //         ->onUpdate('cascade')
+        //         ->onDelete('cascade');
+        // });
+
+        // Schema::table('outlet', function (Blueprint $table) {
+        //     $table->foreignId('citysub_id')
+        //         ->nullable()
+        //         ->constrained('citysub')
+        //         ->onUpdate('cascade')
+        //         ->onDelete('cascade');
+        // });
 
         
     }
