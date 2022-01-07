@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-md">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('/img/example-logo.jpg')}}" style="width: 100px;height:40px" alt="Logo"></a>
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('/img/HappupLogo.png')}}" style="width: 100px;height:40px" alt="Logo"></a>
       <div class="navbar-mobile" id="nav-mobile">
         <div class="navbar-list d-flex">
           <div class="dropdown">

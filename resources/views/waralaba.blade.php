@@ -98,7 +98,7 @@
 
 @section('konten')
 <!-- add konten in here -->
-<div class="header">
+<div class="header p-5">
     <div id="txt1" class="container">
         <p>WARALABA</p>
     </div>

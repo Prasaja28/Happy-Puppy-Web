@@ -50,4 +50,7 @@ Route::get('/lokasi-not-found', function () {
 Route::get('/lokasi-outlet', function () {
     return view('lokasi-outlet');
 });
+Route::get('/form-waralaba', function () {
+    return view('formwaralaba');
+});
 

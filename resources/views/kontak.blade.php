@@ -71,6 +71,8 @@
         cursor: pointer;
         transition: 0.3s;
         font-size: 17px;
+        border-top-right-radius: 70px;
+        border-bottom-right-radius: 70px;
     }
 
     /* Change background color of buttons on hover */
@@ -163,7 +165,7 @@
 
 @section('konten')
 <!-- add konten in here -->
-<div class="header">
+<div class="header p-5">
     <div id="txt1" class="container">
         <p>KONTAK</p>
         <p style="font-weight: bold;">KAMI</p>

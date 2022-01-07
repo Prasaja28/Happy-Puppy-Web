@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 py-2 d-flex">
-         <img src="{{ asset('/img/example-logo.jpg') }}" width="150" height="50" alt="Logo">
+         <img src="{{ asset('/img/HappupLogo.png') }}" width="150" height="50" alt="Logo">
          <p  style="font-size: 10px; padding-left :10px"> PT IMPERIUM HAPPY PUPPY <br> JL HR Muhammad 73B Surabaya 80226 <br> Telp (031) 734-338, Fax. (031) 734-2911 <br> E-mail : infohappy-puppy.com</p>
         </div>
 
