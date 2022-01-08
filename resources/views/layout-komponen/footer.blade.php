@@ -12,7 +12,6 @@
               <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
             </div>
           </div>
-         
         </div>
         <div class="col-6 py-2">
           <div class="text-right">

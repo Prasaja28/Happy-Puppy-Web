@@ -115,10 +115,17 @@ font-size:12px;
     margin-bottom:40px;
     font-weight:bold
 }
+
+}
 @media (max-width: 900px) {
   .card-song{
   margin-top:10px;
   }
+}
+.nav-list{
+  position:fixed;
+  float:right;
+  color:white;
 }
 @media (max-width: 576px) {
   .btn-search{
@@ -203,6 +210,21 @@ font-size:12px;
     margin-bottom:5px;
   }
 }
+ul.navbar-right {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 2;
+    background-color:white;
+    border-radius:40px;
+  }
+  ul.navbar-right li {
+    float: none;
+    list-style-type: none;
+    margin-left:-27px;
+    margin-top:1px;
+    margin-bottom:1px;
+  }
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -212,6 +234,33 @@ font-size:12px;
 <!-- background Home -->
 <div class="header">
 </div>
+<ul class="navbar-right">
+ <li>
+   <a style="display: inline-block; color:blue;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+      <i class="fab fa-facebook fa-sm"></i>
+    </a>
+ </li>
+ <li>
+   <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+   <img src="https://www.designpieces.com/wp-content/uploads/2016/05/Instagram-v051916-150x150.png" width="15" height="15" alt="">
+  </a>
+</li>
+<li>
+  <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+    <img src="https://aiconica.net/previews/apple-logo-filled-circle-icon-312.png" width="15" height="15" alt="">
+    </a>
+ </li>
+ <li>
+   <a style="display: inline-block; color:green;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+     <img src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-pic-0.png" width="15" height="15" alt="">
+   </a>
+ </li>
+<li>
+  <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+    <img src="https://www.pinclipart.com/picdir/big/202-2024262_app-store-google-play-logo-vector-vector-and.png" width="10" height="10" alt="">
+  </a>
+</li>
+</ul>
 <!-- end background Home -->
 <!-- search location  -->
 <div class="container-fluid text-white search-kota">
