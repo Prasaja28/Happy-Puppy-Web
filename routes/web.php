@@ -53,4 +53,7 @@ Route::get('/lokasi-outlet', function () {
 Route::get('/form-waralaba', function () {
     return view('formwaralaba');
 });
+Route::get('/news-detail', function () {
+    return view('news-detail');
+});
 
