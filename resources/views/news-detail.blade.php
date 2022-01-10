@@ -39,7 +39,32 @@
   .news-title{
       text-align:center;
   }
+  .color-background{
+    background-image: linear-gradient(to right, #68a6fb , #f77a8b);
+    position: relative;
+    min-height:60vh;
+  }
+  .news-content{
+    margin-top: -60vh;
+  }
   @media(max-width:600px){
+    .color-background{
+      background-image: linear-gradient(to right, #68a6fb , #f77a8b);
+      position: relative;
+      min-height:30vh;
+    }
+    .news-content{
+      margin-top: -25vh;
+    }
+    .header{
+        min-height: 30vh;
+        background: no-repeat center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: rightl; 
+    }
     .card-news{
         width: 10rem;
         margin: 0 auto; /* Added */
@@ -66,14 +91,17 @@
 @endsection
 @section('navbar-news','active')
 @section('konten')
+<div class="container-fluid color-background">
+
+</div>
 <!-- add konten in here -->
-<div class="container">
-    <div class="row mb-5">
-        <div class="col-lg-12">
-            <div class="header" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-            </div>
+<div class="container news-content">
+  <div class="row mb-5">
+    <div class="col-lg-12 ">
+        <div class="header" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
         </div>
-        <div class="col-lg-8">
+    </div>
+    <div class="col-lg-8">
             <ul class="nav mt-2" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black;" role="tab" data-toggle="tab">Populer</a>
