@@ -110,6 +110,14 @@ font-size:16px
 .padding-card{
     padding-top:10px;
 }
+#more {display: none;}
+  #myBtn{
+    display: block;
+    border-radius:20px;
+    font-size:8px;
+    margin-top:10px;
+    background-color:#221E40;
+  }
 @media (max-width:600px) {
     .lates-news-list{
     background-color:#221E40;
@@ -214,6 +222,19 @@ font-size:16px
     .news-time-popular{
        font-size:6px;
     }
+    #myBtn{
+    display: block;
+    border-radius:20px;
+    font-size:8px;
+    margin-top:10px;
+    margin: 0 auto; /* Added */
+    background-color:#221E40;
+  }
+  #more {
+    display: none;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+  }
 }
 </style>
 @endsection
@@ -393,6 +414,48 @@ font-size:16px
                     </div>
                     </div>
                   </div>
+                  <div id="dots"></div>
+                    <div id="more">
+                    <div class="col-12">
+                      <div class="card card-news-popular">
+                      <div class="row no-gutters">
+                        <div class="col-6">
+                          <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="...">
+                        </div>
+                        <div class="col-6">
+                          <div class="card-body text-bottom">
+                            <p class="news-popular-title">News</p>
+                            <h5 class="card-title card-title-popular">Card title</h5>
+                            <p class="news-time-popular"><?=now()?>
+                              <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="card card-news-popular">
+                      <div class="row no-gutters">
+                        <div class="col-6">
+                          <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="...">
+                        </div>
+                        <div class="col-6">
+                          <div class="card-body text-bottom">
+                            <p class="news-popular-title">News</p>
+                            <h5 class="card-title card-title-popular">Card title</h5>
+                            <p class="news-time-popular"><?=now()?>
+                              <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-12">
+                      <button href="{{url('/')}}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load more</button>
+                    </div>
             </div>
         </div>
 
@@ -401,5 +464,19 @@ font-size:16px
 
 @section('js-internal')
 <!-- add tag js in here -->
+<script>
+  function buttonLess(){
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
 
+    if (dots.style.display === "none") {
+      dots.style.display = "block";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      moreText.style.display = "block";
+    }
+  }
+</script>
 @endsection
