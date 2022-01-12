@@ -52,7 +52,7 @@
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align:left; margin-right: -100px;" >Thumbnail News <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-6 col-xs-12" style="margin-left:60px;">
-                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg">
+                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>

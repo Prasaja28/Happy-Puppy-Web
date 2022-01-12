@@ -32,13 +32,13 @@
                     </div>
                     <div class="form-group">
                         <label for="news_content_en">Content News (EN) :</label>
-                        <textarea id="summernote" name="news_content_en" required>
+                        <textarea id="summernote3" name="news_content_en" required>
                         {{$newss->news_content_en}}
                         </textarea>
                     </div>
                     <div class="form-group">
                         <label for="news_content_id">Content News (ID) :</label>
-                        <textarea id="summernote2" name="news_content_id" required>
+                        <textarea id="summernote4" name="news_content_id" required>
                         {{$newss->news_content_id}}
                         </textarea>
                     </div>

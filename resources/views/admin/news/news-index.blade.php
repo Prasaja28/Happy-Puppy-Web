@@ -1,6 +1,6 @@
 @extends('admin/layout-komponen/master')
 
-@section('title','Ruangan')
+@section('title','News')
 
 @section('css')
 <!-- css internal place -->
@@ -132,6 +132,8 @@
     // Summernote
     $('#summernote').summernote()
     $('#summernote2').summernote()
+    $('#summernote3').summernote()
+    $('#summernote4').summernote()
 
     //datatables
     $("#example2").DataTable({
