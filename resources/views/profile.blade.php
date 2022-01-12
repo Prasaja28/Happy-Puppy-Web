@@ -105,6 +105,11 @@
   text-indent: 1.2in;
 }
 
+.h1 {
+  color: #ffffff;
+  font-size:25px;
+}
+
 .h2 {
   color: #ffffff;
   font-size:15px;
@@ -357,6 +362,191 @@ padding-left: 130px;
   margin-left: -3px;
   top: 5;
 }
+@media (max-width: 576px) {
+#txt2{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: justify;
+    margin: 0;
+    font-size: 25px;
+    min-height: 550px;
+    text-indent: 0.5in;
+}
+#txt1{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: justify;
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    min-height: 500px;
+    text-indent: 0.5in;
+}
+
+.header{
+  min-height: 18vh;
+  background: no-repeat center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: rightl;
+  background-color: #1f1f1f;
+}
+.rounded-circle{
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l1{
+  width: 90px;
+  height: 90px;
+  background: #FA8072;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l2{
+  width: 90px;
+  height: 90px;
+  background: #87CEFA;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l3{
+  width: 90px;
+  height: 90px;
+  background: #ADFF2F;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l4{
+  width: 90px;
+  height: 90px;
+  background: grey;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.l5{
+  width: 90px;
+  height: 90px;
+  background: #FFD700;
+  border-radius: 100%;
+  border: 5px solid #FFF;
+  margin-top:-37px;
+}
+
+.h11 {
+  color: #ffffff;
+  font-size:15px;
+  position: absolute;
+      width: 70px;
+    height: 0px;
+padding-top: 0px;
+padding-right: 5px;
+padding-bottom: 30px;
+padding-left: 5px;
+
+}
+.h1 {
+  color: #ffffff;
+  font-size:15px;
+  text-indent: 0.5in;
+
+
+}
+
+.h2 {
+  color: #ffffff;
+  font-size:10px;
+  font-style: italic;
+  text-indent: 0.5in;
+}
+
+.h3 {
+  color: #000000;
+  font-size:15px;
+}
+.h4 {
+  color: #808080;
+  font-size:9px;
+  position: absolute;
+    width: 120px;
+    height: 60px;
+padding-top: 0px;
+padding-right: 5px;
+padding-bottom: 10px;
+padding-left: 5px;
+}
+
+.h5 {
+  color: #808080;
+  font-size:9px;
+  position: absolute;
+    width: 250px;
+    height: 60px;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 130px;
+}
+
+}
+.ratakiri { text-align: left; }
+.ratakanan { text-align: right; }
+.ratatengah { text-align: center; }
+.ratakirikanan { 
+  text-align: justify;
+   }
+
+.center {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 15px;
+    color: black;
+    background-color:#D3D3D3;
+    text-indent: 0.1in;
+}
+.bold { font-weight: bold; 
+  font-size:15px;}
+  .img-artis-content{
+    margin-top:-50px
+
+  }
+
+.border {
+  border-width: 10px;
+  border-style: solid;
+  border-top-color: red;
+  border-bottom-color: blue;
+  border-left-color: green;
+  border-right-color: yellow;
+  }
+
+.card-body{
+  min-height:5rem;
+  text-align: right;
+  width: 30%;
+  }
+.vl {
+  border-left: 6px solid white;
+  min-height: 6vh;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 5;
+}
 }
 </style>
   <!-- Google Fonts -->
@@ -409,7 +599,7 @@ padding-left: 130px;
     <div class="l1">
       <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
       <br><br>
-    <h4 class="h1">2009</h4>  
+    <h4 class="h11">2009</h4>  
   </div> 
 </center> 
         <div class="vl"></div>
@@ -421,7 +611,7 @@ padding-left: 130px;
         <center>
             <div class="l2">
                 <br><br>
-                  <h4 class="h1">2010</h4>
+                  <h4 class="h11">2010</h4>
                 </div>
             </center> 
         <div class="vl">
@@ -434,7 +624,7 @@ padding-left: 130px;
   <div class="l3">
     <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
     <br><br>
-    <h4 class="h1">2015</h4>
+    <h4 class="h11">2015</h4>
   </div></center><div class="vl"></div>
 </div>
 <br>
@@ -444,7 +634,7 @@ padding-left: 130px;
         <center>
             <div class="l4">
               <br><br>
-            <h4 class="h1">2017</h4>
+            <h4 class="h11">2017</h4>
         </div>
     </center>
   <div class="vl"></div>
@@ -456,7 +646,7 @@ padding-left: 130px;
           <div class="l5">
             <div class="h5" data-aos="fade-left" style="text-align: justify;">Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. </div>  
               <br><br>
-          <h4 class="h1">2019</h4>
+          <h4 class="h11">2019</h4>
         </div>
       </center>
     </div>
