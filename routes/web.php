@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,4 +56,10 @@ Route::get('/form-waralaba', function () {
 Route::get('/news-detail', function () {
     return view('news-detail');
 });
+
+//news-admin
+Route::get('/news-admin',[NewsController::class, 'index']);
+Route::get('/news-admin/delete/{id}',[NewsController::class, 'destroy']);
+Route::put('/news-admin/update/{id}',[NewsController::class, 'update']);
+Route::post('/news-admin/store',[NewsController::class, 'store']);
 

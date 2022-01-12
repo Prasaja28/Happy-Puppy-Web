@@ -6,7 +6,7 @@
 <!-- css internal place -->
 
 @endsection
-
+@section('dashboard','active')
 @section('konten')
 <!-- Content Body place -->
 <h3>Hello world</h3>
