@@ -277,7 +277,6 @@ padding-left: 240px;
 .h1 {
   color: #ffffff;
   font-size:15px;
-  position: absolute;
 }
 
 .h2 {
