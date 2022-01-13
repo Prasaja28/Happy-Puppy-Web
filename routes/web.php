@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SonglistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,4 +63,10 @@ Route::get('/news-admin',[NewsController::class, 'index']);
 Route::get('/news-admin/delete/{id}',[NewsController::class, 'destroy']);
 Route::put('/news-admin/update/{id}',[NewsController::class, 'update']);
 Route::post('/news-admin/store',[NewsController::class, 'store']);
+
+//songlist-admin
+Route::get('/songlist-admin',[SonglistController::class, 'index']);
+Route::get('/songlist-admin/delete/{id}',[SonglistController::class, 'destroy']);
+Route::put('/songlist-admin/update/{id}',[SonglistController::class, 'update']);
+Route::post('/songlist-admin/store',[SonglistController::class, 'store']);
 

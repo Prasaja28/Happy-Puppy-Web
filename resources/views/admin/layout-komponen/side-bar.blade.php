@@ -41,6 +41,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('/songlist-admin') }}" class="nav-link @yield('songlist-admin')">
+            <i class="nav-icon far fa-newspaper"></i>
+              <p>
+             Song List
+              </p>
+            </a>
+          </li>
           
         </ul>
       </nav>
