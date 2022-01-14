@@ -26,7 +26,7 @@
     min-height: 480px;
 }
 .back-grad {
-    height: 600px;
+    min-height: 600px;
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
