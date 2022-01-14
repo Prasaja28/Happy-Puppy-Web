@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SonglistController;
+use App\Http\Controllers\TopartistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,4 +70,11 @@ Route::get('/songlist-admin',[SonglistController::class, 'index']);
 Route::get('/songlist-admin/delete/{id}',[SonglistController::class, 'destroy']);
 Route::put('/songlist-admin/update/{id}',[SonglistController::class, 'update']);
 Route::post('/songlist-admin/store',[SonglistController::class, 'store']);
+
+//top artis
+Route::get('/topartist-admin',[TopartistController::class, 'index']);
+Route::get('/topartist-admin/delete/{id}',[TopartistController::class, 'destroy']);
+Route::post('/topartist-admin/store',[TopartistController::class, 'store']);
+Route::put('/topartist-admin/update/{id}',[TopartistController::class, 'update']);
+
 

@@ -1,6 +1,6 @@
 @extends('admin/layout-komponen/master')
 
-@section('title','Song List')
+@section('title','Top Artist')
 
 @section('css')
 <!-- css internal place -->
@@ -8,10 +8,8 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
- <!-- summernote -->
- <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
 @endsection
-@section('songlist-admin','active')
+@section('topartist-admin','active')
 @section('konten')
 <!-- Content Body place -->
 <section class="content">
@@ -25,7 +23,7 @@
             <div class="col-md-12 my-2">
                 <div class="card">
                     <div class="card-header">
-                    <h3 class="card-title">Data Song List</h3>
+                    <h3 class="card-title">Data Top Artist</h3>
                     </div>
                   <!-- /.card-header -->
                     <div class="card-body px-4">
@@ -34,55 +32,50 @@
                           <thead>
                             <tr>
                               <th>No</th>
-                              <th>Title Song</th>
                               <th>Artis</th>
                               <th>Thumbnail</th>
-                              <th>Kategori Lagu</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @forelse($songlist as $songlists)
+                            @forelse($topartist as $topartists)
                                       <tr>
                                           <td>{{ $loop->iteration }}</td>
-                                          <td>{{$songlists->title_song}}</td>
-                                          <td>{{$songlists->artist}}</td>
+                                          <td>{{$topartists->name}}</td>
                                           <td>
-                                          <img src="{{ asset($songlists->thumbnail) }}" width="100" height="50" alt="">
+                                            <center>
+                                              <img src="{{ asset($topartists->thumbnail) }}" width="100" height="100" alt="">
+                                            </center>
                                           </td>
-                                          <td>{{$songlists->kategori_lagu}}</td>
-                                          @if($songlists->status == 1)
+                                          @if($topartists->status == 1)
                                           <td>Aktif</td>
                                           @else
                                           <td>NonAktif</td>
-                                          @endif
-                                          
+                                          @endif                                        
                                           <td class="text-center">
-                                        @if($songlists->status == 1)
-                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$songlists->id}}"><i class="fas fa-trash-alt"></i></i></button>
+                                        @if($topartists->status == 1)
+                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$topartists->id}}"><i class="fas fa-trash-alt"></i></i></button>
                                         @endif
-                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$songlists->id}}"><i class="fas fa-pen-square"></i></button>
+                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$topartists->id}}"><i class="fas fa-pen-square"></i></button>
                                           </td>
                                       </tr>
                                       <!-- Model Delete -->
-                                     @include('admin.songlist-admin.songlist-admin-delete')
+                                     @include('admin.topartist-admin.topartist-admin-delete')
                                      <!-- Model Update -->
-                                     @include('admin.songlist-admin.songlist-admin-update')
+                                    @include('admin.topartist-admin.topartist-admin-update')
  
                                   @empty
                                   <div class="alert alert-danger">
-                                                Data Song List belum Tersedia.
+                                                Data Top Artist belum Tersedia.
                                   </div>
                               @endforelse
                           </tbody>
                           <tfoot>
                             <tr>
                               <th>No</th>
-                              <th>Title Song</th>
                               <th>Artis</th>
                               <th>Thumbnail</th>
-                              <th>Kategori Lagu</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
@@ -96,7 +89,7 @@
       </div>
   </div>
 </section>
-@include('admin.songlist-admin.songlist-admin-create')
+@include('admin.topartist-admin.topartist-admin-create')
 @endsection
 
 @section('script')
@@ -118,16 +111,9 @@
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
-    // Summernote
-    $('#summernote').summernote()
-    $('#summernote2').summernote()
-    $('#summernote3').summernote()
-    $('#summernote4').summernote()
 
     //datatables
     $("#example2").DataTable({

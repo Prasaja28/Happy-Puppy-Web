@@ -43,9 +43,17 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('/songlist-admin') }}" class="nav-link @yield('songlist-admin')">
-            <i class="nav-icon far fa-newspaper"></i>
+            <i class="nav-icon fas fa-music"></i>
               <p>
              Song List
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/topartist-admin') }}" class="nav-link @yield('topartist-admin')">
+            <i class="nav-icon fas fa-street-view"></i>
+              <p>
+              Top Artist
               </p>
             </a>
           </li>
