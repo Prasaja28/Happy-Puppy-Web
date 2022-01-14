@@ -6,10 +6,10 @@
           <div class="row">
             <div class="col-sm-12 pt-3">
               <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
+              <img src="{{ asset('/img/logofot1.png') }}" class="img-logo" alt="Logo">
+              <img src="{{ asset('/img/logofot2.png') }}" class="img-logo" alt="Logo">
+              <img src="{{ asset('/img/logofot3.png') }}" class="img-logo" alt="Logo">
+              <img src="{{ asset('/img/logofot4.png') }}" class="img-logo" alt="Logo">
             </div>
           </div>
         </div>

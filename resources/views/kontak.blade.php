@@ -71,8 +71,10 @@
         cursor: pointer;
         transition: 0.3s;
         font-size: 17px;
-        border-top-right-radius: 70px;
-        border-bottom-right-radius: 70px;
+        border-top-right-radius: 100px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 20px;
     }
 
     /* Change background color of buttons on hover */
@@ -160,6 +162,30 @@
         color: black;
         font-weight: bold;
     }
+@media(max-width: 800px) {
+    .center {
+        margin: auto;
+        width: 75%;
+        padding: 40px;
+        color: white;
+        background-color:#221E40;
+    }
+    #p1{
+        margin-top: 50px;
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: justify;
+    }
+    #p11{
+        font-size: 10px;
+    }
+    #p2{
+        font-size: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: justify;
+    }
+}
 </style>
 @endsection
 
@@ -174,8 +200,8 @@
 <div class="back-grad">
     <div class="center">
         <div class="row">
-            <br><div class="col-lg-4 d-flex" id="p1">Manajemen & Waralaba:<br>PT. Imperium Happy Puppy</div><br>
-            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">JL. H.R. Mohammad No. 73B Lt. II<br>Surabaya 60226 - Indonesia<br>Tel. (031)734-3388<br>Fax. (031)734-2911<br><br>Informasi Umum : info@happypuppy.id</div><br>
+            <br><div class="col-4 d-flex" id="p1">Manajemen & Waralaba:<br>PT. Imperium Happy Puppy</div><br>
+            <div class="col-8 pt-4 pt-lg-0 content" data-aos="fade-left" id="p11">JL. H.R. Mohammad No. 73B Lt. II<br>Surabaya 60226 - Indonesia<br>Tel. (031)734-3388<br>Fax. (031)734-2911<br><br>Informasi Umum : info@happypuppy.id</div><br>
         </div>
     </div>
 </div>
@@ -306,6 +332,7 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
+
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -321,6 +348,8 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
 </script>
 @endsection
 

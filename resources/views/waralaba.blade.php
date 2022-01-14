@@ -91,6 +91,84 @@
     color: white;
     background-color: #221E40;
 }
+@media (max-width: 576px) {
+    
+    #txt1{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        font-size: 40px;
+        font-weight: bold;
+        min-height: 380px;
+    }
+    .back-grad {
+        height: 300px;
+        width: auto;
+        background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+    }
+    .center {
+        margin: auto;
+        margin-top: 50px;
+        width: 85%;
+        padding: 10px;
+        color: white;
+        background-color:#221E40;
+    }
+    #p1{
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    #p2{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .back {
+        height: 1100px;
+        width: auto;
+        background-color: #85A4E1;
+    }
+    .accordion {
+    background-color: #85A4E1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 10px;
+    transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+    background-color: #ccc; 
+    }
+
+    .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    }
+    #text-acc{
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+    }
+    #txt-foot{
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+    .btn{
+        color: white;
+        background-color: #221E40;
+    }
+}
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -143,7 +221,9 @@
     </div>
     <div class="container" id="txt-foot">
         <p>Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang diisi secara lengkap, untuk mengisi formulir pendaftaran waralaba.</p><br><br>
-        <button type="button" class="btn">Klik Disini</button>
+        <form onclick="window.location.href='/form-waralaba'">
+            <button type="button" class="btn">Klik Disini</button>
+        </form>
     </div>
 </div>
 @endsection

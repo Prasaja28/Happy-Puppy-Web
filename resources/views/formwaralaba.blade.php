@@ -57,6 +57,50 @@
     width: auto;
     background-color: #221E40;
 }
+
+@media (){
+    #txt1{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        font-size: 35px;
+        min-height: 480px;
+    }
+    .back-grad {
+        height: 600px;
+        width: auto;
+        background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+    }
+    #p1{
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    #p2{
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .back {
+        height: 900px;
+        width: auto;
+        background-color: #85A4E1;
+    }
+    #card1{
+        margin-top: 6px;
+    }
+    .foots {
+        height: 300px;
+        width: auto;
+        background-color: #ffff;
+    }
+    .foots2 {
+        height: 800px;
+        width: auto;
+        background-color: #221E40;
+    }
+}
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -92,44 +136,44 @@
                             <input type="text" class="form-control" style="width: 50%" id="usia" placeholder="Usia">
                         </div>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
-                            <option selected="selected">Pendidikan Terakhir</option>
-                            <option>SMA</option>
-                            <option>D3</option>
-                            <option>S1/D4</option>
-                            <option>S2</option>
-                            <option>S3</option>
-                        </select>
+                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                <option selected="selected">Pendidikan Terakhir</option>
+                                <option>SMA</option>
+                                <option>D3</option>
+                                <option>S1/D4</option>
+                                <option>S2</option>
+                                <option>S3</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
-                            <option selected="selected">Status</option>
-                            <option>Menikah</option>
-                            <option>Belum Menikah</option>
-                        </select>
+                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                <option selected="selected">Status</option>
+                                <option>Menikah</option>
+                                <option>Belum Menikah</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 80%" id="umur" placeholder="Umur">
                         </div>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
-                            <option selected="selected">Kota</option>
-                            <option>DKI Jakarta</option>
-                            <option>Tanggerang</option></option>
-                            <option>Surabaya</option>
-                            <option>Bandung</option>
-                            <option>Bali</option>
-                        </select>
+                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                <option selected="selected">Kota</option>
+                                <option>DKI Jakarta</option>
+                                <option>Tanggerang</option></option>
+                                <option>Surabaya</option>
+                                <option>Bandung</option>
+                                <option>Bali</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
-                            <option selected="selected">Provinsi</option>
-                            <option>DKI Jakarta</option>
-                            <option>Jawa Barat</option></option>
-                            <option>Jawa Timur</option>
-                            <option>Jawa Tengah</option>
-                            <option>Bali</option>
-                        </select>
+                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                <option selected="selected">Provinsi</option>
+                                <option>DKI Jakarta</option>
+                                <option>Jawa Barat</option></option>
+                                <option>Jawa Timur</option>
+                                <option>Jawa Tengah</option>
+                                <option>Bali</option>
+                            </select>
                         </div>
                     </div>
                     
@@ -226,11 +270,11 @@
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 80%;">
-                            <option selected="selected">Status Penguasaan Tempat</option>
-                            <option>Lahan Pribadi</option>
-                            <option>Sewa</option></option>
-                        </select>
+                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 80%;">
+                                <option selected="selected">Status Penguasaan Tempat</option>
+                                <option>Lahan Pribadi</option>
+                                <option>Sewa</option></option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 80%" id="alamat" placeholder="Alamat">
