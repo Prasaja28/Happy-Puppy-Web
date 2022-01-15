@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SonglistController;
 use App\Http\Controllers\TopartistController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +60,10 @@ Route::get('/form-waralaba', function () {
 Route::get('/news-detail', function () {
     return view('news-detail');
 });
+//login
+Route::get('/login',[LoginController::class, 'index']);
+Route::post('/login',[LoginController::class, 'login']);
+Route::get('/logout', [loginController::class,'logout']);
 
 //news-admin
 Route::get('/news-admin',[NewsController::class, 'index']);
@@ -77,4 +83,9 @@ Route::get('/topartist-admin/delete/{id}',[TopartistController::class, 'destroy'
 Route::post('/topartist-admin/store',[TopartistController::class, 'store']);
 Route::put('/topartist-admin/update/{id}',[TopartistController::class, 'update']);
 
+//users
 
+Route::get('/users-admin',[UsersController::class, 'index']);
+Route::get('/users-admin/delete/{id}',[UsersController::class, 'destroy']);
+Route::post('/users-admin/store',[UsersController::class, 'store']);
+Route::put('/users-admin/update/{id}',[UsersController::class, 'update']);

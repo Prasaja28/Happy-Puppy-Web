@@ -57,7 +57,14 @@
               </p>
             </a>
           </li>
-          
+          <li class="nav-item">
+            <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
+            <i class="nav-icon fas fa-users"></i>
+              <p>
+              User
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
