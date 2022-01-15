@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Songlist;
+use Session;
 class SonglistController extends Controller
 {
     /**
@@ -53,6 +54,7 @@ class SonglistController extends Controller
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
+                'users_id'=> $request->users_id,
                 'status' => 1
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
@@ -109,6 +111,7 @@ class SonglistController extends Controller
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
                 'status' => $request->status,
+                'users_id'=> $request->users_id
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 
     }
@@ -123,7 +126,8 @@ class SonglistController extends Controller
     {
         Songlist::where('id',$id)
         ->update([
-            'status'=> 0
+            'status'=> 0,
+            'users_id'=> Session::get('user_id')
         ]);
         return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }

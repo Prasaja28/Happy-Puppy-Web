@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Topartist;
+use Session;
 class TopartistController extends Controller
 {
     /**
@@ -52,6 +53,7 @@ class TopartistController extends Controller
             Topartist::create([
                 'thumbnail' => $path,
                 'name' => $request->name,
+                'users_id' => $request->users_id,
                 'status' => 1
             ]);
             return redirect('/topartist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
@@ -106,7 +108,8 @@ class TopartistController extends Controller
             ->update([
                 'thumbnail' => $path,
                 'name' => $request->name,
-                'status' => $request->status
+                'status' => $request->status,
+                'users_id' => $request->users_id
             ]);
             return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!'); 
     }
@@ -121,7 +124,8 @@ class TopartistController extends Controller
     {
         Topartist::where('id',$id)
         ->update([
-            'status'=> 0
+            'status'=> 0,
+            'users_id'=> Session::get('user_id')
         ]);
         return redirect('/topartist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }

@@ -10,6 +10,10 @@ class Topartist extends Model
     use HasFactory;
     protected $table = 'topartist';
     protected $primaryKey = 'id';
-    protected $fillable = ['thumbnail','name','status'];
+    protected $fillable = ['thumbnail','name','status','users_id'];
     protected $guarded = [];
+    public function users()
+    {
+        return $this->belongsTo(User::class,'users_id');
+    }
 }

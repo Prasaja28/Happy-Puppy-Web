@@ -38,20 +38,22 @@
                               <th>Artis</th>
                               <th>Thumbnail</th>
                               <th>Kategori Lagu</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             @forelse($songlist as $songlists)
-                                      <tr>
+                            <tr>
                                           <td>{{ $loop->iteration }}</td>
                                           <td>{{$songlists->title_song}}</td>
                                           <td>{{$songlists->artist}}</td>
                                           <td>
                                           <img src="{{ asset($songlists->thumbnail) }}" width="100" height="50" alt="">
-                                          </td>
+                                        </td>
                                           <td>{{$songlists->kategori_lagu}}</td>
+                                          <td>{{$songlists->users->name}}</td>
                                           @if($songlists->status == 1)
                                           <td>Aktif</td>
                                           @else
@@ -69,20 +71,21 @@
                                      @include('admin.songlist-admin.songlist-admin-delete')
                                      <!-- Model Update -->
                                      @include('admin.songlist-admin.songlist-admin-update')
- 
+                                     
                                   @empty
                                   <div class="alert alert-danger">
                                                 Data Song List belum Tersedia.
                                   </div>
                               @endforelse
-                          </tbody>
-                          <tfoot>
+                            </tbody>
+                            <tfoot>
                             <tr>
                               <th>No</th>
                               <th>Title Song</th>
                               <th>Artis</th>
                               <th>Thumbnail</th>
                               <th>Kategori Lagu</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>

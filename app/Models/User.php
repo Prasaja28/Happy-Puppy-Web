@@ -49,4 +49,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class,'roles_id');
     }
+    public function news()
+    {
+        return $this->hasMany(News::class,'id');
+    }
+    public function songlist()
+    {
+        return $this->hasMany(Songlist::class,'id');
+    }
+    public function topartist()
+    {
+        return $this->hasMany(Topartist::class,'id');
+    }
 }

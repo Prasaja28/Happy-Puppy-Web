@@ -72,6 +72,7 @@
                             </span>
                         @enderror
                     </div>
+                    <input type="hidden" class="form-control form-control-border" id="users_id" name="users_id" value="{{ Session::get('user_id') }}" required>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
 

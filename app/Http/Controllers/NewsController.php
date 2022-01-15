@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use Session;
 class NewsController extends Controller
 {
     /**
@@ -57,6 +58,7 @@ class NewsController extends Controller
                 'news_date' => $request->news_date,
                 'news_category' => $request->news_category,
                 'status' => 1,
+                'users_id' => $request->users_id
             ]);
             return redirect('/news-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
@@ -117,6 +119,7 @@ class NewsController extends Controller
                 'news_date' => $request->news_date,
                 'news_category' => $request->news_category,
                 'status' => $request->status,
+                'users_id' => $request->users_id
             ]);
             return redirect('/news-admin')->with('status','Data Berhasil Di update!!!'); 
     }
@@ -131,7 +134,8 @@ class NewsController extends Controller
     {
         News::where('id',$id)
         ->update([
-            'status'=> 0
+            'status'=> 0,
+            'users_id'=> Session::get('user_id')
         ]);
         return redirect('/news-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }

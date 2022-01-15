@@ -10,6 +10,14 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
  <!-- summernote -->
  <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
+ <style>
+   table.dataTable td {
+      font-size: 14px;
+    }
+   table.dataTable th {
+      font-size: 14px;
+    }
+ </style>
 @endsection
 @section('news-admin','active')
 @section('konten')
@@ -30,7 +38,7 @@
                   <!-- /.card-header -->
                     <div class="card-body px-4">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button>
-                        <table id="example2" class="table table-bordered table-striped">
+                        <table id="example2" class="table table-bordered table-striped ">
                           <thead>
                             <tr>
                               <th>No</th>
@@ -41,6 +49,7 @@
                               <th>News Content EN</th>
                               <th>News Date</th>
                               <th>Category</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
@@ -56,6 +65,7 @@
                                           <td>{{ $newss->news_content_en }}</td>
                                           <td>{{ $newss->news_date }}</td>
                                           <td>{{ $newss->news_category }}</td>
+                                          <td>{{ $newss->users->name }}</td>
                                           @if($newss->status == 1)
                                           <td>Aktif</td>
                                           @else
@@ -89,6 +99,7 @@
                               <th>News Content EN</th>
                               <th>News Date</th>
                               <th>Category</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>

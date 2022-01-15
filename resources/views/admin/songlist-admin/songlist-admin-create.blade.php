@@ -49,6 +49,7 @@
                             <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg" required>
                         </div>
                     </div>
+                    <input type="hidden" class="form-control form-control-border" id="users_id" name="users_id" value="{{ Session::get('user_id') }}" required>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>

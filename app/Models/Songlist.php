@@ -10,6 +10,10 @@ class Songlist extends Model
     use HasFactory;
     protected $table = 'songlist';
     protected $primaryKey = 'id';
-    protected $fillable = ['thumbnail','artist','title_song','kategori_lagu','status'];
+    protected $fillable = ['thumbnail','artist','title_song','kategori_lagu','status','users_id'];
     protected $guarded = [];
+    public function users()
+    {
+        return $this->belongsTo(User::class,'users_id');
+    }
 }

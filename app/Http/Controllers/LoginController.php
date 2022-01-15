@@ -23,7 +23,7 @@ class LoginController extends Controller
 			if($user->password == $password){
                     Session::put('username', $user->name);
                     Session::put('user_id', $user->id);
-                    Session::put('status_user', $user->status);
+                    Session::put('status_user', $user->roles_id);
                     Session::put('email', $user->email);
                     Session::put('/login',TRUE);
                     return redirect('/dashboard');

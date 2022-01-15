@@ -34,6 +34,7 @@
                               <th>No</th>
                               <th>Artis</th>
                               <th>Thumbnail</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
@@ -48,6 +49,7 @@
                                               <img src="{{ asset($topartists->thumbnail) }}" width="100" height="100" alt="">
                                             </center>
                                           </td>
+                                          <td>{{ $topartists->users->name }}</td>
                                           @if($topartists->status == 1)
                                           <td>Aktif</td>
                                           @else
@@ -76,6 +78,7 @@
                               <th>No</th>
                               <th>Artis</th>
                               <th>Thumbnail</th>
+                              <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
