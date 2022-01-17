@@ -79,10 +79,8 @@
                 <div class="form-group">
                   <label>Tanggal Lahir</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
+                        <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                        
                     </div>
                 </div> 
                 <div class="form-group">
@@ -184,8 +182,8 @@
 
 
     <div class="card-header">
-            <h4>Data Bakat</h4>
-        </div>       
+        <h4>Data Bakat</h4>
+    </div>       
           
         <div class="card-body">
             
@@ -220,23 +218,18 @@
         <div class="row">    
                 <div class="col-lg-6">
                 <h6>Upload CV</h6>          
-                  <div class="btn-group w-50">
-                      <span class="btn btn-primary col start">
-                        <i class="fas fa-plus"></i>
-                        <span>Choose File</span>
-                      </span>
-                    </div>
+                <form action="/action_page.php">
+                    <input type="file" id="filecv" name="filecv">
+                    <!-- <input type="submit"> -->
+                </form>
                     <p>Max. 1MB(.JPG or .PNG)</p>
                 </div>
                 <br>
                 <div class="col-lg-6">
                 <h6>Ijazah</h6>          
-                    <div class="btn-group w-50">
-                      <span class="btn btn-primary col start">
-                        <i class="fas fa-plus"></i>
-                        <span>Choose File</span>
-                      </span>
-                    </div>
+                    <form action="/action_page.php">
+                    <input type="file" id="fileijazah" name="fileijazah">
+                    </form>
                     <p>Max. 1MB(.JPG or .PNG)</p>
                 </div>
                 <br>
