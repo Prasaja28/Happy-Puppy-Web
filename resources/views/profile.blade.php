@@ -14,7 +14,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
-  background-image: url('/img/PROFILE.jpg')
+  background-image: url('/img/PROFILE.png')
 
 }
 #txt2{

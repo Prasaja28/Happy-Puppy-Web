@@ -14,7 +14,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
-  background-image: url('/img/karaoke.jpg')
+  background-image: url('/img/waralaba.png')
 }
 #txt1{
     color: white;

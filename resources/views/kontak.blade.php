@@ -13,7 +13,7 @@
         -o-background-size: cover;
         background-size: cover;
         background-position: rightl;
-        background-image: url('/img/call.jpg')
+        background-image: url('/img/kontak.png')
     }
     #txt1{
         color: white;
@@ -208,8 +208,8 @@
 <div class="back">
     <div class="container">
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</button>
-            <button class="tablinks" onclick="openCity(event, 'Request')">Request Lagu</button>
+            <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</button><br>
+            <button class="tablinks" onclick="openCity(event, 'Request')">Request Lagu</button><br>
             <button class="tablinks" onclick="openCity(event, 'keluhan')">Keluhan</button>
         </div>
     

@@ -22,7 +22,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
-  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg')
+  background-image: url('/img/home.png')
 }
 .search-kota{
     background-color:#221E40;
@@ -336,9 +336,9 @@ ul.navbar-right {
               <div class="col-lg-12 col-sm-12">
                  <h6 style="text-transform: uppercase;padding-bottom:10px;color:#221E40">lagu terlaris</h6>
                  <div class="card">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="card-img-top" alt="...">
+                    <img src="/img/marionjola.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Judul Band</h5>
+                      <h5 class="card-title">Marion Jola</h5>
                       <p class="card-text">Judul Lagu</p>
                     </div>
                  </div>
@@ -382,9 +382,9 @@ ul.navbar-right {
                <div class="col-lg-12 col-sm-12">
                  <h6 style="text-transform: uppercase; padding-bottom:10px;color:#221E40">lagu terbaru</h6>
                  <div class="card">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="card-img-top" alt="...">
+                    <img src="/img/bts.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Judul Band</h5>
+                      <h5 class="card-title">BTS</h5>
                       <p class="card-text">Judul Lagu</p>
                     </div>
                  </div>
