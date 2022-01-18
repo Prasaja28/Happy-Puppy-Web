@@ -1,6 +1,6 @@
 @extends('layout-komponen.master')
 
-@section('title','Profile') <!-- name title -->
+@section('title','Karir') <!-- name title -->
 
 @section('css-internal')
 <!-- Add tag css in here -->
