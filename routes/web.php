@@ -6,6 +6,7 @@ use App\Http\Controllers\SonglistController;
 use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +83,9 @@ Route::get('/topartist-admin',[TopartistController::class, 'index']);
 Route::get('/topartist-admin/delete/{id}',[TopartistController::class, 'destroy']);
 Route::post('/topartist-admin/store',[TopartistController::class, 'store']);
 Route::put('/topartist-admin/update/{id}',[TopartistController::class, 'update']);
+
+//Outlet
+Route::get('/outlet-admin',[OutletWaralabaController::class, 'index']);
 
 //users
 

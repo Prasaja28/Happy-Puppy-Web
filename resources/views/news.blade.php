@@ -37,9 +37,11 @@
 .news-time{
   margin-bottom:-10px;
   font-size:12px;
+  font-family: 'Poppins';
 }
 .title-news{
   font-size:16px;
+  font-family: 'Poppins';
 }
 .card-news-lates{
   width: 28rem;
@@ -64,14 +66,17 @@
     margin-top:-15px;
     margin-bottom:40px;
     font-weight:bold
+    font-family: 'Poppins';
 }
 .card-title-lates{
-min-height:40px;
-margin-top:-10px;
-font-size:16px
+  min-height:40px;
+  margin-top:-10px;
+  font-size:16px
+  font-family: 'Poppins';
 }
 .news-time-lates{
   font-size:10px;
+  font-family: 'Poppins';
 }
 .card-news-popular{
   width: 32rem;
@@ -86,6 +91,7 @@ font-size:16px
     margin-top:-15px;
     margin-bottom:40px;
     font-weight:bold
+    font-family: 'Poppins';
 }
 .popularNews{
     margin-top:100px;
@@ -93,7 +99,7 @@ font-size:16px
     background-color:#221E40;
 }
 .card-img-popular{
-  height:130px;
+    height:130px;
 }
 .popular-card-news{
     margin-top:-150px;
@@ -117,6 +123,7 @@ font-size:16px
     font-size:8px;
     margin-top:10px;
     background-color:#221E40;
+    /* font-family: 'Poppins'; */
   }
 @media (max-width:600px) {
     .lates-news-list{
@@ -137,11 +144,13 @@ font-size:16px
     }
     .news-time{
     font-size:8px;
+    /* font-family: 'Poppins'; */
     }
     .title-news{
     margin-top:-15px;
     font-size:12px;
     min-height:30px;
+    /* font-family: 'Poppins'; */
     }
     .card-news-lates{
     width: 10rem;
@@ -155,13 +164,13 @@ font-size:16px
         padding-top:40px;
     }
     .card-img-lates{
-    height:50px;
-    background: no-repeat center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: rightl;
+      height:50px;
+      background: no-repeat center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: rightl;
     }
     .news-lates-title{
         color:#106ec3;
@@ -169,22 +178,25 @@ font-size:16px
         margin-top:-15px;
         margin-bottom:40px;
         font-weight:bold
+        /* font-family: 'Poppins'; */
     }
     .card-title-lates{
-    min-height:15px;
-    margin-top:-10px;
-    font-size:8px
+      min-height:15px;
+      margin-top:-10px;
+      font-size:8px
+      /* font-family: 'Poppins'; */
     }
     .news-time-lates{
-    font-size:4px;
+      font-size:4px;
+      /* font-family: 'Poppins'; */
     }
     .card-news-popular{
-    width: 16rem;
-    height: 65px;
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px;
-    margin-top:10px;
+      width: 16rem;
+      height: 65px;
+      margin: 0 auto; /* Added */
+      float: none; /* Added */
+      margin-bottom: 10px;
+      margin-top:10px;
     }
     .news-popular-title{
         color:#106ec3;
@@ -192,6 +204,7 @@ font-size:16px
         margin-top:-15px;
         margin-bottom:30px;
         font-weight:bold
+        /* font-family: 'Poppins'; */
     }
     .popularNews{
         margin-top:25px;
@@ -208,27 +221,31 @@ font-size:16px
         font-size:8px;
         margin-top:-20px;
         min-height:10px
+        /* font-family: 'Poppins'; */
     }
     .card-news-lates-list{
-    padding-left:10px;
-    padding-right:10px;
+      padding-left:10px;
+      padding-right:10px;
     }
     .lates-title{
-    font-size:16px;
-    padding-top:15px;
-    padding-bottom:0px;
-    padding-left:0px;
+      font-size:16px;
+      padding-top:15px;
+      padding-bottom:0px;
+      padding-left:0px;
+      /* font-family: 'Poppins'; */
     }
     .news-time-popular{
        font-size:6px;
+       /* font-family: 'Poppins'; */
     }
     #myBtn{
-    display: block;
-    border-radius:20px;
-    font-size:8px;
-    margin-top:10px;
-    margin: 0 auto; /* Added */
-    background-color:#221E40;
+      display: block;
+      border-radius:20px;
+      font-size:8px;
+      margin-top:10px;
+      margin: 0 auto; /* Added */
+      background-color:#221E40;
+      /* font-family: 'Poppins'; */
   }
   #more {
     display: none;
@@ -256,9 +273,9 @@ font-size:16px
             <div class="row card-news-lates-list">
                 <div class="col-6 padding-card">
                     <div class="card card-news">
-                        <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                        <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title title-news">Card title</h5>
+                            <h5 class="card-title title-news">Midnight In Egypt</h5>
                             <p class="news-time"><?=now()?>
                                 <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
@@ -274,7 +291,23 @@ font-size:16px
                             </div>
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> expertienst</h5>
+                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
+                                <p class="news-time-lates"><?=now()?>
+                                  <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>   
+                                </p>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-news-lates">
+                            <div class="row no-gutters">
+                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body text-bottom">
+                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
@@ -290,7 +323,7 @@ font-size:16px
                             </div>
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> expertienst</h5>
+                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
@@ -306,23 +339,7 @@ font-size:16px
                             </div>
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> expertienst</h5>
-                                <p class="news-time-lates"><?=now()?>
-                                    <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
-                                </p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card card-news-lates">
-                            <div class="row no-gutters">
-                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> expertienst</h5>
+                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
@@ -456,6 +473,7 @@ font-size:16px
                     <div class="col-12">
                       <button href="{{url('/')}}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load more</button>
                     </div>
+                    <br><br><br>
             </div>
         </div>
 

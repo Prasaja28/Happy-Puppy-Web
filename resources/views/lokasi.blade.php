@@ -14,13 +14,15 @@
   background-size: cover;
   z-index: -1;
   background-position: rightl;
-  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3bacb19c-7e13-4fb6-8af6-36163689b7c0/ddj44uy-7441cf1e-4c35-4096-8f2f-6a3e4828e1c6.png')
+  background-image: url('/img/lokasi.png')
 }
 .cabang{
     font-size:24px;
+    font-family: 'Poppins';
 }
 .cabang-content{
     font-size:18px;
+    font-family: 'Poppins';
 }
 .map-indonesia{
     min-height: 40vh;
@@ -30,11 +32,12 @@
     background-color:#221E40;
 }
 .btn-search{
-  border-radius:30px;
-  width:100px;
-  font-size:8px;
-  margin-left:25px;
-  margin-right:25px;
+    border-radius:30px;
+    width:100px;
+    font-size:8px;
+    margin-left:25px;
+    margin-right:25px;
+    font-family: 'Poppins';
 }
 .background-bottom{
     background-image: linear-gradient(to right, #68a6fb , #f77a8b);

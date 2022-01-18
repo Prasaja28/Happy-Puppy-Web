@@ -1,6 +1,6 @@
 @extends('admin/layout-komponen/master')
 
-@section('title','Top Artist')
+@section('title','Outlet/Waralaba')
 
 @section('css')
 <!-- css internal place -->
@@ -8,8 +8,18 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+ <!-- summernote -->
+ <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
+ <style>
+   table.dataTable td {
+      font-size: 14px;
+    }
+   table.dataTable th {
+      font-size: 14px;
+    }
+ </style>
 @endsection
-@section('topartist-admin','active')
+@section('outlet-admin','active')
 @section('konten')
 <!-- Content Body place -->
 <section class="content">
@@ -23,61 +33,40 @@
             <div class="col-md-12 my-2">
                 <div class="card">
                     <div class="card-header">
-                    <h3 class="card-title">Data Top Artist</h3>
+                    <h3 class="card-title">Outlet / Waralaba</h3>
                     </div>
                   <!-- /.card-header -->
                     <div class="card-body px-4">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button><br><br>
-                        <table id="example2" class="table table-bordered table-striped">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button>
+                        <table id="example2" class="table table-bordered table-striped ">
                           <thead>
                             <tr>
                               <th>No</th>
-                              <th>Artis</th>
                               <th>Thumbnail</th>
+                              <th>News title ID</th>
+                              <th>News title EN</th>
+                              <th>News Content ID</th>
+                              <th>News Content EN</th>
+                              <th>News Date</th>
+                              <th>Category</th>
                               <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @forelse($topartist as $topartists)
-                                      <tr>
-                                          <td>{{ $loop->iteration }}</td>
-                                          <td>{{$topartists->name}}</td>
-                                          <td>
-                                            <center>
-                                              <img src="{{ asset($topartists->thumbnail) }}" width="100" height="100" alt="">
-                                            </center>
-                                          </td>
-                                          <td>{{ $topartists->users->name }}</td>
-                                          @if($topartists->status == 1)
-                                          <td>Aktif</td>
-                                          @else
-                                          <td>NonAktif</td>
-                                          @endif                                        
-                                          <td class="text-center">
-                                        @if($topartists->status == 1)
-                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$topartists->id}}"><i class="fas fa-trash-alt"></i></i></button>
-                                        @endif
-                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$topartists->id}}"><i class="fas fa-pen-square"></i></button>
-                                          </td>
-                                      </tr>
-                                      <!-- Model Delete -->
-                                     @include('admin.topartist-admin.topartist-admin-delete')
-                                     <!-- Model Update -->
-                                    @include('admin.topartist-admin.topartist-admin-update')
- 
-                                  @empty
-                                  <div class="alert alert-danger">
-                                                Data Top Artist belum Tersedia.
-                                  </div>
-                              @endforelse
+                            
                           </tbody>
                           <tfoot>
                             <tr>
                               <th>No</th>
-                              <th>Artis</th>
                               <th>Thumbnail</th>
+                              <th>News title ID</th>
+                              <th>News title EN</th>
+                              <th>News Content ID</th>
+                              <th>News Content EN</th>
+                              <th>News Date</th>
+                              <th>Category</th>
                               <th>Log User</th>
                               <th>Status</th>
                               <th>Action</th>
@@ -92,7 +81,7 @@
       </div>
   </div>
 </section>
-@include('admin.topartist-admin.topartist-admin-create')
+@include('admin.news.news-create')
 @endsection
 
 @section('script')
@@ -114,9 +103,16 @@
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
+    // Summernote
+    $('#summernote').summernote()
+    $('#summernote2').summernote()
+    $('#summernote3').summernote()
+    $('#summernote4').summernote()
 
     //datatables
     $("#example2").DataTable({

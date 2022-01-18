@@ -8,6 +8,7 @@
           <img src="{{ asset('/img/HappupLogo.png') }}" alt="happupLogo" class="brand-image" width="40" height="40"style="opacity: .8">
         </a>
       </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -54,6 +55,14 @@
             <i class="nav-icon fas fa-street-view"></i>
               <p>
               Top Artist
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/outlet-admin') }}" class="nav-link @yield('outlet-admin')">
+            <i class="nav-icon fa fa-building-o"></i>
+              <p>
+              Outlet (Waralaba)
               </p>
             </a>
           </li>

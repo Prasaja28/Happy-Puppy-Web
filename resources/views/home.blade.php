@@ -69,9 +69,11 @@
 .card-title{
 font-size:16px;
 font-weight:bold;
+font-family: 'Poppins';
 }
 .card-text{
 font-size:12px;
+font-family: 'Poppins';
 }
 #myBtn{display: none;}
 
@@ -95,9 +97,11 @@ font-size:12px;
 .news-time{
   margin-bottom:-10px;
   font-size:12px;
+  font-family: 'Poppins';
 }
 .title-news{
   font-size:16px;
+  font-family: 'Poppins';
 }
 .card-news-popular{
   width: 32rem;
@@ -114,6 +118,7 @@ font-size:12px;
     margin-top:-15px;
     margin-bottom:40px;
     font-weight:bold
+    font-family: 'Poppins';
 }
 
 }
@@ -129,10 +134,11 @@ font-size:12px;
 }
 @media (max-width: 576px) {
   .btn-search{
-  border-radius:8px;
-  width:65px;
-  font-size:8px;
-  margin: 5px;
+    border-radius:8px;
+    width:65px;
+    font-size:8px;
+    margin: 5px;
+    font-family: 'Poppins';
   }
   .top-artis-img{
     margin:16px;
@@ -141,28 +147,30 @@ font-size:12px;
     margin-top:-50px
   }
   .song-list{
-  background-color:#F5F5F5;
-  padding-left:30px;
-  padding-right:30px;
+    background-color:#F5F5F5;
+    padding-left:30px;
+    padding-right:30px;
   }
   .card{
-  width:8rem;
+    width:8rem;
   }
   .card-body{
-  min-height:5rem;
+    min-height:5rem;
   }
   .card-img-top{
-  height:125px;
+    height:125px;
   }
   .card-song{
-  margin-top:10px;
+    margin-top:10px;
   }
   .card-title{
-  font-size:12px;
-  font-weight:bold;
+    font-size:12px;
+    font-weight:bold;
+    font-family: 'Poppins';
   }
   .card-text{
-  font-size:8px;
+    font-size:8px;
+    font-family: 'Poppins';
   }
   #more {display: none;}
   #more2 {display: none;}
@@ -172,16 +180,17 @@ font-size:12px;
     font-size:8px;
     margin-top:10px;
     background-color:#221E40;
+    font-family: 'Poppins';
   }
   .news-container{
-  min-height:300px;
-  background-color:#221E40;
-  margin-top: -100px;
+    min-height:300px;
+    background-color:#221E40;
+    margin-top: -100px;
   }
   .card-news{
-  width: 8rem;
-  margin: 0 auto; /* Added */
-  margin-bottom: 10px;
+    width: 8rem;
+    margin: 0 auto; /* Added */
+    margin-bottom: 10px;
   }
   .card-img-news{
     height:80px;
@@ -197,17 +206,20 @@ font-size:12px;
     margin-top:10px;
   }
   .title-news{
-  font-size:12px;
+    font-size:12px;
+    font-family: 'Poppins';
   }
   .news-time{
     font-size:8px;
     margin-top: 24px;
+    font-family: 'Poppins';
   }
   .news-popular-title{
     color:#106ec3;
     font-size:8px;
     margin-top:-15px;
     margin-bottom:5px;
+    font-family: 'Poppins';
   }
 }
 ul.navbar-right {
@@ -227,7 +239,7 @@ ul.navbar-right {
   }
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @endsection
 
 @section('konten')
@@ -265,7 +277,7 @@ ul.navbar-right {
 <!-- search location  -->
 <div class="container-fluid text-white search-kota">
     <center>
-        <h4 class="p-4 font-weight-bold">CARI OUTLET TERDEKAT</h4>
+        <h4 class="p-4 font-weight-bold" style="font-family: 'Poppins';">CARI OUTLET TERDEKAT</h4>
     </center>
         <div class="row py-4" >
             <div class="col-lg-3"></div>
@@ -298,7 +310,7 @@ ul.navbar-right {
           <!-- /.row -->
           <!-- top artis title -->
         <div class="container text-center py-5">
-          <h4 class="font-weight-bold">TOP ARTIST</h4>
+          <h4 class="font-weight-bold" style="font-family: 'Poppins';">TOP ARTIST</h4>
         </div>
         <!-- end top artis title -->
 </div>
@@ -334,7 +346,7 @@ ul.navbar-right {
           <div class="col-6">
             <div class="row px-3">
               <div class="col-lg-12 col-sm-12">
-                 <h6 style="text-transform: uppercase;padding-bottom:10px;color:#221E40">lagu terlaris</h6>
+                 <h6 style="text-transform: uppercase;padding-bottom:10px;color:#221E40;font-family: 'Poppins';">lagu terlaris</h6>
                  <div class="card">
                     <img src="/img/marionjola.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -380,7 +392,7 @@ ul.navbar-right {
            <div class="col-6">
              <div class="row px-3">
                <div class="col-lg-12 col-sm-12">
-                 <h6 style="text-transform: uppercase; padding-bottom:10px;color:#221E40">lagu terbaru</h6>
+                 <h6 style="text-transform: uppercase; padding-bottom:10px;color:#221E40;font-family: 'Poppins';">lagu terbaru</h6>
                  <div class="card">
                     <img src="/img/bts.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -431,6 +443,7 @@ ul.navbar-right {
       <div class="col-lg-2"></div>
     </div>
 </div>
+<br><br>
 <!-- end song list -->
 <!-- news -->
 <div class="container-fluid news-container">
@@ -441,6 +454,7 @@ ul.navbar-right {
       <div class="col-lg-8">
         <div class="container mx-2 news-konten">
             <h4 class="text-white font-weight-bold d-inline-block mr-2">Lates News</h4> <a href="{{url('/news')}}">view all</a>
+            <br><br>
             <div class="row">
               <div class="col-6 my-2">
                 <div class="card card-news">
@@ -544,6 +558,7 @@ ul.navbar-right {
       <div class="col-lg-2"></div>
     </div>
 </div>
+<br><br><br><br>
 <!-- end news -->
 @endsection
 

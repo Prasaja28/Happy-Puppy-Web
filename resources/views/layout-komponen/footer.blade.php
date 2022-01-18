@@ -41,17 +41,17 @@
         </div>
         <div class="col-6">
           <div class="row">
-            <div class="col-sm-6 instansi-kontak">
+            <div class="col-sm-6 instansi-kontak" style="font-family: 'Poppins';">
               <p> PT IMPERIUM HAPPY PUPPY <br> JL HR Muhammad 73B Surabaya 80226</p> 
             </div>
-            <div class="col-sm-6 instansi-kontak">
+            <div class="col-sm-6 instansi-kontak" style="font-family: 'Poppins';">
               <p> Telp (031) 734-338, Fax. (031) 734-2911 <br> E-mail : infohappy-puppy.com</p>
             </div>
           </div>
         </div>
         <div class="col-6 text-right">
           <div class="row">
-            <div class="col-12 pt-3">
+            <div class="col-12 pt-3" style="font-family: 'Poppins';">
               <a href="/" id="language-mobile">INA</a>
               <a id="language-mobile">|</a>
               <a href="/" id="language-mobile">ENG</a>
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="col-12 text-right">
-          <p style="font-size: 10px; padding-left :10px;"><a href="">Syarat & ketentuan</a> | &copy; 2011 PT IMPERIUM HAPPY PUPPY,All Rights Reserved</p>
+          <p style="font-size: 10px; padding-left :10px;font-family: 'Poppins';"><a href="">Syarat & ketentuan</a> | &copy; 2011 PT IMPERIUM HAPPY PUPPY,All Rights Reserved</p>
         </div>
     </div>
 	</div>

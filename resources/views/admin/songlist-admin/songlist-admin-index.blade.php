@@ -29,7 +29,7 @@
                     </div>
                   <!-- /.card-header -->
                     <div class="card-body px-4">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button><br><br>
                         <table id="example2" class="table table-bordered table-striped">
                           <thead>
                             <tr>

@@ -25,6 +25,7 @@
     font-size: 40px;
     font-weight: bold;
     min-height: 380px;
+    font-family: 'Poppins';
 }
 .back-grad {
     height: 300px;
@@ -41,12 +42,12 @@
 }
 #p1{
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-family: 'Poppins';
 }
 #p2{
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
 }
 .back {
     height: 1100px;
@@ -64,6 +65,7 @@
   outline: none;
   font-size: 15px;
   transition: 0.4s;
+  font-family: 'Poppins';
 }
 
 .active, .accordion:hover {
@@ -81,11 +83,12 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
+    font-family: 'Poppins';
 }
 #txt-foot{
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
+    font-family: 'Poppins';
 }
 .btn{
     color: white;

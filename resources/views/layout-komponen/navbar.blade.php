@@ -8,7 +8,7 @@
             <a class="nav-link" href="#" style="color:white"id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bars fa-2x"></i>
             </a>
-            <div class="dropdown-menu" style="right: -20px; left: auto;background-color:#555251;" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" style="right: -20px; left: auto;background-color:#555251;font-family: 'Poppins';" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ url('/lokasi') }}">LOKASI</a>
               <a class="dropdown-item" href="{{ url('/news') }}">BERITA</a>
               <a class="dropdown-item" href="{{ url('/profile') }}">PROFILE</a>

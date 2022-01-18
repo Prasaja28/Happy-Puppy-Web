@@ -23,6 +23,7 @@
         margin: 0;
         font-size: 40px;
         min-height: 450px;
+        font-family: 'Poppins';
     }
     .back-grad {
         height: 250px;
@@ -39,13 +40,13 @@
     #p1{
         margin-top: 50px;
         font-size: 15px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
         font-weight: bold;
         text-align: justify;
     }
     #p2{
         font-size: 15px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
         text-align: justify;
     }
     .back {
@@ -75,6 +76,7 @@
         border-top-left-radius: 20px;
         border-bottom-right-radius: 100px;
         border-bottom-left-radius: 20px;
+        font-family: 'Poppins';
     }
 
     /* Change background color of buttons on hover */
@@ -144,6 +146,7 @@
         outline: none;
         font-size: 15px;
         transition: 0.4s;
+        font-family: 'Poppins';
     }
 
     .active, .accordion:hover {
@@ -161,6 +164,7 @@
         font-family: Arial, Helvetica, sans-serif;
         color: black;
         font-weight: bold;
+        font-family: 'Poppins';
     }
 @media(max-width: 800px) {
     .center {
@@ -192,14 +196,14 @@
 @section('konten')
 <!-- add konten in here -->
 <div class="header p-5">
-    <div id="txt1" class="container">
+    <div id="txt1" class="container" style="font-family: 'Poppins';">
         <p>KONTAK</p>
         <p style="font-weight: bold;">KAMI</p>
     </div>
 </div>
 <div class="back-grad">
     <div class="center">
-        <div class="row">
+        <div class="row" style="font-family: 'Poppins';">
             <br><div class="col-4 d-flex" id="p1">Manajemen & Waralaba:<br>PT. Imperium Happy Puppy</div><br>
             <div class="col-8 pt-4 pt-lg-0 content" data-aos="fade-left" id="p11">JL. H.R. Mohammad No. 73B Lt. II<br>Surabaya 60226 - Indonesia<br>Tel. (031)734-3388<br>Fax. (031)734-2911<br><br>Informasi Umum : info@happypuppy.id</div><br>
         </div>
@@ -214,7 +218,7 @@
         </div>
     
         <div id="kontak" class="tabcontent">
-            <div class="container" id="form1">
+            <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
                     <label for="Nama">Nama</label>
                         <input type="text" id="Nama" name="Nama" placeholder="Nama">
@@ -237,7 +241,7 @@
         </div>
     
         <div id="Request" class="tabcontent">
-            <div class="container" id="form1">
+            <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
                     <label for="Nama">Nama</label>
                         <input type="text" id="Nama" name="Nama" placeholder="Nama">
@@ -256,7 +260,7 @@
         </div>
     
         <div id="keluhan" class="tabcontent">
-            <div class="container" id="form1">
+            <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
                     <label for="Nama">Nama</label>
                         <input type="text" id="Nama" name="Nama" placeholder="Nama">
