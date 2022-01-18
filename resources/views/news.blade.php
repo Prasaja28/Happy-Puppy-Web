@@ -12,8 +12,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: rightl;
-  background-image: url('/img/news.png')
+  background-position: right;
+  background-image: url('/img/1.jpg')
 }
 .lates-news-list{
     background-color:#221E40;
