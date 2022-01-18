@@ -12,27 +12,58 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: right;
-  background-image: url('/img/1.jpg')
+  background-position: rightl;
+  background-image: url('/img/konser.jpg')
 }
+#txt2{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: justify;
+    margin: 0;
+    font-size: 40px;
+    min-height: 500px;
+    font-weight: bold;
+    text-indent: 1.2in;
+    font-family: 'Poppins';
+}
+
 .lates-news-list{
     background-color:#221E40;
-    min-height:250px;
+    min-height:230px;
+    max-width: 1000px;
+    width: 100%;
 }
 .lates-title{
-    padding-top:30px;
+    padding-top:50px;
     padding-bottom:50px;
     padding-left:60px;
 }
 .news-list{
     margin-top: -285px;  
+    padding-left:47px;
 }
+
 .card-news{
+  position: absolute;
   width: 28rem;
   margin-bottom: 10px;
+  z-index: 3;
+}
+.card-news1{
+  position: absolute;
+  width: 29rem;
+  height: 22rem;
+  margin-bottom: 3px;
+  z-index: 2;
+    left: 20px;
+    top: 10px;
 }
 .card-img-news{
   height:240px;
+}
+.card-img-news1{
+  height:260px;
 }
 .news-time{
   margin-bottom:-10px;
@@ -50,6 +81,7 @@
   float: none; /* Added */
   margin-bottom: 10px;
   margin-top:10px;
+  right: 50px;
 }
 .card-img-lates{
   height:90px;
@@ -254,20 +286,22 @@
   }
 }
 </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 @endsection
 @section('navbar-news','active')
 @section('konten')
 <!-- add konten in here -->
 <div class="header ">
-    <div class="container blur-color text-white">
-        <h2 class="pl-5 font-weight-bold" style="padding-top:125px;">News</h2>
+    <div class="container blur-color text-white"id="txt2">
+        <h2 class="p-5 font-Poppins-bold" style="font-style: bold;">NEWS</h2>
     </div>
 </div>
 <div class="container-fluid">
     <div class="container">
         <h4 class="lates-title">Lates News</h4>
     </div>
-        <div class="lates-news-list">
+        <div class="lates-news-list" style="padding-left: 20px; padding-right:20px;">
         </div>
         <div class="news-list">
             <div class="row card-news-lates-list">
@@ -281,17 +315,25 @@
                             </p>
                         </div>
                     </div>
+                <div class="card card-news1">
+                    <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title title-news">Midnight In Egypt</h5>
+                            <p class="news-time"><?=now()?>
+                                <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-news-lates">
                             <div class="row no-gutters">
-                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-                            </div>
+                            <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
+                                <h5 class="card-title-lates card-title"> Stay safe and Healthy</h5>
                                 <p class="news-time-lates"><?=now()?>
                                   <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>   
                                 </p>
@@ -303,11 +345,10 @@
                         <div class="col-12">
                             <div class="card card-news-lates">
                             <div class="row no-gutters">
-                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-                            </div>
+                            <img src="/img/berita2.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
+                                <h5 class="card-title-lates card-title"> Yes, we are open</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
@@ -319,11 +360,10 @@
                         <div class="col-12">
                             <div class="card card-news-lates">
                             <div class="row no-gutters">
-                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-                            </div>
+                            <img src="/img/berita5.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
+                                <h5 class="card-title-lates card-title"> Lagu baru camelia cabello berjudul "Liar"</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
@@ -335,11 +375,10 @@
                         <div class="col-12">
                             <div class="card card-news-lates">
                             <div class="row no-gutters">
-                            <div class="col-4 card-img-lates" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
-                            </div>
+                            <img src="/img/berita4.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Judul Berita</h5>
+                                <h5 class="card-title-lates card-title"> Lagu baru camelia cabello berjudul "Melawan restu"</h5>
                                 <p class="news-time-lates"><?=now()?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
