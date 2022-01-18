@@ -13,11 +13,13 @@
     -o-background-size: cover;
     background-size: cover;
     z-index: -1;
+    font-family: 'Poppins';
     background-position: rightl;
     background-image: url('https://3.bp.blogspot.com/-h3x7o8PdjHI/V9Z7h_d61HI/AAAAAAAAJCM/962SQDbRGQoQMqYn3vacC3gUjDYVgZ24gCLcB/w1200-h630-p-k-no-nu/Kredit-Handphone-Di-Surabaya-Tanpa-Kartu-Kartu-Kredit.jpg')
 }
 .search-result{
     min-height:100px;
+    font-family: 'Poppins';
 }
 .card-outlet{
     background-color:#221E40;
@@ -33,6 +35,7 @@
       transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     cursor: pointer;
     margin-top:50px;
+    font-family: 'Poppins';
 }
 .card-img-top{
     height:200px;

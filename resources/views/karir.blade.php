@@ -61,9 +61,9 @@
     font-family: 'Poppins';
 }
 
-h5 {
+h6 {
   color: #ffffff;
-  font-size:25px;
+  font-size: 18px;
 }
 
 .card-body {
@@ -77,23 +77,39 @@ h5 {
 }
 
 .content {
-    margin: 5px 100px 0px 250px;
+    margin: -50px 100px 0px 250px;
     width: 80%;
     padding: 30px;
     font-family: 'Poppins';
 }
 
 .card {
-    margin: 5px 100px 0px 275px;
+    margin: -42px 100px 0px 275px;
     padding: 0px;
     font-family: 'Poppins';
 }
 
+td {
+  font-size: 13px;
+}
 
 .btn {
     color: white;
     background-color: #221E40;
     font-family: 'Poppins';
+    font-size: 13px;
+    width: 40%;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #221E40;
+    font-family: 'Poppins';
+    font-size: 13px;
+    margin: 10px 100px 20px 275px;
+    width: 10%;
+    min-height: 2rem;
+    border-radius: 30px;
 }
 
 
@@ -118,41 +134,35 @@ h5 {
     
     <div class="container" style="text-align: center; "> 
       HAPPY PUPPY memberikan kesempatan bagi semua pegawai untuk mengembangkan karir <br>
-      mulai dari level dasar sampai mencapai level tertinggi melalui jenjang karir yang telah disusun degan baik
+      mulai dari level dasar sampai mencapai level tertinggi melalui jenjang karir yang telah disusun dengan baik
     </div>
     
     <div class="lowongan">
-        <h5><b>LOWONGAN TERSEDIA</b></h5>
+        <h6><b>LOWONGAN TERSEDIA</b></h6>
     </div>    
     
     <div class="content" >        
         <div class="row">     
             <div class="col-md-4">
                   <div class="form-group">
-                    <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
+                    <input type="text" class="form-control" style="width: 105%; font-size: 14px;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
                   </div>
             </div>
             
             <div class="col-md-4">
                 <div class="form-group">
-                    <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Pilih Lokasi">  
+                    <input type="text" class="form-control" style="width: 100%; font-size: 14px;" id="formGroupExampleInput" placeholder="Pilih Lokasi">  
                 </div>
             </div>
 
             <div class="col-md-4">
-                <button type="button" class="btn">Filter</button>
+                <button type="button" class="btn" style="font-size: 13px">FILTER</button>
             </div>
         </div>
     </div>
 
           <div class="card" style="width: 50%">
                 <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Pekerjaan</th>
-                      <th>Lokasi</th>
-                    </tr>
-                  </thead>
                   <tbody>
                     <tr>
                       <td>Waiter</td>
@@ -162,10 +172,18 @@ h5 {
                       <td>Waiter</td>
                       <td>Jakarta, Jl. Raya Utan Kayu</td>
                     </tr>
+                    <tr>
+                      <td>Information Technology</td>
+                      <td>Bandung, Jl. Raya Utan Kayu</td>
+                    </tr>
+                    <tr>
+                      <td>Supervisor</td>
+                      <td>Bali, Jl. Raya Utan Kayu</td>
+                    </tr>
                   </tbody>
                 </table>
                 
-                <div class="card-footer clearfix">
+                <div class="card-footer">
                 <ul class="pagination pagination-sm m-0 float-right">
                   <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
                   <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -178,14 +196,8 @@ h5 {
               </div>
 
               <br>
-              <!-- <div class="col-md-4" style="text-align: center">
-                <button type="button" class="btn">Apply</button>
-              </div> -->
+                <button type="submit" class="btn-primary">Apply</button>
               <br>
-
-              
-
-
 
 @endsection
 
