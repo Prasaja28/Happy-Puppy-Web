@@ -11,6 +11,8 @@ class OutletWaralabaController extends Controller
     public function index()
     {
         $outlet = Outlet::all();
+        $datas = DB::table('detail_antrian');
+        
         return view('admin.outlet-admin.outlet-admin-index',compact('outlet'));
     }
     /**

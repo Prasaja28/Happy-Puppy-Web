@@ -253,23 +253,23 @@ ul.navbar-right {
     </a>
  </li>
  <li>
-   <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+   <a style="display: inline-block; color:black;" title="Instagram" target="_blank" href="https://www.instagram.com/helloworld">
    <img src="https://www.designpieces.com/wp-content/uploads/2016/05/Instagram-v051916-150x150.png" width="15" height="15" alt="">
   </a>
 </li>
 <li>
-  <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+  <a style="display: inline-block; color:black;" title="Apple" target="_blank" href="https://www.apple.com/id/">
     <img src="https://aiconica.net/previews/apple-logo-filled-circle-icon-312.png" width="15" height="15" alt="">
     </a>
  </li>
  <li>
-   <a style="display: inline-block; color:green;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
+   <a style="display: inline-block; color:green;" title="Whatsapp" target="_blank" href="https://web.whatsapp.com/">
      <img src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-pic-0.png" width="15" height="15" alt="">
    </a>
  </li>
 <li>
-  <a style="display: inline-block; color:black;" title="Facebook" target="_blank" href="https://www.facebook.com/helloworld">
-    <img src="https://www.pinclipart.com/picdir/big/202-2024262_app-store-google-play-logo-vector-vector-and.png" width="10" height="10" alt="">
+  <a style="display: inline-block; color:black;" title="Google-play" target="_blank" href="https://play.google.com/store?utm_source=apac_med&utm_medium=hasem&utm_content=Aug2021&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-id-1003227-med-hasem-py-Evergreen-Aug2021-Text_Search_BKWS-BKWS%7cONSEM_kwid_43700065961766560_creativeid_541258268578_device_c&gclid=CjwKCAiA55mPBhBOEiwANmzoQmuAfFkXJNzysG0CvEsp9Uj5z9BAhjRuq3XD0wkQZU5L39nfBSPcqBoCR_MQAvD_BwE&gclsrc=aw.ds">
+    <img src="https://www.pinclipart.com/picdir/big/202-2024262_app-store-google-play-logo-vector-vector-and.png" width="15" height="15" alt="">
   </a>
 </li>
 </ul>
