@@ -10,9 +10,9 @@ class Outlet extends Model
     use HasFactory;
     protected $table = 'outlet';
     protected $primaryKey = 'id';
-    protected $fillable = ['thumbnail','name','address','phone','fax','link_ig','link_2'];
+    protected $fillable = ['thumbnail','name','address','phone','fax','link_ig','link_2','users_id','city_id','citysub_id'];
     protected $guarded = [];
-    public function users()
+    public function relasi_users()
     {
         return $this->belongsTo(User::class,'users_id');
     }

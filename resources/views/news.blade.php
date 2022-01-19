@@ -13,7 +13,10 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
-  background-image: url('/img/konser.jpg')
+  background-image: url('/img/news.png')
+}
+#n1{
+  font-family: 'Poppins';
 }
 #txt2{
     color: white;
@@ -292,9 +295,9 @@
 @section('navbar-news','active')
 @section('konten')
 <!-- add konten in here -->
-<div class="header ">
-    <div class="container blur-color text-white"id="txt2">
-        <h2 class="p-5 font-Poppins-bold" style="font-style: bold;">NEWS</h2>
+<div class="header p-5">
+    <div class="container" id="txt2" style="font-family: 'Poppins';">
+        <p style="font-weight: bold;">NEWS</p>
     </div>
 </div>
 <div class="container-fluid">
@@ -306,7 +309,7 @@
         <div class="news-list">
             <div class="row card-news-lates-list">
                 <div class="col-6 padding-card">
-                    <div class="card card-news">
+                    <div class="card card-news" style="border: none;">
                         <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
                         <div class="card-body">
                             <h5 class="card-title title-news">Midnight In Egypt</h5>

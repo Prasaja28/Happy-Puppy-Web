@@ -61,4 +61,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Topartist::class,'id');
     }
+    public function outlet()
+    {
+        return $this->hasMany(Outlet::class,'id');
+    }
 }

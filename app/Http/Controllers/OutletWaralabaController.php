@@ -44,15 +44,20 @@ class OutletWaralabaController extends Controller
                 $file->move(public_path('img/outlet-img'), $path);
             }
             // dd($request->jenis_dokumen);
-            Songlist::create([
+            Outlet::create([
                 'thumbnail' => $path,
-                'title_song' => $request->title_song,
-                'kategori_lagu' => $request->kategori_lagu,
-                'artist' => $request->artist,
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'fax'=> $request->fax,
+                'link_ig'=> $request->link_ig,
+                'link_2'=> $request->link_2,
                 'users_id'=> $request->users_id,
+                'city_id'=> $request->city_id,
+                'citysub_id'=> $request->citysub_id,
                 'status' => 1
             ]);
-            return redirect('/songlist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+            return redirect('/outlet-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
 
     /**
@@ -93,22 +98,26 @@ class OutletWaralabaController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
+                $path = '/img/outlet-img/'.time().'-'.$file->getClientOriginalName();
                 //dd($path);
-                $file->move(public_path('img/songlist-img'), $path);
+                $file->move(public_path('img/outlet-img'), $path);
             }else{
                 $path = $request->thumbnail2;
             }
-            Songlist::where('id',$id)
+            Outlet::where('id',$id)
             ->update([
                 'thumbnail' => $path,
-                'title_song' => $request->title_song,
-                'kategori_lagu' => $request->kategori_lagu,
-                'artist' => $request->artist,
-                'status' => $request->status,
-                'users_id'=> $request->users_id
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'fax'=> $request->fax,
+                'link_ig'=> $request->link_ig,
+                'link_2'=> $request->link_2,
+                'users_id'=> $request->users_id,
+                'city_id'=> $request->city_id,
+                'citysub_id'=> $request->citysub_id
             ]);
-            return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 
+            return redirect('/outlet-admin')->with('status','Data Berhasil Di update!!!'); 
     }
 
     /**
@@ -119,11 +128,13 @@ class OutletWaralabaController extends Controller
      */
     public function destroy($id)
     {
-        Songlist::where('id',$id)
+        Outlet::where('id',$id)
         ->update([
-            'status'=> 0,
-            'users_id'=> Session::get('user_id')
+            'status' => 1,
+            'users_id'=> Session::get('user_id'),
+            'city_id'=> Session::get('city_id'),
+            'citysub_id'=> Session::get('citysub_id')
         ]);
-        return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }

@@ -86,6 +86,9 @@ Route::put('/topartist-admin/update/{id}',[TopartistController::class, 'update']
 
 //Outlet
 Route::get('/outlet-admin',[OutletWaralabaController::class, 'index']);
+Route::get('/outlet-admin/delete/{id}',[OutletWaralabaController::class, 'destroy']);
+Route::post('/outlet-admin/store',[OutletWaralabaController::class, 'store']);
+Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update']);
 
 //users
 

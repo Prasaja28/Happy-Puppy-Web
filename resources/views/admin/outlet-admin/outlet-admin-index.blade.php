@@ -37,38 +37,71 @@
                     </div>
                   <!-- /.card-header -->
                     <div class="card-body px-4">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah Data</button><br><br>
                         <table id="example2" class="table table-bordered table-striped ">
                           <thead>
                             <tr>
                               <th>No</th>
                               <th>Thumbnail</th>
-                              <th>News title ID</th>
-                              <th>News title EN</th>
-                              <th>News Content ID</th>
-                              <th>News Content EN</th>
-                              <th>News Date</th>
-                              <th>Category</th>
-                              <th>Log User</th>
-                              <th>Status</th>
+                              <th>Nama Outlet</th>
+                              <th>Alamat Outlet</th>
+                              <th>Nomor Telepon</th>
+                              <th>Nomor Fax</th>
+                              <th>Link ig</th>
+                              <th>Link lainnya</th>
+                              <th>Users_id</th>
+                              <th>City_id</th>
+                              <th>Citysub_id</th>
                               <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
-                            
+                          @forelse($outlet as $outlet)
+                            <tr>
+                              <td>{{$loop->iteration}}</td>
+                              <td>
+                                <center>
+                                  <img src="{{ asset($outlet->thumbnail) }}" width="100" height="100" alt="">
+                                </center>
+                              </td>
+                              <td>{{$outlet->name}}</td>
+                              <td>{{$outlet->address}}</td>
+                              <td>{{$outlet->phone}}<td>                                     
+                              <td>{{$outlet->fax}}<td>                                    
+                              <td>{{$outlet->link_ig}}<td>                                
+                              <td>{{$outlet->link_2}}<td>                                
+                                
+                              <td class="text-center">
+                              @if($topartists->status == 1)
+                                  <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$topartists->id}}"><i class="fas fa-trash-alt"></i></i></button>
+                              @endif
+                                <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$topartists->id}}"><i class="fas fa-pen-square"></i></button>
+                              </td>
+                          </tr>
+                                <!-- Model Delete -->
+                                @include('admin.outlet-admin.outlet-admin-delete')
+                                <!-- Model Update -->
+                                @include('admin.outlet-admin.outlet-admin-update')
+ 
+                                @empty
+                                <div class="alert alert-danger">
+                                  Data Outlet belum Tersedia.
+                                </div>
+                            @endforelse
                           </tbody>
                           <tfoot>
                             <tr>
                               <th>No</th>
                               <th>Thumbnail</th>
-                              <th>News title ID</th>
-                              <th>News title EN</th>
-                              <th>News Content ID</th>
-                              <th>News Content EN</th>
-                              <th>News Date</th>
-                              <th>Category</th>
-                              <th>Log User</th>
-                              <th>Status</th>
+                              <th>Nama Outlet</th>
+                              <th>Alamat Outlet</th>
+                              <th>Nomor Telepon</th>
+                              <th>Nomor Fax</th>
+                              <th>Link ig</th>
+                              <th>Link lainnya</th>
+                              <th>Users_id</th>
+                              <th>City_id</th>
+                              <th>Citysub_id</th>
                               <th>Action</th>
                             </tr>
                           </tfoot>
@@ -81,7 +114,7 @@
       </div>
   </div>
 </section>
-@include('admin.news.news-create')
+@include('admin.outlet-admin.outlet-admin-create')
 @endsection
 
 @section('script')
