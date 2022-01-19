@@ -6,7 +6,7 @@
 <!-- Add tag css in here -->
 <style>
 .header{
-  min-height: 30vh;
+  min-height: 50vh;
   background: no-repeat center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -34,8 +34,9 @@
 .lates-news-list{
     background-color:#221E40;
     min-height:230px;
-    max-width: 1000px;
+    max-width: 1100px;
     width: 100%;
+    margin: 10px 50px 0px 100px;
 }
 .lates-title{
     padding-top:50px;
