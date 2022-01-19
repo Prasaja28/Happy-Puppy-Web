@@ -25,7 +25,7 @@
     text-align: justify;
     margin: 0;
     font-size: 40px;
-    min-height: 500px;
+    min-height: 350px;
     font-weight: bold;
     text-indent: 1.2in;
     font-family: 'Poppins';
@@ -56,12 +56,13 @@
 }
 .card-news1{
   position: absolute;
-  width: 29rem;
+  width: 27rem;
   height: 22rem;
   margin-bottom: 3px;
   z-index: 2;
-    left: 20px;
+    left: 50px;
     top: 10px;
+    background-color: #E9EEF4;
 }
 .card-img-news{
   height:240px;
@@ -131,7 +132,11 @@
 }
 .popularNews{
     margin-top:100px;
-    min-height:200px;
+    margin-left: 0px;
+    margin-right: 0px;
+    min-height:300px;
+    max-width: 1500px;
+    width: 100%;
     background-color:#221E40;
 }
 .card-img-popular{
@@ -155,9 +160,14 @@
 #more {display: none;}
   #myBtn{
     display: block;
-    border-radius:20px;
-    font-size:8px;
-    margin-top:10px;
+    border-radius:50px;
+    font-size:15px;
+    margin-top:40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
     background-color:#221E40;
     /* font-family: 'Poppins'; */
   }
@@ -276,7 +286,7 @@
     }
     #myBtn{
       display: block;
-      border-radius:20px;
+      border-radius:50px;
       font-size:8px;
       margin-top:10px;
       margin: 0 auto; /* Added */
@@ -396,8 +406,8 @@
             </div>
         </div>
         <div class="popularNews">
-            <div class="container">
-                <h4 class="lates-title text-uppercase text-white">popular</h4>
+            <div class="container" style="font-family:'Poppins'; font-size: 25px;">
+                <p class="lates-title text-uppercase text-white">popular</p>
             </div>
         </div>
         <div class="container popular-card-news">
@@ -513,13 +523,13 @@
                       </div>
                     </div>
                     </div>
+
                     <div class="col-12">
                       <button href="{{url('/')}}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load more</button>
                     </div>
                     <br><br><br>
             </div>
         </div>
-
 </div>
 @endsection
 
