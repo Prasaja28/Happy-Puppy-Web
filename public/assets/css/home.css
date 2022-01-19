@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.jumbotron {
+    margin: 0;
+    width: 100%;
+    height: 400px;
+    border-radius: 0;
+    background-size: cover;
+    background-image: url("/img/home.png");
+}
+
+.jumbotron .hero-title-container {
+    margin-left: 25px;
+    margin-top: 150px;
+}
+
+.jumbotron h1 {
+    font-weight: 800;
+    font-size: 38px;
+}
+
+.jumbotron h1 div {
+    font-size: 44px;
+    font-weight: 100;
+    margin-top: -10px;
+    margin-bottom: -15px;
+}
+
+.jumbotron p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* *************************************************** */
+
+div[name="social-media"] ul li img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-left: -25px;
+}
+
+div[name="social-media"] ul li img[name="facebook"] {
+    margin-top: 20px;
+}
+
+ul.navbar-right {
+    width: 55px;
+    right: 0;
+    top: 40%;
+    z-index: 999;
+    position: fixed;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+ul.navbar-right li {
+    list-style-type: none;
+}
+
+/* ****************************************************************** */
+section[name="outlet-search"] {
+    padding-bottom: 30px;
+    background-color: #221e40;
+}
+
+section[name="outlet-search"] h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+section[name="outlet-search"] div[name="city"] a {
+    font-weight: 300;
+    border-radius: 50px;
+}
+
+section[name="outlet-search"] h4[name="top-artist"] {
+    font-size: 20px;
+}
+
+/* *************************************************************** */
+div[name="artist"] {
+    margin-top: -40px;
+    margin-bottom: 100px;
+}
+
+div[name="artist"] img {
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+
+/* **************************************************************** */
+section[name="song"] h6.top-title {
+    margin-top: -150px;
+    font-size: 16px;
+}
+
+section[name="song"] .container div[name="sheets"] {
+    background-color: #f5f6fa;
+}
+
+section[name="song"] .container {
+    margin-top: 200px;
+    padding-bottom: 50px;
+}
+
+section[name="song"] .card h5,
+section[name="song"] div[name="list-song"] h6 {
+    margin-bottom: -1px;
+    font-size: 14px;
+}
+
+section[name="song"] p.text-muted {
+    font-size: 12px;
+}
+
+section[name="song"] button.btn-modif {
+    width: 40%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 100px;
+    background-color: #344072;
+}
+
+/* ********************************************************* */
+section[name="latest-news"] {
+    margin-top: -270px;
+    margin-bottom: -80px;
+    padding-top: 300px;
+    background-color: #28284a;
+}
+
+section[name="latest-news"] h6 {
+    color: white;
+    font-size: 18px;
+    margin: 0 20px 20px 15px;
+}
+
+section[name="latest-news"] a[name="view-all"] {
+    font-size: 14px;
+}
+
+section[name="latest-news"] .card h4 {
+    font-size: 14px;
+}
+
+section[name="latest-news"] p.text-date {
+    font-size: 11px;
+    font-weight: bold;
+    color: #c3c8d9;
+}
+
+section[name="next-news"] {
+    margin-top: 300px;
+}
+
+section[name="next-news"] div[name="item"] img {
+    width: 100%;
+    height: 200px;
+}
+
+/* TABLET++ */
+@media (min-width: 768px) {
+    .jumbotron {
+        width: 100%;
+        height: 700px;
+        background-repeat: no-repeat;
+    }
+
+    .jumbotron .hero-title-container {
+        margin-left: 105px;
+        margin-top: 180px;
+    }
+
+    .jumbotron h1 {
+        font-weight: 800;
+        font-size: 84px;
+    }
+
+    .jumbotron h1 div {
+        font-weight: 100;
+        font-size: 92px;
+        margin-top: -25px;
+        margin-bottom: -25px;
+    }
+
+    .jumbotron p {
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    /* ********************************************************** */
+    div[name="social-media"] ul.navbar-right {
+        top: 40%;
+        border-radius: 15px;
+    }
+
+    /* ********************************************************** */
+    section[name="outlet-search"] h4 {
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    /* ********************************************************** */
+    section[name="song"] h6.top-title {
+        margin-top: -150px;
+        font-size: 20px;
+    }
+
+    section[name="song"] .card h5,
+    section[name="song"] div[name="list-song"] h6 {
+        font-size: 18px;
+    }
+
+    section[name="song"] p.text-muted {
+        font-size: 14px;
+    }
+
+    section[name="song"] button.btn-modif {
+        width: 30%;
+        font-size: 14px;
+    }
+
+    /* ********************************************************* */
+    section[name="latest-news"] h6 {
+        font-size: 22px;
+    }
+
+    section[name="latest-news"] a[name="view-all"] {
+        font-size: 16px;
+    }
+
+    section[name="latest-news"] .card h4 {
+        font-size: 24px;
+    }
+
+    section[name="latest-news"] p.text-date {
+        font-size: 18px;
+    }
+}
+
+/* DEKSTOP++ */
+@media (min-width: 992px) {
+    .jumbotron {
+        background-position-y: -100px;
+    }
+}
