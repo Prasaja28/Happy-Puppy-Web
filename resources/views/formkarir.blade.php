@@ -10,9 +10,28 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: rightl;
-  background-image: url('/img/karaoke.jpg')
+  background-position: right;
+  background-image: url('/img/karaoke.jpg');
+  font-family: 'Poppins';
 }
+
+.content{
+    font-family: 'Poppins';
+    margin: auto;
+}
+
+.btn {
+    color: white;
+    background-color: #221E40;
+    font-family: 'Poppins';
+    border-radius: 50px;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+}
+
 /* 
 .btn{
     color: white;
@@ -245,7 +264,8 @@
             </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+    <button type="submit" class="btn">SUBMIT</button>
     <br><br>
 
     </div>

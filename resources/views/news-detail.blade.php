@@ -6,13 +6,15 @@
 <!-- Add tag css in here -->
 <style>
     .header{
-        min-height: 60vh;
+      margin-top: 131px;
+        min-height: 55vh;
         background: no-repeat center scroll;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         background-position: rightl;
+        box-shadow: 0px 5px 10px;
         
 }
 .tab-content{
@@ -22,9 +24,11 @@
   width: 14rem;
   margin: 0 auto; /* Added */
   margin-bottom: 10px;
+     box-shadow: 0px 1px 5px;
   }
   .card-img-news{
     height:120px;
+    border: none;
   }
   .news-time{
     margin-bottom:-10px;
@@ -42,7 +46,7 @@
   .color-background{
     background-image: linear-gradient(to right, #68a6fb , #f77a8b);
     position: relative;
-    min-height:60vh;
+    min-height:40vh;
   }
   .news-content{
     margin-top: -60vh;
@@ -101,16 +105,16 @@
         <div class="header" style="background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')">
         </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-7">
             <ul class="nav mt-2" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black;" role="tab" data-toggle="tab">Populer</a>
+                <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black; margin-top: 40px;" role="tab" data-toggle="tab">Populer</a>
             </li>
             </ul>
         
             <!-- Tab panes -->
             <div class="tab-content">
-                <h2 class="py-3" style="color:#3792cb">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
+                <h2 class="py-3" style="color:#3792cb; ">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
         
                 <h6 class="pb-3"><?=now()?></h6>
         
@@ -122,7 +126,7 @@
                 </p>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5" style="padding-left: 240px;">
             <div id="detail-news-dekstop">
                 <h6 class="news-title pt-5">Lates News</h6>
                 <div class="row">
@@ -150,7 +154,7 @@
                   </div>
                 </div>
             </div>
-            <div id="detail-news-mobile">
+            <div id="detail-news-mobile" style="font-family: 'Poppins'">
                 <h6 class="news-title pt-5">Lates News</h6>
                 <div class="row">
                   <div class="col-6 my-2">

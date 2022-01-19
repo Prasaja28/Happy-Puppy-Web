@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label for="kategori_lagu">Song Category :</label>
                         <select class="custom-select form-control-border  @error('kategori_lagu') is-invalid @enderror" id="kategori_lagu" name="kategori_lagu" value="{{ old('kategori_lagu') }}" required>
-                            <option selected="Selected" value="">Pilih Category</option>
+                            <option selected="Selected" value="" disabled>Pilih Category</option>
                             <option value="terlaris">Lagu Terlaris</option>
                             <option value="terbaru">Lagu Terbaru</option>
                         </select>

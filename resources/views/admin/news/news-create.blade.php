@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <label for="news_category">News Category :</label>
                         <select class="custom-select form-control-border  @error('news_category') is-invalid @enderror" id="news_category" name="news_category" value="{{ old('news_category') }}" required>
-                            <option selected="Selected" value="">Pilih Category</option>
+                            <option selected="Selected" value="" disabled>Pilih Category</option>
                             <option value="popular">News Popular</option>
                             <option value="lates">News Lates</option>
                         </select>
