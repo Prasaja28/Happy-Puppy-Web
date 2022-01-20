@@ -1,15 +1,15 @@
 <footer>
-	<div class="row m-0 text-white" style="background-color: #000000;">
+	<div class="row m-0 text-white" style="background-color: #171730;">
     <div class="container">
       <div class="row">
         <div class="col-6 py-2 d-flex">
           <div class="row">
             <div class="col-sm-12 pt-3">
-              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/logofot1.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/logofot2.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/logofot3.png') }}" class="img-logo" alt="Logo">
-              <img src="{{ asset('/img/logofot4.png') }}" class="img-logo" alt="Logo">
+              <img src="{{ asset('/img/HappupLogo.png') }}" class="img-logo mr-4" alt="Logo">
+              <img src="{{ asset('/img/logofot1.png') }}" class="img-logo mr-4" alt="Logo">
+              <img src="{{ asset('/img/logofot2.png') }}" class="img-logo mr-4" alt="Logo">
+              <img src="{{ asset('/img/logofot3.png') }}" class="img-logo mr-4" alt="Logo">
+              <img src="{{ asset('/img/logofot4.png') }}" class="img-logo mr-4" alt="Logo">
             </div>
           </div>
         </div>

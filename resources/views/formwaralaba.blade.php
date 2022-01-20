@@ -14,7 +14,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
-  background-image: url('/img/regis.jpg')
+  background-image: url('/img/formwaralaba.png')
 }
 #txt1{
     color: white;
@@ -26,7 +26,7 @@
     min-height: 480px;
 }
 .back-grad {
-    min-height: 600px;
+    min-height: 150px;
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
@@ -40,7 +40,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .back {
-    height: 900px;
+    height: 150px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -83,7 +83,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     .back {
-        height: 600px;
+        height: 300px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -113,10 +113,10 @@
         <p>Form Pendaftaran</p>
         <p style="font-weight: bold;">WARALABA</p>
     </div>
-</div>
+</div><br>
 <div class="back-grad">
     <div class="container">
-        <h2 style="margin-top: 10px;">DATA PRIBADI</h2>
+        <h2 style="margin-top: 10px;">DATA PRIBADI</h2><br>
         <div class="card" id="card1">
             <div class="container">
                 <div class="row">
@@ -198,9 +198,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br><br>
     <div class="container">
-        <h2 style="margin-top: 10px;color:white;">PEKERJAAN</h2>
+        <h2 style="margin-top: 10px;color:black;">PEKERJAAN</h2><br>
         <div class="card" id="card2">
             <div class="container">
                 <div class="row">
@@ -261,9 +261,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br><br>
     <div class="container">
-        <h2 style="margin-top: 10px;color:white;">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2>
+        <h2 style="margin-top: 10px;color:white;">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
         <div class="card" id="card3">
             <div class="container">
                 <div class="row">
