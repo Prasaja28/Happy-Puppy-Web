@@ -1,6 +1,5 @@
 @extends('layout-komponen.master')
 @section('title','Home') <!-- name title -->
-@section('navbar-lokasi','active')
 @section('css-internal')
 
   <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
@@ -20,40 +19,40 @@
     </div>
   </div>
 
-  {{-- SOCIAL MEDIA --}}
-  <div name="social-media">
-    <ul class="navbar-right">
-      <li>
-        <a target="_blank" href="https://www.facebook.com/helloworld">
-          <img name="facebook" src="{{ asset('assets/img/icons/facebook.png') }}">
-        </a>
-      </li>
+{{-- SOCIAL MEDIA --}}
+<div name="social-media">
+  <ul class="navbar-right">
+    <li>
+      <a target="_blank" href="https://www.facebook.com/helloworld">
+        <img name="facebook" src="{{ asset('assets/img/icons/facebook.png') }}">
+      </a>
+    </li>
 
-      <li>
-        <a target="_blank" href="https://www.facebook.com/helloworld">
-          <img src="{{ asset('assets/img/icons/instagram.png') }}">
-        </a>
-      </li>
+    <li>
+      <a target="_blank" href="https://www.facebook.com/helloworld">
+        <img src="{{ asset('assets/img/icons/instagram.png') }}">
+      </a>
+    </li>
 
-      <li>
-        <a target="_blank" href="https://www.facebook.com/helloworld">
-          <img src="{{ asset('assets/img/icons/apple.png') }}">
-          </a>
-      </li>
-
-      <li>
-        <a target="_blank" href="https://www.facebook.com/helloworld">
-          <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
+    <li>
+      <a target="_blank" href="https://www.facebook.com/helloworld">
+        <img src="{{ asset('assets/img/icons/apple.png') }}">
         </a>
-      </li>
+    </li>
 
-      <li>
-        <a target="_blank" href="https://www.facebook.com/helloworld">
-          <img src="{{ asset('assets/img/icons/google-play.png') }}">
-        </a>
-      </li>
-    </ul>
-  </div>
+    <li>
+      <a target="_blank" href="https://www.facebook.com/helloworld">
+        <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
+      </a>
+    </li>
+
+    <li>
+      <a target="_blank" href="https://www.facebook.com/helloworld">
+        <img src="{{ asset('assets/img/icons/google-play.png') }}">
+      </a>
+    </li>
+  </ul>
+</div>
 <!-- END -->
 
 <!-- OUTLET SEARCH  -->
@@ -103,7 +102,6 @@
   </div>
 </div>
 
-
 <!-- song list -->
 <section name="song">
   <div class="container song-container">
@@ -149,7 +147,7 @@
             </div>
   
             <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">View all 
-              <i class="fas fa-chevron-circle-right"></i>
+              <i class="fab fa-chevron-circle-right"></i>
             </button>
           </div>
         </div>
@@ -170,7 +168,7 @@
             </div>
   
             <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">View all
-              <i class="fas fa-chevron-circle-right"></i>
+              <i class="fab fa-chevron-circle-right"></i>
             </button>
           </div>
         </div>
@@ -218,7 +216,6 @@
   </div>
 </section>
 
-
 {{-- NEXT NEWS --}}
 <section name="next-news">
   <div class="container">
@@ -262,18 +259,6 @@
 @endsection
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @section('js-internal')
 <!-- add tag js in here -->
 <script>
@@ -307,39 +292,39 @@
 <!-- Select2  -->
 <script src="{{ asset('admin/plugins/select2/js/select2.full.min.js') }}"></script>
 <script>
-$(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2({
-       
-    });
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-      //set placeholder
-    placeholder: '<center>Masukkan Nama Kota</center>'+'<p style="text-align:right;margin-top:-36px"><i class="fas fa-search"></i></p>',
-    allowClear: true,
-    templateResult: formatState,
-    escapeMarkup: function(m) { 
-       return m; 
-    },
-      theme: 'bootstrap4',
-      width: 'resolve'
-    });
-    //border-radius custom
-    $('.select2-selection').css('border-radius','10px');
-   
-    //redirect after selecting
-    $('.select2bs4').on('change', function() {
-      var data = $(".select2bs4 option:selected").val();
-      window.location.href = '/lokasi/'+data;
-    })
+  $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2({
+        
+      });
+      //Initialize Select2 Elements
+      $('.select2bs4').select2({
+        //set placeholder
+      placeholder: '<center>Masukkan Nama Kota</center>'+'<p style="text-align:right;margin-top:-36px"><i class="fab fa-search"></i></p>',
+      allowClear: true,
+      templateResult: formatState,
+      escapeMarkup: function(m) { 
+        return m; 
+      },
+        theme: 'bootstrap4',
+        width: 'resolve'
+      });
+      //border-radius custom
+      $('.select2-selection').css('border-radius','10px');
+    
+      //redirect after selecting
+      $('.select2bs4').on('change', function() {
+        var data = $(".select2bs4 option:selected").val();
+        window.location.href = '/lokasi/'+data;
+      })
 
-function formatState (state) {
-  if (!state.id) { return state.text; }
-  var $state = $(
-    '<i class="fas fa-search">'+ ' '+state.text+'</i>');
- return $state;
-};
-  })
+  function formatState (state) {
+    if (!state.id) { return state.text; }
+    var $state = $(
+      '<i class="fab fa-search">'+ ' '+state.text+'</i>');
+  return $state;
+  };
+    })
 </script>
 
 @endsection
