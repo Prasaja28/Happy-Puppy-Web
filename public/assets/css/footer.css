@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+div[name="border-right"] {
+    border: 0;
+}
+
+footer {
+    color: white !important;
+    background-color: #171730 !important;
+}
+
+div[name="detail-info"] img {
+    width: auto;
+    height: 23px;
+}
+
+div[name="industry-info"] p {
+    font-size: 12px;
+}
+
+div[name="row-social-media"] img {
+    width: auto;
+    height: 25px;
+}
+
+/* ********************************************* */
+div[name="more-detail"] .btn-member {
+    background-color: #519ff8;
+}
+
+div[name="change-language"] a:active,
+div[name="change-language"] a:hover {
+    color: rgb(255, 224, 51) !important;
+}
+
+div[name="change-language"] a {
+    color: white;
+}
+
+/* ************************************ */
+div[name="term-and-condition"] p {
+    padding-top: 40px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* TABLET++ */
+@media (min-width: 768px) {
+    footer {
+        margin-top: 100px;
+    }
+
+    div[name="border-right"] {
+        border: 1px solid white;
+    }
+
+    div[name="detail-info"] img {
+        height: 25px;
+    }
+
+    div[name="term-and-condition"] {
+        margin-top: -50px;
+    }
+}
