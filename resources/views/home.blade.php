@@ -204,7 +204,7 @@
 
       <div class="col-6">
         <div class="card border-0 rounded-0">
-          <img src="{{ asset('img/egypt.png') }}">
+          <img src="{{ asset('img/491.png') }}">
 
           <div class="card-body pb-0">
             <div class="card-title">
@@ -223,15 +223,39 @@
 <section name="next-news">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-4">
-        <div name="item" class="card border-0 rounded-0">
-          <img src="{{ asset('img/news-img/1641976063-blackpink2.jpg') }}">
+      <div name="item" class="col-11 col-md-8 px-0 mb-5">
+        <img class="float-left mr-3 mr-md-4" src="{{ asset('img/hijau-next-news.png') }}">
 
-          <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-          <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-          
+        <div name="description" class="pr-1 pr-md-3">
+          <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
+          <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
+          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
         </div>
+        <div class="clearfix"></div>
       </div>
+
+      <div name="item" class="col-11 col-md-8 px-0 mb-5">
+        <img class="float-left mr-3 mr-md-4" src="{{ asset('img/stefan.png') }}">
+
+        <div name="description" class="pr-1 pr-md-3">
+          <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
+          <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
+          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div name="item" class="col-11 col-md-8 px-0 mb-5">
+        <img class="float-left mr-3 mr-md-4" src="{{ asset('img/avril.png') }}">
+
+        <div name="description" class="pr-1 pr-md-3">
+          <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
+          <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
+          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
     </div>
   </div>
 </section>

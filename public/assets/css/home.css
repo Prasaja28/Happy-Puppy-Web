@@ -151,6 +151,10 @@ section[name="latest-news"] a[name="view-all"] {
     font-size: 14px;
 }
 
+section[name="latest-news"] .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.144);
+}
+
 section[name="latest-news"] .card h4 {
     font-size: 14px;
 }
@@ -162,12 +166,36 @@ section[name="latest-news"] p.text-date {
 }
 
 section[name="next-news"] {
-    margin-top: 300px;
+    background-color: white;
+    padding-top: 200px;
+    min-height: 1100px;
+}
+
+section[name="next-news"] div[name="item"] {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.082);
 }
 
 section[name="next-news"] div[name="item"] img {
-    width: 100%;
-    height: 200px;
+    width: auto;
+    height: 150px;
+}
+
+section[name="next-news"] div[name="item"] .label {
+    font-size: 14px;
+}
+
+section[name="next-news"] div[name="item"] h4 {
+    font-size: 18px;
+}
+
+section[name="next-news"] div[name="item"] .text-date {
+    font-size: 12px;
+    font-weight: bold;
+    color: #c3c8d9;
+}
+
+section[name="next-news"] div[name="item"]:nth-child(3) {
+    margin-bottom: 200px;
 }
 
 /* TABLET++ */
@@ -247,6 +275,26 @@ section[name="next-news"] div[name="item"] img {
 
     section[name="latest-news"] p.text-date {
         font-size: 18px;
+    }
+
+    /* ***************************************************** */
+    section[name="next-news"] div[name="item"] img {
+        height: 100%;
+    }
+
+    section[name="next-news"] div[name="item"] .label {
+        font-size: 18px;
+    }
+
+    section[name="next-news"] div[name="item"] h4 {
+        line-height: 2rem;
+        font-size: 20px;
+    }
+
+    section[name="next-news"] div[name="item"] .text-date {
+        font-size: 18px;
+        font-weight: bold;
+        color: #c3c8d9;
     }
 }
 
