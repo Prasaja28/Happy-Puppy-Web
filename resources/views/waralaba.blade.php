@@ -53,6 +53,7 @@
     height: 1100px;
     width: auto;
     background-color: #85A4E1;
+    font-family: 'Poppins';
 }
 .accordion {
   background-color: #85A4E1;

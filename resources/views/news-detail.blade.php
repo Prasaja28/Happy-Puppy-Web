@@ -34,7 +34,7 @@
     margin-bottom:-10px;
   }
   .title-news{
-  font-size:12px;
+    font-size:12px;
   }
   .news-time{
     font-size:8px;
@@ -108,7 +108,7 @@
     <div class="col-lg-7">
             <ul class="nav mt-2" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black; margin-top: 40px;" role="tab" data-toggle="tab">Populer</a>
+                <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black; margin-top: 40px;font-family: 'Poppins';" role="tab" data-toggle="tab">Populer</a>
             </li>
             </ul>
         
@@ -184,6 +184,11 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('js-internal')
+<!-- add tag js in here -->
 <script>
         var width = screen.width;
         if(width < 600){
@@ -194,9 +199,4 @@
             document.getElementById('detail-news-mobile').style.display='none';
         }
 </script>
-@endsection
-
-@section('js-internal')
-<!-- add tag js in here -->
-
 @endsection
