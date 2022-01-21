@@ -14,7 +14,7 @@
         -o-background-size: cover;
         background-size: cover;
         background-position: rightl;
-        box-shadow: 0px 5px 10px;
+       
         
 }
 .tab-content{
@@ -24,7 +24,7 @@
   width: 14rem;
   margin: 0 auto; /* Added */
   margin-bottom: 10px;
-     box-shadow: 0px 1px 5px;
+    
   }
   .card-img-news{
     height:120px;
