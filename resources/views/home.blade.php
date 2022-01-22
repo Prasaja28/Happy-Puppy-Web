@@ -92,12 +92,14 @@
 <!-- ARTIST -->
 <div name="artist" class="container top-artis">
   <div class="row justify-content-center">
-    <div class="col-10 col-md-8 offset-1 offset-md-0">
-      <img class="img-thumbnail mr-md-5 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
-      <img class="img-thumbnail mr-md-5 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
-      <img class="img-thumbnail mr-md-5 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
-      <img class="img-thumbnail mr-md-5 mr-3 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
-      <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
+    <div class="col-12 col-md-8">
+      <div class="d-flex flex-wrap align-items-center justify-content-center">
+        <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+        <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+        <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+        <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+        <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+      </div>
     </div>
   </div>
 </div>
