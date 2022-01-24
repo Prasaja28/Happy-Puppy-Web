@@ -115,7 +115,7 @@
             </ul>
         
             <!-- Tab panes -->
-            <div class="tab-content">
+            <div class="tab-content" style="font-family: 'Poppins'">
                 <h2 class="py-3" style="color:#3792cb; ">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
         
                 <h6 class="pb-3"><?=now()?></h6>
@@ -128,7 +128,7 @@
                 </p>
             </div>
         </div>
-        <div class="col-lg-5" style="padding-left: 240px;">
+        <div class="col-lg-5" style="padding-left: 240px; font-family: 'Poppins';">
             <div id="detail-news-dekstop">
                 <h6 class="news-title pt-5">Lates News</h6>
                 <div class="row">
