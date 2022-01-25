@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     @include('layout-komponen.css-eksternal')
     <title>@yield('title')</title>
     @yield('css-internal')
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">></script>
+    <script src="https://kit.fontawesome.com/34f8c2075a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     @include('layout-komponen.navbar')

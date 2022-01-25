@@ -1,457 +1,447 @@
 @extends('layout-komponen.master')
-
-@section('title','Profile') <!-- name title -->
-
+@section('title','Profile')
 @section('css-internal')
+<link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
 <!-- Add tag css in here -->
-<style>
+{{-- <style>
  
-.header1{
-  min-height: 40vh;
-  background: no-repeat center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: rightl;
-  background-image: url('/img/PROFILE.png')
+  .header1{
+    min-height: 40vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: rightl;
+    background-image: url('/img/PROFILE.png')
 
-}
-#txt2{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-size: 35px;
-    min-height: 460px;
-    text-indent: 0.5in;
-    font-family: 'Poppins';
-}
-#txt1{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-size: 35px;
-    font-weight: bold;
-    min-height: 410px;
-    text-indent: 0.5in;
-    font-family: 'Poppins';
-}
+  }
+  #txt2{
+      color: white;
+      position: absolute;
+      bottom: 0;
+      text-align: justify;
+      margin: 0;
+      font-size: 35px;
+      min-height: 460px;
+      text-indent: 0.5in;
+      font-family: 'Poppins';
+  }
+  #txt1{
+      color: white;
+      position: absolute;
+      bottom: 0;
+      text-align: justify;
+      margin: 0;
+      font-size: 35px;
+      font-weight: bold;
+      min-height: 410px;
+      text-indent: 0.5in;
+      font-family: 'Poppins';
+  }
 
-.header{
-  min-height: 19vh;
-  background: no-repeat center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: rightl;
-  background-color: #160840;
-}
-.rounded-circle{
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .header{
+    min-height: 19vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: rightl;
+    background-color: #160840;
+  }
+  .rounded-circle{
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.l1{
-  width: 135px;
-  height: 135px;
-  background: #FA8072;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .l1{
+    width: 135px;
+    height: 135px;
+    background: #FA8072;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.l2{
-  width: 135px;
-  height: 135px;
-  background: #87CEFA;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .l2{
+    width: 135px;
+    height: 135px;
+    background: #87CEFA;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.l3{
-  width: 135px;
-  height: 135px;
-  background: #9ACD32;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .l3{
+    width: 135px;
+    height: 135px;
+    background: #9ACD32;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.l4{
-  width: 135px;
-  height: 135px;
-  background: grey;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .l4{
+    width: 135px;
+    height: 135px;
+    background: grey;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.l5{
-  width: 135px;
-  height: 135px;
-  background: #FFD700;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
+  .l5{
+    width: 135px;
+    height: 135px;
+    background: #FFD700;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
 
-.h1 {
-  color: #ffffff;
-  font-size:23px;
+  .h1 {
+    color: #ffffff;
+    font-size:23px;
     text-indent: 0.7in;
     min-height: 20px;
     padding-top: 12px;
     font-family: 'Poppins';
-}
+  }
 
-.h2 {
-  color: #ffffff;
-  font-size:13px;
-  font-style: italic;
-  text-indent: 0.7in;
-  min-height: 10px;
-  font-family: 'Poppins';
-}
+  .h2 {
+    color: #ffffff;
+    font-size:13px;
+    font-style: italic;
+    text-indent: 0.7in;
+    min-height: 10px;
+    font-family: 'Poppins';
+  }
 
-.deskripsi {
-  color: black;
-  font-size:15px;
-  padding-left: 49px;
-  font-family: 'Poppins';
-}
-
-.h11 {
-  color: #ffffff;
-  font-size:25px;
-  width: 70px;
-  height: 0px;
-  padding-top: 47px;
-  padding-right: 5px;
-  padding-bottom: 30px;
-  padding-left: 0px;
-}
-
-.h3 {
-  color: #000000;
-  font-size:15px;
-  font-family: Poppins;
-}
-.h4 {
-  color: #808080;
-  font-size:15px;
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  padding-top: 0px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 60px;
-  font-family: Poppins;
-}
-
-.h5 {
-  color: #808080;
-  font-size:15px;
-  position: absolute;
-  width: 600px;
-  height: 200px;
-  padding-top: 0px;
-  padding-right: 60px;
-  padding-bottom: 0px;
-  padding-left: 240px;
-  font-family: Poppins;
-}
-
-.ratakiri { 
-  text-align: left; 
-}
-.ratakanan { 
-  text-align: right; 
-}
-.ratatengah { 
-  text-align: center; 
-}
-.ratakirikanan { 
-  text-align: justify;
-}
-
-.center {
-    margin: auto;
-    width: 100%;
+  .deskripsi {
+    color: black;
+    font-size:15px;
     padding-left: 49px;
-    padding-right: 49px;
+    font-family: 'Poppins';
+  }
+
+  .h11 {
+    color: #ffffff;
+    font-size:25px;
+    width: 70px;
+    height: 0px;
+    padding-top: 47px;
+    padding-right: 5px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+  }
+
+  .h3 {
+    color: #000000;
+    font-size:15px;
+    font-family: Poppins;
+  }
+  .h4 {
+    color: #808080;
+    font-size:15px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    padding-top: 0px;
+    padding-right: 30px;
     padding-bottom: 10px;
-    background-color:#D3D3D3;
+    padding-left: 60px;
+    font-family: Poppins;
+  }
+
+  .h5 {
+    color: #808080;
+    font-size:15px;
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    padding-top: 0px;
+    padding-right: 60px;
+    padding-bottom: 0px;
+    padding-left: 240px;
+    font-family: Poppins;
+  }
+
+  .ratakiri { 
+    text-align: left; 
+  }
+  .ratakanan { 
+    text-align: right; 
+  }
+  .ratatengah { 
+    text-align: center; 
+  }
+  .ratakirikanan { 
+    text-align: justify;
+  }
+
+  .center {
+      margin: auto;
+      width: 100%;
+      padding-left: 49px;
+      padding-right: 49px;
+      padding-bottom: 10px;
+      background-color:#D3D3D3;
+      }
+
+  .bold { 
+    font-weight: bold; 
+    font-size:20px;
+    font-family: 'Poppins';
+  }
+    .img-artis-content{
+      margin-top:-50px
+  }
+
+  .border {
+    border-width: 10px;
+    border-style: solid;
+    border-top-color: red;
+    border-bottom-color: blue;
+    border-left-color: green;
+    border-right-color: yellow;
+  }
+
+  .card-body{
+    min-height:5rem;
+    text-align: right;
+    width: 30%;
     }
 
-.bold { 
-  font-weight: bold; 
-  font-size:20px;
-  font-family: 'Poppins';
-}
-  .img-artis-content{
-    margin-top:-50px
-}
-
-.border {
-  border-width: 10px;
-  border-style: solid;
-  border-top-color: red;
-  border-bottom-color: blue;
-  border-left-color: green;
-  border-right-color: yellow;
-}
-
-.card-body{
-  min-height:5rem;
-  text-align: right;
-  width: 30%;
-  }
-
-.vl {
-  border-left: 6px solid white;
-  min-height: 6vh;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 5;
-}
-
-@media (max-width: 576px) {
-#txt2{
-    color: white;
+  .vl {
+    border-left: 6px solid white;
+    min-height: 6vh;
     position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-size: 25px;
-    min-height: 550px;
-    text-indent: 0.5in;
-}
-#txt1{
-    color: white;
+    left: 50%;
+    margin-left: -3px;
+    top: 5;
+  }
+
+  @media (max-width: 576px) {
+  #txt2{
+      color: white;
+      position: absolute;
+      bottom: 0;
+      text-align: justify;
+      margin: 0;
+      font-size: 25px;
+      min-height: 550px;
+      text-indent: 0.5in;
+  }
+  #txt1{
+      color: white;
+      position: absolute;
+      bottom: 0;
+      text-align: justify;
+      margin: 0;
+      font-size: 25px;
+      font-weight: bold;
+      min-height: 500px;
+      text-indent: 0.5in;
+  }
+
+  .header{
+    min-height: 18vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: rightl;
+    background-color: #0d0d73;
+  }
+  .rounded-circle{
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .l1{
+    width: 90px;
+    height: 90px;
+    background: #FA8072;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .l2{
+    width: 90px;
+    height: 90px;
+    background: #87CEFA;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .l3{
+    width: 90px;
+    height: 90px;
+    background: #ADFF2F;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .l4{
+    width: 90px;
+    height: 90px;
+    background: grey;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .l5{
+    width: 90px;
+    height: 90px;
+    background: #FFD700;
+    border-radius: 100%;
+    border: 5px solid #FFF;
+    margin-top:-37px;
+  }
+
+  .h11 {
+    color: #ffffff;
+    font-size:15px;
     position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-size: 25px;
-    font-weight: bold;
-    min-height: 500px;
+    width: 70px;
+    height: 0px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 30px;
+    padding-left: 5px;
+
+  }
+
+  .h1 {
+    color: #ffffff;
+    font-size:15px;
     text-indent: 0.5in;
-}
-
-.header{
-  min-height: 18vh;
-  background: no-repeat center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: rightl;
-  background-color: #0d0d73;
-}
-.rounded-circle{
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.l1{
-  width: 90px;
-  height: 90px;
-  background: #FA8072;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.l2{
-  width: 90px;
-  height: 90px;
-  background: #87CEFA;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.l3{
-  width: 90px;
-  height: 90px;
-  background: #ADFF2F;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.l4{
-  width: 90px;
-  height: 90px;
-  background: grey;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.l5{
-  width: 90px;
-  height: 90px;
-  background: #FFD700;
-  border-radius: 100%;
-  border: 5px solid #FFF;
-  margin-top:-37px;
-}
-
-.h11 {
-  color: #ffffff;
-  font-size:15px;
-  position: absolute;
-  width: 70px;
-  height: 0px;
-  padding-top: 0px;
-  padding-right: 5px;
-  padding-bottom: 30px;
-  padding-left: 5px;
-
-}
-
-.h1 {
-  color: #ffffff;
-  font-size:15px;
-  text-indent: 0.5in;
-}
-
-.h2 {
-  color: #ffffff;
-  font-size:10px;
-  font-style: italic;
-  text-indent: 0.5in;
-}
-
-.h3 {
-  color: #000000;
-  font-size:15px;
-}
-
-.h4 {
-  color: #808080;
-  font-size:9px;
-  position: absolute;
-  width: 120px;
-  height: 60px;
-  padding-top: 0px;
-  padding-right: 5px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-}
-
-.h5 {
-  color: #808080;
-  font-size:9px;
-  position: absolute;
-  width: 250px;
-  height: 60px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 130px;
-}
-
-.ratakiri { text-align: left; }
-.ratakanan { text-align: right; }
-.ratatengah { text-align: center; }
-.ratakirikanan { 
-  text-align: justify;
-   }
-
-.center {
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 100%;
-    padding: 15px;
-    color: black;
-    background-color:#D3D3D3;
-    text-indent: 0.1in;
-}
-.bold { 
-  font-weight: bold; 
-  font-family: Poppins;
-  font-size:20px;}
-  .img-artis-content{
-    margin-top:-50px
-
   }
 
-.border {
-  border-width: 10px;
-  border-style: solid;
-  border-top-color: red;
-  border-bottom-color: blue;
-  border-left-color: green;
-  border-right-color: yellow;
+  .h2 {
+    color: #ffffff;
+    font-size:10px;
+    font-style: italic;
+    text-indent: 0.5in;
   }
 
-.card-body{
-  min-height:5rem;
-  text-align: right;
-  width: 30%;
+  .h3 {
+    color: #000000;
+    font-size:15px;
   }
-.vl {
-  border-left: 6px solid white;
-  min-height: 6vh;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 5;
-}
-}
-</style>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  .h4 {
+    color: #808080;
+    font-size:9px;
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+  }
 
+  .h5 {
+    color: #808080;
+    font-size:9px;
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 130px;
+  }
 
+  .ratakiri { text-align: left; }
+  .ratakanan { text-align: right; }
+  .ratatengah { text-align: center; }
+  .ratakirikanan { 
+    text-align: justify;
+    }
 
-@endsection
+  .center {
+      margin: auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      width: 100%;
+      padding: 15px;
+      color: black;
+      background-color:#D3D3D3;
+      text-indent: 0.1in;
+  }
+  .bold { 
+    font-weight: bold; 
+    font-family: Poppins;
+    font-size:20px;}
+    .img-artis-content{
+      margin-top:-50px
+
+    }
+
+  .border {
+    border-width: 10px;
+    border-style: solid;
+    border-top-color: red;
+    border-bottom-color: blue;
+    border-left-color: green;
+    border-right-color: yellow;
+    }
+
+  .card-body{
+    min-height:5rem;
+    text-align: right;
+    width: 30%;
+    }
+  .vl {
+    border-left: 6px solid white;
+    min-height: 6vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 5;
+  }
+  }
+</style> --}}
+
 @section('navbar-profile','active')
 @section('konten')
-<!-- add konten in here -->
-<!-- background Home -->
-<div class="header1">
-  <div id="txt2" class="container">
-        <p >PROFIL</p>
-
-    </div>
-    <div id="txt1" class="container" style="text-align: justify;">
-        <p>PERUSAHAAN</p>
-    </div>
-</div>
-<div class="header">
-  <br>
-        <h3 class="h1" style="text-align: justify;">PT.IMPERIUM HAPPY PUPPY</h3>
-        <h3 class="h2" style="text-align: justify; ">Let the world sing in harmony</h3>
-</div>
 
 
-<br><br>
-<div class="col-lg-11 col-md-11 col-sm-11">
-<div class="deskripsi"style="text-align: justify; "> 
-  Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan 
+<div class="header container-fluid">
+  <div class="container">
+    <h2>PROFIL</h2>
+    <h1>PERUSAHAAN</h1>
+  </div>
 </div>
+
+<div class="header-below">
+  <div class="container py-4 py-md-5 px-md-3">
+    <h3 class="my-auto">PT.IMPERIUM HAPPY PUPPY</h3>
+    <p class="pt-2 font-italic">Let the world sing in harmony</p>
+  </div>
 </div>
-<br><br>
-<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left: 60px; padding-right: 60px;">
-    <div class="center">
-       <br>
-          <div class="container"style="text-align: justify;  "> 
-        <br>
-    <div class="bold" style="font-family: Poppins;">SEJARAH PERUSAHAAN</div><br>
-</div>
+
+<section class="description">
+  <div class="container">
+    <p class="text-muted py-5">
+      Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan 
+    </p>
+  </div>
+</section>
+
+<section class="history">
+  <div class="container">
+    <h3 class="font-weight-bold">Sejarah Perusahaan</h2>
+  </div>
+</section>
 
 <br><br><br>
 

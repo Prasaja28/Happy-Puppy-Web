@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ************************************************* */
+.header {
+    width: 100%;
+    height: 300px;
+    color: #f9f9f9;
+    background-size: cover;
+    background-image: url("/img/happy-puppy-karaoke.png");
+}
+
+.header h2 {
+    font-size: 38px;
+    font-weight: 300;
+    padding-top: 180px;
+}
+
+.header h1 {
+    font-size: 44px;
+    font-weight: bolder;
+    margin-top: -15px;
+}
+
+.header-below {
+    margin-top: -8px;
+    color: #f9f9f9;
+    background-color: #28284a;
+}
+
+.header-below .container {
+    padding-left: 30px;
+}
+
+.header-below h3 {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.header-below p {
+    font-weight: 300;
+}
+
+.description p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2.5rem;
+}
+
+.history .container {
+    padding: 35px 25px;
+    background-color: #eceff1;
+}
+
+.history .container h3 {
+    color: #28284a;
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 350px;
+    }
+
+    .header h2 {
+        font-size: 58px;
+        padding-top: 180px;
+    }
+
+    .header h1 {
+        font-size: 64px;
+    }
+
+    .header-below h3 {
+        font-size: 32px;
+    }
+}

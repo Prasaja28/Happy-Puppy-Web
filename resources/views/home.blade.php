@@ -149,7 +149,7 @@
             </div>
   
             <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">View all 
-              <i class="fab fa-chevron-circle-right"></i>
+              <i class="fa fa-solid fa-circle-chevron-right"></i>
             </button>
           </div>
         </div>
