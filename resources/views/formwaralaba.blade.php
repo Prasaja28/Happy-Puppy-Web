@@ -26,7 +26,7 @@
     min-height: 480px;
 }
 .back-grad {
-    min-height: 150px;
+    height: 500px;
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
@@ -40,7 +40,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .back {
-    height: 150px;
+    height: 1200px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -69,7 +69,7 @@
         min-height: 480px;
     }
     .back-grad {
-        min-height: 200px;
+        height: 500px;
         width: auto;
         background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
     }
@@ -83,7 +83,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     .back {
-        height: 300px;
+        height: 1200px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -200,7 +200,7 @@
         </div>
     </div><br><br>
     <div class="container">
-        <h2 style="margin-top: 10px;color:black;">PEKERJAAN</h2><br>
+        <h2 style="margin-top: 10px;color:white;">PEKERJAAN</h2><br>
         <div class="card" id="card2">
             <div class="container">
                 <div class="row">

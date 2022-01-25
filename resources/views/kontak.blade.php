@@ -166,6 +166,9 @@
         font-weight: bold;
         font-family: 'Poppins';
     }
+    #faq {
+        padding: 0 18px;
+    }
 @media(max-width: 800px) {
     .center {
         margin: auto;
@@ -188,6 +191,10 @@
         font-size: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: justify;
+    }
+    #faq {
+        padding: 0 18px;
+        font-size: 15px;
     }
 }
 </style>
@@ -283,6 +290,11 @@
 </div>
 <div class="back2">
     <div class="container" id="back2con">
+        <br><br>
+        <div class="row" id="faq">
+            <h3 style="font-family: 'Poppins';font-weight: bold;">FAQ</h3>
+            <h3 style="font-family: 'Poppins';">(frequently Ask Question)</h3>
+        </div><br><br>
         <button class="accordion" id="text-acc">Home Theatre buka untuk karaoke?</button>
         <div class="panel">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

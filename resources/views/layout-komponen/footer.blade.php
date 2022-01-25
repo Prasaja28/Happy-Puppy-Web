@@ -19,21 +19,21 @@
       <div name="row-social-media" class="col-6">
         <div class="row justify-content-end">
           <a href="http://facebook.com">
-            <img class="mr-4 mr-md-5" src="{{ asset('img/icons/facebook.png') }}">
+            <img class="mr-4 mr-md-3" src="{{ asset('img/icons/facebook.png') }}">
           </a>
 
           <a href="http://twitter.com">
-            <img class="mr-4 mr-md-5" src="{{ asset('img/icons/twitter.png') }}">
+            <img class="mr-4 mr-md-3" src="{{ asset('img/icons/twitter.png') }}">
           </a>
 
           <a href="http://instagram.com">
-            <img class="mr-md-5" src="{{ asset('img/icons/instagram.png') }}">
+            <img class="mr-md-3" src="{{ asset('img/icons/instagram.png') }}">
           </a>
 
             <div name="border-right"></div>
 
           <a href="http://apple.com">
-            <img class="mt-4 mt-md-0 mr-4 mr-md-5 pl-5 pl-md-0 ml-md-5" src="{{ asset('img/icons/apple.png') }}">
+            <img class="mt-4 mt-md-0 mr-4 mr-md-3 pl-5 pl-md-0 ml-md-3" src="{{ asset('img/icons/apple.png') }}">
           </a>
           
           <a href="http://google.com">
