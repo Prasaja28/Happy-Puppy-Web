@@ -31,80 +31,80 @@
   </div>
 </section>
 
-<section class="history">
+<section class="history px-3 px-md-0">
   <div class="container">
-    <h3 class="font-weight-bold text-uppercase">Sejarah Perusahaan</h2>
+    <h3 class="font-weight-bold text-uppercase mb-3">Sejarah Perusahaan</h2>
       
-      <div class="brand-history-right">
+      <div class="brand brand-history-right">
         <div class="row justify-content-end">
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 col-md-4 d-flex justify-content-center">
             <div name="years" class="y-2009 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2009</h4>
             </div>
           </div>
-          <div class="col-4">
-            <p class="text-muted">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora amet assumenda magnam facere reprehenderit officia ut nam dolorem quod nesciunt iste odit libero esse earum!
+          <div class="col-4 col-md-4">
+            <p class="text-muted text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="brand-history-left">
+      <div class="brand brand-history-left">
         <div class="row justify-content-start">
-          <div class="col-4 order-2 d-flex justify-content-center">
+          <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
             <div name="years" class="y-2010 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2010</h4>
             </div>
           </div>
-          <div class="col-4 order-1">
-            <p class="text-muted">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora amet assumenda magnam facere reprehenderit officia ut nam dolorem quod nesciunt iste odit libero esse earum!
+          <div class="col-4 col-md-4 order-1">
+            <p class="text-muted text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="brand-history-right">
+      <div class="brand brand-history-right">
         <div class="row justify-content-end">
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 col-md-4 d-flex justify-content-center">
             <div name="years" class="y-2015 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2015</h4>
             </div>
           </div>
-          <div class="col-4">
-            <p class="text-muted">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora amet assumenda magnam facere reprehenderit officia ut nam dolorem quod nesciunt iste odit libero esse earum!
+          <div class="col-4 col-md-4">
+            <p class="text-muted text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="brand-history-left">
+      <div class="brand brand-history-left">
         <div class="row justify-content-start">
-          <div class="col-4 order-2 d-flex justify-content-center">
+          <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
             <div name="years" class="y-2017 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2017</h4>
             </div>
           </div>
-          <div class="col-4 order-1">
-            <p class="text-muted">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora amet assumenda magnam facere reprehenderit officia ut nam dolorem quod nesciunt iste odit libero esse earum!
+          <div class="col-4 col-md-4 order-1">
+            <p class="text-muted text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="brand-history-right">
+      <div class="brand brand-history-right">
         <div class="row justify-content-end">
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 col-md-4 d-flex justify-content-center">
             <div name="years" class="y-2019 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2019</h4>
             </div>
           </div>
-          <div class="col-4">
-            <p class="text-muted">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora amet assumenda magnam facere reprehenderit officia ut nam dolorem quod nesciunt iste odit libero esse earum!
+          <div class="col-4 col-md-4">
+            <p class="text-muted text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
         </div>
