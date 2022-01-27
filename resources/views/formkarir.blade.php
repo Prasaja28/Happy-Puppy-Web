@@ -25,6 +25,9 @@
     font-size: 40px;
     min-height: 480px;
 }
+hr {
+    width: 99%;
+}
 .back-grad {
     height: 500px;
     width: auto;
@@ -39,8 +42,16 @@
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* hr {
+  border:none;
+  border-top:1px dashed #fff;
+  color:#fff;
+  background-color:#fff;
+  height:1px;
+  width:50%;
+} */
 .back {
-    height: 900px;
+    height: 1050px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -247,6 +258,8 @@
                     <br><br> 
                 </div>
 
+                <hr style="border-top: 1.5px dashed #519FF8; color:transparent;"/>
+
                 <div class="row">
                     <div class="col-md-6">
                         <br>
@@ -259,12 +272,6 @@
                             <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lama Bekerja">
                         </div>
                         <br>
-                        <a href="#">+Tambahkan Pengalaman Kerja</a>
-                        <br><br>
-                        <br>
-                        <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Gaji yang Diharapkan">
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <br><br><br>
@@ -273,8 +280,23 @@
                         </div>
                     </div>
                     <br>
-
                 </div>
+
+                <hr style="border-top: 1.5px dashed #519FF8; color:transparent;"/>
+
+                <div class="row">
+                    <div class="col-md-6">              
+                        <a href="#">+Tambahkan Pengalaman Kerja</a>
+                        <br><br>
+                        <br><br><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Gaji yang Diharapkan">
+                        </div>
+                        <br><br>
+                    </div>
+                    <br>
+                </div>
+                
             </div>
         </div>
     </div>
