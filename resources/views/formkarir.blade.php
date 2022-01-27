@@ -51,7 +51,12 @@
     margin-top: 6px;
 }
 .foots {
-    height: 300px;
+    height: 50px;
+    width: auto;
+    background-color: #ffff;
+}
+.footser {
+    height: 600px;
     width: auto;
     background-color: #ffff;
 }
@@ -59,6 +64,14 @@
     height: 800px;
     width: auto;
     background-color: #221E40;
+}
+.btn {
+    color: white;
+    background-color: #221E40;
+    font-family: 'Poppins';
+    font-size: 13px;
+    width: 10%;
+    border-radius: 20px;
 }
 
 @media (){
@@ -103,6 +116,7 @@
         width: auto;
         background-color: #221E40;
     }
+
 }
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
@@ -205,6 +219,7 @@
             </div>
         </div>
     </div><br><br>
+
     <div class="container">
         <h5 style="margin-top: 10px;color:white;"><b>PENGALAMAN KERJA</b></h5><br>
         <div class="card" id="card2">
@@ -229,8 +244,7 @@
                             <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Jabatan">
                         </div>
                     </div>
-                    <br>
-                    <br> 
+                    <br><br> 
                 </div>
 
                 <div class="row">
@@ -252,10 +266,8 @@
                             <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Gaji yang Diharapkan">
                         </div>
                     </div>
-                    
                     <div class="col-md-6">
-                        <br>
-                        <br><br>
+                        <br><br><br>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Jabatan">
                         </div>
@@ -266,7 +278,7 @@
             </div>
         </div>
     </div>
-    <br><br>
+<br><br>
 
     <div class="container">
         <h5 style="margin-top: 10px;color:white;"><b>BAKAT</b></h5><br>
@@ -284,7 +296,7 @@
                     </div>
                     
                     <div class="col-md-6">
-                        <br><br><br>
+                        <br><br>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Komputer">
                         </div>
@@ -293,13 +305,57 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <br><br>
+            </div> <br><br>
         </div>
     </div>
 </div>
+
 <div class="back"></div>
+
 <div class="foots"></div>
+<br><br><br><br><br>
+
+<div class="footser">
+    <div class="container">
+        <h5 style="margin-top: 10px;"><b>LAMPIRAN</b></h5><br><br>
+        
+            <div class="container">
+                <div class="row">    
+                <div class="col-lg-6">
+                <h6><b>Upload CV</b></h6><br>         
+                <form action="/action_page.php">
+                    <input type="file" id="filecv" name="filecv">
+                    <!-- <input type="submit"> -->
+                </form>
+                    <br><p>Max. 1MB(.JPG or .PNG)</p>
+                </div>
+                <br>
+                <div class="col-lg-6">
+                    <h6><b>Ijazah</b></h6><br>   
+                        <form action="/action_page.php">
+                            <input type="file" id="fileijazah" name="fileijazah">
+                        </form><br>
+                        <p>Max. 1MB(.JPG or .PNG)</p>
+                </div><br>
+        </div>
+
+        <br><br>
+        <h6><b>LinkedIn*</b></h6>
+        <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Copy Link"><br>
+                        <p>*jika ada</p> 
+                    </div>              
+                </div>
+        </div>
+
+        <br><button type="submit" class="btn"><b>SUBMIT</b></button><br><br>
+
+            </div>
+        </div>
+    <br><br>
+</div>
 
 @endsection
 
