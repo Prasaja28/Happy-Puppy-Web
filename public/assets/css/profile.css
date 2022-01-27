@@ -55,12 +55,39 @@ a:hover {
 }
 
 .history .container {
-    padding: 35px 25px;
+    padding: 60px 75px;
     background-color: #eceff1;
 }
 
 .history .container h3 {
     color: #28284a;
+}
+
+.history div[name="years"] {
+    width: 130px;
+    height: 130px;
+    color: white;
+    border: 4px solid white;
+}
+
+.history div[name="years"].y-2009 {
+    background-color: #ff8964;
+}
+
+.history div[name="years"].y-2010 {
+    background-color: #4ccfe0;
+}
+
+.history div[name="years"].y-2015 {
+    background-color: #d2df56;
+}
+
+.history div[name="years"].y-2017 {
+    background-color: #748b97;
+}
+
+.history div[name="years"].y-2019 {
+    background-color: #ffca28;
 }
 
 @media (min-width: 768px) {
