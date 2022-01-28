@@ -30,7 +30,7 @@ hr {
 }
 
 .back-grad {
-    height: 500px;
+    height: 550px;
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
@@ -52,7 +52,7 @@ hr {
   width:50%;
 } */
 .back {
-    height: 1500px;
+    height: 1450px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -245,7 +245,7 @@ hr {
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <br>
+                        <br><br>
                         <h6><b>Pengalaman Kerja 1</b></h6>
                         <br>
                         <div class="form-group">

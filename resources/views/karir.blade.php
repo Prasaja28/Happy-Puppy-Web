@@ -55,9 +55,8 @@
     margin: auto;
     margin-top: 50px;
     width: 100%;
-    padding: 50px;
-    color: black;
-    background-color:#221E40;
+    padding: 60px;
+    background-color: #221E40;
     font-family: 'Poppins';
 }
 
@@ -81,6 +80,7 @@ h6 {
     width: 80%;
     padding: 30px;
     font-family: 'Poppins';
+    border-radius:
 }
 
 .card {
@@ -90,12 +90,12 @@ h6 {
 }
 
 td {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .btn {
     color: white;
-    background-color: #221E40;
+    background-color: #344072;
     font-family: 'Poppins';
     font-size: 13px;
     width: 40%;
@@ -106,12 +106,10 @@ td {
     background-color: #221E40;
     font-family: 'Poppins';
     font-size: 13px;
-    margin: 10px 100px 20px 275px;
+    margin-top: 60px;
     width: 13%;
-    min-height: 2.2rem;
     border-radius: 30px;
 }
-
 
 }
 </style>
@@ -121,16 +119,13 @@ td {
 @endsection
 @section('navbar-profile','active')
 @section('konten')
-<!-- add konten in here -->
-<!-- background Home -->
-    
+
     <div class="header1">
         <div id="txt1" class="container" style="text-align: justify; text-indent: 1in;">
             <p>KARIR</p>
         </div>
     </div>
-    <br>
-    <br>
+    <br><br>
     
     <div class="container" style="text-align: center; "> 
       HAPPY PUPPY memberikan kesempatan bagi semua pegawai untuk mengembangkan karir <br>
@@ -138,66 +133,52 @@ td {
     </div>
     
     <div class="lowongan">
-        <h6><b>LOWONGAN TERSEDIA</b></h6>
+        <h6 style="margin-left: 75px"><b>LOWONGAN TERSEDIA</b></h6>
     </div>    
     
-    <div class="content" >        
+    <div class="main">
+<div class="content" style="margin-left: 90px;" >        
         <div class="row">     
             <div class="col-md-4">
                   <div class="form-group">
-                    <input type="text" class="form-control" style="width: 105%; font-size: 14px;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
+                    <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
                   </div>
             </div>
-            
             <div class="col-md-4">
                 <div class="form-group">
-                    <input type="text" class="form-control" style="width: 100%; font-size: 14px;" id="formGroupExampleInput" placeholder="Pilih Lokasi">  
+                    <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Lokasi">  
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <button type="button" class="btn" style="font-size: 13px">FILTER</button>
+            <div class="col-md-4" >
+                <button type="button" class="btn" style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
             </div>
         </div>
+    </div><br>
+          
+    <div class="table" style="margin-left: 120px; margin-top: -50px;">
+            <table class="table table-striped"  style="width: 50.5%">
+              <tbody>
+                <tr>
+                  <td>Waiter</td>
+                  <td>Jakarta, Jl. Utan Kayu</td>
+                </tr>
+                <tr>
+                  <td>Supervisor</td>
+                  <td>Bandung, Jl. Srigunting Raya</td>
+                </tr>
+                <tr>
+                  <td>Chef</td>
+                  <td>Surabaya, Jl. Kapas Krampung</td>
+                </tr>
+              </tbody>
+            </table>
     </div>
-
-          <div class="card" style="width: 50%">
-                <table class="table table-striped">
-                  <tbody>
-                    <tr>
-                      <td>Waiter</td>
-                      <td>Surabaya, Jl. Mayjend Sungkono</td>
-                    </tr>
-                    <tr>
-                      <td>Waiter</td>
-                      <td>Jakarta, Jl. Raya Utan Kayu</td>
-                    </tr>
-                    <tr>
-                      <td>Information Technology</td>
-                      <td>Bandung, Jl. Raya Utan Kayu</td>
-                    </tr>
-                    <tr>
-                      <td>Supervisor</td>
-                      <td>Bali, Jl. Raya Utan Kayu</td>
-                    </tr>
-                  </tbody>
-                </table>
-                
-                <div class="card-footer">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
-
-              </div>
-
-              <br>
-                <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search" style="text-transform:uppercase"><b>APPLY NOW</b></a>
-              <br>
+          
+          <br>
+              <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search" style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
+          <br>
+    </div>
+    
 
 @endsection
 
