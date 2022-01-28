@@ -33,10 +33,11 @@
 
 .lates-news-list{
     background-color:#221E40;
-    min-height:230px;
-    max-width: 1100px;
+    min-height: 250px;
+    max-width: 1160px;
     width: 100%;
-    margin: 10px 50px 0px 100px;
+    background-position: center;
+    margin: 0px 0px 0px 70px;
     padding-left: 20px; 
     padding-right:20px;
 }
@@ -44,7 +45,7 @@
     padding-top:50px;
     padding-bottom:50px;
     padding-left:60px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color:#221E40;
     font-size: 20px;
 }
@@ -55,44 +56,47 @@
 
 .card-news{
   position: absolute;
-  width: 28rem;
+  width: 32rem;
+  height: 25rem;
   margin-bottom: 10px;
   z-index: 3;
 }
 .card-news1{
   position: absolute;
-  width: 27rem;
-  height: 23rem;
+  width: 31rem;
+  height: 26.3rem;
   margin-bottom: 3px;
   z-index: 2;
     left: 50px;
-    top: 9px;
+    top: 10px;
     background-color: #E9EEF4;
 }
 .card-img-news{
-  height:240px;
+  height:290px;
 }
 .card-img-news1{
-  height:260px;
+  height:310px;
 }
 .news-time{
   margin-bottom:-10px;
   font-size:12px;
   font-family: 'Poppins';
+  color: #c7d4e3;
+  font-weight: bold;
 }
 .title-news{
-  font-size:16px;
+  font-size:18px;
   margin-bottom: 30px;
   font-family: 'Poppins';
 }
 .card-news-lates{
-  width: 28rem;
+  width: 25rem;
   height: 90px;
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px;
   margin-top:10px;
-  right: 50px;
+  right: 7px;
   border: none;
 
 }
@@ -114,14 +118,16 @@
     font-family: 'Poppins';
 }
 .card-title-lates{
-  min-height:40px;
-  margin-top:-10px;
-  font-size:16px
+  font-size:13px;
+  margin-bottom: 19px;
   font-family: 'Poppins';
 }
 .news-time-lates{
-  font-size:10px;
+  font-size:12px;
   font-family: 'Poppins';
+  color: #c7d4e3;
+  font-weight: bold;
+  margin-bottom:5px;
 }
 .card-news-popular{
   width: 32rem;
@@ -325,6 +331,8 @@
     </div>
         <div class="lates-news-list">
         </div>
+        <div class="lates-news-list1">
+        </div>
         <div class="news-list">
             <div class="row card-news-lates-list">
                 <div class="col-6 padding-card">
@@ -340,8 +348,7 @@
                 <div class="card card-news1" style="border: none;">
                     <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
                         <div class="card-body">
-                            <h2 class="card-title title-news" >Midnight In Egypt</h2>
-                            <p class="news-time"><?=now()?>
+                            <p class="news-time"><?=date('M, d Y')?>
                                 <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
                         </div>
@@ -355,8 +362,8 @@
                             <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Stay safe and Healthy</h5>
-                                <p class="news-time-lates"><?=now()?>
+                                <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5>
+                                <p class="news-time-lates"><?=date('M, d Y')?>
                                   <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>   
                                 </p>
                                 </div>
@@ -370,8 +377,8 @@
                             <img src="/img/berita2.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Yes, we are open</h5>
-                                <p class="news-time-lates"><?=now()?>
+                                <h5 class="card-title-lates card-title"> Yes, We Are Open</h5>
+                                <p class="news-time-lates"><?=date('M, d Y')?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
                                 </div>
@@ -385,8 +392,8 @@
                             <img src="/img/berita5.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Lagu baru camelia cabello berjudul "Liar"</h5>
-                                <p class="news-time-lates"><?=now()?>
+                                <h5 class="card-title-lates card-title"> Lagu Baru Camelia Cabello Berjudul "Liar"</h5>
+                                <p class="news-time-lates"><?=date('M, d Y')?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
                                 </div>
@@ -400,8 +407,8 @@
                             <img src="/img/berita4.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
                                 <div class="card-body text-bottom">
-                                <h5 class="card-title-lates card-title"> Lagu baru camelia cabello berjudul "Melawan restu"</h5>
-                                <p class="news-time-lates"><?=now()?>
+                                <h5 class="card-title-lates card-title"> Lagu Baru Mahalini Berjudul "Melawan Restu"</h5>
+                                <p class="news-time-lates"><?=date('M, d Y')?>
                                     <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                 </p>
                                 </div>
