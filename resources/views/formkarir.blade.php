@@ -28,6 +28,7 @@
 hr {
     width: 99%;
 }
+
 .back-grad {
     height: 500px;
     width: auto;
@@ -51,7 +52,7 @@ hr {
   width:50%;
 } */
 .back {
-    height: 1050px;
+    height: 1500px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -70,6 +71,14 @@ hr {
     height: 600px;
     width: auto;
     background-color: #ffff;
+}
+.form-control {
+    border: none;
+	border-bottom: 1px solid #000;
+	background: none;
+	padding: 10px;
+	width: 50%;
+	transition: .2s;
 }
 .foots2 {
     height: 800px;
@@ -149,18 +158,18 @@ hr {
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <br>
+                        <br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" disabled="disabled" style="width: 100%" id="formGroupExampleInput" placeholder="Waiter">
-                        </div>
+                            <input type="text" class="form-control" disabled="disabled" style="width: 80%" id="formGroupExampleInput" placeholder="Waiter">
+                        </div><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" disabled="disabled" style="width: 100%" id="formGroupExampleInput" placeholder="Jakarta">
-                        </div>
+                            <input type="text" class="form-control" disabled="disabled" style="width: 80%" id="formGroupExampleInput" placeholder="Jakarta">
+                        </div><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Nama">
-                        </div>
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama">
+                        </div><br>
                         <div class="form-group">
-                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
                             <option selected="selected">Pendidikan Formal</option>
                             <option>SMA</option>
                             <option>D3</option>
@@ -168,7 +177,7 @@ hr {
                             <option>S2</option>
                             <option>S3</option>
                         </select>
-                        </div>
+                        </div><br>
                         <div class="form-group">
                         <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
                             <option selected="selected">Tempat Lahir</option>
@@ -178,53 +187,52 @@ hr {
                             <option>Jawa Tengah</option>
                             <option>Bali</option>
                         </select>
-                        </div>
+                        </div><br>
                         <div class="form-group">
-                        <label>Tanggal Lahir</label>
-                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        <label><b>Tanggal Lahir</b></label><br><br>
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest" style="width: 50%;">
                                 <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                                
                             </div>
-                        </div> 
+                        </div><br> 
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Tinggi">
-                        </div>
+                            <input type="text" class="form-control" style="width: 25%" id="formGroupExampleInput" placeholder="Tinggi">
+                        </div><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Berat">
-                        </div>
+                            <input type="text" class="form-control" style="width: 25%" id="formGroupExampleInput" placeholder="Berat">
+                        </div><br>
                     </div>
                     
                     <div class="col-md-6">
-                        <br>
+                        <br><br>
                         <div class="form-group">
                             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                 <option selected="selected">Jenis Kelamin</option>
                                 <option>Laki-Laki</option>
                                 <option>Perempuan</option>
                             </select>
-                        </div>
+                        </div><br>
                         <div class="form-group">
                             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                 <option selected="selected">Status Marital</option>
                                 <option>Single</option>
                                 <option>Menikah</option>
                             </select>
-                        </div>
+                        </div><br>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Telp">
-                        </div>
+                        </div><br>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="No. HP">
-                        </div>   
+                        </div><br>   
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Email">
-                        </div>
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Email">
+                        </div><br>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Alamat"></textarea>
-                        </div>
+                            <textarea class="form-control" rows="3" style="width: 80%" placeholder="Alamat"></textarea>
+                        </div><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="No. KTP">
-                        </div> 
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="No. KTP">
+                        </div><br> 
                     </div>
                 </div>
             </div>
@@ -241,7 +249,7 @@ hr {
                         <h6><b>Pengalaman Kerja 1</b></h6>
                         <br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Nama Perusahaan">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Perusahaan">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lama Bekerja">
@@ -252,13 +260,15 @@ hr {
                         <br>
                         <br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Jabatan">
+                            <input type="text" class="form-control" style="width: 70%" id="formGroupExampleInput" placeholder="Jabatan">
                         </div>
                     </div>
                     <br><br> 
                 </div>
 
+                <br>
                 <hr style="border-top: 1.5px dashed #519FF8; color:transparent;"/>
+                <br>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -266,7 +276,7 @@ hr {
                         <h6><b>Pengalaman Kerja 2</b></h6>
                         <br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Nama Perusahaan">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Perusahaan">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lama Bekerja">
@@ -276,7 +286,7 @@ hr {
                     <div class="col-md-6">
                         <br><br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Jabatan">
+                            <input type="text" class="form-control" style="width: 70%" id="formGroupExampleInput" placeholder="Jabatan">
                         </div>
                     </div>
                     <br>
@@ -290,9 +300,9 @@ hr {
                         <br><br>
                         <br><br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Gaji yang Diharapkan">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Gaji yang Diharapkan">
                         </div>
-                        <br><br>
+                        <br><br><br>
                     </div>
                     <br>
                 </div>
@@ -310,22 +320,23 @@ hr {
                     <div class="col-md-6">
                         <br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Bahasa">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Bahasa">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Alat Musik">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Alat Musik">
                         </div>
                     </div>
                     
                     <div class="col-md-6">
                         <br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Komputer">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Komputer">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput" placeholder="Keahlian Lainnya">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Keahlian Lainnya">
                         </div>
                     </div>
+                    
                 </div>
             </div> <br><br>
         </div>
@@ -375,7 +386,7 @@ hr {
         <br><button type="submit" class="btn"><b>SUBMIT</b></button><br><br>
 
             </div>
-        </div>
+        
     <br><br>
 </div>
 

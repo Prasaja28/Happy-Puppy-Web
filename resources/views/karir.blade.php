@@ -107,8 +107,8 @@ td {
     font-family: 'Poppins';
     font-size: 13px;
     margin: 10px 100px 20px 275px;
-    width: 10%;
-    min-height: 2rem;
+    width: 13%;
+    min-height: 2.2rem;
     border-radius: 30px;
 }
 
@@ -196,7 +196,7 @@ td {
               </div>
 
               <br>
-                <button type="submit" class="btn-primary">Apply</button>
+                <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search" style="text-transform:uppercase"><b>APPLY NOW</b></a>
               <br>
 
 @endsection
