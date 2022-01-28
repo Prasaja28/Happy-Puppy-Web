@@ -37,11 +37,16 @@
     max-width: 1100px;
     width: 100%;
     margin: 10px 50px 0px 100px;
+    padding-left: 20px; 
+    padding-right:20px;
 }
 .lates-title{
     padding-top:50px;
     padding-bottom:50px;
     padding-left:60px;
+    margin-bottom: 40px;
+    color:#221E40;
+    font-size: 20px;
 }
 .news-list{
     margin-top: -285px;  
@@ -57,11 +62,11 @@
 .card-news1{
   position: absolute;
   width: 27rem;
-  height: 22rem;
+  height: 23rem;
   margin-bottom: 3px;
   z-index: 2;
     left: 50px;
-    top: 10px;
+    top: 9px;
     background-color: #E9EEF4;
 }
 .card-img-news{
@@ -77,6 +82,7 @@
 }
 .title-news{
   font-size:16px;
+  margin-bottom: 30px;
   font-family: 'Poppins';
 }
 .card-news-lates{
@@ -87,6 +93,8 @@
   margin-bottom: 10px;
   margin-top:10px;
   right: 50px;
+  border: none;
+
 }
 .card-img-lates{
   height:90px;
@@ -313,9 +321,9 @@
 </div>
 <div class="container-fluid">
     <div class="container">
-        <h4 class="lates-title">Lates News</h4>
+        <h4 class="lates-title"style="font-weight: bold;">LATEST NEWS</h4>
     </div>
-        <div class="lates-news-list" style="padding-left: 20px; padding-right:20px;">
+        <div class="lates-news-list">
         </div>
         <div class="news-list">
             <div class="row card-news-lates-list">
@@ -323,16 +331,16 @@
                     <div class="card card-news" style="border: none;">
                         <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title title-news">Midnight In Egypt</h5>
-                            <p class="news-time"><?=now()?>
+                            <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5>
+                            <p class="news-time"><?=date('M, d Y')?>
                                 <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
                         </div>
                     </div>
-                <div class="card card-news1">
+                <div class="card card-news1" style="border: none;">
                     <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title title-news">Midnight In Egypt</h5>
+                            <h2 class="card-title title-news" >Midnight In Egypt</h2>
                             <p class="news-time"><?=now()?>
                                 <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
