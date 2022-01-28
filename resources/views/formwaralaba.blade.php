@@ -30,6 +30,14 @@
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
+.form-control {
+    border: none;
+	border-bottom: 1px solid #000;
+	background: none;
+	padding: 10px;
+	width: 50%;
+	transition: .2s;
+}
 #p1{
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
@@ -40,7 +48,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .back {
-    height: 1200px;
+    height: 1350px;
     width: auto;
     background-color: #85A4E1;
 }

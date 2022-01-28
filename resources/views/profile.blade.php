@@ -4,7 +4,17 @@
 @section('title','Profile')
 @section('css-internal')
   <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
-
+  <!-- css garis penghubung -->
+  <style>
+  .vl {
+  border-left: 6px solid white;
+  min-height: 10vh;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 155;
+  }
+  </style>
 @section('navbar-profile','active')
 @section('konten')
 
@@ -41,6 +51,7 @@
             <div name="years" class="y-2009 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2009</h4>
             </div>
+              <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4">
             <p class="text-muted text-justify">
@@ -56,6 +67,7 @@
             <div name="years" class="y-2010 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2010</h4>
             </div>
+            <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4 order-1">
             <p class="text-muted text-justify">
@@ -71,6 +83,7 @@
             <div name="years" class="y-2015 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2015</h4>
             </div>
+            <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4">
             <p class="text-muted text-justify">
@@ -86,6 +99,7 @@
             <div name="years" class="y-2017 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2017</h4>
             </div>
+            <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4 order-1">
             <p class="text-muted text-justify">
@@ -101,6 +115,7 @@
             <div name="years" class="y-2019 align-self-center d-flex justify-content-center rounded-circle">
               <h4 class="align-self-center font-weight-bold">2019</h4>
             </div>
+
           </div>
           <div class="col-4 col-md-4">
             <p class="text-muted text-justify">

@@ -50,7 +50,7 @@
         text-align: justify;
     }
     .back {
-        height: 730px;
+        height: 540px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -96,6 +96,15 @@
         width: 70%;
         border-left: none;
         height: 300px;
+    }
+
+    .form-control {
+        border: none;
+        border-bottom: 1px solid #000;
+        background: none;
+        padding: 10px;
+        width: 50%;
+        transition: .2s;
     }
 
     input[type=text], select, textarea {
@@ -227,22 +236,24 @@
         <div id="kontak" class="tabcontent">
             <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
-                    <label for="Nama">Nama</label>
-                        <input type="text" id="Nama" name="Nama" placeholder="Nama">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control" class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+        
+                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
 
-                    <label for="MID">Member ID</label>
-                        <input type="text" id="MID" name="lastname" placeholder="Member ID">
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
 
-                    <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email" placeholder="Email">
+                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                        </div>
 
-                    <label for="telp">Telp.</label>
-                        <input type="text" id="telp" name="telp" placeholder="Telp."></input>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="pesan" name="pesan" placeholder="Pesan"></input>
 
-                    <label for="telp">Pesan</label>
-                        <input type="text" id="pesan" name="pesan" placeholder="Pesan"></input>
-
-                    <input type="submit" value="Submit">
+                            <br><br><br><br><br>
+                            <input style="background-color:#0275d8" type="submit" value="Submit">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -250,18 +261,24 @@
         <div id="Request" class="tabcontent">
             <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
-                    <label for="Nama">Nama</label>
-                        <input type="text" id="Nama" name="Nama" placeholder="Nama">
-                    <label for="MID">Member ID</label>
-                        <input type="text" id="MID" name="lastname" placeholder="Member ID">
-                    <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email" placeholder="Email">
-                    <label for="telp">Telp.</label>
-                        <input type="text" id="telp" name="telp" placeholder="Telp."></input>
-                    <label for="telp">Request Lagu</label>
-                        <input type="text" id="req" name="req" placeholder="Request Lagu"></input>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                            
+                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                        
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                
+                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                        </div>
 
-                    <input type="submit" value="Submit">
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="req" name="req" placeholder="Request Lagu"></input>
+
+                            <br><br><br><br><br>
+                            <input style="background-color:#0275d8" type="submit" value="Submit">
+                        </div>
+                    </div>
                 </form>
             </div> 
         </div>
@@ -269,20 +286,28 @@
         <div id="keluhan" class="tabcontent">
             <div class="container" id="form1" style="font-family: 'Poppins';">
                 <form action="/action_page.php">
-                    <label for="Nama">Nama</label>
-                        <input type="text" id="Nama" name="Nama" placeholder="Nama">
-                    <label for="MID">Member ID</label>
-                        <input type="text" id="MID" name="lastname" placeholder="Member ID">
-                    <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email" placeholder="Email">
-                    <label for="telp">Telp.</label>
-                        <input type="text" id="telp" name="telp" placeholder="Telp."></input>
-                    <label for="telp">Outlet</label>
-                        <input type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
-                    <label for="telp">Keluhan</label>
-                        <input type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Nama">Nama</label>
+                                <input type="text" id="Nama" name="Nama" placeholder="Nama">
+                            <label for="MID">Member ID</label>
+                                <input type="text" id="MID" name="lastname" placeholder="Member ID">
+                            <label for="email">E-mail</label>
+                                <input type="text" id="email" name="email" placeholder="Email">
+                            <label for="telp">Telp.</label>
+                                <input type="text" id="telp" name="telp" placeholder="Telp."></input>
+                        </div>
 
-                    <input type="submit" value="Submit">
+                        <div class="col-md-6">
+                            <label for="telp">Outlet</label>
+                                <input type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
+                            <label for="telp">Keluhan</label>
+                                <input type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+
+                                <br><br><br><br><br><br><br>
+                            <input style="background-color:#0275d8" type="submit" value="Submit">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
