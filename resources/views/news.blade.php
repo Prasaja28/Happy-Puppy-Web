@@ -25,7 +25,7 @@
     text-align: justify;
     margin: 0;
     font-size: 40px;
-    min-height: 350px;
+    min-height: 360px;
     font-weight: bold;
     text-indent: 1.2in;
     font-family: 'Poppins';
@@ -33,11 +33,10 @@
 
 .lates-news-list{
     background-color:#221E40;
-    min-height: 250px;
+    min-height: 299px;
     max-width: 1160px;
     width: 100%;
-    background-position: center;
-    margin: 0px 0px 0px 70px;
+    margin: 20px 0px 0px 70px;
     padding-left: 20px; 
     padding-right:20px;
 }
@@ -45,7 +44,7 @@
     padding-top:50px;
     padding-bottom:50px;
     padding-left:60px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color:#221E40;
     font-size: 20px;
 }
@@ -59,6 +58,7 @@
   width: 32rem;
   height: 25rem;
   margin-bottom: 10px;
+  top: -60px;
   z-index: 3;
 }
 .card-news1{
@@ -70,6 +70,7 @@
     left: 50px;
     top: 10px;
     background-color: #E9EEF4;
+      top: -60px;
 }
 .card-img-news{
   height:290px;
@@ -98,6 +99,7 @@
   margin-top:10px;
   right: 7px;
   border: none;
+    top: -70px;
 
 }
 .card-img-lates{
@@ -108,6 +110,7 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: rightl;
+       z-index: 2;
 }
 .news-lates-title{
     color:#106ec3;
@@ -116,11 +119,13 @@
     margin-bottom:40px;
     font-weight:bold
     font-family: 'Poppins';
+         z-index: 2;
 }
 .card-title-lates{
   font-size:13px;
   margin-bottom: 19px;
   font-family: 'Poppins';
+       z-index: 2;
 }
 .news-time-lates{
   font-size:12px;
@@ -128,6 +133,7 @@
   color: #c7d4e3;
   font-weight: bold;
   margin-bottom:5px;
+       z-index: 2;
 }
 .card-news-popular{
   width: 32rem;
@@ -148,7 +154,7 @@
     margin-top:100px;
     margin-left: 0px;
     margin-right: 0px;
-    min-height:300px;
+    min-height:400px;
     max-width: 1500px;
     width: 100%;
     background-color:#221E40;
@@ -329,14 +335,12 @@
     <div class="container">
         <h4 class="lates-title"style="font-weight: bold;">LATEST NEWS</h4>
     </div>
-        <div class="lates-news-list">
-        </div>
-        <div class="lates-news-list1">
+        <div class="lates-news-list" style="z-index: 1;">
         </div>
         <div class="news-list">
             <div class="row card-news-lates-list">
                 <div class="col-6 padding-card">
-                    <div class="card card-news" style="border: none;">
+                    <div class="card card-news" style="border: none;z-index: 3;">
                         <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
                         <div class="card-body">
                             <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5>
@@ -345,7 +349,7 @@
                             </p>
                         </div>
                     </div>
-                <div class="card card-news1" style="border: none;">
+                <div class="card card-news1" style="border: none;z-index: 2;">
                     <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
                         <div class="card-body">
                             <p class="news-time"><?=date('M, d Y')?>
@@ -357,7 +361,7 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card card-news-lates">
+                            <div class="card card-news-lates" style="z-index:2;">
                             <div class="row no-gutters">
                             <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
@@ -372,7 +376,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="card card-news-lates">
+                            <div class="card card-news-lates" style="z-index:2;">
                             <div class="row no-gutters">
                             <img src="/img/berita2.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
@@ -387,7 +391,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="card card-news-lates">
+                            <div class="card card-news-lates" style="z-index:2;">
                             <div class="row no-gutters">
                             <img src="/img/berita5.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
@@ -402,7 +406,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="card card-news-lates">
+                            <div class="card card-news-lates" style="z-index:2;">
                             <div class="row no-gutters">
                             <img src="/img/berita4.jpg" class="col-4 card-img-lates" alt="...">
                             <div class="col-8">
@@ -421,9 +425,9 @@
             </div>
         </div>
         <div class="popularNews">
-            <div class="container" style="font-family:'Poppins'; font-size: 25px;">
+            <!-- <div class="container" style="font-family:'Poppins'; font-size: 25px;">
                 <p class="lates-title text-uppercase text-white">popular</p>
-            </div>
+            </div> -->
         </div>
         <div class="container popular-card-news">
             <div class="row lates-title">
