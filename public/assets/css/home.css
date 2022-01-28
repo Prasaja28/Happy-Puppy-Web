@@ -298,9 +298,8 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
     }
 }
 
-/* DEKSTOP++ */
 @media (min-width: 992px) {
-    .jumbotron {
-        background-position-y: -100px;
+    .jumbotron .hero-title-container {
+        margin-top: 240px;
     }
 }

@@ -56,7 +56,7 @@
 <!-- END -->
 
 <!-- OUTLET SEARCH  -->
-<section name="outlet-search">
+<section name="outlet-search" class="mt-0">
   <div class="container-fluid text-white search-kota">
     <h4 class="pt-5 text-center">Cari Outlet Terdekat</h4>
 
