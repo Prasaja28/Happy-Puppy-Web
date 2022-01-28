@@ -4,7 +4,7 @@
 @section('title','Profile')
 @section('css-internal')
   <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
-  <!-- garis penghubung -->
+  <!-- css garis penghubung -->
   <style>
   .vl {
   border-left: 6px solid white;
