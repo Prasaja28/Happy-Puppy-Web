@@ -66,6 +66,11 @@ div[name="term-and-condition"] p {
         height: 25px;
     }
 
+    div[name="detail-info"] img:nth-child(3) {
+        margin-top: -10px;
+        height: 50px;
+    }
+
     div[name="term-and-condition"] {
         margin-top: -50px;
     }
