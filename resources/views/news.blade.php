@@ -48,6 +48,14 @@
     color:#221E40;
     font-size: 20px;
 }
+.lates-title1{
+    padding-top:40px;
+    padding-bottom:80px;
+    padding-left:60px;
+    margin-bottom: 60px;
+    color:white;
+    font-size: 30px;
+}
 .news-list{
     margin-top: -285px;  
     padding-left:47px;
@@ -136,26 +144,28 @@
        z-index: 2;
 }
 .card-news-popular{
-  width: 32rem;
+  width: 37rem;
   height: 130px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top:10px;
+  top: -400px;
+  border: none;
 }
 
 .news-popular-title{
-    color:#106ec3;
-    font-size:12px;
-    margin-top:-15px;
-    margin-bottom:40px;
-    font-weight:bold
+    color:#221E40;
+    font-size:13px;
+    margin-top: -12px;
+    margin-bottom:20px;
+    font-weight:bold;
     font-family: 'Poppins';
 }
 .popularNews{
-    margin-top:100px;
+    margin-top:10px;
     margin-left: 0px;
     margin-right: 0px;
-    min-height:400px;
-    max-width: 1500px;
+    min-height:600px;
+    max-width: 1600px;
     width: 100%;
     background-color:#221E40;
 }
@@ -166,9 +176,17 @@
     margin-top:-150px;
 }
 .card-title-popular{
-    font-size:16px;
-    margin-top:-20px;
-    min-height:40px
+  font-size:18px;
+  margin-bottom: 20px;
+  font-family: 'Poppins';
+}
+.news-time-popular{
+  font-size:12px;
+  font-family: 'Poppins';
+  color: #c7d4e3;
+  font-weight: bold;
+  margin-bottom:5px;
+       z-index: 2;
 }
 .card-news-lates-list{
     padding-left:120px;
@@ -179,12 +197,13 @@
 }
 #more {display: none;}
   #myBtn{
+    position: absolute;
     display: block;
     border-radius:50px;
     font-size:15px;
-    margin-top:40px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 2;
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: 'Poppins';
@@ -424,12 +443,12 @@
                 </div>
             </div>
         </div>
-        <div class="popularNews">
-            <!-- <div class="container" style="font-family:'Poppins'; font-size: 25px;">
-                <p class="lates-title text-uppercase text-white">popular</p>
-            </div> -->
+        <div class="popularNews" style="z-index:1;">
+            <div class="container">
+        <h4 class="lates-title1"style="font-weight: bold;">POPULAR</h4>
+            </div>
         </div>
-        <div class="container popular-card-news">
+        <div class="container popular-card-news" style="z-index:2;">
             <div class="row lates-title">
                   <div class="col-12">
                     <div class="card card-news-popular">
@@ -441,8 +460,7 @@
                         <div class="card-body text-bottom">
                           <p class="news-popular-title">News</p>
                           <h5 class="card-title card-title-popular">Card title</h5>
-                          <p class="news-time-popular"><?=now()?>
-                            <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                          <p class="news-time-popular"><?=date('M, d Y')?>
                           </p>
                         </div>
                       </div>
@@ -459,8 +477,7 @@
                         <div class="card-body text-bottom">
                           <p class="news-popular-title">News</p>
                           <h5 class="card-title card-title-popular">Card title</h5>
-                          <p class="news-time-popular"><?=now()?>
-                            <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                          <p class="news-time-popular"><?=date('M, d Y')?>
                           </p>
                         </div>
                       </div>
@@ -477,8 +494,7 @@
                         <div class="card-body text-bottom">
                           <p class="news-popular-title">News</p>
                           <h5 class="card-title card-title-popular">Card title</h5>
-                          <p class="news-time-popular"><?=now()?>
-                            <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                          <p class="news-time-popular"><?=date('M, d Y')?>
                           </p>
                         </div>
                       </div>
@@ -495,8 +511,7 @@
                         <div class="card-body text-bottom">
                           <p class="news-popular-title">News</p>
                           <h5 class="card-title card-title-popular">Card title</h5>
-                          <p class="news-time-popular"><?=now()?>
-                            <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                          <p class="news-time-popular"><?=date('M, d Y')?>
                           </p>
                         </div>
                       </div>
@@ -515,8 +530,7 @@
                           <div class="card-body text-bottom">
                             <p class="news-popular-title">News</p>
                             <h5 class="card-title card-title-popular">Card title</h5>
-                            <p class="news-time-popular"><?=now()?>
-                              <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                            <p class="news-time-popular"><?=date('M, d Y')?>
                             </p>
                           </div>
                         </div>
@@ -533,8 +547,7 @@
                           <div class="card-body text-bottom">
                             <p class="news-popular-title">News</p>
                             <h5 class="card-title card-title-popular">Card title</h5>
-                            <p class="news-time-popular"><?=now()?>
-                              <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                            <p class="news-time-popular"><?=date('M, d Y')?>
                             </p>
                           </div>
                         </div>
@@ -546,7 +559,6 @@
                     <div class="col-12">
                       <button href="{{url('/')}}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load more</button>
                     </div>
-                    <br><br><br>
             </div>
         </div>
 </div>
