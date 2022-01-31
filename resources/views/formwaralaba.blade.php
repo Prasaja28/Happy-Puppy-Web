@@ -22,6 +22,7 @@
     bottom: 0;
     text-align: justify;
     margin: 0;
+    font-family: 'Poppins';
     font-size: 40px;
     min-height: 480px;
 }
@@ -40,15 +41,15 @@
 }
 #p1{
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
     font-weight: bold;
 }
 #p2{
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
 }
 .back {
-    height: 1350px;
+    height: 1300px;
     width: auto;
     background-color: #85A4E1;
 }
@@ -56,7 +57,7 @@
     margin-top: 6px;
 }
 .foots {
-    height: 300px;
+    height: 150px;
     width: auto;
     background-color: #ffff;
 }
@@ -83,12 +84,12 @@
     }
     #p1{
         font-size: 25px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
         font-weight: bold;
     }
     #p2{
         font-size: 13px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
     }
     .back {
         height: 1200px;
@@ -124,7 +125,7 @@
 </div><br>
 <div class="back-grad">
     <div class="container">
-        <h2 style="margin-top: 10px;">DATA PRIBADI</h2><br>
+        <h2 style="margin-top: 10px;font-family: 'Poppins';">DATA PRIBADI</h2><br>
         <div class="card" id="card1">
             <div class="container">
                 <div class="row">
@@ -208,7 +209,7 @@
         </div>
     </div><br><br>
     <div class="container">
-        <h2 style="margin-top: 10px;color:white;">PEKERJAAN</h2><br>
+        <h2 style="margin-top: 10px;color:white;font-family: 'Poppins';">PEKERJAAN</h2><br>
         <div class="card" id="card2">
             <div class="container">
                 <div class="row">
@@ -271,7 +272,7 @@
         </div>
     </div><br><br>
     <div class="container">
-        <h2 style="margin-top: 10px;color:white;">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
+        <h2 style="margin-top: 10px;color:white;font-family: 'Poppins';">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
         <div class="card" id="card3">
             <div class="container">
                 <div class="row">
