@@ -144,6 +144,7 @@
     #back2con{
         margin-top: 30px;
     }
+
     .accordion {
         background-color: #FFFFFF;
         color: #444;
@@ -159,7 +160,8 @@
     }
 
     .active, .accordion:hover {
-        background-color: #221E40; 
+        background-color: #221E40;
+        color: white;
     }
 
     .panel {
@@ -288,23 +290,21 @@
                 <form action="/action_page.php">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="Nama">Nama</label>
-                                <input type="text" id="Nama" name="Nama" placeholder="Nama">
-                            <label for="MID">Member ID</label>
-                                <input type="text" id="MID" name="lastname" placeholder="Member ID">
-                            <label for="email">E-mail</label>
-                                <input type="text" id="email" name="email" placeholder="Email">
-                            <label for="telp">Telp.</label>
-                                <input type="text" id="telp" name="telp" placeholder="Telp."></input>
+                            <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+            
+                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+        
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+
+                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="telp">Outlet</label>
-                                <input type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
-                            <label for="telp">Keluhan</label>
-                                <input type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+                            <input class="form-control" type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
+        
+                            <input class="form-control" type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
 
-                                <br><br><br><br><br><br><br>
+                            <br><br>
                             <input style="background-color:#0275d8" type="submit" value="Submit">
                         </div>
                     </div>

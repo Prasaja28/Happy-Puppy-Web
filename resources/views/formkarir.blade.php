@@ -76,7 +76,7 @@ hr {
     border: none;
 	border-bottom: 1px solid #000;
 	background: none;
-	padding: 10px;
+	padding: 5px;
 	width: 50%;
 	transition: .2s;
 }
