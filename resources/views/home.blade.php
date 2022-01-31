@@ -185,7 +185,7 @@
   <div class="container">
     <div class="row">
       <h6 class="font-weight-bold top-title">LATEST NEWS</h6>
-      <a name="view-all" href="#">VIEW ALL</a>
+      <a name="view-all" href="news">VIEW ALL</a>
     </div>
 
     <div class="row">
