@@ -1,19 +1,17 @@
-{{-- FRONTEND BY BAMBANGIWN :) --}}
-
 @extends('layout-komponen.master')
 @section('title','Profile')
 @section('css-internal')
   <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
   <!-- css garis penghubung -->
   <style>
-  .vl {
-  border-left: 6px solid white;
-  min-height: 10vh;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 155;
-  }
+    .vl {
+    border-left: 6px solid white;
+    min-height: 10vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 155;
+    }
   </style>
 @section('navbar-profile','active')
 @section('konten')
