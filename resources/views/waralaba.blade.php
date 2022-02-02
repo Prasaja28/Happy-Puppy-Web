@@ -50,21 +50,24 @@
     font-family: 'Poppins';
 }
 .back {
-    height: 1100px;
+    height: 1000px;
     width: auto;
     background-color: #85A4E1;
     font-family: 'Poppins';
 }
 
-.card-header, .btn {
-    color: #221E40;
+.card-header, .cc {
+    color: white;
     background-color: #85A4E1;
     font-family: 'Poppins';
     font-weight: bold;
+    border-bottom: none;
 }
 
 .card-body {
     background-color: #ECEFF1;
+    border-bottom: none;
+    border-radius: 1em;
 }
 
 /* .accordion {
@@ -235,12 +238,12 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div><br><br><br><br> -->
         <div id="accordion">
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Home Theatre buka untuk karaoke?
-                    </button>
+                    </div>
                 </h5>
                 </div>
 
@@ -250,12 +253,12 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Karaoke keluarga, bisnis hiburan tanpa masalah
-                    </button>
+                    </div>
                 </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -264,12 +267,12 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Kenapa memilih waralaba Happy Puppy?
-                    </button>
+                    </div>
                 </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -278,12 +281,12 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Hal yang perlu diperhatikan dalam waralaba ini
-                    </button>
+                    </div>
                 </h5>
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -292,12 +295,12 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingFive">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     Berapa investasi yang dibutuhkan untuk waralaba ini?
-                    </button>
+                    </div>
                 </h5>
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
@@ -306,12 +309,12 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0">
+            <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingSix">
                 <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <div class="cc" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Daftar kota tertutup untuk waralaba
-                    </button>
+                    </div>
                 </h5>
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
