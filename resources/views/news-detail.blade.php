@@ -6,16 +6,17 @@
 <!-- Add tag css in here -->
 <style>
     .header{
-      margin-top: 131px;
-        min-height: 50vh;
+/*      margin-top: 131px;*/
+        min-height: 50vh;/*
+        margin-bottom: 500px;*/
         background: no-repeat center scroll;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         background-position: rightl;
-        background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg')
-       
+        background-color: #221E40;
+        z-index: 1;
         
 }
 .tab-content{
@@ -25,6 +26,7 @@
   width: 14rem;
   margin: 0 auto; /* Added */
   margin-bottom: 10px;
+  box-shadow: 0px 5px #E9EEF4;
     
   }
   .card-img-news{
@@ -36,19 +38,73 @@
   }
   .title-news{
     font-size:12px;
+
   }
-  .news-time{
+  .title-news1{
+/*    top: 20px;*/
+    font-size:13px;
+    font-weight: bold;
+   border-bottom-width: 4px ;
+    border-bottom-style: solid;
+    border-bottom-color: black; 
+    margin-top: 60px;
+    font-family: 'Poppins';
+  }
+
+    .title-news2{
+/*    top: 20px;*/
+    font-size:40px;
+    margin-top: 35px;
+    color: #000080;
+    font-family: 'Poppins';
+  }
+
+    .news{
+/*    top: 20px;*/
+    font-size:17px;
+    color: black;
+    font-family: 'Poppins';
+    text-align: justify;
+  }
+   .news-time{
     font-size:8px;
     margin-top: 24px;
+    font-family: 'Poppins';
+  } 
+
+  .news-time1{
+    font-size:13px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: 'Poppins';
   }
+
   .news-title{
       text-align:center;
   }
-  .color-background{
-    background-color:#221E40 ;
+  .image-background{
+    background-image: url('/img/camilaa.jpg');
+    margin-top: -850px;
+    top: -100px;
+    margin-left: 115px;
     /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
-    position: relative;
-    min-height:40vh;
+    min-height:70vh;
+    max-width: 170.5vh;
+        width: 100%;
+    margin-bottom: 450px;
+  padding: 10px;
+  box-shadow: 0px 10px #D1D6DB;
+  }
+  .image-color{
+    background-color: #E9EEF4;
+    margin-top: -340px;
+    margin-left: 115px;
+    /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
+    min-height:70vh;
+    top: 50px;
+    max-width: 170.5vh;
+        width: 100%;
+    margin-bottom: 400px;
   }
   .news-content{
     margin-top: -60vh;
@@ -97,47 +153,50 @@
 @endsection
 @section('navbar-news','active')
 @section('konten')
-<div class="container-fluid color-background">
+<!-- <div class="color-background">
 
-</div>
+</div> -->
+        <div class="header" style="z-index:1;" >          
+        </div> 
+        <div class="image-color" style="z-index: 2;"></div>
+          <div class="image-background" style="z-index: 3;"> 
+        </div>
 <!-- add konten in here -->
 <div class="container news-content">
   <div class="row mb-5">
     <div class="col-lg-12 ">
-        <div class="header" >
-        </div>
     </div>
     <div class="col-lg-7">
             <ul class="nav mt-2" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active font-weight-bold text-uppercase" style="border-bottom-style: solid;border-bottom-color: black; margin-top: 40px;font-family: 'Poppins';" role="tab" data-toggle="tab">Populer</a>
+                <a class="title-news1" role="tab" data-toggle="tab">POPULAR</a>
             </li>
             </ul>
         
             <!-- Tab panes -->
-            <div class="tab-content" style="font-family: 'Poppins'">
-                <h2 class="py-3" style="color:#3792cb; ">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
+            <div class="tab-content" >
+                <h2 class="title-news2">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
         
-                <h6 class="pb-3"><?=now()?></h6>
+                <h6 class="news-time1"><?=date('M, d Y')?></h6>
         
-                <p class="text-justify news-title">
+                <p class="news">
                     Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
                 </p>
-                <p class="text-justify news-title">
+                <p class="news">
                     Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
                 </p>
             </div>
         </div>
-        <div class="col-lg-5" style="padding-left: 240px; font-family: 'Poppins';">
+        <div class="col-lg-5" style="padding-left: 240px; ">
             <div id="detail-news-dekstop">
-                <h6 class="news-title pt-5">Lates News</h6>
+                <h6 class="news-title pt-5">LATEST NEWS</h6>
                 <div class="row">
                   <div class="col-12 my-2">
                     <div class="card card-news">
                       <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=now()?>
+                        <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -148,7 +207,7 @@
                       <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=now()?>
+                        <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -164,7 +223,7 @@
                       <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=now()?>
+                        <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -175,7 +234,7 @@
                       <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=now()?>
+                        <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
