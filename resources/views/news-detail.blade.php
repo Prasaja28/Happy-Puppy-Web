@@ -83,7 +83,7 @@
       text-align:center;
   }
   .image-background{
-    background-image: url('/img/camila-cabello.jpg');
+    background-image: url('/img/came.jpg');
     margin-top: -850px;
     top: -100px;
     margin-left: 115px;
