@@ -155,8 +155,8 @@ td {
         </div>
     </div><br>
           
-    <div class="table" style="margin-left: 120px; margin-top: -50px;">
-            <table class="table table-striped"  style="width: 50.5%">
+    <div class="table" style="padding-left: 120px; margin-top: -50px;">
+            <table class="table table-striped"  style="width: 56%">
               <tbody>
                 <tr>
                   <td>Waiter</td>
@@ -165,6 +165,18 @@ td {
                 <tr>
                   <td>Supervisor</td>
                   <td>Bandung, Jl. Srigunting Raya</td>
+                </tr>
+                <tr>
+                  <td>Chef</td>
+                  <td>Surabaya, Jl. Kapas Krampung</td>
+                </tr>
+                <tr>
+                  <td>Chef</td>
+                  <td>Surabaya, Jl. Kapas Krampung</td>
+                </tr>
+                <tr>
+                  <td>Chef</td>
+                  <td>Surabaya, Jl. Kapas Krampung</td>
                 </tr>
                 <tr>
                   <td>Chef</td>
