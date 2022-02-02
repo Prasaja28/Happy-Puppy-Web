@@ -83,7 +83,7 @@
       text-align:center;
   }
   .image-background{
-    background-image: url('/img/camilaa.jpg');
+    background-image: url('/img/camila-cabello.jpg');
     margin-top: -850px;
     top: -100px;
     margin-left: 115px;
@@ -175,27 +175,27 @@
         
             <!-- Tab panes -->
             <div class="tab-content" >
-                <h2 class="title-news2">Penampakan Ganasnya Banjir Jember, Mobil Terseret Derasnya Arus!</h2>
+                <div class="title-news2">Lagu Baru Camelia Cabello Berjudul "Liar"</div>
         
-                <h6 class="news-time1"><?=date('M, d Y')?></h6>
+                <div class="news-time1"><?=date('M, d Y')?></div>
         
-                <p class="news">
+                <div class="news">
+                    Camila Cabello baru saja merilis lagu barunya yang berjudul "Liar", Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
+                </div>
+                <div class="news">
                     Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
-                </p>
-                <p class="news">
-                    Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
-                </p>
+                </div>
             </div>
         </div>
         <div class="col-lg-5" style="padding-left: 240px; ">
             <div id="detail-news-dekstop">
-                <h6 class="news-title pt-5">LATEST NEWS</h6>
+                <div class="news-title pt-5">LATEST NEWS</div>
                 <div class="row">
                   <div class="col-12 my-2">
                     <div class="card card-news">
-                      <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                      <img src="/img/berita2.jpg" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title title-news">Card title</h5>
+                        <h5 class="card-title title-news">Yes, We Are Open</h5>
                         <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
@@ -204,9 +204,9 @@
                   </div>
                   <div class="col-12 my-2">
                     <div class="card card-news">
-                      <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                      <img src="/img/berita1.jpg" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title title-news">Card title</h5>
+                        <h5 class="card-title title-news">Stay Safe and Healthy</h5>
                         <p class="news-time"><?=date('M, d Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
