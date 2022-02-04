@@ -162,6 +162,63 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('/img/room-karaoke.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
+                                <p class="card-text text-center">
+                                    Jl. Kapas Krampung Surabaya 60142 - Indonesia
+                                    <br>
+                                    Tel. (031)374-0666
+                                    <br>
+                                    Fax. (031)374-0668
+                                </p>
+                                <center>
+                                    <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('/img/room-karaoke.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
+                                <p class="card-text text-center">
+                                    Jl. Kapas Krampung Surabaya 60142 - Indonesia
+                                    <br>
+                                    Tel. (031)374-0666
+                                    <br>
+                                    Fax. (031)374-0668
+                                </p>
+                                <center>
+                                    <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('/img/room-karaoke.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
+                                <p class="card-text text-center">
+                                    Jl. Kapas Krampung Surabaya 60142 - Indonesia
+                                    <br>
+                                    Tel. (031)374-0666
+                                    <br>
+                                    Fax. (031)374-0668
+                                </p>
+                                <center>
+                                    <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
             </div>

@@ -80,6 +80,7 @@
   }
 
   .news-title{
+    font-family: 'Poppins';
       text-align:center;
   }
   .image-background{
