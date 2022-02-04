@@ -12,6 +12,15 @@
     margin-left: -3px;
     top: 155;
     }
+    @media (max-width:600px) {
+    .vl {
+    border-left: 6px solid white;
+    min-height: 60vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 252;
+    }
   </style>
 @section('navbar-profile','active')
 @section('konten')
