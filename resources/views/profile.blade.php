@@ -14,13 +14,21 @@
     }
     @media (max-width:600px) {
     .vl {
-    border-left: 6px solid white;
-    min-height: 60vh;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 252;
+      border-left: 6px solid white;
+      min-height: 60vh;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      top: 252;
     }
+    .history div[name="years"] h4 {
+      font-size: 11px;
+    }
+    .history-desc {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+  }
   </style>
 @section('navbar-profile','active')
 @section('konten')
@@ -61,7 +69,7 @@
               <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4">
-            <p class="text-muted text-justify">
+            <p class="text-muted text-justify history-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
@@ -77,7 +85,7 @@
             <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4 order-1">
-            <p class="text-muted text-justify">
+            <p class="text-muted text-justify history-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
@@ -93,7 +101,7 @@
             <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4">
-            <p class="text-muted text-justify">
+            <p class="text-muted text-justify history-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
@@ -109,7 +117,7 @@
             <div class="vl"></div>
           </div>
           <div class="col-4 col-md-4 order-1">
-            <p class="text-muted text-justify">
+            <p class="text-muted text-justify history-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
@@ -125,7 +133,7 @@
 
           </div>
           <div class="col-4 col-md-4">
-            <p class="text-muted text-justify">
+            <p class="text-muted text-justify history-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
           </div>
