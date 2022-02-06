@@ -94,6 +94,12 @@
   background-color: white;
   overflow: hidden;
 } */
+
+    .active, .accordion {
+        background-color: #221E40;
+        color: white;
+    }
+
 #text-acc{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;

@@ -81,12 +81,24 @@
 
     /* Change background color of buttons on hover */
     .tab button:hover {
-        background-color: #656282;
+        /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
+        -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+        background-color: #85A4E1;
+        background-image: url('/img/Rectangle.png');
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
     }
 
     /* Create an active/current "tab button" class */
     .tab button.active {
-        background-color: #221E40;
+        /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
+        -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+        background-color: #85A4E1;
+        background-image: url('/img/Rectangle.png');
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;  
     }
 
     /* Style the tab content */
@@ -102,7 +114,7 @@
         border: none;
         border-bottom: 1px solid #000;
         background: none;
-        padding: 10px;
+        padding: 5px;
         width: 50%;
         transition: .2s;
     }
@@ -185,6 +197,16 @@
         background-color: #6699CC;
         overflow: hidden;
     } */
+
+    .active, .accordion {
+        background-color: #221E40;
+        color: white;
+    }
+
+    /* .active, .accordion:hover {
+        background-color: #ccc; 
+    } */
+
     #text-acc{
         font-size: 18px;
         font-family: Arial, Helvetica, sans-serif;
@@ -245,6 +267,7 @@
 <div class="back">
     <div class="container">
         <div class="tab">
+            <!-- <div class="tablinks" style="background-image: url('/img/Rectangle.png')" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</div> -->
             <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</button><br>
             <button class="tablinks" onclick="openCity(event, 'Request')">Request Lagu</button><br>
             <button class="tablinks" onclick="openCity(event, 'keluhan')">Keluhan</button>
@@ -255,13 +278,18 @@
                 <form action="/action_page.php">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
-        
-                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
-
-                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
-
-                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                            <div class="form-group">    
+                                <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                            </div>
                         </div>
 
                         <div class="col-md-6">
@@ -462,23 +490,17 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 </script>
 
-<!-- <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("accordion");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
   });
 }
-
-
-</script> -->
+</script>
 @endsection
 
