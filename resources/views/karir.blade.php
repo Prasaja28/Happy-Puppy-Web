@@ -17,17 +17,6 @@
   background-image: url('/img/karir.png')
 }
 
-#txt2{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-size: 35px;
-    min-height: 550px;
-    text-indent: 1in;
-}
-
 #txt1{
     color: white;
     position: absolute;
@@ -38,17 +27,6 @@
     font-weight: bold;
     min-height: 500px;
     text-indent: 1in;
-}
-
-.center {
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 100%;
-    padding: 15px;
-    color: black;
-    background-color:#D3D3D3;
-    text-indent: 0.1in;
 }
 
 .lowongan {
@@ -65,12 +43,6 @@ h6 {
   font-size: 18px;
 }
 
-.card-body {
-  min-height:5rem;
-  text-align: right;
-  width: 30%;
-  }
-
 .container {
   font-family: 'Poppins';
 }
@@ -80,13 +52,7 @@ h6 {
     width: 80%;
     padding: 30px;
     font-family: 'Poppins';
-    border-radius:
-}
-
-.card {
-    margin: -42px 100px 0px 275px;
-    padding: 0px;
-    font-family: 'Poppins';
+    border-radius: none;
 }
 
 td {
@@ -99,6 +65,10 @@ td {
     font-family: 'Poppins';
     font-size: 13px;
     width: 40%;
+}
+
+table {
+  border-top: none;
 }
 
 .btn-primary {
@@ -136,28 +106,23 @@ td {
         <h6 style="margin-left: 75px"><b>LOWONGAN TERSEDIA</b></h6>
     </div>    
     
-    <div class="main">
-<div class="content" style="margin-left: 90px;" >        
-        <div class="row">     
-            <div class="col-md-4">
-                  <div class="form-group">
-                    <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
-                  </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Lokasi">  
-                </div>
-            </div>
-            <div class="col-md-4" >
-                <button type="button" class="btn" style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
-            </div>
-        </div>
+    <div class="content" style="margin-left: 90px;" >        
+        
     </div><br>
           
-    <div class="table" style="padding-left: 120px; margin-top: -50px;">
-            <table class="table table-striped"  style="width: 56%">
-              <tbody>
+    <div class="table" style="padding-left: 120px; margin-top: -70px;">
+            <table class="table table-striped"  style="width: 56%; background-color: transparent;">
+                <thead>
+                  <tr>
+                    <th>    
+                        <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
+                    </th>
+                    <th>
+                        <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Lokasi">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
                 <tr>
                   <td>Waiter</td>
                   <td>Jakarta, Jl. Utan Kayu</td>
@@ -189,8 +154,7 @@ td {
           <br>
               <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search" style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
           <br>
-    </div>
-    
+
 
 @endsection
 
