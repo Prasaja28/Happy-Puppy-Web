@@ -6,23 +6,26 @@
   <style>
     .vl {
     border-left: 6px solid white;
-    min-height: 10vh;
+    min-height: 7vh;
     position: absolute;
     left: 50%;
     margin-left: -3px;
-    top: 155;
+    top: 127;
     }
+    .row1{
+ /* display: inline-r;*/
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
     @media (max-width:600px) {
     .vl {
-      border-left: 6px solid white;
-      min-height: 60vh;
-      position: absolute;
-      left: 50%;
-      margin-left: -3px;
-      top: 252;
-    }
-    .history div[name="years"] h4 {
-      font-size: 11px;
+    border-left: 6px solid white;
+    min-height: 60vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 252;
     }
     .history-desc {
         font-size: 11px;
@@ -59,86 +62,66 @@
 <section class="history px-3 px-md-0">
   <div class="container">
     <h3 class="font-weight-bold text-uppercase mb-3">Sejarah Perusahaan</h2>
-      
-      <div class="brand brand-history-right">
-        <div class="row justify-content-end">
+      @php
+      $history = [
+        [
+          'tahun'=>'2009',
+          'desc'=>'lorem ipsum',
+        ],  
+        [
+          
+          'tahun'=>'2010',
+          'desc'=>'lorem ipsum',
+        ],  
+        [
+          'tahun'=>'2011',
+          'desc'=>'lorem ipsum',
+        ],  
+        [
+          'tahun'=>'2012',
+          'desc'=>'lorem ipsum', 
+          
+        ]  
+      ];
+      @endphp
+      @foreach($history as $key=>$row)
+     <!--  <div id='content'> -->
+      <div class="brand {{($key%2==0)? 'brand-history-right' : 'brand-history-left'}}">
+        <div class="row {{($key%2==0)? 'justify-content-center' : 'justify-content-center'}}">
           <div class="col-4 col-md-4 d-flex justify-content-center">
-            <div name="years" class="y-2009 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">2009</h4>
+<!-- <div class="content"> -->
+            <!-- <div name="years" class="row  align-self-center d-flex justify-content-center rounded-circle"> -->
+              <div name="years" class="y-2009 align-self-center d-flex justify-content-center rounded-circle">
+              <h4 class="align-self-center font-weight-bold">{{ $row['tahun'] }}</h4>
             </div>
               <div class="vl"></div>
+<!--</div> -->
           </div>
+          <div class="row {{($key%2==0)? 'justify-content-end' : 'justify-content-start'}}">
           <div class="col-4 col-md-4">
-            <p class="text-muted text-justify history-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
+            <p class="text-muted text-justify-content-start history-desc">
+              {{ $row['desc'] }}
             </p>
           </div>
         </div>
+        </div>
       </div>
+<!--     </div> -->
+      @endforeach
+      <script>
+        var count = 0;
+$('#content .row1').each(
+  function () {  
+    if(count%2 == 0){
+        $(this).css('background', '#F00');       
+    }else{
+        $(this).css('background', '#3875D9');              
+    }
+    count++;
+});
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       
-      <div class="brand brand-history-left">
-        <div class="row justify-content-start">
-          <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
-            <div name="years" class="y-2010 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">2010</h4>
-            </div>
-            <div class="vl"></div>
-          </div>
-          <div class="col-4 col-md-4 order-1">
-            <p class="text-muted text-justify history-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="brand brand-history-right">
-        <div class="row justify-content-end">
-          <div class="col-4 col-md-4 d-flex justify-content-center">
-            <div name="years" class="y-2015 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">2015</h4>
-            </div>
-            <div class="vl"></div>
-          </div>
-          <div class="col-4 col-md-4">
-            <p class="text-muted text-justify history-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand brand-history-left">
-        <div class="row justify-content-start">
-          <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
-            <div name="years" class="y-2017 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">2017</h4>
-            </div>
-            <div class="vl"></div>
-          </div>
-          <div class="col-4 col-md-4 order-1">
-            <p class="text-muted text-justify history-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="brand brand-history-right">
-        <div class="row justify-content-end">
-          <div class="col-4 col-md-4 d-flex justify-content-center">
-            <div name="years" class="y-2019 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">2019</h4>
-            </div>
-
-          </div>
-          <div class="col-4 col-md-4">
-            <p class="text-muted text-justify history-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus accusamus, provident tempora Lorem ipsum dolor sit amet consectetur adipisicing.
-            </p>
-          </div>
-        </div>
-      </div>
   </div>
 </section>
 @endsection
