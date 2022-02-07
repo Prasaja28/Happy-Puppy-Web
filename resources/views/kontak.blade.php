@@ -278,18 +278,13 @@
                 <form action="/action_page.php">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">    
-                                <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
-                            </div>
+                            <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                            
+                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                            
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                            
+                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
                         </div>
 
                         <div class="col-md-6">
