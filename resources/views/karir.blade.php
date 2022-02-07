@@ -68,7 +68,7 @@ td {
 }
 
 table {
-  border-top: none;
+  
 }
 
 .btn-primary {
@@ -111,13 +111,13 @@ table {
     </div><br>
           
     <div class="table" style="padding-left: 120px; margin-top: -70px;">
-            <table class="table table-striped"  style="width: 56%; background-color: transparent;">
+            <table class="table table-striped"  style="width: 56%; background-color: transparent; ">
                 <thead>
                   <tr>
-                    <th>    
+                    <th style="border-top: 0px;">    
                         <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
                     </th>
-                    <th>
+                    <th style="border-top: 0px;">
                         <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Lokasi">
                     </th>
                   </tr>

@@ -6,26 +6,23 @@
   <style>
     .vl {
     border-left: 6px solid white;
-    min-height: 7vh;
+    min-height: 10vh;
     position: absolute;
     left: 50%;
     margin-left: -3px;
-    top: 127;
+    top: 155;
     }
-    .row1{
- /* display: inline-r;*/
-  width: 100%;
-  color: #fff;
-  text-align: center;
-}
     @media (max-width:600px) {
     .vl {
-    border-left: 6px solid white;
-    min-height: 60vh;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 252;
+      border-left: 6px solid white;
+      min-height: 60vh;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      top: 252;
+    }
+    .history div[name="years"] h4 {
+      font-size: 11px;
     }
     .history-desc {
         font-size: 11px;
@@ -63,65 +60,78 @@
   <div class="container">
     <h3 class="font-weight-bold text-uppercase mb-3">Sejarah Perusahaan</h2>
       @php
-      $history = [
-        [
-          'tahun'=>'2009',
-          'desc'=>'lorem ipsum',
-        ],  
-        [
-          
-          'tahun'=>'2010',
-          'desc'=>'lorem ipsum',
-        ],  
-        [
-          'tahun'=>'2011',
-          'desc'=>'lorem ipsum',
-        ],  
-        [
-          'tahun'=>'2012',
-          'desc'=>'lorem ipsum', 
-          
-        ]  
-      ];
+          $historyDB = [
+            [
+              "tahun" => 2009,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ],
+            [
+              "tahun" => 2010,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ],
+            [
+              "tahun" => 2011,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ],
+            [
+              "tahun" => 2012,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ],
+            [
+              "tahun" => 2013,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ],
+            [
+              "tahun" => 2014,
+              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
+            ]
+          ];
+
+          $bgColor = ['y-2009', 'y-2010', 'y-2015', 'y-2017', 'y-2019'];
       @endphp
-      @foreach($history as $key=>$row)
-     <!--  <div id='content'> -->
-      <div class="brand {{($key%2==0)? 'brand-history-right' : 'brand-history-left'}}">
-        <div class="row {{($key%2==0)? 'justify-content-center' : 'justify-content-center'}}">
+
+      @foreach($historyDB as $key=>$history)
+      <!-- // $bgColor[$key%3]
+      // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
+      @if($key%2 == 0)
+      <div class="brand brand-history-right">
+        <div class="row justify-content-end">
           <div class="col-4 col-md-4 d-flex justify-content-center">
-<!-- <div class="content"> -->
-            <!-- <div name="years" class="row  align-self-center d-flex justify-content-center rounded-circle"> -->
-              <div name="years" class="y-2009 align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">{{ $row['tahun'] }}</h4>
+            <div name="years" class="{{$bgColor[$key%5]}} align-self-center d-flex justify-content-center rounded-circle">
+              <h4 class="align-self-center font-weight-bold">{{ $history["tahun"] }}</h4>
             </div>
+            @if($key!=count($historyDB)-1)
               <div class="vl"></div>
-<!--</div> -->
+            @endif
           </div>
-          <div class="row {{($key%2==0)? 'justify-content-end' : 'justify-content-start'}}">
           <div class="col-4 col-md-4">
-            <p class="text-muted text-justify-content-start history-desc">
-              {{ $row['desc'] }}
+            <p class="text-muted text-justify history-desc">
+              {{ $history["desc"] }}
             </p>
           </div>
         </div>
+      </div>
+      @else
+      <div class="brand brand-history-left">
+        <div class="row justify-content-start">
+          <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
+            <div name="years" class="{{$bgColor[$key%5]}} align-self-center d-flex justify-content-center rounded-circle">
+              <h4 class="align-self-center font-weight-bold">{{ $history["tahun"] }}</h4>
+            </div>
+            @if($key!=count($historyDB)-1)
+              <div class="vl"></div>
+            @endif
+          </div>
+          <div class="col-4 col-md-4 order-1">
+            <p class="text-muted text-justify history-desc">
+              {{ $history["desc"] }}
+            </p>
+          </div>
         </div>
       </div>
-<!--     </div> -->
+      @endif
       @endforeach
-      <script>
-        var count = 0;
-$('#content .row1').each(
-  function () {  
-    if(count%2 == 0){
-        $(this).css('background', '#F00');       
-    }else{
-        $(this).css('background', '#3875D9');              
-    }
-    count++;
-});
-      </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      
+     
   </div>
 </section>
 @endsection
