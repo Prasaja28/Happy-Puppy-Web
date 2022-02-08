@@ -34,6 +34,7 @@
     margin-top: 50px;
     width: 100%;
     padding: 60px;
+    padding-left: 110px;
     background-color: #221E40;
     font-family: 'Poppins';
 }
@@ -64,7 +65,7 @@ td {
     background-color: #344072;
     font-family: 'Poppins';
     font-size: 13px;
-    width: 40%;
+    width: 130%;
 }
 
 table {
@@ -110,15 +111,18 @@ table {
         
     </div><br>
           
-    <div class="table" style="padding-left: 120px; margin-top: -70px;">
-            <table class="table table-striped"  style="width: 56%; background-color: transparent; ">
+    <div class="table" style="padding-left: 180px; margin-top: -70px;">
+            <table class="table table-striped"  style="width: 80%; background-color: transparent; ">
                 <thead>
                   <tr>
-                    <th style="border-top: 0px;">    
+                    <th style="border-top: 0px; padding-left: 0px;">    
                         <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
                     </th>
                     <th style="border-top: 0px;">
                         <input type="text" class="form-control" style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" id="formGroupExampleInput" placeholder="Pilih Lokasi">
+                    </th>
+                    <th style="border-top: 0px;">
+                      <button type="button" class="btn" style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
                     </th>
                   </tr>
                 </thead>
@@ -150,10 +154,13 @@ table {
               </tbody>
             </table>
     </div>
-          
-          <br>
+    <br>
+          <div class="form-group" style="padding-left: 60px;">
               <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search" style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
+          </div>
           <br>
+              
+          
 
 
 @endsection
