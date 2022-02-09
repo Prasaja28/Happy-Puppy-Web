@@ -6,11 +6,11 @@
   <style>
     .vl {
     border-left: 6px solid white;
-    min-height: 10vh;
+    min-height: 7vh;
     position: absolute;
     left: 50%;
     margin-left: -3px;
-    top: 155;
+    top: 127;
     }
     @media (max-width:600px) {
     .vl {
