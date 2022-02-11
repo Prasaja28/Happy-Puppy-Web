@@ -2,9 +2,9 @@
 @section('title','Home') <!-- name title -->
 @section('css-internal')
 
-  <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
-  <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 @endsection
 
 @section('konten')
@@ -63,14 +63,15 @@
     <div class="row pt-2 px-3 justify-content-md-center">
       <div class="col-12 col-md-6">
         <select class="form-control select2bs4" id="search">
-          <option selected="selected"></option>
-          <option value="#">Alabama</option>
-          <option value="#">Alaska</option>
-          <option>California</option>
-          <option>Delaware</option>
-          <option>Tennessee</option>
-          <option>Texas</option>
-          <option>Washington</option>
+          {{-- <option selected="selected"></option> --}}
+          <option></option>
+          <option> Alabama</option>
+          <option> Alaska</option>
+          <option> California</option>
+          <option> Delaware</option>
+          <option> Tennessee</option>
+          <option> Texas</option>
+          <option> Washington</option>
         </select>
       </div>
     </div>
@@ -302,7 +303,11 @@
       //Initialize Select2 Elements
       $('.select2bs4').select2({
         //set placeholder
-      placeholder: '<center>Masukkan Nama Kota</center>'+'<p style="text-align:right;margin-top:-36px"><i class="fab fa-search"></i></p>',
+      placeholder: `<p class="text-center" style="color: #A3A3A3; opacity: 0.6;">Masukkan Nama Kota</p> 
+                      <p style='text-align:right; margin-top:-51px'>
+                        <i class='fas fa-search'></i>
+                      </p>
+                    `,
       allowClear: true,
       templateResult: formatState,
       escapeMarkup: function(m) { 
@@ -320,13 +325,13 @@
         window.location.href = '/lokasi/'+data;
       })
 
-  function formatState (state) {
-    if (!state.id) { return state.text; }
-    var $state = $(
-      '<i class="fab fa-search">'+ ' '+state.text+'</i>');
-  return $state;
-  };
-    })
+    function formatState (state) {
+      let searchOptions = document.querySelectorAll('#search option');
+      if (state.id) { 
+        return  searchOptions.innerHTML = `<i class="fas fa-search" style="color: #888888; margin-right: 10px;"></i> ${state.text}`; 
+      }
+    };
+  })
 </script>
 
 @endsection

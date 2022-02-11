@@ -73,6 +73,12 @@ section[name="outlet-search"] {
     background-color: #221e40;
 }
 
+section[name="outlet-search"] select#search {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
 section[name="outlet-search"] h4 {
     font-size: 20px;
     font-weight: 500;
