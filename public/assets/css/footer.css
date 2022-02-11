@@ -22,6 +22,10 @@ div[name="detail-info"] img {
     height: 23px;
 }
 
+div[name="detail-info"] img:nth-child(3) {
+    height: 40px;
+}
+
 div[name="industry-info"] p {
     font-size: 12px;
 }
@@ -33,7 +37,14 @@ div[name="row-social-media"] img {
 
 /* ********************************************* */
 div[name="more-detail"] .btn-member {
+    width: 150px;
+    height: auto;
+    font-size: 12px;
     background-color: #519ff8;
+    /* border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; */
 }
 
 div[name="change-language"] a:active,
