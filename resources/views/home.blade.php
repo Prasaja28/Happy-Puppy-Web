@@ -149,8 +149,9 @@
               <p class="text-muted">Terlanjur Cinta</p>
             </div>
   
-            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">View all 
-              <i class="fa fa-solid fa-circle-chevron-right"></i>
+            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">
+              View all 
+              <i class="fas fa-chevron-circle-right"></i>
             </button>
           </div>
         </div>
@@ -170,8 +171,9 @@
               <p class="text-muted">Sejauh Dua Benua</p>
             </div>
   
-            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">View all
-              <i class="fab fa-chevron-circle-right"></i>
+            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">
+              View all
+              <i class="fas fa-chevron-circle-right"></i>
             </button>
           </div>
         </div>
@@ -197,7 +199,10 @@
           <div class="card-body pb-0">
             <div class="card-title">
               <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-              <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+              <div class="date d-flex justify-content-between align-items-center">
+                <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+                <a href="#"><img src="{{ asset('img/book.png') }}"></a>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +215,10 @@
           <div class="card-body pb-0">
             <div class="card-title">
               <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-              <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+              <div class="date d-flex justify-content-between align-items-center">
+                <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+                <a href="#"><img src="{{ asset('img/book.png') }}"></a>
+              </div>
             </div>
           </div>
         </div>
@@ -229,7 +237,10 @@
         <div name="description" class="pr-1 pr-md-3">
           <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
           <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+          <div class="date d-flex justify-content-between align-items-center">
+            <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+            <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+          </div>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -240,7 +251,10 @@
         <div name="description" class="pr-1 pr-md-3">
           <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
           <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+          <div class="date d-flex justify-content-between align-items-center">
+            <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+            <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+          </div>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -251,7 +265,10 @@
         <div name="description" class="pr-1 pr-md-3">
           <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
           <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-          <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+          <div class="date d-flex justify-content-between align-items-center">
+            <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
+            <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+          </div>
         </div>
         <div class="clearfix"></div>
       </div>

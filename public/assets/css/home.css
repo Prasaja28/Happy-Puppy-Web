@@ -139,6 +139,11 @@ section[name="song"] button.btn-modif {
     background-color: #344072;
 }
 
+section[name="song"] div[name="list-song"] button i.fas {
+    height: 80%;
+    width: auto;
+}
+
 /* ********************************************************* */
 section[name="latest-news"] {
     margin-top: -270px;
@@ -171,6 +176,11 @@ section[name="latest-news"] p.text-date {
     color: #c3c8d9;
 }
 
+section[name="latest-news"] div.date img {
+    width: 20px;
+    height: 20px;
+}
+
 section[name="next-news"] {
     background-color: white;
     padding-top: 200px;
@@ -198,6 +208,11 @@ section[name="next-news"] div[name="item"] .text-date {
     font-size: 12px;
     font-weight: bold;
     color: #c3c8d9;
+}
+
+section[name="next-news"] div.date img {
+    width: 20px;
+    height: 20px;
 }
 
 section[name="next-news"] div[name="item"]:nth-child(3) {
@@ -283,6 +298,11 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
         font-size: 18px;
     }
 
+    section[name="latest-news"] div.date img {
+        width: 30px;
+        height: 30px;
+    }
+
     /* ***************************************************** */
     section[name="next-news"] div[name="item"] img {
         height: 100%;
@@ -301,6 +321,11 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
         font-size: 18px;
         font-weight: bold;
         color: #c3c8d9;
+    }
+
+    section[name="next-news"] div.date img {
+        width: 30px;
+        height: 30px;
     }
 }
 
