@@ -17,6 +17,7 @@ class CreateProfilTable extends Migration
             $table->id();
             $table->year('year');
             $table->text('content_history');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OutletWaralabaController;
+use App\Http\Controllers\ProfilController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,6 +90,12 @@ Route::get('/outlet-admin',[OutletWaralabaController::class, 'index']);
 Route::get('/outlet-admin/delete/{id}',[OutletWaralabaController::class, 'destroy']);
 Route::post('/outlet-admin/store',[OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update']);
+
+//Profil
+Route::get('/profil-admin',[ProfilController::class, 'index']);
+Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
+Route::post('/profil-admin/store',[ProfilController::class, 'store']);
+Route::put('/profil-admin/update/{id}',[ProfilController::class, 'update']);
 
 //users
 

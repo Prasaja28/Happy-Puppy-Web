@@ -60,10 +60,10 @@
                         <select class="custom-select form-control-border  @error('status') is-invalid @enderror" id="status" name="status" required>
                             @if($songlists->status == 1)
                             <option selected="Selected" value="1">Aktif</option>
-                            <option value="0">NoAkfit</option>
+                            <option value="0">Non-Aktif</option>
                             @else
-                            <option selected="Selected" value="1">NoAktif</option>
-                            <option value="1">Akfit</option>
+                            <option selected="Selected" value="1">Non-Aktif</option>
+                            <option value="1">Aktif</option>
                             @endif
                         </select>
                         @error('status')

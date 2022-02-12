@@ -62,7 +62,15 @@
             <a href="{{ url('/outlet-admin') }}" class="nav-link @yield('outlet-admin')">
             <i class="nav-icon fa fa-building-o"></i>
               <p>
-              Outlet (Waralaba)
+              Outlet
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/profil-admin') }}" class="nav-link @yield('profil-admin')">
+            <i class="nav-icon fa fa-history"></i>
+              <p>
+              Profil
               </p>
             </a>
           </li>

@@ -1,6 +1,6 @@
 @extends('admin/layout-komponen/master')
 
-@section('title','News')
+@section('title','Profil')
 
 @section('css')
 <!-- css internal place -->
@@ -19,7 +19,7 @@
     }
  </style>
 @endsection
-@section('news-admin','active')
+@section('profil-admin','active')
 @section('konten')
 <!-- Content Body place -->
 <section class="content">
@@ -33,7 +33,7 @@
             <div class="col-md-12 my-2">
                 <div class="card">
                     <div class="card-header">
-                    <h3 class="card-title">Profil</h3>
+                    <h3 class="card-title">Profil Input</h3>
                     </div>
                   <!-- /.card-header -->
                     <div class="card-body px-4">
@@ -44,55 +44,44 @@
                               <th>No</th>
                               <th>Tahun</th>
                               <th>Keterangan</th>
+                              <th>Status</th>
                               <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @forelse($news as $newss)
-                                      <tr>
-                                          <td>{{ $loop->iteration }}</td>
-                                          <td>{{ $newss->thumbnail }}</td>
-                                          <td>{{ $newss->news_title_id }}</td>
-                                          <td>{{ $newss->news_title_en }}</td>
-                                          <td>{{ $newss->news_content_id }}</td>
-                                          <td>{{ $newss->news_content_en }}</td>
-                                          <td>{{ $newss->news_date }}</td>
-                                          <td>{{ $newss->news_category }}</td>
-                                          <td>{{ $newss->users->name }}</td>
-                                          @if($newss->status == 1)
-                                          <td>Aktif</td>
-                                          @else
-                                          <td>NonAktif</td>
-                                          @endif
+                            @forelse($profil as $data)
+                              <tr>
+                                  <td>{{ $loop->iteration }}</td>
+                                  <td>{{ $data->year }}</td>
+                                  <td>{{ $data->content_history }}</td>
+                                  @if($data->status == 1)
+                                      <td>Aktif</td>
+                                  @else
+                                      <td>NonAktif</td>
+                                  @endif
                                           
-                                          <td class="text-center">
-                                        @if($newss->status == 1)
-                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$newss->id}}"><i class="fas fa-trash-alt"></i></i></button>
-                                        @endif
-                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$newss->id}}"><i class="fas fa-pen-square"></i></button>
-                                          </td>
-                                      </tr>
-                                      <!-- Model Delete -->
-                                      @include('admin.news.news-delete')
-                                      <!-- Model Update -->
-                                      @include('admin.news.news-update')
-                                  @empty
-                                  <div class="alert alert-danger">
-                                                Data News belum Tersedia.
-                                  </div>
-                              @endforelse
+                                  <td class="text-center">
+                                    @if($data->status == 1)
+                                      <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$data->id}}"><i class="fas fa-trash-alt"i></i></button>
+                                    @endif
+                                      <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$data->id}}"><ibutton class="fas fa-pen-square"></ibutton>
+                                  </td>
+                              </tr>
+                              <!-- Model Delete -->
+                              @include('admin.profil.profil-delete')
+                              <!-- Model Update -->
+                              @include('admin.profil.profil-update')
+                              @empty
+                              <div class="alert alert-danger">
+                                Data News belum Tersedia.
+                              </div>
+                            @endforelse
                           </tbody>
                           <tfoot>
                             <tr>
                               <th>No</th>
-                              <th>Thumbnail</th>
-                              <th>News title ID</th>
-                              <th>News title EN</th>
-                              <th>News Content ID</th>
-                              <th>News Content EN</th>
-                              <th>News Date</th>
-                              <th>Category</th>
-                              <th>Log User</th>
+                              <th>Tahun</th>
+                              <th>Keterangan</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
@@ -106,7 +95,7 @@
       </div>
   </div>
 </section>
-@include('admin.news.news-create')
+@include('admin.profil.profil-create')
 @endsection
 
 @section('script')

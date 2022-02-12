@@ -117,6 +117,14 @@ class CreateRelationsTable extends Migration
                 ->onDelete('cascade');
         });
 
+        Schema::table('profil', function (Blueprint $table) {
+            $table->foreignId('users_id')
+                ->nullable()
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
+
         
     }
 
