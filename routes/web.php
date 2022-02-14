@@ -62,6 +62,7 @@ Route::get('/form-waralaba', function () {
 Route::get('/news-detail', function () {
     return view('news-detail');
 });
+
 //login
 Route::get('/login',[LoginController::class, 'index']);
 Route::post('/login',[LoginController::class, 'login']);
@@ -79,26 +80,25 @@ Route::get('/songlist-admin/delete/{id}',[SonglistController::class, 'destroy'])
 Route::put('/songlist-admin/update/{id}',[SonglistController::class, 'update']);
 Route::post('/songlist-admin/store',[SonglistController::class, 'store']);
 
-//top artis
+//top-artist
 Route::get('/topartist-admin',[TopartistController::class, 'index']);
 Route::get('/topartist-admin/delete/{id}',[TopartistController::class, 'destroy']);
 Route::post('/topartist-admin/store',[TopartistController::class, 'store']);
 Route::put('/topartist-admin/update/{id}',[TopartistController::class, 'update']);
 
-//Outlet
+//outlet
 Route::get('/outlet-admin',[OutletWaralabaController::class, 'index']);
 Route::get('/outlet-admin/delete/{id}',[OutletWaralabaController::class, 'destroy']);
 Route::post('/outlet-admin/store',[OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update']);
 
-//Profil
+//profil
 Route::get('/profil-admin',[ProfilController::class, 'index']);
 Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
 Route::post('/profil-admin/store',[ProfilController::class, 'store']);
 Route::put('/profil-admin/update/{id}',[ProfilController::class, 'update']);
 
 //users
-
 Route::get('/users-admin',[UsersController::class, 'index']);
 Route::get('/users-admin/delete/{id}',[UsersController::class, 'destroy']);
 Route::post('/users-admin/store',[UsersController::class, 'store']);

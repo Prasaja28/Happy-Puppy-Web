@@ -11,10 +11,14 @@ class OutletWaralabaController extends Controller
     public function index()
     {
         $outlet = Outlet::all();
-        $datas = DB::table('detail_antrian');
+        $datas = DB::table('outlet')
+        ->join('profil', 'outlet.profil_id', '=', 'profil.profil_id')
+        ->join('city', 'outlet.city_id', '=', 'city.city_id')
+        ->join('citysub', 'outlet.citysub_id', '=', 'citysub.citysub_id')->get();
         
         return view('admin.outlet-admin.outlet-admin-index',compact('outlet'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
