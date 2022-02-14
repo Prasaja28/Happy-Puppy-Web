@@ -22,10 +22,10 @@
       top: 110;
     }
     .history div[name="years"] h4 {
-      font-size: 11px;
+      font-size: 13px;
     }
     .history-desc {
-        font-size: 11px;
+        font-size: 6px;
         overflow-wrap: anywhere;
     }
   }

@@ -19,15 +19,16 @@ footer {
 
 div[name="detail-info"] img {
     width: auto;
-    height: 23px;
+    height: 13px;
 }
 
 div[name="detail-info"] img:nth-child(3) {
-    height: 40px;
+    height: 19px;
 }
 
 div[name="industry-info"] p {
-    font-size: 12px;
+    font-size: 6px;
+    margin-left: -13px;
 }
 
 div[name="row-social-media"] img {
