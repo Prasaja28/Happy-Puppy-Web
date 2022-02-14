@@ -15,11 +15,11 @@
     @media (max-width:600px) {
     .vl {
       border-left: 6px solid white;
-      min-height: 60vh;
+      min-height: 5vh;
       position: absolute;
       left: 50%;
       margin-left: -3px;
-      top: 252;
+      top: 110;
     }
     .history div[name="years"] h4 {
       font-size: 11px;
