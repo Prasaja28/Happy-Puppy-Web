@@ -7,7 +7,9 @@ use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OutletWaralabaController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\KeluhanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -97,6 +99,12 @@ Route::get('/profil-admin',[ProfilController::class, 'index']);
 Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
 Route::post('/profil-admin/store',[ProfilController::class, 'store']);
 Route::put('/profil-admin/update/{id}',[ProfilController::class, 'update']);
+
+//Kontak
+Route::get('/kontak-admin',[KontakController::class, 'index']);
+
+//Keluhan
+Route::get('/keluhan-admin',[KeluhanController::class, 'index']);
 
 //users
 Route::get('/users-admin',[UsersController::class, 'index']);

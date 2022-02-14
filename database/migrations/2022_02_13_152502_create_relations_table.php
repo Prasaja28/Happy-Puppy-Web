@@ -68,6 +68,22 @@ class CreateRelationsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
+        
+        Schema::table('requestlagu', function (Blueprint $table) {
+            $table->foreignId('outlet_id')
+                ->nullable()
+                ->constrained('outlet')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
+        
+        Schema::table('keluhan', function (Blueprint $table) {
+            $table->foreignId('outlet_id')
+                ->nullable()
+                ->constrained('outlet')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
 
         Schema::table('citysub', function (Blueprint $table) {
             $table->foreignId('city_id')

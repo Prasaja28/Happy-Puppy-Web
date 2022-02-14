@@ -75,6 +75,30 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ url('/kontak-admin') }}" class="nav-link @yield('kontak-admin')">
+            <i class="nav-icon fa fa-phone"></i>
+              <p>
+              Kontak (Pesan)
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/keluhan-admin') }}" class="nav-link @yield('keluhan-admin')">
+            <i class="nav-icon fas fa-exclamation"></i>
+              <p>
+              Keluhan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('/request-admin') }}" class="nav-link @yield('request-admin')">
+            <i class="nav-icon fas fa-music"></i>
+              <p>
+              Request Lagu
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
             <i class="nav-icon fas fa-users"></i>
               <p>
