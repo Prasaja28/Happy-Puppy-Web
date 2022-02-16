@@ -6,10 +6,10 @@ use App\Http\Controllers\SonglistController;
 use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\OutletWaralabaController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KeluhanController;
+use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

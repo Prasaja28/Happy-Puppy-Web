@@ -58,6 +58,7 @@ h6 {
 
 td {
   font-size: 15px;
+  border-top: 0px;
 }
 
 .btn {
@@ -128,7 +129,7 @@ table {
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Waiter</td>
+                  <td style="">Waiter</td>
                   <td>Jakarta, Jl. Utan Kayu</td>
                 </tr>
                 <tr>

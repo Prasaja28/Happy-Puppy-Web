@@ -11,9 +11,19 @@ class Outlet extends Model
     protected $table = 'outlet';
     protected $primaryKey = 'id';
     protected $fillable = ['thumbnail','name','address','phone','fax','link_ig','link_2','users_id','city_id','citysub_id'];
-    protected $guarded = [];
+    
     public function relasi_users()
     {
         return $this->belongsTo(User::class,'users_id');
+    }
+
+    public function relasi_city()
+    {
+    	return $this->belongsTo(City::class,'city_id');
+    }
+
+    public function relasi_citysub()
+    {
+    	return $this->belongsTo(Citysub::class,'citysub_id');
     }
 }

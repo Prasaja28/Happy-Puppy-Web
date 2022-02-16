@@ -1,40 +1,46 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Outlet;
+use App\Models\User;
+use App\Models\City;
+use App\Models\Citysub;
 use Session;
 
 class OutletWaralabaController extends Controller
 {
     public function index()
     {
-        $outlet = Outlet::all();
-        $datas = DB::table('outlet')
-        ->join('profil', 'outlet.profil_id', '=', 'profil.profil_id')
-        ->join('city', 'outlet.city_id', '=', 'city.city_id')
-        ->join('citysub', 'outlet.citysub_id', '=', 'citysub.citysub_id')->get();
-        
-        return view('admin.outlet-admin.outlet-admin-index',compact('outlet'));
+        $outlet = DB::table('outlet')
+                    ->join('users', 'outlet.users_id', '=', 'users.users_id')
+                    ->join('city', 'outlet.city_id', '=', 'city.city_id')
+                    ->join('citysub', 'outlet.citysub_id', '=', 'citysub.citysub_id')
+                    ->get();
+        DB::table('users')->get();
+        DB::table('city')->get();
+        DB::table('citysub')->get();
+        return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function insert()
+    {   
+        $outlet= DB::table('outlet')->get();
+        $users= DB::table('users')->get();
+        $city= DB::table('city')->get();
+        $citysub= DB::table('citysub')->get();
+        $outlet = array(
+            'menu' => 'outlet',
+            'outlet' => $outlet,
+            'users' => $users,
+            'city' => $city,
+            'citysub' => $citysub,
+            'submenu' => '',
+        );
+        return view('admin.outlet-admin.outlet-admin-insert', $outlet); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -66,35 +72,6 @@ class OutletWaralabaController extends Controller
             return redirect('/outlet-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -126,18 +103,12 @@ class OutletWaralabaController extends Controller
             return redirect('/outlet-admin')->with('status','Data Berhasil Di update!!!'); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Outlet::where('id',$id)
         ->update([
             'status' => 1,
-            'users_id'=> Session::get('user_id'),
+            'users_id'=> Session::get('users_id'),
             'city_id'=> Session::get('city_id'),
             'citysub_id'=> Session::get('citysub_id')
         ]);

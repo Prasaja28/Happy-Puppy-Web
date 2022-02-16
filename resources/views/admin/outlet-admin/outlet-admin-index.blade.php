@@ -72,10 +72,10 @@
                               <td>{{$outlet->link_2}}<td>                                
                                 
                               <td class="text-center">
-                              @if($topartists->status == 1)
-                                  <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$topartists->id}}"><i class="fas fa-trash-alt"></i></i></button>
+                              @if($outlet->status == 1)
+                                  <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$outlet->id}}"><i class="fas fa-trash-alt"></i></i></button>
                               @endif
-                                <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$topartists->id}}"><i class="fas fa-pen-square"></i></button>
+                                <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$outlet->id}}"><i class="fas fa-pen-square"></i></button>
                               </td>
                           </tr>
                                 <!-- Model Delete -->
