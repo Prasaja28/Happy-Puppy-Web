@@ -24,23 +24,6 @@ class OutletWaralabaController extends Controller
         return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
-    public function insert()
-    {   
-        $outlet= DB::table('outlet')->get();
-        $users= DB::table('users')->get();
-        $city= DB::table('city')->get();
-        $citysub= DB::table('citysub')->get();
-        $outlet = array(
-            'menu' => 'outlet',
-            'outlet' => 'outlet',
-            'users' => 'users',
-            'city' => 'city',
-            'citysub' => 'citysub',
-            'submenu' => '',
-        );
-        return view('admin.outlet-admin.outlet-admin-insert', $outlet); 
-    }
-
     public function store(Request $request)
     {
         $request->validate([
