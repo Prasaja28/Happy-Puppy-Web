@@ -14,9 +14,9 @@ class OutletWaralabaController extends Controller
     public function index()
     {
         $outlet = DB::table('outlet')
-                    ->join('users', 'outlet.users_id', '=', 'users.users_id')
-                    ->join('city', 'outlet.city_id', '=', 'city.city_id')
-                    ->join('citysub', 'outlet.citysub_id', '=', 'citysub.citysub_id')
+                    ->join('users', 'outlet.users_id', '=', 'users.id')
+                    ->join('city', 'outlet.city_id', '=', 'city.id')
+                    ->join('citysub', 'outlet.citysub_id', '=', 'citysub.id')
                     ->get();
         DB::table('users')->get();
         DB::table('city')->get();
@@ -32,10 +32,10 @@ class OutletWaralabaController extends Controller
         $citysub= DB::table('citysub')->get();
         $outlet = array(
             'menu' => 'outlet',
-            'outlet' => $outlet,
-            'users' => $users,
-            'city' => $city,
-            'citysub' => $citysub,
+            'outlet' => 'outlet',
+            'users' => 'users',
+            'city' => 'city',
+            'citysub' => 'citysub',
             'submenu' => '',
         );
         return view('admin.outlet-admin.outlet-admin-insert', $outlet); 

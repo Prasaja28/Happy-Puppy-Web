@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Citysub extends Model
 {
     use HasFactory;
+    public function outlet()
+    {
+        return $this->hasMany(Outlet::class,'id');
+    }
 }
