@@ -44,7 +44,7 @@
 /*    top: 20px;*/
     font-size:13px;
     font-weight: bold;
-   border-bottom-width: 4px ;
+    border-bottom-width: 4px ;
     border-bottom-style: solid;
     border-bottom-color: black; 
     margin-top: 60px;
@@ -54,6 +54,8 @@
     .title-news2{
 /*    top: 20px;*/
     font-size:40px;
+    line-height: 30pt;
+    font-weight: 500;
     margin-top: 35px;
     color: #000080;
     font-family: 'Poppins';
@@ -81,20 +83,21 @@
 
   .news-title{
     font-family: 'Poppins';
-      text-align:center;
+    text-align:center;
   }
   .image-background{
-    background-image: url('/img/came.jpg');
+    background-image: url('/img/camila.png');
+    /* background-size: 1000px 800px; */
     margin-top: -850px;
     top: -100px;
     margin-left: 115px;
     /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
     min-height:70vh;
     max-width: 170.5vh;
-        width: 100%;
+    width: 100%;
     margin-bottom: 450px;
-  padding: 10px;
-  box-shadow: 0px 10px #D1D6DB;
+    padding: 10px;
+    box-shadow: 0px 10px #D1D6DB;
   }
   .image-color{
     background-color: #E9EEF4;
@@ -109,6 +112,7 @@
   }
   .news-content{
     margin-top: -60vh;
+    line-height: 28pt;
   }
   @media(max-width:600px){
     .color-background{

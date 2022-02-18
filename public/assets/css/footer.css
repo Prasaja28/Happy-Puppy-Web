@@ -83,6 +83,10 @@ div[name="term-and-condition"] p {
         height: 50px;
     }
 
+    div[name="industry-info"] p {
+        font-size: 12px;
+    }
+
     div[name="term-and-condition"] {
         margin-top: -50px;
     }

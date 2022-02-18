@@ -296,7 +296,7 @@
     }
     .popularNews{
         margin-top:25px;
-        min-height:200px;
+        min-height:100px;
         background-color:#221E40;
     }
     .card-img-popular{
