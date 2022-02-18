@@ -145,7 +145,7 @@
 }
 .card-news-popular{
   width: 37rem;
-  height: 130px;
+  height: 180px;
   margin-bottom: 20px;
   margin-top:10px;
   top: -400px;
@@ -172,7 +172,7 @@
     background-color:#221E40;
 }
 .card-img-popular{
-    height:130px;
+    height:180px;
 }
 .popular-card-news{
     margin-top:-150px;
@@ -457,7 +457,7 @@
                     <div class="card card-news-popular"style="z-index:2;">
                     <div class="row no-gutters">
                       <div class="col-6">
-                        <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="...">
+                        <img src="{{ asset('img/hijau-next-news.png') }}" class="card-img-top card-img-popular" alt="...">
                       </div>
                       <div class="col-6">
                         <div class="card-body text-bottom"style="z-index:2;">
@@ -474,7 +474,7 @@
                     <div class="card card-news-popular"style="z-index:2;">
                     <div class="row no-gutters">
                       <div class="col-6">
-                        <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="...">
+                        <img src="{{ asset('img/stefan.png') }}" class="card-img-top card-img-popular" alt="...">
                       </div>
                       <div class="col-6">
                         <div class="card-body text-bottom"style="z-index:2;">
@@ -491,7 +491,7 @@
                     <div class="card card-news-popular" style="z-index:2;">
                     <div class="row no-gutters">
                       <div class="col-6">
-                        <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="...">
+                        <img src="{{ asset('img/avril.png') }}" class="card-img-top card-img-popular" alt="...">
                       </div>
                       <div class="col-6">
                         <div class="card-body text-bottom" style="z-index:2;">

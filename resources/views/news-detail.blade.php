@@ -25,8 +25,8 @@
 .card-news{
   width: 14rem;
   margin: 0 auto; /* Added */
-  margin-bottom: 10px;
-  box-shadow: 0px 5px #E9EEF4;
+  margin-bottom: 20px;
+  /* box-shadow: 0px 5px #E9EEF4; */
     
   }
   .card-img-news{
@@ -37,8 +37,8 @@
     margin-bottom:-10px;
   }
   .title-news{
-    font-size:12px;
-
+    font-size: 16px;
+    font-weight: 500;
   }
   .title-news1{
 /*    top: 20px;*/
@@ -54,7 +54,8 @@
     .title-news2{
 /*    top: 20px;*/
     font-size:40px;
-    line-height: 30pt;
+    line-height: 40pt;
+    letter-spacing: 3px;
     font-weight: 500;
     margin-top: 35px;
     color: #000080;
@@ -82,25 +83,29 @@
   }
 
   .news-title{
+    font-size: 20px;
     font-family: 'Poppins';
-    text-align:center;
+    text-align: center;
+    color: #344072;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
   .image-background{
     background-image: url('/img/camila.png');
     /* background-size: 1000px 800px; */
     margin-top: -850px;
     top: -100px;
-    margin-left: 115px;
+    margin-left: 110px;
     /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
     min-height:70vh;
     max-width: 170.5vh;
-    width: 100%;
+    width: 97%;
     margin-bottom: 450px;
     padding: 10px;
-    box-shadow: 0px 10px #D1D6DB;
+    /* box-shadow: 0px 10px #D1D6DB; */
   }
   .image-color{
-    background-color: #E9EEF4;
+    /* background-color: #E9EEF4; */
     margin-top: -340px;
     margin-left: 115px;
     /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
@@ -186,7 +191,7 @@
         
                 <div class="news">
                     Camila Cabello baru saja merilis lagu barunya yang berjudul "Liar", Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
-                </div>
+                </div><br><br>
                 <div class="news">
                     Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
                 </div>
