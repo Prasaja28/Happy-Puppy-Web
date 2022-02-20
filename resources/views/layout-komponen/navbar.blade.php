@@ -55,7 +55,7 @@
               <a class="dropdown-item" href="{{ url('/profile') }}">PROFILE</a>
               <a class="dropdown-item" href="{{ url('/waralaba') }}">WARALABA</a>
               <a class="dropdown-item" href="{{ url('/karir') }}">KARIR</a>
-              <a class="dropdown-item" href="{{ url('/FAQ') }}">KONTAK KAMI</a>
+              <a class="dropdown-item" href="{{ url('/kontak') }}">KONTAK KAMI</a>
             </div>
           </div>
         </div>

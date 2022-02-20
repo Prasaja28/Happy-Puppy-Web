@@ -117,14 +117,25 @@
     background-color: #221E40;
 }
 @media (max-width: 576px) {
+    .header{
+        min-height: 20vh;
+        background: no-repeat center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: rightl;
+        background-image: url('/img/waralaba.png')
+    }
     
     #txt1{
         color: white;
         position: absolute;
-        bottom: 0;
+        bottom: 160px;
         text-align: justify;
         margin: 0;
-        font-size: 40px;
+        margin-left: -30px;
+        font-size: 20px;
         font-weight: bold;
         min-height: 380px;
     }
@@ -140,6 +151,21 @@
         padding: 10px;
         color: white;
         background-color:#221E40;
+    }
+    .card-header, .cc {
+        color: white;
+        background-color: #85A4E1;
+        font-family: 'Poppins';
+        font-weight: bold;
+        border-bottom: none;
+        font-size: 15px;
+    }
+
+    .card-body {
+        background-color: #ECEFF1;
+        border-bottom: none;
+        border-radius: 1em;
+        font-size: 12px;
     }
     #p1{
         font-size: 20px;
@@ -192,6 +218,7 @@
     .btn{
         color: white;
         background-color: #221E40;
+        font-size: 13px;
     }
 }
 </style>
