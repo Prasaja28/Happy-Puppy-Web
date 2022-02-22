@@ -22,15 +22,15 @@ a:hover {
 }
 
 .header h2 {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 300;
-    padding-top: 180px;
+    padding-top: 42px;
 }
 
 .header h1 {
     font-size: 20px;
     font-weight: bolder;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .header-below {
@@ -44,16 +44,17 @@ a:hover {
 }
 
 .header-below h3 {
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bolder;
 }
 
 .header-below p {
+    font-size: 14px;
     font-weight: 300;
 }
 
 .description p {
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 300;
     line-height: 2.5rem;
 }
