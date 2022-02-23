@@ -5,18 +5,16 @@
 @section('css-internal')
 <!-- Add tag css in here -->
 <style>
-    .header{
-/*      margin-top: 131px;*/
-        min-height: 50vh;/*
-        margin-bottom: 500px;*/
-        background: no-repeat center scroll;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-position: rightl;
-        background-color: #221E40;
-        z-index: 1;
+.header{
+    min-height: 50vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: rightl;
+    background-color: #221E40;
+    z-index: 1;
         
 }
 .tab-content{
@@ -119,7 +117,19 @@
     margin-top: -60vh;
     line-height: 28pt;
   }
-  @media(max-width:600px){
+@media(max-width: 576px){
+    /* .header{
+      min-height: 20vh;
+      background: no-repeat center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: rightl;
+      background-color: #221E40;
+      z-index: 1;
+            
+    } */
     .color-background{
       background-image: linear-gradient(to right, #68a6fb , #f77a8b);
       position: relative;
@@ -135,7 +145,8 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        background-position: rightl; 
+        background-position: rightl;
+        background-color: #221E40; 
     }
     .card-news{
         width: 10rem;
@@ -152,13 +163,71 @@
         font-size:12px;
     }
     .news-time{
-        font-size:8px;
+        font-size: 10px;
         margin-top: 24px;
     }
     .news-title{
       text-align:left;
     }
+  
+  .title-news{
+    font-size: 16px;
+    font-weight: 500;
   }
+  .title-news1{
+/*    top: 20px;*/
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom-width: 4px ;
+    border-bottom-style: solid;
+    border-bottom-color: black; 
+    margin-top: 60px;
+    font-family: 'Poppins';
+  }
+
+    .title-news2{
+/*    top: 20px;*/
+    font-size: 18px;
+    line-height: 20pt;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-top: 35px;
+    color: #000080;
+    font-family: 'Poppins';
+  }
+  .news{
+/*    top: 20px;*/
+    font-size:12px;
+    color: black;
+    font-family: 'Poppins';
+    text-align: justify;
+  }
+  .news-title{
+    font-size: 12px;
+    font-family: 'Poppins';
+    text-align: center;
+    color: #344072;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .image-background{
+    background-image: url('/img/camila.png');
+    background-size: 302px 139px;
+    background-repeat: no-repeat;
+    margin-top: -630px;
+    top: -100px;
+    margin-left: 50px;
+    /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
+    min-height:22vh;
+    max-width: 170.5vh;
+    width: 97%;
+    margin-bottom: 450px;
+    padding: 10px;
+    /* box-shadow: 0px 10px #D1D6DB; */
+  }
+
+
+}
 </style>
 @endsection
 @section('navbar-news','active')

@@ -217,32 +217,94 @@
     #faq {
         padding: 0 18px;
     }
-@media(max-width: 800px) {
+@media(max-width: 576px) {
+    .header{
+        min-height: 20vh;
+        background: no-repeat center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: rightl;
+        background-image: url('/img/kontak.png')
+    }
+    #txt1{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        margin-left: -19px;
+        font-size: 20px;
+        min-height: 563px;
+        font-family: 'Poppins';
+    }
+    .back-grad {
+        height: 81px;
+        width: auto;
+        background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+    }
     .center {
         margin: auto;
-        width: 75%;
+        width: 302px;
+        height: 94px;
         padding: 40px;
         color: white;
         background-color:#221E40;
     }
     #p1{
         margin-top: 50px;
-        font-size: 10px;
+        font-size: 7px;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        text-align: justify;
+        text-align: left;
+        margin-top: -16px;
+        margin-left: -2px;
     }
     #p11{
-        font-size: 10px;
+        font-size: 6px;
+        margin-top: -45px;
+    }
+    .back {
+        height: 675px;
+        width: auto;
+        background-color: #85A4E1;
+    }
+    .tab {
+        float: left;
+        background-color: #85A4E1;
+        width: 30%;
+        height: 300px;
+        margin-top: 28px;
+    }
+    #form1 {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 28px;
     }
     #p2{
         font-size: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: justify;
     }
+    .card-header, .btn {
+        color: #221E40;
+        background-color: #FFFFFF;
+        font-family: 'Poppins';
+        font-weight: bold;
+        border-bottom: none;
+        font-size: 10px;
+    }
     #faq {
         padding: 0 18px;
-        font-size: 15px;
+        font-size: 20px;
+    }
+    .card-body {
+        background-color: #ECEFF1;
+        border-bottom: none;
+        border-radius: 1em;
+        font-size: 10px;
     }
 }
 </style>
