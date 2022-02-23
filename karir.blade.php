@@ -143,6 +143,9 @@
                 color: #ffffff;
                 margin-top: 20px;
                 margin-right: 5px;
+                border-bottom: 3px solid rgb(206, 135, 44);
+                display: inline;
+                padding-bottom: 7px;
             }
         }
 
