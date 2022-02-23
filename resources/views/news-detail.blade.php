@@ -117,6 +117,9 @@
     margin-top: -60vh;
     line-height: 28pt;
   }
+  .col-lg-5{
+    padding-left: 240px;
+  }
 @media(max-width: 576px){
     /* .header{
       min-height: 20vh;
@@ -152,6 +155,8 @@
         width: 10rem;
         margin: 0 auto; /* Added */
         margin-bottom: 10px;
+        margin-left: -18px;
+        margin-top: 272px;
     }
     .card-img-news{
         height:90px;
@@ -209,6 +214,7 @@
     color: #344072;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-left: -283px;
   }
   .image-background{
     background-image: url('/img/camila.png');
@@ -225,7 +231,12 @@
     padding: 10px;
     /* box-shadow: 0px 10px #D1D6DB; */
   }
-
+  .col-lg-5{
+    padding-left: 40px;
+  }
+  .mt-2, .my-2{
+    margin-top: -17.5rem!important;
+  }
 
 }
 </style>
@@ -266,7 +277,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5" style="padding-left: 240px; ">
+        <div class="col-lg-5" >
             <div id="detail-news-dekstop">
                 <div class="news-title pt-5">LATEST NEWS</div>
                 <div class="row">
@@ -295,7 +306,7 @@
                 </div>
             </div>
             <div id="detail-news-mobile" style="font-family: 'Poppins'">
-                <h6 class="news-title pt-5">Lates News</h6>
+                <h6 class="news-title pt-5">LATEST NEWS</h6>
                 <div class="row">
                   <div class="col-6 my-2">
                     <div class="card card-news">

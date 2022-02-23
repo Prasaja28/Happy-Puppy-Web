@@ -277,6 +277,27 @@
         height: 300px;
         margin-top: 28px;
     }
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
+        -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+        background-color: #85A4E1;
+        background-image: url('/img/Rectangle.png');
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+        /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
+        -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+        background-color: #85A4E1;
+        background-image: url('/img/Rectangle.png');
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;  
+    }
     #form1 {
         border-radius: 5px;
         background-color: #f2f2f2;
