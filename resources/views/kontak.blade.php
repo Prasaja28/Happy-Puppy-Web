@@ -348,7 +348,7 @@
     </div>
 </div>
 <div class="back">
-    <div class="container">
+    <div class="container" id="tab-request-dekstop">
         <div class="tab">
             <!-- <div class="tablinks" style="background-image: url('/img/Rectangle.png')" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</div> -->
             <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</button><br>
@@ -433,6 +433,112 @@
             </div>
         </div>
     </div>
+    <div class="container" id="tab-request-mobile">
+        <div id="accordion-req">
+            <div class="card border-0">
+                <div class="card-header" id="headingOne-req">
+                <h5 class="mb-0">
+                    <button class="btn req" data-toggle="collapse" data-target="#collapseOne-req" aria-expanded="true" aria-controls="collapseOne-req">
+                    Kontak
+                    </button>
+                </h5>
+                </div>
+
+                <div id="collapseOne-req" class="collapse show" aria-labelledby="headingOne-req" data-parent="#accordion">
+                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
+                        <form action="/action_page.php">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                    
+                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                                    
+                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                                    
+                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="pesan" name="pesan" placeholder="Pesan"></input>
+
+                                    <br><br><br><br><br>
+                                    <input style="background-color:#0275d8" type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-0">
+                <div class="card-header" id="headingTwo-req">
+                <h5 class="mb-0">
+                    <button class="btn req" data-toggle="collapse" data-target="#collapseTwo-req" aria-expanded="false" aria-controls="collapseTwo-req">
+                    Request Lagu
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseTwo-req" class="collapse" aria-labelledby="headingTwo-req" data-parent="#accordion">
+                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
+                        <form action="/action_page.php">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                    
+                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                                
+                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                        
+                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="req" name="req" placeholder="Request Lagu"></input>
+
+                                    <br><br><br><br><br>
+                                    <input style="background-color:#0275d8" type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+            <div class="card border-0">
+                <div class="card-header" id="headingThree-req">
+                <h5 class="mb-0">
+                    <button class="btn req" data-toggle="collapse" data-target="#collapseThree-req" aria-expanded="false" aria-controls="collapseThree-req">
+                    Keluhan
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseThree-req" class="collapse" aria-labelledby="headingThree-req" data-parent="#accordion">
+                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
+                        <form action="/action_page.php">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                    
+                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                
+                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+
+                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
+                
+                                    <input class="form-control" type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+
+                                    <br><br>
+                                    <input style="background-color:#0275d8" type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="back2">
     <div class="container" id="back2con">
@@ -441,35 +547,7 @@
             <h3 style="font-family: 'Poppins';font-weight: bold;">FAQ</h3>
             <h3 style="font-family: 'Poppins';">(frequently Ask Question)</h3>
         </div><br><br>
-        <!-- <button class="accordion" id="text-acc">Home Theatre buka untuk karaoke?</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    
-        <button class="accordion" id="text-acc">Karaoke keluarga, bisnis hiburan tanpa masalah</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    
-        <button class="accordion" id="text-acc">kenapa memilih waralaba Happy Puppy?</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <button class="accordion" id="text-acc">Hal yang perlu diperhatikan dalam waralaba ini</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <button class="accordion" id="text-acc">Berapa investasi yang dibutuhkan untuk waralaba ini?</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <button class="accordion" id="text-acc">Daftar kota tertutup untuk waralaba</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div><br><br><br><br> -->
+        
         <div id="accordion">
             <div class="card border-0">
                 <div class="card-header" id="headingOne">
@@ -579,6 +657,30 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " active";
   });
 }
+</script>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("accordion-req");
+var btns1 = header.getElementsByClassName("btn req");
+for (var i = 0; i < btns1.length; i++) {
+  btns1[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<script>
+        var width = screen.width;
+        if(width < 600){
+            document.getElementById('tab-request-mobile').style.display='block';
+            document.getElementById('tab-request-dekstop').style.display='none';
+        }else{
+            document.getElementById('tab-request-dekstop').style.display='block';
+            document.getElementById('tab-request-mobile').style.display='none';
+        }
 </script>
 @endsection
 

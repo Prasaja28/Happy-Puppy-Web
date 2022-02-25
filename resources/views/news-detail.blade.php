@@ -310,7 +310,7 @@
                 <div class="row">
                   <div class="col-6 my-2">
                     <div class="card card-news">
-                      <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                      <img src="/img/berita2.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
                         <p class="news-time"><?=date('M, d Y')?>
@@ -321,7 +321,7 @@
                   </div>
                   <div class="col-6 my-2">
                     <div class="card card-news">
-                      <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-news" alt="...">
+                      <img src="/img/berita1.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
                         <p class="news-time"><?=date('M, d Y')?>
