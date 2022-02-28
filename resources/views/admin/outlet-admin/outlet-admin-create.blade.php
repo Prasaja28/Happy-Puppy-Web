@@ -70,7 +70,7 @@
                         <label for="city_id">Kota :</label>
                         <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
                                 <option value="">(Pilih Kota)</option>
-                                @foreach($city_id as $data)
+                                @foreach($outlet as $data)
                                     <option value="{{$data->id}}">{{$data->city_name}}</option>
                                 @endforeach
                         </select>
@@ -84,7 +84,7 @@
                         <label for="citysub_id">Kecamatan :</label>
                         <select class="form-control" name="citysub_id" id="citysub_id" required="" data-dependent="citysub_id">
                                 <option value="">(Pilih Kota)</option>
-                                @foreach($citysub_id as $data)
+                                @foreach($outlet as $data)
                                     <option value="{{$data->id}}">{{$data->csub_name}}</option>
                                 @endforeach
                         </select>

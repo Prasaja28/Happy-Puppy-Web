@@ -29,7 +29,7 @@ class OutletWaralabaController extends Controller
         $request->validate([
             'thumbnail' => 'max:255'
         ]);
-        //dd($request->news_title_en);
+        dd($outlet);
         $path = null; 
             if($request->thumbnail)
             {
