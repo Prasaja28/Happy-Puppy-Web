@@ -233,7 +233,6 @@
     }
     #txt1{
         color: white;
-        position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
