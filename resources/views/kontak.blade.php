@@ -217,6 +217,9 @@
     #faq {
         padding: 0 18px;
     }
+    #kami{
+        font-weight: bold;
+    }
 @media(max-width: 576px) {
     .header{
         min-height: 20vh;
@@ -320,12 +323,21 @@
     #faq {
         padding: 0 18px;
         font-size: 20px;
+        margin-left: 13px;
     }
     .card-body {
         background-color: #ECEFF1;
         border-bottom: none;
         border-radius: 1em;
         font-size: 10px;
+    }
+    #faq1{
+        font-size: 22px;
+        font-family: 'Poppins';
+    }
+    #kami{
+        font-weight: bold;
+        margin-top: -15px;
     }
 }
 </style>
@@ -336,7 +348,7 @@
 <div class="header p-5">
     <div id="txt1" class="container" style="font-family: 'Poppins';">
         <p>KONTAK</p>
-        <p style="font-weight: bold;">KAMI</p>
+        <p id="kami">KAMI</p>
     </div>
 </div>
 <div class="back-grad">
@@ -545,7 +557,7 @@
         <br><br>
         <div class="row" id="faq">
             <h3 style="font-family: 'Poppins';font-weight: bold;">FAQ</h3>
-            <h3 style="font-family: 'Poppins';">(frequently Ask Question)</h3>
+            <h3 id="faq1">(frequently Ask Question)</h3>
         </div><br><br>
         
         <div id="accordion">
