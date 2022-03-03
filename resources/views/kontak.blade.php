@@ -233,6 +233,7 @@
     }
     #txt1{
         color: white;
+        position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
@@ -268,7 +269,7 @@
         margin-top: -45px;
     }
     .back {
-        height: 675px;
+        height: 750px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -304,7 +305,10 @@
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
-        margin-top: 28px;
+        margin-top: -6px;
+        font-size: 12px;
+        width: 290px;
+        margin-left: -21px;
     }
     #p2{
         font-size: 5px;
@@ -337,6 +341,84 @@
     #kami{
         font-weight: bold;
         margin-top: -15px;
+    }
+    .accordionWrapper{
+        float:left;
+        width:80%;
+        box-sizing:border-box;
+        margin:10%;
+    }
+    .accordionItem{
+        float:left;
+        display:block;
+        width:100%;
+        box-sizing: border-box;
+        font-family:'Poppins';
+    }
+    .accordionItemHeading{
+        cursor:pointer;
+        margin:0px 0px 10px 0px;
+        padding:10px;
+        background:#344D6F;
+        color:#fff;
+        width:100%;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family:'Poppins';
+        font-weight: bold;
+    }
+    .close .accordionItemContent{
+        height:0px;
+        transition:height 1s ease-out;
+        -webkit-transform: scaleY(0);
+        -o-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        float:left;
+        display:block;
+        
+        
+    }
+    .open .accordionItemContent{
+        padding: 20px;
+        width: 100%;
+        margin: 0px 0px 10px 0px;
+        display:block;
+        -webkit-transform: scaleY(1);
+        -o-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: top;
+        -o-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+
+        -webkit-transition: -webkit-transform 0.4s ease-out;
+        -o-transition: -o-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        transition: transform 0.4s ease;
+        box-sizing: border-box;
+    }
+
+    .open .accordionItemHeading{
+        margin:0px;
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        -webkit-border-bottom-right-radius: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        -moz-border-radius-bottomright: 0px;
+        -moz-border-radius-bottomleft: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background-color: #344D6F;
+        color: #fff;
     }
 }
 </style>
@@ -444,113 +526,97 @@
             </div>
         </div>
     </div>
+
     <div class="container" id="tab-request-mobile">
-        <div id="accordion-req">
-            <div class="card border-0">
-                <div class="card-header" id="headingOne-req">
-                <h5 class="mb-0">
-                    <button class="btn req" data-toggle="collapse" data-target="#collapseOne-req" aria-expanded="true" aria-controls="collapseOne-req">
-                    Kontak
-                    </button>
-                </h5>
-                </div>
+        <div class="accordionWrapper">
+            <div class="accordionItem open">
+                <h2 class="accordionItemHeading">Kontak</h2>
+                    <div id="kontak" class="accordionItemContent">
+                        <div class="container" id="form1" style="font-family: 'Poppins';">
+                            <form action="/action_page.php">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                        
+                                        <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                                        
+                                        <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                                        
+                                        <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                    </div>
 
-                <div id="collapseOne-req" class="collapse show" aria-labelledby="headingOne-req" data-parent="#accordion">
-                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
-                        <form action="/action_page.php">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
-                                    
-                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
-                                    
-                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
-                                    
-                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" id="pesan" name="pesan" placeholder="Pesan"></input>
+
+                                        <br><br><br><br><br>
+                                        <input style="background-color:#0275d8" type="submit" value="Submit">
+                                    </div>
                                 </div>
-
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="pesan" name="pesan" placeholder="Pesan"></input>
-
-                                    <br><br><br><br><br>
-                                    <input style="background-color:#0275d8" type="submit" value="Submit">
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
             </div>
-            <div class="card border-0">
-                <div class="card-header" id="headingTwo-req">
-                <h5 class="mb-0">
-                    <button class="btn req" data-toggle="collapse" data-target="#collapseTwo-req" aria-expanded="false" aria-controls="collapseTwo-req">
-                    Request Lagu
-                    </button>
-                </h5>
-                </div>
-                <div id="collapseTwo-req" class="collapse" aria-labelledby="headingTwo-req" data-parent="#accordion">
-                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
-                        <form action="/action_page.php">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
-                                    
-                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+
+                <div class="accordionItem close">
+                    <h2 class="accordionItemHeading">Request Lagu</h2>
+                        <div id="Request" class="accordionItemContent">
+                            <div class="container" id="form1" style="font-family: 'Poppins';">
+                                <form action="/action_page.php">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                            
+                                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
+                                        
+                                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
                                 
-                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
+                                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="req" name="req" placeholder="Request Lagu"></input>
+
+                                            <br><br><br><br><br>
+                                            <input style="background-color:#0275d8" type="submit" value="Submit">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                        </div>
+                </div>
+
+                <div class="accordionItem close">
+                <h2 class="accordionItemHeading">Keluhan</h2>
+                    <div id="keluhan" class="accordionItemContent">
+                            <div class="container" id="form1" style="font-family: 'Poppins';">
+                                <form action="/action_page.php">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                            
+                                            <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
                         
-                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
-                                </div>
+                                            <input class="form-control" type="text" id="email" name="email" placeholder="Email">
 
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="req" name="req" placeholder="Request Lagu"></input>
+                                            <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
+                                        </div>
 
-                                    <br><br><br><br><br>
-                                    <input style="background-color:#0275d8" type="submit" value="Submit">
-                                </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
+                        
+                                            <input class="form-control" type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
+
+                                            <br><br>
+                                            <input style="background-color:#0275d8" type="submit" value="Submit">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div> 
-                </div>
-            </div>
-            <div class="card border-0">
-                <div class="card-header" id="headingThree-req">
-                <h5 class="mb-0">
-                    <button class="btn req" data-toggle="collapse" data-target="#collapseThree-req" aria-expanded="false" aria-controls="collapseThree-req">
-                    Keluhan
-                    </button>
-                </h5>
-                </div>
-                <div id="collapseThree-req" class="collapse" aria-labelledby="headingThree-req" data-parent="#accordion">
-                    <div class="card-body" id="form1-mobile" style="font-family: 'Poppins';">
-                        <form action="/action_page.php">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
-                    
-                                    <input class="form-control" type="text" id="MID" name="lastname" placeholder="Member ID">
-                
-                                    <input class="form-control" type="text" id="email" name="email" placeholder="Email">
-
-                                    <input class="form-control" type="text" id="telp" name="telp" placeholder="Telp."></input>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="outlet" name="outlet" placeholder="Outlet"></input>
-                
-                                    <input class="form-control" type="text" id="keluhan" name="keluhan" placeholder="Keluhan"></input>
-
-                                    <br><br>
-                                    <input style="background-color:#0275d8" type="submit" value="Submit">
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
-</div>
 <div class="back2">
     <div class="container" id="back2con">
         <br><br>
@@ -671,16 +737,20 @@ for (var i = 0; i < btns.length; i++) {
 </script>
 
 <script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("accordion-req");
-var btns1 = header.getElementsByClassName("btn req");
-for (var i = 0; i < btns1.length; i++) {
-  btns1[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
-}
+var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionItemHeading');
+    for (i = 0; i < accHD.length; i++) {
+        accHD[i].addEventListener('click', toggleItem, false);
+    }
+    function toggleItem() {
+        var itemClass = this.parentNode.className;
+        for (i = 0; i < accItem.length; i++) {
+            accItem[i].className = 'accordionItem close';
+        }
+        if (itemClass == 'accordionItem close') {
+            this.parentNode.className = 'accordionItem open';
+        }
+    }
 </script>
 
 <script>
