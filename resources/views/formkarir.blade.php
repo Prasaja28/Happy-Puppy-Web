@@ -182,7 +182,7 @@
                 display: flex;
                 justify-content: center;
                 font-size: 15px;
-                margin-top: -55%;
+                margin-top: -50%;
             }
 
             .bom {
@@ -432,47 +432,6 @@
 
                         </div>
                     </div> <br><br>
-                    <div class="container">
-                        <h5 style="margin-top: 10px;"><b>LAMPIRAN</b></h5><br><br>
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <h6><b>Upload CV</b></h6><br>
-                                    <form action="/action_page.php">
-                                        <input type="file" id="filecv" name="filecv">
-                                        <!-- <input type="submit"> -->
-                                    </form>
-                                    <br>
-                                    <p>Max. 1MB(.JPG or .PNG)</p>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                    <h6><b>Ijazah</b></h6><br>
-                                    <form action="/action_page.php">
-                                        <input type="file" id="fileijazah" name="fileijazah">
-                                    </form><br>
-                                    <p>Max. 1MB(.JPG or .PNG)</p>
-                                </div><br>
-                            </div>
-
-                            <br><br>
-                            <h6><b>LinkedIn*</b></h6>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" style="width: 100%"
-                                            id="formGroupExampleInput" placeholder="Copy Link"><br>
-                                        <p>*jika ada</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <br><button type="submit" id="Btnsubmit" class="btn"><b>SUBMIT</b></button><br><br>
-
-                        </div>
-
-                        <br><br>
-                    </div>
                 </div>
             </div>
         </div>
