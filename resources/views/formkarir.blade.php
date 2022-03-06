@@ -102,6 +102,14 @@
             border-radius: 20px;
         }
 
+        #subTittle {
+            color: white;
+        }
+
+        #lampiran {
+            display: none;
+        }
+
         @media (max-width: 600px) {
             #txt1 {
                 color: white;
@@ -196,6 +204,18 @@
             #buttoon {
                 margin-top: 100px;
             }
+
+            #subTittle {
+                color: #000;
+            }
+
+            #lampiran {
+                display: inline-block;
+            }
+
+            #bakat {
+                margin-top: -85px;
+            }
         }
 
     </style>
@@ -213,6 +233,9 @@
     </div><br>
     <form id="regForm" action="" enctype="multipart/form-data">
         @csrf
+        <div class="col-12">
+            <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
+        </div>
         <div class="back-grad">
             <div class="container bom">
                 <h5 style="margin-top: 10px;"><b>DATA PRIBADI</b></h5><br>
@@ -322,7 +345,7 @@
 
             <br>
             <div class="container bom">
-                <h5 style="margin-top: 10px;color:white;"><b>PENGALAMAN KERJA</b></h5><br>
+                <h5 style="margin-top: 10px;" id="subTittle"><b>PENGALAMAN KERJA</b></h5><br>
                 <div class="card" id="card2">
                     <div class="container">
                         <div class="row">
@@ -401,8 +424,8 @@
             </div>
             <br><br>
 
-            <div class="container bom">
-                <h5 style="margin-top: 10px;color:white;"><b>BAKAT</b></h5><br>
+            <div class="container bom" id="bakat">
+                <h5 style="margin-top: 10px;" id="subTittle"><b>BAKAT</b></h5><br>
                 <div class="card" id="card3">
                     <div class="container">
                         <div class="row">
@@ -432,6 +455,47 @@
 
                         </div>
                     </div> <br><br>
+                    <div class="container" id="lampiran">
+                        <h5 style="margin-top: 10px;"><b>LAMPIRAN</b></h5><br><br>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h6><b>Upload CV</b></h6><br>
+                                    <form action="/action_page.php">
+                                        <input type="file" id="filecv" name="filecv">
+                                        <!-- <input type="submit"> -->
+                                    </form>
+                                    <br>
+                                    <p>Max. 1MB(.JPG or .PNG)</p>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                    <h6><b>Ijazah</b></h6><br>
+                                    <form action="/action_page.php">
+                                        <input type="file" id="fileijazah" name="fileijazah">
+                                    </form><br>
+                                    <p>Max. 1MB(.JPG or .PNG)</p>
+                                </div><br>
+                            </div>
+
+                            <br><br>
+                            <h6><b>LinkedIn*</b></h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" style="width: 100%"
+                                            id="formGroupExampleInput" placeholder="Copy Link"><br>
+                                        <p>*jika ada</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><button type="submit" id="Btnsubmit" class="btn"><b>SUBMIT</b></button><br><br>
+
+                        </div>
+
+                        <br><br>
+                    </div>
                 </div>
             </div>
         </div>
@@ -516,6 +580,11 @@
         function showTab(n) {
             var x = document.getElementsByClassName("bom");
             x[n].style.display = "block";
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
             if (n == (x.length - 1)) {
                 document.getElementById("myBtn").innerHTML = "Submit";
             } else {
@@ -524,21 +593,14 @@
         }
 
         function nextPrev(n) {
-            // This function will figure out which tab to display
             var x = document.getElementsByClassName("bom");
-            // Exit the function if any field in the current tab is invalid:
             if (n == 1 && !validateForm()) return false;
-            // Hide the current tab:
             x[currentTab].style.display = "none";
-            // Increase or decrease the current tab by 1:
             currentTab = currentTab + n;
-            // if you have reached the end of the form... :
             if (currentTab >= x.length) {
-                //...the form gets submitted:
                 document.getElementById("regForm").submit();
                 return false;
             }
-            // Otherwise, display the correct tab:
             showTab(currentTab);
         }
 
