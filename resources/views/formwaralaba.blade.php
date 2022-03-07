@@ -67,7 +67,7 @@
     background-color: #221E40;
 }
 
-@media (){
+@media (max-width: 600px) {
     #txt1{
         color: white;
         position: absolute;
@@ -91,6 +91,9 @@
         font-size: 13px;
         font-family: 'Poppins';
     }
+    .bom {
+                display: none;
+            }
     .back {
         height: 1200px;
         width: auto;
@@ -117,14 +120,19 @@
 
 @section('konten')
 <!-- add konten in here -->
-<div class="header p-5">
-    <div id="txt1" class="container">
-        <p>Form Pendaftaran</p>
-        <p style="font-weight: bold;">WARALABA</p>
-    </div>
-</div><br>
-<div class="back-grad">
-    <div class="container">
+    <div class="header p-5">
+        <div id="txt1" class="container">
+            <p>Form Pendaftaran</p>
+            <p style="font-weight: bold;">WARALABA</p>
+        </div>
+    </div><br>
+    <form id="regForm" action="" enctype="multipart/form-data">
+        @csrf
+            <div class="col-12">
+                <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
+            </div>
+    <div class="back-grad">
+    <div class="container bom">
         <h2 style="margin-top: 10px;font-family: 'Poppins';">DATA PRIBADI</h2><br>
         <div class="card" id="card1">
             <div class="container">
@@ -376,24 +384,74 @@
         <br><br>
     </div>
 </div>
+    <div class="col-12" id="buttoon">
+            <button type="submit" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">Next Step</button>
+        </div>
+        <br>
+    </form>
 @endsection
 
 @section('js-internal')
 <!-- add tag js in here -->
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+        panel.style.display = "none";
+        } else {
+        panel.style.display = "block";
+        }
+    });
     }
-  });
-}
+    
 </script>
+
+
+<script>
+        var currentTab = 0;
+        showTab(currentTab);
+
+        function showTab(n) {
+            var x = document.getElementsByClassName("bom");
+            x[n].style.display = "block";
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("myBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("myBtn").innerHTML = "Next Step";
+            }
+        }
+
+        function nextPrev(n) {
+            var x = document.getElementsByClassName("bom");
+            if (n == 1 && !validateForm()) return false;
+            x[currentTab].style.display = "none";
+            currentTab = currentTab + n;
+            if (currentTab >= x.length) {
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+            // This function deals with validation of the form fields
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("bom");
+            y = x[currentTab].getElementsByTagName("input");
+
+            return valid;
+        }
+</script>
+        
+
 @endsection
