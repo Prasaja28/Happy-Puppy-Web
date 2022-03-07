@@ -5,72 +5,72 @@
 @section('css-internal')
 <!-- Add tag css in here -->
 <style>
-.header{
-  min-height: 30vh;
-  background: no-repeat center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  z-index: -1;
-  background-position: right;
-  background-image: url('/img/lokasi.png')
-}
-.cabang{
-    font-size:24px;
-    font-family: 'Poppins';
-}
-.cabang-content{
-    font-size:18px;
-    font-family: 'Poppins';
-}
-.map-indonesia{
-    min-height: 40vh;
-    /* background-image: url('/img/map-indonesia.png') */
-}
-.search-kota{
-    background-color:#221E40;
-}
-.btn-search{
-    border-radius:30px;
-    width:100px;
-    font-size:8px;
-    margin-left:25px;
-    margin-right:25px;
-    font-family: 'Poppins';
-}
-.background-bottom{
-    background-image: linear-gradient(to right, #68a6fb , #f77a8b);
+  .header{
+    min-height: 30vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     z-index: -1;
-    min-height:300px;
-    margin-top:-100px;
-    position: relative;
-}
-@media (max-width: 576px) {
-    .cabang{
-        font-size:10px;
-    }
-    .cabang-content{
-        font-size:8px;
-    }
-  .btn-search{
-    border-radius:8px;
-    width:60px;
-    font-size:7px;
-    margin: 4px;
+    background-position: right;
+    background-image: url('/img/lokasi.png')
+  }
+  .cabang{
+      font-size:24px;
+      font-family: 'Poppins';
+  }
+  .cabang-content{
+      font-size:18px;
+      font-family: 'Poppins';
   }
   .map-indonesia{
-    min-height: 8vh;
-    /* background-image: url('/img/map-indonesia.png') */
+      min-height: 40vh;
+      /* background-image: url('/img/map-indonesia.png') */
+  }
+  .search-kota{
+      background-color:#221E40;
+  }
+  .btn-search{
+      border-radius:30px;
+      width:100px;
+      font-size:8px;
+      margin-left:25px;
+      margin-right:25px;
+      font-family: 'Poppins';
   }
   .background-bottom{
-    background-image: linear-gradient(to right, #68a6fb , #f77a8b);
-    z-index: -1;
-    min-height:200px;
-    margin-top:-100px;
-    position: relative;
-}
-}
+      background-image: linear-gradient(to right, #68a6fb , #f77a8b);
+      z-index: -1;
+      min-height:300px;
+      margin-top:-100px;
+      position: relative;
+  }
+  @media (max-width: 576px) {
+      .cabang{
+          font-size:10px;
+      }
+      .cabang-content{
+          font-size:8px;
+      }
+    .btn-search{
+      border-radius:8px;
+      width:60px;
+      font-size:7px;
+      margin: 4px;
+    }
+    .map-indonesia{
+      min-height: 8vh;
+      /* background-image: url('/img/map-indonesia.png') */
+    }
+    .background-bottom{
+      background-image: linear-gradient(to right, #68a6fb , #f77a8b);
+      z-index: -1;
+      min-height:200px;
+      margin-top:-100px;
+      position: relative;
+    }
+  }
 </style>
 <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -168,11 +168,18 @@ $(function () {
       window.location.href = '/lokasi-outlet/';
     })
 
+    // function formatState (state) {
+    // return state.text;
+    // };
     function formatState (state) {
-    if (!state.id) { return state.text; }
-    var $state = $(
-        '<i class="fas fa-search">'+ ' '+state.text+'</i>');
-    return $state;
+      console.log(state);
+
+      if (!state.id) {
+        return state.text;
+      }
+      var $state = 
+      '<i class="fas fa-search">  '+'  </i>     '+ state.text;
+      return $state;
     };
 });
 </script>
