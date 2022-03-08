@@ -6,66 +6,69 @@
 <!-- Add tag css in here -->
 <style>
  
-.header{
-  min-height: 50vh;
-  background: no-repeat center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: rightl;
-  background-image: url('/img/formwaralaba.png')
-}
-#txt1{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    text-align: justify;
-    margin: 0;
-    font-family: 'Poppins';
-    font-size: 40px;
-    min-height: 480px;
-}
-.back-grad {
-    height: 500px;
-    width: auto;
-    background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
-}
-.form-control {
-    border: none;
-	border-bottom: 1px solid #000;
-	background: none;
-	padding: 5px;
-	width: 50%;
-	transition: .2s;
-}
-#p1{
-    font-size: 30px;
-    font-family: 'Poppins';
-    font-weight: bold;
-}
-#p2{
-    font-size: 15px;
-    font-family: 'Poppins';
-}
-.back {
-    height: 1300px;
-    width: auto;
-    background-color: #85A4E1;
-}
-#card1{
-    margin-top: 6px;
-}
-.foots {
-    height: 150px;
-    width: auto;
-    background-color: #ffff;
-}
-.foots2 {
-    height: 800px;
-    width: auto;
-    background-color: #221E40;
-}
+    .header{
+    min-height: 50vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: rightl;
+    background-image: url('/img/formwaralaba.png')
+    }
+    #txt1{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        font-family: 'Poppins';
+        font-size: 40px;
+        min-height: 480px;
+    }
+    .back-grad {
+        height: 500px;
+        width: auto;
+        background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+    }
+    .container {
+                font-family: 'Poppins';
+    }
+    .form-control {
+        border: none;
+        border-bottom: 1px solid #000;
+        background: none;
+        padding: 5px;
+        width: 50%;
+        transition: .2s;
+    }
+    #p1{
+        font-size: 30px;
+        font-family: 'Poppins';
+        font-weight: bold;
+    }
+    #p2{
+        font-size: 15px;
+        font-family: 'Poppins';
+    }
+    .back {
+        height: 1300px;
+        width: auto;
+        background-color: #85A4E1;
+    }
+    #card1{
+        margin-top: 6px;
+    }
+    .foots {
+        height: 150px;
+        width: auto;
+        background-color: #ffff;
+    }
+    .foots2 {
+        height: 800px;
+        width: auto;
+        background-color: #221E40;
+    }
 
 @media (max-width: 600px) {
     #txt1{
@@ -76,6 +79,9 @@
         margin: 0;
         font-size: 35px;
         min-height: 480px;
+    }
+    .container {
+        font-family: 'Poppins';
     }
     .back-grad {
         height: 500px;
@@ -91,9 +97,6 @@
         font-size: 13px;
         font-family: 'Poppins';
     }
-    .bom {
-                display: none;
-            }
     .back {
         height: 1200px;
         width: auto;
@@ -102,15 +105,58 @@
     #card1{
         margin-top: 6px;
     }
+    #card2 {
+        margin-top: 6px;
+    }
+    #card3 {
+        margin-top: 6px;
+    }
     .foots {
         height: 300px;
         width: auto;
+        display: none;
         background-color: #ffff;
     }
     .foots2 {
         height: 800px;
         width: auto;
+        display: none;
+                background-color: #221E40;
+    }
+    .btn {
+        color: white;
         background-color: #221E40;
+        font-family: 'Poppins';
+        font-size: 13px;
+        width: 35%;
+        border-radius: 15px;
+        margin-left: 32%;
+        margin-top: 45px;
+    }
+    .footser {
+        display: none;
+    }
+    #myBtn {
+        display: flex;
+        justify-content: center;
+        font-size: 15px;
+        margin-top: -50%;
+    }
+    .bom {
+        display: none;
+        font-family: 'Poppins';
+    }
+    #buttoon {
+        margin-top: 100px;
+    }
+    #subTittle {
+        color: #000;
+    }
+    #lampiran {
+        display: inline-block;
+    }
+    #bakat {
+        margin-top: -85px;
     }
 }
 </style>
@@ -216,8 +262,8 @@
             </div>
         </div>
     </div><br><br>
-    <div class="container">
-        <h2 style="margin-top: 10px;color:white;font-family: 'Poppins';">PEKERJAAN</h2><br>
+    <div class="container bom">
+        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';"  id="subTittle" >PEKERJAAN</h2><br>
         <div class="card" id="card2">
             <div class="container">
                 <div class="row">
@@ -279,8 +325,8 @@
             </div>
         </div>
     </div><br><br>
-    <div class="container">
-        <h2 style="margin-top: 10px;color:white;font-family: 'Poppins';">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
+    <div class="container bom">
+        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
         <div class="card" id="card3">
             <div class="container">
                 <div class="row">
@@ -364,7 +410,7 @@
 <div class="foots2">
     <div class="container">
         <br><br>    
-        <p style="color:white;">Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br> diisi secara lengkap. untuk mengisi formulir pendaftaran waralaba.</p>
+        <p style="color: white;">Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br> diisi secara lengkap. untuk mengisi formulir pendaftaran waralaba.</p>
         <div class="form-group">
             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 10%;background-color: #221E40;color:white;">
                 <option selected="selected">Ya/Tidak</option>
@@ -398,20 +444,17 @@
     var i;
 
     for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-        panel.style.display = "none";
-        } else {
-        panel.style.display = "block";
-        }
-    });
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+            }
+        });
     }
-    
 </script>
-
-
 <script>
         var currentTab = 0;
         showTab(currentTab);
@@ -452,6 +495,4 @@
             return valid;
         }
 </script>
-        
-
 @endsection
