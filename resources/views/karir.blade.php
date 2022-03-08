@@ -20,7 +20,7 @@
         #txt1 {
             color: white;
             position: absolute;
-            bottom: 175px;
+            bottom: 200px;
             text-align: justify;
             margin: 0;
             font-size: 35px;
