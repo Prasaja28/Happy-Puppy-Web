@@ -169,6 +169,7 @@
         background-color: #ECEFF1;
         border-bottom: none;
         border-radius: 1em;
+        margin-left: 20px;
     }
 
 
@@ -333,6 +334,7 @@
         border-bottom: none;
         border-radius: 1em;
         font-size: 10px;
+        margin-left: 20px;
     }
     #faq1{
         font-size: 22px;
@@ -622,7 +624,7 @@
         <br><br>
         <div class="row" id="faq">
             <h3 style="font-family: 'Poppins';font-weight: bold;">FAQ</h3>
-            <h3 id="faq1">(frequently Ask Question)</h3>
+            <h3 id="faq1">(Frequently Ask Question)</h3>
         </div><br><br>
         
         <div id="accordion">

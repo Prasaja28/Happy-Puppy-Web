@@ -267,7 +267,7 @@
             <div class="tab-content" >
                 <div class="title-news2">Lagu Baru Camelia Cabello Berjudul "Liar"</div>
         
-                <div class="news-time1"><?=date('M, d Y')?></div>
+                <div class="news-time1"><?=date('M d, Y')?></div>
         
                 <div class="news">
                     Camila Cabello baru saja merilis lagu barunya yang berjudul "Liar", Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang pertama dari Tuhan untuk manusia, sejak diciptakan sampai sepanjang sejarah peradabannya. Keceriaan, keterbukaan, keramah-tamahan dan kebersihan adalah landasan sifat dan sikap hidup kami. Kami dipacu oleh manfaat persaingan sehat untuk membentuk hubungan timbal balik yang berguna bagi peningkatan kepentingan-kepentingan konsumen, karyawan, dan perusahaan. Kami cita-citakan dunia yang bernyanyi dengan keselarasan.
@@ -286,7 +286,7 @@
                       <img src="/img/berita2.jpg" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Yes, We Are Open</h5>
-                        <p class="news-time"><?=date('M, d Y')?>
+                        <p class="news-time"><?=date('M d, Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -297,7 +297,7 @@
                       <img src="/img/berita1.jpg" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Stay Safe and Healthy</h5>
-                        <p class="news-time"><?=date('M, d Y')?>
+                        <p class="news-time"><?=date('M d, Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -313,7 +313,7 @@
                       <img src="/img/berita2.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=date('M, d Y')?>
+                        <p class="news-time"><?=date('M d, Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>
@@ -324,7 +324,7 @@
                       <img src="/img/berita1.jpg" class="card-img-top card-img-news" alt="...">
                       <div class="card-body">
                         <h5 class="card-title title-news">Card title</h5>
-                        <p class="news-time"><?=date('M, d Y')?>
+                        <p class="news-time"><?=date('M d, Y')?>
                           <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                         </p>
                       </div>

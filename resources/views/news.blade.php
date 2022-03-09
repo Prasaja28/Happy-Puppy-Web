@@ -16,7 +16,10 @@
             background-position: rightl;
             background-image: url('/img/news.png')
         }
-
+        .header p{
+            font-weight: bold;
+            margin-top: -65px;
+        }
         #n1 {
             font-family: 'Poppins';
         }
@@ -243,6 +246,21 @@
         }
 
         @media (max-width:600px) {
+            .header {
+                min-height: 20vh;
+                background: no-repeat center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: rightl;
+                background-image: url('/img/news.png')
+            }
+            .header p{
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: -160px;
+            }
             .lates-news-list {
                 background-color: #221E40;
                 min-height: 125px;
@@ -373,7 +391,7 @@
             }
 
             .card-img-popular {
-                height: 65px;
+                height: 80px;
             }
 
             .popular-card-news {
@@ -455,7 +473,7 @@
     <!-- add konten in here -->
     <div class="header p-5">
         <div class="container" id="txt2" style="font-family: 'Poppins';">
-            <p style="font-weight: bold;">NEWS</p>
+            <p>NEWS</p>
         </div>
     </div>
     <div class="container-fluid">
@@ -471,7 +489,7 @@
                         <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
                         <div class="card-body">
                             <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5>
-                            <p class="news-time"><?= date('M, d Y') ?>
+                            <p class="news-time"><?= date('M d, Y') ?>
                                 <a href="" class="" style="float:right;color:black"><i
                                         class="fas fa-book-open"></i></a>
                             </p>
@@ -480,7 +498,7 @@
                     <div class="card card-news1" style="border: none;z-index: 2;">
                         <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
                         <div class="card-body">
-                            <p class="news-time"><?= date('M, d Y') ?>
+                            <p class="news-time"><?= date('M d, Y') ?>
                                 <a href="" class="" style="float:right;color:black"><i
                                         class="fas fa-book-open"></i></a>
                             </p>
@@ -496,7 +514,7 @@
                                     <div class="col-8">
                                         <div class="card-body text-bottom">
                                             <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5>
-                                            <p class="news-time-lates"><?= date('M, d Y') ?>
+                                            <p class="news-time-lates"><?= date('M d, Y') ?>
                                                 <a href="" class="" style="float:right;color:black"><i
                                                         class="fas fa-book-open"></i></a>
                                             </p>
@@ -512,7 +530,7 @@
                                     <div class="col-8">
                                         <div class="card-body text-bottom">
                                             <h5 class="card-title-lates card-title"> Yes, We Are Open</h5>
-                                            <p class="news-time-lates"><?= date('M, d Y') ?>
+                                            <p class="news-time-lates"><?= date('M d, Y') ?>
                                                 <a href="" class="" style="float:right;color:black"><i
                                                         class="fas fa-book-open"></i></a>
                                             </p>
@@ -529,7 +547,7 @@
                                         <div class="card-body text-bottom">
                                             <h5 class="card-title-lates card-title"> Lagu Baru Camelia Cabello Berjudul
                                                 "Liar"</h5>
-                                            <p class="news-time-lates"><?= date('M, d Y') ?>
+                                            <p class="news-time-lates"><?= date('M d, Y') ?>
                                                 <a href="" class="" style="float:right;color:black"><i
                                                         class="fas fa-book-open"></i></a>
                                             </p>
@@ -546,7 +564,7 @@
                                         <div class="card-body text-bottom">
                                             <h5 class="card-title-lates card-title"> Lagu Baru Mahalini Berjudul "Melawan
                                                 Restu"</h5>
-                                            <p class="news-time-lates"><?= date('M, d Y') ?>
+                                            <p class="news-time-lates"><?= date('M d, Y') ?>
                                                 <a href="" class="" style="float:right;color:black"><i
                                                         class="fas fa-book-open"></i></a>
                                             </p>
@@ -577,7 +595,7 @@
                                 <div class="card-body text-bottom" style="z-index:2;">
                                     <p class="news-popular-title">News</p>
                                     <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M, d Y') ?>
+                                    <p class="news-time-popular"><?= date('M d, Y') ?>
                                     </p>
                                 </div>
                             </div>
@@ -594,7 +612,7 @@
                                 <div class="card-body text-bottom" style="z-index:2;">
                                     <p class="news-popular-title">News</p>
                                     <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M, d Y') ?>
+                                    <p class="news-time-popular"><?= date('M d, Y') ?>
                                     </p>
                                 </div>
                             </div>
@@ -611,7 +629,7 @@
                                 <div class="card-body text-bottom" style="z-index:2;">
                                     <p class="news-popular-title">News</p>
                                     <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M, d Y') ?>
+                                    <p class="news-time-popular"><?= date('M d, Y') ?>
                                     </p>
                                 </div>
                             </div>
@@ -629,7 +647,7 @@
                                 <div class="card-body text-bottom" style="z-index:2;">
                                     <p class="news-popular-title">News</p>
                                     <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M, d Y') ?>
+                                    <p class="news-time-popular"><?= date('M d, Y') ?>
                                     </p>
                                 </div>
                             </div>
@@ -649,7 +667,7 @@
                                     <div class="card-body text-bottom" style="z-index:2;">
                                         <p class="news-popular-title">News</p>
                                         <h5 class="card-title card-title-popular">Card title</h5>
-                                        <p class="news-time-popular"><?= date('M, d Y') ?>
+                                        <p class="news-time-popular"><?= date('M d, Y') ?>
                                         </p>
                                     </div>
                                 </div>
@@ -667,7 +685,7 @@
                                     <div class="card-body text-bottom" style="z-index:2;">
                                         <p class="news-popular-title">News</p>
                                         <h5 class="card-title card-title-popular">Card title</h5>
-                                        <p class="news-time-popular"><?= date('M, d Y') ?>
+                                        <p class="news-time-popular"><?= date('M d, Y') ?>
                                         </p>
                                     </div>
                                 </div>

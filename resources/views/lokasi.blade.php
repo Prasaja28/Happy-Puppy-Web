@@ -81,7 +81,7 @@
 
     <!-- background Home -->
     <div class="header text-white p-5">
-        <h4 class="mt-5">Cari</h4>
+        <h4 class="mt-5">CARI</h4>
         <h2 class="font-weight-bold">LOKASI</h2>
     </div>
     <!-- end background home -->

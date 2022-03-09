@@ -36,7 +36,7 @@
   <nav class="navbar navbar-expand-lg" style="background-color: #0F0F0F;">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{asset('/img/HappupLogo.png')}}" style="width: 100px;height:40px">
+        <img src="{{asset('/img/HappupLogo.png')}}" style="width: 100px;height:32px">
       </a>
       
       {{-- COLLAPSE ON MOBILE --}}

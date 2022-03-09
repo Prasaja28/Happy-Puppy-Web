@@ -5,24 +5,24 @@
   <!-- css garis penghubung -->
   <style>
     .vl {
-    border-left: 6px solid white;
-    min-height: 7vh;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 127;
+        border-left: 6px solid white;
+        min-height: 7vh;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 127;
     }
     @media (max-width:600px) {
     .vl {
-      border-left: 6px solid white;
-      min-height: 5vh;
-      position: absolute;
-      left: 50%;
-      margin-left: -3px;
-      top: 110;
+        border-left: 6px solid white;
+        min-height: 5vh;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 110;
     }
     .history div[name="years"] h4 {
-      font-size: 13px;
+        font-size: 13px;
     }
     .history-desc {
         font-size: 6px;

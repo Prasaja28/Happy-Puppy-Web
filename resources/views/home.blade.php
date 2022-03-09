@@ -148,11 +148,6 @@
               <h6 class="font-weight-bold">Cakra Khan, Hael Husaini</h6>
               <p class="text-muted">Terlanjur Cinta</p>
             </div>
-  
-            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">
-              View all 
-              <i class="fas fa-chevron-circle-right"></i>
-            </button>
           </div>
         </div>
   
@@ -170,11 +165,6 @@
               <h6 class="font-weight-bold">Arsy Widianto, Brisia Jodie</h6>
               <p class="text-muted">Sejauh Dua Benua</p>
             </div>
-  
-            <button href="{{url('/')}}" onclick="buttonLess2()" id="myBtn" class="btn btn-modif mb-4 mx-auto">
-              View all
-              <i class="fas fa-chevron-circle-right"></i>
-            </button>
           </div>
         </div>
       </div>
