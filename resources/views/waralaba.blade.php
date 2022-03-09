@@ -73,7 +73,7 @@
 }
 
 .card-body {
-    background-color: #ECEFF1;
+    background-color: white;
     border-bottom: none;
     border-radius: 1em;
     margin-left: 20px;
@@ -171,7 +171,7 @@
     }
 
     .card-body {
-        background-color: #ECEFF1;
+        background-color: white;
         border-bottom: none;
         border-radius: 1em;
         font-size: 12px;

@@ -7,14 +7,14 @@
 <style>
  
     .header{
-    min-height: 50vh;
-    background: no-repeat center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: rightl;
-    background-image: url('/img/formwaralaba.png')
+        min-height: 50vh;
+        background: no-repeat center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: rightl;
+        background-image: url('/img/formwaralaba.png');
     }
     #txt1{
         color: white;
@@ -71,14 +71,26 @@
     }
 
 @media (max-width: 600px) {
+    .header{
+        min-height: 20vh;
+        background: no-repeat center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: rightl;
+        background-image: url('/img/formwaralaba.png');
+    }
     #txt1{
         color: white;
         position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
-        font-size: 35px;
+        font-size: 15px;
         min-height: 480px;
+        margin-bottom: 86px;
+        margin-left: -31px;
     }
     .container {
         font-family: 'Poppins';

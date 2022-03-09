@@ -344,6 +344,10 @@
         font-weight: bold;
         margin-top: -15px;
     }
+    .active, .accordion {
+        background-color: #221E40;
+        color: white;
+    }
     .accordionWrapper{
         float:left;
         width:80%;
@@ -731,9 +735,9 @@ var header = document.getElementById("accordion");
 var btns = header.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
   });
 }
 </script>
