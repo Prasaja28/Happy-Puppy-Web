@@ -7,15 +7,16 @@
 <style>
  
     .header{
-        min-height: 50vh;
-        background: no-repeat center scroll;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-position: rightl;
-        background-image: url('/img/formwaralaba.png');
+    min-height: 50vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: right;
+    background-image: url('/img/formwaralaba.png')
     }
+
     #txt1{
         color: white;
         position: absolute;
@@ -26,14 +27,67 @@
         font-size: 40px;
         min-height: 480px;
     }
+
+    hr {
+        width: 99%;
+    }
+
     .back-grad {
         height: 500px;
         width: auto;
         background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
     }
-    .container {
-                font-family: 'Poppins';
+
+    #p1 {
+        font-size: 30px;
+        font-family: 'Poppins';
+        font-weight: bold;
     }
+
+    #p2 {
+        font-size: 15px;
+        font-family: 'Poppins';
+    }
+
+    .back {
+        height: 1300px;
+        width: auto;
+        background-color: #85A4E1;
+    }
+
+    .container {
+            font-family: 'Poppins';
+    }
+
+    #card1 {
+        margin-top: 6px;
+    }
+
+    #myBtn {
+        display: none;
+    }
+
+    .foots {
+        height: 150px;
+        width: auto;
+        background-color: #ffff;
+    }
+
+    .foots2 {
+        height: 800px;
+        width: auto;
+        background-color: #221E40;
+    }
+
+    .btn {
+        color: white;
+        background-color: #221E40;
+        font-family: 'Poppins';
+        font-size: 13px;
+        width: 10%;
+        border-radius: 20px;
+    }
+
     .form-control {
         border: none;
         border-bottom: 1px solid #000;
@@ -42,55 +96,28 @@
         width: 50%;
         transition: .2s;
     }
-    #p1{
-        font-size: 30px;
-        font-family: 'Poppins';
-        font-weight: bold;
+
+    #subTittle {
+        color: white;
     }
-    #p2{
-        font-size: 15px;
-        font-family: 'Poppins';
+
+    #lampiran {
+        display: none;
     }
-    .back {
-        height: 1300px;
-        width: auto;
-        background-color: #85A4E1;
-    }
-    #card1{
-        margin-top: 6px;
-    }
-    .foots {
-        height: 150px;
-        width: auto;
-        background-color: #ffff;
-    }
-    .foots2 {
-        height: 800px;
-        width: auto;
-        background-color: #221E40;
+
+    #bakat {
+        margin-top: -85px;
     }
 
 @media (max-width: 600px) {
-    .header{
-        min-height: 20vh;
-        background: no-repeat center scroll;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-position: rightl;
-        background-image: url('/img/formwaralaba.png');
-    }
     #txt1{
         color: white;
         position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
-        font-size: 15px;
+        font-size: 35px;
         min-height: 480px;
-        margin-bottom: 86px;
-        margin-left: -31px;
     }
     .container {
         font-family: 'Poppins';
@@ -156,7 +183,6 @@
     }
     .bom {
         display: none;
-        font-family: 'Poppins';
     }
     #buttoon {
         margin-top: 100px;
@@ -338,7 +364,7 @@
         </div>
     </div><br><br>
     <div class="container bom">
-        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
+        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
         <div class="card" id="card3">
             <div class="container">
                 <div class="row">
@@ -420,9 +446,9 @@
 <div class="back"></div>
 <div class="foots"></div>
 <div class="foots2">
-    <div class="container">
+    <div class="container bom">
         <br><br>    
-        <p style="color: white;">Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br> diisi secara lengkap. untuk mengisi formulir pendaftaran waralaba.</p>
+        <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br> diisi secara lengkap. untuk mengisi formulir pendaftaran waralaba.</p>
         <div class="form-group">
             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 10%;background-color: #221E40;color:white;">
                 <option selected="selected">Ya/Tidak</option>
