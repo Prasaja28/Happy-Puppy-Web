@@ -28,7 +28,7 @@
     font-family: 'Poppins';
 }
 .back-grad {
-    height: 300px;
+    height: 340px;
     width: auto;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
 }
@@ -45,27 +45,28 @@
     font-size: 35px;
     font-weight: bold;
     font-family: 'Poppins';
-    margin-left: 35px;
+    margin-left: 85px;
 }
 #p2{
     font-size: 20px;
     line-height: 2.5rem;
     font-family: 'Poppins';
-    margin-left: 35px;
+    margin-left: 85px;
 }
 .back {
-    height: 1000px;
+    height: 1200px;
     width: auto;
     background-color: #85A4E1;
     font-family: 'Poppins';
 }
 
 .card-header {
-    margin-top:20px;
+    margin-top:50px;
 }
 
-.card-header, .cc {
+.card-header, .card-header .btn {
     color: white;
+    font-size: 20px;
     background-color: #85A4E1;
     font-family: 'Poppins';
     font-weight: bold;
@@ -79,35 +80,10 @@
     margin-left: 20px;
 }
 
-/* .accordion {
-  background-color: #85A4E1;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-  font-family: 'Poppins';
+.active, .accordion {
+    background-color: #221E40;
+    color: white;
 }
-
-.active, .accordion:hover {
-  background-color: #ccc; 
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-} */
-
-    .active, .accordion {
-        background-color: #221E40;
-        color: white;
-    }
 
 #text-acc{
     font-size: 20px;
@@ -121,11 +97,11 @@
     color: white;
     font-family: 'Poppins';
 }
-.btn{
+#txt-foot .btn{
     color: white;
     background-color: #221E40;
 }
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .header{
         min-height: 20vh;
         background: no-repeat center scroll;
@@ -161,29 +137,32 @@
         color: white;
         background-color:#221E40;
     }
-    .card-header, .cc {
+    .card-header, .btn {
         color: white;
         background-color: #85A4E1;
         font-family: 'Poppins';
         font-weight: bold;
         border-bottom: none;
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .card-body {
         background-color: white;
         border-bottom: none;
         border-radius: 1em;
-        font-size: 12px;
+        font-size: 10px;
     }
     #p1{
         font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
         font-weight: bold;
+        margin-left: 26px;
     }
     #p2{
         font-size: 10px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Poppins';
+        margin-left: 26px;
+        line-height: normal;
     }
     .back {
         height: 1100px;
@@ -224,7 +203,7 @@
         font-family: Arial, Helvetica, sans-serif;
         color: white;
     }
-    .btn{
+    #txt-foot .btn{
         color: white;
         background-color: #221E40;
         font-size: 13px;
@@ -254,7 +233,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Home Theatre buka untuk karaoke?
                     <!-- <img src="img/home-theatre.png" alt=""> -->
                     </div>
@@ -270,7 +249,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Karaoke keluarga, bisnis hiburan tanpa masalah
                     </div>
                 </h5>
@@ -284,7 +263,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Kenapa memilih waralaba Happy Puppy?
                     </div>
                 </h5>
@@ -298,7 +277,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Hal yang perlu diperhatikan dalam waralaba ini
                     </div>
                 </h5>
@@ -312,7 +291,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingFive">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     Berapa investasi yang dibutuhkan untuk waralaba ini?
                     </div>
                 </h5>
@@ -326,7 +305,7 @@
             <div class="card border-0" style="background-color: #85A4E1;">
                 <div class="card-header" id="headingSix">
                 <h5 class="mb-0">
-                    <div class="cc" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Daftar kota tertutup untuk waralaba
                     </div>
                 </h5>
@@ -350,7 +329,7 @@
 
 @section('js-internal')
 <!-- add tag js in here -->
-<script>
+<!-- <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -365,6 +344,36 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+</script> -->
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("accordion");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+<script>
+var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionItemHeading');
+    for (i = 0; i < accHD.length; i++) {
+        accHD[i].addEventListener('click', toggleItem, false);
+    }
+    function toggleItem() {
+        var itemClass = this.parentNode.className;
+        for (i = 0; i < accItem.length; i++) {
+            accItem[i].className = 'accordionItem close';
+        }
+        if (itemClass == 'accordionItem close') {
+            this.parentNode.className = 'accordionItem open';
+        }
+    }
 </script>
 
 @endsection

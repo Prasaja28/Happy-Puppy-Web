@@ -166,47 +166,16 @@
     }
 
     .card-body {
-        background-color: #ECEFF1;
+        background-color: white;
         border-bottom: none;
         border-radius: 1em;
         margin-left: 20px;
     }
 
-
-    /* .accordion {
-        background-color: #FFFFFF;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        transition: 0.4s;
-        font-family: 'Poppins';
-    } */
-
-    /* .active, .accordion:hover {
-        background-color: #221E40;
-        color: white;
-    } */
-
-    /* .panel {
-        padding: 0 18px;
-        display: none;
-        background-color: #6699CC;
-        overflow: hidden;
-    } */
-
     .active, .accordion {
         background-color: #221E40;
         color: white;
     }
-
-    /* .active, .accordion:hover {
-        background-color: #ccc; 
-    } */
 
     #text-acc{
         font-size: 18px;

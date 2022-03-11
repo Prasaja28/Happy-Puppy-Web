@@ -67,7 +67,7 @@ div[name="term-and-condition"] p {
 /* TABLET++ */
 @media (min-width: 768px) {
     footer {
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     div[name="border-right"] {
