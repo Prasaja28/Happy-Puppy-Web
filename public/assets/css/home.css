@@ -41,6 +41,9 @@ a:hover {
     font-size: 20px;
 }
 
+.container-fluid .row {
+    margin-top: 45px;
+}
 /* *************************************************** */
 
 div[name="social-media"] ul li img {

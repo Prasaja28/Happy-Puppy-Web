@@ -221,7 +221,7 @@
     #kami{
         font-weight: bold;
     }
-@media(max-width: 576px) {
+@media(max-width: 600px) {
     .header{
         min-height: 20vh;
         background: no-repeat center scroll;
