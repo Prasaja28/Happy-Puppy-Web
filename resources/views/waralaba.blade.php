@@ -60,6 +60,10 @@
     font-family: 'Poppins';
 }
 
+#accordion .card{
+    background-color: #85A4E1;
+}
+
 .card-header {
     margin-top:50px;
 }
@@ -230,26 +234,26 @@
 <div class="back">
     <div class="container">
         <div id="accordion">
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Home Theatre buka untuk karaoke?
                     <!-- <img src="img/home-theatre.png" alt=""> -->
                     </div>
                 </h5>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                 </div>
                 </div>
             </div>
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Karaoke keluarga, bisnis hiburan tanpa masalah
                     </div>
                 </h5>
@@ -260,10 +264,10 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Kenapa memilih waralaba Happy Puppy?
                     </div>
                 </h5>
@@ -274,10 +278,10 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Hal yang perlu diperhatikan dalam waralaba ini
                     </div>
                 </h5>
@@ -288,10 +292,10 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingFive">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     Berapa investasi yang dibutuhkan untuk waralaba ini?
                     </div>
                 </h5>
@@ -302,10 +306,10 @@
                 </div>
                 </div>
             </div>
-            <div class="card border-0" style="background-color: #85A4E1;">
+            <div class="card border-0">
                 <div class="card-header" id="headingSix">
                 <h5 class="mb-0">
-                    <div class="btn" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Daftar kota tertutup untuk waralaba
                     </div>
                 </h5>
@@ -329,27 +333,13 @@
 
 @section('js-internal')
 <!-- add tag js in here -->
-<!-- <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-</script> -->
 
 <script>
 // Add active class to the current button (highlight it)
 var header = document.getElementById("accordion");
+header.classList.remove("className");
 var btns = header.getElementsByClassName("btn");
+document.getElementById("myDIV").classList.add("className");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");

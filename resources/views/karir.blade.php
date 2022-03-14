@@ -6,7 +6,7 @@
 @section('css-internal')
     <!-- Add tag css in here -->
     <style>
-        .header1 {
+        .header {
             min-height: 29vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -17,10 +17,10 @@
             background-image: url('/img/karir.png')
         }
 
-        #txt1 {
+        .text-white p {
             color: white;
             position: absolute;
-            bottom: 200px;
+            bottom: 57px;
             text-align: justify;
             margin: 0;
             font-size: 35px;
@@ -86,10 +86,10 @@
         }
 
         @media(max-width:600px) {
-            #txt1 {
+            .text-white p {
                 font-size: 35px;
-                margin-bottom: -190px;
-                margin-left: -75px
+                margin-bottom: -80px;
+                margin-left: -111px;
             }
 
             .lowongan {
@@ -160,10 +160,8 @@
 @section('navbar-profile', 'active')
 @section('konten')
 
-    <div class="header1">
-        <div id="txt1" class="container" style="text-align: justify; text-indent: 1in;">
-            <p>KARIR</p>
-        </div>
+    <div class="header text-white p-5">
+        <p>KARIR</p>
     </div>
     <br><br>
 

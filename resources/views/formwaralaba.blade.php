@@ -364,7 +364,7 @@
         </div>
     </div><br><br>
     <div class="container bom">
-        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK WARALAH HAPPY PUPPY</h2><br>
+        <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK WARALABA HAPPY PUPPY</h2><br>
         <div class="card" id="card3">
             <div class="container">
                 <div class="row">
@@ -477,22 +477,7 @@
 
 @section('js-internal')
 <!-- add tag js in here -->
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-            panel.style.display = "none";
-            } else {
-            panel.style.display = "block";
-            }
-        });
-    }
-</script>
 <script>
         var currentTab = 0;
         showTab(currentTab);
