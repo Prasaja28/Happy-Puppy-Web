@@ -97,4 +97,11 @@ class OutletWaralabaController extends Controller
         ]);
         return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $users = Outlet::where('name', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('admin.outlet-admin.outlet-admin-index', compact('outlet'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
