@@ -110,17 +110,28 @@
     }
 
 @media (max-width: 600px) {
+    
+    .header {
+    min-height: 50vh;
+    background: no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: right;
+    background-image: url('/img/formwaralaba.png')
+    }
+    .containerr {
+        width: 100px;
+    }
     #txt1{
         color: white;
         position: absolute;
         bottom: 0;
         text-align: justify;
-        margin: 0;
-        font-size: 35px;
+        margin: auto;
+        font-size: 30px;
         min-height: 480px;
-    }
-    .container {
-        font-family: 'Poppins';
     }
     .back-grad {
         height: 500px;
@@ -137,7 +148,7 @@
         font-family: 'Poppins';
     }
     .back {
-        height: 1200px;
+        height: 500px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -160,8 +171,9 @@
         height: 800px;
         width: auto;
         display: none;
-                background-color: #221E40;
+        background-color: #221E40;
     }
+    
     .btn {
         color: white;
         background-color: #221E40;
@@ -185,7 +197,7 @@
         display: none;
     }
     #buttoon {
-        margin-top: 100px;
+        margin-top: 50px;
     }
     #subTittle {
         color: #000;
@@ -205,7 +217,7 @@
 @section('konten')
 <!-- add konten in here -->
     <div class="header p-5">
-        <div id="txt1" class="container">
+        <div id="txt1" class="containerr">
             <p>Form Pendaftaran</p>
             <p style="font-weight: bold;">WARALABA</p>
         </div>
@@ -217,7 +229,7 @@
             </div>
     <div class="back-grad">
     <div class="container bom">
-        <h2 style="margin-top: 10px;font-family: 'Poppins';">DATA PRIBADI</h2><br>
+        <h2 style="margin-top: 10px; font-family: 'Poppins';">DATA PRIBADI</h2><br>
         <div class="card" id="card1">
             <div class="container">
                 <div class="row">
@@ -457,9 +469,9 @@
             </select>
         </div>
         <br><br>    
-        <p style="color:white;">Sebelum anda mengirim pendaftaran waralaba ini, setujukah anda bahwa :<br><br> Anda dan keluarga langsung atau Pemilik dan Pengurus Perusahaan yang anda<br> wakili, tidak memiliki dan/atau menjadi Pengurus usaha Karaoke Keluarga/Rumah<br> Bernyanyi Keluarga lainnya, baik sekarang ataupun pada saat pendaftaran<br> waralaba ini diterima</p>
+        <p style="color: white;">Sebelum anda mengirim pendaftaran waralaba ini, setujukah anda bahwa :<br><br> Anda dan keluarga langsung atau Pemilik dan Pengurus Perusahaan yang anda<br> wakili, tidak memiliki dan/atau menjadi Pengurus usaha Karaoke Keluarga/Rumah<br> Bernyanyi Keluarga lainnya, baik sekarang ataupun pada saat pendaftaran<br> waralaba ini diterima</p>
         <div class="form-group">
-            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 10%;background-color: #221E40;color:white;">
+            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 10%; background-color: #221E40; color:white;">
                 <option selected="selected">Ya/Tidak</option>
                 <option>Ya</option>
                 <option>Tidak</option></option>
