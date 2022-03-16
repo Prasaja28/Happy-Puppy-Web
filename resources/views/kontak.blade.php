@@ -190,7 +190,7 @@
     #kami{
         font-weight: bold;
     }
-@media(max-width: 600px) {
+@media(max-width: 576px) {
     .header{
         min-height: 20vh;
         background: no-repeat center scroll;
@@ -277,8 +277,8 @@
         padding: 20px;
         margin-top: -6px;
         font-size: 12px;
-        width: 290px;
-        margin-left: -21px;
+        margin-left: auto;
+        margin-right: auto;
     }
     #p2{
         font-size: 5px;
@@ -358,9 +358,9 @@
         
     }
     .open .accordionItemContent{
-        padding: 20px;
+        padding: -5px;
+        margin: 15px 0px 10px 0px;
         width: 100%;
-        margin: 0px 0px 10px 0px;
         display:block;
         -webkit-transform: scaleY(1);
         -o-transform: scaleY(1);

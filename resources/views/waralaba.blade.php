@@ -66,9 +66,11 @@
 
 .card-header {
     margin-top:50px;
+    background-color: #85A4E1;
+    border-bottom: none;
 }
 
-.card-header, .card-header .btn {
+.card-header .btn {
     color: white;
     font-size: 20px;
     background-color: #85A4E1;
@@ -84,7 +86,7 @@
     margin-left: 20px;
 }
 
-.active, .accordion {
+.collapsed, .accordion {
     background-color: #221E40;
     color: white;
 }
@@ -126,7 +128,7 @@
         margin-left: -30px;
         font-size: 20px;
         font-weight: bold;
-        min-height: 380px;
+        min-height: 50vh;
     }
     .back-grad {
         height: 300px;
@@ -141,13 +143,19 @@
         color: white;
         background-color:#221E40;
     }
-    .card-header, .btn {
+    .card-header {
+        margin-top: -10px;
+        background-color: #85A4E1;
+        border-bottom: none;
+        margin-left: -24px;
+    }
+    .card-header .btn {
         color: white;
         background-color: #85A4E1;
         font-family: 'Poppins';
         font-weight: bold;
         border-bottom: none;
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .card-body {
@@ -155,6 +163,7 @@
         border-bottom: none;
         border-radius: 1em;
         font-size: 10px;
+        margin-left: 8px;
     }
     #p1{
         font-size: 20px;
@@ -169,7 +178,7 @@
         line-height: normal;
     }
     .back {
-        height: 1100px;
+        height: 785px;
         width: auto;
         background-color: #85A4E1;
     }
@@ -203,9 +212,10 @@
         font-weight: bold;
     }
     #txt-foot{
-        font-size: 14px;
+        font-size: 10px;
         font-family: Arial, Helvetica, sans-serif;
         color: white;
+        margin-top: -30px;
     }
     #txt-foot .btn{
         color: white;
@@ -237,7 +247,7 @@
             <div class="card border-0">
                 <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <div class="btn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Home Theatre buka untuk karaoke?
                     <!-- <img src="img/home-theatre.png" alt=""> -->
                     </div>
@@ -334,12 +344,11 @@
 @section('js-internal')
 <!-- add tag js in here -->
 
-<script>
+<!-- <script>
 // Add active class to the current button (highlight it)
 var header = document.getElementById("accordion");
 header.classList.remove("className");
 var btns = header.getElementsByClassName("btn");
-document.getElementById("myDIV").classList.add("className");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
@@ -347,7 +356,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-</script>
+</script> -->
 
 <script>
 var accItem = document.getElementsByClassName('accordionItem');

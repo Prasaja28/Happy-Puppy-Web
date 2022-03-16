@@ -85,7 +85,7 @@
             display: none;
         }
 
-        @media(max-width:600px) {
+        @media(max-width:576px) {
             .text-white p {
                 font-size: 35px;
                 margin-bottom: -80px;

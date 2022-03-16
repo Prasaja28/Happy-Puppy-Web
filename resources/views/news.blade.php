@@ -276,6 +276,8 @@
 
             .news-list {
                 margin-top: -160px;
+                margin-left: -22px;
+                margin-right: -32px;
             }
 
             .card-news {
