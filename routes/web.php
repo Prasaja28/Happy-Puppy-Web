@@ -40,18 +40,18 @@ Route::get('/daftar-lagu', function () {
 Route::get('/lokasi', function () {
     return view('lokasi');
 });
-Route::get('/karir', function () {
-    return view('karir');
-});
+// Route::get('/karir', function () {
+//     return view('karir');
+// });
 Route::get('/waralaba', function () {
     return view('waralaba');
 });
 Route::get('/kontak', function () {
     return view('kontak');
 });
-Route::get('/formkarir', function () {
-    return view('formkarir');
-});
+// Route::get('/formkarir', function () {
+//     return view('formkarir');
+// });
 Route::get('/lokasi-not-found', function () {
     return view('lokasi-not-found');
 });
@@ -94,6 +94,14 @@ Route::get('/outlet-admin/delete/{id}',[OutletWaralabaController::class, 'destro
 Route::post('/outlet-admin/store',[OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update']);
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
+
+//Karir
+Route::get('/career-admin', [CareerController::class, 'index']);
+Route::post('/career-admin/store', [CareerController::class, 'store'])->name('career.store');
+Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy'])->name('career.destroy');
+Route::get('/karir', [JobsController::class, 'index']);
+Route::get('/formkarir/{jobvacancy_id?}', [CareerController::class, 'index'])->name('karirForm');
+Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filter');
 
 //profil
 Route::get('/profil-admin',[ProfilController::class, 'index']);
