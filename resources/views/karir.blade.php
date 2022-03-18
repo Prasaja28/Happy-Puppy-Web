@@ -6,7 +6,7 @@
 @section('css-internal')
     <!-- Add tag css in here -->
     <style>
-        .header {
+        .header1 {
             min-height: 29vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -17,10 +17,10 @@
             background-image: url('/img/karir.png')
         }
 
-        .text-white p {
+        #txt1 {
             color: white;
             position: absolute;
-            bottom: 57px;
+            bottom: 3.5rem;
             text-align: justify;
             margin: 0;
             font-size: 35px;
@@ -69,7 +69,26 @@
             width: 130%;
         }
 
-        table {}
+        .table .tr-inputs th {
+            position: relative;
+            padding: 0;
+            padding-bottom: 1.2rem;
+            margin: 0;
+        }
+
+        .table .tr-inputs div {
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .table input {
+            width: 100%;
+            box-sizing: border-box;
+        }
 
         .btn-primary {
             color: white;
@@ -85,19 +104,27 @@
             display: none;
         }
 
-        @media(max-width:576px) {
-            .text-white p {
+        @media(max-width:600px) {
+            #txt1 {
                 font-size: 35px;
-                margin-bottom: -80px;
-                margin-left: -111px;
+                margin-bottom: -12rem;
+                margin-left: -5rem;
+            }
+
+            .table .tr-inputs th {
+                position: relative;
+                padding: 0;
+                padding-bottom: 1.2rem;
+                margin: 0 0 0.5rem 0;
             }
 
             .lowongan {
-                width: 100%;
-                padding-top: 100px;
-                padding-bottom: 10px;
-                background-image: linear-gradient(#221E40 75%, #ffffff 50%, #ffffff);
-                font-family: 'Poppins';
+                /* width: 100%;
+                                                                                                                                                                                                    padding-top: 100px;
+                                                                                                                                                                                                    padding-bottom: 10px;
+                                                                                                                                                                                                    background-image: linear-gradient(#221E40 75%, #ffffff 50%, #ffffff);
+                                                                                                                                                                                                    font-family: 'Poppins'; */
+                display: none;
             }
 
             b#low {
@@ -110,13 +137,11 @@
                 font-size: 18px;
             }
 
-            table {
-                display: none;
+            .table {
+                margin-left: -5.5rem;
+                margin-top: 4rem;
             }
 
-            #apply {
-                display: none;
-            }
 
             .grid-container {
                 margin-left: -107px;
@@ -150,6 +175,12 @@
             }
         }
 
+        @media(max-width:320px) {
+            #filter {
+                margin-left: 2rem;
+            }
+        }
+
     </style>
     <!-- Google Fonts -->
     <link
@@ -160,8 +191,11 @@
 @section('navbar-profile', 'active')
 @section('konten')
 
-    <div class="header text-white p-5">
-        <p>KARIR</p>
+    <div class="header1">
+        <div class="header text-white p-5">
+            {{-- <h4 class="mt-5">Cari</h4> --}}
+            <h2 class="font-weight-bold" style="font-size: 35px; margin-top:6.5rem; margin-left:2rem">Karir</h2>
+        </div>
     </div>
     <br><br>
 
@@ -182,64 +216,62 @@
         </div>
     </div>
 
-    <div class="content" style="margin-left: 90px;">
+    <div class="content" style="margin-left: 1rem;">
     </div>
 
     <br>
-
-    <div class="table" style="padding-left: 180px; margin-top: -70px;">
-        <table class="table table-striped" style="width: 80%; background-color: transparent; ">
-            <thead>
-                <tr>
-                    <th style="border-top: 0px; padding-left: 0px;">
-                        <input type="text" class="form-control"
-                            style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
-                            id="formGroupExampleInput" placeholder="Pilih Pekerjaan">
-                    </th>
-                    <th style="border-top: 0px;">
-                        <input type="text" class="form-control"
-                            style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
-                            id="formGroupExampleInput" placeholder="Pilih Lokasi">
-                    </th>
-                    <th style="border-top: 0px;">
-                        <button type="button" class="btn"
-                            style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="">Waiter</td>
-                    <td>Jakarta, Jl. Utan Kayu</td>
-                </tr>
-                <tr>
-                    <td>Supervisor</td>
-                    <td>Bandung, Jl. Srigunting Raya</td>
-                </tr>
-                <tr>
-                    <td>Chef</td>
-                    <td>Surabaya, Jl. Kapas Krampung</td>
-                </tr>
-                <tr>
-                    <td>Chef</td>
-                    <td>Surabaya, Jl. Kapas Krampung</td>
-                </tr>
-                <tr>
-                    <td>Chef</td>
-                    <td>Surabaya, Jl. Kapas Krampung</td>
-                </tr>
-                <tr>
-                    <td>Chef</td>
-                    <td>Surabaya, Jl. Kapas Krampung</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="container" id="filter" style="margin-left: auto;padding-left: 0rem;">
+        <div class="table" style="padding-left: 12rem; margin-top: -4.6rem;">
+            <table class="table table-striped" style="width: 80%; background-color: transparent; ">
+                <thead>
+                    <tr class="tr-inputs">
+                        <form action="{{ route('jobs.filter') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <th style="border-top: 0px; padding-left: 0px;">
+                                    <input type="text" class="form-control"
+                                        style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
+                                        name="nama_job" placeholder="Pilih Pekerjaan">
+                                </th>
+                            </div>
+                            <div class="form-group">
+                                <th style="border-top: 0px;">
+                                    <input type="text" class="form-control"
+                                        style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
+                                        name="lokasi" placeholder="Pilih Lokasi">
+                                </th>
+                            </div>
+                            <th style="border-top: 0px;">
+                                <button type="submit" class="btn"
+                                    style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
+                            </th>
+                        </form>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($jobs as $j)
+                        <tr>
+                            <td>
+                                <p style="font-size: 15px;">{{ $j->name_job }}</p>
+                            </td>
+                            <td>
+                                <p style="font-size: 15px;">{{ $j->location }}</p>
+                            </td>
+                            <td>
+                                <a href="{{ route('karirForm', ['jobvacancy_id' => $j->id]) }}" type="button"
+                                    class="btn btn-primary" id="apply"
+                                    style="font-size: 13px; height: 3rem; width:100%; margin-top:0rem; padding-top:0.75rem">APPLY</a>
+                            </td>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <br>
-    <div id="apply" class="form-group" style="padding-left: 60px;">
+    {{-- <div id="apply" class="form-group" style="padding-left: 60px;">
         <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search"
             style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
-    </div>
+    </div> --}}
     <br>
 @endsection
 
