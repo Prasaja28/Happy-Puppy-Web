@@ -9,8 +9,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KeluhanController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\CareerController;
+=======
+use App\Http\Controllers\RequestLaguController;
+>>>>>>> Stashed changes
 use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
@@ -116,6 +120,9 @@ Route::get('/kontak-admin',[KontakController::class, 'index']);
 
 //Keluhan
 Route::get('/keluhan-admin',[KeluhanController::class, 'index']);
+
+//Request Lagu
+Route::get('/request-admin',[RequestLaguController::class, 'index']);
 
 //users
 Route::get('/users-admin',[UsersController::class, 'index']);

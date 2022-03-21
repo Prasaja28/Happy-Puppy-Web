@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RequestLagu;
+use Session;
 
 class RequestLaguController extends Controller
 {
@@ -13,7 +15,8 @@ class RequestLaguController extends Controller
      */
     public function index()
     {
-        //
+        $request = RequestLagu::all();
+        return view('admin.kontak-kami.requestlagu-admin.request-admin-index',compact('request'));
     }
 
     /**
