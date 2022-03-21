@@ -246,7 +246,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="usia" placeholder="Usia">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Usia">
                         </div>
                         <div class="form-group">
                             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
@@ -266,7 +266,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="umur" placeholder="Umur">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Umur">
                         </div>
                         <div class="form-group">
                             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
@@ -293,19 +293,19 @@
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="telpr" placeholder="Telp. rumah">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Telp. rumah">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="telpk" placeholder="Telp. kantor">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Telp. kantor">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="nohp" placeholder="No. Hp">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="No. Hp">
                         </div>   
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="email" placeholder="Email">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="konemail" placeholder="Konfirmasi email">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Konfirmasi email">
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="pekanda" placeholder="Pekerjaan anda">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Pekerjaan anda">
                         </div>
                         <div class="form-group">
                             <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
@@ -332,23 +332,23 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="lain2" placeholder="Lain-lain">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lain-lain">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="namaper" placeholder="Nama Perusahaan">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Perusahaan">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="jabatan" placeholder="Jabatan anda">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Jabatan anda">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="lain22" placeholder="Lain-lain">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lain-lain">
                         </div>
                     </div>
                     
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="alamat" placeholder="Alamat">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Alamat">
                         </div>
                         <div class="form-group">
                         <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 50%;">
@@ -390,38 +390,38 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="alamat" placeholder="Alamat">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Alamat">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="kot" placeholder="Kota">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Kota">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="prov" placeholder="Provinsi">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Provinsi">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="dikenal" placeholder="Dikenal sebagai Daerah">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Dikenal sebagai Daerah">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="lain222" placeholder="Lain-lain">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lain-lain">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="luasbang" placeholder="Luas bangunan                          M">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Luas bangunan                          M">
                         </div>
                         <br><br>
                         <p style="font-weight: bold;">Usaha Tetangga Kiri:</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="namus" placeholder="Nama Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Usaha">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="bius" placeholder="Bidang Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Bidang Usaha">
                         </div>
                         <br><br>
                         <p style="font-weight: bold;">Usaha Tetangga Kanan:</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="namus2" placeholder="Nama Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Usaha">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="bius2" placeholder="Bidang Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Bidang Usaha">
                         </div>
                     </div>
                     
@@ -429,25 +429,25 @@
                         <br>
                         <p style="font-weight: bold;">Usaha Tetangga Belakang:</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="namus" placeholder="Nama Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Usaha">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="bius" placeholder="Bidang Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Bidang Usaha">
                         </div>
                         <br><br>
                         <p style="font-weight: bold;">Usaha Tetangga Depan:</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="namus2" placeholder="Nama Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Nama Usaha">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 80%" id="bius2" placeholder="Bidang Usaha">
+                            <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput" placeholder="Bidang Usaha">
                         </div>
                         <br><br>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="lebarjalan" placeholder="Lebar Jalan Depan">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lebar Jalan Depan">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="width: 50%" id="lalulin" placeholder="Lalu - Lintas Jalan Depan">
+                            <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput" placeholder="Lalu - Lintas Jalan Depan">
                         </div>
                     </div>
                 </div>

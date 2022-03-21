@@ -9,6 +9,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KeluhanController;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
