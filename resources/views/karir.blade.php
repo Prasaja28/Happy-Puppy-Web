@@ -30,11 +30,7 @@
         }
 
         .lowongan {
-            margin: auto;
-            margin-top: 50px;
             width: 100%;
-            padding: 60px;
-            padding-left: 110px;
             background-color: #221E40;
             font-family: 'Poppins';
         }
@@ -66,7 +62,15 @@
             background-color: #344072;
             font-family: 'Poppins';
             font-size: 13px;
-            width: 130%;
+            width: 100%;
+        }
+
+        .karir-dsc {
+            text-align: center;
+        }
+
+        .karir-dsc p {
+            line-height: 3em;
         }
 
         .table .tr-inputs th {
@@ -104,82 +108,73 @@
             display: none;
         }
 
-        @media(max-width:600px) {
-            #txt1 {
-                font-size: 35px;
-                margin-bottom: -12rem;
-                margin-left: -5rem;
-            }
+        /* @media(max-width:600px) {
+                            #txt1 {
+                                font-size: 35px;
+                                margin-bottom: -12rem;
+                                margin-left: -5rem;
+                            }
 
-            .table .tr-inputs th {
-                position: relative;
-                padding: 0;
-                padding-bottom: 1.2rem;
-                margin: 0 0 0.5rem 0;
-            }
+                            .table .tr-inputs th {
+                                position: relative;
+                                padding: 0;
+                                padding-bottom: 1.2rem;
+                                margin: 0 0 0.5rem 0;
+                            }
 
-            .lowongan {
-                /* width: 100%;
-                                                                                                                                                                                                    padding-top: 100px;
-                                                                                                                                                                                                    padding-bottom: 10px;
-                                                                                                                                                                                                    background-image: linear-gradient(#221E40 75%, #ffffff 50%, #ffffff);
-                                                                                                                                                                                                    font-family: 'Poppins'; */
-                display: none;
-            }
+                            .lowongan {
+                                display: none;
+                            }
 
-            b#low {
-                margin-left: -150px;
-            }
+                            h6 {
+                                color: #ffffff;
+                                margin-top: -75px;
+                                font-size: 18px;
+                            }
 
-            h6 {
-                color: #ffffff;
-                margin-top: -75px;
-                font-size: 18px;
-            }
-
-            .table {
-                margin-left: -5.5rem;
-                margin-top: 4rem;
-            }
+                            .table {
+                                margin-left: -5.5rem;
+                                margin-top: 4rem;
+                            }
 
 
-            .grid-container {
-                margin-left: -107px;
-                display: grid;
-                column-gap: 10px;
-                row-gap: 15px;
-                grid-template-columns: 115px 115px 115px;
-                grid-template-rows: 105px 105px;
-                padding: 10px;
+                            .grid-container {
+                                margin-left: -107px;
+                                display: grid;
+                                column-gap: 10px;
+                                row-gap: 15px;
+                                grid-template-columns: 115px 115px 115px;
+                                grid-template-rows: 105px 105px;
+                                padding: 10px;
 
-            }
+                            }
 
-            .grid-item {
-                background-image: url('/img/karir.png');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                border: 1px solid rgba(0, 0, 0, 0.8);
-                padding: 55px 5px 10px 5px;
-            }
+                            .grid-item {
+                                background-image: url('/img/karir.png');
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                border: 1px solid rgba(0, 0, 0, 0.8);
+                                padding: 55px 5px 10px 5px;
+                            }
 
-            b#item {
-                font-size: 13px;
-                color: #ffffff;
-                margin-top: 5px;
-                margin-right: 5px;
-                border-bottom: 3px solid rgb(206, 135, 44);
-                padding-bottom: 2px;
-                position: absolute;
-                width: 5%;
-            }
-        }
+                            b#item {
+                                font-size: 13px;
+                                color: #ffffff;
+                                margin-top: 5px;
+                                margin-right: 5px;
+                                border-bottom: 3px solid rgb(206, 135, 44);
+                                padding-bottom: 2px;
+                                position: absolute;
+                                width: 5%;
+                            }
+                        }
 
-        @media(max-width:320px) {
-            #filter {
-                margin-left: 2rem;
-            }
-        }
+                        @media(max-width:320px) {
+                            #filter {
+                                margin-left: 2rem;
+                            }
+                        } */
 
     </style>
     <!-- Google Fonts -->
@@ -191,28 +186,31 @@
 @section('navbar-profile', 'active')
 @section('konten')
 
-    <div class="header1">
-        <div class="header text-white p-5">
-            {{-- <h4 class="mt-5">Cari</h4> --}}
-            <h2 class="font-weight-bold" style="font-size: 35px; margin-top:6.5rem; margin-left:2rem">Karir</h2>
+    <div class="header1 d-flex">
+        <div class="container d-flex header text-white py-5 align-items-end">
+            <h2 class="font-weight-bold">KARIR</h2>
         </div>
     </div>
     <br><br>
 
-    <div class="container" style="text-align: center; ">
-        HAPPY PUPPY memberikan kesempatan bagi semua pegawai untuk mengembangkan karir <br>
-        mulai dari level dasar sampai mencapai level tertinggi melalui jenjang karir yang telah disusun dengan baik
+    <div class="container karir-dsc">
+        <p class="lh-lg px-5">
+            HAPPY PUPPY memberikan kesempatan bagi semua pegawai untuk mengembangkan karir mulai dari level dasar sampai
+            mencapai level tertinggi melalui jenjang karir yang telah disusun dengan baik
+        </p>
     </div>
 
-    <div class="lowongan">
-        <h6 style="margin-left: 75px"><b id="low">LOWONGAN TERSEDIA</b></h6>
-        <div class="grid-container">
-            <div class="grid-item waiter"><b id="item">Waiter</b></div>
-            <div class="grid-item"><b id="item">Cashier</b></div>
-            <div class="grid-item"><b id="item">Chef</b></div>
-            <div class="grid-item"><b id="item">Accounting</b></div>
-            <div class="grid-item" style="line-height: 90%;"><b id="item">Information<br>Technology</b></div>
-            <div class="grid-item"><b id="item">Supervisor</b></div>
+    <div class="lowongan p-5 mt-5">
+        <div class="container">
+            <h6 class="font-weight-bold px-5">LOWONGAN TERSEDIA</h6>
+            <div class="grid-container">
+                <div class="grid-item waiter"><b id="item">Waiter</b></div>
+                <div class="grid-item"><b id="item">Cashier</b></div>
+                <div class="grid-item"><b id="item">Chef</b></div>
+                <div class="grid-item"><b id="item">Accounting</b></div>
+                <div class="grid-item" style="line-height: 90%;"><b id="item">Information<br>Technology</b></div>
+                <div class="grid-item"><b id="item">Supervisor</b></div>
+            </div>
         </div>
     </div>
 
@@ -220,27 +218,23 @@
     </div>
 
     <br>
-    <div class="container" id="filter" style="margin-left: auto;padding-left: 0rem;">
-        <div class="table" style="padding-left: 12rem; margin-top: -4.6rem;">
-            <table class="table table-striped" style="width: 80%; background-color: transparent; ">
+    <div class="container" id="filter">
+        <div class="table px-2 px-lg-5" style="margin-top: -4.6rem;">
+            <table class="table table-striped mt-3" style="background-color: transparent; ">
                 <thead>
                     <tr class="tr-inputs">
                         <form action="{{ route('jobs.filter') }}" method="POST">
                             @csrf
-                            <div class="form-group">
-                                <th style="border-top: 0px; padding-left: 0px;">
-                                    <input type="text" class="form-control"
-                                        style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
-                                        name="nama_job" placeholder="Pilih Pekerjaan">
-                                </th>
-                            </div>
-                            <div class="form-group">
-                                <th style="border-top: 0px;">
-                                    <input type="text" class="form-control"
-                                        style="width: 105%; font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;"
-                                        name="lokasi" placeholder="Pilih Lokasi">
-                                </th>
-                            </div>
+                            <th style="border-top: 0px; padding-left: 0px;">
+                                <input type="text" class="form-control"
+                                    style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
+                                    placeholder="Pilih Pekerjaan">
+                            </th>
+                            <th style="border-top: 0px;">
+                                <input type="text" class="form-control"
+                                    style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="lokasi"
+                                    placeholder="Pilih Lokasi">
+                            </th>
                             <th style="border-top: 0px;">
                                 <button type="submit" class="btn"
                                     style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
