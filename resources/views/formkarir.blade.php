@@ -22,7 +22,7 @@
             position: absolute;
             bottom: 0;
             text-align: justify;
-            margin: 105px 10px;
+            margin: 7rem 1rem;
             font-size: 40px;
             min-height: 480px;
         }
@@ -62,9 +62,9 @@
             margin-top: 6px;
         }
 
-        #myBtn {
-            display: none;
-        }
+        /* #myBtn {
+                                                                                                                                                                                                display: none;
+                                                                                                                                                                                            } */
 
         .foots {
             height: 50px;
@@ -231,7 +231,8 @@
             <p style="font-weight: bold;">LOWONGAN</p>
         </div>
     </div><br>
-    <form id="regForm" action="" enctype="multipart/form-data">
+    <form id="regForm" action="{{ route('career.store') }}" method="post" enctype="multipart/form-data">
+        {{-- <form action="/action_page.php"> --}}
         @csrf
         <div class="col-12">
             <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
@@ -246,54 +247,55 @@
                                 <br><br>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%"
-                                        id="formGroupExampleInput" placeholder="Waiter">
+                                    <label for=""></label>
+                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%" id=""
+                                        name="" placeholder="{{ $jobs[0]->name_job }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%"
-                                        id="formGroupExampleInput" placeholder="Jakarta">
+                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%" id=""
+                                        name="" placeholder="{{ $jobs[0]->location }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" id="name" name="name"
                                         placeholder="Nama">
+                                    <input type="hidden" class="form-control" style="width: 80%" id="jobvacancy_id"
+                                        name="jobvacancy_id" value="{{ $jobs[0]->id }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" name="formal_education"
+                                        id="formal_education" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Pendidikan Formal</option>
-                                        <option>SMA</option>
-                                        <option>D3</option>
-                                        <option>S1/D4</option>
-                                        <option>S2</option>
-                                        <option>S3</option>
+                                        <option value="SMA">SMA</option>
+                                        <option value="D3">D3</option>
+                                        <option value="S1/D4">S1/D4</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="place_birth" id="place_birth"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Tempat Lahir</option>
-                                        <option>DKI Jakarta</option>
-                                        <option>Jawa Barat</option>
-                                        </option>
-                                        <option>Jawa Timur</option>
-                                        <option>Jawa Tengah</option>
-                                        <option>Bali</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="Bali">Bali</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
                                     <label><b>Tanggal Lahir</b></label><br><br>
-                                    <div class="input-group date" id="reservationdate" data-target-input="nearest"
-                                        style="width: 50%;">
-                                        <input type="date" class="form-control datetimepicker-input"
-                                            data-target="#reservationdate" />
+                                    <div class="input-group date" id="reservationdate" style="width: 50%;">
+                                        <input type="date" id="date_birth" name="date_birth"
+                                            class="form-control datetimepicker-input" />
                                     </div>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 25%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 25%" id="height" name="height"
                                         placeholder="Tinggi">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 25%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 25%" id="weight" name="weight"
                                         placeholder="Berat">
                                 </div><br>
                             </div>
@@ -301,39 +303,39 @@
                             <div class="col-md-6">
                                 <br><br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" id="gender" name="gender"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Jenis Kelamin</option>
-                                        <option>Laki-Laki</option>
-                                        <option>Perempuan</option>
+                                        <option value="0">Laki-Laki</option>
+                                        <option value="1">Perempuan</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" id="status_marital"
+                                        name="status_marital" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Status Marital</option>
-                                        <option>Single</option>
-                                        <option>Menikah</option>
+                                        <option value="0">Single</option>
+                                        <option value="1">Menikah</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" id="phone" name="phone"
                                         placeholder="Telp">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="No. HP">
+                                    <input type="text" class="form-control" style="width: 50%" id="mobile_phone"
+                                        name="mobile_phone" placeholder="No. HP">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" id="email" name="email"
                                         placeholder="Email">
                                 </div><br>
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="3" style="width: 80%"
+                                    <textarea class="form-control" rows="3" style="width: 80%" id="address" name="address"
                                         placeholder="Alamat"></textarea>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
                                         placeholder="No. KTP">
                                 </div><br>
                             </div>
@@ -411,8 +413,8 @@
                                 <br><br>
                                 <br><br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Gaji yang Diharapkan">
+                                    <input type="text" class="form-control" style="width: 80%" id="expected_salary"
+                                        name="expected_salary" placeholder="Gaji yang Diharapkan">
                                 </div>
                                 <br><br><br>
                             </div>
@@ -432,29 +434,31 @@
                             <div class="col-md-6">
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Bahasa">
+                                    <input type="text" class="form-control" style="width: 80%" id="language"
+                                        name="language" placeholder="Bahasa">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Alat Musik">
+                                    <input type="text" class="form-control" style="width: 80%" id="instrument_music"
+                                        name="instrument_music" placeholder="Alat Musik">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Komputer">
+                                    <input type="text" class="form-control" style="width: 80%" id="computer"
+                                        name="computer" placeholder="Komputer">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Keahlian Lainnya">
+                                    <input type="text" class="form-control" style="width: 80%" id="otheer_expertise"
+                                        name="otheer_expertise" placeholder="Keahlian Lainnya">
                                 </div>
                             </div>
 
                         </div>
                     </div> <br><br>
+
+
                     <div class="container" id="lampiran">
                         <h5 style="margin-top: 10px;"><b>LAMPIRAN</b></h5><br><br>
 
@@ -462,19 +466,17 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <h6><b>Upload CV</b></h6><br>
-                                    <form action="/action_page.php">
-                                        <input type="file" id="filecv" name="filecv">
-                                        <!-- <input type="submit"> -->
-                                    </form>
+                                    <input type="file" id="cv" name="cv_mob">
+                                    {{-- <input type="file" id="ijazah" name="ijazah"> --}}
+                                    <!-- <input type="submit"> -->
                                     <br>
                                     <p>Max. 1MB(.JPG or .PNG)</p>
                                 </div>
                                 <br>
                                 <div class="col-lg-6">
                                     <h6><b>Ijazah</b></h6><br>
-                                    <form action="/action_page.php">
-                                        <input type="file" id="fileijazah" name="fileijazah">
-                                    </form><br>
+                                    <input type="file" id="ijazah" name="ijazah_mob">
+                                    <br>
                                     <p>Max. 1MB(.JPG or .PNG)</p>
                                 </div><br>
                             </div>
@@ -484,13 +486,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" style="width: 100%"
-                                            id="formGroupExampleInput" placeholder="Copy Link"><br>
+                                        <input type="text" class="form-control" style="width: 100%" id="linkedin"
+                                            name="linkedin" placeholder="Copy Link"><br>
                                         <p>*jika ada</p>
                                     </div>
                                 </div>
                             </div>
-                            <br><button type="submit" id="Btnsubmit" class="btn"><b>SUBMIT</b></button><br><br>
+                            <br><br><br>
 
                         </div>
 
@@ -505,7 +507,7 @@
         <div class="foots"></div>
         <br><br><br><br><br>
 
-        <div class="footser bom1">
+        <div class="footser">
             <div class="container">
                 <h5 style="margin-top: 10px;"><b>LAMPIRAN</b></h5><br><br>
 
@@ -513,19 +515,20 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <h6><b>Upload CV</b></h6><br>
-                            <form action="/action_page.php">
-                                <input type="file" id="filecv" name="filecv">
-                                <!-- <input type="submit"> -->
-                            </form>
+                            {{-- <form action="/action_page.php"> --}}
+                            <input type="file" id="cv" name="cv">
+                            <!-- <input type="submit"> -->
+                            {{-- </form> --}}
                             <br>
                             <p>Max. 1MB(.JPG or .PNG)</p>
                         </div>
                         <br>
                         <div class="col-lg-6">
                             <h6><b>Ijazah</b></h6><br>
-                            <form action="/action_page.php">
-                                <input type="file" id="fileijazah" name="fileijazah">
-                            </form><br>
+                            {{-- <form action="/action_page.php"> --}}
+                            <input type="file" id="ijazah" name="ijazah">
+                            {{-- </form> --}}
+                            <br>
                             <p>Max. 1MB(.JPG or .PNG)</p>
                         </div><br>
                     </div>
@@ -535,23 +538,25 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" style="width: 100%" id="formGroupExampleInput"
-                                    placeholder="Copy Link"><br>
+                                <input type="text" class="form-control" style="width: 100%" id="linkedin" name="linkedin"
+                                    placeholder="Copy Link Desk"><br>
                                 <p>*jika ada</p>
                             </div>
                         </div>
                     </div>
-                    <br><button type="submit" id="Btnsubmit" class="btn"><b>SUBMIT</b></button><br><br>
+                    {{-- <br><br><br> --}}
 
                 </div>
 
-                <br><br>
+                {{-- <br><br> --}}
             </div>
         </div>
-        <div class="col-12" id="buttoon">
-            <button type="submit" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">Next Step</button>
-        </div>
-        <br>
+    </form>
+    <div class="col-12" id="buttoon">
+        <button type="submit" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">SUBMIT</button>
+    </div>
+    <br>
+
     </form>
 @endsection
 
@@ -585,19 +590,28 @@
             } else {
                 document.getElementById("prevBtn").style.display = "inline";
             }
-            if (n == (x.length - 1)) {
+            // if ($(window).width() > 600) {
+            //     document.getElementById("myBtn").innerHTML = "Submit";
+            // }
+            if (n == (x.length - 1) || $(window).width() > 600) {
                 document.getElementById("myBtn").innerHTML = "Submit";
             } else {
                 document.getElementById("myBtn").innerHTML = "Next Step";
             }
         }
 
+
         function nextPrev(n) {
+
             var x = document.getElementsByClassName("bom");
             if (n == 1 && !validateForm()) return false;
             x[currentTab].style.display = "none";
             currentTab = currentTab + n;
             if (currentTab >= x.length) {
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            if ($(window).width() > 600) {
                 document.getElementById("regForm").submit();
                 return false;
             }
