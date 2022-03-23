@@ -13,23 +13,27 @@ class OutletWaralabaController extends Controller
 {
     public function index()
     {
-        $outlet = DB::table('outlet')
-                    ->join('users', 'outlet.users_id', '=', 'users.id')
-                    ->join('city', 'outlet.city_id', '=', 'city.id')
-                    ->join('citysub', 'outlet.citysub_id', '=', 'citysub.id')
-                    ->get();
+        // $outlet = DB::table('outlet')
+        //             ->join('users', 'outlet.users_id', '=', 'users.id')
+        //             ->join('city', 'outlet.city_id', '=', 'city.id')
+        //             ->join('citysub', 'outlet.citysub_id', '=', 'citysub.id')
+        //             ->get();
+        $outlet = Outlet::All();
+        $city = City::All();
+        $citysub = Citysub::All();
         DB::table('users')->get();
         DB::table('city')->get();
         DB::table('citysub')->get();
-        return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
+        return view('admin.outlet-admin.outlet-admin-index',compact('outlet', 'city', 'citysub'));
+        // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'thumbnail' => 'max:255'
         ]);
-        dd($outlet);
         $path = null; 
             if($request->thumbnail)
             {

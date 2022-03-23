@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <form action="{{ url('/outlet-admin/store') }}" method="post" enctype="multipart/form-data">
-                @csrf
+                {{csrf_field()}}
                     <div class="form-group">
                         <label for="name">Nama Outlet :</label>
                         <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ old('name') }}" required>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Alamat Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{ old('address') }}" required>
+                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="address" placeholder="Alamat Outlet" name="address" value="{{ old('address') }}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                         <label for="city_id">Kota :</label>
                         <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
                                 <option value="">(Pilih Kota)</option>
-                                @foreach($outlet as $data)
+                                @foreach($city as $data)
                                     <option value="{{$data->id}}">{{$data->city_name}}</option>
                                 @endforeach
                         </select>
@@ -83,8 +83,8 @@
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
                         <select class="form-control" name="citysub_id" id="citysub_id" required="" data-dependent="citysub_id">
-                                <option value="">(Pilih Kota)</option>
-                                @foreach($outlet as $data)
+                                <option value="">(Pilih Kecamatan)</option>
+                                @foreach($citysub as $data)
                                     <option value="{{$data->id}}">{{$data->csub_name}}</option>
                                 @endforeach
                         </select>

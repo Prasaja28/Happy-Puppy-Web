@@ -9,12 +9,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KeluhanController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\CareerController;
-=======
 use App\Http\Controllers\RequestLaguController;
->>>>>>> Stashed changes
 use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
