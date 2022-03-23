@@ -103,7 +103,7 @@ Route::get('/career-admin', [CareerController::class, 'index']);
 Route::post('/career-admin/store', [CareerController::class, 'store'])->name('career.store');
 Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy'])->name('career.destroy');
 Route::get('/karir', [JobsController::class, 'index']);
-Route::get('/formkarir/{jobvacancy_id?}', [CareerController::class, 'index'])->name('karirForm');
+Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filter');
 
 //profil
