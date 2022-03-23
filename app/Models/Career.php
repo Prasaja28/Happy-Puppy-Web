@@ -14,7 +14,7 @@ class Career extends Model
     protected $fillable = [
         'name',
         'formal_education', 'informal_education', 'jurusan',
-        'place_birth', 'date_birt', 'height', 'weight',
+        'place_birth', 'date_birth', 'height', 'weight',
         'gender', 'status_marital', 'phone', 'mobile_phone',
         'email', 'address', 'no_ktp', 'expected_salary', 'language',
         'instrument_music', 'computer', 'other_expertise', 'cv', 'ijazah',
