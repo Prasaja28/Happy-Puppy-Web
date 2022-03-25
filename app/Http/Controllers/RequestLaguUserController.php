@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kontak;
+use App\Models\RequestLagu;
 use Session;
 
-class KontakController extends Controller
+class RequestLaguUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class KontakController extends Controller
      */
     public function index()
     {
-        $kontak = Kontak::all();
-        return view('admin.kontak-kami.kontak-admin.kontak-admin-index',compact('kontak'));
+        
     }
 
     /**
@@ -26,7 +25,7 @@ class KontakController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +36,15 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        
+        RequestLagu::create([
+            'name' => $request->name,
+            'member_id' => $request->member_id,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'request' => $request->request,
+            'status' => 1
+        ]);
+        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kontak;
 use Session;
 
-class KontakController extends Controller
+class KontakUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class KontakController extends Controller
      */
     public function index()
     {
-        $kontak = Kontak::all();
-        return view('admin.kontak-kami.kontak-admin.kontak-admin-index',compact('kontak'));
+        $kontakUser = Kontak::all();
+        return view('kontak',compact('kontakUser'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KontakController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +37,15 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Kontak::create([
+            'name' => $request->name,
+            'member_id' => $request->member_id,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'complaint' => $request->complaint,
+            'status' => 1
+        ]);
+        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
     }
 
     /**

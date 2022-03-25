@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kontak;
+use App\Models\Keluhan;
 use Session;
 
-class KontakController extends Controller
+class KeluhanUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class KontakController extends Controller
      */
     public function index()
     {
-        $kontak = Kontak::all();
-        return view('admin.kontak-kami.kontak-admin.kontak-admin-index',compact('kontak'));
+        //
     }
 
     /**
@@ -37,7 +36,16 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Keluhan::create([
+            'name' => $request->name,
+            'member_id' => $request->member_id,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'outlet' => $request->outlet,
+            'keluhan' => $request->keluhan,
+            'status' => 1
+        ]);
+        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
     }
 
     /**

@@ -7,11 +7,14 @@ use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\KontakUserController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KeluhanController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\RequestLaguController;
+use App\Http\Controllers\RequestLaguUserController;
+use App\Http\Controllers\KeluhanUserController;
 use App\Http\Controllers\OutletWaralabaController;
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +52,9 @@ Route::get('/lokasi', function () {
 Route::get('/waralaba', function () {
     return view('waralaba');
 });
-Route::get('/kontak', function () {
-    return view('kontak');
-});
+// Route::get('/kontak', function () {
+//     return view('kontak');
+// });
 // Route::get('/formkarir', function () {
 //     return view('formkarir');
 // });
@@ -112,13 +115,19 @@ Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
 Route::post('/profil-admin/store',[ProfilController::class, 'store']);
 Route::put('/profil-admin/update/{id}',[ProfilController::class, 'update']);
 
-//Kontak
+//Kontak User
+Route::get('/kontak', [KontakUserController::class, 'index']);
+Route::post('/kontak/store',[KontakUserController::class, 'store']);
+Route::post('/request/store',[RequestLaguUserController::class, 'store']);
+Route::post('/keluhan/store',[KeluhanUserController::class, 'store']);
+
+//KontakAdmin
 Route::get('/kontak-admin',[KontakController::class, 'index']);
 
 //Keluhan
 Route::get('/keluhan-admin',[KeluhanController::class, 'index']);
 
-//Request Lagu
+//Request Admin Lagu
 Route::get('/request-admin',[RequestLaguController::class, 'index']);
 
 //users

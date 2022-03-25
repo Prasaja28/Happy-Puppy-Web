@@ -265,7 +265,7 @@
                 background-color: #221E40;
                 min-height: 125px;
                 margin-left: -20px;
-                width: 395px;
+                width: auto;
             }
 
             #txt2 {
@@ -281,7 +281,7 @@
             }
 
             .card-news {
-                width: 10rem;
+                width: 9rem;
                 height: 170px;
                 margin-top: 100px;
                 margin-left: -48px
@@ -289,7 +289,7 @@
 
             .card-news1 {
                 position: absolute;
-                width: 10rem;
+                width: 9rem;
                 height: 170px;
                 margin-top: 106px;
                 margin-left: -70px;
@@ -325,7 +325,7 @@
                 /* Added */
                 margin-bottom: 5px;
                 margin-top: 5px;
-                margin-left: -21px;
+                margin-left: -37px;
             }
 
             .padding-card {
@@ -387,7 +387,7 @@
             .popularNews {
                 margin-top: -55px;
                 min-height: 100px;
-                width: 390px;
+                width: auto;
                 margin-left: -15px;
                 background-color: #221E40;
             }
