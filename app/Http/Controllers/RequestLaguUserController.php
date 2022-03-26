@@ -37,11 +37,11 @@ class RequestLaguUserController extends Controller
     public function store(Request $request)
     {
         RequestLagu::create([
-            'name' => $request->name,
-            'member_id' => $request->member_id,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'request' => $request->request,
+            'name' => $request->get('name'),
+            'member_id' => $request->get('member_id'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'request' => $request->get('request'),
             'status' => 1
         ]);
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
