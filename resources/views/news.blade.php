@@ -244,6 +244,21 @@
             background-color: #221E40;
             /* font-family: 'Poppins'; */
         }
+        #myBtn2 {
+            position: absolute;
+            display: block;
+            bottom: 350px;
+            border-radius: 50px;
+            font-size: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            z-index: 2;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-family: 'Poppins';
+            background-color: #221E40;
+            /* font-family: 'Poppins'; */
+        }
 
         @media (max-width:600px) {
             .header {
@@ -436,6 +451,18 @@
             }
 
             #myBtn {
+                display: block;
+                border-radius: 50px;
+                font-size: 8px;
+                margin-top: 10px;
+                margin: 0 auto;
+                /* Added */
+                background-color: #221E40;
+                /* font-family: 'Poppins'; */
+                bottom: -3px;
+                left: 40%;
+            }
+            #myBtn2 {
                 display: block;
                 border-radius: 50px;
                 font-size: 8px;
@@ -697,8 +724,8 @@
                 </div>
 
                 <div class="col-12">
-                    <button href="{{ url('/') }}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load
-                        more</button>
+                    <button href="{{ url('/') }}" onclick="buttonLess()" id="myBtn" class="btn btn-primary">Load more</button>
+                    <button href="{{ url('/') }}" onclick="buttonLess()" id="myBtn2" class="btn btn-primary">Close</button>
                 </div>
             </div>
         </div>
@@ -716,9 +743,13 @@
             if (dots.style.display === "none") {
                 dots.style.display = "block";
                 moreText.style.display = "none";
+                document.getElementById('myBtn').style.display='block';
+                document.getElementById('myBtn2').style.display='none';
             } else {
                 dots.style.display = "none";
                 moreText.style.display = "block";
+                document.getElementById('myBtn2').style.display='block';
+                document.getElementById('myBtn').style.display='none';
             }
         }
     </script>

@@ -64,14 +64,13 @@
       <div class="col-12 col-md-6">
         <select class="form-control select2bs4" id="search">
           {{-- <option selected="selected"></option> --}}
-          <option></option>
-          <option> Alabama</option>
-          <option> Alaska</option>
-          <option> California</option>
-          <option> Delaware</option>
-          <option> Tennessee</option>
-          <option> Texas</option>
-          <option> Washington</option>
+          <option value="1">Surabaya</option>
+          <option value="2">Jakarta</option>
+          <option>Makasar</option>
+          <option>Samarinda</option>
+          <option>Yogyakarta</option>
+          <option>Semarang</option>
+          <option>Madura</option>
         </select>
       </div>
     </div>
@@ -95,11 +94,22 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8">
       <div class="d-flex flex-wrap align-items-center justify-content-center">
-        <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-        <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-        <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-        <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-        <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+        @if ($topartist->count() != 0)
+          @foreach($topartist as $data)
+            @if ($data->status == 1)
+              <img class="img-thumbnail mr-4 mr-md-5" src="{{$data->thumbnail}}">
+              <img class="img-thumbnail mr-4 mr-md-5" src="{{$data->thumbnail}}">
+              <img class="img-thumbnail mr-md-5" src="{{$data->thumbnail}}">
+              <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="{{$data->thumbnail}}">
+              <img class="img-thumbnail mt-3 mt-md-0" src="{{$data->thumbnail}}">
+              <!-- <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+              <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+              <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+              <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+              <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"> -->
+            @endif
+          @endforeach
+        @endif
       </div>
     </div>
   </div>
@@ -113,10 +123,23 @@
         <div class="col-6 col-md-4">
           <h6 class="font-weight-bold top-title">LAGU TERLARIS</h6>
           <div class="card border-0">
-            <img src="{{ asset('img/marionjola.png') }}" class="card-img-top">
+            <!-- <img src="{{ asset('img/marionjola.png') }}" class="card-img-top"> -->
+            @if ($songlist->count() != 0)
+              @foreach($songlist as $list)
+                @if ($list->status == 1)
+                <img src="{{ $list->thumbnail }}" class="card-img-top">
+                @endif
+              @endforeach
+            @endif
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">MARION JOLA</h5>
-              <p class="text-muted">Menangis Tanpa Air Mata</p>
+            @if ($songlist->count() != 0)
+              @foreach ($songlist as $datasong)
+              <!-- <h5 class="card-title font-weight-bold">MARION JOLA</h5>
+              <p class="text-muted">Menangis Tanpa Air Mata</p> -->
+              <h5 class="card-title font-weight-bold">{{$datasong->artist}}</h5>
+              <p class="text-muted">{{$datasong->title_song}}</p>
+              @endforeach
+            @endif
             </div>
           </div>
         </div>
