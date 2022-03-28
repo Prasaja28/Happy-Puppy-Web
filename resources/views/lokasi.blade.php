@@ -98,24 +98,12 @@
     <div class="container">
         <div class="container-fluid text-white search-kota">
             <center>
-                <h5 class="p-4 font-weight-bold">Cari Oulet Terdekat</h5>
+              <h5 class="p-4 font-weight-bold">Cari Oulet Terdekat</h5>
+              <form action="/cari" method="GET">
+                <input type="text" name="cari" placeholder="Masukkan Lokasi" value="{{ old('cari') }}">
+                <input type="submit" value="CARI">
+              </form>
             </center>
-            <div class="row py-2" >
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                          <select class="form-control select2bs4" id="search" style="width: 100%;">
-                          <option selected="selected"></option>
-                          <option value="1">Surabaya</option>
-                            <option value="2">Jakarta</option>
-                            <option>Makasar</option>
-                            <option>Samarinda</option>
-                            <option>Yogyakarta</option>
-                            <option>Semarang</option>
-                            <option>Madura</option>
-                          </select>
-                </div>
-                <div class="col-lg-3"></div>
-            </div>
             <div class="container-fluid pb-4 text-center">
               <div class="row py-3">
                 <div class="col-12">

@@ -9,12 +9,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/outlet-admin/update/'.$outlets->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/outlet-admin/update/'.$outlet->id) }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="form-group">
                         <label for="name">Nama Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ $outlets->'name' }}" required>
+                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ $outlet->'name' }}" required>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Alamat Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{ $outlets->'address' }}" required>
+                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{ $outlet->'address' }}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Nomor Telepon :</label>
-                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlets->'phone' }}" required>
+                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlet->'phone' }}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="fax">Nomor Fax :</label>
-                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlets->'fax' }}" required>
+                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlet->'fax' }}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link_ig">Link IG :</label>
-                        <input type="text" class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig" placeholder="Link IG" name="link_ig" value="{{ $outlets->'link_ig' }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig" placeholder="Link IG" name="link_ig" value="{{ $outlet->'link_ig' }}" required>
                         @error('link_ig')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link_2">Link Lainnya :</label>
-                        <input type="text" class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2" placeholder="Link Lainnya" name="link_2" value="{{ $outlets->'link_2' }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2" placeholder="Link Lainnya" name="link_2" value="{{ $outlet->'link_2' }}" required>
                         @error('link_2')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

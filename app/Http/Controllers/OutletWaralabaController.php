@@ -102,16 +102,15 @@ class OutletWaralabaController extends Controller
         return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 
-    public function search(Request $request){
-    // Get the search value from the request
-    $search = $request->input('search');
-
-    // Search in the title and body columns from the posts table
-    $outlet = Outlet::query()
-        ->where('name', 'LIKE', "%{$search}%")
-        ->get();
-
-    // Return the search view with the resluts compacted
-    return view('search', compact('outlet'));
-}
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+ 
+		$city = DB::table('city')
+		->where('city_name','like',"%".$cari."%")
+		->paginate();
+ 
+		return view('lokasi',['city' => $city]);
+ 
+	}
 }

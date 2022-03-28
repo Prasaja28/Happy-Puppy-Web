@@ -11,7 +11,8 @@
             </div>
             <div class="modal-body">
                 <form action="{{ url('/outlet-admin/store') }}" method="post" enctype="multipart/form-data">
-                {{csrf_field()}}
+                @method('put')
+                @csrf
                     <div class="form-group">
                         <label for="name">Nama Outlet :</label>
                         <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ old('name') }}" required>
