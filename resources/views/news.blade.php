@@ -276,10 +276,12 @@
                 font-size: 20px;
                 margin-top: -160px;
             }
+
             .lates-news-list {
                 background-color: #221E40;
                 min-height: 125px;
-                margin-left: -20px;
+                margin-left: -15px;
+                margin-right: -15px;
                 width: auto;
             }
 
@@ -291,12 +293,12 @@
 
             .news-list {
                 margin-top: -160px;
-                margin-left: -22px;
-                margin-right: -32px;
+                margin-left: -6px;
+                margin-right: 16px;
             }
 
             .card-news {
-                width: 9rem;
+                width: 7rem;
                 height: 170px;
                 margin-top: 100px;
                 margin-left: -48px
@@ -304,7 +306,7 @@
 
             .card-news1 {
                 position: absolute;
-                width: 9rem;
+                width: 7rem;
                 height: 170px;
                 margin-top: 106px;
                 margin-left: -70px;
@@ -326,7 +328,7 @@
 
             .title-news {
                 margin-top: -15px;
-                font-size: 12px;
+                font-size: 10px;
                 min-height: 30px;
                 /* font-family: 'Poppins'; */
             }
@@ -404,6 +406,7 @@
                 min-height: 100px;
                 width: auto;
                 margin-left: -15px;
+                margin-right: -15px;
                 background-color: #221E40;
             }
 

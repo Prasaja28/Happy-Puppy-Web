@@ -16,6 +16,8 @@ use App\Http\Controllers\RequestLaguController;
 use App\Http\Controllers\RequestLaguUserController;
 use App\Http\Controllers\KeluhanUserController;
 use App\Http\Controllers\OutletWaralabaController;
+use App\Models\Topartist;
+use App\Models\Songlist;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +30,9 @@ use App\Http\Controllers\OutletWaralabaController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $topartist = Topartist::all();
+    $songlist = Songlist::all();
+    return view('home',compact('topartist','songlist'));
 });
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
