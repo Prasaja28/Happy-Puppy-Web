@@ -105,11 +105,13 @@ class OutletWaralabaController extends Controller
 
     public function search(Request $request)
     {
-        $keyword = $request->search;
-        $outlet = Outlet::All();
-        $city = City::All();
-        $citysub = Citysub::All();
-        $city = City::where('city_name', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('lokasi-outlet', compact('outlet', 'city', 'citysub'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $keyword = $request->keyword;
+        $outlet = Outlet::from('outlet as o')
+            ->select('o.*', 'c.city_name')
+            ->where('o.name', 'like', '%'.$keyword.'%' )
+            ->orWhere('c.city_name', 'like', '%'.$keyword.'%' )
+            ->leftJoin('city as c', 'c.id', '=' , "o.city_id")
+            ->get();
+        return view('lokasi-outlet', compact('outlet', 'keyword'));
     }
 }

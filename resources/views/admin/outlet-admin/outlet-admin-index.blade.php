@@ -64,13 +64,13 @@
                               </td>
                               <td>{{$outlet->name}}</td>
                               <td>{{$outlet->address}}</td>
-                              <td>{{$outlet->phone}}<td>                                     
-                              <td>{{$outlet->fax}}<td>                                    
-                              <td>{{$outlet->link_ig}}<td>  
-                              <td>{{$outlet->link_2}}<td>                                
-                              <td>{{$outlet->users_id}}<td>
-                              <td>{{$outlet->city_id}}<td>
-                              <td>{{$outlet->citysub_id}}<td>                                  
+                              <td>{{$outlet->phone}}</td>                                     
+                              <td>{{$outlet->fax}}</td>                                    
+                              <td>{{$outlet->link_ig}}</td>  
+                              <td>{{$outlet->link_2}}</td>                                
+                              <td>{{$outlet->users_id}}</td>
+                              <td>{{$outlet->city_id}}</td>
+                              <td>{{$outlet->citysub_id}}</td>                                  
                               <td class="text-center">
                               @if($outlet->status == 1)
                                   <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$outlet->id}}"><i class="fas fa-trash-alt"></i></i></button>
