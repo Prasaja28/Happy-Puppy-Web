@@ -50,6 +50,7 @@
 
         .back {
             height: 1450px;
+            overflow: hidden;
             width: auto;
             background-color: #85A4E1;
         }
@@ -63,8 +64,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                display: none;
-                                                                                                                                                                                            } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                        } */
 
         .foots {
             height: 50px;
@@ -73,7 +74,7 @@
         }
 
         .footser {
-            height: 600px;
+            height: auto;
             width: auto;
             background-color: #ffff;
         }
@@ -203,6 +204,8 @@
 
             #buttoon {
                 margin-top: 100px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             #subTittle {
@@ -344,16 +347,16 @@
                 </div>
             </div>
             <br>
-
+            @php $i=1 @endphp
             <br>
             <div class="container bom">
                 <h5 style="margin-top: 10px;" id="subTittle"><b>PENGALAMAN KERJA</b></h5><br>
                 <div class="card" id="card2">
                     <div class="container">
-                        <div class="row">
+                        <div class="row fieldGroup">
                             <div class="col-md-6">
                                 <br><br>
-                                <h6><b>Pengalaman Kerja 1</b></h6>
+                                <h6><b>Pengalaman Kerja {{ $i }}</b></h6>
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
@@ -379,37 +382,38 @@
                         <br>
                         <hr style="border-top: 1.5px dashed #519FF8; color:transparent;" />
                         <br>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <br>
-                                <h6><b>Pengalaman Kerja 2</b></h6>
-                                <br>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Perusahaan">
+                        <div class="fieldGroupCopy">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h6><b>Pengalaman Kerja {{ $i + 1 }}</b></h6>
+                                    <br>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" style="width: 80%"
+                                            placeholder="Nama Perusahaan">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" style="width: 50%"
+                                            placeholder="Lama Bekerja">
+                                    </div>
+                                    <br>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Lama Bekerja">
+                                <div class="col-md-6">
+                                    <br><br><br>
+                                    <div class="form-group" id="pengalaman">
+                                        <input type="text" class="form-control" style="width: 70%" id="inPeng"
+                                            placeholder="Jabatan">
+                                    </div>
                                 </div>
                                 <br>
                             </div>
-                            <div class="col-md-6">
-                                <br><br><br>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 70%" id="formGroupExampleInput"
-                                        placeholder="Jabatan">
-                                </div>
-                            </div>
-                            <br>
                         </div>
 
                         <hr style="border-top: 1.5px dashed #519FF8; color:transparent;" />
 
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="#">+Tambahkan Pengalaman Kerja</a>
+                                <a href="javascript:void(0)" class="addRow">+Tambahkan Pengalaman Kerja</a>
                                 <br><br>
                                 <br><br><br>
                                 <div class="form-group">
@@ -464,7 +468,7 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-md-6">
                                     <h6><b>Upload CV</b></h6><br>
                                     <input type="file" id="cv" name="cv_mob">
                                     {{-- <input type="file" id="ijazah" name="ijazah"> --}}
@@ -473,7 +477,7 @@
                                     <p>Max. 1MB(.JPG or .PNG)</p>
                                 </div>
                                 <br>
-                                <div class="col-lg-6">
+                                <div class="col-md-6">
                                     <h6><b>Ijazah</b></h6><br>
                                     <input type="file" id="ijazah" name="ijazah_mob">
                                     <br>
@@ -505,7 +509,7 @@
         <div class="back"></div>
 
         <div class="foots"></div>
-        <br><br><br><br><br>
+        <br><br><br>
 
         <div class="footser">
             <div class="container">
@@ -552,7 +556,7 @@
             </div>
         </div>
     </form>
-    <div class="col-12" id="buttoon">
+    <div class="container d-flex text-white py-5 align-items-end" id="buttoon">
         <button type="submit" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">SUBMIT</button>
     </div>
     <br>
@@ -562,6 +566,33 @@
 
 @section('js-internal')
     <!-- add tag js in here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // membatasi jumlah inputan
+            var maxGroup = 5;
+            var a = 3;
+            //melakukan proses multiple input 
+            $(".addRow").click(function() {
+                if ($('body').find('.fieldGroup').length < maxGroup) {
+                    var fieldHTML = '<div class="row">' +
+                        '<div class="col-md-6">' + $(".fieldGroupCopy .col-md-6").html() + '</div>' +
+                        '<div class="col-md-6">' + '<br><br><br>' + $(".col-md-6 #pengalaman").html() +
+                        '</div>' + '</div>' +
+                        "<hr style='border-top: 1.5px dashed #519FF8; color:transparent;'>";
+                    $('body').find('.fieldGroupCopy:last').before(fieldHTML);
+                    $('body').find('.fieldGroupCopy:last').find('h6 b').text('Pengalaman Kerja ' + (a++));
+                    //tambah height back 250 px saat ditambahkan
+                    $('.back').css('height', $('.back').height() + 250);
+                    //auto increment on h6 pengalaman kerja
+
+                } else {
+                    alert('Maximum ' + maxGroup + ' groups are allowed.');
+                }
+            });
+        });
+    </script>
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -614,6 +645,9 @@
             if ($(window).width() > 600) {
                 document.getElementById("regForm").submit();
                 return false;
+            }
+            if ($(window).width() < 500) {
+                $('.back').css('height', '1200px');
             }
             showTab(currentTab);
         }

@@ -9,14 +9,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                
-                    <h3>Apakah Anda yakin untuk Menghapus ?</h3>
-                   
+                <h3>Apakah Anda yakin untuk Menghapus ?</h3>
             </div>
             <div class="modal-footer">
                 <a href="{{ url('/outlet-admin/delete/'.$outlet->id)}}" class="btn btn-danger">Delete</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -31,7 +31,7 @@ class OutletWaralabaController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $request->validate([
+        $this->validate($request,[
             'thumbnail' => 'max:255'
         ]);
         $path = null; 
@@ -56,10 +56,11 @@ class OutletWaralabaController extends Controller
                 'citysub_id'=> $request->citysub_id,
                 'status' => 1
             ]);
+            
             return redirect('/outlet-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $request->validate([
             'thumbnail' => 'max:255'
@@ -102,15 +103,13 @@ class OutletWaralabaController extends Controller
         return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 
-    public function cari(Request $request)
-	{
-		$cari = $request->cari;
- 
-		$city = DB::table('city')
-		->where('city_name','like',"%".$cari."%")
-		->paginate();
- 
-		return view('lokasi',['city' => $city]);
- 
-	}
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $outlet = Outlet::All();
+        $city = City::All();
+        $citysub = Citysub::All();
+        $city = City::where('city_name', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('lokasi-outlet', compact('outlet', 'city', 'citysub'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
