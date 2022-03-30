@@ -11,7 +11,6 @@
             </div>
             <div class="modal-body">
                 <form action="{{ url('/outlet-admin/store') }}" method="post" enctype="multipart/form-data">
-                @method('put')
                 @csrf
                     <div class="form-group">
                         <label for="name">Nama Outlet :</label>

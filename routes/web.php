@@ -103,7 +103,7 @@ Route::get('/outlet-admin',[OutletWaralabaController::class, 'index']);
 Route::get('/outlet-admin/delete/{id}',[OutletWaralabaController::class, 'destroy']);
 Route::post('/outlet-admin/store',[OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update']);
-Route::get('/cari', [OutletWaralabaController::class, 'cari'])->name('cari');
+Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
 
 //Karir
 Route::get('/career-admin', [CareerController::class, 'index']);

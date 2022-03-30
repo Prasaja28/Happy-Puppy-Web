@@ -47,11 +47,11 @@
                               <th>Alamat Outlet</th>
                               <th>Nomor Telepon</th>
                               <th>Nomor Fax</th>
-                              <th>Link ig</th>
-                              <th>Link lainnya</th>
-                              <th>Users_id</th>
-                              <th>City_id</th>
-                              <th>Citysub_id</th>
+                              <th>Link IG</th>
+                              <th>Link Lainnya</th>
+                              <th>Users ID</th>
+                              <th>City ID</th>
+                              <th>Citysub ID</th>
                               <th>Action</th>
                             </tr>
                           </thead>
@@ -60,17 +60,17 @@
                             <tr>
                               <td>{{$loop->iteration}}</td>
                               <td>
-                                <center>
                                   <img src="{{ asset($outlet->thumbnail) }}" width="100" height="100" alt="">
-                                </center>
                               </td>
                               <td>{{$outlet->name}}</td>
                               <td>{{$outlet->address}}</td>
                               <td>{{$outlet->phone}}<td>                                     
                               <td>{{$outlet->fax}}<td>                                    
-                              <td>{{$outlet->link_ig}}<td>                                
+                              <td>{{$outlet->link_ig}}<td>  
                               <td>{{$outlet->link_2}}<td>                                
-                                
+                              <td>{{$outlet->users_id}}<td>
+                              <td>{{$outlet->city_id}}<td>
+                              <td>{{$outlet->citysub_id}}<td>                                  
                               <td class="text-center">
                               @if($outlet->status == 1)
                                   <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$outlet->id}}"><i class="fas fa-trash-alt"></i></i></button>
@@ -89,22 +89,6 @@
                                 </div>
                             @endforelse
                           </tbody>
-                          <tfoot>
-                            <tr>
-                              <th>No</th>
-                              <th>Thumbnail</th>
-                              <th>Nama Outlet</th>
-                              <th>Alamat Outlet</th>
-                              <th>Nomor Telepon</th>
-                              <th>Nomor Fax</th>
-                              <th>Link ig</th>
-                              <th>Link lainnya</th>
-                              <th>Users_id</th>
-                              <th>City_id</th>
-                              <th>Citysub_id</th>
-                              <th>Action</th>
-                            </tr>
-                          </tfoot>
                         </table>
                 </div>
               <!-- /.card-body -->

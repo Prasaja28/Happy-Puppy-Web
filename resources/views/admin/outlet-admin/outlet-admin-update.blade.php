@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="edit{{$outlets->id}}" tabindex="-1" role="dialog" aria-labelledby="outletupdate" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="edit{{$outlet->id}}" tabindex="-1" role="dialog" aria-labelledby="outletupdate" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
           <div class="modal-header">
@@ -14,7 +14,7 @@
                 @csrf
                 <div class="form-group">
                         <label for="name">Nama Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ $outlet->'name' }}" required>
+                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{$outlet->name}}" required>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Alamat Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{ $outlet->'address' }}" required>
+                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{$outlet->address}}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Nomor Telepon :</label>
-                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlet->'phone' }}" required>
+                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telepon" name="phone" value="{{$outlet->phone}}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="fax">Nomor Fax :</label>
-                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlet->'fax' }}" required>
+                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{$outlet->fax}}" required>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link_ig">Link IG :</label>
-                        <input type="text" class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig" placeholder="Link IG" name="link_ig" value="{{ $outlet->'link_ig' }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig" placeholder="Link IG" name="link_ig" value="{{$outlet->link_ig}}" required>
                         @error('link_ig')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link_2">Link Lainnya :</label>
-                        <input type="text" class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2" placeholder="Link Lainnya" name="link_2" value="{{ $outlet->'link_2' }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2" placeholder="Link Lainnya" name="link_2" value="{{$outlet->link_2}}" required>
                         @error('link_2')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                         <label for="city_id">Kota :</label>
                         <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
                                 <option value="">(Pilih Kota)</option>
-                                @foreach($city_id as $data)
+                                @foreach($city as $data)
                                     <option value="{{$data->id}}">{{$data->city_name}}</option>
                                 @endforeach
                         </select>
@@ -83,8 +83,8 @@
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
                         <select class="form-control" name="citysub_id" id="citysub_id" required="" data-dependent="citysub_id">
-                                <option value="">(Pilih Kota)</option>
-                                @foreach($citysub_id as $data)
+                                <option value="">(Pilih Kecamatan)</option>
+                                @foreach($citysub as $data)
                                     <option value="{{$data->id}}">{{$data->csub_name}}</option>
                                 @endforeach
                         </select>

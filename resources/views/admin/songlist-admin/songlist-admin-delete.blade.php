@@ -8,10 +8,8 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                
+            <div class="modal-body">             
                     <h3>Apakah Anda yakin untuk Menghapus ?</h3>
-                   
             </div>
             <div class="modal-footer">
                 <a href="{{ url('/songlist-admin/delete/'.$songlists->id)}}" class="btn btn-danger">Delete</a>

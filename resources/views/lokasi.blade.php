@@ -99,11 +99,21 @@
         <div class="container-fluid text-white search-kota">
             <center>
               <h5 class="p-4 font-weight-bold">Cari Oulet Terdekat</h5>
-              <form action="/cari" method="GET">
-                <input type="text" name="cari" placeholder="Masukkan Lokasi" value="{{ old('cari') }}">
-                <input type="submit" value="CARI">
-              </form>
+              <form class="form" method="get" action="{{ route('search') }}">
+                <div class="form-group w-50 mb-3">
+                    <label for="search" class="d-block mr-2"></label>
+                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Cari Outlet">
+                    <button type="submit" class="btn btn-primary mb-1">Cari</button>
+                </div>
+            </form>
+            <!-- Start kode untuk form pencarian -->
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
             </center>
+
             <div class="container-fluid pb-4 text-center">
               <div class="row py-3">
                 <div class="col-12">
