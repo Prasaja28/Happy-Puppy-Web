@@ -31,8 +31,9 @@ use App\Models\Songlist;
 
 Route::get('/', function () {
     $topartist = Topartist::all();
-    $songlist = Songlist::all();
-    return view('home',compact('topartist','songlist'));
+    $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')->get();
+    $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')->get();
+    return view('home',compact('topartist','songlist_terlaris','songlist_terbaru'));
 });
 Route::get('/dashboard', function () {
     return view('admin.dashboard');

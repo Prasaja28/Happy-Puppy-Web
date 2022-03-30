@@ -123,23 +123,10 @@
         <div class="col-6 col-md-4">
           <h6 class="font-weight-bold top-title">LAGU TERLARIS</h6>
           <div class="card border-0">
-            <!-- <img src="{{ asset('img/marionjola.png') }}" class="card-img-top"> -->
-            @if ($songlist->count() != 0)
-              @foreach($songlist as $list)
-                @if ($list->status == 1)
-                <img src="{{ $list->thumbnail }}" class="card-img-top">
-                @endif
-              @endforeach
-            @endif
+            <img src="{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
             <div class="card-body">
-            @if ($songlist->count() != 0)
-              @foreach ($songlist as $datasong)
-              <!-- <h5 class="card-title font-weight-bold">MARION JOLA</h5>
-              <p class="text-muted">Menangis Tanpa Air Mata</p> -->
-              <h5 class="card-title font-weight-bold">{{$datasong->artist}}</h5>
-              <p class="text-muted">{{$datasong->title_song}}</p>
-              @endforeach
-            @endif
+                  <h5 class="card-title font-weight-bold">{{$songlist_terlaris[0]->artist}}</h5>
+                  <p class="text-muted">{{$songlist_terlaris[0]->title_song}}</p>
             </div>
           </div>
         </div>
@@ -147,10 +134,10 @@
         <div class="col-6 col-md-4">
           <h6 class="font-weight-bold top-title">LAGU TERBARU</h6>
           <div class="card border-0">
-            <img src="{{ asset('img/bts.png') }}" class="card-img-top">
+            <img src="{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">BTS</h5>
-              <p class="text-muted">Life Goes On</p>
+              <h5 class="card-title font-weight-bold">{{$songlist_terbaru[0]->artist}}</h5>
+              <p class="text-muted">{{$songlist_terbaru[0]->title_song}}</p>
             </div>
           </div>
         </div>
@@ -160,16 +147,13 @@
         <div class="col-6 col-md-4">
           <div class="card border-0">
             <div class="card-body">
-              <h6 class="font-weight-bold">TIARA ANDINI</h6>
-              <p class="text-muted">Maafkan Aku #terlanjurmencinta</p>
-              <h6 class="font-weight-bold">AURELIA HERMANSYAH</h6>
-              <p class="text-muted">Kepastian</p>
-              <h6 class="font-weight-bold">ARMADA</h6>
-              <p class="text-muted">Awas Jatuh Cinta</p>
-              <h6 class="font-weight-bold">Mawar De Jongh</h6>
-              <p class="text-muted">Sedang sayang, sayangnya</p>
-              <h6 class="font-weight-bold">Cakra Khan, Hael Husaini</h6>
-              <p class="text-muted">Terlanjur Cinta</p>
+              @foreach($songlist_terlaris as $key => $song)
+              @php
+              if($key == 0)continue;
+              @endphp
+              <h6 class="font-weight-bold">{{$song->artist}}</h6>
+              <p class="text-muted">{{$song->title_song}}</p>
+              @endforeach
             </div>
           </div>
         </div>
@@ -177,16 +161,13 @@
         <div class="col-6 col-md-4">
           <div class="card border-0">
             <div class="card-body">
-              <h6 class="font-weight-bold">AGATHA CHELSEA</h6>
-              <p class="text-muted">Lebih Baik Darinnya</p>
-              <h6 class="font-weight-bold">TIVAL</h6>
-              <p class="text-muted">Mengalah</p>
-              <h6 class="font-weight-bold">Arsy Widianto, Brisla Jodie</h6>
-              <p class="text-muted">Rindu Dalam Hati</p>
-              <h6 class="font-weight-bold">Noah</h6>
-              <p class="text-muted">Kau Udara Bagiku</p>
-              <h6 class="font-weight-bold">Arsy Widianto, Brisia Jodie</h6>
-              <p class="text-muted">Sejauh Dua Benua</p>
+              @foreach($songlist_terbaru as $key => $song)
+              @php
+              if($key == 0)continue;
+              @endphp
+              <h6 class="font-weight-bold">{{$song->artist}}</h6>
+              <p class="text-muted">{{$song->title_song}}</p>
+              @endforeach
             </div>
           </div>
         </div>
