@@ -18,7 +18,7 @@ class Career extends Model
         'gender', 'status_marital', 'phone', 'mobile_phone',
         'email', 'address', 'no_ktp', 'expected_salary', 'language',
         'instrument_music', 'computer', 'other_expertise', 'cv', 'ijazah',
-        'linkedin', 'created_at', 'updated_at'
+        'linkedin', 'created_at', 'updated_at', 'jobvacancy_id'
     ];
     public function users()
     {
