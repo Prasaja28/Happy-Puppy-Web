@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\SonglistController;
 use App\Http\Controllers\TopartistController;
 use App\Http\Controllers\UsersController;
@@ -16,8 +17,7 @@ use App\Http\Controllers\RequestLaguController;
 use App\Http\Controllers\RequestLaguUserController;
 use App\Http\Controllers\KeluhanUserController;
 use App\Http\Controllers\OutletWaralabaController;
-use App\Models\Topartist;
-use App\Models\Songlist;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,12 +29,9 @@ use App\Models\Songlist;
 |
 */
 
-Route::get('/', function () {
-    $topartist = Topartist::all();
-    $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')->get();
-    $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')->get();
-    return view('home',compact('topartist','songlist_terlaris','songlist_terbaru'));
-});
+//Home User
+Route::get('/',[LandingController::class, 'index']);
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });

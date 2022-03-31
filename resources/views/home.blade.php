@@ -125,8 +125,10 @@
           <div class="card border-0">
             <img src="{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
             <div class="card-body">
-                  <h5 class="card-title font-weight-bold">{{$songlist_terlaris[0]->artist}}</h5>
-                  <p class="text-muted">{{$songlist_terlaris[0]->title_song}}</p>
+            @if ($songlist_terlaris->count() != 0)
+              <h5 class="card-title font-weight-bold">{{$songlist_terlaris[0]->artist}}</h5>
+              <p class="text-muted">{{$songlist_terlaris[0]->title_song}}</p>
+            @endif
             </div>
           </div>
         </div>
@@ -136,8 +138,10 @@
           <div class="card border-0">
             <img src="{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
             <div class="card-body">
+            @if ($songlist_terbaru->count() != 0)
               <h5 class="card-title font-weight-bold">{{$songlist_terbaru[0]->artist}}</h5>
               <p class="text-muted">{{$songlist_terbaru[0]->title_song}}</p>
+            @endif
             </div>
           </div>
         </div>
