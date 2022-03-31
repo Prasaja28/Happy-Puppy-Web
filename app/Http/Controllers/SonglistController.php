@@ -124,10 +124,7 @@ class SonglistController extends Controller
      */
     public function destroy($id)
     {
-        Songlist::where('id',$id)
-        ->update([
-            'users_id'=> Session::get('user_id')
-        ]);
-        return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        Songlist::where('id',$id)->delete();
+        return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!');
     }
 }
