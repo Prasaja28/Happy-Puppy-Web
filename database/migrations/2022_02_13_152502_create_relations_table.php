@@ -100,6 +100,14 @@ class CreateRelationsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
+        
+         Schema::table('jobexpertise', function (Blueprint $table) {
+            $table->foreignId('careerform_id')
+                ->nullable()
+                ->constrained('careerform')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
 
         Schema::table('city', function (Blueprint $table) {
             $table->foreignId('citysub_id')
