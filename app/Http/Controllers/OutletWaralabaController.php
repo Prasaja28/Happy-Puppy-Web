@@ -40,8 +40,9 @@ class OutletWaralabaController extends Controller
                 $file = $request->file('thumbnail');
                 $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
                 //dd($path);
-                $file->move(public_path('img/outlet-img'), $path);
+                $file->move(public_path('img/songlist-img'), $path);
             }
+            
             // dd($request->jenis_dokumen);
             Outlet::create([
                 'thumbnail' => $path,
@@ -69,10 +70,11 @@ class OutletWaralabaController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/outlet-img/'.time().'-'.$file->getClientOriginalName();
+                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
                 //dd($path);
-                $file->move(public_path('img/outlet-img'), $path);
-            }else{
+                $file->move(public_path('img/songlist-img'), $path);
+            }
+            else { 
                 $path = $request->thumbnail2;
             }
             Outlet::where('id',$id)

@@ -108,7 +108,7 @@
                     @foreach ($outlet as $o)
                     <div class="col-lg-4">
                         <div class="card">
-                            <img class="card-img-top" src="{{ $o->thumbnail }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('/img/songlist-img/'.$o->thumbnail) }}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
                                 <p class="card-text text-center">
