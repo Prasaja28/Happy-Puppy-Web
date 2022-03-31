@@ -126,7 +126,6 @@ class SonglistController extends Controller
     {
         Songlist::where('id',$id)
         ->update([
-            'status'=> 0,
             'users_id'=> Session::get('user_id')
         ]);
         return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!'); 

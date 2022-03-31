@@ -123,9 +123,11 @@
         <div class="col-6 col-md-4">
           <h6 class="font-weight-bold top-title">LAGU TERLARIS</h6>
           <div class="card border-0">
+          @if ($songlist_terlaris->count() != null)
             <img src="{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
+          @endif
             <div class="card-body">
-            @if ($songlist_terlaris->count() != 0)
+            @if ($songlist_terlaris->count() != null)
               <h5 class="card-title font-weight-bold">{{$songlist_terlaris[0]->artist}}</h5>
               <p class="text-muted">{{$songlist_terlaris[0]->title_song}}</p>
             @endif
@@ -136,9 +138,11 @@
         <div class="col-6 col-md-4">
           <h6 class="font-weight-bold top-title">LAGU TERBARU</h6>
           <div class="card border-0">
+          @if ($songlist_terbaru->count() != null)
             <img src="{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
+          @endif
             <div class="card-body">
-            @if ($songlist_terbaru->count() != 0)
+            @if ($songlist_terbaru->count() != null)
               <h5 class="card-title font-weight-bold">{{$songlist_terbaru[0]->artist}}</h5>
               <p class="text-muted">{{$songlist_terbaru[0]->title_song}}</p>
             @endif
