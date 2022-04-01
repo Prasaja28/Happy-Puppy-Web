@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Career;
 use App\Models\Jobs;
+use App\Models\JobsEkspertise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 Carbon::setlocale(LC_ALL, 'IND');
 
@@ -50,8 +52,6 @@ class CareerController extends Controller
                 'id',
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
-                'informal_education'    => $request->informal_education,
-                'jurusan'               => $request->jurusan,
                 'place_birth'           => $request->place_birth,
                 'date_birth'            => $request->date_birth,
                 'height'                => $request->height,
@@ -67,7 +67,6 @@ class CareerController extends Controller
                 'language'              => $request->language,
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
-                'other_expertise'       => $request->other_expertise,
                 'cv'                    => $filename,
                 'ijazah'                => $filename2,
                 'linkedin'              => $request->linkedin,
@@ -85,10 +84,31 @@ class CareerController extends Controller
                 $filename2
             );
 
-            Career::create($data);
-            return back()->with('success', 'Data berhasil ditambahkan');
-        } else return back()->with('error', 'Data gagal ditambahkan');
-        if ($request->hasFile('cv_mob') && $request->hasFile('ijazah_mob')) {
+            $careerform_id = Career::create($data);
+            $jobeks = new JobsEkspertise();
+            //get spesific id form careerform table insert into jobexpertise table
+            $jobeks->careerform_id = Career::max('id');
+            $jobeks->company_name = $request->nama_perusahaan;
+            $jobeks->length_work = $request->lama_kerja;
+            $jobeks->position = $request->jabatan;
+            // dd($jobeks);
+            $jobeks->save();
+
+            $company_name = $request->company_name;
+            $length_work = $request->length_work;
+            $position = $request->position;
+            for ($i = 0; $i < count($company_name); $i++) {
+                $data = [
+                    'company_name' => $company_name[$i],
+                    'length_work' => $length_work[$i],
+                    'position' => $position[$i],
+                    'careerform_id' => $careerform_id->id,
+                ];
+                // dd($data);
+                DB::table('jobexpertise')->insert($data);
+            }
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with('success', 'Formulir berhasil dikirim');
+        } elseif ($request->hasFile('cv_mob') && $request->hasFile('ijazah_mob')) {
             $file = $request->file('cv_mob');
             $file2 = $request->file('ijazah_mob');
             $filename = $file->getClientOriginalName();
@@ -100,8 +120,6 @@ class CareerController extends Controller
                 'id',
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
-                'informal_education'    => $request->informal_education,
-                'jurusan'               => $request->jurusan,
                 'place_birth'           => $request->place_birth,
                 'date_birth'            => $request->date_birth,
                 'height'                => $request->height,
@@ -117,13 +135,13 @@ class CareerController extends Controller
                 'language'              => $request->language,
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
-                'other_expertise'       => $request->other_expertise,
-                'cv_mob'                => $filename,
-                'ijazah_mob'            => $filename2,
-                'linkedin'              => $request->linkedin,
+                'cv'                => $filename,
+                'ijazah'            => $filename2,
+                'linkedin'              => $request->linkedin_mob,
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
+
             Storage::putFileAs(
                 'public/uploads/cv' . $path,
                 $file,
@@ -135,54 +153,34 @@ class CareerController extends Controller
                 $filename2
             );
 
-            Career::create($data);
-            return back()->with('success', 'Data berhasil ditambahkan');
+            $careerform_id = Career::create($data);
+            $jobeks = new JobsEkspertise();
+            //get spesific id form careerform table insert into jobexpertise table
+            $jobeks->careerform_id = Career::max('id');
+            $jobeks->company_name = $request->nama_perusahaan;
+            $jobeks->length_work = $request->lama_kerja;
+            $jobeks->position = $request->jabatan;
+            // dd($jobeks);
+            $jobeks->save();
+
+            $company_name = $request->company_name;
+            $length_work = $request->length_work;
+            $position = $request->position;
+            for ($i = 0; $i < count($company_name); $i++) {
+                $data = [
+                    'company_name' => $company_name[$i],
+                    'length_work' => $length_work[$i],
+                    'position' => $position[$i],
+                    'careerform_id' => $careerform_id->id,
+                ];
+                // dd($data);
+                DB::table('jobexpertise')->insert($data);
+            }
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with('success', 'Formulir berhasil dikirim');
+        } else {
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with('error', 'Formulir gagal dikirim');
         }
     }
-
-    // public function update(Request $request)
-    // {
-    //     $update = Career::findorFail($request->id);
-    //     if ($request->hasFile('cv')) {
-    //         $file = $request->file('cv');
-    //         $filename = time() . '.' . $file->getClientOriginalExtension();
-    //         $file->move(public_path('/uploads/cv'), $filename);
-    //         $file2 = $request->file('ijazah');
-    //         $filename2 = time() . '.' . $file2->getClientOriginalExtension();
-    //         $file2->move(public_path('/uploads/ijazah'), $filename2);
-
-    //         Storage::putFileAs('public/uploads/cv', $file, $filename);
-    //         Storage::putFileAs('public/uploads/ijazah', $file2, $filename2);
-
-    //         $update->cv = $filename;
-    //         $update->ijazah = $filename2;
-    //     }
-    //     $update->name = $request->name;
-    //     $update->formal_education = $request->formal_education;
-    //     $update->informal_education = $request->informal_education;
-    //     $update->jurusan = $request->jurusan;
-    //     $update->place_birth = $request->place_birth;
-    //     $update->date_birt = $request->date_birt;
-    //     $update->height = $request->height;
-    //     $update->weight = $request->weight;
-    //     $update->gender = $request->gender;
-    //     $update->status_marital = $request->status_marital;
-    //     $update->phone = $request->phone;
-    //     $update->mobile_phone = $request->mobile_phone;
-    //     $update->email = $request->email;
-    //     $update->address = $request->address;
-    //     $update->no_ktp = $request->no_ktp;
-    //     $update->expected_salary = $request->expected_salary;
-    //     $update->language = $request->language;
-    //     $update->instrument_music = $request->instrument_music;
-    //     $update->computer = $request->computer;
-    //     $update->other_expertise = $request->other_expertise;
-    //     $update->linkedin = $request->linkedin;
-    //     if ($update->save()) {
-    //         return redirect('/career')->with('success', 'Data berhasil diubah');
-    //     }
-    //     return redirect('/career')->with('error', 'Data gagal diubah');
-    // }
 
     /**
      * Remove the specified resource from storage.
@@ -192,14 +190,12 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
-        Career::where('id', $id)
-            ->update([
-                'status' => 1
-            ]);
-        return back()->with('status', 'Data Berhasil Di Hapus!!!');
+        $career = Career::find($id);
+        $career->delete();
+        return back()->with('success', 'Formulir berhasil dihapus');
     }
     public function form(Request $request)
     {
-        # code...
+        //multiple instert from careerform to jobexpertise
     }
 }
