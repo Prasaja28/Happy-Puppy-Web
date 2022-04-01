@@ -14,23 +14,43 @@
                 @csrf
                     <div class="form-group">
                         <label for="news_title_en">News Title (EN) :</label>
-                        <input type="text" class="form-control form-control-border" id="news_title_en" placeholder="Title News (EN)" name="news_title_en" required>
+                        <input type="text" class="form-control form-control-border @error('news_title_en') is-invalid @enderror" id="news_title_en" placeholder="Title News (EN)" name="news_title_en" value="{{ old('news_title_en') }}" required>
+                        @error('news_title_en')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="news_title_id">News Title (ID) :</label>
-                        <input type="text" class="form-control form-control-border" id="news_title_id" placeholder="Title News (ID)" name="news_title_id" required>
+                        <input type="text" class="form-control form-control-border @error('news_title_id') is-invalid @enderror" id="news_title_id" placeholder="Title News (ID)" name="news_title_id" value="{{ old('news_title_id') }}" required>
+                        @error('news_title_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="news_content_en">Content News (EN) :</label>
-                        <textarea id="summernote" name="news_content_en" required>
+                        <textarea class="form-control form-control-border @error('news_content_en') is-invalid @enderror" id="summernote" name="news_content_en" value="{{ old('news_content_en') }}" required>
                             News Content EN
                         </textarea>
+                        @error('news_content_en')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="news_content_id">Content News (ID) :</label>
-                        <textarea id="summernote2" name="news_content_id" required>
+                        <textarea class="form-control form-control-border @error('news_content_id') is-invalid @enderror" id="summernote2" name="news_content_id" value="{{ old('news_content_id') }}" required>
                             News Content ID
                         </textarea>
+                        @error('news_content_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="news_category">News Category :</label>
@@ -47,7 +67,12 @@
                     </div>
                     <div class="form-group">
                         <label for="news_date">News Date :</label>
-                        <input type="date" class="form-control form-control-border" id="news_date" placeholder="News Date" name="news_date" required>
+                        <input type="date" class="form-control form-control-border @error('news_date') is-invalid @enderror" id="news_date" placeholder="News Date" name="news_date" value="{{ old('news_date') }}" required>
+                        @error('news_date')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align:left; margin-right: -100px;" >Thumbnail News <span class="required">*</span></label>

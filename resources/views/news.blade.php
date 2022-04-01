@@ -518,21 +518,28 @@
             <div class="row card-news-lates-list">
                 <div class="col-6 padding-card">
                     <div class="card card-news" style="border: none;z-index: 3;">
-                        <img src="/img/egypt.png" class="card-img-top card-img-news" alt="...">
+                        @if ($news_terbaru->count() != null)
+                            <!-- <img src="/img/egypt.png" class="card-img-top card-img-news" alt="..."> -->
+                            <img src="$news_terbaru[0]->thumbnail" class="card-img-top card-img-news" alt="...">
+                        @endif
                         <div class="card-body">
-                            <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5>
-                            <p class="news-time"><?= date('M d, Y') ?>
-                                <a href="" class="" style="float:right;color:black"><i
-                                        class="fas fa-book-open"></i></a>
+                        @if ($news_terbaru->count() != null)
+                            <!-- <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5> -->
+                            <h5 class="card-title title-news" style="font-weight: bold;">$news_terbaru[0]->news_title_id</h5>
+                            <p class="news-time"><?= date('M d, Y', strotime($news_terbaru[0]->news_date)) ?>
+                                <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
+                        @endif
                         </div>
                     </div>
                     <div class="card card-news1" style="border: none;z-index: 2;">
-                        <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="...">
+                        @if ($news_terbaru->count() != null)
+                            <!-- <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="..."> -->
+                            <img src="$news_terbaru[0]->thumbnail" class="card-img-top card-img-news1" alt="...">
+                        @endif
                         <div class="card-body">
                             <p class="news-time"><?= date('M d, Y') ?>
-                                <a href="" class="" style="float:right;color:black"><i
-                                        class="fas fa-book-open"></i></a>
+                                <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                             </p>
                         </div>
                     </div>
@@ -542,66 +549,97 @@
                         <div class="col-12">
                             <div class="card card-news-lates" style="z-index:2;">
                                 <div class="row no-gutters">
-                                    <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="...">
-                                    <div class="col-8">
-                                        <div class="card-body text-bottom">
-                                            <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5>
-                                            <p class="news-time-lates"><?= date('M d, Y') ?>
+                                    @if ($news_terbaru->count() != null)
+                                        @foreach($news_terbaru as $key => $newss)
+                                            @php
+                                                if($key == 0)continue;
+                                            @endphp
+                                        <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
+                                        <img src="$newss[0]->thumbnail" class="col-4 card-img-lates" alt="...">
+                                        <div class="col-8">
+                                            <div class="card-body text-bottom">
+                                                <!-- <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5> -->
+                                                <h5 class="card-title-lates card-title">{{$newss->news_title_id}}</h5>
+                                                <p class="news-time-lates"><?= date('M d, Y' , strotime($newss[0]->news_date)) ?>
                                                 <a href="" class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
+                                                class="fas fa-book-open"></i></a>
                                             </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="card card-news-lates" style="z-index:2;">
                                 <div class="row no-gutters">
-                                    <img src="/img/berita2.jpg" class="col-4 card-img-lates" alt="...">
-                                    <div class="col-8">
-                                        <div class="card-body text-bottom">
-                                            <h5 class="card-title-lates card-title"> Yes, We Are Open</h5>
-                                            <p class="news-time-lates"><?= date('M d, Y') ?>
-                                                <a href="" class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
-                                            </p>
+                                    @if ($news_terbaru->count() != null)
+                                        @foreach($news_terbaru as $key => $newss)
+                                            @php
+                                                if($key == 0)continue;
+                                            @endphp
+                                        <!-- <img src="/img/berita2.jpg" class="col-4 card-img-lates" alt="..."> -->
+                                        <img src="$newss[0]->thumbnail" class="col-4 card-img-lates" alt="...">
+                                        <div class="col-8">
+                                            <div class="card-body text-bottom">
+                                                <!-- <h5 class="card-title-lates card-title"> Yes, We Are Open</h5> -->
+                                                <h5 class="card-title-lates card-title">{{$newss->news_title_id}}</h5>
+                                                <p class="news-time-lates"><?= date('M d, Y' , strotime($newss[0]->news_date)) ?>
+                                                    <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="card card-news-lates" style="z-index:2;">
                                 <div class="row no-gutters">
-                                    <img src="/img/berita5.jpg" class="col-4 card-img-lates" alt="...">
-                                    <div class="col-8">
-                                        <div class="card-body text-bottom">
-                                            <h5 class="card-title-lates card-title"> Lagu Baru Camelia Cabello Berjudul
-                                                "Liar"</h5>
-                                            <p class="news-time-lates"><?= date('M d, Y') ?>
-                                                <a href="" class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
-                                            </p>
+                                @if ($news_terbaru->count() != null)
+                                    @foreach($news_terbaru as $key => $newss)
+                                        @php
+                                            if($key == 0)continue;
+                                        @endphp
+                                        <!-- <img src="/img/berita5.jpg" class="col-4 card-img-lates" alt="..."> -->
+                                        <img src="$newss[0]->thumbnail" class="col-4 card-img-lates" alt="...">
+                                        <div class="col-8">
+                                            <div class="card-body text-bottom">
+                                                <!-- <h5 class="card-title-lates card-title"> Lagu Baru Camelia Cabello Berjudul "Liar"</h5> -->
+                                                <h5 class="card-title-lates card-title">{{$newss->news_title_id}}</h5>
+                                                <p class="news-time-lates"><?= date('M d, Y', strotime($newss[0]->news_date)) ?>
+                                                    <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
+                                @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="card card-news-lates" style="z-index:2;">
                                 <div class="row no-gutters">
-                                    <img src="/img/berita4.jpg" class="col-4 card-img-lates" alt="...">
-                                    <div class="col-8">
-                                        <div class="card-body text-bottom">
-                                            <h5 class="card-title-lates card-title"> Lagu Baru Mahalini Berjudul "Melawan
-                                                Restu"</h5>
-                                            <p class="news-time-lates"><?= date('M d, Y') ?>
-                                                <a href="" class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
-                                            </p>
+                                @if ($news_terbaru->count() != null)
+                                    @foreach($news_terbaru as $key => $newss)
+                                        @php
+                                            if($key == 0)continue;
+                                        @endphp
+                                        <!-- <img src="/img/berita4.jpg" class="col-4 card-img-lates" alt="..."> -->
+                                        <img src="$newss[0]->thumbnail" class="col-4 card-img-lates" alt="...">
+                                        <div class="col-8">
+                                            <div class="card-body text-bottom">
+                                                <!-- <h5 class="card-title-lates card-title"> Lagu Baru Mahalini Berjudul "Melawan Restu"</h5> -->
+                                                <h5 class="card-title-lates card-title">{{$newss->news_title_id}}</h5>
+                                                <p class="news-time-lates"><?= date('M d, Y', strotime($newss[0]->news_date)) ?>
+                                                    <a href="" class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -619,70 +657,93 @@
                 <div class="col-12">
                     <div class="card card-news-popular" style="z-index:2;" id="popular">
                         <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="{{ asset('img/hijau-next-news.png') }}" class="card-img-top card-img-popular"
-                                    alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body text-bottom" style="z-index:2;">
-                                    <p class="news-popular-title">News</p>
-                                    <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M d, Y') ?>
-                                    </p>
-                                </div>
-                            </div>
+                            @if ($news_terlaris->count() != null)
+                                @foreach($news_terlaris as $newsst)
+                                    <div class="col-6">
+                                            <!-- <img src="{{ asset('img/hijau-next-news.png') }}" class="card-img-top card-img-popular" alt="..."> -->
+                                            <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card-body text-bottom" style="z-index:2;">
+                                            <!-- <p class="news-popular-title">News</p> -->
+                                            <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                            <p class="news-popular-title">News</p>
+                                            <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                            <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="card card-news-popular" style="z-index:2;">
                         <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="{{ asset('img/stefan.png') }}" class="card-img-top card-img-popular" alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body text-bottom" style="z-index:2;">
-                                    <p class="news-popular-title">News</p>
-                                    <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M d, Y') ?>
-                                    </p>
-                                </div>
-                            </div>
+                            @if ($news_terlaris->count() != null)
+                                @foreach($news_terlaris as $newsst)
+                                    <div class="col-6">
+                                        <!-- <img src="{{ asset('img/stefan.png') }}" class="card-img-top card-img-popular" alt="..."> -->
+                                        <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card-body text-bottom" style="z-index:2;">
+                                            <p class="news-popular-title">News</p>
+                                            <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                            <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                            <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="card card-news-popular" style="z-index:2;">
                         <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="{{ asset('img/avril.png') }}" class="card-img-top card-img-popular" alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body text-bottom" style="z-index:2;">
-                                    <p class="news-popular-title">News</p>
-                                    <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M d, Y') ?>
-                                    </p>
+                        @if ($news_terlaris->count() != null)
+                            @foreach($news_terlaris as $newsst)
+                                <div class="col-6">
+                                    <!-- <img src="{{ asset('img/avril.png') }}" class="card-img-top card-img-popular" alt="..."> -->
+                                    <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
                                 </div>
-                            </div>
+                                <div class="col-6">
+                                    <div class="card-body text-bottom" style="z-index:2;">
+                                        <p class="news-popular-title">News</p>
+                                        <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                        <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                        <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="card card-news-popular" style="z-index:2;">
                         <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg"
-                                    class="card-img-top card-img-popular" alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body text-bottom" style="z-index:2;">
-                                    <p class="news-popular-title">News</p>
-                                    <h5 class="card-title card-title-popular">Card title</h5>
-                                    <p class="news-time-popular"><?= date('M d, Y') ?>
-                                    </p>
+                        @if ($news_terlaris->count() != null)
+                            @foreach($news_terlaris as $newsst)
+                                <div class="col-6">
+                                    <!-- <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="..."> -->
+                                    <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
                                 </div>
-                            </div>
+                                <div class="col-6">
+                                    <div class="card-body text-bottom" style="z-index:2;">
+                                        <p class="news-popular-title">News</p>
+                                        <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                        <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                        <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
                         </div>
                     </div>
                 </div>
@@ -691,36 +752,46 @@
                     <div class="col-12">
                         <div class="card card-news-popular" style="z-index:2;">
                             <div class="row no-gutters">
-                                <div class="col-6">
-                                    <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg"
-                                        class="card-img-top card-img-popular" alt="...">
-                                </div>
-                                <div class="col-6">
-                                    <div class="card-body text-bottom" style="z-index:2;">
-                                        <p class="news-popular-title">News</p>
-                                        <h5 class="card-title card-title-popular">Card title</h5>
-                                        <p class="news-time-popular"><?= date('M d, Y') ?>
-                                        </p>
+                            @if ($news_terlaris->count() != null)
+                                @foreach($news_terlaris as $newsst)
+                                    <div class="col-6">
+                                        <!-- <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="..."> -->
+                                        <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
                                     </div>
-                                </div>
+                                    <div class="col-6">
+                                        <div class="card-body text-bottom" style="z-index:2;">
+                                            <p class="news-popular-title">News</p>
+                                            <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                            <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                            <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="card card-news-popular" style="z-index:2;">
                             <div class="row no-gutters">
-                                <div class="col-6">
-                                    <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg"
-                                        class="card-img-top card-img-popular" alt="...">
-                                </div>
-                                <div class="col-6">
-                                    <div class="card-body text-bottom" style="z-index:2;">
-                                        <p class="news-popular-title">News</p>
-                                        <h5 class="card-title card-title-popular">Card title</h5>
-                                        <p class="news-time-popular"><?= date('M d, Y') ?>
-                                        </p>
+                            @if ($news_terlaris->count() != null)
+                                @foreach($news_terlaris as $newsst)
+                                    <div class="col-6">
+                                        <!-- <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="..."> -->
+                                        <img src="$newsst->thumbnail" class="card-img-top card-img-popular" alt="...">
                                     </div>
-                                </div>
+                                    <div class="col-6">
+                                        <div class="card-body text-bottom" style="z-index:2;">
+                                            <p class="news-popular-title">News</p>
+                                            <h5 class="card-title card-title-popular">{{$newsst->news_title_id}}</h5>
+                                            <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
+                                            <p class="news-time-popular"><?= date('M d, Y', strotime($newsst[0]->news_date)) ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                             </div>
                         </div>
                     </div>

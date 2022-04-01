@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NewsUserController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\SonglistController;
 use App\Http\Controllers\TopartistController;
@@ -32,15 +33,15 @@ use App\Http\Controllers\OutletWaralabaController;
 //Home User
 Route::get('/',[LandingController::class, 'index']);
 
+//News User
+Route::get('/news',[NewsUserController::class, 'index']);
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
 Route::get('/profile', function () {
     return view('profile');
-});
-Route::get('/news', function () {
-    return view('news');
 });
 Route::get('/daftar-lagu', function () {
     return view('daftar-lagu');

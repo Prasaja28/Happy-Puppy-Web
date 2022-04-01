@@ -57,9 +57,10 @@ class NewsController extends Controller
                 'news_content_id' => $request->news_content_id,
                 'news_date' => $request->news_date,
                 'news_category' => $request->news_category,
-                'status' => 1,
-                'users_id' => $request->users_id
+                'users_id' => $request->users_id,
+                'status' => 1
             ]);
+            // dd($test);
             return redirect('/news-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
 
