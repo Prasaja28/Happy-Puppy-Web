@@ -597,4 +597,22 @@
             return valid;
         }
     </script>
+    <script>
+        //if email_confirm != email then return warning
+        $('#email_confirm').on('keyup', function() {
+            var email = $('#email').val();
+            var email_confirm = $('#email_confirm').val();
+            if (email != email_confirm) {
+                $('#email_confirm').css('border-color', 'red');
+                $('#email_confirm').css('border-width', '1px');
+                $('#email_confirm').css('border-style', 'solid');
+                $('#email_confirm').css('border-radius', '5px');
+            } else {
+                $('#email_confirm').css('border-color', '#ced4da');
+                $('#email_confirm').css('border-width', '1px');
+                $('#email_confirm').css('border-style', 'solid');
+                $('#email_confirm').css('border-radius', '5px');
+            }
+        });
+    </script>
 @endsection
