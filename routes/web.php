@@ -112,6 +112,9 @@ Route::get('/karir', [JobsController::class, 'index']);
 Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filter');
 
+//waralaba
+Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');
+
 //profil
 Route::get('/profil-admin',[ProfilController::class, 'index']);
 Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
