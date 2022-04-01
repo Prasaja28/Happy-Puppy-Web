@@ -105,7 +105,7 @@ Route::put('/outlet-admin/update/{id}',[OutletWaralabaController::class, 'update
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
 
 //Karir
-Route::get('/career-admin', [CareerController::class, 'index']);
+Route::get('/career-admin', [CareerController::class, 'adminIndex']);
 Route::post('/career-admin/store', [CareerController::class, 'store'])->name('career.store');
 Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy'])->name('career.destroy');
 Route::get('/karir', [JobsController::class, 'index']);
