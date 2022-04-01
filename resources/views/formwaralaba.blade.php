@@ -97,10 +97,6 @@
             color: white;
         }
 
-        #lampiran {
-            display: none;
-        }
-
         #bakat {
             margin-top: -85px;
         }
@@ -237,7 +233,7 @@
             <p style="font-weight: bold;">WARALABA</p>
         </div>
     </div><br>
-    <form id="regForm" action="" enctype="multipart/form-data">
+    <form id="regForm" action="{{ route('waralaba.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-12">
             <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
@@ -251,66 +247,64 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="nama"
+                                    <input type="text" class="form-control" style="width: 80%" id="nama" name="name"
                                         placeholder="Nama">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="gender"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Jenis Kelamin</option>
-                                        <option>Laki-Laki</option>
-                                        <option>Perempuan</option>
+                                        <option value="0">Laki-Laki</option>
+                                        <option value="1">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="number" class="form-control" style="width: 50%" name="age"
                                         placeholder="Usia">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="last_education"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Pendidikan Terakhir</option>
-                                        <option>SMA</option>
-                                        <option>D3</option>
-                                        <option>S1/D4</option>
-                                        <option>S2</option>
-                                        <option>S3</option>
+                                        <option value="SMA">SMA</option>
+                                        <option value="D3">D3</option>
+                                        <option value="S1/D4">S1/D4</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="marital"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Status</option>
-                                        <option>Menikah</option>
-                                        <option>Belum Menikah</option>
+                                        <option value="0">Menikah</option>
+                                        <option value="1">Belum Menikah</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Umur">
+                                    <input type="text" class="form-control" style="width: 80%" name="official_address"
+                                        placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="city"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Kota</option>
-                                        <option>DKI Jakarta</option>
-                                        <option>Tanggerang</option>
-                                        </option>
-                                        <option>Surabaya</option>
-                                        <option>Bandung</option>
-                                        <option>Bali</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Tanggerang">Tanggerang</option>
+                                        <option value="Surabaya">Surabaya</option>
+                                        <option value="Bandung">Bandung</option>
+                                        <option value="Bali">Bali</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="province"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Provinsi</option>
-                                        <option>DKI Jakarta</option>
-                                        <option>Jawa Barat</option>
-                                        </option>
-                                        <option>Jawa Timur</option>
-                                        <option>Jawa Tengah</option>
-                                        <option>Bali</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="Bali">Bali</option>
                                     </select>
                                 </div>
                             </div>
@@ -318,24 +312,24 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" name="home_phone"
                                         placeholder="Telp. rumah">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" name="official_phone"
                                         placeholder="Telp. kantor">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" name="mobile_phone"
                                         placeholder="No. Hp">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" name="email" id="email"
                                         placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Konfirmasi email">
+                                    <input type="text" class="form-control" style="width: 80%" id="email_confirm"
+                                        name="email_confirm" placeholder="Konfirmasi email">
                                 </div>
                             </div>
                         </div>
@@ -350,33 +344,33 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" name="job" id="job"
                                         placeholder="Pekerjaan anda">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="bussiness_field"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Bidang Usaha</option>
-                                        <option>Bidang Pertanian</option>
-                                        <option>Bidang Manufaktur</option>
-                                        <option>Bidang Konstruksi</option>
-                                        <option>Bidang Komunikasi</option>
+                                        <option value="Bidang Pertanian">Bidang Pertanian</option>
+                                        <option value="Bidang Manufaktur">Bidang Manufaktur</option>
+                                        <option value="Bidang Konstruksi">Bidang Konstruksi</option>
+                                        <option value="Bidang Komunikasi">Bidang Komunikasi</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" id="other" name="other"
                                         placeholder="Lain-lain">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Perusahaan">
+                                    <input type="text" class="form-control" style="width: 80%" id="company_name"
+                                        name="company_name" placeholder="Nama Perusahaan">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Jabatan anda">
+                                    <input type="text" class="form-control" style="width: 80%" id="postion_company"
+                                        name="postion_company" placeholder="Jabatan anda">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" id="other_2" name="other_2"
                                         placeholder="Lain-lain">
                                 </div>
                             </div>
@@ -384,31 +378,29 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Alamat">
+                                    <input type="text" class="form-control" style="width: 80%" id="address_2"
+                                        name="address_2" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="city_2" id="city_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Kota</option>
-                                        <option>DKI Jakarta</option>
-                                        <option>Tanggerang</option>
-                                        </option>
-                                        <option>Surabaya</option>
-                                        <option>Bandung</option>
-                                        <option>Bali</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Tanggerang">Tanggerang</option>
+                                        <option value="Surabaya">Surabaya</option>
+                                        <option value="Bandung">Bandung</option>
+                                        <option value="Bali">Bali</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
+                                    <select class="form-control select2 select2-danger" name="province_2" id="province_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Provinsi</option>
-                                        <option>DKI Jakarta</option>
-                                        <option>Jawa Barat</option>
-                                        </option>
-                                        <option>Jawa Timur</option>
-                                        <option>Jawa Tengah</option>
-                                        <option>Bali</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="Bali">Bali</option>
                                     </select>
                                 </div>
                             </div>
@@ -416,8 +408,7 @@
                     </div>
                 </div>
             </div><br><br>
-            <div class="bom">
-            <div class="container">
+            <div class="container bom">
                 <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK
                     WARALABA HAPPY PUPPY</h2><br>
                 <div class="card" id="card3">
@@ -426,57 +417,57 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger"
-                                        data-dropdown-css-class="select2-danger" style="width: 80%;">
+                                    <select class="form-control select2 select2-danger" name="status_penguasaan"
+                                        id="status_penguasaan" data-dropdown-css-class="select2-danger" style="width: 80%;">
                                         <option selected="selected">Status Penguasaan Tempat</option>
-                                        <option>Lahan Pribadi</option>
-                                        <option>Sewa</option>
+                                        <option value="Lahan Pribadi">Lahan Pribadi</option>
+                                        <option value="Sewa">Sewa</option>
                                         </option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Alamat">
+                                    <input type="text" class="form-control" style="width: 80%" id="address_3"
+                                        name="address_3" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" id="city_3" name="city_3"
                                         placeholder="Kota">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Provinsi">
+                                    <input type="text" class="form-control" style="width: 50%" id="province_3"
+                                        name="province_3" placeholder="Provinsi">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Dikenal sebagai Daerah">
+                                    <input type="text" class="form-control" style="width: 50%" id="known_as_area"
+                                        name="known_as_area" placeholder="Dikenal sebagai Daerah">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" id="other_3" name="other_3"
                                         placeholder="Lain-lain">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Luas bangunan                          M">
+                                    <input type="number" class="form-control" style="width: 50%" id="building_area"
+                                        name="building_area" placeholder="Luas bangunan                          M">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Kiri:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="left_business_name"
+                                        name="left_business_name" placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Bidang Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="left_business_field"
+                                        name="left_business_field" placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Kanan:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="right_business_name"
+                                        name="right_business_name" placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Bidang Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="right_business_field"
+                                        name="right_business_field" placeholder="Bidang Usaha">
                                 </div>
                             </div>
 
@@ -484,31 +475,32 @@
                                 <br>
                                 <p style="font-weight: bold;">Usaha Tetangga Belakang:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="behind_business_name"
+                                        name="behind_business_name" placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Bidang Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="behind_business_field"
+                                        name="behind_business_field" placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Depan:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Nama Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="front_business_name"
+                                        name="front_business_name" placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
-                                        placeholder="Bidang Usaha">
+                                    <input type="text" class="form-control" style="width: 80%" id="front_business_field"
+                                        name="front_business_field" placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Lebar Jalan Depan">
+                                    <input type="number" class="form-control" style="width: 50%" id="front_road_width"
+                                        name="front_road_width" placeholder="Lebar Jalan Depan">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
-                                        placeholder="Lalu - Lintas Jalan Depan">
+                                    <input type="text" class="form-control" style="width: 50%" id="front_road_traffic"
+                                        name="front_road_traffic" placeholder="Lalu - Lintas Jalan Depan">
+                                    <input type="hidden" name="status" id="status" value="0">
                                 </div>
                             </div>
                         </div>
@@ -516,11 +508,10 @@
                 </div>
             </div>
         </div>
-        </div>
         <div class="back"></div>
         <div class="foots"></div>
         <div class="foots2">
-            <div class="container">
+            <div class="container bom">
                 <br><br>
                 <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat, serta mempunyai
                     kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang
@@ -528,10 +519,11 @@
                     mengisi formulir pendaftaran waralaba.</p>
                 <div class="form-group">
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
-                        style="width: 10%;background-color: #221E40;color:white;">
+                        style="width: 10%;background-color: #221E40;color:white;" name="confirm_completenes"
+                        id="confirm_completenes">
                         <option selected="selected">Ya/Tidak</option>
-                        <option>Ya</option>
-                        <option>Tidak</option>
+                        <option value="0">Ya</option>
+                        <option value="1">Tidak</option>
                         </option>
                     </select>
                 </div>
@@ -542,10 +534,11 @@
                     saat pendaftaran<br> waralaba ini diterima</p>
                 <div class="form-group">
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
-                        style="width: 10%; background-color: #221E40; color:white;">
+                        style="width: 10%; background-color: #221E40; color:white;" name="confirm_register"
+                        id="confirm_register">
                         <option selected="selected">Ya/Tidak</option>
-                        <option>Ya</option>
-                        <option>Tidak</option>
+                        <option value="0">Ya</option>
+                        <option value="1">Tidak</option>
                         </option>
                     </select>
                 </div>
@@ -554,7 +547,8 @@
         </div>
         <br>
         <div class="col-12" id="buttoon">
-            <a style="font-weight: bold; color:white;" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">Next Step</a>
+            <a style="font-weight: bold; color:white;" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">Next
+                Step</a>
         </div>
         <br>
     </form>
@@ -587,7 +581,7 @@
             if (n == 1 && !validateForm()) return false;
             x[currentTab].style.display = "none";
             currentTab = currentTab + n;
-            if (currentTab >= x.length) {
+            if (currentTab >= x.length || $(window).width() > 600) {
                 document.getElementById("regForm").submit();
                 return false;
             }
