@@ -194,8 +194,9 @@ class CareerController extends Controller
         $career->delete();
         return back()->with('success', 'Formulir berhasil dihapus');
     }
-    public function form(Request $request)
+    public function adminIndex()
     {
-        //multiple instert from careerform to jobexpertise
+        $careers = Career::all();
+        return view('admin.career-admin', compact('careers'));
     }
 }
