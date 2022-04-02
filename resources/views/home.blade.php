@@ -98,10 +98,6 @@
           @foreach($topartist as $data)
             @if ($data->status == 1)
               <img class="img-thumbnail mr-4 mr-md-5" src="{{$data->thumbnail}}">
-              <img class="img-thumbnail mr-4 mr-md-5" src="{{$data->thumbnail}}">
-              <img class="img-thumbnail mr-md-5" src="{{$data->thumbnail}}">
-              <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="{{$data->thumbnail}}">
-              <img class="img-thumbnail mt-3 mt-md-0" src="{{$data->thumbnail}}">
               <!-- <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
               <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
               <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
@@ -196,31 +192,47 @@
     <div class="row">
       <div class="col-6">
         <div class="card border-0 rounded-0">
-          <img src="{{ asset('img/egypt.png') }}">
-
+        @if ($news_terbaru->count() != null)
+          <img src="{{ $news_terbaru[0]->thumbnail }}">
+          <!-- <img src="{{ asset('img/egypt.png') }}"> -->
+        @endif
           <div class="card-body pb-0">
             <div class="card-title">
-              <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
+            @if ($news_terbaru->count() != null)
+              <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                <a href="#"><img src="{{ asset('img/book.png') }}"></a>
+                <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
+              <h4 class="font-weight-none pt-1 pt-md-3">{{$news_terbaru[0]->news_title_id}}</h4>
+              <div class="date d-flex justify-content-between align-items-center">
+                <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
+                <a href="#"><img src="{{  asset('img/book.png') }}"></a>
               </div>
+            @endif
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-6">
-        <div class="card border-0 rounded-0">
-          <img src="{{ asset('img/491.png') }}">
-
+      <div class="card border-0 rounded-0">
+        @if ($news_terbaru->count() != null)
+          <img src="{{ $news_terbaru[1]->thumbnail }}">
+          <!-- <img src="{{ asset('img/egypt.png') }}"> -->
+        @endif
           <div class="card-body pb-0">
             <div class="card-title">
-              <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
+            @if ($news_terbaru->count() != null)
+              <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                <a href="#"><img src="{{ asset('img/book.png') }}"></a>
+                <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
+              <h4 class="font-weight-none pt-1 pt-md-3">{{$news_terbaru[1]->news_title_id}}</h4>
+              <div class="date d-flex justify-content-between align-items-center">
+                <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
+                <a href="#"><img src="{{  asset('img/book.png') }}"></a>
               </div>
+            @endif
             </div>
           </div>
         </div>

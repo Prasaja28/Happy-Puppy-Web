@@ -37,7 +37,7 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'thumbnail' => 'max:88'
+            'thumbnail' => 'max:1000'
         ]);
         //dd($request->news_title_en);
         $path = null; 
@@ -96,7 +96,7 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'thumbnail' => 'max:88'
+            'thumbnail' => 'max:1000'
         ]);
         //dd($request);
         //dd($request->news_title_en);

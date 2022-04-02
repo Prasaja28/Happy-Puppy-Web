@@ -108,7 +108,7 @@ div[name="artist"] {
 
 div[name="artist"] img {
     width: 100px;
-    height: auto;
+    height: 100px;
     border-radius: 100%;
 }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Topartist;
 use App\Models\Songlist;
+use App\Models\News;
 
 class LandingController extends Controller
 {
@@ -18,7 +19,8 @@ class LandingController extends Controller
         $topartist = Topartist::all();
         $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')->get();
         $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')->get();
-        return view('home',compact('topartist','songlist_terlaris','songlist_terbaru'));
+        $news_terbaru = News::where('news_category','lates')->get();
+        return view('home',compact('topartist','songlist_terlaris','songlist_terbaru','news_terbaru'));
     }
 
     /**

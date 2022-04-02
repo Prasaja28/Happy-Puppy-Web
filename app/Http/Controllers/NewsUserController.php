@@ -14,10 +14,10 @@ class NewsUserController extends Controller
      */
     public function index()
     {
-        $usernews = News::all();
+        // $usernews = News::all();
         $news_terlaris = News::where('news_category','popular')->get();
         $news_terbaru = News::where('news_category','lates')->get();
-        return view('news',compact('usernews','news_terlaris','news_terbaru'));
+        return view('news',compact('news_terlaris','news_terbaru'));
     }
 
     /**
