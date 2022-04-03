@@ -17,6 +17,10 @@
             background-image: url('/img/formwaralaba.png')
         }
 
+        #last_form_section {
+            display: none;
+        }
+
         #txt1 {
             color: white;
             position: absolute;
@@ -95,10 +99,19 @@
 
         #subTittle {
             color: white;
+            margin-top: 10px;
         }
 
         #bakat {
             margin-top: -85px;
+        }
+
+        #footer_mobile {
+            display: none;
+        }
+
+        .mob {
+            width: 10%;
         }
 
         @media (max-width: 600px) {
@@ -116,6 +129,10 @@
 
             .containerr {
                 width: 100px;
+            }
+
+            .mob {
+                width: 35%;
             }
 
             #txt1 {
@@ -146,7 +163,7 @@
             }
 
             .back {
-                height: 500px;
+                height: 30rem;
                 width: auto;
                 background-color: #85A4E1;
             }
@@ -175,6 +192,10 @@
                 width: auto;
                 display: none;
                 background-color: #221E40;
+            }
+
+            #last_form_section {
+                display: block;
             }
 
             .btn {
@@ -218,6 +239,10 @@
             #bakat {
                 margin-top: -85px;
             }
+
+            #last_waralaba {
+                margin-top: -50px;
+            }
         }
 
     </style>
@@ -226,6 +251,15 @@
 @endsection
 
 @section('konten')
+    @if (session()->has('message'))
+        <div class="row alert alert-{{ session('alert') }} alert-dismissible fade show mx-1 justify-content-center"
+            role="alert">
+            <span class="alert-text">{{ session('message') }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="containerr">
@@ -337,7 +371,7 @@
                 </div>
             </div><br><br>
             <div class="container bom">
-                <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">PEKERJAAN</h2><br>
+                <h2 style="font-family: 'Poppins';" id="subTittle">PEKERJAAN</h2><br>
                 <div class="card" id="card2">
                     <div class="container">
                         <div class="row">
@@ -408,8 +442,8 @@
                     </div>
                 </div>
             </div><br><br>
-            <div class="container bom">
-                <h2 style="margin-top: 10px; color: white; font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK
+            <div class="container bom" id="last_waralaba">
+                <h2 style="font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK
                     WARALABA HAPPY PUPPY</h2><br>
                 <div class="card" id="card3">
                     <div class="container">
@@ -502,16 +536,63 @@
                                         name="front_road_traffic" placeholder="Lalu - Lintas Jalan Depan">
                                     <input type="hidden" name="status" id="status" value="0">
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="card" style="background-color: #221E40;width: 100%;padding: 1rem;"
+                    id="last_form_section">
+                    <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat,
+                        serta
+                        mempunyai
+                        kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir
+                        peminat
+                        waralaba<br> yang
+                        tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br>
+                        diisi
+                        secara lengkap. untuk
+                        mengisi formulir pendaftaran waralaba.</p>
+                    <div class="form-group">
+                        <select class="form-control select2 select2-danger mob" data-dropdown-css-class="select2-danger"
+                            style="background-color: #221E40;color:white;" name="confirm_completenes_mob"
+                            id="confirm_completenes">
+                            <option value="" selected disabled>Ya/Tidak</option>
+                            <option value="0">Ya</option>
+                            <option value="1">Tidak</option>
+                            </option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <p style="color: white;">Sebelum anda mengirim pendaftaran waralaba ini, setujukah
+                        anda
+                        bahwa :<br><br> Anda
+                        dan keluarga langsung atau Pemilik dan Pengurus Perusahaan yang anda<br> wakili,
+                        tidak
+                        memiliki dan/atau
+                        menjadi Pengurus usaha Karaoke Keluarga/Rumah<br> Bernyanyi Keluarga lainnya,
+                        baik
+                        sekarang ataupun pada
+                        saat pendaftaran<br> waralaba ini diterima</p>
+                    <div class="form-group">
+                        <select class="form-control select2 select2-danger mob" data-dropdown-css-class="select2-danger"
+                            style=" background-color: #221E40; color:white;" name="confirm_register_mob"
+                            id="confirm_register">
+                            <option value="" selected disabled>Ya/Tidak</option>
+                            <option value="0">Ya</option>
+                            <option value="1">Tidak</option>
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
             </div>
+        </div>
         </div>
         <div class="back"></div>
         <div class="foots"></div>
         <div class="foots2">
-            <div class="container bom">
+            <div class="container">
                 <br><br>
                 <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat, serta mempunyai
                     kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang
@@ -521,7 +602,7 @@
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
                         style="width: 10%;background-color: #221E40;color:white;" name="confirm_completenes"
                         id="confirm_completenes">
-                        <option selected="selected">Ya/Tidak</option>
+                        <option value="" selected disabled>Ya/Tidak</option>
                         <option value="0">Ya</option>
                         <option value="1">Tidak</option>
                         </option>
@@ -536,7 +617,7 @@
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
                         style="width: 10%; background-color: #221E40; color:white;" name="confirm_register"
                         id="confirm_register">
-                        <option selected="selected">Ya/Tidak</option>
+                        <option value="" selected disabled>Ya/Tidak</option>
                         <option value="0">Ya</option>
                         <option value="1">Tidak</option>
                         </option>
@@ -569,22 +650,40 @@
             } else {
                 document.getElementById("prevBtn").style.display = "inline";
             }
-            if (n == (x.length - 1) || $(window).width() > 600) {
+            if (n == (x.length - 1)) {
                 document.getElementById("myBtn").innerHTML = "Submit";
             } else {
                 document.getElementById("myBtn").innerHTML = "Next Step";
             }
+            if ($(window).width() > 600) {
+                document.getElementById("myBtn").innerHTML = "Submit";
+            }
+            //set .back height on last tab to 1200px on window width < 600px
+            if ($(window).width() < 600) {
+                if (n == (x.length - 1)) {
+                    document.getElementsByClassName("back")[0].style.height = "110rem";
+                    document.getElementsByClassName("back-grad")[0].style.height = "610px";
+                } else {
+                    document.getElementsByClassName("back")[0].style.height = "30rem";
+                }
+            }
         }
+
 
         function nextPrev(n) {
             var x = document.getElementsByClassName("bom");
             if (n == 1 && !validateForm()) return false;
             x[currentTab].style.display = "none";
             currentTab = currentTab + n;
-            if (currentTab >= x.length || $(window).width() > 600) {
+            if (currentTab >= x.length) {
                 document.getElementById("regForm").submit();
                 return false;
             }
+            if ($(window).width() > 600) {
+                document.getElementById("regForm").submit();
+                return false;
+            }
+
             showTab(currentTab);
         }
 
