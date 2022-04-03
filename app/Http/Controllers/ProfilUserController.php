@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profil;
-use Session;
 
-class ProfilController extends Controller
+class ProfilUserController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $profil = Profil::all();
-        return view('admin.profil.profil-index',compact('profil'));
+        $profill = Profil::all();
+        return view('profile',compact('profill'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
@@ -27,13 +36,7 @@ class ProfilController extends Controller
      */
     public function store(Request $request)
     {
-        Profil::create([
-            'year' => $request->year,
-            'content_history' => $request->content_history,
-            'users_id'=> $request->users_id,
-            'status' => 1
-        ]);
-        return redirect('/profil-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+        //
     }
 
     /**
@@ -67,14 +70,7 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Profil::where('id',$id)
-        ->update([
-            'year' => $request->year,
-            'content_history' => $request->content_history,
-            'status' => $request->status,
-            'users_id'=> $request->users_id
-        ]);
-        return redirect('/profil-admin')->with('status','Data Berhasil Di update!!!'); 
+        //
     }
 
     /**
@@ -85,8 +81,6 @@ class ProfilController extends Controller
      */
     public function destroy($id)
     {
-        Profil::where('id',$id)->delete();
-        return redirect('/profil-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        //
     }
-
 }

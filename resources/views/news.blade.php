@@ -94,7 +94,11 @@
         }
 
         .card-img-news {
-            height: 290px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-height: 250px;
+            margin-bottom: 1rem;
         }
 
         .card-img-news1 {
@@ -131,6 +135,8 @@
         }
 
         .card-img-lates {
+            object-fit: cover;
+            object-position: center;
             height: 90px;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -197,6 +203,8 @@
         }
 
         .card-img-popular {
+            object-fit: cover;
+            object-position: center;
             height: 180px;
         }
 
@@ -324,11 +332,17 @@
             }
 
             .card-img-news {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                max-height: 250px;
+                margin-bottom: 1rem;
                 height: 90px;
             }
 
             .news-time {
                 font-size: 8px;
+                margin-top: -23px;
                 /* font-family: 'Poppins'; */
             }
 
@@ -370,19 +384,18 @@
                 font-size: 12px;
                 margin-top: -15px;
                 margin-bottom: 40px;
-                font-weight: bold
-                    /* font-family: 'Poppins'; */
+                font-weight: bold;
             }
 
             .card-title-lates {
                 min-height: 15px;
                 margin-top: -10px;
-                font-size: 6px
-                    /* font-family: 'Poppins'; */
+                font-size: 9px;
             }
 
             .news-time-lates {
-                font-size: 4px;
+                font-size: 7px;
+                margin-top: -8px;
                 /* font-family: 'Poppins'; */
             }
 
@@ -417,6 +430,8 @@
             }
 
             .card-img-popular {
+                object-fit: cover;
+                object-position: center;
                 height: 80px;
             }
 
@@ -546,10 +561,6 @@
                             <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news1" alt="...">
                         @endif
                         <div class="card-body">
-                            <p class="news-time"><?= date('M d, Y') ?>
-                                <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}" class=""
-                                    style="float:right;color:black"><i class="fas fa-book-open"></i></a>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -619,6 +630,8 @@
                                             <h5 class="card-title card-title-popular">{{ $newsst->news_title_id }}</h5>
                                             <p class="news-time-popular">
                                                 <?= date('M d, Y', strtotime($newsst->news_date)) ?>
+                                                <a href="{{ route('detailNews', ['id' => $newsst->id]) }}"
+                                                class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -650,7 +663,9 @@
                                                 </h5>
                                                 <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
                                                 <p class="news-time-popular">
-                                                    <?= date('M d, Y', strtotime($newsst->news_date)) ?>
+                                                    <?= date('M d, Y', strtotime($newss->news_date)) ?>
+                                                    <a href="{{ route('detailNews', ['id' => $newsst->id]) }}"
+                                                    class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                                 </p>
                                             </div>
                                         </div>

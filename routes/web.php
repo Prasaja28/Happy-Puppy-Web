@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\KontakUserController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ProfilUserController;
 use App\Http\Controllers\KeluhanController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\CareerController;
@@ -33,16 +34,16 @@ use App\Http\Controllers\OutletWaralabaController;
 //Home User
 Route::get('/',[LandingController::class, 'index']);
 
-//News User
-Route::get('/news',[NewsUserController::class, 'index']);
-
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+//News User
+Route::get('/news',[NewsUserController::class, 'index']);
+
+//Profil User
+Route::get('/profile',[ProfilUserController::class, 'index']);
+
 Route::get('/daftar-lagu', function () {
     return view('daftar-lagu');
 });
@@ -113,7 +114,7 @@ Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filte
 //waralaba
 Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');
 
-//profil
+//profil-admin
 Route::get('/profil-admin',[ProfilController::class, 'index']);
 Route::get('/profil-admin/delete/{id}',[ProfilController::class, 'destroy']);
 Route::post('/profil-admin/store',[ProfilController::class, 'store']);

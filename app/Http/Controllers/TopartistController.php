@@ -122,11 +122,7 @@ class TopartistController extends Controller
      */
     public function destroy($id)
     {
-        Topartist::where('id',$id)
-        ->update([
-            'status'=> 0,
-            'users_id'=> Session::get('user_id')
-        ]);
+        Topartist::where('id',$id)->delete();
         return redirect('/topartist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }

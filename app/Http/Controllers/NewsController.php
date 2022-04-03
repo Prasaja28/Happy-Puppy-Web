@@ -133,11 +133,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::where('id',$id)
-        ->update([
-            'status'=> 0,
-            'users_id'=> Session::get('user_id')
-        ]);
+        News::where('id',$id)->delete();
         return redirect('/news-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }

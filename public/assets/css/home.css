@@ -312,7 +312,9 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
 
     /* ***************************************************** */
     section[name="next-news"] div[name="item"] img {
-        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 200px;
     }
 
     section[name="next-news"] div[name="item"] .label {

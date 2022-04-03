@@ -60,28 +60,29 @@
   <div class="container-fluid text-white search-kota">
     <h4 class="pt-5 text-center">Cari Outlet Terdekat</h4>
 
-    <div class="row pt-2 px-3 justify-content-md-center">
-      <div class="col-12 col-md-6">
-        <select class="form-control select2bs4" id="search">
-          {{-- <option selected="selected"></option> --}}
-          <option value="1">Surabaya</option>
-          <option value="2">Jakarta</option>
-          <option>Makasar</option>
-          <option>Samarinda</option>
-          <option>Yogyakarta</option>
-          <option>Semarang</option>
-          <option>Madura</option>
-        </select>
+    <center>
+      <form class="form" method="get" action="{{ route('search') }}">
+        <div class="form-group w-50 mb-3">
+            <label for="search" class="d-block mr-2"></label>
+            <input type="text" name="keyword" class="form-control w-75 d-inline" id="search" placeholder="Cari Outlet">
+            <button type="submit" class="btn btn-primary mb-1">Cari</button>
+        </div>
+      </form>
+      <!-- Start kode untuk form pencarian -->
+      @if ($message = Session::get('success'))
+      <div class="alert alert-success">
+        <p>{{ $message }}</p>
       </div>
-    </div>
+      @endif
+    </center>
 
     <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang sedang berlaku</p>
         
     <div name="city" class="row pt-3 justify-content-center">
-      <a href="#" class="btn btn-primary mr-3">Jakarta</a>
-      <a href="#" class="btn btn-primary mr-3">Surabaya</a>
-      <a href="#" class="btn btn-primary mr-3">Makasar</a>
-      <a href="#" class="btn btn-primary">Samarinda</a>
+        <a href="{{ route('search', ['keyword'=> 'Jakarta'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
+        <a href="{{ route('search', ['search'=> 'Surabaya'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
+        <a href="{{ route('search', ['search'=> 'Makasar'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
+        <a href="{{ route('search', ['search'=> 'Samarinda'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
     </div>
 
     <h4 name="top-artist" class="font-weight-bold text-center py-5">TOP ARTIST</h4>
@@ -245,21 +246,34 @@
 <section name="next-news">
   <div class="container">
     <div class="row justify-content-center">
-      <div name="item" class="col-11 col-md-8 px-0 mb-5">
-        <img class="float-left mr-3 mr-md-4" src="{{ asset('img/hijau-next-news.png') }}">
+    @if ($news_terbaru->count() != null)
+      @foreach($news_terbaru as $key => $newst)
+        @php
+            if($key == 0)continue;
+            if($key == 1)continue;
+        @endphp
+        <div name="item" class="col-11 col-md-8 px-0 mb-5">
+          <!-- <img class="float-left mr-3 mr-md-4" src="{{ asset('img/hijau-next-news.png') }}"> -->
+          <img class="float-left mr-3 mr-md-4" src="{{$newst->thumbnail}}">
 
-        <div name="description" class="pr-1 pr-md-3">
-          <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
-          <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-          <div class="date d-flex justify-content-between align-items-center">
-            <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p>
-            <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+          <div name="description" class="pr-1 pr-md-3">
+            <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
+            <h4 class="font-weight-none pt-0 pt-md-3">{{$newst->news_title_id}}</h4>
+            <div class="date d-flex justify-content-between align-items-center">
+              <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($newst->news_date)) ?></p>
+            <!-- <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
+            <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
+            <div class="date d-flex justify-content-between align-items-center">
+              <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p> -->
+              <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+            </div>
           </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-      </div>
+      @endforeach
+    @endif
 
-      <div name="item" class="col-11 col-md-8 px-0 mb-5">
+      <!-- <div name="item" class="col-11 col-md-8 px-0 mb-5">
         <img class="float-left mr-3 mr-md-4" src="{{ asset('img/stefan.png') }}">
 
         <div name="description" class="pr-1 pr-md-3">
@@ -285,7 +299,7 @@
           </div>
         </div>
         <div class="clearfix"></div>
-      </div>
+      </div> -->
 
     </div>
   </div>
@@ -363,6 +377,50 @@
       }
     };
   })
+</script>
+<script src="{{ asset('admin/plugins/select2/js/select2.full.min.js') }}"></script>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2({
+       
+    });
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      //set placeholder
+    placeholder: '<center>Masukkan Nama Kota</center>'+'<p style="text-align:right;margin-top:-36px"><i class="fas fa-search"></i></p>',
+    allowClear: true,
+    templateResult: formatState,
+    escapeMarkup: function(m) { 
+       return m; 
+    },
+      theme: 'bootstrap4',
+      width: 'resolve'
+    });
+    //border-radius custom
+    $('.select2-selection').css('border-radius','10px');
+   
+    //redirect after selecting
+    $('.select2bs4').on('change', function() {
+      var data = $(".select2bs4 option:selected").val();
+      // window.location.href = '/lokasi-outlet/'+data;
+      window.location.href = '/lokasi-outlet/';
+    })
+
+    // function formatState (state) {
+    // return state.text;
+    // };
+    function formatState (state) {
+      console.log(state);
+
+      if (!state.id) {
+        return state.text;
+      }
+      var $state = 
+      '<i class="fas fa-search">  '+'  </i>     '+ state.text;
+      return $state;
+    };
+});
 </script>
 
 @endsection

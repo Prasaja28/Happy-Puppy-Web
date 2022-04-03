@@ -101,19 +101,26 @@
             margin-bottom: 20px;
         }
 
+        .image-background img{
+            height: auto;
+            width: 500px;
+        }
+
         .image-background {
-            /* background-image: url('/img/camila.png'); */
+            /* background-image: url(/img/camila.png); */
             /* background-size: 1000px 800px; */
-            margin-top: -850px;
+            margin-top: -372px;
             top: -100px;
-            margin-left: 110px;
-            /*background-image: linear-gradient(to right, #68a6fb , #f77a8b);*/
+            /* background-image: linear-gradient(to right, #68a6fb , #f77a8b); */
             min-height: 70vh;
             max-width: 170.5vh;
             width: 97%;
             margin-bottom: 450px;
             padding: 10px;
-            /* box-shadow: 0px 10px #D1D6DB; */
+            /* box-shadow: 0px 10px #d1d6db; */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
         .image-color {
@@ -141,7 +148,7 @@
             }
 
             .news-content {
-                margin-top: -25vh;
+                margin-top: -85vh;
             }
 
             .header {
@@ -152,6 +159,16 @@
                 -o-background-size: cover;
                 background-size: cover;
                 background-position: rightl;
+                background-color: #221E40;
+            }
+
+            .image-background {
+                margin-top: -160px;
+            }
+
+            .image-background img{
+                height: auto;
+                width: 265px;
             }
 
             .card-news {
@@ -159,6 +176,7 @@
                 margin: 0 auto;
                 /* Added */
                 margin-bottom: 10px;
+                margin-left: -219px;
             }
 
             .card-img-news {
@@ -180,6 +198,7 @@
 
             .news-title {
                 text-align: left;
+                margin-left: -217px;
             }
         }
 
@@ -192,7 +211,6 @@
                                                                                     </div> -->
     <div class="header" style="z-index:1;">
     </div>
-    <div class="image-color" style="z-index: 2;"></div>
     <div class="image-background" style="z-index: 3;">
         <img src="{{ $news_detail[0]->thumbnail }}" alt="">
     </div>
