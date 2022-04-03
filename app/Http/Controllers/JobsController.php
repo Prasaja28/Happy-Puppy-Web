@@ -13,9 +13,12 @@ class JobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
-        $jobs = Jobs::all();
+        $jobs = Jobs::select('*')
+            ->orderBy('id', 'desc')
+            ->limit(5)
+            ->get();
         return view('karir', compact('jobs'));
     }
 
