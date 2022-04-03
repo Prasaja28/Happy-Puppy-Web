@@ -98,6 +98,14 @@
               </p>
             </a>
           </li>
+           <li class="nav-item">
+                    <a href="{{ url('/career-admin') }}" class="nav-link @yield('career-admin')">
+                        <i class="nav-icon fas fa-book-open"></i>
+                        <p>
+                            Karir
+                        </p>
+                    </a>
+                </li>
           <li class="nav-item">
             <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
             <i class="nav-icon fas fa-users"></i>
