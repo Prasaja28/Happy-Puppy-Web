@@ -149,9 +149,9 @@
         padding: 20px;
     }
     .back2 {
-        height: 900px;
         width: auto;
         background-color: #FFFFFF;
+        margin-bottom: 65px;
     }
     #back2con{
         margin-top: 30px;
@@ -298,7 +298,7 @@
         font-family: 'Poppins';
         font-weight: bold;
         border-bottom: none;
-        font-size: 10px;
+        font-size: 8px;
     }
     #faq {
         padding: 0 18px;
