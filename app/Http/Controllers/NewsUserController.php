@@ -25,9 +25,16 @@ class NewsUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function detailIndex($id)
     {
-        //
+        // dd($id);
+        $news_detail = News::select('*')
+            ->where('id', '=', $id)
+            ->get();
+        $news_detail_terbaru = News::where('news_category', 'lates')
+            ->where('id', '!=', $id)
+            ->get();
+        return view('news-detail', compact('news_detail', 'news_detail_terbaru'));
     }
 
     /**
