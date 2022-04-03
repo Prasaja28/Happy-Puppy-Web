@@ -64,8 +64,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                            display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                        } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } */
 
         .foots {
             height: 50px;
@@ -203,7 +203,6 @@
             }
 
             #buttoon {
-                margin-top: 100px;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -227,6 +226,15 @@
 @endsection
 
 @section('konten')
+    @if (session()->has('message'))
+        <div class="row alert alert-{{ session('alert') }} alert-dismissible fade show mx-1 justify-content-center"
+            role="alert">
+            <span class="alert-text">{{ session('message') }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="container">
@@ -248,7 +256,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <br><br>
-
+                                <input type="hidden" class="form-control" name="careerform_id" value="">
                                 <div class="form-group">
                                     <label for=""></label>
                                     <input type="text" class="form-control" disabled="disabled" style="width: 80%" id=""
@@ -288,7 +296,7 @@
                                 </div><br>
                                 <div class="form-group">
                                     <label><b>Tanggal Lahir</b></label><br><br>
-                                    <div class="input-group date" id="reservationdate" style="width: 50%;">
+                                    <div class="input-group date" style="width: 50%;">
                                         <input type="date" id="date_birth" name="date_birth"
                                             class="form-control datetimepicker-input" />
                                     </div>
@@ -359,11 +367,11 @@
                                 <h6><b>Pengalaman Kerja {{ $i }}</b></h6>
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 80%" name="nama_perusahaan"
                                         placeholder="Nama Perusahaan">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 50%" name="lama_kerja"
                                         placeholder="Lama Bekerja">
                                 </div>
                             </div>
@@ -372,7 +380,7 @@
                                 <br>
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 70%" id="formGroupExampleInput"
+                                    <input type="text" class="form-control" style="width: 70%" name="jabatan"
                                         placeholder="Jabatan">
                                 </div>
                             </div>
@@ -389,11 +397,12 @@
                                     <h6><b>Pengalaman Kerja {{ $i + 1 }}</b></h6>
                                     <br>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" style="width: 80%"
+                                        <input type="hidden" class="form-control" name="id_je">
+                                        <input type="text" class="form-control" style="width: 80%" name="company_name[]"
                                             placeholder="Nama Perusahaan">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" style="width: 50%"
+                                        <input type="number" class="form-control" style="width: 50%" name="length_work[]"
                                             placeholder="Lama Bekerja">
                                     </div>
                                     <br>
@@ -402,7 +411,7 @@
                                     <br><br><br>
                                     <div class="form-group" id="pengalaman">
                                         <input type="text" class="form-control" style="width: 70%" id="inPeng"
-                                            placeholder="Jabatan">
+                                            name="position[]" placeholder="Jabatan">
                                     </div>
                                 </div>
                                 <br>
@@ -491,7 +500,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" style="width: 100%" id="linkedin"
-                                            name="linkedin" placeholder="Copy Link"><br>
+                                            name="linkedin_mob" placeholder="Copy Link"><br>
                                         <p>*jika ada</p>
                                     </div>
                                 </div>
@@ -567,7 +576,7 @@
 @section('js-internal')
     <!-- add tag js in here -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
     <script>
         $(document).ready(function() {
             // membatasi jumlah inputan
@@ -661,4 +670,20 @@
             return valid;
         }
     </script>
+    {{-- <script>
+        //if there is null form, show alert
+        $(document).ready(function() {
+        $('#myBtn').click(function() {
+                if ($('#name').val() == '' || $('#formal_education').val() == '' || $('#place_birth').val() == '' ||
+                    $('#date_birth').val() == '' || $('#height').val() == '' || $('#weight').val() == '' ||
+                    $('#gender').val() == '' || $('#status_marital').val() == '' || $('#status_marital').val() == '' ||
+                    $('#mobile_phone').val() == '' || $('#email').val() == '' || $('#address').val() == '' ||
+                    $('#no_ktp').val() == '' || $('#language').val() == '' ){
+            alert("Please fill all form");
+        } else {
+            $('#regForm').submit();
+        }
+        })
+        })
+    </script> --}}
 @endsection
