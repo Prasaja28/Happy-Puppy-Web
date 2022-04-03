@@ -86,8 +86,11 @@
                                             <td>{{ $users->instrument_music }}</td>
                                             <td>{{ $users->computer }}</td>
                                             <td>{{ $users->other_expertise }}</td>
-                                            <td>{{ $users->cv }}</td>
-                                            <td>{{ $users->ijazah }}</td>
+                                            <td><a href="/storage/{{ $users->cv }}" download="">{{ $users->cv }}</a>
+                                            </td>
+                                            <td><a href="/storage/{{ $users->ijazah }}"
+                                                    download="">{{ $users->ijazah }}</a>
+                                            </td>
                                             <td>{{ $users->linkedin }}</td>
                                             <td class="text-center">
                                                 {{-- @if ($users->status == 1) --}}
