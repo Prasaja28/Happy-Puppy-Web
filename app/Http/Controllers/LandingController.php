@@ -16,10 +16,19 @@ class LandingController extends Controller
      */
     public function index()
     {
-        $topartist = Topartist::all();
-        $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')->get();
-        $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')->get();
-        $news_terbaru = News::where('news_category','lates')->get();
+        $topartist = Topartist::select('*')
+            ->orderBy('id', 'desc')
+            ->limit(5)
+            ->get();
+        $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')
+            ->limit(6)
+            ->get();
+        $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')
+            ->limit(6)
+            ->get();
+        $news_terbaru = News::where('news_category','lates')
+            ->limit(6)
+            ->get();
         return view('home',compact('topartist','songlist_terlaris','songlist_terbaru','news_terbaru'));
     }
 
@@ -39,7 +48,7 @@ class LandingController extends Controller
             ->get();
         return view('news-detail', compact('news_detail', 'news_detail_terbaru'));
     }
-    
+
     public function create()
     {
         //
