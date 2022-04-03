@@ -60,37 +60,10 @@
   <div class="container">
     <h3 class="font-weight-bold text-uppercase mb-3">Sejarah Perusahaan</h2>
       @php
-          $historyDB = [
-            [
-              "tahun" => 2009,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ],
-            [
-              "tahun" => 2010,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ],
-            [
-              "tahun" => 2011,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ],
-            [
-              "tahun" => 2012,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ],
-            [
-              "tahun" => 2013,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ],
-            [
-              "tahun" => 2014,
-              "desc" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto deleniti necessitatibus ac"    
-            ]
-          ];
-
-          $bgColor = ['y-2009', 'y-2010', 'y-2015', 'y-2017', 'y-2019'];
+        $bgColor = ['y-2009', 'y-2010', 'y-2015', 'y-2017', 'y-2019'];
       @endphp
 
-      @foreach($historyDB as $key=>$history)
+      @foreach($profill as $key=>$history)
       <!-- // $bgColor[$key%3]
       // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
       @if($key%2 == 0)
@@ -98,15 +71,15 @@
         <div class="row justify-content-end">
           <div class="col-4 col-md-4 d-flex justify-content-center">
             <div name="years" class="{{$bgColor[$key%5]}} align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">{{ $history["tahun"] }}</h4>
+              <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
             </div>
-            @if($key!=count($historyDB)-1)
+            @if($key!=count($profill)-1)
               <div class="vl"></div>
             @endif
           </div>
           <div class="col-4 col-md-4">
             <p class="text-muted text-justify history-desc">
-              {{ $history["desc"] }}
+              {{ $history->content_history }}
             </p>
           </div>
         </div>
@@ -116,15 +89,15 @@
         <div class="row justify-content-start">
           <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
             <div name="years" class="{{$bgColor[$key%5]}} align-self-center d-flex justify-content-center rounded-circle">
-              <h4 class="align-self-center font-weight-bold">{{ $history["tahun"] }}</h4>
+              <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
             </div>
-            @if($key!=count($historyDB)-1)
+            @if($key!=count($profill)-1)
               <div class="vl"></div>
             @endif
           </div>
           <div class="col-4 col-md-4 order-1">
             <p class="text-muted text-justify history-desc">
-              {{ $history["desc"] }}
+              {{ $history->content_history }}
             </p>
           </div>
         </div>

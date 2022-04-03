@@ -207,7 +207,7 @@
               <h4 class="font-weight-none pt-1 pt-md-3">{{$news_terbaru[0]->news_title_id}}</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
-                <a href="#"><img src="{{  asset('img/book.png') }}"></a>
+                <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"><img src="{{  asset('img/book.png') }}"></a>
               </div>
             @endif
             </div>
@@ -231,7 +231,7 @@
               <h4 class="font-weight-none pt-1 pt-md-3">{{$news_terbaru[1]->news_title_id}}</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
-                <a href="#"><img src="{{  asset('img/book.png') }}"></a>
+                <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"><img src="{{  asset('img/book.png') }}"></a>
               </div>
             @endif
             </div>
@@ -265,7 +265,7 @@
             <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
             <div class="date d-flex justify-content-between align-items-center">
               <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p> -->
-              <a href="#" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+              <a href="{{ route('detailNews', ['id' => $newst->id]) }}" class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
             </div>
           </div>
           <div class="clearfix"></div>
