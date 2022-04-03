@@ -70,9 +70,7 @@ Route::get('/lokasi-outlet', function () {
 Route::get('/form-waralaba', function () {
     return view('formwaralaba');
 });
-Route::get('/news-detail', function () {
-    return view('news-detail');
-});
+Route::get('/news/detail/{id}', [NewsUserController::class, 'detailIndex'])->name('detailNews');
 
 //login
 Route::get('/login',[LoginController::class, 'index']);
