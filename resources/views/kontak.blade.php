@@ -15,14 +15,14 @@
         background-position: rightl;
         background-image: url('/img/kontak.png')
     }
-    #txt1{
+    .header #kont{
         color: white;
         position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
         font-size: 40px;
-        min-height: 450px;
+        min-height: 491px;
         font-family: 'Poppins';
     }
     .back-grad {
@@ -189,6 +189,14 @@
     }
     #kami{
         font-weight: bold;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        font-size: 40px;
+        min-height: 439px;
+        font-family: 'Poppins';
     }
 @media(max-width: 576px) {
     .header{
@@ -201,15 +209,14 @@
         background-position: rightl;
         background-image: url('/img/kontak.png')
     }
-    #txt1{
+    .header #kont{
         color: white;
         position: absolute;
         bottom: 0;
         text-align: justify;
         margin: 0;
-        margin-left: -19px;
         font-size: 20px;
-        min-height: 563px;
+        min-height: 491px;
         font-family: 'Poppins';
     }
     .back-grad {
@@ -312,6 +319,14 @@
     #kami{
         font-weight: bold;
         margin-top: -15px;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: justify;
+        margin: 0;
+        font-size: 20px;
+        min-height: 460px;
+        font-family: 'Poppins';
     }
     .active, .accordion {
         background-color: #221E40;
@@ -402,10 +417,8 @@
 @section('konten')
 <!-- add konten in here -->
 <div class="header p-5">
-    <div id="txt1" class="container" style="font-family: 'Poppins';">
-        <p>KONTAK</p>
-        <p id="kami">KAMI</p>
-    </div>
+    <p id="kont">KONTAK</p>
+    <p id="kami">KAMI</p>
 </div>
 <div class="back-grad">
     <div class="center">
