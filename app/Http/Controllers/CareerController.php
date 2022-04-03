@@ -107,7 +107,10 @@ class CareerController extends Controller
                 // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with('success', 'Formulir berhasil dikirim');
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+                'message' => 'Fromulir Berhasil Dikirim!',
+                'alert' => 'success'
+            ]);
         } elseif ($request->hasFile('cv_mob') && $request->hasFile('ijazah_mob')) {
             $file = $request->file('cv_mob');
             $file2 = $request->file('ijazah_mob');
@@ -176,9 +179,15 @@ class CareerController extends Controller
                 // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with('success', 'Formulir berhasil dikirim');
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+                'message' => 'Fromulir Berhasil Dikirim!',
+                'alert' => 'success'
+            ]);
         } else {
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with('error', 'Formulir gagal dikirim');
+            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+                'message' => 'Fromulir Gagal Dikirim, Mohon Periksa Kembali Formulir Anda!',
+                'alert' => 'warning'
+            ]);
         }
     }
 
