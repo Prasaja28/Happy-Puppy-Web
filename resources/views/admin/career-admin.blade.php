@@ -90,7 +90,7 @@
                                             <td>{{ $users->instrument_music }}</td>
                                             <td>{{ $users->computer }}</td>
                                             <td>{{ $users->other_expertise }}</td>
-                                            <td><a href="/storage/{{ $users->cv }}" make>{{ $users->cv }}</a>
+                                            <td><a href="/storage/{{ $users->cv }}" download>{{ $users->cv }}</a>
                                             </td>
                                             <td><a href="/storage/{{ $users->ijazah }}"
                                                     download>{{ $users->ijazah }}</a>
