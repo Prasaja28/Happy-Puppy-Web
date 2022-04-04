@@ -64,8 +64,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } */
 
         .foots {
             height: 50px;
@@ -302,11 +302,11 @@
                                     </div>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 25%" id="height" name="height"
+                                    <input type="number" class="form-control" style="width: 25%" id="height" name="height"
                                         placeholder="Tinggi">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 25%" id="weight" name="weight"
+                                    <input type="number" class="form-control" style="width: 25%" id="weight" name="weight"
                                         placeholder="Berat">
                                 </div><br>
                             </div>
@@ -346,7 +346,7 @@
                                         placeholder="Alamat"></textarea>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
+                                    <input type="number" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
                                         placeholder="No. KTP">
                                 </div><br>
                             </div>
@@ -371,7 +371,7 @@
                                         placeholder="Nama Perusahaan">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" name="lama_kerja"
+                                    <input type="number" class="form-control" style="width: 50%" name="lama_kerja"
                                         placeholder="Lama Bekerja">
                                 </div>
                             </div>
@@ -426,7 +426,7 @@
                                 <br><br>
                                 <br><br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="expected_salary"
+                                    <input type="number" class="form-control" style="width: 80%" id="expected_salary"
                                         name="expected_salary" placeholder="Gaji yang Diharapkan">
                                 </div>
                                 <br><br><br>
@@ -463,8 +463,8 @@
                                         name="computer" placeholder="Komputer">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="otheer_expertise"
-                                        name="otheer_expertise" placeholder="Keahlian Lainnya">
+                                    <input type="text" class="form-control" style="width: 80%" id="other_expertise"
+                                        name="other_expertise" placeholder="Keahlian Lainnya">
                                 </div>
                             </div>
 
