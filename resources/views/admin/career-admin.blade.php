@@ -38,8 +38,6 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Pendidikan Formal</th>
-                                        <th>Pendidikan Informal</th>
-                                        <th>Jurusan</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Tinggi</th>
@@ -68,14 +66,20 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $users->name }}</td>
                                             <td>{{ $users->formal_education }}
-                                            <td>{{ $users->informal_education }}</td>
-                                            <td>{{ $users->jurusan }}</td>
                                             <td>{{ $users->place_birth }}</td>
-                                            <td>{{ $users->date_birt }}</td>
+                                            <td>{{ $users->date_birth }}</td>
                                             <td>{{ $users->height }}</td>
                                             <td>{{ $users->weight }}</td>
-                                            <td>{{ $users->gender }}</td>
-                                            <td>{{ $users->status_marital }}</td>
+                                            @if ($users->gender == 0)
+                                                <td> Laki-Laki </td>
+                                            @else
+                                                <td>Perempuan</td>
+                                            @endif
+                                            @if ($users->status_marital == 0)
+                                                <td> Single </td>
+                                            @else
+                                                <td> Menikah </td>
+                                            @endif
                                             <td>{{ $users->phone }}</td>
                                             <td>{{ $users->mobile_phone }}</td>
                                             <td>{{ $users->email }}</td>
@@ -86,10 +90,10 @@
                                             <td>{{ $users->instrument_music }}</td>
                                             <td>{{ $users->computer }}</td>
                                             <td>{{ $users->other_expertise }}</td>
-                                            <td><a href="/storage/{{ $users->cv }}" download="">{{ $users->cv }}</a>
+                                            <td><a href="/storage/{{ $users->cv }}" make>{{ $users->cv }}</a>
                                             </td>
                                             <td><a href="/storage/{{ $users->ijazah }}"
-                                                    download="">{{ $users->ijazah }}</a>
+                                                    download>{{ $users->ijazah }}</a>
                                             </td>
                                             <td>{{ $users->linkedin }}</td>
                                             <td class="text-center">
@@ -104,11 +108,36 @@
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
-                                        {{-- @include(
-                                            'admin.users-admin.users-admin-delete'
-                                        )
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="usersDelete" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="usersDelete">Delete Data Career
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <h3>Apakah Anda yakin untuk Menghapus ?</h3>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="{{ url('/career-admin/delete/' . $users->id) }}"
+                                                            class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <!-- Model Update -->
-                                        @include(
+                                        {{-- @include(
                                             'admin.users-admin.users-admin-update'
                                         ) --}}
                                     @empty
@@ -122,8 +151,6 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Pendidikan Formal</th>
-                                        <th>Pendidikan Informal</th>
-                                        <th>Jurusan</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Tinggi</th>
