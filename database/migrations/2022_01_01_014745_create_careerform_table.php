@@ -32,6 +32,7 @@ class CreateCareerformTable extends Migration
             $table->string('language', 50)->nullable();
             $table->string('instrument_music', 50)->nullable();
             $table->string('computer', 50)->nullable();
+            $table->string('other_expertise', 50)->nullable();
             $table->string('cv');
             $table->string('ijazah');
             $table->string('linkedin')->nullable();
