@@ -106,7 +106,7 @@ Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search
 //Karir
 Route::get('/career-admin', [CareerController::class, 'adminIndex']);
 Route::post('/career-admin/store', [CareerController::class, 'store'])->name('career.store');
-Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy'])->name('career.destroy');
+Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy']);
 Route::get('/karir', [JobsController::class, 'index']);
 Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filter');
@@ -140,3 +140,9 @@ Route::get('/users-admin',[UsersController::class, 'index']);
 Route::get('/users-admin/delete/{id}',[UsersController::class, 'destroy']);
 Route::post('/users-admin/store',[UsersController::class, 'store']);
 Route::put('/users-admin/update/{id}',[UsersController::class, 'update']);
+
+//jobvacancy
+Route::get('/jobvacancy-admin', [JobsController::class, 'adminIndex']);
+Route::get('/jobvacancy-admin/delete/{id}', [JobsController::class, 'destroy']);
+Route::post('/jobvacancy-admin/store', [JobsController::class, 'store'])->name('jobvacancy.store');
+Route::put('/jobvacancy-admin/update/{id}', [JobsController::class, 'update']);
