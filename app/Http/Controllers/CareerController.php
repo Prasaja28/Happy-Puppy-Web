@@ -68,19 +68,19 @@ class CareerController extends Controller
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
                 'other_expertise'       => $request->other_expertise,
-                'cv'                    => $filename,
-                'ijazah'                => $filename2,
+                'cv'                    => $path . $filename,
+                'ijazah'                => $path2 . $filename2,
                 'linkedin'              => $request->linkedin,
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
             Storage::putFileAs(
-                'public/uploads/cv' . $path,
+                'public/' . $path,
                 $file,
                 $filename
             );
             Storage::putFileAs(
-                'public/uploads/ijazah' . $path2,
+                'public/' . $path2,
                 $file2,
                 $filename2
             );
@@ -140,8 +140,8 @@ class CareerController extends Controller
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
                 'other_expertise'       => $request->other_expertise,
-                'cv'                    => $filename,
-                'ijazah'                => $filename2,
+                'cv'                    => $path . $filename,
+                'ijazah'                => $path2 . $filename2,
                 'linkedin'              => $request->linkedin_mob,
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
