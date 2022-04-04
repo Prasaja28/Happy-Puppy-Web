@@ -13,7 +13,7 @@ class JobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   public function index()
+    public function index()
     {
         $jobs = Jobs::select('*')
             ->orderBy('id', 'desc')
@@ -44,9 +44,10 @@ class JobsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function adminIndex()
     {
-        //
+        $jobs = Jobs::all();
+        return view('admin.jobvacancy-admin.jobvacancy-admin-index', compact('jobs'));
     }
 
     /**
@@ -55,9 +56,14 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function show(Jobs $jobs)
+    public function store(Request $request)
     {
-        //
+        $jobs = new Jobs;
+        $jobs->name_job = $request->name_job;
+        $jobs->location = $request->location;
+        $jobs->status = $request->status;
+        $jobs->save();
+        return back()->with('status', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -76,9 +82,17 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jobs $jobs)
+    public function update(Request $request, $id)
     {
-        //
+        Jobs::findOrFail($id)
+            ->update([
+                'name_job' => $request->name_job,
+                'location' => $request->location,
+                'status' => $request->status
+            ]);
+        return back()->with([
+            'status' => 'Data berhasil diubah'
+        ]);
     }
 
     /**
@@ -87,8 +101,11 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobs $jobs)
+    public function destroy($id)
     {
-        //
+        Jobs::findOrFail($id)->delete();
+        return back()->with([
+            'status' => 'Data berhasil dihapus'
+        ]);
     }
 }
