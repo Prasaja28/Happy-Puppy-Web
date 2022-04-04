@@ -7,6 +7,7 @@
     <!-- Add tag css in here -->
     <style>
         .header {
+            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -25,22 +26,20 @@
             margin: 0;
             font-size: 40px;
             font-weight: bold;
-            min-height: 380px;
             font-family: 'Poppins';
         }
 
         .back-grad {
-            height: 340px;
             width: auto;
             background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
         }
 
         .center {
             margin: auto;
-            margin-left: 145px;
+            /* margin-left: 145px; */
             margin-top: 49px;
             width: 80%;
-            padding: 10px;
+            padding: 5%;
             color: white;
             background-color: #221E40;
         }
@@ -49,21 +48,19 @@
             font-size: 35px;
             font-weight: bold;
             font-family: 'Poppins';
-            margin-left: 85px;
         }
 
         #p2 {
             font-size: 20px;
             line-height: 2.5rem;
             font-family: 'Poppins';
-            margin-left: 85px;
         }
 
         .back {
-            height: 1200px;
             width: auto;
             background-color: #85A4E1;
             font-family: 'Poppins';
+            padding: 5%;
         }
 
         #accordion .card {
@@ -76,7 +73,7 @@
             border-bottom: none;
         }
 
-        .card-header .btn {
+        .card-header .btnss {
             color: white;
             font-size: 20px;
             /* background-color: #85A4E1; */
@@ -98,7 +95,7 @@
             color: white;
         }
 
-        .btn.orange {
+        .btnss.orange {
             background-color: #221E40;
         }
 
@@ -123,6 +120,7 @@
 
         @media (max-width: 600px) {
             .header {
+                position: relative;
                 min-height: 20vh;
                 background: no-repeat center scroll;
                 -webkit-background-size: cover;
@@ -135,18 +133,11 @@
 
             #txt1 {
                 color: white;
-                position: absolute;
-                bottom: 160px;
-                text-align: justify;
                 margin: 0;
-                margin-left: -30px;
                 font-size: 20px;
-                font-weight: bold;
-                min-height: 50vh;
             }
 
             .back-grad {
-                height: 300px;
                 width: auto;
                 background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
             }
@@ -155,7 +146,7 @@
                 margin: auto;
                 margin-top: 50px;
                 width: 85%;
-                padding: 10px;
+                padding: 5%;
                 color: white;
                 background-color: #221E40;
             }
@@ -167,13 +158,14 @@
                 margin-left: -24px;
             }
 
-            .card-header .btn {
+            .card-header .btnss {
                 color: white;
                 background-color: #85A4E1;
                 font-family: 'Poppins';
                 font-weight: bold;
                 border-bottom: none;
                 font-size: 9px;
+                margin-top: 10px;
             }
 
             .card-body {
@@ -188,20 +180,18 @@
                 font-size: 20px;
                 font-family: 'Poppins';
                 font-weight: bold;
-                margin-left: 26px;
             }
 
             #p2 {
                 font-size: 10px;
                 font-family: 'Poppins';
-                margin-left: 26px;
                 line-height: normal;
             }
 
             .back {
-                height: 785px;
                 width: auto;
                 background-color: #85A4E1;
+                padding: 10%;
             }
 
             .accordion {
@@ -277,7 +267,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <div class="btn" id="judul" data-toggle="collapse" data-target="#collapseOne"
+                            <div class="btnss" id="judul" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
                                 Home Theatre buka untuk karaoke?
                                 <!-- <img src="img/home-theatre.png" alt=""> -->
@@ -300,7 +290,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <div class="btn" id="judul2" data-toggle="collapse" data-target="#collapseTwo"
+                            <div class="btnss" id="judul2" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
                                 Karaoke keluarga, bisnis hiburan tanpa masalah
                             </div>
@@ -321,7 +311,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <div class="btn collapsed" id="judul3" data-toggle="collapse" data-target="#collapseThree"
+                            <div class="btnss collapsed" id="judul3" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 Kenapa memilih waralaba Happy Puppy?
                             </div>
@@ -342,7 +332,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFour">
                         <h5 class="mb-0">
-                            <div class="btn collapsed" id="judul4" data-toggle="collapse" data-target="#collapseFour"
+                            <div class="btnss collapsed" id="judul4" data-toggle="collapse" data-target="#collapseFour"
                                 aria-expanded="false" aria-controls="collapseFour">
                                 Hal yang perlu diperhatikan dalam waralaba ini
                             </div>
@@ -363,7 +353,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFive">
                         <h5 class="mb-0">
-                            <div class="btn collapsed" id="judul5" data-toggle="collapse" data-target="#collapseFive"
+                            <div class="btnss collapsed" id="judul5" data-toggle="collapse" data-target="#collapseFive"
                                 aria-expanded="false" aria-controls="collapseFive">
                                 Berapa investasi yang dibutuhkan untuk waralaba ini?
                             </div>
@@ -384,7 +374,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingSix">
                         <h5 class="mb-0">
-                            <div class="btn collapsed" id="judul6" data-toggle="collapse" data-target="#collapseSix"
+                            <div class="btnss collapsed" id="judul6" data-toggle="collapse" data-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
                                 Daftar kota tertutup untuk waralaba
                             </div>
