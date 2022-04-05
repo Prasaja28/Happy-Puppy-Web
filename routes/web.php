@@ -19,6 +19,7 @@ use App\Http\Controllers\RequestLaguController;
 use App\Http\Controllers\RequestLaguUserController;
 use App\Http\Controllers\KeluhanUserController;
 use App\Http\Controllers\OutletWaralabaController;
+use App\Http\Controllers\WaralabaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -146,3 +147,7 @@ Route::get('/jobvacancy-admin', [JobsController::class, 'adminIndex']);
 Route::get('/jobvacancy-admin/delete/{id}', [JobsController::class, 'destroy']);
 Route::post('/jobvacancy-admin/store', [JobsController::class, 'store'])->name('jobvacancy.store');
 Route::put('/jobvacancy-admin/update/{id}', [JobsController::class, 'update']);
+
+//waralaba
+Route::get('/waralaba-admin', [WaralabaController::class, 'index']);
+Route::get('/waralaba-admin/delete/{id}', [WaralabaController::class, 'destroy']);
