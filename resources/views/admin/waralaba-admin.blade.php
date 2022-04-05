@@ -152,12 +152,12 @@
                                         </tr>
                                         <!-- Model Delete -->
                                         <!-- Modal -->
-                                        <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
+                                       <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
                                             role="dialog" aria-labelledby="usersDelete" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="usersDelete">Delete Data Career
+                                                        <h5 class="modal-title" id="usersDelete">Delete Data Waralaba
                                                         </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
@@ -170,7 +170,7 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="{{ url('/career-admin/delete/' . $users->id) }}"
+                                                        <a href="{{ url('/waralaba-admin/delete/' . $users->id) }}"
                                                             class="btn btn-danger">Delete</a>
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Close</button>
