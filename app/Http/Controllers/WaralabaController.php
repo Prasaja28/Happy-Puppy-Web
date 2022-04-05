@@ -17,7 +17,7 @@ class WaralabaController extends Controller
     {
 
         $waralaba = Waralaba::all();
-        return view('admin-waralaba', compact('waralaba'));
+        return view('admin.waralaba-admin', compact('waralaba'));
     }
 
 
@@ -104,6 +104,6 @@ class WaralabaController extends Controller
     {
         $waralaba = Waralaba::findOrFail($id);
         $waralaba->delete();
-        return back()->with('success', 'Data berhasil dihapus');
+        return back()->with('status', 'Data berhasil dihapus');
     }
 }
