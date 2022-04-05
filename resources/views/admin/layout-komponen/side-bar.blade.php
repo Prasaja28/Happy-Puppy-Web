@@ -106,6 +106,22 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/jobvacancy-admin') }}" class="nav-link @yield('jobvacancy-admin')">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Jobvacancy
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/waralaba-admin') }}" class="nav-link @yield('waralaba-admin')">
+                        <i class="nav-icon fas fa-archway"></i>
+                        <p>
+                            Waralaba
+                        </p>
+                    </a>
+                </li>
           <li class="nav-item">
             <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
             <i class="nav-icon fas fa-users"></i>
