@@ -148,12 +148,12 @@ class CareerController extends Controller
             ];
 
             Storage::putFileAs(
-                'public/uploads/cv' . $path,
+                'public/' . $path,
                 $file,
                 $filename
             );
             Storage::putFileAs(
-                'public/uploads/ijazah' . $path2,
+                'public/' . $path2,
                 $file2,
                 $filename2
             );
@@ -207,7 +207,9 @@ class CareerController extends Controller
     }
     public function adminIndex()
     {
-        $careers = Career::all();
+        $careers = Career::select('*', 'name_job', 'location')
+            ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
+            ->get();
         return view('admin.career-admin', compact('careers'));
     }
 }
