@@ -191,15 +191,13 @@
     </div>
 
     <div class="row">
+      @if ($news_terbaru->count() > 0)
       <div class="col-6">
         <div class="card border-0 rounded-0">
-        @if ($news_terbaru->count() != null)
           <img src="{{ $news_terbaru[0]->thumbnail }}">
           <!-- <img src="{{ asset('img/egypt.png') }}"> -->
-        @endif
           <div class="card-body pb-0">
             <div class="card-title">
-            @if ($news_terbaru->count() != null)
               <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
@@ -209,21 +207,19 @@
                 <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
                 <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"><img src="{{  asset('img/book.png') }}"></a>
               </div>
-            @endif
             </div>
           </div>
         </div>
       </div>
+      @endif
 
+      @if ($news_terbaru->count() > 1)
       <div class="col-6">
-      <div class="card border-0 rounded-0">
-        @if ($news_terbaru->count() != null)
+        <div class="card border-0 rounded-0">
           <img src="{{ $news_terbaru[1]->thumbnail }}">
           <!-- <img src="{{ asset('img/egypt.png') }}"> -->
-        @endif
           <div class="card-body pb-0">
             <div class="card-title">
-            @if ($news_terbaru->count() != null)
               <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
               <div class="date d-flex justify-content-between align-items-center">
                 <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
@@ -233,11 +229,11 @@
                 <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
                 <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"><img src="{{  asset('img/book.png') }}"></a>
               </div>
-            @endif
             </div>
           </div>
         </div>
       </div>
+      @endif
     </div>
   </div>
 </section>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Keluhan;
+use Illuminate\Support\Facades\Validator;
 use Session;
 
 class KeluhanUserController extends Controller
@@ -36,6 +37,15 @@ class KeluhanUserController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect('/kontak')
+                ->withErrors($validator)
+                ->withInput();
+        }
         Keluhan::create([
             'name' => $request->name,
             'member_id' => $request->member_id,
@@ -43,7 +53,6 @@ class KeluhanUserController extends Controller
             'phone' => $request->phone,
             'outlet' => $request->outlet,
             'keluhan' => $request->keluhan,
-            'g-recaptcha-response' => 'recaptcha',
             'status' => 1
         ]);
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');

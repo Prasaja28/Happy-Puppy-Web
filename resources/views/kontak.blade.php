@@ -431,6 +431,15 @@
 </div>
 <div class="back">
     <div class="container" id="tab-request-dekstop">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="tab">
             <!-- <div class="tablinks" style="background-image: url('/img/Rectangle.png')" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</div> -->
             <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</button><br>

@@ -231,7 +231,7 @@
                 font-size: 10px;
                 font-family: Arial, Helvetica, sans-serif;
                 color: white;
-                margin-top: -30px;
+                margin-top: 50px;
             }
 
             #txt-foot .btn {
@@ -393,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br><br><br>
+            </div>
         </div>
         <div class="container" id="txt-foot">
             <p>Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan finansial untuk membiayai investasi,

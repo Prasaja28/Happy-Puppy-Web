@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kontak;
+use Illuminate\Support\Facades\Validator;
 use Session;
 
 class KontakUserController extends Controller
@@ -37,13 +38,21 @@ class KontakUserController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect('/kontak')
+                ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
+                ->withInput();
+        }
         Kontak::create([
             'name' => $request->name,
             'member_id' => $request->member_id,
             'email' => $request->email,
             'phone' => $request->phone,
             'complaint' => $request->complaint,
-            'g-recaptcha-response' => 'recaptcha',
             'status' => 1
         ]);
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
