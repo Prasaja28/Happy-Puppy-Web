@@ -20,6 +20,7 @@ use App\Http\Controllers\RequestLaguUserController;
 use App\Http\Controllers\KeluhanUserController;
 use App\Http\Controllers\OutletWaralabaController;
 use App\Http\Controllers\WaralabaController;
+use App\Http\Controllers\JobEkspertiseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,9 @@ Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy']);
 Route::get('/karir', [JobsController::class, 'index']);
 Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('karir/filter', [JobsController::class, 'filter'])->name('jobs.filter');
+
+//job expertise
+Route::get('/job-expertise', [JobEkspertiseController::class, 'index'])->name('jobexpertise');
 
 //waralaba
 Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');
