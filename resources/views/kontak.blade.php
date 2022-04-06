@@ -227,7 +227,7 @@
     }
     .center {
         margin: auto;
-        width: 302px;
+        width: 290px;
         height: 94px;
         padding: 40px;
         color: white;

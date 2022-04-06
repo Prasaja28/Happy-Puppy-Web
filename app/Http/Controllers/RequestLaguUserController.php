@@ -47,6 +47,13 @@ class RequestLaguUserController extends Controller
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+    }
+
     /**
      * Display the specified resource.
      *

@@ -96,7 +96,8 @@
         }
 
         .btnss.orange {
-            background-color: #221E40;
+            /* background-color: #221E40; */
+            background-image: url('/img/Rectangle.png');
         }
 
         #text-acc {

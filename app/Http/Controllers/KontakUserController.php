@@ -43,6 +43,7 @@ class KontakUserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'complaint' => $request->complaint,
+            'g-recaptcha-response' => 'recaptcha',
             'status' => 1
         ]);
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
