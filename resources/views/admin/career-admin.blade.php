@@ -106,9 +106,9 @@
                                                     data-target="#delete{{ $users->id }}"><i
                                                         class="fas fa-trash-alt"></i></i></button>
                                                 {{-- @endif --}}
-                                                {{-- <button class="btn btn-success" alt="Edit" data-toggle="modal"
-                                                    data-target="#edit{{ $users->id }}"><i
-                                                        class="fas fa-pen-square"></i></button> --}}
+                                                <a href="{{ route('jobexpertise', ['careerform_id' => $users->id]) }}"
+                                                    class="btn btn-success" alt="Detail"><i
+                                                        class="far fa-folder-open"></i></a>
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
