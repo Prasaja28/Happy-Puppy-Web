@@ -232,6 +232,22 @@
             padding-right: 120px;
         }
 
+        .card a.main {
+            color: #85baff;
+            text-align: right;
+            display: block;
+            z-index: 1;
+        }
+
+        .card a.main::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: ' ';
+        }
+
         .padding-card {
             padding-top: 10px;
         }
@@ -549,7 +565,7 @@
                                     {{ $news_terbaru[0]->news_title_id }}</h5>
                                 <p class="news-time"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?>
                                     <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
-                                        class="" style="float:right;color:black"><i
+                                        class="main" style="float:right;color:black"><i
                                             class="fas fa-book-open"></i></a>
                                 </p>
                             </div>
@@ -586,7 +602,7 @@
                                                     <p class="news-time-lates">
                                                         <?= date('M d, Y', strtotime($newss->news_date)) ?>
                                                         <a href="{{ route('detailNews', ['id' => $newss->id]) }}"
-                                                            class="" style="float:right;color:black"><i
+                                                            class="main" style="float:right;color:black"><i
                                                                 class="fas fa-book-open"></i></a>
                                                     </p>
                                                 </div>
@@ -631,7 +647,8 @@
                                             <p class="news-time-popular">
                                                 <?= date('M d, Y', strtotime($newsst->news_date)) ?>
                                                 <a href="{{ route('detailNews', ['id' => $newsst->id]) }}"
-                                                class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                    class="main" style="float:right;color:black"><i
+                                                        class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -665,7 +682,8 @@
                                                 <p class="news-time-popular">
                                                     <?= date('M d, Y', strtotime($newss->news_date)) ?>
                                                     <a href="{{ route('detailNews', ['id' => $newsst->id]) }}"
-                                                    class="" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                        class="main" style="float:right;color:black"><i
+                                                            class="fas fa-book-open"></i></a>
                                                 </p>
                                             </div>
                                         </div>

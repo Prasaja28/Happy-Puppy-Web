@@ -57,6 +57,8 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
+                                        <th>Jobvacancy</th>
+                                        <th>Lokasi</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -96,6 +98,8 @@
                                                     download>{{ $users->ijazah }}</a>
                                             </td>
                                             <td>{{ $users->linkedin }}</td>
+                                            <td>{{ $users->name_job }}</td>
+                                            <td>{{ $users->location }}</td>
                                             <td class="text-center">
                                                 {{-- @if ($users->status == 1) --}}
                                                 <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
@@ -170,6 +174,8 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
+                                        <th>Jobvacancy</th>
+                                        <th>Lokasi</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
