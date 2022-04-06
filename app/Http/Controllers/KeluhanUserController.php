@@ -43,6 +43,7 @@ class KeluhanUserController extends Controller
             'phone' => $request->phone,
             'outlet' => $request->outlet,
             'keluhan' => $request->keluhan,
+            'g-recaptcha-response' => 'recaptcha',
             'status' => 1
         ]);
         return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');

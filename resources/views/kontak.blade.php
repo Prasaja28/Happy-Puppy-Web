@@ -3,6 +3,7 @@
 @section('title','Kontak') <!-- name title -->
 
 @section('css-internal')
+{!! ReCaptcha::htmlScriptTagJsApi() !!}
 <!-- Add tag css in here -->
 <style>
     .header{
@@ -480,6 +481,10 @@
                                 </span>
                             @enderror
 
+                            <div class="form-group row">
+                                <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                            </div>
+
                             <br><br><br><br><br>
                             <input style="background-color:#0275d8" type="submit" value="Submit">
                         </div>
@@ -530,6 +535,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                            <div class="form-group row">
+                                <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                            </div>
 
                             <br><br><br><br><br>
                             <input style="background-color:#0275d8" type="submit" value="Submit">
@@ -588,6 +597,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                            <div class="form-group row">
+                                <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                            </div>
 
                             <br><br>
                             <input style="background-color:#0275d8" type="submit" value="Submit">
