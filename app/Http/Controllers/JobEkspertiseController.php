@@ -9,14 +9,18 @@ class JobEkspertiseController extends Controller
 {
     public function index()
     {
-        $jobsEkspertise = JobsEkspertise::all();
-        return view('admin-jobekspertise', compact('jobsEkspertise'));
+        $jobsEkspertise = JobsEkspertise::select('*', 'name')
+            ->join('careerform', 'careerform.id', 'jobexpertise.careerform_id')
+            ->get();
+        return view('admin.jobekspertise-admin', compact('jobsEkspertise'));
     }
 
     public function delete($id)
     {
         $jobsEkspertise = JobsEkspertise::findOrFail($id);
         $jobsEkspertise->delete();
-        return redirect('/admin-jobekspertise');
+        return back()->with([
+            'status' => 'Data Berhasil Dihapus!'
+        ]);
     }
 }
