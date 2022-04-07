@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
-@section('career-admin', 'active')
+@section('waralaba-admin', 'active')
 @section('konten')
     <!-- Content Body place -->
     <section class="content">
@@ -152,7 +152,7 @@
                                         </tr>
                                         <!-- Model Delete -->
                                         <!-- Modal -->
-                                       <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
+                                        <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
                                             role="dialog" aria-labelledby="usersDelete" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">

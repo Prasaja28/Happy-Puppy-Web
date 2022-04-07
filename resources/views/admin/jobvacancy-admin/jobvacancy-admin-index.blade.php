@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
-@section('users-admin', 'active')
+@section('jobvacancy-admin', 'active')
 @section('konten')
     <!-- Content Body place -->
     <section class="content">
@@ -96,6 +96,7 @@
                     <!-- /.card -->
                 </div>
             </div>
+        </div>
         </div>
     </section>
     @include('admin.jobvacancy-admin.jobvacancy-admin-create')
