@@ -11,5 +11,5 @@ class Settings extends Model
 
     protected $table = 'settings';
     protected $fillable = ['key', 'value'];
-    protected $PrimaryKey = 'id';
+    protected $primaryKey = 'id';
 }
