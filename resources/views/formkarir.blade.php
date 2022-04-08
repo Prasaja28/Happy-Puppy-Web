@@ -4,6 +4,7 @@
 <!-- name title -->
 
 @section('css-internal')
+{!! ReCaptcha::htmlScriptTagJsApi() !!}
     <!-- Add tag css in here -->
     <style>
         .header {
@@ -505,6 +506,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div> {!! htmlFormSnippet() !!} </div>
+                            </div>
                             <br><br><br>
 
                         </div>
@@ -556,6 +560,9 @@
                                 <p>*jika ada</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div> {!! htmlFormSnippet() !!} </div>
                     </div>
                     {{-- <br><br><br> --}}
 

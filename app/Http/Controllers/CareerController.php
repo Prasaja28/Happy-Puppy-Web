@@ -7,6 +7,7 @@ use App\Models\Jobs;
 use App\Models\JobsEkspertise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -39,6 +40,22 @@ class CareerController extends Controller
         // $jobvacancy_id = $request->jobvacancy_id;
         // $name_job = $request->name_job;
         // $location = $request->location;
+
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect('/formkarir')
+                ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
+                ->withInput();
+        }
+        if ($request->email_confirm != $request->email) {
+            return back()->with([
+                'message' => 'Email Tidak Sesuai!',
+                'alert' => 'warning'
+            ]);
+        }
 
         if ($request->hasFile('cv') && $request->hasFile('ijazah')) {
             $file = $request->file('cv');

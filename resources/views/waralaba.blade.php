@@ -112,6 +112,7 @@
             font-size: 18px;
             color: white;
             font-family: 'Poppins';
+            margin-top: 45px;
         }
 
         #txt-foot .btn {

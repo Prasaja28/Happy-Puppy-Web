@@ -191,7 +191,7 @@ section[name="latest-news"] div.date img {
 section[name="next-news"] {
     background-color: white;
     padding-top: 200px;
-    min-height: 1100px;
+    /* min-height: 1100px; */
 }
 
 section[name="next-news"] div[name="item"] {

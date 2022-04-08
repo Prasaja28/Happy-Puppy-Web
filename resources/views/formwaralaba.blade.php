@@ -4,6 +4,7 @@
 <!-- name title -->
 
 @section('css-internal')
+{!! ReCaptcha::htmlScriptTagJsApi() !!}
     <!-- Add tag css in here -->
     <style>
         .header {
@@ -584,6 +585,9 @@
                             </option>
                         </select>
                     </div>
+                    <div class="form-group row">
+                        <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                    </div>
                 </div>
                 <br><br>
             </div>
@@ -623,6 +627,9 @@
                         </option>
                     </select>
                 </div>
+                <div class="form-group row">
+                    <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                </div>
                 <br><br>
             </div>
         </div>
@@ -661,7 +668,7 @@
             //set .back height on last tab to 1200px on window width < 600px
             if ($(window).width() < 600) {
                 if (n == (x.length - 1)) {
-                    document.getElementsByClassName("back")[0].style.height = "110rem";
+                    document.getElementsByClassName("back")[0].style.height = "118rem";
                     document.getElementsByClassName("back-grad")[0].style.height = "610px";
                 } else {
                     document.getElementsByClassName("back")[0].style.height = "30rem";

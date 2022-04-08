@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Waralaba;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 
 class WaralabaController extends Controller
@@ -29,6 +30,15 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+ 
+        if ($validator->fails()) {
+            return redirect('formwaralaba')
+                ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
+                ->withInput();
+        }
         if ($request->email_confirm != $request->email) {
             return back()->with([
                 'message' => 'Email Tidak Sesuai!',
