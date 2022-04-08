@@ -141,10 +141,10 @@
                             @if ($data->status == 1)
                                 <img class="img-thumbnail mr-4 mr-md-5" src="{{ $data->thumbnail }}">
                                 <!-- <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"> -->
+                                                                                                    <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+                                                                                                    <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+                                                                                                    <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+                                                                                                    <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"> -->
                             @endif
                         @endforeach
                     @endif
@@ -232,7 +232,12 @@
         <div class="container">
             <div class="row">
                 <h6 class="font-weight-bold top-title">LATEST NEWS</h6>
-                <a name="view-all" class="view-all" href="news">VIEW ALL</a>
+                @if ($news_terbaru->count() > 6)
+                    <a name="view-all" class="view-all" href="news">VIEW ALL</a>
+                @else
+                    <a name="view-all" class="view-all" href="news"></a>
+                @endif
+
             </div>
 
             <div class="row">
@@ -244,9 +249,9 @@
                             <div class="card-body pb-0">
                                 <div class="card-title">
                                     <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-                                                                                                             <div class="date d-flex justify-content-between align-items-center">
-                                                                                                               <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                                                                                                               <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
+                                                                                                                 <div class="date d-flex justify-content-between align-items-center">
+                                                                                                                   <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+                                                                                                                   <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
                                     <div class="date d-flex justify-content-between align-items-center">
                                         <p class="text-date pt-2 pt-md-4 pb-0">
@@ -268,9 +273,9 @@
                             <div class="card-body pb-0">
                                 <div class="card-title">
                                     <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-                                                                                                                                                                  <div class="date d-flex justify-content-between align-items-center">
-                                                                                                                                                                    <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                                                                                                                                                                    <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
+                                                                                                                                                                      <div class="date d-flex justify-content-between align-items-center">
+                                                                                                                                                                        <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
+                                                                                                                                                                        <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[1]->news_title_id }}</h4>
                                     <div class="date d-flex justify-content-between align-items-center">
                                         <p class="text-date pt-2 pt-md-4 pb-0">
@@ -312,9 +317,9 @@
                                     <p class="text-date pt-2 pt-md-4 pb-0">
                                         <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
                                     <!-- <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
-                                                                                                           <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-                                                                                                           <div class="date d-flex justify-content-between align-items-center">
-                                                                                                             <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p> -->
+                                                                                                               <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
+                                                                                                               <div class="date d-flex justify-content-between align-items-center">
+                                                                                                                 <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p> -->
                                     <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
                                         class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
                                 </div>
