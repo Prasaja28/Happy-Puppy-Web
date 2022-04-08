@@ -92,15 +92,10 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="value">Value :</label>
-                                                                <input type="text"
-                                                                    class="form-control form-control-border @error('value') is-invalid @enderror"
+                                                                <input type="text" class="form-control form-control-border"
                                                                     id="value" placeholder="value" name="value"
-                                                                    value="{{ $users->value }}" required>
-                                                                @error('value')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                @enderror
+                                                                    value="{{ $users->value }}">
+
                                                             </div>
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </form>

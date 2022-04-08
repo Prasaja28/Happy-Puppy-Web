@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Topartist;
 use App\Models\Songlist;
 use App\Models\News;
+use App\Models\Settings;
 
 class LandingController extends Controller
 {
@@ -20,16 +21,17 @@ class LandingController extends Controller
             ->orderBy('id', 'desc')
             ->limit(5)
             ->get();
-        $songlist_terlaris = Songlist::where('kategori_lagu','terlaris')
+        $songlist_terlaris = Songlist::where('kategori_lagu', 'terlaris')
             ->limit(6)
             ->get();
-        $songlist_terbaru = Songlist::where('kategori_lagu','terbaru')
+        $songlist_terbaru = Songlist::where('kategori_lagu', 'terbaru')
             ->limit(6)
             ->get();
-        $news_terbaru = News::where('news_category','lates')
+        $news_terbaru = News::where('news_category', 'lates')
             ->limit(6)
             ->get();
-        return view('home',compact('topartist','songlist_terlaris','songlist_terbaru','news_terbaru'));
+        $settings = Settings::select('value')->get();
+        return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings'));
     }
 
     /**

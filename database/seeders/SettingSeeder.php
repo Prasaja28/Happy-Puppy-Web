@@ -15,8 +15,27 @@ class SettingSeeder extends Seeder
     public function run()
     {
         Settings::create([
-            'key' => 'site_name',
-            'value' => 'Laravel\'s Blog',
+            'key' => 'url_facebook',
+            'value' => 'https://facebook.com',
+        ]);
+
+        Settings::create([
+            'key' => 'url_instagram',
+            'value' => 'https://instagram.com',
+        ]);
+
+        Settings::create([
+            'key' => 'url_apple',
+            'value' => 'https://apple.com',
+        ]);
+        Settings::create([
+            'key' => 'url_whatsapp',
+            'value' => 'https://whatsapp.com',
+        ]);
+
+        Settings::create([
+            'key' => 'url_google_play',
+            'value' => 'https://google_play.com',
         ]);
     }
 }
