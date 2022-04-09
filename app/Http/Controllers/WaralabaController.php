@@ -35,7 +35,7 @@ class WaralabaController extends Controller
         ]);
  
         if ($validator->fails()) {
-            return redirect('formwaralaba')
+            return redirect('/form-waralaba')
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
                 ->withInput();
         }

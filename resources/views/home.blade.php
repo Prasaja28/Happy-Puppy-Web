@@ -232,7 +232,7 @@
         <div class="container">
             <div class="row">
                 <h6 class="font-weight-bold top-title">LATEST NEWS</h6>
-                @if ($news_terbaru->count() > 6)
+                @if ($news_terbaru->count() > 5)
                     <a name="view-all" class="view-all" href="news">VIEW ALL</a>
                 @else
                     <a name="view-all" class="view-all" href="news"></a>
@@ -459,14 +459,6 @@
         $('.social-item').each(function() {
             if ($(this).attr('href') == '') {
                 $(this).hide();
-            }
-        });
-    </script>
-    <script>
-        //if container has less than 6 content then hide 'view all'
-        $('.container').each(function() {
-            if ($(this).children().length < 6) {
-                $(this).children('.view-all').hide();
             }
         });
     </script>

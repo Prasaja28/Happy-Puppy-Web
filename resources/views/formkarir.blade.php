@@ -227,15 +227,7 @@
 @endsection
 
 @section('konten')
-    @if (session()->has('message'))
-        <div class="row alert alert-{{ session('alert') }} alert-dismissible fade show mx-1 justify-content-center"
-            role="alert">
-            <span class="alert-text">{{ session('message') }}</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+    
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="container">
@@ -243,12 +235,22 @@
             <p style="font-weight: bold;">LOWONGAN</p>
         </div>
     </div><br>
+    
     <form id="regForm" action="{{ route('career.store') }}" method="post" enctype="multipart/form-data">
         {{-- <form action="/action_page.php"> --}}
         @csrf
         <div class="col-12">
             <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="back-grad">
             <div class="container bom">
                 <h5 style="margin-top: 10px;"><b>DATA PRIBADI</b></h5><br>
