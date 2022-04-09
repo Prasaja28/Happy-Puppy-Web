@@ -15,7 +15,8 @@
     z-index: -1;
     font-family: 'Poppins';
     background-position: rightl;
-    background-image: url('https://3.bp.blogspot.com/-h3x7o8PdjHI/V9Z7h_d61HI/AAAAAAAAJCM/962SQDbRGQoQMqYn3vacC3gUjDYVgZ24gCLcB/w1200-h630-p-k-no-nu/Kredit-Handphone-Di-Surabaya-Tanpa-Kartu-Kartu-Kredit.jpg')
+    /* background-image: url('https://3.bp.blogspot.com/-h3x7o8PdjHI/V9Z7h_d61HI/AAAAAAAAJCM/962SQDbRGQoQMqYn3vacC3gUjDYVgZ24gCLcB/w1200-h630-p-k-no-nu/Kredit-Handphone-Di-Surabaya-Tanpa-Kartu-Kartu-Kredit.jpg') */
+    background-image: url('/img/mapsindo.png')
 }
 .search-result{
     min-height:100px;
@@ -89,7 +90,8 @@
     <!-- background Home -->
     <div class="header ">
     <div class="container-fluid blur-color text-white p-5">
-        <h2 class="mt-5 font-weight-bold">Surabaya</h2>
+        <!-- <h2 class="mt-5 font-weight-bold">Surabaya</h2> -->
+        <h2 class="mt-5 font-weight-bold">{{ $keyword }}</h2>
         <h4>OUTLET</h4>
     </div>
     </div>
