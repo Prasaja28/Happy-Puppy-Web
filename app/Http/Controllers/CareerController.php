@@ -46,7 +46,7 @@ class CareerController extends Controller
         ]);
  
         if ($validator->fails()) {
-            return redirect('/formkarir')
+            return redirect('/formkarir/'. $request->jobvacancy_id)
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
                 ->withInput();
         }

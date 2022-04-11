@@ -63,6 +63,11 @@
             padding: 5%;
         }
 
+        .btnss.collapsed {
+            background-color: #85A4E1;
+            background-image: none;
+        }
+
         #accordion .card {
             background-color: #85A4E1;
         }
@@ -80,6 +85,15 @@
             font-family: 'Poppins';
             font-weight: bold;
             border-bottom: none;
+            cursor: pointer;
+        }
+
+        .btnss {
+            background-image: url('/img/Rectangle.png');
+            background-repeat: no-repeat;
+            background-size: 300px 100px;
+            background-color: #85A4E1;
+            border: transparent;
         }
 
         .card-body {
@@ -95,10 +109,7 @@
             color: white;
         }
 
-        .btnss.orange {
-            /* background-color: #221E40; */
-            background-image: url('/img/Rectangle.png');
-        }
+
 
         #text-acc {
             font-size: 20px;
@@ -211,7 +222,7 @@
 
             .active,
             .accordion:hover {
-                background-color: #ccc;
+                background-color: #221E40;
             }
 
             .panel {
@@ -269,11 +280,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <div class="btnss" id="judul" data-toggle="collapse" data-target="#collapseOne"
+                            <button class="btnss" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
                                 Home Theatre buka untuk karaoke?
-                                <!-- <img src="img/home-theatre.png" alt=""> -->
-                            </div>
+                            </button>
                         </h5>
                     </div>
 
@@ -292,10 +302,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <div class="btnss" id="judul2" data-toggle="collapse" data-target="#collapseTwo"
+                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
                                 Karaoke keluarga, bisnis hiburan tanpa masalah
-                            </div>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -313,10 +323,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <div class="btnss collapsed" id="judul3" data-toggle="collapse" data-target="#collapseThree"
+                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 Kenapa memilih waralaba Happy Puppy?
-                            </div>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -334,10 +344,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFour">
                         <h5 class="mb-0">
-                            <div class="btnss collapsed" id="judul4" data-toggle="collapse" data-target="#collapseFour"
+                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseFour"
                                 aria-expanded="false" aria-controls="collapseFour">
                                 Hal yang perlu diperhatikan dalam waralaba ini
-                            </div>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -355,10 +365,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFive">
                         <h5 class="mb-0">
-                            <div class="btnss collapsed" id="judul5" data-toggle="collapse" data-target="#collapseFive"
+                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseFive"
                                 aria-expanded="false" aria-controls="collapseFive">
                                 Berapa investasi yang dibutuhkan untuk waralaba ini?
-                            </div>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
@@ -376,10 +386,10 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingSix">
                         <h5 class="mb-0">
-                            <div class="btnss collapsed" id="judul6" data-toggle="collapse" data-target="#collapseSix"
+                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
                                 Daftar kota tertutup untuk waralaba
-                            </div>
+                            </button>
                         </h5>
                     </div>
                     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
@@ -423,7 +433,18 @@
             });
         }
     </script> --}}
-
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("accordion");
+        var btns = header.getElementsByClassName("btnss");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
     <script>
         var accItem = document.getElementsByClassName('accordionItem');
         var accHD = document.getElementsByClassName('accordionItemHeading');
@@ -442,25 +463,5 @@
         }
     </script>
 
-    <script>
-        jQuery('#judul').click(function() {
-            $(this).toggleClass('orange');
-        });
-        jQuery('#judul2').click(function() {
-            $(this).toggleClass('orange');
-        });
-        jQuery('#judul3').click(function() {
-            $(this).toggleClass('orange');
-        });
-        jQuery('#judul4').click(function() {
-            $(this).toggleClass('orange');
-        });
-        jQuery('#judul5').click(function() {
-            $(this).toggleClass('orange');
-        });
-        jQuery('#judul6').click(function() {
-            $(this).toggleClass('orange');
-        });
-    </script>
 
 @endsection

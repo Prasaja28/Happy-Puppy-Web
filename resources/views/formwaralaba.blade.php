@@ -4,7 +4,7 @@
 <!-- name title -->
 
 @section('css-internal')
-{!! ReCaptcha::htmlScriptTagJsApi() !!}
+    {!! ReCaptcha::htmlScriptTagJsApi() !!}
     <!-- Add tag css in here -->
     <style>
         .header {
@@ -259,7 +259,7 @@
             <p style="font-weight: bold;">WARALABA</p>
         </div>
     </div><br>
-    
+
     <form id="regForm" action="{{ route('waralaba.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-12">

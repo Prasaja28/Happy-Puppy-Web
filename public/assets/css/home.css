@@ -53,9 +53,9 @@ div[name="social-media"] ul li img {
     margin-left: -25px;
 }
 
-div[name="social-media"] ul li img[name="facebook"] {
+/* div[name="social-media"] ul li img[name="facebook"] {
     margin-top: 20px;
-}
+} */
 
 ul.navbar-right {
     width: 55px;
