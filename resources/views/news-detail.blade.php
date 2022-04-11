@@ -101,6 +101,22 @@
             margin-bottom: 20px;
         }
 
+        .card a.main {
+            color: #85baff;
+            text-align: right;
+            display: block;
+            z-index: 1;
+        }
+
+        .card a.main::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: ' ';
+        }
+
         .image-background img{
             height: auto;
             width: 500px;
@@ -177,6 +193,21 @@
                 /* Added */
                 margin-bottom: 10px;
                 margin-left: -219px;
+            }
+            .card a.main {
+                color: #85baff;
+                text-align: right;
+                display: block;
+                z-index: 1;
+            }
+
+            .card a.main::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: ' ';
             }
 
             .card-img-news {
@@ -263,10 +294,10 @@
                                             <h5 class="card-title title-news">
                                                 {{ $ntd->news_title_id }}
                                             </h5>
-                                            <p class="news-time">{{ $ntd->news_date }}
+                                            <p class="news-time">
+                                                <?= date('M d, Y', strtotime($ntd->news_date)) ?>
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"
-                                                    class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
+                                                class="main" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>
