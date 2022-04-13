@@ -18,6 +18,25 @@
             background-image: url('/img/waralaba.png')
         }
 
+        .tablinks {
+            display: block;
+            background-color: inherit;
+            color: white;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 100px;
+            border-bottom-left-radius: 20px;
+            font-family: 'Poppins';
+        }
+
         #txt1 {
             color: white;
             position: absolute;
@@ -91,7 +110,8 @@
         .btnss {
             background-image: url('/img/Rectangle.png');
             background-repeat: no-repeat;
-            background-size: 300px 100px;
+            background-size: auto;
+            background-position: left;
             background-color: #85A4E1;
             border: transparent;
         }
@@ -272,7 +292,7 @@
     <div class="back-grad">
         <div class="center">
             <br>
-            <p id="p1">Kenapa Memilih Usaha Karaoke (Bernyanyi)?</p><br>
+            <p id="p1" onclick="openCity(event, 'kontak')">Kenapa Memilih Usaha Karaoke (Bernyanyi)?</p><br>
             <p id="p2">Karena bernyanyi tidak mengenal musim sehingga kita tidak perlu kuatir suatu<br> waktu manusia bosan
                 bernyanyi. Bernyanyi adalah hiburan pertama yang<br> dianugerahkan oleh Tuhan YME untuk manusia dan akan
                 terus diminati manusia<br> sepanjang peradabannya.</p><br>
@@ -284,7 +304,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btnss" data-toggle="collapse" data-target="#collapseOne"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
                                 Home Theatre buka untuk karaoke?
                             </button>
@@ -306,7 +326,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
                                 Karaoke keluarga, bisnis hiburan tanpa masalah
                             </button>
@@ -327,7 +347,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 Kenapa memilih waralaba Happy Puppy?
                             </button>
@@ -348,7 +368,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFour">
                         <h5 class="mb-0">
-                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseFour"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseFour"
                                 aria-expanded="false" aria-controls="collapseFour">
                                 Hal yang perlu diperhatikan dalam waralaba ini
                             </button>
@@ -369,7 +389,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingFive">
                         <h5 class="mb-0">
-                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseFive"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseFive"
                                 aria-expanded="false" aria-controls="collapseFive">
                                 Berapa investasi yang dibutuhkan untuk waralaba ini?
                             </button>
@@ -390,7 +410,7 @@
                 <div class="card border-0">
                     <div class="card-header" id="headingSix">
                         <h5 class="mb-0">
-                            <button class="btnss collapsed" data-toggle="collapse" data-target="#collapseSix"
+                            <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
                                 Daftar kota tertutup untuk waralaba
                             </button>
@@ -425,18 +445,21 @@
     <!-- add tag js in here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     {{-- <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("accordion");
-        header.classList.remove("className");
-        var btns = header.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
+        function openCity(evt, cityName) {
+            var i, collapse, btnss;
+            collapse = document.getElementsByClassName("collapse");
+            for (i = 0; i < collapse.length; i++) {
+                collapse[i].style.display = "none";
+            }
+            btnss = document.getElementsByClassName("btnss");
+            for (i = 0; i < btnss.length; i++) {
+                btnss[i].className = btnss[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
     </script> --}}
+
     <script>
         // Add active class to the current button (highlight it)
         var header = document.getElementById("accordion");
@@ -466,6 +489,5 @@
             }
         }
     </script>
-
 
 @endsection
