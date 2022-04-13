@@ -114,6 +114,9 @@ class OutletWaralabaController extends Controller
             ->orWhere('c.city_name', 'like', '%'.$keyword.'%' )
             ->leftJoin('city as c', 'c.id', '=' , "o.city_id")
             ->get();
+        if ($outlet->count() == 0) {
+            return view('/lokasi-not-found');
+        }
         return view('lokasi-outlet', compact('outlet', 'keyword'));
     }
 }
