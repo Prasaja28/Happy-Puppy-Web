@@ -29,12 +29,17 @@ class JobsController extends Controller
      */
     public function filter(Request $request)
     {
+        
         $jobs = Jobs::select('*')
             ->where([
                 ['name_job', 'like', '%' . $request->nama_job . '%'],
                 ['location', 'like', '%' . $request->lokasi . '%']
             ])
             ->get();
+        //return not found if no data match with where clause
+        if ($jobs->count() == 0) {
+            return view('errors.karror');
+        }
         return view('karir', compact('jobs'));
     }
 

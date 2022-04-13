@@ -109,72 +109,72 @@
         }
 
         /* @media(max-width:600px) {
-                                            #txt1 {
-                                                font-size: 35px;
-                                                margin-bottom: -12rem;
-                                                margin-left: -5rem;
-                                            }
+                                                                #txt1 {
+                                                                    font-size: 35px;
+                                                                    margin-bottom: -12rem;
+                                                                    margin-left: -5rem;
+                                                                }
 
-                                            .table .tr-inputs th {
-                                                position: relative;
-                                                padding: 0;
-                                                padding-bottom: 1.2rem;
-                                                margin: 0 0 0.5rem 0;
-                                            }
+                                                                .table .tr-inputs th {
+                                                                    position: relative;
+                                                                    padding: 0;
+                                                                    padding-bottom: 1.2rem;
+                                                                    margin: 0 0 0.5rem 0;
+                                                                }
 
-                                            .lowongan {
-                                                display: none;
-                                            }
+                                                                .lowongan {
+                                                                    display: none;
+                                                                }
 
-                                            h6 {
-                                                color: #ffffff;
-                                                margin-top: -75px;
-                                                font-size: 18px;
-                                            }
+                                                                h6 {
+                                                                    color: #ffffff;
+                                                                    margin-top: -75px;
+                                                                    font-size: 18px;
+                                                                }
 
-                                            .table {
-                                                margin-left: -5.5rem;
-                                                margin-top: 4rem;
-                                            }
+                                                                .table {
+                                                                    margin-left: -5.5rem;
+                                                                    margin-top: 4rem;
+                                                                }
 
 
-                                            .grid-container {
-                                                margin-left: -107px;
-                                                display: grid;
-                                                column-gap: 10px;
-                                                row-gap: 15px;
-                                                grid-template-columns: 115px 115px 115px;
-                                                grid-template-rows: 105px 105px;
-                                                padding: 10px;
+                                                                .grid-container {
+                                                                    margin-left: -107px;
+                                                                    display: grid;
+                                                                    column-gap: 10px;
+                                                                    row-gap: 15px;
+                                                                    grid-template-columns: 115px 115px 115px;
+                                                                    grid-template-rows: 105px 105px;
+                                                                    padding: 10px;
 
-                                            }
+                                                                }
 
-                                            .grid-item {
-                                                background-image: url('/img/karir.png');
-                                                background-position: center;
-                                                background-repeat: no-repeat;
-                                                background-size: cover;
-                                                border: 1px solid rgba(0, 0, 0, 0.8);
-                                                padding: 55px 5px 10px 5px;
-                                            }
+                                                                .grid-item {
+                                                                    background-image: url('/img/karir.png');
+                                                                    background-position: center;
+                                                                    background-repeat: no-repeat;
+                                                                    background-size: cover;
+                                                                    border: 1px solid rgba(0, 0, 0, 0.8);
+                                                                    padding: 55px 5px 10px 5px;
+                                                                }
 
-                                            b#item {
-                                                font-size: 13px;
-                                                color: #ffffff;
-                                                margin-top: 5px;
-                                                margin-right: 5px;
-                                                border-bottom: 3px solid rgb(206, 135, 44);
-                                                padding-bottom: 2px;
-                                                position: absolute;
-                                                width: 5%;
-                                            }
-                                        }
+                                                                b#item {
+                                                                    font-size: 13px;
+                                                                    color: #ffffff;
+                                                                    margin-top: 5px;
+                                                                    margin-right: 5px;
+                                                                    border-bottom: 3px solid rgb(206, 135, 44);
+                                                                    padding-bottom: 2px;
+                                                                    position: absolute;
+                                                                    width: 5%;
+                                                                }
+                                                            }
 
-                                        @media(max-width:320px) {
-                                            #filter {
-                                                margin-left: 2rem;
-                                            }
-                                        } */
+                                                            @media(max-width:320px) {
+                                                                #filter {
+                                                                    margin-left: 2rem;
+                                                                }
+                                                            } */
 
     </style>
     <!-- Google Fonts -->
@@ -236,28 +236,15 @@
                             </th>
                             <th style="border-top: 0px;">
                                 <button type="submit" class="btn"
-                                    style="font-size: 13px; height: 3rem;"><b>FILTER</b></button>
+                                    style="font-size: 13px; height: 3rem;"><b>Filter</b></button>
                             </th>
                         </form>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach ($jobs as $j)
-                        <tr>
-                            <td>
-                                <p style="font-size: 15px;">{{ $j->name_job }}</p>
-                            </td>
-                            <td>
-                                <p style="font-size: 15px;">{{ $j->location }}</p>
-                            </td>
-                            <td>
-                                <a href="{{ route('karirForm', ['jobvacancy_id' => $j->id]) }}" type="button"
-                                    class="btn btn-primary" id="apply"
-                                    style="font-size: 13px; height: 3rem; width:100%; margin-top:0rem; padding-top:0.75rem">APPLY</a>
-                            </td>
-                    @endforeach
-                </tbody>
             </table>
+            <center>
+                <h4>Data Tidak itemukan</h4>
+            </center>
         </div>
     </div>
     <br>

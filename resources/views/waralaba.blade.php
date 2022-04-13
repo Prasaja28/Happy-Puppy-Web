@@ -96,6 +96,10 @@
             border: transparent;
         }
 
+        button:focus {
+            outline: 0;
+        }
+
         .card-body {
             background-color: white;
             border-bottom: none;
