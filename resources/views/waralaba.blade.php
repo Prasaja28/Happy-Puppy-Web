@@ -110,7 +110,7 @@
         .btnss {
             background-image: url('/img/Rectangle.png');
             background-repeat: no-repeat;
-            background-size: auto;
+            background-size: 40rem 7rem;
             background-position: left;
             background-color: #85A4E1;
             border: transparent;
