@@ -50,12 +50,12 @@ class CareerController extends Controller
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
                 ->withInput();
         }
-        if ($request->email_confirm != $request->email) {
-            return back()->with([
-                'message' => 'Email Tidak Sesuai!',
-                'alert' => 'warning'
-            ]);
-        }
+        // if ($request->email_confirm != $request->email) {
+        //     return back()->with([
+        //         'message' => 'Email Tidak Sesuai!',
+        //         'alert' => 'warning'
+        //     ]);
+        // }
 
         if ($request->hasFile('cv') && $request->hasFile('ijazah')) {
             $file = $request->file('cv');

@@ -586,18 +586,18 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row" id="mobile_captcha">
                         <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <br><br>
             </div>
         </div>
-        </div>
+
         <div class="back"></div>
         <div class="foots"></div>
         <div class="foots2">
-            <div class="container">
+            <div class="container" id="last_section_web">
                 <br><br>
                 <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat, serta mempunyai
                     kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang
@@ -628,14 +628,14 @@
                         </option>
                     </select>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row" id="web_captcha">
                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                 </div>
                 <br><br>
             </div>
         </div>
         <br>
-        <div class="col-12" id="buttoon">
+        <div class="container" id="buttoon">
             <a style="font-weight: bold; color:white;" id="myBtn" onclick="nextPrev(1)" class="btn btn-primary">Next
                 Step</a>
         </div>
@@ -721,5 +721,13 @@
                 $('#email_confirm').css('border-radius', '5px');
             }
         });
+    </script>
+
+    <script>
+        if ($(window).width() < 600) {
+            //put web_captcha to last_form_section
+            $('#web_captcha').appendTo('#last_form_section');
+
+        }
     </script>
 @endsection

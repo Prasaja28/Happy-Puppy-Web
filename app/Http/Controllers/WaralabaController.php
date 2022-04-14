@@ -30,6 +30,7 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
@@ -47,11 +48,13 @@ class WaralabaController extends Controller
         }
         // dd($request->all());
         if ($request->confirm_completenes != null && $request->confirm_completenes != null) {
+          
             Waralaba::create($request->all());
             return back()->with([
                 'message' => 'Fromulir Berhasil Dikirim!',
                 'alert' => 'success'
             ]);
+            
         } elseif ($request->confirm_completenes_mob != null && $request->confirm_completenes_mob != null) {
             $waralaba = new Waralaba();
             $waralaba->name = $request->name;

@@ -4,7 +4,7 @@
 <!-- name title -->
 
 @section('css-internal')
-{!! ReCaptcha::htmlScriptTagJsApi() !!}
+    {!! ReCaptcha::htmlScriptTagJsApi() !!}
     <!-- Add tag css in here -->
     <style>
         .header {
@@ -65,8 +65,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
 
         .foots {
             height: 50px;
@@ -227,7 +227,7 @@
 @endsection
 
 @section('konten')
-    
+
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="container">
@@ -235,7 +235,7 @@
             <p style="font-weight: bold;">LOWONGAN</p>
         </div>
     </div><br>
-    
+
     <form id="regForm" action="{{ route('career.store') }}" method="post" enctype="multipart/form-data">
         {{-- <form action="/action_page.php"> --}}
         @csrf
@@ -502,15 +502,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" style="width: 100%" id="linkedin"
+                                        <input type="text" class="form-control" style="width: 100%" id="linkedin_mob"
                                             name="linkedin_mob" placeholder="Copy Link"><br>
                                         <p>*jika ada</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div> {!! htmlFormSnippet() !!} </div>
-                            </div>
+                            </div> --}}
                             <br><br><br>
 
                         </div>
@@ -563,7 +563,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="web_captcha">
                         <div> {!! htmlFormSnippet() !!} </div>
                     </div>
                     {{-- <br><br><br> --}}
@@ -677,6 +677,14 @@
             y = x[currentTab].getElementsByTagName("input");
 
             return valid;
+        }
+    </script>
+    <script>
+        if ($(window).width() < 600) {
+            //put web_captcha to last_form_section
+            $('#web_captcha').appendTo('#lampiran');
+            $('#linkedin').hide();
+
         }
     </script>
     {{-- <script>
