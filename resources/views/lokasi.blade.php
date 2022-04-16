@@ -117,10 +117,10 @@
             <div class="container-fluid pb-4 text-center">
               <div class="row py-3">
                 <div class="col-12">
-                      <a href="{{ route('search', ['keyword'=> 'Jakarta'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
-                      <a href="{{ route('search', ['search'=> 'Surabaya'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
-                      <a href="{{ route('search', ['search'=> 'Makasar'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
-                      <a href="{{ route('search', ['search'=> 'Samarinda'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
+                      <a href="{{ route('search', ['keyword'=> 'jakarta'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
+                      <a href="{{ route('search', ['keyword'=> 'surabaya'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
+                      <a href="{{ route('search', ['keyword'=> 'makasar'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
+                      <a href="{{ route('search', ['keyword'=> 'samarinda'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
                 </div>
               </div>
             </div>

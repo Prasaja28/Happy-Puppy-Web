@@ -38,7 +38,6 @@ class KontakUserController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);

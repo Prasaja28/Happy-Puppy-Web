@@ -172,6 +172,7 @@
                 color: white;
                 margin: 0;
                 font-size: 20px;
+                margin-left: -48px;
             }
 
             .back-grad {
@@ -210,7 +211,7 @@
                 border-bottom: none;
                 border-radius: 1em;
                 font-size: 10px;
-                margin-left: 8px;
+                margin-left: -5px;
             }
 
             #p1 {

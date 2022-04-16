@@ -110,7 +110,7 @@
                     @foreach ($outlet as $o)
                     <div class="col-lg-4">
                         <div class="card">
-                            <img class="card-img-top" src="{{ asset('/img/songlist-img/'.$o->thumbnail) }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ $o->thumbnail }}" alt="image">
                             <div class="card-body">
                                 <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
                                 <p class="card-text text-center">
@@ -137,82 +137,37 @@
             <!-- end windows card view -->
             <div id="mobile-view-card">
                 <div class="row">
+                @foreach ($outlet as $o)
                     <div class="col-12">
                         <div class="card card-news-popular">
                         <div class="row no-gutters">
                             <div class="col-6">
-                                <img src="{{ asset('/img/room-karaoke.jpg') }}" class="card-img-top card-img-news" alt="...">
+                                <img src="{{ $o->thumbnail }}" class="card-img-top card-img-news" alt="image">
                             </div>
                             <div class="col-6">
                                 <div class="card-body">
-                                    <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
+                                    <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
                                     <p class="card-text text-center">
-                                        Jl. Kapas Krampung Surabaya 60142 - Indonesia
+                                        {{ $o->address }}
                                         <br>
-                                        Tel. (031)374-0666
+                                        Tel. {{ $o->phone }}
                                         <br>
-                                        Fax. (031)374-0668
+                                        Fax. {{ $o->fax }}
                                     </p>
                                     <center>
-                                        <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
-                                        <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
+                                        @if (!empty( $o->link_ig ))
+                                        <a href="{{ $o->link_ig }}" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
+                                        @endif
+                                        @if (!empty( $o->link_2 ))
+                                        <a href="{{ $o->link_2 }}" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
+                                        @endif
                                     </center>
                                 </div>
                             </div>
                         </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card card-news-popular">
-                        <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="{{ asset('/img/room-karaoke.jpg') }}" class="card-img-top card-img-news" alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
-                                    <p class="card-text text-center">
-                                        Jl. Kapas Krampung Surabaya 60142 - Indonesia
-                                        <br>
-                                        Tel. (031)374-0666
-                                        <br>
-                                        Fax. (031)374-0668
-                                    </p>
-                                    <center>
-                                        <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
-                                        <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card card-news-popular">
-                        <div class="row no-gutters">
-                            <div class="col-6">
-                                <img src="{{ asset('/img/room-karaoke.jpg') }}" class="card-img-top card-img-news" alt="...">
-                            </div>
-                            <div class="col-6">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center font-weight-bold">Suka Suka Kapas Kampung</h5>
-                                    <p class="card-text text-center">
-                                        Jl. Kapas Krampung Surabaya 60142 - Indonesia
-                                        <br>
-                                        Tel. (031)374-0666
-                                        <br>
-                                        Fax. (031)374-0668
-                                    </p>
-                                    <center>
-                                        <a href="#" class="btn btn-light"><i class="fab fa-instagram fa-lg"></i></a>
-                                        <a href="#" class="btn btn-light"><i class="fas fa-square fa-lg"></i></i></a>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    
+                @endforeach 
                 </div>
             </div>
         </div>
