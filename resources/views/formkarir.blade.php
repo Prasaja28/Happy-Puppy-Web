@@ -65,8 +65,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
 
         .foots {
             height: 50px;
@@ -286,13 +286,14 @@
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="name" name="name"
-                                        placeholder="Nama">
+                                        value="{{ old('name') }}" placeholder="Nama">
                                     <input type="hidden" class="form-control" style="width: 80%" id="jobvacancy_id"
                                         name="jobvacancy_id" value="{{ $jobs[0]->id }}">
                                 </div><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="formal_education"
-                                        id="formal_education" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        value="{{ old('formal_education') }}" id="formal_education"
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Pendidikan Formal</option>
                                         <option value="SMA">SMA</option>
                                         <option value="D3">D3</option>
@@ -303,7 +304,8 @@
                                 </div><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="place_birth" id="place_birth"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        value="{{ old('place_birth') }}" data-dropdown-css-class="select2-danger"
+                                        style="width: 50%;">
                                         <option selected="selected">Tempat Lahir</option>
                                         <option value="DKI Jakarta">DKI Jakarta</option>
                                         <option value="Jawa Barat">Jawa Barat</option>
@@ -316,16 +318,16 @@
                                     <label><b>Tanggal Lahir</b></label><br><br>
                                     <div class="input-group date" style="width: 50%;">
                                         <input type="date" id="date_birth" name="date_birth"
-                                            class="form-control datetimepicker-input" />
+                                            value="{{ old('date_birth') }}" class="form-control datetimepicker-input" />
                                     </div>
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 25%" id="height" name="height"
-                                        placeholder="Tinggi">
+                                        value="{{ old('height') }}" placeholder="Tinggi">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 25%" id="weight" name="weight"
-                                        placeholder="Berat">
+                                        value="{{ old('weight') }}" placeholder="Berat">
                                 </div><br>
                             </div>
 
@@ -333,7 +335,8 @@
                                 <br><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" id="gender" name="gender"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        value="{{ old('gender') }}" data-dropdown-css-class="select2-danger"
+                                        style="width: 50%;">
                                         <option selected="selected">Jenis Kelamin</option>
                                         <option value="0">Laki-Laki</option>
                                         <option value="1">Perempuan</option>
@@ -341,7 +344,8 @@
                                 </div><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" id="status_marital"
-                                        name="status_marital" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        value="{{ old('status_marital') }}" name="status_marital"
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Status Marital</option>
                                         <option value="0">Single</option>
                                         <option value="1">Menikah</option>
@@ -349,15 +353,15 @@
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="phone" name="phone"
-                                        placeholder="Telp">
+                                        value="{{ old('phone') }}" placeholder="Telp">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="mobile_phone"
-                                        name="mobile_phone" placeholder="No. HP">
+                                        value="{{ old('mobile_phone') }}" name="mobile_phone" placeholder="No. HP">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="email" name="email"
-                                        placeholder="Email">
+                                        value="{{ old('email') }}" placeholder="Email">
                                 </div><br>
                                 <div class="form-group">
                                     <textarea class="form-control" rows="3" style="width: 80%" id="address" name="address"
@@ -365,7 +369,7 @@
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
-                                        placeholder="No. KTP">
+                                        value="{{ old('no_ktp') }}" placeholder="No. KTP">
                                 </div><br>
                             </div>
                         </div>
@@ -386,11 +390,11 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="nama_perusahaan"
-                                        placeholder="Nama Perusahaan">
+                                        value="{{ old('nama_perusahaan') }}" placeholder="Nama Perusahaan">
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" name="lama_kerja"
-                                        placeholder="Lama Bekerja">
+                                        value="{{ old('lama_kerja') }}" placeholder="Lama Bekerja">
                                 </div>
                             </div>
 
@@ -399,7 +403,7 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 70%" name="jabatan"
-                                        placeholder="Jabatan">
+                                        value="{{ old('jabatan') }}" placeholder="Jabatan">
                                 </div>
                             </div>
                             <br><br>
@@ -445,7 +449,8 @@
                                 <br><br><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 80%" id="expected_salary"
-                                        name="expected_salary" placeholder="Gaji yang Diharapkan">
+                                        value="{{ old('expected_salary') }}" name="expected_salary"
+                                        placeholder="Gaji yang Diharapkan">
                                 </div>
                                 <br><br><br>
                             </div>
@@ -466,11 +471,12 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="language"
-                                        name="language" placeholder="Bahasa">
+                                        value="{{ old('language') }}" name="language" placeholder="Bahasa">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="instrument_music"
-                                        name="instrument_music" placeholder="Alat Musik">
+                                        value="{{ old('instrument_music') }}" name="instrument_music"
+                                        placeholder="Alat Musik">
                                 </div>
                             </div>
 
@@ -478,11 +484,12 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="computer"
-                                        name="computer" placeholder="Komputer">
+                                        value="{{ old('computer') }}" name="computer" placeholder="Komputer">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="other_expertise"
-                                        name="other_expertise" placeholder="Keahlian Lainnya">
+                                        value="{{ old('other_expertise') }}" name="other_expertise"
+                                        placeholder="Keahlian Lainnya">
                                 </div>
                             </div>
 
@@ -518,7 +525,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" style="width: 100%" id="linkedin_mob"
-                                            name="linkedin_mob" placeholder="Copy Link"><br>
+                                            value="{{ old('linkedin_mob') }}" name="linkedin_mob"
+                                            placeholder="Copy Link"><br>
                                         <p>*jika ada</p>
                                     </div>
                                 </div>
@@ -573,7 +581,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" style="width: 100%" id="linkedin" name="linkedin"
-                                    placeholder="Copy Link Desk"><br>
+                                    value="{{ old('linkedin') }}" placeholder="Copy Link Desk"><br>
                                 <p>*jika ada</p>
                             </div>
                         </div>
