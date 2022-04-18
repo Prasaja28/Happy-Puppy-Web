@@ -91,16 +91,10 @@ class CareerController extends Controller
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
-            Storage::putFileAs(
-                'public/' . $path,
-                $file,
-                $filename
-            );
-            Storage::putFileAs(
-                'public/' . $path2,
-                $file2,
-                $filename2
-            );
+            $destinationPath = public_path('/uploads/' . $path);
+            $destinationPath2 = public_path('/uploads/' . $path2);
+            $file->move($destinationPath, $filename);
+            $file2->move($destinationPath2, $filename2);
 
             $careerform_id = Career::create($data);
             $jobeks = new JobsEkspertise();
@@ -163,17 +157,12 @@ class CareerController extends Controller
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
-
-            Storage::putFileAs(
-                'public/' . $path,
-                $file,
-                $filename
-            );
-            Storage::putFileAs(
-                'public/' . $path2,
-                $file2,
-                $filename2
-            );
+            
+            $destinationPath = public_path('/uploads/' . $path);
+            $destinationPath2 = public_path('/uploads/' . $path2);
+            $file->move($destinationPath, $filename);
+            $file2->move($destinationPath2, $filename2);
+            
 
             $careerform_id = Career::create($data);
             $jobeks = new JobsEkspertise();
@@ -225,9 +214,21 @@ class CareerController extends Controller
     }
     public function adminIndex()
     {
-        $careers = Career::select('*', 'name_job', 'location')
+        $careers = Career::select('careerform.*', 'name_job', 'location')
             ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
             ->get();
         return view('admin.career-admin', compact('careers'));
+    }
+    public function detail($id)
+    {
+        $career = Career::find($id);
+        if (empty($career)) {
+            return redirect()->route('career-admin')->with('error', 'Data Tidak Ditemukan');
+        }
+        $jobsEkspertise = JobsEkspertise::select('jobexpertise.*', 'name')
+            ->join('careerform', 'careerform.id', 'jobexpertise.careerform_id')
+            ->where('careerform.id', $id)
+            ->get();
+        return view('admin.jobekspertise-admin', compact('jobsEkspertise'));
     }
 }

@@ -107,15 +107,13 @@ Route::put('/outlet-admin/update/{id}', [OutletWaralabaController::class, 'updat
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
 
 //Karir
-Route::get('/career-admin', [CareerController::class, 'adminIndex']);
+Route::get('/career-admin', [CareerController::class, 'adminIndex'])->name('career-admin');
 Route::post('/career-admin/store', [CareerController::class, 'store'])->name('career.store');
 Route::get('/career-admin/delete/{id}', [CareerController::class, 'destroy']);
 Route::get('/karir', [JobsController::class, 'index']);
 Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('/karir', [JobsController::class, 'filter'])->name('jobs.filter');
-
-//job expertise
-Route::get('/job-expertise', [JobEkspertiseController::class, 'index'])->name('jobexpertise');
+Route::get('/career-admin/{id}', [CareerController::class, 'detail'])->name('career.detail');
 
 //waralaba
 Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');

@@ -63,57 +63,57 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($careers as $users)
+                                    @forelse($careers as $career)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $users->name }}</td>
-                                            <td>{{ $users->formal_education }}
-                                            <td>{{ $users->place_birth }}</td>
-                                            <td>{{ $users->date_birth }}</td>
-                                            <td>{{ $users->height }}</td>
-                                            <td>{{ $users->weight }}</td>
-                                            @if ($users->gender == 0)
+                                            <td>{{ $career->name }}</td>
+                                            <td>{{ $career->formal_education }}
+                                            <td>{{ $career->place_birth }}</td>
+                                            <td>{{ $career->date_birth }}</td>
+                                            <td>{{ $career->height }}</td>
+                                            <td>{{ $career->weight }}</td>
+                                            @if ($career->gender == 0)
                                                 <td> Laki-Laki </td>
                                             @else
                                                 <td>Perempuan</td>
                                             @endif
-                                            @if ($users->status_marital == 0)
+                                            @if ($career->status_marital == 0)
                                                 <td> Single </td>
                                             @else
                                                 <td> Menikah </td>
                                             @endif
-                                            <td>{{ $users->phone }}</td>
-                                            <td>{{ $users->mobile_phone }}</td>
-                                            <td>{{ $users->email }}</td>
-                                            <td>{{ $users->address }}</td>
-                                            <td>{{ $users->no_ktp }}</td>
-                                            <td>{{ $users->expected_salary }}</td>
-                                            <td>{{ $users->language }}</td>
-                                            <td>{{ $users->instrument_music }}</td>
-                                            <td>{{ $users->computer }}</td>
-                                            <td>{{ $users->other_expertise }}</td>
-                                            <td><a href="/storage/{{ $users->cv }}" download>{{ $users->cv }}</a>
+                                            <td>{{ $career->phone }}</td>
+                                            <td>{{ $career->mobile_phone }}</td>
+                                            <td>{{ $career->email }}</td>
+                                            <td>{{ $career->address }}</td>
+                                            <td>{{ $career->no_ktp }}</td>
+                                            <td>{{ $career->expected_salary }}</td>
+                                            <td>{{ $career->language }}</td>
+                                            <td>{{ $career->instrument_music }}</td>
+                                            <td>{{ $career->computer }}</td>
+                                            <td>{{ $career->other_expertise }}</td>
+                                            <td><a href="/uploads/{{ $career->cv }}" download>{{ $career->cv }}</a>
                                             </td>
-                                            <td><a href="/storage/{{ $users->ijazah }}"
-                                                    download>{{ $users->ijazah }}</a>
+                                            <td><a href="/uploads/{{ $career->ijazah }}"
+                                                    download>{{ $career->ijazah }}</a>
                                             </td>
-                                            <td>{{ $users->linkedin }}</td>
-                                            <td>{{ $users->name_job }}</td>
-                                            <td>{{ $users->location }}</td>
+                                            <td>{{ $career->linkedin }}</td>
+                                            <td>{{ $career->name_job }}</td>
+                                            <td>{{ $career->location }}</td>
                                             <td class="text-center">
-                                                {{-- @if ($users->status == 1) --}}
+                                                {{-- @if ($career->status == 1) --}}
                                                 <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
-                                                    data-target="#delete{{ $users->id }}"><i
+                                                    data-target="#delete{{ $career->id }}"><i
                                                         class="fas fa-trash-alt"></i></i></button>
                                                 {{-- @endif --}}
-                                                <a href="{{ route('jobexpertise', ['careerform_id' => $users->id]) }}"
+                                                <a href="{{ route('career.detail', ['id' => $career->id]) }}"
                                                     class="btn btn-success" alt="Detail"><i
                                                         class="far fa-folder-open"></i></a>
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
                                         <!-- Modal -->
-                                        <div class="modal fade" id="delete{{ $users->id }}" tabindex="-1"
+                                        <div class="modal fade" id="delete{{ $career->id }}" tabindex="-1"
                                             role="dialog" aria-labelledby="usersDelete" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -131,7 +131,7 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="{{ url('/career-admin/delete/' . $users->id) }}"
+                                                        <a href="{{ url('/career-admin/delete/' . $career->id) }}"
                                                             class="btn btn-danger">Delete</a>
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Close</button>
@@ -142,7 +142,7 @@
 
                                         <!-- Model Update -->
                                         {{-- @include(
-                                            'admin.users-admin.users-admin-update'
+                                            'admin.career-admin.users-admin-update'
                                         ) --}}
                                     @empty
                                         <div class="alert alert-danger">

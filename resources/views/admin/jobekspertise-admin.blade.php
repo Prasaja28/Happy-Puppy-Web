@@ -28,7 +28,8 @@
                 <div class="col-md-12 my-2">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Jobs Ekspertise Dari : <b>{{ $jobsEkspertise[0]->name }}</b></h3>
+                            <h3 class="card-title">Jobs Ekspertise Dari :
+                                <b>{{ count($jobsEkspertise) ? $jobsEkspertise[0]->name : '' }}</b></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body px-4">

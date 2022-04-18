@@ -7,7 +7,7 @@ use App\Models\JobsEkspertise;
 
 class JobEkspertiseController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         $jobsEkspertise = JobsEkspertise::select('*', 'name')
             ->join('careerform', 'careerform.id', 'jobexpertise.careerform_id')
