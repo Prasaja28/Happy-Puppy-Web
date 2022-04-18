@@ -299,7 +299,7 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="nama" name="name"
-                                        placeholder="Nama">
+                                        value="{{ old('name') }}" placeholder="Nama">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="gender"
@@ -311,7 +311,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" name="age"
-                                        placeholder="Usia">
+                                        value="{{ old('age') }}" placeholder="Usia">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="last_education"
@@ -334,7 +334,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="official_address"
-                                        placeholder="Alamat">
+                                        value="{{ old('official_address') }}" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city"
@@ -364,23 +364,24 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="home_phone"
-                                        placeholder="Telp. rumah">
+                                        value="{{ old('home_phone') }}" placeholder="Telp. rumah">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="official_phone"
-                                        placeholder="Telp. kantor">
+                                        value="{{ old('official_phone') }}" placeholder="Telp. kantor">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="mobile_phone"
-                                        placeholder="No. Hp">
+                                        value="{{ old('mobile_phone') }}" placeholder="No. Hp">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="email" id="email"
-                                        placeholder="Email">
+                                        value="{{ old('email') }}" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="email_confirm"
-                                        name="email_confirm" placeholder="Konfirmasi email">
+                                        value="{{ old('email_confirm') }}" name="email_confirm"
+                                        placeholder="Konfirmasi email">
                                 </div>
                             </div>
                         </div>
@@ -396,7 +397,7 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="job" id="job"
-                                        placeholder="Pekerjaan anda">
+                                        value="{{ old('job') }}" placeholder="Pekerjaan anda">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="bussiness_field"
@@ -410,19 +411,21 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other" name="other"
-                                        placeholder="Lain-lain">
+                                        value="{{ old('other') }}" placeholder="Lain-lain">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="company_name"
-                                        name="company_name" placeholder="Nama Perusahaan">
+                                        value="{{ old('company_name') }}" name="company_name"
+                                        placeholder="Nama Perusahaan">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="postion_company"
-                                        name="postion_company" placeholder="Jabatan anda">
+                                        value="{{ old('postion_company') }}" name="postion_company"
+                                        placeholder="Jabatan anda">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other_2" name="other_2"
-                                        placeholder="Lain-lain">
+                                        value="{{ old('other_2') }}" placeholder="Lain-lain">
                                 </div>
                             </div>
 
@@ -430,7 +433,7 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_2"
-                                        name="address_2" placeholder="Alamat">
+                                        value="{{ old('address_2') }}" name="address_2" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city_2" id="city_2"
@@ -478,47 +481,53 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_3"
-                                        name="address_3" placeholder="Alamat">
+                                        value="{{ old('address_3') }}" name="address_3" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="city_3" name="city_3"
-                                        placeholder="Kota">
+                                        value="{{ old('city_3') }}" placeholder="Kota">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="province_3"
-                                        name="province_3" placeholder="Provinsi">
+                                        value="{{ old('province_3') }}" name="province_3" placeholder="Provinsi">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="known_as_area"
-                                        name="known_as_area" placeholder="Dikenal sebagai Daerah">
+                                        value="{{ old('known_as_area') }}" name="known_as_area"
+                                        placeholder="Dikenal sebagai Daerah">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other_3" name="other_3"
-                                        placeholder="Lain-lain">
+                                        value="{{ old('other_3') }}" placeholder="Lain-lain">
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="building_area"
-                                        name="building_area" placeholder="Luas bangunan                          M">
+                                        value="{{ old('building_area') }}" name="building_area"
+                                        placeholder="Luas bangunan                          M">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Kiri:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="left_business_name"
-                                        name="left_business_name" placeholder="Nama Usaha">
+                                        value="{{ old('left_business_name') }}" name="left_business_name"
+                                        placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="left_business_field"
-                                        name="left_business_field" placeholder="Bidang Usaha">
+                                        value="{{ old('left_business_field') }}" name="left_business_field"
+                                        placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Kanan:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="right_business_name"
-                                        name="right_business_name" placeholder="Nama Usaha">
+                                        value="{{ old('right_business_name') }}" name="right_business_name"
+                                        placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="right_business_field"
-                                        name="right_business_field" placeholder="Bidang Usaha">
+                                        value="{{ old('right_business_field') }}" name="right_business_field"
+                                        placeholder="Bidang Usaha">
                                 </div>
                             </div>
 
@@ -527,30 +536,36 @@
                                 <p style="font-weight: bold;">Usaha Tetangga Belakang:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="behind_business_name"
-                                        name="behind_business_name" placeholder="Nama Usaha">
+                                        value="{{ old('behind_business_name') }}" name="behind_business_name"
+                                        placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="behind_business_field"
-                                        name="behind_business_field" placeholder="Bidang Usaha">
+                                        value="{{ old('behind_business_field') }}" name="behind_business_field"
+                                        placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Depan:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="front_business_name"
-                                        name="front_business_name" placeholder="Nama Usaha">
+                                        value="{{ old('front_business_name') }}" name="front_business_name"
+                                        placeholder="Nama Usaha">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="front_business_field"
-                                        name="front_business_field" placeholder="Bidang Usaha">
+                                        value="{{ old('front_business_field') }}" name="front_business_field"
+                                        placeholder="Bidang Usaha">
                                 </div>
                                 <br><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="front_road_width"
-                                        name="front_road_width" placeholder="Lebar Jalan Depan">
+                                        value="{{ old('front_road_width') }}" name="front_road_width"
+                                        placeholder="Lebar Jalan Depan">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="front_road_traffic"
-                                        name="front_road_traffic" placeholder="Lalu - Lintas Jalan Depan">
+                                        value="{{ old('front_road_traffic') }}" name="front_road_traffic"
+                                        placeholder="Lalu - Lintas Jalan Depan">
                                     <input type="hidden" name="status" id="status" value="0">
                                 </div>
 
