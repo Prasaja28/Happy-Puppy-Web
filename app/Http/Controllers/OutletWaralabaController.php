@@ -32,15 +32,15 @@ class OutletWaralabaController extends Controller
     {
         // dd($request);
         $this->validate($request,[
-            'thumbnail' => 'max:255'
+            'thumbnail' => 'max:2000'
         ]);
         $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
+                $path = '/img/outlet-img/'.time().'-'.$file->getClientOriginalName();
                 //dd($path);
-                $file->move(public_path('img/songlist-img'), $path);
+                $file->move(public_path('img/outlet-img'), $path);
             }
             
             // dd($request->jenis_dokumen);
@@ -64,15 +64,15 @@ class OutletWaralabaController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'thumbnail' => 'max:255'
+            'thumbnail' => 'max:2000'
         ]);
         $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
+                $path = '/img/outlet-img/'.time().'-'.$file->getClientOriginalName();
                 //dd($path);
-                $file->move(public_path('img/songlist-img'), $path);
+                $file->move(public_path('img/outlet-img'), $path);
             }
             else { 
                 $path = $request->thumbnail2;

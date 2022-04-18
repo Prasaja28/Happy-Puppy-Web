@@ -19,7 +19,7 @@ class LandingController extends Controller
     {
         $topartist = Topartist::select('*')
             ->orderBy('id', 'desc')
-            ->limit(5)
+            ->limit(4)
             ->get();
         $songlist_terlaris = Songlist::where('kategori_lagu', 'terlaris')
             ->limit(6)
@@ -30,7 +30,12 @@ class LandingController extends Controller
         $news_terbaru = News::where('news_category', 'lates')
             ->limit(6)
             ->get();
-        $settings = Settings::select('value')->get();
+        $settings = Settings::select('*')
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value','key')
+            ->toArray();
+        // dd($settings);
         return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings'));
     }
 

@@ -6,6 +6,29 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+
+    <style>
+        @media (max-width:600px) {
+            /* pembenahan buat card news */
+            section[name="next-news"] div[name="item"] img {
+                width: 50%;
+                height: 100%;
+                object-fit: cover;
+            }
+            section[name="next-news"] div[name="item"] h4 {
+                font-size: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            section[name="next-news"] div[name="item"] {
+                box-shadow: 4px 6px 10px rgb(0 0 0 / 8%);
+                height: 125px;
+            }
+        }
+    </style>
 @endsection
 
 @section('konten')
@@ -21,45 +44,47 @@
     </div>
 
     {{-- SOCIAL MEDIA --}}
+    @if (count($settings) > 0)
     <div name="social-media">
         <ul class="navbar-right">
-            @if ($settings[0] != null)
+            @if (!empty($settings['url_facebook']))
                 <li>
-                    <a target="_blank" class="social-item" href="{{ $settings[0]->value }}">
+                    <a target="_blank" class="social-item" href="{{ $settings['url_facebook'] }}">
                         <img name="facebook" src="{{ asset('assets/img/icons/facebook.png') }}">
                     </a>
                 </li>
             @endif
-            @if ($settings[1] != null)
+            @if (!empty($settings['url_instagram']))
                 <li>
-                    <a target="_blank" class="social-item" href="{{ $settings[1]->value }}">
+                    <a target="_blank" class="social-item" href="{{ $settings['url_instagram'] }}">
                         <img name="instagram" src="{{ asset('assets/img/icons/instagram.png') }}">
                     </a>
                 </li>
             @endif
-            @if ($settings[2] != null)
+            @if (!empty($settings['url_apple']))
                 <li>
-                    <a target="_blank" class="social-item" href="{{ $settings[2]->value }}">
+                    <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
                         <img name="apple" src="{{ asset('assets/img/icons/apple.png') }}">
                     </a>
                 </li>
             @endif
-            @if ($settings[3] != null)
+            @if (!empty($settings['url_whatsapp']))
                 <li>
-                    <a target="_blank" class="social-item" href="{{ $settings[3]->value }}">
+                    <a target="_blank" class="social-item" href="{{ $settings['url_whatsapp'] }}">
                         <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
                     </a>
                 </li>
             @endif
-            @if ($settings[4] != null)
+            @if (!empty($settings['url_google_play']))
                 <li>
-                    <a target="_blank" class="social-item" href="{{ $settings[4]->value }}">
+                    <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
                         <img src="{{ asset('assets/img/icons/google-play.png') }}">
                     </a>
                 </li>
             @endif
         </ul>
     </div>
+    @endif
     <!-- END -->
 
     <!-- OUTLET SEARCH  -->
@@ -69,7 +94,7 @@
 
             <center>
                 <form class="form" method="get" action="{{ route('search') }}">
-                    <div class="form-group w-50 mb-3">
+                    <div class="form-group mb-3">
                         <label for="search" class="d-block mr-2"></label>
                         <input type="text" name="keyword" class="form-control w-75 d-inline" id="search"
                             placeholder="Cari Outlet">
@@ -84,18 +109,16 @@
                 @endif
             </center>
 
-            <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang
-                sedang berlaku</p>
+            <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang sedang berlaku</p>
 
             <div name="city" class="row pt-3 justify-content-center">
-                <a href="{{ route('search', ['keyword' => 'Jakarta']) }}" class="btn btn-primary btn-search"
+                <a href="{{ route('search', ['keyword' => 'jakarta']) }}" class="btn mx-3 btn-primary btn-search"
                     style="text-transform:uppercase">Jakarta</a>
-                <a href="{{ route('search', ['search' => 'Surabaya']) }}" class="btn btn-primary btn-search"
+                <a href="{{ route('search', ['keyword' => 'surabaya']) }}" class="btn mx-3 btn-primary btn-search"
                     style="text-transform:uppercase">Surabaya</a>
-                <a href="{{ route('search', ['search' => 'Makasar']) }}" class="btn btn-primary btn-search"
+                <a href="{{ route('search', ['keyword' => 'makasar']) }}" class="btn mx-3 btn-primary btn-search"
                     style="text-transform:uppercase">Makasar</a>
-                <a href="{{ route('search', ['search' => 'Samarinda']) }}" class="btn btn-primary btn-search"
-                    style="text-transform:uppercase">Samarinda</a>
+                <a href="{{ route('search', ['keyword' => 'samarinda']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
             </div>
 
             <h4 name="top-artist" class="font-weight-bold text-center py-5">TOP ARTIST</h4>
@@ -112,11 +135,6 @@
                         @foreach ($topartist as $data)
                             @if ($data->status == 1)
                                 <img class="img-thumbnail mr-4 mr-md-5" src="{{ $data->thumbnail }}">
-                                <!-- <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                                                                                                                                                                                                                                                                                                                        <img class="img-thumbnail mr-4 mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                                                                                                                                                                                                                                                                                                                        <img class="img-thumbnail mr-md-5" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                                                                                                                                                                                                                                                                                                                        <img class="img-thumbnail mr-4 mr-md-5 mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
-                                                                                                                                                                                                                                                                                                                                                                                                        <img class="img-thumbnail mt-3 mt-md-0" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"> -->
                             @endif
                         @endforeach
                     @endif
@@ -217,19 +235,12 @@
                     <div class="col-6">
                         <div class="card border-0 rounded-0">
                             <img src="{{ $news_terbaru[0]->thumbnail }}">
-                            <!-- <img src="{{ asset('img/egypt.png') }}"> -->
                             <div class="card-body pb-0">
                                 <div class="card-title">
-                                    <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="date d-flex justify-content-between align-items-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                       <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                       <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
                                     <div class="date d-flex justify-content-between align-items-center">
-                                        <p class="text-date pt-2 pt-md-4 pb-0">
-                                            <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
-                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"><img
-                                                src="{{ asset('img/book.png') }}"></a>
+                                        <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
+                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}" class="main"><img src="{{ asset('img/book.png') }}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -241,13 +252,8 @@
                     <div class="col-6">
                         <div class="card border-0 rounded-0">
                             <img src="{{ $news_terbaru[1]->thumbnail }}">
-                            <!-- <img src="{{ asset('img/egypt.png') }}"> -->
                             <div class="card-body pb-0">
                                 <div class="card-title">
-                                    <!-- <h4 class="font-weight-none pt-1 pt-md-3">Midnight In Egypt</h4>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="date d-flex justify-content-between align-items-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <p class="text-date pt-2 pt-md-4 pb-0">September 02, 2019</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a href="#"><img src="{{ asset('img/book.png') }}"></a> -->
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[1]->news_title_id }}</h4>
                                     <div class="date d-flex justify-content-between align-items-center">
                                         <p class="text-date pt-2 pt-md-4 pb-0">
@@ -279,7 +285,6 @@
                             }
                         @endphp
                         <div name="item" class="col-11 col-md-8 px-0 mb-5">
-                            <!-- <img class="float-left mr-3 mr-md-4" src="{{ asset('img/hijau-next-news.png') }}"> -->
                             <img class="float-left mr-3 mr-md-4" src="{{ $newst->thumbnail }}">
 
                             <div name="description" class="pr-1 pr-md-3">
@@ -288,10 +293,6 @@
                                 <div class="date d-flex justify-content-between align-items-center">
                                     <p class="text-date pt-2 pt-md-4 pb-0">
                                         <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
-                                    <!-- <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                   <h4 class="font-weight-none pt-0 pt-md-3">Usaha Keras Musisi Introvert Zion.T</h4>
-                                                                                                                                                                                                                                                                                                                                                                                                                   <div class="date d-flex justify-content-between align-items-center">
-                                                                                                                                                                                                                                                                                                                                                                                                                     <p class="text-date font-weight-bold pt-3 pt-md-5 pb-0 pb-md-3">September 02, 2019</p> -->
                                     <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
                                         class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
                                 </div>
