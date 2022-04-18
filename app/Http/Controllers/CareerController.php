@@ -46,9 +46,9 @@ class CareerController extends Controller
         ]);
  
         if ($validator->fails()) {
-            return redirect('/formkarir/'. $request->jobvacancy_id)
-                ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
-                ->withInput();
+            return back()
+            ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
+            ->withInput($request->all());     
         }
         // if ($request->email_confirm != $request->email) {
         //     return back()->with([
@@ -203,7 +203,8 @@ class CareerController extends Controller
                 'alert' => 'success'
             ]);
         } else {
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+            return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()
+            ->with([
                 'message' => 'Fromulir Gagal Dikirim, Mohon Periksa Kembali Formulir Anda!',
                 'alert' => 'warning'
             ]);

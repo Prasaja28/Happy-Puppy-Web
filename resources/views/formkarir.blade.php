@@ -65,8 +65,8 @@
         }
 
         /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } */
 
         .foots {
             height: 50px;
@@ -227,6 +227,21 @@
 @endsection
 
 @section('konten')
+    <center>
+        @if (session()->has('message'))
+            <div class="alert alert-{{ session('alert') }} alert-has-icon  alert-dismissible fade show mx-1 justify-content-center"
+                role="alert">
+                <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="alert-title">{{ session('title') }}</span>
+                    </button>
+                    <span class="alert-text">{{ session('message') }}</span>
+                </div>
+            </div>
+        @endif
+    </center>
 
     <!-- add konten in here -->
     <div class="header p-5">
