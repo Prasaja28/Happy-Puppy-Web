@@ -9,12 +9,14 @@
 
     <style>
         @media (max-width:600px) {
+
             /* pembenahan buat card news */
             section[name="next-news"] div[name="item"] img {
                 width: 50%;
                 height: 100%;
                 object-fit: cover;
             }
+
             section[name="next-news"] div[name="item"] h4 {
                 font-size: 12px;
                 overflow: hidden;
@@ -23,11 +25,13 @@
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
             }
+
             section[name="next-news"] div[name="item"] {
                 box-shadow: 4px 6px 10px rgb(0 0 0 / 8%);
                 height: 125px;
             }
         }
+
     </style>
 @endsection
 
@@ -45,45 +49,45 @@
 
     {{-- SOCIAL MEDIA --}}
     @if (count($settings) > 0)
-    <div name="social-media">
-        <ul class="navbar-right">
-            @if (!empty($settings['url_facebook']))
-                <li>
-                    <a target="_blank" class="social-item" href="{{ $settings['url_facebook'] }}">
-                        <img name="facebook" src="{{ asset('assets/img/icons/facebook.png') }}">
-                    </a>
-                </li>
-            @endif
-            @if (!empty($settings['url_instagram']))
-                <li>
-                    <a target="_blank" class="social-item" href="{{ $settings['url_instagram'] }}">
-                        <img name="instagram" src="{{ asset('assets/img/icons/instagram.png') }}">
-                    </a>
-                </li>
-            @endif
-            @if (!empty($settings['url_apple']))
-                <li>
-                    <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
-                        <img name="apple" src="{{ asset('assets/img/icons/apple.png') }}">
-                    </a>
-                </li>
-            @endif
-            @if (!empty($settings['url_whatsapp']))
-                <li>
-                    <a target="_blank" class="social-item" href="{{ $settings['url_whatsapp'] }}">
-                        <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
-                    </a>
-                </li>
-            @endif
-            @if (!empty($settings['url_google_play']))
-                <li>
-                    <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
-                        <img src="{{ asset('assets/img/icons/google-play.png') }}">
-                    </a>
-                </li>
-            @endif
-        </ul>
-    </div>
+        <div name="social-media">
+            <ul class="navbar-right">
+                @if (!empty($settings['url_facebook']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_facebook'] }}">
+                            <img name="facebook" src="{{ asset('assets/img/icons/facebook.png') }}">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_instagram']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_instagram'] }}">
+                            <img name="instagram" src="{{ asset('assets/img/icons/instagram.png') }}">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_apple']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
+                            <img name="apple" src="{{ asset('assets/img/icons/apple.png') }}">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_whatsapp']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_whatsapp'] }}">
+                            <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_google_play']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
+                            <img src="{{ asset('assets/img/icons/google-play.png') }}">
+                        </a>
+                    </li>
+                @endif
+            </ul>
+        </div>
     @endif
     <!-- END -->
 
@@ -109,7 +113,8 @@
                 @endif
             </center>
 
-            <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang sedang berlaku</p>
+            <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang
+                sedang berlaku</p>
 
             <div name="city" class="row pt-3 justify-content-center">
                 <a href="{{ route('search', ['keyword' => 'jakarta']) }}" class="btn mx-3 btn-primary btn-search"
@@ -118,7 +123,8 @@
                     style="text-transform:uppercase">Surabaya</a>
                 <a href="{{ route('search', ['keyword' => 'makasar']) }}" class="btn mx-3 btn-primary btn-search"
                     style="text-transform:uppercase">Makasar</a>
-                <a href="{{ route('search', ['keyword' => 'samarinda']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
+                <a href="{{ route('search', ['keyword' => 'samarinda']) }}" class="btn mx-3 btn-primary btn-search"
+                    style="text-transform:uppercase">Samarinda</a>
             </div>
 
             <h4 name="top-artist" class="font-weight-bold text-center py-5">TOP ARTIST</h4>
@@ -239,8 +245,10 @@
                                 <div class="card-title">
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
                                     <div class="date d-flex justify-content-between align-items-center">
-                                        <p class="text-date pt-2 pt-md-4 pb-0"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
-                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}" class="main"><img src="{{ asset('img/book.png') }}"></a>
+                                        <p class="text-date pt-2 pt-md-4 pb-0">
+                                            <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
+                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
+                                            class="main"><img src="{{ asset('img/book.png') }}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -258,8 +266,8 @@
                                     <div class="date d-flex justify-content-between align-items-center">
                                         <p class="text-date pt-2 pt-md-4 pb-0">
                                             <?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
-                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"><img
-                                                src="{{ asset('img/book.png') }}"></a>
+                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"
+                                            class="main"><img src="{{ asset('img/book.png') }}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -293,8 +301,8 @@
                                 <div class="date d-flex justify-content-between align-items-center">
                                     <p class="text-date pt-2 pt-md-4 pb-0">
                                         <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
-                                    <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
-                                        class="pr-2 pr-md-0"><img src="{{ asset('img/book.png') }}"></a>
+                                    <a href="{{ route('detailNews', ['id' => $newst->id]) }}" class="pr-2 pr-md-0"><img
+                                            src="{{ asset('img/book.png') }}"></a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
