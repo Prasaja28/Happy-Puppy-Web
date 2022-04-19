@@ -24,6 +24,22 @@
             content: ' ';
         }
 
+        .item a.itemClick {
+            color: #85baff;
+            text-align: right;
+            display: block;
+            z-index: 1;
+        }
+
+        .item a.itemClick::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: ' ';
+        }
+
         @media (max-width:600px) {
 
             /* pembenahan buat card news */
@@ -308,7 +324,7 @@
                                 continue;
                             }
                         @endphp
-                        <div name="item" class="col-11 col-md-8 px-0 mb-5">
+                        <div name="item" class="col-11 col-md-8 px-0 mb-5 item">
                             <img class="float-left mr-3 mr-md-4" src="{{ $newst->thumbnail }}">
 
                             <div name="description" class="pr-1 pr-md-3">
@@ -318,7 +334,7 @@
                                     <p class="text-date pt-2 pt-md-4 pb-0">
                                         <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
                                     <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
-                                        class="pr-2 pr-md-0 clickArea"><img src="{{ asset('img/book.png') }}"></a>
+                                        class="pr-2 pr-md-0 itemClick"><img src="{{ asset('img/book.png') }}"></a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
