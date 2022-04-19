@@ -558,7 +558,8 @@
                     <div class="card card-news" style="border: none;z-index: 3;">
                         @if ($news_terbaru->count() != null)
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news" alt="..."> -->
-                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news" alt="...">
+                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main"
+                                alt="...">
                             <div class="card-body">
                                 <!-- <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5> -->
                                 <h5 class="card-title title-news" style="font-weight: bold;">
@@ -593,7 +594,10 @@
                                     <div class="card card-news-lates" style="z-index:2;">
                                         <div class="row no-gutters">
                                             <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
-                                            <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates" alt="...">
+                                            <a href="{{ route('detailNews', ['id' => $newss->id]) }}"
+                                                class="main" style="float:right;color:black">
+                                                <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates" alt="...">
+                                            </a>
                                             <div class="col-8">
                                                 <div class="card-body text-bottom">
                                                     <!-- <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5> -->
@@ -634,9 +638,10 @@
                             <div class="card card-news-popular" style="z-index:2;" id="popular">
                                 <div class="row no-gutters">
                                     <div class="col-6">
-                                        <!-- <img src="{{ asset('img/hijau-next-news.png') }}" class="card-img-top card-img-popular" alt="..."> -->
-                                        <img src="{{ $newsst->thumbnail }}" class="card-img-top card-img-popular"
-                                            alt="...">
+                                        <a href="{{ route('detailNews', ['id' => $newsst->id]) }}" class="main">
+                                            <img src="{{ $newsst->thumbnail }}" class="card-img-top card-img-popular"
+                                                alt="...">
+                                        </a>
                                     </div>
                                     <div class="col-6">
                                         <div class="card-body text-bottom" style="z-index:2;">

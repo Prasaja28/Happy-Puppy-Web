@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 
     <style>
+        .card a.clickArea {
+            color: #85baff;
+            text-align: right;
+            display: block;
+            z-index: 1;
+        }
+
+        .card a.clickArea::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: ' ';
+        }
+
         @media (max-width:600px) {
 
             /* pembenahan buat card news */
@@ -248,7 +264,7 @@
                                         <p class="text-date pt-2 pt-md-4 pb-0">
                                             <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
                                         <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
-                                            class="main"><img src="{{ asset('img/book.png') }}"></a>
+                                            class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -267,7 +283,7 @@
                                         <p class="text-date pt-2 pt-md-4 pb-0">
                                             <?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
                                         <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"
-                                            class="main"><img src="{{ asset('img/book.png') }}"></a>
+                                            class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
                                     </div>
                                 </div>
                             </div>
