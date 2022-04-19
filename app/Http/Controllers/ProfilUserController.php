@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profil;
+use App\Models\Settings;
 
 class ProfilUserController extends Controller
 {
@@ -14,8 +15,13 @@ class ProfilUserController extends Controller
      */
     public function index()
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         $profill = Profil::all();
-        return view('profile',compact('profill'));
+        return view('profile',compact('profill','settings'));
     }
 
     /**

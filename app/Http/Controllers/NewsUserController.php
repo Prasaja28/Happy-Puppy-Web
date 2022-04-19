@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\Settings;
 
 class NewsUserController extends Controller
 {
@@ -14,10 +15,15 @@ class NewsUserController extends Controller
      */
     public function index()
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         // $usernews = News::all();
         $news_terlaris = News::where('news_category','popular')->get();
         $news_terbaru = News::where('news_category','lates')->get();
-        return view('news',compact('news_terlaris','news_terbaru'));
+        return view('news',compact('news_terlaris','news_terbaru','settings'));
     }
 
     /**
@@ -27,6 +33,11 @@ class NewsUserController extends Controller
      */
     public function detailIndex($id)
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         // dd($id);
         $news_detail = News::select('*')
             ->where('id', '=', $id)
@@ -34,7 +45,7 @@ class NewsUserController extends Controller
         $news_detail_terbaru = News::where('news_category', 'lates')
             ->where('id', '!=', $id)
             ->get();
-        return view('news-detail', compact('news_detail', 'news_detail_terbaru'));
+        return view('news-detail', compact('news_detail', 'news_detail_terbaru', 'settings'));
     }
 
     /**

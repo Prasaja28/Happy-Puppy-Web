@@ -37,5 +37,10 @@ class SettingSeeder extends Seeder
             'key' => 'url_google_play',
             'value' => 'https://google_play.com',
         ]);
+
+        Settings::create([
+            'key' => 'url_twitter',
+            'value' => 'https://twitter.com',
+        ]);
     }
 }

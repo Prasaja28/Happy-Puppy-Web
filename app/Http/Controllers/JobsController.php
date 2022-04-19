@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Career;
 use App\Models\Jobs;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -15,11 +16,16 @@ class JobsController extends Controller
      */
     public function index()
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         $jobs = Jobs::select('*')
             ->orderBy('id', 'desc')
             ->limit(5)
             ->get();
-        return view('karir', compact('jobs'));
+        return view('karir', compact('jobs', 'settings'));
     }
 
     /**
@@ -29,7 +35,11 @@ class JobsController extends Controller
      */
     public function filter(Request $request)
     {
-        
+        $settings = Settings::select('*')
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value','key')
+            ->toArray();
         $jobs = Jobs::select('*')
             ->where([
                 ['name_job', 'like', '%' . $request->nama_job . '%'],
@@ -40,7 +50,7 @@ class JobsController extends Controller
         if ($jobs->count() == 0) {
             return view('errors.karror');
         }
-        return view('karir', compact('jobs'));
+        return view('karir', compact('jobs','settings'));
     }
 
     /**

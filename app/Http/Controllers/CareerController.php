@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Career;
 use App\Models\Jobs;
+use App\Models\Settings;
 use App\Models\JobsEkspertise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -24,6 +25,11 @@ class CareerController extends Controller
 
     public function index($jobvacancy_id)
     {
+        $settings = Settings::select('*')
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value','key')
+            ->toArray();
         $jobs = Jobs::select('id', 'name_job', 'location')
             ->where('jobvacancy.id', '=', $jobvacancy_id)
             ->get();
@@ -31,7 +37,7 @@ class CareerController extends Controller
         $careers = Career::select('*', 'name_job', 'location')
             ->join('jobvacancy', 'careerform.jobvacancy_id', 'jobvacancy.id')
             ->get();
-        return view('formkarir', compact('careers', 'jobs'));
+        return view('formkarir', compact('careers', 'jobs', 'settings'));
     }
 
     public function store(Request $request)

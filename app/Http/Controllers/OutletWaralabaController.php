@@ -107,6 +107,11 @@ class OutletWaralabaController extends Controller
 
     public function search(Request $request)
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
             ->select('o.*', 'c.city_name')
@@ -117,6 +122,6 @@ class OutletWaralabaController extends Controller
         if ($outlet->count() == 0) {
             return view('/lokasi-not-found');
         }
-        return view('lokasi-outlet', compact('outlet', 'keyword'));
+        return view('lokasi-outlet', compact('outlet', 'keyword', 'settings'));
     }
 }

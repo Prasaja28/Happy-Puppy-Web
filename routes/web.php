@@ -22,6 +22,7 @@ use App\Http\Controllers\OutletWaralabaController;
 use App\Http\Controllers\WaralabaController;
 use App\Http\Controllers\JobEkspertiseController;
 use App\Http\Controllers\SettingsController;
+use App\Models\Settings;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,16 +49,31 @@ Route::get('/news', [NewsUserController::class, 'index']);
 Route::get('/profile', [ProfilUserController::class, 'index']);
 
 Route::get('/daftar-lagu', function () {
-    return view('daftar-lagu');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('daftar-lagu',compact('settings'));
 });
 Route::get('/lokasi', function () {
-    return view('lokasi');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('lokasi',compact('settings'));
 });
 // Route::get('/karir', function () {
 //     return view('karir');
 // });
 Route::get('/waralaba', function () {
-    return view('waralaba');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('waralaba',compact('settings'));
 });
 // Route::get('/kontak', function () {
 //     return view('kontak');
@@ -66,13 +82,28 @@ Route::get('/waralaba', function () {
 //     return view('formkarir');
 // });
 Route::get('/lokasi-not-found', function () {
-    return view('lokasi-not-found');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('lokasi-not-found',compact('settings'));
 });
 Route::get('/lokasi-outlet', function () {
-    return view('lokasi-outlet');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('lokasi-outlet',compact('settings'));
 });
 Route::get('/form-waralaba', function () {
-    return view('formwaralaba');
+    $settings = Settings::select('*')
+    ->whereNotNull('value')
+    ->get()
+    ->pluck('value','key')
+    ->toArray();
+    return view('formwaralaba',compact('settings'));
 });
 Route::get('/news/detail/{id}', [NewsUserController::class, 'detailIndex'])->name('detailNews');
 

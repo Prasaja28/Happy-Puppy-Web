@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kontak;
+use App\Models\Settings;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -16,8 +17,13 @@ class KontakUserController extends Controller
      */
     public function index()
     {
+        $settings = Settings::select('*')
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value','key')
+        ->toArray();
         $kontakUser = Kontak::all();
-        return view('kontak',compact('kontakUser'));
+        return view('kontak',compact('kontakUser','settings'));
     }
 
     /**
