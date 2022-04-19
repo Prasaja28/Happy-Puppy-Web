@@ -317,8 +317,8 @@
                                 <div class="date d-flex justify-content-between align-items-center">
                                     <p class="text-date pt-2 pt-md-4 pb-0">
                                         <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
-                                    <a href="{{ route('detailNews', ['id' => $newst->id]) }}" class="pr-2 pr-md-0"><img
-                                            src="{{ asset('img/book.png') }}"></a>
+                                    <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
+                                        class="pr-2 pr-md-0 clickArea"><img src="{{ asset('img/book.png') }}"></a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
