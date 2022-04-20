@@ -594,14 +594,13 @@
                                     <div class="card card-news-lates" style="z-index:2;">
                                         <div class="row no-gutters">
                                             <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
-                                            <a href="{{ route('detailNews', ['id' => $newss->id]) }}"
-                                                class="main" style="float:right;color:black">
-                                                <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates" alt="...">
-                                            </a>
+                                            <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates main"
+                                                alt="...">
                                             <div class="col-8">
                                                 <div class="card-body text-bottom">
                                                     <!-- <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5> -->
-                                                    <h5 class="card-title-lates card-title">{{ $newss->news_title_id }}
+                                                    <h5 class="card-title-lates card-title">
+                                                        {{ $newss->news_title_id }}
                                                     </h5>
                                                     <p class="news-time-lates">
                                                         <?= date('M d, Y', strtotime($newss->news_date)) ?>
