@@ -74,7 +74,7 @@
 
         .card-news {
             position: absolute;
-            width: 32rem;
+            width: 38.5vw;
             height: 25rem;
             margin-bottom: 10px;
             top: -60px;
@@ -83,11 +83,11 @@
 
         .card-news1 {
             position: absolute;
-            width: 31rem;
+            width: 37vw;
             height: 26.3rem;
             margin-bottom: 3px;
             z-index: 2;
-            left: 50px;
+            left: 4vw;
             top: 10px;
             background-color: #E9EEF4;
             top: -60px;
@@ -120,7 +120,7 @@
         }
 
         .card-news-lates {
-            width: 25rem;
+            width: 35vw;
             height: 90px;
             margin: 0 auto;
             /* Added */
@@ -128,7 +128,7 @@
             /* Added */
             margin-bottom: 10px;
             margin-top: 10px;
-            right: 7px;
+            right: -5vw;
             border: none;
             top: -70px;
 
@@ -228,8 +228,8 @@
         }
 
         .card-news-lates-list {
-            padding-left: 120px;
-            padding-right: 120px;
+            padding-left: 5vw;
+            padding-right: 5vw;
         }
 
         .card a.main {
@@ -594,8 +594,8 @@
                                     <div class="card card-news-lates" style="z-index:2;">
                                         <div class="row no-gutters">
                                             <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
-                                            <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates main"
-                                                alt="...">
+                                            <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates" alt="...">
+                                            </a>
                                             <div class="col-8">
                                                 <div class="card-body text-bottom">
                                                     <!-- <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5> -->
@@ -728,4 +728,5 @@
             }
         }
     </script>
+
 @endsection
