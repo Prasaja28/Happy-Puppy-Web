@@ -42,7 +42,7 @@
             background-color: #221E40;
             min-height: 299px;
             max-width: 1160px;
-            width: 100%;
+            width: 90%;
             margin: 20px 0px 0px 70px;
             padding-left: 20px;
             padding-right: 20px;
@@ -74,7 +74,7 @@
 
         .card-news {
             position: absolute;
-            width: 38.5vw;
+            width: 33.5vw;
             height: 25rem;
             margin-bottom: 10px;
             top: -60px;
@@ -83,7 +83,7 @@
 
         .card-news1 {
             position: absolute;
-            width: 37vw;
+            width: 31vw;
             height: 26.3rem;
             margin-bottom: 3px;
             z-index: 2;
@@ -120,7 +120,7 @@
         }
 
         .card-news-lates {
-            width: 35vw;
+            width: 30vw;
             height: 90px;
             margin: 0 auto;
             /* Added */
@@ -128,7 +128,7 @@
             /* Added */
             margin-bottom: 10px;
             margin-top: 10px;
-            right: -5vw;
+            right: 5vw;
             border: none;
             top: -70px;
 
