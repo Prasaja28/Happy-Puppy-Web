@@ -8,6 +8,7 @@
     <!-- Add tag css in here -->
     <style>
         .header {
+            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -30,7 +31,7 @@
             margin: 0;
             font-family: 'Poppins';
             font-size: 40px;
-            min-height: 480px;
+            padding-left: 5%;
         }
 
         hr {
