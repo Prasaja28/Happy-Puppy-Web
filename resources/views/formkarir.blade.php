@@ -8,6 +8,7 @@
     <!-- Add tag css in here -->
     <style>
         .header {
+            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -23,9 +24,9 @@
             position: absolute;
             bottom: 0;
             text-align: justify;
-            margin: 7rem 1rem;
+            margin: 0;
             font-size: 40px;
-            min-height: 480px;
+            padding-left: 5%;
         }
 
         hr {
@@ -63,10 +64,6 @@
         #card1 {
             margin-top: 6px;
         }
-
-        /* #myBtn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
 
         .foots {
             height: 50px;
@@ -113,15 +110,25 @@
         }
 
         @media (max-width: 600px) {
+            .header {
+                position: relative;
+                min-height: 20vh;
+                background: no-repeat center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: right;
+                background-image: url('/img/formwaralaba.png')
+            }
             #txt1 {
                 color: white;
                 position: absolute;
                 bottom: 0;
                 text-align: justify;
                 margin: 0;
-                font-size: 35px;
-                min-height: 480px;
-                margin-left: -50px;
+                font-size: 12px;
+                margin-left: -51px;
             }
 
             .back-grad {

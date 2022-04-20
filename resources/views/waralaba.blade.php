@@ -46,6 +46,7 @@
             font-size: 40px;
             font-weight: bold;
             font-family: 'Poppins';
+            padding-left: 6%;
         }
 
         .back-grad {
