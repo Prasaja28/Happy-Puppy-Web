@@ -186,6 +186,16 @@
                 height: auto;
                 width: 265px;
             }
+            .title-news2 {
+                /* top: 20px; */
+                font-size: 20px;
+                line-height: 40pt;
+                letter-spacing: 3px;
+                font-weight: 500;
+                margin-top: 35px;
+                color: #000080;
+                font-family: 'Poppins';
+            }
 
             .card-news {
                 width: 10rem;
