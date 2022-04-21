@@ -7,6 +7,7 @@ use App\Models\Outlet;
 use App\Models\User;
 use App\Models\City;
 use App\Models\Citysub;
+use App\Models\Settings;
 use Session;
 
 class OutletWaralabaController extends Controller
@@ -120,8 +121,9 @@ class OutletWaralabaController extends Controller
             ->leftJoin('city as c', 'c.id', '=' , "o.city_id")
             ->get();
         if ($outlet->count() == 0) {
-            return view('/lokasi-not-found');
+            return view('/lokasi-not-found', compact('settings'));
         }
+        
         return view('lokasi-outlet', compact('outlet', 'keyword', 'settings'));
     }
 }
