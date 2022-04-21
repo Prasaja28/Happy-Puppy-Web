@@ -119,7 +119,8 @@
         @media (max-width: 600px) {
 
             .header {
-                min-height: 50vh;
+                position: relative;
+                min-height: 20vh;
                 background: no-repeat center scroll;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
@@ -143,8 +144,8 @@
                 bottom: 0;
                 text-align: justify;
                 margin: auto;
-                font-size: 30px;
-                min-height: 480px;
+                font-size: 20px;
+                padding-left: 1%;
             }
 
             .back-grad {
