@@ -7,7 +7,6 @@
     <!-- Add tag css in here -->
     <style>
         .header {
-            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -18,6 +17,11 @@
             background-image: url('/img/news.png')
         }
 
+        .header p {
+            font-weight: bold;
+            margin-top: -65px;
+        }
+
         #n1 {
             font-family: 'Poppins';
         }
@@ -25,23 +29,25 @@
         #txt2 {
             color: white;
             position: absolute;
-            bottom: 0;
+            margin: 275px 250px 50px 0px;
             text-align: justify;
-            margin: 0;
-            font-size: 40px;
+            font-size: 50px;
+            min-height: 360px;
             font-weight: bold;
+            text-indent: 1.2in;
             font-family: 'Poppins';
-            padding-left: 6%;
         }
 
         .lates-news-list {
             background-color: #221E40;
             min-height: 299px;
-            max-width: 1160px;
+            /* max-width: 1160px; */
             width: 90%;
-            margin: 20px 0px 0px 70px;
+            /* margin: 20px 0px 0px 70px; */
             padding-left: 20px;
             padding-right: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .lates-title {
@@ -113,11 +119,6 @@
             font-size: 18px;
             margin-bottom: 30px;
             font-family: 'Poppins';
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
         }
 
         .card-news-lates {
@@ -139,6 +140,7 @@
             object-fit: cover;
             object-position: center;
             height: 90px;
+            width: 100%;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -162,11 +164,6 @@
             margin-bottom: 19px;
             font-family: 'Poppins';
             z-index: 2;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
         }
 
         .news-time-lates {
@@ -203,7 +200,7 @@
             margin-right: 0px;
             /*top: 400px;*/
             min-height: 600px;
-            max-width: 1600px;
+            /* max-width: 1600px; */
             width: 100%;
             background-color: #221E40;
         }
@@ -296,7 +293,6 @@
 
         @media (max-width:600px) {
             .header {
-                position: relative;
                 min-height: 20vh;
                 background: no-repeat center scroll;
                 -webkit-background-size: cover;
@@ -305,6 +301,12 @@
                 background-size: cover;
                 background-position: rightl;
                 background-image: url('/img/news.png')
+            }
+
+            .header p {
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: -160px;
             }
 
             .lates-news-list {
@@ -316,7 +318,9 @@
             }
 
             #txt2 {
-                font-size: 25px;
+                position: absolute;
+                margin: 200px -250px 0px -150px;
+                font-size: 35px;
             }
 
             .news-list {
@@ -365,11 +369,6 @@
                 margin-top: -15px;
                 font-size: 10px;
                 min-height: 30px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
                 /* font-family: 'Poppins'; */
             }
 
@@ -411,11 +410,6 @@
                 min-height: 15px;
                 margin-top: -10px;
                 font-size: 9px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
             }
 
             .news-time-lates {
@@ -567,8 +561,10 @@
                     <div class="card card-news" style="border: none;z-index: 3;">
                         @if ($news_terbaru->count() != null)
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news" alt="..."> -->
-                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main" alt="...">
+                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main"
+                                alt="...">
                             <div class="card-body">
+                                <!-- <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5> -->
                                 <h5 class="card-title title-news" style="font-weight: bold;">
                                     {{ $news_terbaru[0]->news_title_id }}</h5>
                                 <p class="news-time"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?>
