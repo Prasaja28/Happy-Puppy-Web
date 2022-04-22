@@ -172,7 +172,7 @@
                     @if ($topartist->count() != 0)
                         @foreach ($topartist as $data)
                             @if ($data->status == 1)
-                                <img class="img-thumbnail mr-4 mr-md-5" src="{{ $data->thumbnail }}">
+                                <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
                             @endif
                         @endforeach
                     @endif

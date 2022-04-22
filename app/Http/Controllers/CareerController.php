@@ -68,8 +68,8 @@ class CareerController extends Controller
             $file2 = $request->file('ijazah');
             $filename = $file->getClientOriginalName();
             $filename2 = $file2->getClientOriginalName();
-            $path = Carbon::now()->format('Y') . '/';
-            $path2 = Carbon::now()->format('Y') . '/';
+            $path = 'cv' . '/';
+            $path2 = 'ijazah' . '/';
 
             $data = [
                 'id',
@@ -134,8 +134,8 @@ class CareerController extends Controller
             $file2 = $request->file('ijazah_mob');
             $filename = $file->getClientOriginalName();
             $filename2 = $file2->getClientOriginalName();
-            $path = Carbon::now()->format('Y') . '/';
-            $path2 = Carbon::now()->format('Y') . '/';
+            $path = 'cv' . '/';
+            $path2 = 'ijazah' . '/';
 
             $data = [
                 'id',
