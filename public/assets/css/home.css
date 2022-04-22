@@ -314,7 +314,7 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
     section[name="next-news"] div[name="item"] img {
         object-fit: cover;
         object-position: center;
-        height: 230px;
+        height: 270px;
     }
 
     section[name="next-news"] div[name="item"] .label {
@@ -347,5 +347,115 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
 @media (min-width: 992px) {
     .jumbotron .hero-title-container {
         margin-top: 240px;
+    }
+
+    .jumbotron {
+        width: 100%;
+        height: 700px;
+        background-repeat: no-repeat;
+    }
+
+    .jumbotron h1 {
+        font-weight: 800;
+        font-size: 84px;
+    }
+
+    .jumbotron h1 div {
+        font-weight: 100;
+        font-size: 92px;
+        margin-top: -25px;
+        margin-bottom: -25px;
+    }
+
+    .jumbotron p {
+        font-weight: bold;
+        font-size: 32px;
+    }
+
+    /* ********************************************************** */
+    div[name="social-media"] ul.navbar-right {
+        top: 40%;
+        border-radius: 15px;
+    }
+
+    /* ********************************************************** */
+    section[name="outlet-search"] h4 {
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    /* ********************************************************** */
+    section[name="song"] h6.top-title {
+        margin-top: -150px;
+        font-size: 20px;
+    }
+
+    section[name="song"] .card h5,
+    section[name="song"] div[name="list-song"] h6 {
+        font-size: 18px;
+    }
+
+    section[name="song"] p.text-muted {
+        font-size: 14px;
+    }
+
+    section[name="song"] button.btn-modif {
+        width: 30%;
+        font-size: 14px;
+    }
+
+    /* ********************************************************* */
+    section[name="latest-news"] h6 {
+        font-size: 22px;
+    }
+
+    section[name="latest-news"] a[name="view-all"] {
+        font-size: 16px;
+    }
+
+    section[name="latest-news"] .card h4 {
+        font-size: 24px;
+    }
+
+    section[name="latest-news"] p.text-date {
+        font-size: 18px;
+    }
+
+    section[name="latest-news"] div.date img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ***************************************************** */
+    section[name="next-news"] div[name="item"] img {
+        object-fit: cover;
+        object-position: center;
+        height: 230px;
+    }
+
+    section[name="next-news"] div[name="item"] .label {
+        font-size: 18px;
+    }
+
+    section[name="next-news"] div[name="item"] h4 {
+        line-height: 2rem;
+        font-size: 20px;
+        /* font-size: 12px; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    section[name="next-news"] div[name="item"] .text-date {
+        font-size: 18px;
+        font-weight: bold;
+        color: #c3c8d9;
+    }
+
+    section[name="next-news"] div.date img {
+        width: 30px;
+        height: 30px;
     }
 }
