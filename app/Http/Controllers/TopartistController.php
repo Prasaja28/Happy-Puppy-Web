@@ -45,13 +45,15 @@ class TopartistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/topartist-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = time().'.'.$file->getClientOriginalName();
+                $path = 'img/topartist-img/';
                 //dd($path);
-                $file->move(public_path('img/topartist-img'), $path);
+                $destinationPath = public_path('/uploads/' . $path);
+                $file->move($destinationPath, $fileName);
             }
             // dd($request->jenis_dokumen);
             Topartist::create([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'name' => $request->name,
                 'users_id' => $request->users_id,
                 'status' => 1
@@ -98,15 +100,16 @@ class TopartistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/topartist-img/'.time().'-'.$file->getClientOriginalName();
-                //dd($path);
-                $file->move(public_path('img/topartist-img'), $path);
+                $fileName = time().'.'.$file->getClientOriginalName();
+                $path = 'img/topartist-img/';
+                $destinationPath = public_path('/uploads/' . $path);
+                $file->move($destinationPath, $fileName);
             }else{
                 $path = $request->thumbnail2;
             }
             Topartist::where('id',$id)
             ->update([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'name' => $request->name,
                 'status' => $request->status,
                 'users_id' => $request->users_id
