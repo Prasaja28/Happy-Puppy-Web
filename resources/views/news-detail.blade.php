@@ -118,8 +118,11 @@
         }
 
         .image-background img{
-            height: auto;
-            width: 500px;
+            margin: auto;
+                margin-top: 50px;
+                width: 85%;
+                padding: 5%;
+                color: white;
         }
 
         .image-background {
@@ -183,8 +186,11 @@
             }
 
             .image-background img{
-                height: auto;
-                width: 265px;
+                margin: auto;
+                margin-top: 50px;
+                width: 85%;
+                padding: 5%;
+                color: white;
             }
             .title-news2 {
                 /* top: 20px; */
