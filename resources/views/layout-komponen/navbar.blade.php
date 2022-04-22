@@ -97,7 +97,7 @@
   var width = screen.width;
   console.log(width);
   
-  if(width <= 768){
+  if(width <= 990){
       document.getElementById('nav-mobile').style.display= 'block';
   }
 </script>
