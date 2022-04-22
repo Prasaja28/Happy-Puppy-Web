@@ -7,6 +7,7 @@
     <!-- Add tag css in here -->
     <style>
         .header {
+            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -17,11 +18,6 @@
             background-image: url('/img/news.png')
         }
 
-        .header p {
-            font-weight: bold;
-            margin-top: -65px;
-        }
-
         #n1 {
             font-family: 'Poppins';
         }
@@ -29,13 +25,13 @@
         #txt2 {
             color: white;
             position: absolute;
-            margin: 275px 250px 50px 0px;
+            bottom: 0;
             text-align: justify;
-            font-size: 50px;
-            min-height: 360px;
+            margin: 0;
+            font-size: 40px;
             font-weight: bold;
-            text-indent: 1.2in;
             font-family: 'Poppins';
+            padding-left: 6%;
         }
 
         .lates-news-list {
@@ -119,6 +115,11 @@
             font-size: 18px;
             margin-bottom: 30px;
             font-family: 'Poppins';
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .card-news-lates {
@@ -164,6 +165,11 @@
             margin-bottom: 19px;
             font-family: 'Poppins';
             z-index: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .news-time-lates {
@@ -293,6 +299,7 @@
 
         @media (max-width:600px) {
             .header {
+                position: relative;
                 min-height: 20vh;
                 background: no-repeat center scroll;
                 -webkit-background-size: cover;
@@ -301,12 +308,6 @@
                 background-size: cover;
                 background-position: rightl;
                 background-image: url('/img/news.png')
-            }
-
-            .header p {
-                font-weight: bold;
-                font-size: 20px;
-                margin-top: -160px;
             }
 
             .lates-news-list {
@@ -318,9 +319,10 @@
             }
 
             #txt2 {
-                position: absolute;
-                margin: 200px -250px 0px -150px;
-                font-size: 35px;
+                color: white;
+                margin: 0;
+                font-size: 20px;
+                margin-left: -48px;
             }
 
             .news-list {
@@ -362,14 +364,16 @@
             .news-time {
                 font-size: 8px;
                 margin-top: -23px;
-                /* font-family: 'Poppins'; */
             }
 
             .title-news {
                 margin-top: -15px;
                 font-size: 10px;
-                min-height: 30px;
-                /* font-family: 'Poppins'; */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
 
             .card-news-lates {
@@ -410,11 +414,16 @@
                 min-height: 15px;
                 margin-top: -10px;
                 font-size: 9px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
 
             .news-time-lates {
                 font-size: 7px;
-                margin-top: -8px;
+                margin-top: -14px;
                 /* font-family: 'Poppins'; */
             }
 
@@ -451,7 +460,7 @@
             .card-img-popular {
                 object-fit: cover;
                 object-position: center;
-                height: 80px;
+                height: 68px;
             }
 
             .popular-card-news {
