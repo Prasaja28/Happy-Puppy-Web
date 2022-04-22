@@ -32,11 +32,10 @@
       background-color:#221E40;
   }
   .btn-search{
-      border-radius:30px;
-      width:100px;
-      font-size:8px;
-      margin-left:25px;
-      margin-right:25px;
+      font-weight: 300;
+      border-radius: 50px;
+      margin-top: -30px;
+      margin-bottom: 50px;
       font-family: 'Poppins';
   }
   .background-bottom{
@@ -46,18 +45,23 @@
       margin-top:-100px;
       position: relative;
   }
+  #butt{
+    margin-top: 45px;
+  }
   @media (max-width: 576px) {
       .cabang{
-          font-size:10px;
+          font-size:15px;
       }
       .cabang-content{
-          font-size:8px;
+          font-size:12px;
       }
     .btn-search{
-      border-radius:8px;
-      width:60px;
-      font-size:7px;
-      margin: 4px;
+      font-weight: 300;
+      border-radius: 50px;
+      margin-top: -30px;
+      margin-bottom: 50px;
+      font-size: 12px;
+      font-family: 'Poppins';
     }
     .map-indonesia{
       min-height: 8vh;
@@ -100,7 +104,7 @@
             <center>
               <h5 class="p-4 font-weight-bold">Cari Oulet Terdekat</h5>
               <form class="form" method="get" action="{{ route('search') }}">
-                <div class="form-group w-50 mb-3">
+                <div class="form-group mb-3">
                     <label for="search" class="d-block mr-2"></label>
                     <input type="text" name="keyword" class="form-control w-75 d-inline" id="search" placeholder="Cari Outlet">
                     <button type="submit" class="btn btn-primary mb-1">Cari</button>
@@ -115,7 +119,7 @@
             </center>
 
             <div class="container-fluid pb-4 text-center">
-              <div class="row py-3">
+              <div class="row py-3" id="butt">
                 <div class="col-12">
                       <a href="{{ route('search', ['keyword'=> 'jakarta'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
                       <a href="{{ route('search', ['keyword'=> 'surabaya'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
