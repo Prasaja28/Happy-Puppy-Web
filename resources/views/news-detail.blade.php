@@ -335,8 +335,7 @@
                                             </h5>
                                             <p class="news-time">{{ $ntd->news_date }}
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"
-                                                    class="" style="float:right;color:black"><i
-                                                        class="fas fa-book-open"></i></a>
+                                                class="main" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>
