@@ -39,7 +39,9 @@ class OutletWaralabaController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/outlet-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = time().'.'.$file->getClientOriginalName();
+                $path = '/img/outlet-img/';
+                $destinationPath = public_path('/uploads/' . $path);
                 //dd($path);
                 $file->move(public_path('img/outlet-img'), $path);
             }
