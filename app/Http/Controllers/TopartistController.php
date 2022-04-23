@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Topartist;
 use Session;
+use Illuminate\Support\Facades\File; 
 class TopartistController extends Controller
 {
     /**
@@ -45,7 +46,7 @@ class TopartistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = '.'.$file->getClientOriginalName();
                 $path = 'img/topartist-img/';
                 //dd($path);
                 $destinationPath = public_path('/uploads/' . $path);
@@ -100,7 +101,7 @@ class TopartistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/topartist-img/';
                 $destinationPath = public_path('/uploads/' . $path);
                 $file->move($destinationPath, $fileName);
@@ -123,9 +124,16 @@ class TopartistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         Topartist::where('id',$id)->delete();
+        // $fileName = Topartist::select('thumbnail')->where('id',$id)->first();
+        // // $path = 'img/topartist-img/';
+        // $try=(public_path('uploads\img\topartist-img'.'.'.$fileName));
+        // dd($try);
+        // if (File::exists(public_path('uploads/img/topartist-img/'.'.'.$request->thumbnail))) {
+        //     File::delete(public_path('uploads/img/topartist-img/'.'.'.$request->thumbnail));
+        // }
         return redirect('/topartist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }
