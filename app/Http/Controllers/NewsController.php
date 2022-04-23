@@ -44,13 +44,14 @@ class NewsController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/news-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = '.'.$file->getClientOriginalName();
+                $path = '/img/news-img/';
                 //dd($path);
-                $file->move(public_path('img/news-img'), $path);
+                $file->move(public_path('/uploads/'.$path), $fileName);
             }
             // dd($request->jenis_dokumen);
             News::create([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'news_title_en' => $request->news_title_en,
                 'news_title_id' => $request->news_title_id,
                 'news_content_en' => $request->news_content_en,
@@ -104,15 +105,16 @@ class NewsController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/news-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = '.'.$file->getClientOriginalName();
+                $path = '/img/news-img/';
                 //dd($path);
-                $file->move(public_path('img/news-img'), $path);
+                $file->move(public_path('/uploads/' . $path), $fileName);
             }else{
                 $path = $request->thumbnail2;
             }
             News::where('id',$id)
             ->update([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'news_title_en' => $request->news_title_en,
                 'news_title_id' => $request->news_title_id,
                 'news_content_en' => $request->news_content_en,

@@ -190,7 +190,7 @@
                         <h6 class="font-weight-bold top-title">LAGU TERLARIS</h6>
                         <div class="card border-0">
                             @if ($songlist_terlaris->count() != null)
-                                <img src="{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
+                                <img src="/uploads/{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
                             @endif
                             <div class="card-body">
                                 @if ($songlist_terlaris->count() != null)
@@ -205,7 +205,7 @@
                         <h6 class="font-weight-bold top-title">LAGU TERBARU</h6>
                         <div class="card border-0">
                             @if ($songlist_terbaru->count() != null)
-                                <img src="{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
+                                <img src="/uploads/{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
                             @endif
                             <div class="card-body">
                                 @if ($songlist_terbaru->count() != null)
@@ -272,7 +272,7 @@
                 @if ($news_terbaru->count() > 0)
                     <div class="col-6">
                         <div class="card border-0 rounded-0">
-                            <img src="{{ $news_terbaru[0]->thumbnail }}">
+                            <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}">
                             <div class="card-body pb-0">
                                 <div class="card-title">
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
@@ -291,7 +291,7 @@
                 @if ($news_terbaru->count() > 1)
                     <div class="col-6">
                         <div class="card border-0 rounded-0">
-                            <img src="{{ $news_terbaru[1]->thumbnail }}">
+                            <img src="/uploads/{{ $news_terbaru[1]->thumbnail }}">
                             <div class="card-body pb-0">
                                 <div class="card-title">
                                     <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[1]->news_title_id }}</h4>
@@ -325,7 +325,7 @@
                             }
                         @endphp
                         <div name="item" class="col-11 col-md-8 px-0 mb-5 item">
-                            <img class="float-left mr-3 mr-md-4" src="{{ $newst->thumbnail }}">
+                            <img class="float-left mr-3 mr-md-4" src="/uploads/{{ $newst->thumbnail }}">
 
                             <div name="description" class="pr-1 pr-md-3">
                                 <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>

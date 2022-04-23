@@ -44,13 +44,14 @@ class SonglistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = '.'.$file->getClientOriginalName();
+                $path = '/img/songlist-img/';
                 //dd($path);
-                $file->move(public_path('img/songlist-img'), $path);
+                $file->move(public_path('/uploads/' . $path), $fileName);
             }
             // dd($request->jenis_dokumen);
             Songlist::create([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
@@ -98,15 +99,16 @@ class SonglistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $path = '/img/songlist-img/'.time().'-'.$file->getClientOriginalName();
+                $fileName = '.'.$file->getClientOriginalName();
+                $path = '/img/songlist-img/';
                 //dd($path);
-                $file->move(public_path('img/songlist-img'), $path);
+                $file->move(public_path('/uploads/'. $path), $fileName);
             }else{
                 $path = $request->thumbnail2;
             }
             Songlist::where('id',$id)
             ->update([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName,
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,

@@ -570,7 +570,7 @@
                     <div class="card card-news" style="border: none;z-index: 3;">
                         @if ($news_terbaru->count() != null)
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news" alt="..."> -->
-                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main"
+                            <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main"
                                 alt="...">
                             <div class="card-body">
                                 <!-- <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5> -->
@@ -587,7 +587,8 @@
                     <div class="card card-news1" style="border: none;z-index: 2;">
                         @if ($news_terbaru->count() != null)
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="..."> -->
-                            <img src="{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news1" alt="...">
+                            <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news1"
+                                alt="...">
                         @endif
                         <div class="card-body">
                         </div>
@@ -606,7 +607,8 @@
                                     <div class="card card-news-lates" style="z-index:2;">
                                         <div class="row no-gutters">
                                             <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
-                                            <img src="{{ $newss->thumbnail }}" class="col-4 card-img-lates" alt="...">
+                                            <img src="/uploads/{{ $newss->thumbnail }}" class="col-4 card-img-lates"
+                                                alt="...">
                                             </a>
                                             <div class="col-8">
                                                 <div class="card-body text-bottom">
@@ -650,8 +652,8 @@
                                 <div class="row no-gutters">
                                     <div class="col-6">
                                         <a href="{{ route('detailNews', ['id' => $newsst->id]) }}" class="main">
-                                            <img src="{{ $newsst->thumbnail }}" class="card-img-top card-img-popular"
-                                                alt="...">
+                                            <img src="/uploads/{{ $newsst->thumbnail }}"
+                                                class="card-img-top card-img-popular" alt="...">
                                         </a>
                                     </div>
                                     <div class="col-6">
@@ -686,8 +688,8 @@
                                     <div class="row no-gutters">
                                         <div class="col-6">
                                             <!-- <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="..."> -->
-                                            <img src="{{ $newsst->thumbnail }}" class="card-img-top card-img-popular"
-                                                alt="...">
+                                            <img src="/uploads/{{ $newsst->thumbnail }}"
+                                                class="card-img-top card-img-popular" alt="...">
                                         </div>
                                         <div class="col-6">
                                             <div class="card-body text-bottom" style="z-index:2;">
