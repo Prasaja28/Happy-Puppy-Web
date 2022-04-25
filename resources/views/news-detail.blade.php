@@ -259,7 +259,7 @@
     <div class="header" style="z-index:1;">
     </div>
     <div class="image-background" style="z-index: 3;">
-        <img src="{{ $news_detail[0]->thumbnail }}" alt="">
+        <img src="/uploads/{{ $news_detail[0]->thumbnail }}" alt="">
     </div>
     <!-- add konten in here -->
     <div class="container news-content">
@@ -305,7 +305,7 @@
                                 @endphp
                                 <div class="col-12 my-2">
                                     <div class="card card-news">
-                                        <img src="{{ $ntd->thumbnail }}" alt="...">
+                                        <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
                                                 {{ $ntd->news_title_id }}
@@ -334,7 +334,7 @@
                                 @endphp
                                 <div class="col-12 my-2">
                                     <div class="card card-news">
-                                        <img src="{{ $ntd->thumbnail }}" alt="...">
+                                        <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
                                                 {{ $ntd->news_title_id }}
