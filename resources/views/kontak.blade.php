@@ -48,7 +48,6 @@
             font-size: 15px;
             font-family: 'Poppins';
             font-weight: bold;
-            text-align: justify;
         }
 
         #p2 {
