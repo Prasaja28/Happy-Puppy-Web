@@ -60,7 +60,8 @@
                             <tr>
                               <td>{{$loop->iteration}}</td>
                               <td>
-                                  <img src="{{ asset($outlet->thumbnail) }}" width="100" height="100" alt="">
+                                  <img src="/uploads/{{ $outlet->thumbnail }}" width="100" height="100"
+                                                    alt="">
                               </td>
                               <td>{{$outlet->name}}</td>
                               <td>{{$outlet->address}}</td>
