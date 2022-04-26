@@ -62,7 +62,7 @@ class OutletWaralabaController extends Controller
             return redirect('/outlet-admin')->with('status','Data Berhasil Di Simpan!!!'); 
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'thumbnail' => 'max:2000'

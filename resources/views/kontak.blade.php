@@ -270,7 +270,7 @@
             }
 
             .back {
-                height: 750px;
+                height: 768px;
                 width: auto;
                 background-color: #85A4E1;
             }
@@ -690,26 +690,59 @@
                     <h2 class="accordionItemHeading">Kontak</h2>
                     <div id="kontak" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
-                            <form action="/action_page.php">
-                                <div class="row">
+                             <form action="{{ url('/kontak/store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
+                                            name="name" placeholder="Nama" value="{{ old('name') }}" required>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="MID" name="lastname"
-                                            placeholder="Member ID">
+                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
+                                            id="member_id" name="member_id" placeholder="Member ID" value="{{ old('member_id') }}"
+                                            required>
+                                        @error('member_id')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="email" name="email"
-                                            placeholder="Email">
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
+                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="telp" name="telp"
-                                            placeholder="Telp."></input>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
+                                            name="phone" placeholder="Telp." value="{{ old('phone') }}" required>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="pesan" name="pesan"
-                                            placeholder="Pesan"></input>
+                                        <input class="form-control @error('complaint') is-invalid @enderror" type="text"
+                                            id="complaint" name="complaint" placeholder="Pesan" value="{{ old('complaint') }}"
+                                            required>
+                                        @error('complaint')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <br><br><br><br><br>
+                                        <div class="form-group row" id="web_captcha">
+                                            <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                        </div>
+
+                                        <br>
                                         <input style="background-color:#0275d8" type="submit" value="Submit">
                                     </div>
                                 </div>
@@ -722,26 +755,58 @@
                     <h2 class="accordionItemHeading">Request Lagu</h2>
                     <div id="Request" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
-                            <form action="/action_page.php">
-                                <div class="row">
+                            <form action="{{ url('/request/store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                                <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
+                                            name="name" placeholder="Nama" value="{{ old('name') }}" required>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="MID" name="lastname"
-                                            placeholder="Member ID">
+                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
+                                            id="member_id" name="member_id" placeholder="Member ID"
+                                            value="{{ old('member_id') }}" required>
+                                        @error('member_id')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="email" name="email"
-                                            placeholder="Email">
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
+                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="telp" name="telp"
-                                            placeholder="Telp."></input>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
+                                            name="phone" placeholder="Telp." value="{{ old('phone') }}" required>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="req" name="req"
-                                            placeholder="Request Lagu"></input>
+                                        <input class="form-control @error('request') is-invalid @enderror" type="text" id="request"
+                                            name="request" placeholder="Request Lagu" value="{{ old('request') }}" required>
+                                        @error('request')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <br><br><br><br><br>
+                                        <div class="form-group row" id="web_captcha">
+                                            <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                        </div>
+
+                                        <br>
                                         <input style="background-color:#0275d8" type="submit" value="Submit">
                                     </div>
                                 </div>
@@ -754,29 +819,65 @@
                     <h2 class="accordionItemHeading">Keluhan</h2>
                     <div id="keluhan" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
-                            <form action="/action_page.php">
-                                <div class="row">
+                            <form action="{{ url('/keluhan/store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                                <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="Nama" name="Nama" placeholder="Nama">
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
+                                            name="name" placeholder="Nama" value="{{ old('name') }}" required>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="MID" name="lastname"
-                                            placeholder="Member ID">
+                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
+                                            id="member_id" name="member_id" placeholder="Member ID"
+                                            value="{{ old('member_id') }}" required>
+                                        @error('member_id')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="email" name="email"
-                                            placeholder="Email">
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
+                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="telp" name="telp"
-                                            placeholder="Telp."></input>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
+                                            name="phone" placeholder="Telp." value="{{ old('phone') }}" required>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" id="outlet" name="outlet"
-                                            placeholder="Outlet"></input>
+                                        <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet"
+                                            name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" required></input>
+                                        @error('outlet')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <input class="form-control" type="text" id="keluhan" name="keluhan"
-                                            placeholder="Keluhan"></input>
+                                        <input class="form-control @error('keluhan') is-invalid @enderror" type="text" id="keluhan"
+                                            name="keluhan" placeholder="Keluhan" value="{{ old('keluhan') }}" required></input>
+                                        @error('keluhan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
-                                        <br><br>
+                                        <div class="form-group row" id="web_captcha">
+                                            <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
+                                        </div>
+
                                         <input style="background-color:#0275d8" type="submit" value="Submit">
                                     </div>
                                 </div>
@@ -967,6 +1068,13 @@
         } else {
             document.getElementById('tab-request-dekstop').style.display = 'block';
             document.getElementById('tab-request-mobile').style.display = 'none';
+        }
+    </script>
+    <script>
+        if ($(window).width() < 600) {
+            //put web_captcha to last_form_section
+            $('#web_captcha').appendTo('#last_form_section');
+
         }
     </script>
 @endsection
