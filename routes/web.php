@@ -97,14 +97,8 @@ Route::get('/lokasi-outlet', function () {
     ->toArray();
     return view('lokasi-outlet',compact('settings'));
 });
-Route::get('/form-waralaba', function () {
-    $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('formwaralaba',compact('settings'));
-});
+
+
 Route::get('/news/detail/{id}', [NewsUserController::class, 'detailIndex'])->name('detailNews');
 
 //login
@@ -136,6 +130,8 @@ Route::get('/outlet-admin/delete/{id}', [OutletWaralabaController::class, 'destr
 Route::post('/outlet-admin/store', [OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}', [OutletWaralabaController::class, 'update']);
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
+Route::get('/getKotaById/{id}', [OutletWaralabaController::class, 'getKotaById']);
+Route::get('/getKecamatanById/{id}', [OutletWaralabaController::class, 'getKecamatanById']);
 
 //Karir
 Route::get('/career-admin', [CareerController::class, 'adminIndex'])->name('career-admin');
@@ -147,6 +143,8 @@ Route::post('/karir', [JobsController::class, 'filter'])->name('jobs.filter');
 Route::get('/career-admin/{id}', [CareerController::class, 'detail'])->name('career.detail');
 
 //waralaba
+Route::get('/form-waralaba',[WaralabaController::class, 'form'])->name('formwaralaba');
+Route::get('/getKota/{id}', [WaralabaController::class, 'GetKota']);
 Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');
 
 //profil-admin

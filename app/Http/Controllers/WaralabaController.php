@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Waralaba;
+use App\Models\Settings;
+use App\Models\Province;
+use App\Models\Regency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
@@ -17,7 +20,22 @@ class WaralabaController extends Controller
     public function index()
     {
 
-        $waralaba = Waralaba::all();
+        $waralaba = Waralaba::select(
+            'waralabaregister.*', 
+            'regencies.name as regency_name', 
+            'provinces.name as province_name',
+            'reg2.name as regency_name2',
+            'pro2.name as province_name2',
+            'reg3.name as regency_name3',
+            'pro3.name as province_name3',
+            )
+            ->join('regencies', 'waralabaregister.city', '=', 'regencies.id')
+            ->join('provinces', 'waralabaregister.province', '=', 'provinces.id')
+            ->join('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
+            ->join('provinces as pro2', 'waralabaregister.province_2', '=', 'pro2.id')
+            ->join('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
+            ->join('provinces as pro3', 'waralabaregister.province_3', '=', 'pro3.id')
+            ->get();
         return view('admin.waralaba-admin', compact('waralaba'));
     }
 
@@ -30,7 +48,7 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
@@ -119,4 +137,25 @@ class WaralabaController extends Controller
         $waralaba->delete();
         return back()->with('status', 'Data berhasil dihapus');
     }
+    public function form()
+    {
+        $settings = Settings::select('*')
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value','key')
+            ->toArray();
+        $provincies = Province::select('*')
+        ->orderBy('name', 'asc')
+        ->get();
+        $regencies = Regency::select('*')
+        ->orderBy('name', 'asc')
+        ->get();
+        return view('formwaralaba',compact('settings','provincies','regencies'));
+    }
+    public function GetKota($id)
+    {
+        $regencies = Regency::where('province_id',$id)->pluck('name');
+        return response()->json($regencies);
+    }
+    
 }

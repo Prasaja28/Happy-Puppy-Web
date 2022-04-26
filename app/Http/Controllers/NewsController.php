@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Session;
+use File;
 class NewsController extends Controller
 {
     /**
@@ -45,7 +46,7 @@ class NewsController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = '.'.$file->getClientOriginalName();
-                $path = '/img/news-img/';
+                $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'.$path), $fileName);
             }
@@ -106,7 +107,7 @@ class NewsController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = '.'.$file->getClientOriginalName();
-                $path = '/img/news-img/';
+                $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
             }else{
@@ -135,7 +136,13 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::where('id',$id)->delete();
+        $news = News::where('id',$id)->first();
+        $path = public_path('uploads/'.$news->thumbnail);
+
+        if(File::exists($path)) {
+            File::delete($path);
+        }
+        $news->delete();
         return redirect('/news-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }

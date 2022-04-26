@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Career;
 use App\Models\Jobs;
 use App\Models\Settings;
+use App\Models\Province;
 use App\Models\JobsEkspertise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -37,7 +38,9 @@ class CareerController extends Controller
         $careers = Career::select('*', 'name_job', 'location')
             ->join('jobvacancy', 'careerform.jobvacancy_id', 'jobvacancy.id')
             ->get();
-        return view('formkarir', compact('careers', 'jobs', 'settings'));
+        $province = Province::select('*')
+            ->get();
+        return view('formkarir', compact('careers', 'jobs', 'settings', 'province'));
     }
 
     public function store(Request $request)
@@ -220,8 +223,9 @@ class CareerController extends Controller
     }
     public function adminIndex()
     {
-        $careers = Career::select('careerform.*', 'name_job', 'location')
+        $careers = Career::select('careerform.*', 'name_job', 'location', 'provinces.name as name_place')
             ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
+            ->join('provinces', 'careerform.place_birth', '=', 'provinces.id')
             ->get();
         return view('admin.career-admin', compact('careers'));
     }

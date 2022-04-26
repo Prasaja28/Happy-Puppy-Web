@@ -126,14 +126,16 @@ class TopartistController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        Topartist::where('id',$id)->delete();
-        // $fileName = Topartist::select('thumbnail')->where('id',$id)->first();
-        // // $path = 'img/topartist-img/';
-        // $try=(public_path('uploads\img\topartist-img'.'.'.$fileName));
-        // dd($try);
-        // if (File::exists(public_path('uploads/img/topartist-img/'.'.'.$request->thumbnail))) {
-        //     File::delete(public_path('uploads/img/topartist-img/'.'.'.$request->thumbnail));
-        // }
+        $topartist = Topartist::where('id',$id)->first();
+        
+        $path = public_path('uploads/'.$topartist->thumbnail);
+    
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+        
+        $topartist->delete();
+        
         return redirect('/topartist-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 }

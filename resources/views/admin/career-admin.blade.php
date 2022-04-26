@@ -68,7 +68,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $career->name }}</td>
                                             <td>{{ $career->formal_education }}
-                                            <td>{{ $career->place_birth }}</td>
+                                            <td>{{ $career->name_place }}</td>
                                             <td>{{ $career->date_birth }}</td>
                                             <td>{{ $career->height }}</td>
                                             <td>{{ $career->weight }}</td>

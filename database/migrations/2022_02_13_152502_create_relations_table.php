@@ -85,13 +85,7 @@ class CreateRelationsTable extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::table('citysub', function (Blueprint $table) {
-            $table->foreignId('city_id')
-                ->nullable()
-                ->constrained('city')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-        });
+        
 
         Schema::table('careerform', function (Blueprint $table) {
             $table->foreignId('jobvacancy_id')
@@ -108,15 +102,6 @@ class CreateRelationsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
-
-        Schema::table('city', function (Blueprint $table) {
-            $table->foreignId('citysub_id')
-                ->nullable()
-                ->constrained('citysub')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-        });
-
         Schema::table('outlet', function (Blueprint $table) {
             $table->foreignId('users_id')
                 ->nullable()
@@ -125,21 +110,7 @@ class CreateRelationsTable extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::table('outlet', function (Blueprint $table) {
-            $table->foreignId('city_id')
-                ->nullable()
-                ->constrained('city')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-        });
-
-        Schema::table('outlet', function (Blueprint $table) {
-            $table->foreignId('citysub_id')
-                ->nullable()
-                ->constrained('citysub')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-        });
+        
 
         Schema::table('profil', function (Blueprint $table) {
             $table->foreignId('users_id')

@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Outlet;
 use App\Models\User;
-use App\Models\City;
-use App\Models\Citysub;
 use App\Models\Settings;
 use Session;
 
@@ -14,24 +12,24 @@ class OutletWaralabaController extends Controller
 {
     public function index()
     {
-        // $outlet = DB::table('outlet')
-        //             ->join('users', 'outlet.users_id', '=', 'users.id')
-        //             ->join('city', 'outlet.city_id', '=', 'city.id')
-        //             ->join('citysub', 'outlet.citysub_id', '=', 'citysub.id')
-        //             ->get();
-        $outlet = Outlet::All();
-        $city = City::All();
-        $citysub = Citysub::All();
-        DB::table('users')->get();
-        DB::table('city')->get();
-        DB::table('citysub')->get();
-        return view('admin.outlet-admin.outlet-admin-index',compact('outlet', 'city', 'citysub'));
+        $outlet = Outlet::select('outlet.*', 
+        'regencies.name as regency_name', 
+        'districts.name as district_name', 
+        'provinces.name as province_name')
+            ->join('regencies', 'outlet.city_id', '=', 'regencies.id')
+            ->join('districts', 'outlet.citysub_id', '=', 'districts.id')
+            ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
+            ->get();
+        $regency = DB::table('regencies')->get();
+        $district = DB::table('districts')->get();
+        $province = DB::table('provinces')->get();    
+        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','regency','district','province'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
     public function store(Request $request)
     {
-        // dd($request);
+        // dd($request->all());
         $this->validate($request,[
             'thumbnail' => 'max:2000'
         ]);
@@ -40,7 +38,7 @@ class OutletWaralabaController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = time().'.'.$file->getClientOriginalName();
-                $path = '/img/outlet-img/';
+                $path = 'img/outlet-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
             }
@@ -55,6 +53,7 @@ class OutletWaralabaController extends Controller
                 'link_ig'=> $request->link_ig,
                 'link_2'=> $request->link_2,
                 'users_id'=> $request->users_id,
+                'province_id'=> $request->province_id,
                 'city_id'=> $request->city_id,
                 'citysub_id'=> $request->citysub_id,
                 'status' => 1
@@ -73,7 +72,7 @@ class OutletWaralabaController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = time().'.'.$file->getClientOriginalName();
-                $path = '/img/outlet-img/';
+                $path = 'img/outlet-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
             }
@@ -90,6 +89,7 @@ class OutletWaralabaController extends Controller
                 'link_ig'=> $request->link_ig,
                 'link_2'=> $request->link_2,
                 'users_id'=> $request->users_id,
+                'province_id'=> $request->province_id,
                 'city_id'=> $request->city_id,
                 'citysub_id'=> $request->citysub_id
             ]);
@@ -98,13 +98,12 @@ class OutletWaralabaController extends Controller
 
     public function destroy($id)
     {
-        Outlet::where('id',$id)
-        ->update([
-            'status' => 1,
-            'users_id'=> Session::get('users_id'),
-            'city_id'=> Session::get('city_id'),
-            'citysub_id'=> Session::get('citysub_id')
-        ]);
+       $outlet = Outlet::find($id);
+       $path = public_path('uploads/'. $outlet->thumbnail);
+       if (File::exists($path)) {
+           File::delete($path);
+       }
+         $outlet->delete();
         return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
     }
 
@@ -117,15 +116,25 @@ class OutletWaralabaController extends Controller
         ->toArray();
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
-            ->select('o.*', 'c.city_name')
+            ->select('o.*', 'c.name')
             ->where('o.name', 'like', '%'.$keyword.'%' )
-            ->orWhere('c.city_name', 'like', '%'.$keyword.'%' )
-            ->leftJoin('city as c', 'c.id', '=' , "o.city_id")
+            ->orWhere('c.name', 'like', '%'.$keyword.'%' )
+            ->leftJoin('regencies as c', 'c.id', '=' , "o.city_id")
             ->get();
         if ($outlet->count() == 0) {
             return view('/lokasi-not-found', compact('settings'));
         }
         
         return view('lokasi-outlet', compact('outlet', 'keyword', 'settings'));
+    }
+    public function getKotaById($id)
+    {
+        $city = Regency::where('province_id', $id)->pluck('name', 'id');
+        return response()->json($city);
+    }
+    public function getKecamatanById($id)
+    {
+        $district = District::where('regency_id', $id)->pluck('name', 'id');
+        return response()->json($district);
     }
 }

@@ -10,7 +10,7 @@
             /*      margin-top: 131px;*/
             min-height: 50vh;
             /*
-                                                                                            margin-bottom: 500px;*/
+                                                                                                margin-bottom: 500px;*/
             background: no-repeat center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -117,12 +117,12 @@
             content: ' ';
         }
 
-        .image-background img{
+        .image-background img {
             margin: auto;
-                margin-top: 50px;
-                width: 85%;
-                padding: 5%;
-                color: white;
+            margin-top: 50px;
+            width: 85%;
+            padding: 5%;
+            color: white;
         }
 
         .image-background {
@@ -185,13 +185,14 @@
                 margin-top: -160px;
             }
 
-            .image-background img{
+            .image-background img {
                 margin: auto;
                 margin-top: 50px;
                 width: 85%;
                 padding: 5%;
                 color: white;
             }
+
             .title-news2 {
                 /* top: 20px; */
                 font-size: 20px;
@@ -210,6 +211,7 @@
                 margin-bottom: 10px;
                 margin-left: -219px;
             }
+
             .card a.main {
                 color: #85baff;
                 text-align: right;
@@ -255,7 +257,7 @@
 @section('konten')
     <!-- <div class="color-background">
 
-                                                                                    </div> -->
+                                                                                        </div> -->
     <div class="header" style="z-index:1;">
     </div>
     <div class="image-background" style="z-index: 3;">
@@ -313,7 +315,8 @@
                                             <p class="news-time">
                                                 <?= date('M d, Y', strtotime($ntd->news_date)) ?>
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"
-                                                class="main" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                    class="main" style="float:right;color:black"><i
+                                                        class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -341,7 +344,8 @@
                                             </h5>
                                             <p class="news-time">{{ $ntd->news_date }}
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"
-                                                class="main" style="float:right;color:black"><i class="fas fa-book-open"></i></a>
+                                                    class="main" style="float:right;color:black"><i
+                                                        class="fas fa-book-open"></i></a>
                                             </p>
                                         </div>
                                     </div>

@@ -121,6 +121,7 @@
                 background-position: right;
                 background-image: url('/img/formwaralaba.png')
             }
+
             #txt1 {
                 color: white;
                 position: absolute;
@@ -313,12 +314,10 @@
                                     <select class="form-control select2 select2-danger" name="place_birth" id="place_birth"
                                         value="{{ old('place_birth') }}" data-dropdown-css-class="select2-danger"
                                         style="width: 50%;">
-                                        <option selected="selected">Tempat Lahir</option>
-                                        <option value="DKI Jakarta">DKI Jakarta</option>
-                                        <option value="Jawa Barat">Jawa Barat</option>
-                                        <option value="Jawa Timur">Jawa Timur</option>
-                                        <option value="Jawa Tengah">Jawa Tengah</option>
-                                        <option value="Bali">Bali</option>
+                                        <option selected disabled>Tempat Lahir</option>
+                                        @foreach ($province as $p)
+                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div><br>
                                 <div class="form-group">

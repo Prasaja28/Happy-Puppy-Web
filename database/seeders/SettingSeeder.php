@@ -14,6 +14,7 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
+        Settings::truncate();
         Settings::create([
             'key' => 'url_facebook',
             'value' => 'https://facebook.com',

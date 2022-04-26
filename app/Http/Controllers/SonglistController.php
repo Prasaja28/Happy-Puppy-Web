@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Songlist;
 use Session;
+use File;
 class SonglistController extends Controller
 {
     /**
@@ -45,7 +46,7 @@ class SonglistController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = '.'.$file->getClientOriginalName();
-                $path = '/img/songlist-img/';
+                $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
             }
@@ -100,7 +101,7 @@ class SonglistController extends Controller
             {
                 $file = $request->file('thumbnail');
                 $fileName = '.'.$file->getClientOriginalName();
-                $path = '/img/songlist-img/';
+                $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
             }else{
@@ -126,7 +127,13 @@ class SonglistController extends Controller
      */
     public function destroy($id)
     {
-        Songlist::where('id',$id)->delete();
+       $songlist = Songlist::where('id',$id)->first();
+       $path = public_path('uploads/'.$songlist->thumbnail);
+
+         if(File::exists($path)){
+            File::delete($path);
+         }
+         $songlist->delete();
         return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!');
     }
 }

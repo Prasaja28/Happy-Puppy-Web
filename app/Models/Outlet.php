@@ -10,7 +10,7 @@ class Outlet extends Model
     use HasFactory;
     protected $table = 'outlet';
     protected $primaryKey = 'id';
-    protected $fillable = ['thumbnail','name','address','phone','fax','link_ig','link_2','users_id','city_id','citysub_id'];
+    protected $fillable = ['province_id','city_id','citysub_id','thumbnail','name','address','phone','fax','link_ig','link_2','users_id'];
     
     public function relasi_users()
     {

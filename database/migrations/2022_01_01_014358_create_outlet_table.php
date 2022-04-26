@@ -15,6 +15,9 @@ class CreateOutletTable extends Migration
     {
         Schema::create('outlet', function (Blueprint $table) {
             $table->id();
+            $table->char('province_id', 2);
+            $table->char('city_id', 4);
+            $table->char('citysub_id', 7);
             $table->string('thumbnail');
             $table->string('name',50);
             $table->string('address');
@@ -23,6 +26,18 @@ class CreateOutletTable extends Migration
             $table->text('link_ig');
             $table->text('link_2');
             $table->timestamps();
+            $table->foreign('province_id')
+                ->references('id')
+                ->on('provinces')
+                ->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('city_id')
+                ->references('id')
+                ->on('regencies')
+                ->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('citysub_id')
+                ->references('id')
+                ->on('districts')
+                ->onUpdate('cascade')->onDelete('restrict');        
         });
     }
 

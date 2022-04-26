@@ -339,25 +339,21 @@
                                         value="{{ old('official_address') }}" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="city"
+                                    <select class="form-control select2 select2-danger" name="city" id="city"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Kota</option>
-                                        <option value="DKI Jakarta">DKI Jakarta</option>
-                                        <option value="Tanggerang">Tanggerang</option>
-                                        <option value="Surabaya">Surabaya</option>
-                                        <option value="Bandung">Bandung</option>
-                                        <option value="Bali">Bali</option>
+                                        <option selected disabled>Kota</option>
+                                        @foreach ($regencies as $r)
+                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="province"
+                                    <select class="form-control select2 select2-danger" name="province" id="province"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Provinsi</option>
-                                        <option value="DKI Jakarta">DKI Jakarta</option>
-                                        <option value="Jawa Barat">Jawa Barat</option>
-                                        <option value="Jawa timur">Jawa Timur</option>
-                                        <option value="Jawa Tengah">Jawa Tengah</option>
-                                        <option value="Bali">Bali</option>
+                                        <option selected disabled>Provinsi</option>
+                                        @foreach ($provincies as $p)
+                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -441,22 +437,18 @@
                                     <select class="form-control select2 select2-danger" name="city_2" id="city_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Kota</option>
-                                        <option value="DKI Jakarta">DKI Jakarta</option>
-                                        <option value="Tanggerang">Tanggerang</option>
-                                        <option value="Surabaya">Surabaya</option>
-                                        <option value="Bandung">Bandung</option>
-                                        <option value="Bali">Bali</option>
+                                        @foreach ($regencies as $r)
+                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_2" id="province_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Provinsi</option>
-                                        <option value="DKI Jakarta">DKI Jakarta</option>
-                                        <option value="Jawa Barat">Jawa Barat</option>
-                                        <option value="Jawa Timur">Jawa Timur</option>
-                                        <option value="Jawa Tengah">Jawa Tengah</option>
-                                        <option value="Bali">Bali</option>
+                                        <option selected disabled>Provinsi</option>
+                                        @foreach ($provincies as $p)
+                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -486,12 +478,23 @@
                                         value="{{ old('address_3') }}" name="address_3" placeholder="Alamat">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="city_3" name="city_3"
-                                        value="{{ old('city_3') }}" placeholder="Kota">
+                                    <select class="form-control select2 select2-danger" id="city_3" name="city_3"
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        <option selected="selected">Kota</option>
+                                        @foreach ($regencies as $r)
+                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="province_3"
-                                        value="{{ old('province_3') }}" name="province_3" placeholder="Provinsi">
+                                    <select class="form-control select2 select2-danger" name="province_3" id="province_3"
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        <option selected disabled>Provinsi</option>
+                                        @foreach ($provincies as $p)
+                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="known_as_area"
@@ -677,7 +680,7 @@
 
 @section('js-internal')
     <!-- add tag js in here -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         var currentTab = 0;
         showTab(currentTab);
@@ -761,5 +764,83 @@
             $('#web_captcha').appendTo('#last_form_section');
 
         }
+    </script>
+    <script>
+        $('#province').change(function() {
+            var id = $(this).val();
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/getKota/" + id,
+                    dataType: 'JSON',
+                    success: function(res) {
+                        if (res) {
+                            $("#city").empty();
+                            $("#city").append('<option>Kota</option>');
+                            $.each(res, function(nama, id) {
+                                $("#city").append('<option value="' + nama + '">' + id +
+                                    '</option>');
+                            });
+                        } else {
+                            $("#city").empty();
+                        }
+                    }
+                });
+            } else {
+                $("#city").empty();
+            }
+        });
+    </script>
+    <script>
+        $('#province_2').change(function() {
+            var id = $(this).val();
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/getKota/" + id,
+                    dataType: 'JSON',
+                    success: function(res) {
+                        if (res) {
+                            $("#city_2").empty();
+                            $("#city_2").append('<option>Kota</option>');
+                            $.each(res, function(nama, id) {
+                                $("#city_2").append('<option value="' + nama + '">' + id +
+                                    '</option>');
+                            });
+                        } else {
+                            $("#city_2").empty();
+                        }
+                    }
+                });
+            } else {
+                $("#city_2").empty();
+            }
+        });
+    </script>
+    <script>
+        $('#province_3').change(function() {
+            var id = $(this).val();
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/getKota/" + id,
+                    dataType: 'JSON',
+                    success: function(res) {
+                        if (res) {
+                            $("#city_3").empty();
+                            $("#city_3").append('<option>Kota</option>');
+                            $.each(res, function(nama, id) {
+                                $("#city_3").append('<option value="' + nama + '">' + id +
+                                    '</option>');
+                            });
+                        } else {
+                            $("#city_3").empty();
+                        }
+                    }
+                });
+            } else {
+                $("#city_3").empty();
+            }
+        });
     </script>
 @endsection
