@@ -115,7 +115,7 @@ class NewsController extends Controller
             }
             News::where('id',$id)
             ->update([
-                'thumbnail' => $path . $fileName,
+                'thumbnail' => $path,
                 'news_title_en' => $request->news_title_en,
                 'news_title_id' => $request->news_title_id,
                 'news_content_en' => $request->news_content_en,

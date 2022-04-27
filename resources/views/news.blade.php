@@ -225,6 +225,12 @@
             font-size: 18px;
             margin-bottom: 20px;
             font-family: 'Poppins';
+            z-index: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .news-time-popular {
@@ -559,6 +565,7 @@
         </div>
     </div>
     <div class="container-fluid">
+        @if ($news_terbaru->count() > 0)
         <div class="container">
             <h4 class="lates-title" style="font-weight: bold;">LATEST NEWS</h4>
         </div>
@@ -566,9 +573,9 @@
         </div>
         <div class="news-list">
             <div class="row card-news-lates-list">
+                @if ($news_terbaru->count() != null)
                 <div class="col-6 padding-card">
                     <div class="card card-news" style="border: none;z-index: 3;">
-                        @if ($news_terbaru->count() != null)
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news" alt="..."> -->
                             <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news main"
                                 alt="...">
@@ -582,18 +589,16 @@
                                             class="fas fa-book-open"></i></a>
                                 </p>
                             </div>
-                        @endif
-                    </div>
-                    <div class="card card-news1" style="border: none;z-index: 2;">
-                        @if ($news_terbaru->count() != null)
+                        </div>
+                        <div class="card card-news1" style="border: none;z-index: 2;">
                             <!-- <img src="/img/egypt.png" class="card-img-top card-img-news1" alt="..."> -->
                             <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}" class="card-img-top card-img-news1"
-                                alt="...">
-                        @endif
-                        <div class="card-body">
+                            alt="...">
+                            <div class="card-body">
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="col-6" id="group-news">
                     <div class="row">
                         @if ($news_terbaru->count() != null)
@@ -633,6 +638,8 @@
                 </div>
             </div>
         </div>
+        @endif
+        @if ($news_terlaris->count() > 0)
         <div class="popularNews" style="z-index:1;">
             <div class="container">
                 <h4 class="lates-title1" style="font-weight: bold;">POPULAR</h4>
@@ -722,6 +729,7 @@
                 @endif
             </div>
         </div>
+        @endif
     </div>
 @endsection
 
