@@ -20,7 +20,7 @@ class OutletWaralabaController extends Controller
             ->join('districts', 'outlet.citysub_id', '=', 'districts.id')
             ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
             ->get();
-        $province = DB::table('provinces')->get(); 
+        $province = DB::table('provinces')->orderBy('name', 'asc')->get(); 
         return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
@@ -128,7 +128,10 @@ class OutletWaralabaController extends Controller
     public function getKotaById(Request $request)
     {
         $province_id = $request->province_id;
-        $kota = DB::table('regencies')->where('province_id', $province_id)->get();
+        $kota = DB::table('regencies')
+        ->where('province_id', $province_id)
+        ->orderBy('name', 'asc')
+        ->get();
         foreach ($kota as $kota) {
             echo "<option value=$kota->id>$kota->name</option>";
         }
@@ -136,7 +139,10 @@ class OutletWaralabaController extends Controller
     public function getKecamatanById(Request $request)
     {
         $city_id = $request->city_id;
-        $kecamatan = DB::table('districts')->where('regency_id', $city_id)->get();
+        $kecamatan = DB::table('districts')
+        ->where('regency_id', $city_id)
+        ->orderBy('name', 'asc')
+        ->get();
         foreach ($kecamatan as $kecamatan) {
             echo "<option value=$kecamatan->id>$kecamatan->name</option>";
         }
