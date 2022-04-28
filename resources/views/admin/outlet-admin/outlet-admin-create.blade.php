@@ -102,7 +102,7 @@
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control " name="citysub_id" id="kecamtan" required="">
+                        <select class="form-control " name="citysub_id" id="kecamatan" required="">
                             <option value="">(Pilih Kecamatan)</option>
 
                         </select>

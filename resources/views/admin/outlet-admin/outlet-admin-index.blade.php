@@ -176,7 +176,7 @@
                 let province_id = $('#province').val();
 
                 $.ajax({
-                    url: "{{ route('getKotaById') }}/",
+                    url: "{{ route('getKotaById') }}",
                     type: "POST",
                     data: {
                         province_id: province_id,
@@ -197,8 +197,8 @@
                 let city_id = $('#kota').val();
 
                 $.ajax({
-                    url: "{{ route('getKecamatanById') }}/",
                     type: "POST",
+                    url: "{{ route('getKecamatanById') }}",
                     data: {
                         city_id: city_id,
                         "_token": "{{ csrf_token() }}"
@@ -209,7 +209,7 @@
                     },
                     error: function(data) {
                         console.log('error:', data);
-                    }
+                    },
                 });
 
             })
