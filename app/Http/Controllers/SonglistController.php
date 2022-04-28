@@ -49,7 +49,7 @@ class SonglistController extends Controller
                 $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
-            }
+            
             // dd($request->jenis_dokumen);
             Songlist::create([
                 'thumbnail' => $path . $fileName,
@@ -60,6 +60,9 @@ class SonglistController extends Controller
                 'status' => 1
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+        } else {
+            return redirect('/songlist-admin')->with('status','Data Gagal Di Simpan!!!');
+        }
     }
 
     /**
@@ -104,9 +107,7 @@ class SonglistController extends Controller
                 $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
-            }else{
-                $path = $request->thumbnail2;
-            }
+            
             Songlist::where('id',$id)
             ->update([
                 'thumbnail' => $path . $fileName,
@@ -117,6 +118,9 @@ class SonglistController extends Controller
                 'users_id'=> $request->users_id
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 
+        }else{
+            return redirect('/songlist-admin')->with('status','Data Gagal Di update!!!');
+        }
     }
 
     /**

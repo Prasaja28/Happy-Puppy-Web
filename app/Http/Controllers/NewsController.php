@@ -40,8 +40,6 @@ class NewsController extends Controller
         $request->validate([
             'thumbnail' => 'max:1000'
         ]);
-        //dd($request->news_title_en);
-        $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
@@ -49,7 +47,7 @@ class NewsController extends Controller
                 $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'.$path), $fileName);
-            }
+            
             // dd($request->jenis_dokumen);
             News::create([
                 'thumbnail' => $path . $fileName,
@@ -64,6 +62,9 @@ class NewsController extends Controller
             ]);
             // dd($test);
             return redirect('/news-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+        } else {
+            return redirect('/news-admin')->with('status','Data Gagal Di Simpan!!!'); 
+        }
     }
 
     /**
@@ -110,12 +111,10 @@ class NewsController extends Controller
                 $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
-            }else{
-                $path = $request->thumbnail2;
-            }
+           
             News::where('id',$id)
             ->update([
-                'thumbnail' => $path,
+                'thumbnail' => $path . $fileName ,
                 'news_title_en' => $request->news_title_en,
                 'news_title_id' => $request->news_title_id,
                 'news_content_en' => $request->news_content_en,
@@ -126,6 +125,9 @@ class NewsController extends Controller
                 'users_id' => $request->users_id
             ]);
             return redirect('/news-admin')->with('status','Data Berhasil Di update!!!'); 
+        }else{
+                return redirect('/news-admin')->with('status','Data Gagal Di update!!!');
+        }
     }
 
     /**

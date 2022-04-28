@@ -51,7 +51,7 @@ class TopartistController extends Controller
                 //dd($path);
                 $destinationPath = public_path('/uploads/' . $path);
                 $file->move($destinationPath, $fileName);
-            }
+            
             // dd($request->jenis_dokumen);
             Topartist::create([
                 'thumbnail' => $path . $fileName,
@@ -60,6 +60,9 @@ class TopartistController extends Controller
                 'status' => 1
             ]);
             return redirect('/topartist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+        }else{
+            return redirect('/topartist-admin')->with('status','Data Gagal Di Simpan!!!');
+        }
     }
 
     /**
@@ -105,17 +108,33 @@ class TopartistController extends Controller
                 $path = 'img/topartist-img/';
                 $destinationPath = public_path('/uploads/' . $path);
                 $file->move($destinationPath, $fileName);
+
+                Topartist::where('id',$id)
+                ->update([
+                    'thumbnail' => $path . $fileName,
+                    'name' => $request->name,
+                    'status' => $request->status,
+                    'users_id' => $request->users_id
+                ]);
+                return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!');
             }else{
                 $path = $request->thumbnail2;
+                $file = $request->file('thumbnail');
+                $fileName = $file->getClientOriginalName();
+                $destinationPath = public_path('/uploads/' . $path);
+                $file->move($destinationPath, $fileName);
+                Topartist::where('id',$id)
+                ->update([
+                    'thumbnail' => $path . $fileName,
+                    'name' => $request->name,
+                    'status' => $request->status,
+                    'users_id' => $request->users_id
+                ]);
+                return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!');
             }
-            Topartist::where('id',$id)
-            ->update([
-                'thumbnail' => $path . $fileName,
-                'name' => $request->name,
-                'status' => $request->status,
-                'users_id' => $request->users_id
-            ]);
-            return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!'); 
+            if($path != null){
+                return redirect('/topartist-admin')->with('status','Data Gagal Di update!!!');
+        } 
     }
 
     /**

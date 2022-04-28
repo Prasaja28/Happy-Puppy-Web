@@ -78,8 +78,8 @@
                     </div>
                     <div class="form-group">
                         <label for="province_id">Provinsi :</label>
-                        <select class="form-control" name="province_id" id="province_id" required=""
-                            data-dependent="province_id">
+                        <select class="form-control dynamic" data-dependent="city_id" name="province_id" id="province"
+                            required="">
                             <option value="">(Pilih Provinsi)</option>
                             @foreach ($province as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
@@ -93,32 +93,20 @@
                     </div>
                     <div class="form-group">
                         <label for="city_id">Kota :</label>
-                        <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
+                        <select class="form-control dynamic" data-dependent="citysub_id" name="city_id" id="kota"
+                            required="">
                             <option value="">(Pilih Kota)</option>
-                            @foreach ($regency as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach
+
                         </select>
-                        @error('city_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control" name="citysub_id" id="citysub_id" required=""
-                            data-dependent="citysub_id">
+                        <select class="form-control " name="citysub_id" id="kecamtan" required="">
                             <option value="">(Pilih Kecamatan)</option>
-                            @foreach ($district as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach
+
                         </select>
-                        @error('citysub_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
                     </div>
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"

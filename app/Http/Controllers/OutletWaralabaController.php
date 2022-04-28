@@ -20,10 +20,8 @@ class OutletWaralabaController extends Controller
             ->join('districts', 'outlet.citysub_id', '=', 'districts.id')
             ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
             ->get();
-        $regency = DB::table('regencies')->get();
-        $district = DB::table('districts')->get();
-        $province = DB::table('provinces')->get();    
-        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','regency','district','province'));
+        $province = DB::table('provinces')->get(); 
+        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
@@ -127,14 +125,21 @@ class OutletWaralabaController extends Controller
         
         return view('lokasi-outlet', compact('outlet', 'keyword', 'settings'));
     }
-    public function getKotaById($id)
+    public function getKotaById(Request $request)
     {
-        $city = Regency::where('province_id', $id)->pluck('name', 'id');
-        return response()->json($city);
+        $province_id = $request->province_id;
+        $kota = DB::table('regencies')->where('province_id', $province_id)->get();
+        foreach ($kota as $kota) {
+            echo "<option value=$kota->id>$kota->name</option>";
+        }
     }
-    public function getKecamatanById($id)
+    public function getKecamatanById(Request $request)
     {
-        $district = District::where('regency_id', $id)->pluck('name', 'id');
-        return response()->json($district);
+        $city_id = $request->city_id;
+        $kecamatan = DB::table('districts')->where('regency_id', $city_id)->get();
+        foreach ($kecamatan as $kecamatan) {
+            echo "<option value=$kecamatan->id>$kecamatan->name</option>";
+        }
     }
+    
 }

@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="edit{{ $outlet->id }}" tabindex="-1" role="dialog"
-    aria-labelledby="outletupdate" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    aria-labelledby="outletupdate" aria-hidden="true" data-to>
+    <div class="modal-dialog modal-lg" role="document" id="modaledit">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="outletupdate">Update Data Outlet</h5>
@@ -39,7 +39,7 @@
                         <label for="phone">Nomor Telepon :</label>
                         <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror"
                             id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlet->phone }}" required>
-                        @error('address')
+                        @error('phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -49,7 +49,7 @@
                         <label for="fax">Nomor Fax :</label>
                         <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror"
                             id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlet->fax }}" required>
-                        @error('address')
+                        @error('fax')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -81,7 +81,7 @@
                         <label for="province_id">Provinsi :</label>
                         <select class="form-control" name="province_id" id="province_id" required=""
                             data-dependent="province_id">
-                            <option value="">(Pilih Provinsi)</option>
+                            <option value="{{ $outlet->province_id }}">{{ $outlet->province_name }}</option>
                             @foreach ($province as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
@@ -95,10 +95,8 @@
                     <div class="form-group">
                         <label for="city_id">Kota :</label>
                         <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
-                            <option value="">(Pilih Kota)</option>
-                            @foreach ($regency as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach
+                            <option value="{{ $outlet->city_id }}">{{ $outlet->regency_name }}</option>
+
                         </select>
                         @error('city_id')
                             <span class="invalid-feedback" role="alert">
@@ -110,10 +108,8 @@
                         <label for="citysub_id">Kecamatan :</label>
                         <select class="form-control" name="citysub_id" id="citysub_id" required=""
                             data-dependent="citysub_id">
-                            <option value="">(Pilih Kecamatan)</option>
-                            @foreach ($district as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach
+                            <option value="{{ $outlet->citysub_id }}">{{ $outlet->district_name }}</option>
+
                         </select>
                         @error('citysub_id')
                             <span class="invalid-feedback" role="alert">
@@ -123,10 +119,12 @@
                     </div>
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                            style="text-align:left; margin-right: -100px;">Thumbnail Outlet <span
-                                class="required">*</span></label>
+                            style="text-align:left; margin-right: -100px;">Thumbnail Outlet</label>
                         <div class="col-md-9 col-sm-6 col-xs-12" style="margin-left:60px;">
-                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg" required>
+                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg"
+                                value="{{ $outlet->thumbnail }}">
+                            <img src="/uploads/{{ $outlet->thumbnail }}" alt="Tidak Ada gambar"
+                                style="width:100px; height:100px; margin-top:10px;">
                         </div>
                     </div>
                     <input type="hidden" class="form-control form-control-border" id="users_id" name="users_id"

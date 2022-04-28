@@ -130,8 +130,8 @@ Route::get('/outlet-admin/delete/{id}', [OutletWaralabaController::class, 'destr
 Route::post('/outlet-admin/store', [OutletWaralabaController::class, 'store']);
 Route::put('/outlet-admin/update/{id}', [OutletWaralabaController::class, 'update']);
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
-Route::get('/getKotaById/{id}', [OutletWaralabaController::class, 'getKotaById']);
-Route::get('/getKecamatanById/{id}', [OutletWaralabaController::class, 'getKecamatanById']);
+Route::post('/getKotaById', [OutletWaralabaController::class, 'getKotaById'])->name('getKotaById');
+Route::post('/getKecamatanById', [OutletWaralabaController::class, 'getKecamatanById'])->name('getKecamatanById');
 
 //Karir
 Route::get('/career-admin', [CareerController::class, 'adminIndex'])->name('career-admin');

@@ -102,6 +102,23 @@
                                         </div>
                                     @endforelse
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Thumbnail</th>
+                                        <th>Nama Outlet</th>
+                                        <th>Alamat Outlet</th>
+                                        <th>Nomor Telepon</th>
+                                        <th>Nomor Fax</th>
+                                        <th>Link IG</th>
+                                        <th>Link Lainnya</th>
+                                        <th>Users ID</th>
+                                        <th>Provinsi</th>
+                                        <th>City </th>
+                                        <th>Citysub </th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -131,6 +148,9 @@
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <!-- Summernote -->
     <script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <!-- Page specific script -->
@@ -151,56 +171,48 @@
         });
     </script>
     <script>
-        $('#province_id').change(function() {
-            var id = $(this).val();
-            if (id) {
+        $(function() {
+            $('#province').on('change', function() {
+                let province_id = $('#province').val();
+
                 $.ajax({
-                    type: "GET",
-                    url: "/getKotaById/" + id,
-                    dataType: 'JSON',
-                    success: function(res) {
-                        if (res) {
-                            $("#city_id").empty();
-                            $("#citysub_id").empty();
-                            $("#city_id").append('<option>Kota</option>');
-                            $.each(res, function(nama, id) {
-                                $("#city_id").append('<option value="' + nama + '">' + id +
-                                    '</option>');
-                            });
-                        } else {
-                            $("#city_id").empty();
-                            $("#citysub_id").empty();
-                        }
+                    url: "{{ route('getKotaById') }}/",
+                    type: "POST",
+                    data: {
+                        province_id: province_id,
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    cache: false,
+                    success: function(msg) {
+                        $('#kota').html(msg);
+                        $('#kecamatan').html(' ');
+                    },
+                    error: function(data) {
+                        console.log('error:', data);
+                    }
+                })
+
+            })
+            $('#kota').on('change', function() {
+                let city_id = $('#kota').val();
+
+                $.ajax({
+                    url: "{{ route('getKecamatanById') }}/",
+                    type: "POST",
+                    data: {
+                        city_id: city_id,
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    cache: false,
+                    success: function(msg) {
+                        $('#kecamatan').html(msg);
+                    },
+                    error: function(data) {
+                        console.log('error:', data);
                     }
                 });
-            } else {
-                $("#city_id").empty();
-                $("#citysub_id").empty();
-            }
-        });
-        $('#city_id').change(function() {
-            var id = $(this).val();
-            if (id) {
-                $.ajax({
-                    type: "GET",
-                    url: "/getKecamatanById/" + id,
-                    dataType: 'JSON',
-                    success: function(res) {
-                        if (res) {
-                            $("#citysub_id").empty();
-                            $("#city_id").append('<option>Kecamatan</option>');
-                            $.each(res, function(nama, id) {
-                                $("#city_id").append('<option value="' + nama + '">' + id +
-                                    '</option>');
-                            });
-                        } else {
-                            $("#citysub_id").empty();
-                        }
-                    }
-                });
-            } else {
-                $("#citysub_id").empty();
-            }
-        });
+
+            })
+        })
     </script>
 @endsection
