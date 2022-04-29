@@ -80,7 +80,7 @@
                     <div class="form-group">
                         <label for="province_id">Provinsi :</label>
                         <select class="form-control" name="province_id" id="province_id" required=""
-                            data-dependent="province_id">
+                            data-dependent="city_id">
                             <option value="{{ $outlet->province_id }}">{{ $outlet->province_name }}</option>
                             @foreach ($province as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
@@ -94,9 +94,12 @@
                     </div>
                     <div class="form-group">
                         <label for="city_id">Kota :</label>
-                        <select class="form-control" name="city_id" id="city_id" required="" data-dependent="city_id">
+                        <select class="form-control" name="city_id" id="city_id" required=""
+                            data-dependent="citysub_id">
                             <option value="{{ $outlet->city_id }}">{{ $outlet->regency_name }}</option>
-
+                            {{-- @foreach ($city as $data)
+                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                            @endforeach --}}
                         </select>
                         @error('city_id')
                             <span class="invalid-feedback" role="alert">
@@ -106,10 +109,11 @@
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control" name="citysub_id" id="citysub_id" required=""
-                            data-dependent="citysub_id">
+                        <select class="form-control" name="citysub_id" id="citysub_id" required="">
                             <option value="{{ $outlet->citysub_id }}">{{ $outlet->district_name }}</option>
-
+                            {{-- @foreach ($citysub as $data)
+                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                            @endforeach --}}
                         </select>
                         @error('citysub_id')
                             <span class="invalid-feedback" role="alert">

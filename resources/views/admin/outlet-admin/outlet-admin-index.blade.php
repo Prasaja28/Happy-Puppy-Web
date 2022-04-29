@@ -219,15 +219,17 @@
         $(function() {
             $('#province_id').on('change', function() {
                 let province_id = $('#province_id').val();
-
+                console.log(id);
                 $.ajax({
                     url: "{{ route('getKotaById') }}",
                     type: "POST",
                     data: {
-                        province_id: province_id
+                        province_id: province_id,
+                        "_token": "{{ csrf_token() }}"
                     },
                     cache: false,
                     success: function(msg) {
+                        console.log(msg);
                         $('#city_id').html(msg);
                         $('#citysub_id').html(' ');
                     },
@@ -237,19 +239,19 @@
                 })
 
             })
-            $('#kota').on('change', function() {
-                let city_id = $('#kota').val();
+            $('#city_id').on('change', function() {
+                let city_id = $('#city_id').val();
 
                 $.ajax({
-                    type: "POST",
                     url: "{{ route('getKecamatanById') }}",
+                    type: "POST",
                     data: {
                         city_id: city_id,
-                        "_token": "{{ csrf_token() }}"
+                        "_token": "{{ csrf_token() }}",
                     },
                     cache: false,
                     success: function(msg) {
-                        $('#kecamatan').html(msg);
+                        $('#citysub_id').html(msg);
                     },
                     error: function(data) {
                         console.log('error:', data);
@@ -259,48 +261,6 @@
             })
         })
     </script>
-    <script>
-        $(function() {
-            $('#province_id').on('change', function() {
-                let province_id = $('#province_id').val();
 
-                $.ajax({
-                    url: "{{ route('getKotaById') }}",
-                    type: "POST",
-                    data: {
-                        province_id: province_id
-                    },
-                    cache: false,
-                    success: function(msg) {
-                        $('#city_id').html(msg);
-                        $('#citysub_id').html(' ');
-                    },
-                    error: function(data) {
-                        console.log('error:', data);
-                    }
-                })
 
-            })
-            $('#kota').on('change', function() {
-                let city_id = $('#kota').val();
-
-                $.ajax({
-                    type: "POST",
-                    url: "{{ route('getKecamatanById') }}",
-                    data: {
-                        city_id: city_id,
-                        "_token": "{{ csrf_token() }}"
-                    },
-                    cache: false,
-                    success: function(msg) {
-                        $('#kecamatan').html(msg);
-                    },
-                    error: function(data) {
-                        console.log('error:', data);
-                    },
-                });
-
-            })
-        })
-    </script>
 @endsection

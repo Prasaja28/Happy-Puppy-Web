@@ -43,7 +43,7 @@ class NewsController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = '.'.$file->getClientOriginalName();
+                $fileName = time().'.'.$file->getClientOriginalName();
                 $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'.$path), $fileName);
@@ -107,7 +107,7 @@ class NewsController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = '.'.$file->getClientOriginalName();
+                $fileName = time().'.'.$file->getClientOriginalName();
                 $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);

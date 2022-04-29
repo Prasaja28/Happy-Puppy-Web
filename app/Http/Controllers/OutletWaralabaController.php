@@ -7,6 +7,7 @@ use App\Models\Outlet;
 use App\Models\User;
 use App\Models\Settings;
 use Session;
+use File;
 
 class OutletWaralabaController extends Controller
 {
@@ -21,7 +22,10 @@ class OutletWaralabaController extends Controller
             ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
             ->get();
         $province = DB::table('provinces')->orderBy('name', 'asc')->get(); 
-        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province'));
+        $city = DB::table('regencies')
+        ->orderBy('name', 'asc')->get();
+        $citysub = DB::table('districts')->orderBy('name', 'asc')->get();
+        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province','city','citysub'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
 
@@ -62,6 +66,8 @@ class OutletWaralabaController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+        Outlet::findOrFail($id);
         $request->validate([
             'thumbnail' => 'max:2000'
         ]);
@@ -136,6 +142,7 @@ class OutletWaralabaController extends Controller
             echo "<option value=$kota->id>$kota->name</option>";
         }
     }
+   
     public function getKecamatanById(Request $request)
     {
         $city_id = $request->city_id;
