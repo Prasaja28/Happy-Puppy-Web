@@ -8,6 +8,7 @@
     <!-- Add tag css in here -->
     <style>
         .header {
+            position: relative;
             min-height: 50vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
@@ -25,7 +26,7 @@
             text-align: justify;
             margin: 0;
             font-size: 40px;
-            min-height: 491px;
+            min-height: 110px;
             font-family: 'Poppins';
         }
 
@@ -212,12 +213,12 @@
             text-align: justify;
             margin: 0;
             font-size: 40px;
-            min-height: 439px;
             font-family: 'Poppins';
         }
 
         @media(max-width: 576px) {
             .header {
+                position: relative;
                 min-height: 20vh;
                 background: no-repeat center scroll;
                 -webkit-background-size: cover;
@@ -235,7 +236,7 @@
                 text-align: justify;
                 margin: 0;
                 font-size: 20px;
-                min-height: 491px;
+                min-height: 55px;
                 font-family: 'Poppins';
             }
 
@@ -359,7 +360,6 @@
                 text-align: justify;
                 margin: 0;
                 font-size: 20px;
-                min-height: 460px;
                 font-family: 'Poppins';
             }
 
