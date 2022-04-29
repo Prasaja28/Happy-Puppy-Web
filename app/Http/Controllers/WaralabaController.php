@@ -20,21 +20,22 @@ class WaralabaController extends Controller
     public function index()
     {
 
-        $waralaba = Waralaba::select(
-            'waralabaregister.*', 
-            'regencies.name as regency_name', 
-            'provinces.name as province_name',
-            'reg2.name as regency_name2',
-            'pro2.name as province_name2',
-            'reg3.name as regency_name3',
-            'pro3.name as province_name3',
-            )
-            ->leftjoin('regencies', 'waralabaregister.city', '=', 'regencies.id')
-            ->leftjoin('provinces', 'waralabaregister.province', '=', 'provinces.id')
-            ->leftjoin('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
+        $waralaba = Waralaba::leftjoin('provinces', 'waralabaregister.province', '=', 'provinces.id')
             ->leftjoin('provinces as pro2', 'waralabaregister.province_2', '=', 'pro2.id')
-            ->leftjoin('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
             ->leftjoin('provinces as pro3', 'waralabaregister.province_3', '=', 'pro3.id')
+            ->leftjoin('regencies', 'waralabaregister.city', '=', 'regencies.id')
+            ->leftjoin('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
+            ->leftjoin('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
+        ->select(
+            'waralabaregister.*', 
+            'provinces.name as province_name',
+            'pro2.name as province_name2',
+            'pro3.name as province_name3',
+            'regencies.name as city_name',
+            'reg2.name as city_name2',
+            'reg3.name as city_name3'
+            )
+            
             ->get();
             
         return view('admin.waralaba-admin', compact('waralaba'));
