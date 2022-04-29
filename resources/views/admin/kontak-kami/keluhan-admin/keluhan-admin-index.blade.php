@@ -35,7 +35,6 @@
                     <div class="card-header">
                     <h3 class="card-title">Keluhan User</h3>
                     </div>
-                  <!-- /.card-header -->
                     <div class="card-body px-4">
                         <table id="example2" class="table table-bordered table-striped ">
                           <thead>
@@ -66,12 +65,7 @@
                                       <td>NonAktif</td>
                                   @endif
                                           
-                                  <!-- <td class="text-center">
-                                    @if($data->status == 1)
-                                      <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$data->id}}"><i class="fas fa-trash-alt"i></i></button>
-                                    @endif
-                                      <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$data->id}}"><ibutton class="fas fa-pen-square"></ibutton>
-                                  </td> -->
+                            
                               </tr>
                               <!-- Model Delete -->
                               <!-- @include('admin.profil.profil-delete') -->
