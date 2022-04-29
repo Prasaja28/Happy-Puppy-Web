@@ -35,21 +35,18 @@ class OutletWaralabaController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:2000',
-                'name'          => 'required|max:50'
+                'thumbnail'             => 'required|max:2000'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2000',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
             ]
         );
         $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/outlet-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
@@ -81,20 +78,17 @@ class OutletWaralabaController extends Controller
             $request, 
             [   
                 'thumbnail'             => 'required|max:2000',
-                'name'          => 'required|max:50'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
-                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2000',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
         $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/outlet-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);

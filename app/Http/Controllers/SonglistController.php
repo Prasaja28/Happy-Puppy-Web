@@ -40,14 +40,11 @@ class SonglistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:1000',
-                'name'          => 'required|max:50'
+                'thumbnail'             => 'required|max:2000',
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
-                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 1000',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
         //dd($request->news_title_en);
@@ -55,7 +52,7 @@ class SonglistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
@@ -109,21 +106,18 @@ class SonglistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:1000',
-                'name'          => 'required|max:50'
+                'thumbnail'             => 'required|max:2000'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
-                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 1000',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
         $path = null; 
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);

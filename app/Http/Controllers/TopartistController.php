@@ -40,12 +40,11 @@ class TopartistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:255',
-                'name'          => 'required|max:50'
+                'thumbnail'             => 'required|max:2000'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
-                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 255',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
                 'name.required' => 'Nama tidak boleh kosong',
                 'name.max'      => 'Nama tidak boleh lebih dari 50',
             ]
@@ -55,7 +54,7 @@ class TopartistController extends Controller
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
-                $fileName = '.'.$file->getClientOriginalName();
+                $fileName = $file->getClientOriginalName();
                 $path = 'img/topartist-img/';
                 //dd($path);
                 $destinationPath = public_path('/uploads/' . $path);
@@ -108,14 +107,11 @@ class TopartistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:255',
-                'name'          => 'required|max:50'
+                'thumbnail'             => 'required|max:2000'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
-                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 255',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
         
