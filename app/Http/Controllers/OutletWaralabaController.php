@@ -32,9 +32,19 @@ class OutletWaralabaController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $this->validate($request,[
-            'thumbnail' => 'max:2000'
-        ]);
+        $this->validate(
+            $request, 
+            [   
+                'thumbnail'             => 'required|max:2000',
+                'name'          => 'required|max:50'
+            ],
+            [   
+                'thumbnail.required'    => 'Gambar tidak boleh kosong',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2000',
+                'name.required' => 'Nama tidak boleh kosong',
+                'name.max'      => 'Nama tidak boleh lebih dari 50',
+            ]
+        );
         $path = null; 
             if($request->thumbnail)
             {
@@ -67,10 +77,19 @@ class OutletWaralabaController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->all());
-        Outlet::findOrFail($id);
-        $request->validate([
-            'thumbnail' => 'max:2000'
-        ]);
+        $this->validate(
+            $request, 
+            [   
+                'thumbnail'             => 'required|max:2000',
+                'name'          => 'required|max:50'
+            ],
+            [   
+                'thumbnail.required'    => 'Gambar tidak boleh kosong',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2000',
+                'name.required' => 'Nama tidak boleh kosong',
+                'name.max'      => 'Nama tidak boleh lebih dari 50',
+            ]
+        );
         $path = null; 
             if($request->thumbnail)
             {

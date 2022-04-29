@@ -37,10 +37,19 @@ class TopartistController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'thumbnail' => 'max:255',
-            'name' => 'max:50'
-        ]);
+        $this->validate(
+            $request, 
+            [   
+                'thumbnail'             => 'required|max:255',
+                'name'          => 'required|max:50'
+            ],
+            [   
+                'thumbnail.required'    => 'Gambar tidak boleh kosong',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 255',
+                'name.required' => 'Nama tidak boleh kosong',
+                'name.max'      => 'Nama tidak boleh lebih dari 50',
+            ]
+        );
         //dd($request->news_title_en);
         $path = null; 
             if($request->thumbnail)
@@ -96,11 +105,20 @@ class TopartistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'thumbnail' => 'max:255',
-            'name' => 'max:50'
-        ]);
-        $path = null; 
+        $this->validate(
+            $request, 
+            [   
+                'thumbnail'             => 'required|max:255',
+                'name'          => 'required|max:50'
+            ],
+            [   
+                'thumbnail.required'    => 'Gambar tidak boleh kosong',
+                'thumbnail.max'      => 'Gambar tidak boleh lebih dari 255',
+                'name.required' => 'Nama tidak boleh kosong',
+                'name.max'      => 'Nama tidak boleh lebih dari 50',
+            ]
+        );
+        
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
