@@ -219,7 +219,6 @@
         $(function() {
             $('#province_id').on('change', function() {
                 let province_id = $('#province_id').val();
-                console.log(id);
                 $.ajax({
                     url: "{{ route('getKotaById') }}",
                     type: "POST",
