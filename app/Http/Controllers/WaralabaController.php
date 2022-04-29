@@ -29,13 +29,14 @@ class WaralabaController extends Controller
             'reg3.name as regency_name3',
             'pro3.name as province_name3',
             )
-            ->join('regencies', 'waralabaregister.city', '=', 'regencies.id')
-            ->join('provinces', 'waralabaregister.province', '=', 'provinces.id')
-            ->join('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
-            ->join('provinces as pro2', 'waralabaregister.province_2', '=', 'pro2.id')
-            ->join('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
-            ->join('provinces as pro3', 'waralabaregister.province_3', '=', 'pro3.id')
+            ->leftjoin('regencies', 'waralabaregister.city', '=', 'regencies.id')
+            ->leftjoin('provinces', 'waralabaregister.province', '=', 'provinces.id')
+            ->leftjoin('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
+            ->leftjoin('provinces as pro2', 'waralabaregister.province_2', '=', 'pro2.id')
+            ->leftjoin('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
+            ->leftjoin('provinces as pro3', 'waralabaregister.province_3', '=', 'pro3.id')
             ->get();
+            
         return view('admin.waralaba-admin', compact('waralaba'));
     }
 
