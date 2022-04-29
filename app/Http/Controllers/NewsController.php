@@ -109,13 +109,10 @@ class NewsController extends Controller
             $request, 
             [   
                 'thumbnail'             => 'required|max:2000',
-                'name'          => 'required|max:50'
             ],
             [   
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
-                'name.required' => 'Nama tidak boleh kosong',
-                'name.max'      => 'Nama tidak boleh lebih dari 50',
             ]
         );
         //dd($request);
