@@ -19,6 +19,10 @@
             font-size: 14px;
         }
 
+        #select2-data-41-vw4h {
+            width: 100% !important;
+        }
+
     </style>
 @endsection
 @section('outlet-admin', 'active')
@@ -150,6 +154,8 @@
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Summernote -->
     <script src="{{ asset('admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
@@ -260,6 +266,10 @@
             })
         })
     </script>
-
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
 
 @endsection

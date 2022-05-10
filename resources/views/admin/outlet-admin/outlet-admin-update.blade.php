@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="edit{{ $outlet->id }}" tabindex="-1" role="dialog"
+<div class="modal fade bd-example-modal-lg letupdate" id="edit{{ $outlet->id }}" role=" dialog"
     aria-labelledby="outletupdate" aria-hidden="true" data-to>
     <div class="modal-dialog modal-lg" role="document" id="modaledit">
         <div class="modal-content">
@@ -78,9 +78,9 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="province_id">Provinsi :</label>
-                        <select class="form-control" name="province_id" id="province_id" required=""
-                            data-dependent="city_id">
+                        <label for="edit_province_id">Provinsi :</label>
+                        <select class="form-control js-example-basic-single" name="province_id" id="province_id"
+                            required="" data-dependent="city_id">
                             <option value="{{ $outlet->province_id }}">{{ $outlet->province_name }}</option>
                             @foreach ($province as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
@@ -93,13 +93,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="city_id">Kota :</label>
-                        <select class="form-control" name="city_id" id="city_id" required=""
+                        <label for="edit_city_id">Kota :</label>
+                        <select class="form-control js-example-basic-single" name="city_id" id="city_id" required=""
                             data-dependent="citysub_id">
                             <option value="{{ $outlet->city_id }}">{{ $outlet->regency_name }}</option>
-                            {{-- @foreach ($city as $data)
+                            @foreach ($city as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach --}}
+                            @endforeach
                         </select>
                         @error('city_id')
                             <span class="invalid-feedback" role="alert">
@@ -109,11 +109,12 @@
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control" name="citysub_id" id="citysub_id" required="">
+                        <select class="form-control js-example-basic-single" name="citysub_id" id="citysub_id"
+                            required="">
                             <option value="{{ $outlet->citysub_id }}">{{ $outlet->district_name }}</option>
-                            {{-- @foreach ($citysub as $data)
+                            @foreach ($citysub as $data)
                                 <option value="{{ $data->id }}">{{ $data->name }}</option>
-                            @endforeach --}}
+                            @endforeach
                         </select>
                         @error('citysub_id')
                             <span class="invalid-feedback" role="alert">
