@@ -23,6 +23,18 @@
             width: 100% !important;
         }
 
+        #select2-province_id-container {
+            margin-top: -10px;
+        }
+
+        #select2-city_id-container {
+            margin-top: -10px;
+        }
+
+        #select2-citysub_id-container {
+            margin-top: -10px;
+        }
+
     </style>
 @endsection
 @section('outlet-admin', 'active')
