@@ -778,7 +778,7 @@
                             $("#city").empty();
                             $("#city").append('<option>Kota</option>');
                             $.each(res, function(nama, id) {
-                                $("#city").append('<option value="' + nama + '">' + id +
+                                $("#city").append('<option value="' + id + '">' + id +
                                     '</option>');
                             });
                         } else {
@@ -804,7 +804,7 @@
                             $("#city_2").empty();
                             $("#city_2").append('<option>Kota</option>');
                             $.each(res, function(nama, id) {
-                                $("#city_2").append('<option value="' + nama + '">' + id +
+                                $("#city_2").append('<option value="' + id + '">' + id +
                                     '</option>');
                             });
                         } else {
@@ -830,7 +830,7 @@
                             $("#city_3").empty();
                             $("#city_3").append('<option>Kota</option>');
                             $.each(res, function(nama, id) {
-                                $("#city_3").append('<option value="' + nama + '">' + id +
+                                $("#city_3").append('<option value="' + id + '">' + id +
                                     '</option>');
                             });
                         } else {

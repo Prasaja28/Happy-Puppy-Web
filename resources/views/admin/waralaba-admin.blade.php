@@ -98,7 +98,7 @@
                                             @endif
                                             <td>{{ $users->official_address }}</td>
                                             <td>{{ $users->city }}</td>
-                                            <td>{{ $users->province_name }}</td>
+                                            <td>{{ $users->province_name_1 }}</td>
                                             <td>{{ $users->home_phone }}</td>
                                             <td>{{ $users->official_phone }}</td>
                                             <td>{{ $users->mobile_phone }}</td>
@@ -111,11 +111,11 @@
                                             <td>{{ $users->other_2 }}</td>
                                             <td>{{ $users->address_2 }}</td>
                                             <td>{{ $users->city_2 }}</td>
-                                            <td>{{ $users->province_name2 }}</td>
+                                            <td>{{ $users->province_name_2 }}</td>
                                             <td>{{ $users->status_penguasaan }}</td>
                                             <td>{{ $users->address_3 }}</td>
                                             <td>{{ $users->city_3 }}</td>
-                                            <td>{{ $users->province_name3 }}</td>
+                                            <td>{{ $users->province_name_3 }}</td>
                                             <td>{{ $users->known_as_area }}</td>
                                             <td>{{ $users->other_3 }}</td>
                                             <td>{{ $users->building_area }}</td>

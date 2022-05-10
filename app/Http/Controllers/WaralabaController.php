@@ -20,24 +20,12 @@ class WaralabaController extends Controller
     public function index()
     {
 
-        $waralaba = Waralaba::leftjoin('provinces', 'waralabaregister.province', '=', 'provinces.id')
-            ->leftjoin('provinces as pro2', 'waralabaregister.province_2', '=', 'pro2.id')
-            ->leftjoin('provinces as pro3', 'waralabaregister.province_3', '=', 'pro3.id')
-            ->leftjoin('regencies', 'waralabaregister.city', '=', 'regencies.id')
-            ->leftjoin('regencies as reg2', 'waralabaregister.city_2', '=', 'reg2.id')
-            ->leftjoin('regencies as reg3', 'waralabaregister.city_3', '=', 'reg3.id')
-        ->select(
-            'waralabaregister.*', 
-            'provinces.name as province_name',
-            'pro2.name as province_name2',
-            'pro3.name as province_name3',
-            'regencies.name as city_name',
-            'reg2.name as city_name2',
-            'reg3.name as city_name3'
-            )
-            
-            ->get();
-            
+        $waralaba = Waralaba::from("waralabaregister as w")
+        ->leftjoin('provinces as p1', 'p1.id', '=', 'w.province')
+        ->leftJoin('provinces as p2', 'p2.id', '=', 'w.province_2')
+        ->leftJoin('provinces as p3', 'p3.id', '=', 'w.province_3')
+        ->select('w.*','p1.name as province_name_1', 'p2.name as province_name_2', 'p3.name as province_name_3')
+        ->get();
         return view('admin.waralaba-admin', compact('waralaba'));
     }
 
@@ -50,6 +38,7 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
