@@ -28,7 +28,6 @@ class OutletWaralabaController extends Controller
         return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province','city','citysub'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
-
     public function store(Request $request)
     {
         // dd($request->all());
@@ -133,7 +132,7 @@ class OutletWaralabaController extends Controller
         ->toArray();
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
-            ->select('o.*', 'c.name')
+            ->select('o.*', 'c.name', 'o.name as outlet_name')
             ->where('o.name', 'like', '%'.$keyword.'%' )
             ->orWhere('c.name', 'like', '%'.$keyword.'%' )
             ->leftJoin('regencies as c', 'c.id', '=' , "o.city_id")

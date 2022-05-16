@@ -131,7 +131,7 @@
                         <div class="card">
                             <img class="card-img-top" src="/uploads/{{ $o->thumbnail }}" alt="image">
                             <div class="card-body">
-                                <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
+                                <h5 class="card-title text-center font-weight-bold">{{ $o->outlet_name }}</h5>
                                 <p class="card-text text-center">
                                     {{ $o->address }}
                                     <br>
