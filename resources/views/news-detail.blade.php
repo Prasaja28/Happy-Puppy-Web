@@ -282,7 +282,7 @@
                     <div class="news-time1">{{ $news_detail[0]->news_date }}</div>
 
                     <div class="news">
-                        {{ $news_detail[0]->news_content_id }}
+                    {!! $news_detail[0]->news_content_id !!}
                     </div><br><br>
                     {{-- <div class="news">
                         Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang

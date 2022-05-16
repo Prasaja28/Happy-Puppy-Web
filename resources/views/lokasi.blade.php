@@ -123,7 +123,7 @@
                 <div class="col-12">
                       <a href="{{ route('search', ['keyword'=> 'jakarta'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
                       <a href="{{ route('search', ['keyword'=> 'surabaya'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
-                      <a href="{{ route('search', ['keyword'=> 'makasar'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makasar</a>
+                      <a href="{{ route('search', ['keyword'=> 'makassar'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Makassar</a>
                       <a href="{{ route('search', ['keyword'=> 'samarinda'] ) }}" class="btn btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
                 </div>
               </div>
