@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
+                                        <h5 class="card-title text-center font-weight-bold">{{ $o->outlet_name }}</h5>
                                         <p class="card-text text-center">
                                             {{ $o->address }}
                                             <br>
