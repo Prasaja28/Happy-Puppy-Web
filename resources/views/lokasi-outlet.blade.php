@@ -85,6 +85,11 @@
 
             .card-text {
                 font-size: 8px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
             }
 
             .card-outlet {
@@ -168,7 +173,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center font-weight-bold">{{ $o->name }}</h5>
+                                        <h5 class="card-title text-center font-weight-bold">{{ $o->outlet_name }}</h5>
                                         <p class="card-text text-center">
                                             {{ $o->address }}
                                             <br>
