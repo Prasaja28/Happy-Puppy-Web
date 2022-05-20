@@ -36,7 +36,7 @@
   <nav class="navbar navbar-expand-lg" style="background-color: #0F0F0F;">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{asset('/img/HappupLogo.png')}}" style="width: 100px;height:32px">
+        <img src="{{asset('/img/HappupLogo.png')}}" style="width: 125px;height:50px">
       </a>
       
       {{-- COLLAPSE ON MOBILE --}}
@@ -52,7 +52,7 @@
             <div class="dropdown-menu" style="right: -20px; left: auto; background-color:#555251; font-family: 'Poppins';" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ url('/lokasi') }}">LOKASI</a>
               <a class="dropdown-item" href="{{ url('/news') }}">BERITA</a>
-              <a class="dropdown-item" href="{{ url('/profile') }}">PROFILE</a>
+              <a class="dropdown-item" href="{{ url('/profil') }}">PROFIL</a>
               <a class="dropdown-item" href="{{ url('/waralaba') }}">WARALABA</a>
               <a class="dropdown-item" href="{{ url('/karir') }}">KARIR</a>
               <a class="dropdown-item" href="{{ url('/kontak') }}">KONTAK KAMI</a>

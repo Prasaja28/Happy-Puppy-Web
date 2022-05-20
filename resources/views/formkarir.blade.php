@@ -128,7 +128,7 @@
                 bottom: 0;
                 text-align: justify;
                 margin: 0;
-                font-size: 12px;
+                font-size: 20px;
                 margin-left: -51px;
             }
 

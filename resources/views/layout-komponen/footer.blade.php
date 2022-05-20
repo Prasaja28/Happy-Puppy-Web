@@ -8,10 +8,10 @@
             <div class="row">
                 <div name="detail-info" class="col-6">
                     <div class="row justify-content-start">
-                        <img src="{{ asset('/img/HappupLogo.png') }}" class="mr-2 mr-md-4">
-                        <img src="{{ asset('/img/logofot1.png') }}" class="mr-2 mr-md-4">
-                        <img src="{{ asset('/img/logofot3.png') }}" class="mr-2 mr-md-4">
-                        <img src="{{ asset('/img/logofot2.png') }}" class="mr-2 mr-md-4 mt-4 mt-md-0">
+                        <img src="{{ asset('/img/HappupLogo.png') }}" class="mr-2 mr-md-2">
+                        <img src="{{ asset('/img/logofot1.png') }}" class="mr-2 mr-md-2">
+                        <img src="{{ asset('/img/logofot3.png') }}" class="mr-2 mr-md-2">
+                        <img src="{{ asset('/img/logofot2.png') }}" class="mr-2 mr-md-2 mt-4 mt-md-0">
                         <img src="{{ asset('/img/logofot4.png') }}" class="mt-4 mt-md-0">
                     </div>
                 </div>
@@ -83,10 +83,10 @@
                             <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">Become a member</a>
                         </div>
 
-                        <div name="change-language" class="row justify-content-end my-5 my-md-3">
-                            {{-- <a href="#">INA |</a> --}}
-                            {{-- <a href="#" class="pl-1">ENG</a> --}}
-                        </div>
+                        <!-- <div name="change-language" class="row justify-content-end my-5 my-md-3">
+                                <a href="#">INA |</a>
+                                <a href="#" class="pl-1">ENG</a>
+                            </div> -->
                     </div>
                 </div>
             </div>

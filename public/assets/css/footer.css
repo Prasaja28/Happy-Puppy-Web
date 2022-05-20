@@ -74,12 +74,25 @@ div[name="term-and-condition"] p {
         border: 1px solid white;
     }
 
-    div[name="detail-info"] img {
-        height: 25px;
-    }
+    /* div[name="detail-info"] img {
+        height: 52px;
+    } */
 
+    div[name="detail-info"] img:nth-child(1) {
+        height: 40px;
+    }
+    div[name="detail-info"] img:nth-child(2) {
+        margin-top: -22px;
+        height: 80px;
+    }
     div[name="detail-info"] img:nth-child(3) {
         margin-top: -10px;
+        height: 50px;
+    }
+    div[name="detail-info"] img:nth-child(4) {
+        height: 50px;
+    }
+    div[name="detail-info"] img:nth-child(5) {
         height: 50px;
     }
 
