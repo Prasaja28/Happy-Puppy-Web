@@ -61,7 +61,9 @@ class KontakUserController extends Controller
             'complaint' => $request->complaint,
             'status' => 1
         ]);
-        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
+        return redirect('/kontak')->with([
+            'message' => 'Data Berhasil Dikirim!',
+            'alert' => 'success']);
     }
 
     /**

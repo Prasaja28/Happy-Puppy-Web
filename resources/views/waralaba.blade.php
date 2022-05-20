@@ -80,7 +80,7 @@
             width: auto;
             background-color: #85A4E1;
             font-family: 'Poppins';
-            padding: 5%;
+            padding: 0% 5% 5% 5%;
         }
 
         .btnss.collapsed {
@@ -93,7 +93,7 @@
         }
 
         .card-header {
-            margin-top: 50px;
+            margin-top: 0.5rem;
             background-color: #85A4E1;
             border-bottom: none;
         }

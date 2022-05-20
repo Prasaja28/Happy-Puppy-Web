@@ -73,7 +73,7 @@
 
                 @foreach ($profill as $key => $history)
                     <!-- // $bgColor[$key%3]
-                  // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
+                      // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
                     @if ($key % 2 == 0)
                         <div class="brand brand-history-right">
                             <div class="row justify-content-end">
@@ -117,4 +117,5 @@
 
         </div>
     </section>
+@endsection
 @endsection

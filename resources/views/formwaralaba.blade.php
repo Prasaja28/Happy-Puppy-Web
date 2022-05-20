@@ -313,7 +313,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" name="age"
-                                        value="{{ old('age') }}" placeholder="Usia">
+                                        value="{{ old('age') }}" placeholder="Usia" min="1">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="last_education"
@@ -508,7 +508,7 @@
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="building_area"
                                         value="{{ old('building_area') }}" name="building_area"
-                                        placeholder="Luas bangunan                          M">
+                                        placeholder="Luas bangunan                          M" min="1">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">Usaha Tetangga Kiri:</p>
@@ -565,7 +565,7 @@
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="front_road_width"
                                         value="{{ old('front_road_width') }}" name="front_road_width"
-                                        placeholder="Lebar Jalan Depan">
+                                        placeholder="Lebar Jalan Depan" min="1">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="front_road_traffic"

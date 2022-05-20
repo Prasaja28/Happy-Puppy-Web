@@ -83,10 +83,10 @@
                             <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">Become a member</a>
                         </div>
 
-                        <!-- <div name="change-language" class="row justify-content-end my-5 my-md-3">
-                                <a href="#">INA |</a>
-                                <a href="#" class="pl-1">ENG</a>
-                            </div> -->
+                        <div name="change-language" class="row justify-content-end my-5 my-md-3">
+                            {{-- <a href="#">INA |</a>
+                                <a href="#" class="pl-1">ENG</a> --}}
+                        </div>
                     </div>
                 </div>
             </div>

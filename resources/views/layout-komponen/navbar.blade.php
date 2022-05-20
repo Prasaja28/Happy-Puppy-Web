@@ -71,7 +71,7 @@
             <a class="nav-link @yield('navbar-news')" href="{{ url('/news') }}">BERITA</a>
           </li>
           <li class="nav-item pr-4">
-            <a class="nav-link @yield('navbar-profile')" href="{{ url('/profile') }}">PROFIL</a>
+            <a class="nav-link @yield('navbar-profile')" href="{{ url('/profil') }}">PROFIL</a>
           </li>
 
           <li class="nav-item dropdown">

@@ -23,7 +23,7 @@ class ProfilUserController extends Controller
         $profill = Profil::select('*')
         ->orderBy('year','asc')
         ->get();
-        return view('profile',compact('profill','settings'));
+        return view('profil',compact('profill','settings'));
     }
 
     /**

@@ -329,11 +329,11 @@
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 25%" id="height" name="height"
-                                        value="{{ old('height') }}" placeholder="Tinggi">
+                                        value="{{ old('height') }}" placeholder="Tinggi" min="1">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 25%" id="weight" name="weight"
-                                        value="{{ old('weight') }}" placeholder="Berat">
+                                        value="{{ old('weight') }}" placeholder="Berat" min="1">
                                 </div><br>
                             </div>
 
@@ -375,7 +375,7 @@
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
-                                        value="{{ old('no_ktp') }}" placeholder="No. KTP">
+                                        value="{{ old('no_ktp') }}" placeholder="No. KTP" min="0">
                                 </div><br>
                             </div>
                         </div>
@@ -400,7 +400,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" name="lama_kerja"
-                                        value="{{ old('lama_kerja') }}" placeholder="Lama Bekerja">
+                                        value="{{ old('lama_kerja') }}" placeholder="Lama Bekerja" min="1">
                                 </div>
                             </div>
 
@@ -431,7 +431,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="number" class="form-control" style="width: 50%" name="length_work[]"
-                                            placeholder="Lama Bekerja">
+                                            placeholder="Lama Bekerja" min="1">
                                     </div>
                                     <br>
                                 </div>
@@ -456,7 +456,7 @@
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 80%" id="expected_salary"
                                         value="{{ old('expected_salary') }}" name="expected_salary"
-                                        placeholder="Gaji yang Diharapkan">
+                                        placeholder="Gaji yang Diharapkan" min="1">
                                 </div>
                                 <br><br><br>
                             </div>
@@ -619,6 +619,9 @@
         $(document).ready(function() {
             // membatasi jumlah inputan
             var maxGroup = 5;
+
+
+
             var a = 3;
             //melakukan proses multiple input 
             $(".addRow").click(function() {

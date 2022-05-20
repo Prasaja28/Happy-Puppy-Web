@@ -33,6 +33,7 @@
             width: 100%;
             background-color: #221E40;
             font-family: 'Poppins';
+            padding: 2.5rem 3rem 4.5rem
         }
 
         h6 {
@@ -199,16 +200,10 @@
         </p>
     </div>
 
-    <div class="lowongan p-5 mt-5">
+    <div class="lowongan mt-5">
         <div class="container">
             <h6 class="font-weight-bold lowtext">LOWONGAN TERSEDIA</h6>
             <div class="grid-container">
-                <div class="grid-item waiter"><b id="item">Waiter</b></div>
-                <div class="grid-item"><b id="item">Cashier</b></div>
-                <div class="grid-item"><b id="item">Chef</b></div>
-                <div class="grid-item"><b id="item">Accounting</b></div>
-                <div class="grid-item" style="line-height: 90%;"><b id="item">Information<br>Technology</b></div>
-                <div class="grid-item"><b id="item">Supervisor</b></div>
             </div>
         </div>
     </div>
@@ -218,7 +213,7 @@
 
     <br>
     <div class="container" id="filter">
-        <div class="table px-2 px-lg-5" style="margin-top: -4.6rem;">
+        <div class="table px-2 px-lg-5" style="margin-top: -95px;">
             <table class="table table-striped mt-3" style="background-color: transparent; ">
                 <thead>
                     <tr class="tr-inputs">
@@ -242,6 +237,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <p class="text-warning">Search Result for '{{$nama_job}}' at '{{$lokasi}}'</p>
                     @foreach ($jobs as $j)
                         <tr>
                             <td>
@@ -272,7 +268,7 @@
 @section('js-internal')
     <!-- add tag js in here -->
     <script>
-        //  if mobile device set lowtext to padding right 5rem
+        //if mobile device set lowtext to padding right 5rem
         if ($(window).width() < 600) {
                $('.lowtext').css("padding-right", "5rem");
             }

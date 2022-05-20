@@ -40,17 +40,24 @@ class JobsController extends Controller
             ->get()
             ->pluck('value','key')
             ->toArray();
+            $nama_job = $request->nama_job;
+            $lokasi = $request->lokasi;
         $jobs = Jobs::select('*')
             ->where([
-                ['name_job', 'like', '%' . $request->nama_job . '%'],
-                ['location', 'like', '%' . $request->lokasi . '%']
+                ['name_job', 'like', '%' . $nama_job . '%'],
+                ['location', 'like', '%' . $lokasi . '%']
             ])
             ->get();
         //return not found if no data match with where clause
         if ($jobs->count() == 0) {
-            return view('errors.karror');
+            $settings = Settings::select('*')
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value','key')
+            ->toArray();
+            return view('errors.karror', compact('settings'));
         }
-        return view('karir', compact('jobs','settings'));
+        return view('karir-filter', compact('jobs','settings', 'nama_job', 'lokasi'));
     }
 
     /**
