@@ -46,7 +46,7 @@ Route::get('/dashboard', function () {
 Route::get('/news', [NewsUserController::class, 'index']);
 
 //Profil User
-Route::get('/profile', [ProfilUserController::class, 'index']);
+Route::get('/profil', [ProfilUserController::class, 'index']);
 
 Route::get('/daftar-lagu', function () {
     $settings = Settings::select('*')

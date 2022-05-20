@@ -43,7 +43,7 @@
 
 <div class="header-below">
   <div class="container py-4 py-md-5 px-md-3">
-    <h3 class="my-auto">PT.IMPERIUM HAPPY PUPPY</h3>
+    <h3 class="my-auto">PT IMPERIUM HAPPY PUPPY</h3>
     <p class="pt-2 font-italic">Let the world sing in harmony</p>
   </div>
 </div>

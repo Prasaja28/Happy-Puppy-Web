@@ -21,7 +21,7 @@ class ProfilUserController extends Controller
         ->pluck('value','key')
         ->toArray();
         $profill = Profil::all();
-        return view('profile',compact('profill','settings'));
+        return view('profil',compact('profill','settings'));
     }
 
     /**
