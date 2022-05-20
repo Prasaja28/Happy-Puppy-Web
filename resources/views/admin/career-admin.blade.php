@@ -37,6 +37,10 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Jobvacancy</th>
+                                        <th>Lokasi</th>
+                                        <th>Email</th>
+                                        <th>Alamat</th>
                                         <th>Pendidikan Formal</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
@@ -46,8 +50,6 @@
                                         <th>Status Martial</th>
                                         <th>Phone</th>
                                         <th>Mobile Phone</th>
-                                        <th>Email</th>
-                                        <th>Alamat</th>
                                         <th>No. KTP</th>
                                         <th>Gaji Yang Diharapkan</th>
                                         <th>Bahasa</th>
@@ -57,8 +59,7 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
-                                        <th>Jobvacancy</th>
-                                        <th>Lokasi</th>
+                                        <th>Detail</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -67,6 +68,10 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $career->name }}</td>
+                                            <td>{{ $career->name_job }}</td>
+                                            <td>{{ $career->location }}</td>
+                                            <td>{{ $career->email }}</td>
+                                            <td>{{ $career->address }}</td>
                                             <td>{{ $career->formal_education }}
                                             <td>{{ $career->name_place }}</td>
                                             <td>{{ $career->date_birth }}</td>
@@ -84,8 +89,6 @@
                                             @endif
                                             <td>{{ $career->phone }}</td>
                                             <td>{{ $career->mobile_phone }}</td>
-                                            <td>{{ $career->email }}</td>
-                                            <td>{{ $career->address }}</td>
                                             <td>{{ $career->no_ktp }}</td>
                                             <td>{{ $career->expected_salary }}</td>
                                             <td>{{ $career->language }}</td>
@@ -98,17 +101,17 @@
                                                     download>{{ $career->ijazah }}</a>
                                             </td>
                                             <td>{{ $career->linkedin }}</td>
-                                            <td>{{ $career->name_job }}</td>
-                                            <td>{{ $career->location }}</td>
+                                            <td class="text-center">
+                                                <a href="{{ route('career.detail', ['id' => $career->id]) }}"
+                                                    class="btn btn-success" alt="Detail"><i
+                                                        class="far fa-folder-open"></i></a>
+                                            </td>
                                             <td class="text-center">
                                                 {{-- @if ($career->status == 1) --}}
                                                 <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
                                                     data-target="#delete{{ $career->id }}"><i
                                                         class="fas fa-trash-alt"></i></i></button>
                                                 {{-- @endif --}}
-                                                <a href="{{ route('career.detail', ['id' => $career->id]) }}"
-                                                    class="btn btn-success" alt="Detail"><i
-                                                        class="far fa-folder-open"></i></a>
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
@@ -154,6 +157,10 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Jobvacancy</th>
+                                        <th>Lokasi</th>
+                                        <th>Email</th>
+                                        <th>Alamat</th>
                                         <th>Pendidikan Formal</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
@@ -163,8 +170,6 @@
                                         <th>Status Martial</th>
                                         <th>Phone</th>
                                         <th>Mobile Phone</th>
-                                        <th>Email</th>
-                                        <th>Alamat</th>
                                         <th>No. KTP</th>
                                         <th>Gaji Yang Diharapkan</th>
                                         <th>Bahasa</th>
@@ -174,8 +179,7 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
-                                        <th>Jobvacancy</th>
-                                        <th>Lokasi</th>
+                                        <th>Detail</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

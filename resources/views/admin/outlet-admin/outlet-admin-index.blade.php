@@ -250,8 +250,8 @@
                         $('#city_id').html(msg);
                         $('#citysub_id').html(' ');
                     },
-                    error: function(data) {
-                        console.log('error:', data);
+                    error: function(err) {
+                        console.log('error:', err);
                     }
                 })
 
@@ -271,17 +271,17 @@
                         $('#citysub_id').html(msg);
                     },
                     error: function(data) {
-                        console.log('error:', data);
+                        console.log('error:', );
                     },
                 });
 
             })
         })
     </script>
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
         });
-    </script>
+    </script> --}}
 
 @endsection

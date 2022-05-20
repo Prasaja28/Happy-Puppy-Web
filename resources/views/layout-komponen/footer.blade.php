@@ -84,8 +84,8 @@
                         </div>
 
                         <div name="change-language" class="row justify-content-end my-5 my-md-3">
-                            <a href="#">INA |</a>
-                            <a href="#" class="pl-1">ENG</a>
+                            {{-- <a href="#">INA |</a> --}}
+                            {{-- <a href="#" class="pl-1">ENG</a> --}}
                         </div>
                     </div>
                 </div>

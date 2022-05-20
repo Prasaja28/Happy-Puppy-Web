@@ -20,7 +20,9 @@ class ProfilUserController extends Controller
         ->get()
         ->pluck('value','key')
         ->toArray();
-        $profill = Profil::all();
+        $profill = Profil::select('*')
+        ->orderBy('year','asc')
+        ->get();
         return view('profile',compact('profill','settings'));
     }
 
