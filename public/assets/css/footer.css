@@ -19,7 +19,7 @@ footer {
 
 div[name="detail-info"] img {
     width: auto;
-    height: 13px;
+    height: 23px;
 }
 
 div[name="detail-info"] img:nth-child(3) {
@@ -79,21 +79,21 @@ div[name="term-and-condition"] p {
     } */
 
     div[name="detail-info"] img:nth-child(1) {
-        height: 40px;
+        height: 35px;
     }
     div[name="detail-info"] img:nth-child(2) {
-        margin-top: -22px;
-        height: 80px;
+        margin-top: -8px;
+        height: 38px;
     }
     div[name="detail-info"] img:nth-child(3) {
-        margin-top: -10px;
-        height: 50px;
+        margin-top: -18px;
+        height: 58px;
     }
     div[name="detail-info"] img:nth-child(4) {
-        height: 50px;
+        height: 35px;
     }
     div[name="detail-info"] img:nth-child(5) {
-        height: 50px;
+        height: 31px;
     }
 
     div[name="industry-info"] p {
