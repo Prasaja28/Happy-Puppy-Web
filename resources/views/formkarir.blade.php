@@ -301,14 +301,19 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="formal_education"
                                         value="{{ old('formal_education') }}" id="formal_education"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Pendidikan Formal</option>
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;" required>
+                                        <option selected="selected" selected disabled>Pendidikan Formal</option>
                                         <option value="SMA">SMA</option>
                                         <option value="D3">D3</option>
                                         <option value="S1/D4">S1/D4</option>
                                         <option value="S2">S2</option>
                                         <option value="S3">S3</option>
                                     </select>
+                                    @error('formal_education')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="place_birth" id="place_birth"
@@ -343,7 +348,7 @@
                                     <select class="form-control select2 select2-danger" id="gender" name="gender"
                                         value="{{ old('gender') }}" data-dropdown-css-class="select2-danger"
                                         style="width: 50%;">
-                                        <option selected="selected">Jenis Kelamin</option>
+                                        <option selected="selected" selected disabled>Jenis Kelamin</option>
                                         <option value="0">Laki-Laki</option>
                                         <option value="1">Perempuan</option>
                                     </select>
@@ -352,7 +357,7 @@
                                     <select class="form-control select2 select2-danger" id="status_marital"
                                         value="{{ old('status_marital') }}" name="status_marital"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Status Marital</option>
+                                        <option selected="selected" selected disabled>Status Marital</option>
                                         <option value="0">Single</option>
                                         <option value="1">Menikah</option>
                                     </select>
@@ -614,7 +619,11 @@
 @section('js-internal')
     <!-- add tag js in here -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
     <script>
         $(document).ready(function() {
             // membatasi jumlah inputan
@@ -715,24 +724,119 @@
         if ($(window).width() < 600) {
             //put web_captcha to last_form_section
             $('#web_captcha').appendTo('#lampiran');
-            $('#linkedin').hide();
+            // $('#linkedin').hide();
 
         }
     </script>
-    {{-- <script>
-        //if there is null form, show alert
-        $(document).ready(function() {
-        $('#myBtn').click(function() {
-                if ($('#name').val() == '' || $('#formal_education').val() == '' || $('#place_birth').val() == '' ||
-                    $('#date_birth').val() == '' || $('#height').val() == '' || $('#weight').val() == '' ||
-                    $('#gender').val() == '' || $('#status_marital').val() == '' || $('#status_marital').val() == '' ||
-                    $('#mobile_phone').val() == '' || $('#email').val() == '' || $('#address').val() == '' ||
-                    $('#no_ktp').val() == '' || $('#language').val() == '' ){
-            alert("Please fill all form");
-        } else {
-            $('#regForm').submit();
-        }
-        })
-        })
-    </script> --}}
+    <script>
+        $(function() {
+            //prevent form submit on enter
+            $('regForm').on('keyup keypress', function(e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            $('#regForm').validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true,
+                    },
+                    name: {
+                        required: true,
+                    },
+                    formal_education: {
+                        required: true
+                    },
+                    place_birth: {
+                        required: true
+                    },
+                    date_birth: {
+                        required: true
+                    },
+                    height: {
+                        required: true
+                    },
+                    weight: {
+                        required: true
+                    },
+                    gender: {
+                        required: true
+                    },
+                    status_marital: {
+                        required: true
+                    },
+                    phone: {
+                        required: true
+                    },
+                    mobile_phone: {
+                        required: true
+                    },
+                    address: {
+                        required: true
+                    },
+                    no_ktp: {
+                        required: true
+                    },
+
+                },
+                messages: {
+                    email: {
+                        required: "Please enter a email address",
+                        email: "Please enter a valid email address"
+                    },
+                    formal_education: {
+                        required: "Please provide a formal education",
+                    },
+                    name: {
+                        required: "Please provide a name",
+                    },
+                    place_birth: {
+                        required: "Please provide a place of birth",
+                    },
+                    date_birth: {
+                        required: "Please provide a date of birth",
+                    },
+                    height: {
+                        required: "Please provide a height",
+                    },
+                    weight: {
+                        required: "Please provide a weight",
+                    },
+                    gender: {
+                        required: "Please provide a gender"
+                    },
+                    status_marital: {
+                        required: "Please provide a status marital"
+                    },
+                    phone: {
+                        required: "Please provide a phone number"
+                    },
+                    mobile_phone: {
+                        required: "Please provide a mobile phone number"
+                    },
+                    address: {
+                        required: "Please provide a address"
+                    },
+                    no_ktp: {
+                        required: "Please provide a no. ktp"
+                    },
+
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
+        });
+    </script>
 @endsection
