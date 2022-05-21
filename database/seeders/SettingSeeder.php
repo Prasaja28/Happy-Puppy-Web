@@ -43,5 +43,13 @@ class SettingSeeder extends Seeder
             'key' => 'url_twitter',
             'value' => 'https://twitter.com',
         ]);
+        Settings::create([
+            'key' => 'url_tiktok',
+            'value' => 'https://tiktok.com',
+        ]);
+        Settings::create([
+            'key' => 'url_youtube',
+            'value' => 'https://youtube.com',
+        ]);
     }
 }

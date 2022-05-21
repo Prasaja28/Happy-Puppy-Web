@@ -35,6 +35,17 @@
                                         src="{{ asset('img/icons/instagram.png') }}">
                                 </a>
                             @endif
+                            @if (!empty($settings['url_tiktok']))
+                                <a target="_blank" class="social-item" href="{{ $settings['url_tiktok'] }}">
+                                    <img name="tiktok" class="mr-md-3" src="{{ asset('img/icons/tiktok.png') }}">
+                                </a>
+                            @endif
+                            @if (!empty($settings['url_youtube']))
+                                <a target="_blank" class="social-item" href="{{ $settings['url_youtube'] }}">
+                                    <img name="youtube" class="mr-md-3"
+                                        src="{{ asset('img/icons/youtube.png') }}">
+                                </a>
+                            @endif
                             <div name="border-right"></div>
                             @if (!empty($settings['url_apple']))
                                 <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
