@@ -25,7 +25,9 @@
     <div class="card">
         <div class="card-body login-card-body">
             <div class="login-logo">
-              <a href="{{ url('/') }}"><img src="{{ asset('/img/HappupLogo.png') }}" alt="Logo"></a>
+              <a href="{{ url('/') }}">
+                <img src="{{ asset('/img/HappupLogo.png') }}" alt="Logo" style="width: 20rem;">
+              </a>
             </div>
             <!-- /.login-logo -->
             <p class="login-box-msg">Login to Admin Dashboard</p>
