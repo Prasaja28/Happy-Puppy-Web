@@ -54,9 +54,7 @@ a:hover {
 }
 
 .description p {
-    font-size: 10px;
-    font-weight: 300;
-    line-height: 2.5rem;
+    line-height: 2em;
 }
 .history {
     margin-bottom: 200px;

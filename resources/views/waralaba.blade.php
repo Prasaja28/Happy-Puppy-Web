@@ -203,7 +203,7 @@
                 font-family: 'Poppins';
                 font-weight: bold;
                 border-bottom: none;
-                font-size: 9px;
+                font-size: 15px;
                 margin-top: 10px;
             }
 

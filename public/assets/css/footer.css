@@ -64,6 +64,24 @@ div[name="term-and-condition"] p {
     text-align: center;
 }
 
+div[name="detail-info"] img:nth-child(1) {
+    height: 35px;
+}
+div[name="detail-info"] img:nth-child(2) {
+    margin-top: -8px;
+    height: 38px;
+}
+div[name="detail-info"] img:nth-child(3) {
+    margin-top: 14px;
+    height: 38px;
+}
+div[name="detail-info"] img:nth-child(4) {
+    height: 35px;
+}
+div[name="detail-info"] img:nth-child(5) {
+    height: 31px;
+}
+
 /* TABLET++ */
 @media (min-width: 768px) {
     /* footer {
