@@ -65,21 +65,21 @@ div[name="term-and-condition"] p {
 }
 
 div[name="detail-info"] img:nth-child(1) {
-    height: 35px;
+    height: 25px;
 }
 div[name="detail-info"] img:nth-child(2) {
-    margin-top: -8px;
-    height: 38px;
+    margin-top: -1px;
+    height: 25px;
 }
 div[name="detail-info"] img:nth-child(3) {
-    margin-top: 14px;
+    margin-top: 23px;
     height: 38px;
 }
 div[name="detail-info"] img:nth-child(4) {
     height: 35px;
 }
 div[name="detail-info"] img:nth-child(5) {
-    height: 31px;
+    height: 25px;
 }
 
 /* TABLET++ */
