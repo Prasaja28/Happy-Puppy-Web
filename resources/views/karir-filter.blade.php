@@ -171,12 +171,6 @@
                                             }
                                         }
 
-                                        @media(max-width:320px) {
-                                            #filter {
-                                                margin-left: 2rem;
-                                            }
-                                        } */
-
     </style>
     <!-- Google Fonts -->
     <link
