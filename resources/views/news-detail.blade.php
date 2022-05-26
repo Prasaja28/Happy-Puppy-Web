@@ -260,8 +260,10 @@
                                                                                         </div> -->
     <div class="header" style="z-index:1;">
     </div>
-    <div class="image-background" style="z-index: 3;">
-        <img src="/uploads/{{ $news_detail[0]->thumbnail }}" alt="">
+    <div class="container">
+        <div class="image-background" style="z-index: 3;">
+            <img src="/uploads/{{ $news_detail[0]->thumbnail }}" alt="">
+        </div>
     </div>
     <!-- add konten in here -->
     <div class="container news-content">
