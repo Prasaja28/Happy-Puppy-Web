@@ -211,7 +211,7 @@
                 background-color: white;
                 border-bottom: none;
                 border-radius: 1em;
-                font-size: 10px;
+                font-size: 14px;
                 margin-left: -5px;
             }
 
@@ -222,7 +222,7 @@
             }
 
             #p2 {
-                font-size: 10px;
+                font-size: 13px;
                 font-family: 'Poppins';
                 line-height: normal;
             }
@@ -266,7 +266,7 @@
             }
 
             #txt-foot {
-                font-size: 10px;
+                font-size: 15px;
                 font-family: Arial, Helvetica, sans-serif;
                 color: white;
                 margin-top: 50px;
