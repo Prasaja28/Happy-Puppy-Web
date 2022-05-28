@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <style>
+        table.dataTable>tbody>tr.child ul.dtr-details>li {
+            /* padding-left: 30px; */
+            border-bottom: 1px solid #efefef;
+            padding: 0.5em 0;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+        }
+
+        table.dataTable>tbody>tr.child ul.dtr-details {
+            display: revert;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
 @endsection
 @section('waralaba-admin', 'active')
 @section('konten')

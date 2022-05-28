@@ -141,6 +141,7 @@ Route::get('/karir', [JobsController::class, 'index']);
 Route::get('/formkarir/{jobvacancy_id}', [CareerController::class, 'index'])->name('karirForm');
 Route::post('/karir-filter', [JobsController::class, 'filter'])->name('jobs.filter');
 Route::get('/career-admin/{id}', [CareerController::class, 'detail'])->name('career.detail');
+Route::get('/file-export/{id?}', [CareerController::class, 'Export'])->name('file-export');
 
 //waralaba
 Route::get('/form-waralaba',[WaralabaController::class, 'form'])->name('formwaralaba');

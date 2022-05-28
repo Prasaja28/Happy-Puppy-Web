@@ -33,6 +33,7 @@
             width: 100%;
             background-color: #221E40;
             font-family: 'Poppins';
+            padding: 2.5rem 3rem 4.5rem
         }
 
         h6 {
@@ -199,23 +200,17 @@
         </p>
     </div>
 
-    <div class="lowongan p-5 mt-5">
+    <div class="lowongan mt-5">
         <div class="container">
-            <h6 class="font-weight-bold px-5">LOWONGAN TERSEDIA</h6>
+            <h6 class="font-weight-bold lowtext">LOWONGAN TERSEDIA</h6>
             <div class="grid-container">
-                <div class="grid-item waiter"><b id="item">Waiter</b></div>
-                <div class="grid-item"><b id="item">Cashier</b></div>
-                <div class="grid-item"><b id="item">Chef</b></div>
-                <div class="grid-item"><b id="item">Accounting</b></div>
-                <div class="grid-item" style="line-height: 90%;"><b id="item">Information<br>Technology</b></div>
-                <div class="grid-item"><b id="item">Supervisor</b></div>
             </div>
         </div>
     </div>
-
+    
     <div class="content" style="margin-left: 1rem;">
     </div>
-
+    
     <br>
     <div class="container" id="filter">
         <div class="table px-2 px-lg-5" style="margin-top: -4.6rem;">
@@ -226,21 +221,22 @@
                             @csrf
                             <th style="border-top: 0px; padding-left: 0px;">
                                 <input type="text" class="form-control"
-                                    style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
+                                style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
                                     placeholder="Pilih Pekerjaan">
-                            </th>
+                                </th>
                             <th style="border-top: 0px;">
                                 <input type="text" class="form-control"
                                     style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="lokasi"
                                     placeholder="Pilih Lokasi">
-                            </th>
-                            <th style="border-top: 0px;">
-                                <button type="submit" class="btn"
+                                </th>
+                                <th style="border-top: 0px;">
+                                    <button type="submit" class="btn"
                                     style="font-size: 13px; height: 3rem;"><b>Filter</b></button>
                             </th>
                         </form>
                     </tr>
                 </thead>
+                <p class="text-warning" style="margin-top: -86px">Search Result for '{{$nama_job}}' at '{{$lokasi}}'</p>
             </table>
             <center>
                 <h4>Data Tidak itemukan</h4>
@@ -250,10 +246,10 @@
     <br>
     {{-- <div id="apply" class="form-group" style="padding-left: 60px;">
         <a href="{{ url('/formkarir') }}" class="btn btn-primary btn-search"
-            style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
+        style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
     </div> --}}
     <br>
-@endsection
+    @endsection
 
 
 @section('js-internal')

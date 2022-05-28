@@ -349,8 +349,8 @@
                                         value="{{ old('gender') }}" data-dropdown-css-class="select2-danger"
                                         style="width: 50%;">
                                         <option selected="selected" selected disabled>Jenis Kelamin</option>
-                                        <option value="0">Laki-Laki</option>
-                                        <option value="1">Perempuan</option>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
@@ -358,8 +358,8 @@
                                         value="{{ old('status_marital') }}" name="status_marital"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected" selected disabled>Status Marital</option>
-                                        <option value="0">Single</option>
-                                        <option value="1">Menikah</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Menikah">Menikah</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">

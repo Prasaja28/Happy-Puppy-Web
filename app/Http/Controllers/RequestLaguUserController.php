@@ -54,7 +54,9 @@ class RequestLaguUserController extends Controller
             'request' => $request->get('request'),
             'status' => 1
         ]);
-        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
+        return redirect('/kontak')->with([
+            'message' => 'Data Berhasil Dikirim!',
+            'alert' => 'success']);
     }
 
     /**

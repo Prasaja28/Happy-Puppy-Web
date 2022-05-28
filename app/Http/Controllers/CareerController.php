@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\CareerExport;
 
 Carbon::setlocale(LC_ALL, 'IND');
 
@@ -446,5 +448,10 @@ class CareerController extends Controller
             ->where('careerform.id', $id)
             ->get();
         return view('admin.jobekspertise-admin', compact('jobsEkspertise'));
+    }
+    public function Export(Request $request)
+    {
+        
+        return Excel::download(new CareerExport($request->id), 'Data Pelamar.xlsx');
     }
 }

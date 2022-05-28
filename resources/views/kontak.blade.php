@@ -18,7 +18,16 @@
             background-position: rightl;
             background-image: url('/img/kontak.png')
         }
-
+        .form-area{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
         .header #kont {
             color: white;
             position: absolute;
@@ -545,9 +554,9 @@
                             </div>
 
                             <div class="col-md-6">
-                                <input class="form-control @error('complaint') is-invalid @enderror" type="text"
+                                <textarea class="form-area" type="text" rows="6"
                                     id="complaint" name="complaint" placeholder="Pesan" value="{{ old('complaint') }}"
-                                    required>
+                                    required></textarea>
                                 @error('complaint')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -558,7 +567,7 @@
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                 </div>
 
-                                <br><br><br><br><br>
+                                
                                 <input style="background-color:#0275d8" type="submit" value="Submit">
                             </div>
                         </div>
@@ -607,8 +616,9 @@
                             </div>
 
                             <div class="col-md-6">
-                                <input class="form-control @error('request') is-invalid @enderror" type="text" id="request"
-                                    name="request" placeholder="Request Lagu" value="{{ old('request') }}" required>
+                                <textarea class="form-area" type="text" id="request" rows="6"
+                                    name="request" placeholder="Request Lagu" value="{{ old('request') }}" 
+                                    required></textarea>
                                 @error('request')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -619,7 +629,7 @@
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                 </div>
 
-                                <br><br><br><br><br>
+                                
                                 <input style="background-color:#0275d8" type="submit" value="Submit">
                             </div>
                         </div>
@@ -669,15 +679,17 @@
 
                             <div class="col-md-6">
                                 <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet"
-                                    name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" required></input>
+                                    name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" 
+                                    required>
                                 @error('outlet')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('keluhan') is-invalid @enderror" type="text" id="keluhan"
-                                    name="keluhan" placeholder="Keluhan" value="{{ old('keluhan') }}" required></input>
+                                <textarea class="form-area" rows="4" type="text" id="keluhan"
+                                    name="keluhan" placeholder="Keluhan" value="{{ old('keluhan') }}" 
+                                    required></textarea>
                                 @error('keluhan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -688,7 +700,6 @@
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                 </div>
 
-                                <br><br>
                                 <input style="background-color:#0275d8" type="submit" value="Submit">
                             </div>
                         </div>
@@ -755,7 +766,7 @@
                                             <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                         </div>
 
-                                        <br>
+                                        
                                         <input style="background-color:#0275d8" type="submit" value="Submit">
                                     </div>
                                 </div>

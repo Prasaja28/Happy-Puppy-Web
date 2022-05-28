@@ -169,7 +169,7 @@
                                                 position: absolute;
                                                 width: 5%;
                                             }
-                                        }
+                                        } */
 
     </style>
     <!-- Google Fonts -->

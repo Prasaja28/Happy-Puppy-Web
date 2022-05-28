@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <style>
+        table.dataTable>tbody>tr.child ul.dtr-details>li {
+            /* padding-left: 30px; */
+            border-bottom: 1px solid #efefef;
+            padding: 0.5em 0;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+        }
+
+        table.dataTable>tbody>tr.child ul.dtr-details {
+            display: revert;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
 @endsection
 @section('career-admin', 'active')
 @section('konten')
@@ -42,6 +63,8 @@
                                         <th>Email</th>
                                         <th>Alamat</th>
                                         <th>Pendidikan Formal</th>
+                                        <th>Eksport</th>
+                                        <th>Pengalaman</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Tinggi</th>
@@ -59,12 +82,11 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
-                                        <th>Detail</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($careers as $career)
+                                    @foreach ($careers as $career)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $career->name }}</td>
@@ -73,20 +95,20 @@
                                             <td>{{ $career->email }}</td>
                                             <td>{{ $career->address }}</td>
                                             <td>{{ $career->formal_education }}
+                                            <td class="text-center">
+                                                <a href="/file-export/{{ $career->id }}"
+                                                    class="btn btn-secondary">Export</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{{ route('career.detail', ['id' => $career->id]) }}"
+                                                    class="btn btn-success" alt="Detail"> Lihat Detail</a>
+                                            </td>
                                             <td>{{ $career->name_place }}</td>
                                             <td>{{ $career->date_birth }}</td>
                                             <td>{{ $career->height }}</td>
                                             <td>{{ $career->weight }}</td>
-                                            @if ($career->gender == 0)
-                                                <td> Laki-Laki </td>
-                                            @else
-                                                <td>Perempuan</td>
-                                            @endif
-                                            @if ($career->status_marital == 0)
-                                                <td> Single </td>
-                                            @else
-                                                <td> Menikah </td>
-                                            @endif
+                                            <td>{{ $career->gender }}</td>
+                                            <td>{{ $career->status_marital }}</td>
                                             <td>{{ $career->phone }}</td>
                                             <td>{{ $career->mobile_phone }}</td>
                                             <td>{{ $career->no_ktp }}</td>
@@ -101,16 +123,12 @@
                                                     download>{{ $career->ijazah }}</a>
                                             </td>
                                             <td>{{ $career->linkedin }}</td>
-                                            <td class="text-center">
-                                                <a href="{{ route('career.detail', ['id' => $career->id]) }}"
-                                                    class="btn btn-success" alt="Detail"><i
-                                                        class="far fa-folder-open"></i></a>
-                                            </td>
+
                                             <td class="text-center">
                                                 {{-- @if ($career->status == 1) --}}
                                                 <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
                                                     data-target="#delete{{ $career->id }}"><i
-                                                        class="fas fa-trash-alt"></i></i></button>
+                                                        class="fas fa-trash-alt"></i></button>
                                                 {{-- @endif --}}
                                             </td>
                                         </tr>
@@ -147,11 +165,12 @@
                                         {{-- @include(
                                             'admin.career-admin.users-admin-update'
                                         ) --}}
-                                    @empty
+                                    @endforeach
+                                    @if ($careers->count() == 0)
                                         <div class="alert alert-danger">
                                             Data Karier Belum Tersedia.
                                         </div>
-                                    @endforelse
+                                    @endif
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -162,6 +181,8 @@
                                         <th>Email</th>
                                         <th>Alamat</th>
                                         <th>Pendidikan Formal</th>
+                                        <th>Eksport</th>
+                                        <th>Pengalaman</th>
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Tinggi</th>
@@ -179,7 +200,6 @@
                                         <th>CV</th>
                                         <th>Ijazah</th>
                                         <th>Linkedin</th>
-                                        <th>Detail</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

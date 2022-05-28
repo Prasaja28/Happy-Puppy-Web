@@ -50,12 +50,14 @@ class JobsController extends Controller
             ->get();
         //return not found if no data match with where clause
         if ($jobs->count() == 0) {
+            $nama_job = $request->nama_job;
+            $lokasi = $request->lokasi;
             $settings = Settings::select('*')
             ->whereNotNull('value')
             ->get()
             ->pluck('value','key')
             ->toArray();
-            return view('errors.karror', compact('settings'));
+            return view('errors.karror', compact('jobs','settings', 'nama_job', 'lokasi'));
         }
         return view('karir-filter', compact('jobs','settings', 'nama_job', 'lokasi'));
     }

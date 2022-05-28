@@ -55,7 +55,9 @@ class KeluhanUserController extends Controller
             'keluhan' => $request->keluhan,
             'status' => 1
         ]);
-        return redirect('/kontak')->with('Data Berhasil Di Simpan!!!');
+        return redirect('/kontak')->with([
+            'message' => 'Data Berhasil Dikirim!',
+            'alert' => 'success']);
     }
 
     /**
