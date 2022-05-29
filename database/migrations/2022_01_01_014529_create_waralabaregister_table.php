@@ -23,9 +23,9 @@ class CreateWaralabaregisterTable extends Migration
             $table->string('city',64);
             $table->string('province',32);
             $table->string('official_address');
-            $table->string('home_phone',16);
-            $table->string('official_phone',16);
-            $table->string('mobile_phone',15);
+            $table->string('home_phone',20);
+            $table->string('official_phone',20);
+            $table->string('mobile_phone',20);
             $table->string('email',50);
             $table->string('job',30);
             $table->string('bussiness_field',50);

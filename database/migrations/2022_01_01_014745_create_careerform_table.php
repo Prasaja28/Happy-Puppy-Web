@@ -21,8 +21,8 @@ class CreateCareerformTable extends Migration
             $table->date('date_birth');
             $table->integer('height');
             $table->integer('weight');
-            $table->boolean('gender');
-            $table->boolean('status_marital');
+            $table->string('gender',10);
+            $table->string('status_marital',10);
             $table->string('phone', 20)->nullable();
             $table->string('mobile_phone', 20);
             $table->string('email', 50);
