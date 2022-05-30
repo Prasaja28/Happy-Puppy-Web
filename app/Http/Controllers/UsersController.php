@@ -15,9 +15,15 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $role = Role::where('status',1)->get();
-        return view('admin.users-admin.users-admin-index',compact('user','role'));
+        if (User::select('roles_id')->where('roles_id', '=', '1')->count() > 0) {
+            $user = User::all();
+            $role = Role::where('status',1)->get();
+            return view('admin.users-admin.users-admin-index',compact('user','role'));
+        }elseif (User::select('roles_id')->where('roles_id', '=', '2')->count() > 0) {
+            return view('admin.dashboard')->with('message','Anda tidak memiliki akses ke halaman ini');
+        }
+            
+        
     }
 
     /**

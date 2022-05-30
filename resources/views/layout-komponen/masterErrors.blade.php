@@ -17,7 +17,7 @@
     @include('layout-komponen.layout-konten')
     @include('layout-komponen.js-eksternal')
     @yield('js-internal')
-    @include('layout-komponen.footer')
+    {{-- @include('layout-komponen.footer') --}}
 </body>
 
 </html>
