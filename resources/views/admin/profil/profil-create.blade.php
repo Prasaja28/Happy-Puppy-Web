@@ -12,7 +12,7 @@
                 @csrf
                     <div class="form-group">
                         <label for="title_song">Tahun :</label>
-                        <input type="number" class="form-control form-control-border @error('year') is-invalid @enderror" id="year" placeholder="Isikan Tahun berapa" name="year" value="{{ old('year') }}" required>
+                        <input type="number" class="form-control form-control-border @error('year') is-invalid @enderror" id="year" placeholder="Isikan Tahun berapa" name="year" value="{{ old('year') }}" min="1" max="9999" required>
                         @error('year')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
