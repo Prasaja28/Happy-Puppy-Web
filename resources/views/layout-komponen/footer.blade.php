@@ -72,13 +72,13 @@
                             </div>
 
                             <div class="col-12 col-md-6">
-                                <p class="font-weight-bold">Telp.(031) 734-3388, Fax.(031) 734-2911</p>
+                                <p class="font-weight-bold">{{ __('footer.call') }}</p>
                             </div>
                         </div>
 
                         <div class="row justify-content-start">
                             <div class="col-12 col-md-6">
-                                <p class="font-weight-bold">JL. HR Muhammad 73B Surabaya 60226</p>
+                                <p class="font-weight-bold">{{ __('footer.address') }}</p>
                             </div>
 
                             <div class="col-12 col-md-6">
@@ -91,19 +91,19 @@
                 <div class="col-6">
                     <div name="more-detail">
                         <div class="row justify-content-end">
-                            <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">Become a member</a>
+                            <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">{{ __('footer.button') }}</a>
                         </div>
 
                         <div name="change-language" class="row justify-content-end my-5 my-md-3">
-                            {{-- <a href="#">INA |</a>
-                                <a href="#" class="pl-1">ENG</a> --}}
+                            <a href="lang/id">INA |</a>
+                            <a href="lang/en" class="pl-1">ENG</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div name="term-and-condition" class="row justify-content-md-end">
-                <p>Syarat & Ketentuan | @ 2011 PT Imperium Happy Puppy. All Right Reserved.</p>
+                <p>{{ __('footer.warning') }}</p>
             </div>
         </div>
     </footer>

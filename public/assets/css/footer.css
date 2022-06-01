@@ -121,4 +121,9 @@ div[name="detail-info"] img:nth-child(5) {
     div[name="term-and-condition"] {
         margin-top: -50px;
     }
+
+    /* div[name="row-social-media"] img:nth-child(3) {
+        width: auto;
+        height: 25px;
+    } */
 }

@@ -85,14 +85,14 @@
 
     <!-- background Home -->
     <div class="header text-white p-5">
-        <h4 class="mt-5">CARI</h4>
-        <h2 class="font-weight-bold">LOKASI</h2>
+        <h4 class="mt-5">{{ __('lokasi.title1') }}</h4>
+        <h2 class="font-weight-bold">{{ __('lokasi.title2') }}</h2>
     </div>
     <!-- end background home -->
     <!-- map indonesia -->
     <div class="container p-5" style="">
-    <h6 class="font-weight-bold  text-center cabang">Cabang Kami Tersebar Sampai 36 Kota Besar di Indonesia</h6>
-    <p class="text-center my-2 cabang-content">Input nama kota untuk mencari outlet di sekitarmu <br> serta dapatkan promo dan event yang sedang berlaku</p>
+    <h6 class="font-weight-bold  text-center cabang">{{ __('lokasi.desk1') }}</h6>
+    <p class="text-center my-2 cabang-content">{{ __('lokasi.desk2') }}</p>
     <div class="map-indonesia text-center">
         <img src="{{ asset('/img/map-indonesia.png') }}" alt="" class="img-fluid">
     </div>
@@ -102,12 +102,12 @@
     <div class="container">
         <div class="container-fluid text-white search-kota">
             <center>
-              <h5 class="p-4 font-weight-bold">Cari Oulet Terdekat</h5>
+              <h5 class="p-4 font-weight-bold">{{ __('lokasi.find1') }}</h5>
               <form class="form" method="get" action="{{ route('search') }}">
                 <div class="form-group mb-3">
                     <label for="search" class="d-block mr-2"></label>
-                    <input type="text" name="keyword" class="form-control w-75 d-inline" id="search" placeholder="Cari Outlet">
-                    <button type="submit" class="btn btn-primary mb-1">Cari</button>
+                    <input type="text" name="keyword" class="form-control w-75 d-inline" id="search" placeholder="{{ __('lokasi.find3') }}">
+                    <button type="submit" class="btn btn-primary mb-1">{{ __('lokasi.find2') }}</button>
                 </div>
             </form>
             <!-- Start kode untuk form pencarian -->

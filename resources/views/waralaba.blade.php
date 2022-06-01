@@ -287,16 +287,14 @@
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="container">
-            <p>WARALABA</p>
+            <p>{{ __('waralaba.title1') }}</p>
         </div>
     </div>
     <div class="back-grad">
         <div class="center">
             <br>
-            <p id="p1" onclick="openCity(event, 'kontak')">Kenapa Memilih Usaha Karaoke (Bernyanyi)?</p><br>
-            <p id="p2">Karena bernyanyi tidak mengenal musim sehingga kita tidak perlu kuatir suatu<br> waktu manusia bosan
-                bernyanyi. Bernyanyi adalah hiburan pertama yang<br> dianugerahkan oleh Tuhan YME untuk manusia dan akan
-                terus diminati manusia<br> sepanjang peradabannya.</p><br>
+            <p id="p1" onclick="openCity(event, 'kontak')">{{ __('waralaba.title2') }}</p><br>
+            <p id="p2">{{ __('waralaba.desc1') }}</p><br>
         </div>
     </div>
     <div class="back">
@@ -307,7 +305,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                                Home Theatre buka untuk karaoke?
+                                {{ __('waralaba.qna1') }}
                             </button>
                         </h5>
                     </div>
@@ -329,7 +327,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
-                                Karaoke keluarga, bisnis hiburan tanpa masalah
+                                {{ __('waralaba.qna2') }}
                             </button>
                         </h5>
                     </div>
@@ -350,7 +348,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
-                                Kenapa memilih waralaba Happy Puppy?
+                                {{ __('waralaba.qna3') }}
                             </button>
                         </h5>
                     </div>
@@ -371,7 +369,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseFour"
                                 aria-expanded="false" aria-controls="collapseFour">
-                                Hal yang perlu diperhatikan dalam waralaba ini
+                                {{ __('waralaba.qna4') }}
                             </button>
                         </h5>
                     </div>
@@ -392,7 +390,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseFive"
                                 aria-expanded="false" aria-controls="collapseFive">
-                                Berapa investasi yang dibutuhkan untuk waralaba ini?
+                                {{ __('waralaba.qna5') }}
                             </button>
                         </h5>
                     </div>
@@ -413,7 +411,7 @@
                         <h5 class="mb-0">
                             <button class="btnss collapsed tablinks" data-toggle="collapse" data-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
-                                Daftar kota tertutup untuk waralaba
+                                {{ __('waralaba.qna6') }}
                             </button>
                         </h5>
                     </div>
@@ -432,11 +430,9 @@
             </div>
         </div>
         <div class="container" id="txt-foot">
-            <p>Jika anda berminat serius, memenuhi syarat, serta mempunyai kemampuan finansial untuk membiayai investasi,
-                silahkan mengisi formulir peminat waralaba yang tersedia secara lengkap. Kami hanya menerima dan memproses
-                formulir yang diisi secara lengkap, untuk mengisi formulir pendaftaran waralaba.</p><br><br>
+            <p>{{ __('waralaba.desc2') }}</p><br><br>
             <form onclick="window.location.href='/form-waralaba'">
-                <button type="button" class="btn">Klik Disini</button>
+                <button type="button" class="btn">{{ __('waralaba.button') }}</button>
             </form>
         </div>
     </div>

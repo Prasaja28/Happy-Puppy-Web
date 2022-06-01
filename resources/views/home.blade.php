@@ -140,226 +140,225 @@
     <!-- END -->
 
     <!-- OUTLET SEARCH  -->
-    <section name="outlet-search" class="mt-0">
-        <div class="container-fluid text-white search-kota">
-            <h4 class="pt-5 text-center">Cari Outlet Terdekat</h4>
-
-            <center>
-                <form class="form" method="get" action="{{ route('search') }}">
-                    <div class="form-group mb-3">
-                        <label for="search" class="d-block mr-2"></label>
-                        <input type="text" name="keyword" class="form-control w-75 d-inline" id="search"
-                            placeholder="Cari Outlet">
-                        <button type="submit" class="btn btn-primary mb-1">Cari</button>
-                    </div>
-                </form>
-                <!-- Start kode untuk form pencarian -->
-                @if ($message = Session::get('success'))
-                    <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                    </div>
-                @endif
-            </center>
-
-            <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang
-                sedang berlaku</p>
-
-            <div name="city" class="row pt-3 justify-content-center">
-                <a href="{{ route('search', ['keyword' => 'jakarta']) }}" class="btn mx-3 btn-primary btn-search"
-                    style="text-transform:uppercase">Jakarta</a>
-                <a href="{{ route('search', ['keyword' => 'surabaya']) }}" class="btn mx-3 btn-primary btn-search"
-                    style="text-transform:uppercase">Surabaya</a>
-                <a href="{{ route('search', ['keyword' => 'makassar']) }}" class="btn mx-3 btn-primary btn-search"
-                    style="text-transform:uppercase">Makassar</a>
-                <a href="{{ route('search', ['keyword' => 'samarinda']) }}" class="btn mx-3 btn-primary btn-search"
-                    style="text-transform:uppercase">Samarinda</a>
+    <div class="container">
+        <section name="outlet-search" class="mt-0">
+            <div class="container-fluid text-white search-kota">
+                <!-- <h4 class="pt-5 text-center">Cari Outlet Terdekat</h4> -->
+                <h4 class="pt-5 text-center">{{ __('home.find1') }}</h4>
+    
+                <center>
+                    <form class="form" method="get" action="{{ route('search') }}">
+                        <div class="form-group mb-3">
+                            <label for="search" class="d-block mr-2"></label>
+                            <input type="text" name="keyword" class="form-control w-75 d-inline" id="search" placeholder="{{ __('home.find4') }}">
+                            <!-- <button type="submit" class="btn btn-primary mb-1">Cari</button> -->
+                            <button type="submit" class="btn btn-primary mb-1">{{ __('home.find2') }}</button>
+                        </div>
+                    </form>
+                    <!-- Start kode untuk form pencarian -->
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                </center>
+    
+                <!-- <p class="text-center pt-4">Masukkan nama kota untuk mencari outlet di sekitar anda serta promo dan event yang sedang berlaku</p> -->
+                <p class="text-center pt-4">{{ __('home.find3') }}</p>
+    
+                <div name="city" class="row pt-3 justify-content-center">
+                    <a href="{{ route('search', ['keyword' => 'jakarta']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Jakarta</a>
+                    <a href="{{ route('search', ['keyword' => 'surabaya']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Surabaya</a>
+                    <a href="{{ route('search', ['keyword' => 'makassar']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Makassar</a>
+                    <a href="{{ route('search', ['keyword' => 'samarinda']) }}" class="btn mx-3 btn-primary btn-search" style="text-transform:uppercase">Samarinda</a>
+                </div>
+    
+                <h4 name="top-artist" class="font-weight-bold text-center py-5">{{ __('home.top') }}</h4>
             </div>
-
-            <h4 name="top-artist" class="font-weight-bold text-center py-5">TOP ARTIST</h4>
+        </section>
+        <!-- END -->
+    
+        <!-- ARTIST -->
+        <div name="artist" class="container top-artis">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center">
+                        @if ($topartist->count() != 0)
+                            @foreach ($topartist as $data)
+                                @if ($data->status == 1)
+                                    <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
+                                @endif
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-    <!-- END -->
-
-    <!-- ARTIST -->
-    <div name="artist" class="container top-artis">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                <div class="d-flex flex-wrap align-items-center justify-content-center">
-                    @if ($topartist->count() != 0)
-                        @foreach ($topartist as $data)
-                            @if ($data->status == 1)
-                                <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
-                            @endif
+    
+        <!-- song list -->
+        <section name="song">
+            <div class="container song-container">
+                <div name="sheets">
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-md-4">
+                            <h6 class="font-weight-bold top-title">{{ __('home.song1') }}</h6>
+                            <div class="card border-0">
+                                @if ($songlist_terlaris->count() != null)
+                                    <img src="/uploads/{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
+                                @endif
+                                <div class="card-body">
+                                    @if ($songlist_terlaris->count() != null)
+                                        <h5 class="card-title font-weight-bold">{{ $songlist_terlaris[0]->artist }}</h5>
+                                        <p class="text-muted">{{ $songlist_terlaris[0]->title_song }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4">
+                            <h6 class="font-weight-bold top-title">{{ __('home.song2') }}</h6>
+                            <div class="card border-0">
+                                @if ($songlist_terbaru->count() != null)
+                                    <img src="/uploads/{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
+                                @endif
+                                <div class="card-body">
+                                    @if ($songlist_terbaru->count() != null)
+                                        <h5 class="card-title font-weight-bold">{{ $songlist_terbaru[0]->artist }}</h5>
+                                        <p class="text-muted">{{ $songlist_terbaru[0]->title_song }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div name="list-song" class="row justify-content-center mt-3">
+                        <div class="col-6 col-md-4">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    @foreach ($songlist_terlaris as $key => $song)
+                                        @php
+                                            if ($key == 0) {
+                                                continue;
+                                            }
+                                        @endphp
+                                        <h6 class="font-weight-bold">{{ $song->artist }}</h6>
+                                        <p class="text-muted">{{ $song->title_song }}</p>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    @foreach ($songlist_terbaru as $key => $song)
+                                        @php
+                                            if ($key == 0) {
+                                                continue;
+                                            }
+                                        @endphp
+                                        <h6 class="font-weight-bold">{{ $song->artist }}</h6>
+                                        <p class="text-muted">{{ $song->title_song }}</p>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{-- END --}}
+    
+        {{-- LATEST NEWS --}}
+        <section name="latest-news">
+            <div class="container">
+                <div class="row">
+                    <h6 class="font-weight-bold top-title">{{ __('home.latest1') }}</h6>
+                    @if ($news_terbaru->count() > 5)
+                        <a name="view-all" class="view-all" href="news">VIEW ALL</a>
+                    @else
+                        <a name="view-all" class="view-all" href="news"></a>
+                    @endif
+    
+                </div>
+    
+                <div class="row">
+                    @if ($news_terbaru->count() > 0)
+                        <div class="col-6">
+                            <div class="card border-0 rounded-0">
+                                <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}">
+                                <div class="card-body pb-0">
+                                    <div class="card-title">
+                                        <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
+                                        <div class="date d-flex justify-content-between align-items-center">
+                                            <p class="text-date pt-2 pt-md-4 pb-0">
+                                                <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
+                                            <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
+                                                class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+    
+                    @if ($news_terbaru->count() > 1)
+                        <div class="col-6">
+                            <div class="card border-0 rounded-0">
+                                <img src="/uploads/{{ $news_terbaru[1]->thumbnail }}">
+                                <div class="card-body pb-0">
+                                    <div class="card-title">
+                                        <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[1]->news_title_id }}</h4>
+                                        <div class="date d-flex justify-content-between align-items-center">
+                                            <p class="text-date pt-2 pt-md-4 pb-0">
+                                                <?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
+                                            <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"
+                                                class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </section>
+    
+        {{-- NEXT NEWS --}}
+        <section name="next-news">
+            <div class="container">
+                <div class="row justify-content-center">
+                    @if ($news_terbaru->count() != null)
+                        @foreach ($news_terbaru as $key => $newst)
+                            @php
+                                if ($key == 0) {
+                                    continue;
+                                }
+                                if ($key == 1) {
+                                    continue;
+                                }
+                            @endphp
+                            <div name="item" class="col-11 col-md-8 px-0 mb-5 item">
+                                <img class="float-left mr-3 mr-md-4" src="/uploads/{{ $newst->thumbnail }}">
+    
+                                <div name="description" class="pr-1 pr-md-3">
+                                    <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">{{ __('home.latest2') }}</p>
+                                    <h4 class="font-weight-none pt-0 pt-md-3">{{ $newst->news_title_id }}</h4>
+                                    <div class="date d-flex justify-content-between align-items-center">
+                                        <p class="text-date pt-2 pt-md-4 pb-0">
+                                            <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
+                                        <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
+                                            class="pr-2 pr-md-0 itemClick"><img src="{{ asset('img/book.png') }}"></a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                         @endforeach
                     @endif
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-
-    <!-- song list -->
-    <section name="song">
-        <div class="container song-container">
-            <div name="sheets">
-                <div class="row justify-content-center">
-                    <div class="col-6 col-md-4">
-                        <h6 class="font-weight-bold top-title">LAGU TERLARIS</h6>
-                        <div class="card border-0">
-                            @if ($songlist_terlaris->count() != null)
-                                <img src="/uploads/{{ $songlist_terlaris[0]->thumbnail }}" class="card-img-top">
-                            @endif
-                            <div class="card-body">
-                                @if ($songlist_terlaris->count() != null)
-                                    <h5 class="card-title font-weight-bold">{{ $songlist_terlaris[0]->artist }}</h5>
-                                    <p class="text-muted">{{ $songlist_terlaris[0]->title_song }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4">
-                        <h6 class="font-weight-bold top-title">LAGU TERBARU</h6>
-                        <div class="card border-0">
-                            @if ($songlist_terbaru->count() != null)
-                                <img src="/uploads/{{ $songlist_terbaru[0]->thumbnail }}" class="card-img-top">
-                            @endif
-                            <div class="card-body">
-                                @if ($songlist_terbaru->count() != null)
-                                    <h5 class="card-title font-weight-bold">{{ $songlist_terbaru[0]->artist }}</h5>
-                                    <p class="text-muted">{{ $songlist_terbaru[0]->title_song }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div name="list-song" class="row justify-content-center mt-3">
-                    <div class="col-6 col-md-4">
-                        <div class="card border-0">
-                            <div class="card-body">
-                                @foreach ($songlist_terlaris as $key => $song)
-                                    @php
-                                        if ($key == 0) {
-                                            continue;
-                                        }
-                                    @endphp
-                                    <h6 class="font-weight-bold">{{ $song->artist }}</h6>
-                                    <p class="text-muted">{{ $song->title_song }}</p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-4">
-                        <div class="card border-0">
-                            <div class="card-body">
-                                @foreach ($songlist_terbaru as $key => $song)
-                                    @php
-                                        if ($key == 0) {
-                                            continue;
-                                        }
-                                    @endphp
-                                    <h6 class="font-weight-bold">{{ $song->artist }}</h6>
-                                    <p class="text-muted">{{ $song->title_song }}</p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- END --}}
-
-    {{-- LATEST NEWS --}}
-    <section name="latest-news">
-        <div class="container">
-            <div class="row">
-                <h6 class="font-weight-bold top-title">LATEST NEWS</h6>
-                @if ($news_terbaru->count() > 5)
-                    <a name="view-all" class="view-all" href="news">VIEW ALL</a>
-                @else
-                    <a name="view-all" class="view-all" href="news"></a>
-                @endif
-
-            </div>
-
-            <div class="row">
-                @if ($news_terbaru->count() > 0)
-                    <div class="col-6">
-                        <div class="card border-0 rounded-0">
-                            <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}">
-                            <div class="card-body pb-0">
-                                <div class="card-title">
-                                    <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
-                                    <div class="date d-flex justify-content-between align-items-center">
-                                        <p class="text-date pt-2 pt-md-4 pb-0">
-                                            <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>
-                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
-                                            class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
-                @if ($news_terbaru->count() > 1)
-                    <div class="col-6">
-                        <div class="card border-0 rounded-0">
-                            <img src="/uploads/{{ $news_terbaru[1]->thumbnail }}">
-                            <div class="card-body pb-0">
-                                <div class="card-title">
-                                    <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[1]->news_title_id }}</h4>
-                                    <div class="date d-flex justify-content-between align-items-center">
-                                        <p class="text-date pt-2 pt-md-4 pb-0">
-                                            <?= date('M d, Y', strtotime($news_terbaru[1]->news_date)) ?></p>
-                                        <a href="{{ route('detailNews', ['id' => $news_terbaru[1]->id]) }}"
-                                            class="clickArea"><img src="{{ asset('img/book.png') }}"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </section>
-
-    {{-- NEXT NEWS --}}
-    <section name="next-news">
-        <div class="container">
-            <div class="row justify-content-center">
-                @if ($news_terbaru->count() != null)
-                    @foreach ($news_terbaru as $key => $newst)
-                        @php
-                            if ($key == 0) {
-                                continue;
-                            }
-                            if ($key == 1) {
-                                continue;
-                            }
-                        @endphp
-                        <div name="item" class="col-11 col-md-8 px-0 mb-5 item">
-                            <img class="float-left mr-3 mr-md-4" src="/uploads/{{ $newst->thumbnail }}">
-
-                            <div name="description" class="pr-1 pr-md-3">
-                                <p class="label font-weight-bold mb-2 mb-md-4 mt-3 mt-md-4">NEWS</p>
-                                <h4 class="font-weight-none pt-0 pt-md-3">{{ $newst->news_title_id }}</h4>
-                                <div class="date d-flex justify-content-between align-items-center">
-                                    <p class="text-date pt-2 pt-md-4 pb-0">
-                                        <?= date('M d, Y', strtotime($newst->news_date)) ?></p>
-                                    <a href="{{ route('detailNews', ['id' => $newst->id]) }}"
-                                        class="pr-2 pr-md-0 itemClick"><img src="{{ asset('img/book.png') }}"></a>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    </section>
 @endsection
 
 
