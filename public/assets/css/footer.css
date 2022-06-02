@@ -176,3 +176,9 @@ div[name="detail-info"] img {
         display: none;
     }
 }
+@media (max-width: 320px){
+    div[name="row-social-media"] img {
+        width: auto;
+        height: 15px;
+    }
+}
