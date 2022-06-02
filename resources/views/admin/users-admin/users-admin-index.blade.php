@@ -1,3 +1,4 @@
+@if (Session::get('status_user') == '1')
 @extends('admin/layout-komponen/master')
 
 @section('title','Users')
@@ -125,3 +126,6 @@
   });
 </script>
 @endsection
+@else
+@include('admin.nologin')
+@endif

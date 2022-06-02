@@ -7,55 +7,53 @@
         <div class="container p-5">
             <div class="row">
                 <div name="detail-info" class="col-6">
-                    <div class="row justify-content-start">
-                        <img src="{{ asset('/img/HappupLogo.png') }}" class="mr-2 mr-md-2">
-                        <img src="{{ asset('/img/logofot1.png') }}" class="mr-2 mr-md-2">
-                        <img src="{{ asset('/img/logofot3.png') }}" class="mr-2 mr-md-2">
-                        <img src="{{ asset('/img/logofot2.png') }}" class="mr-2 mr-md-2 mt-4 mt-md-0">
-                        <img src="{{ asset('/img/logofot4.png') }}" class="mt-4 mt-md-0">
-                    </div>
+                    <img src="{{ asset('/img/HappupLogo.png') }}" class="d-flex align-middle">
+                    <img src="{{ asset('/img/logofot1.png') }}" class="d-flex align-middle">
+                    <img src="{{ asset('/img/logofot3.png') }}" class="d-flex align-middle">
+                    <img src="{{ asset('/img/logofot2.png') }}" class="d-flex align-middle">
+                    <img src="{{ asset('/img/logofot4.png') }}" class="d-flex align-middle">
                 </div>
                 @if (count($settings) > 0)
                     <div name="row-social-media" class="col-6">
-                        <div class="row justify-content-end">
+                        <div class="media-wrapper justify-content-end">
                             @if (!empty($settings['url_facebook']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_facebook'] }}">
-                                    <img name="facebook" class="mr-4 mr-md-3"
+                                <a target="_blank" class="social-items" href="{{ $settings['url_facebook'] }}">
+                                    <img name="facebook"
                                         src="{{ asset('img/icons/facebook.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_twitter']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_twitter'] }}">
-                                    <img class="mr-4 mr-md-3" src="{{ asset('img/icons/twitter.png') }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_twitter'] }}">
+                                    <img src="{{ asset('img/icons/twitter.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_instagram']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_instagram'] }}">
-                                    <img name="instagram" class="mr-md-3"
+                                <a target="_blank" class="social-items" href="{{ $settings['url_instagram'] }}">
+                                    <img name="instagram"
                                         src="{{ asset('img/icons/instagram.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_tiktok']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_tiktok'] }}">
-                                    <img name="tiktok" class="mr-md-3" src="{{ asset('img/icons/tiktok.png') }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_tiktok'] }}">
+                                    <img name="tiktok" src="{{ asset('img/icons/tiktok.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_youtube']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_youtube'] }}">
-                                    <img name="youtube" class="mr-md-3"
+                                <a target="_blank" class="social-items" href="{{ $settings['url_youtube'] }}">
+                                    <img name="youtube"
                                         src="{{ asset('img/icons/youtube.png') }}">
                                 </a>
                             @endif
-                            <div name="border-right"></div>
+                            <div class="divider"><p>|</p></div>
                             @if (!empty($settings['url_apple']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
-                                    <img name="apple" class="mt-4 mt-md-0 mr-4 mr-md-3 pl-5 pl-md-0 ml-md-3"
+                                <a target="_blank" class="social-items" href="{{ $settings['url_apple'] }}">
+                                    <img name="apple"
                                         src="{{ asset('img/icons/apple.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_google_play']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
-                                    <img class="mt-4 mt-md-0" src="{{ asset('img/icons/google-play.png') }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_google_play'] }}">
+                                    <img src="{{ asset('img/icons/google-play.png') }}">
                                 </a>
                             @endif
                         </div>

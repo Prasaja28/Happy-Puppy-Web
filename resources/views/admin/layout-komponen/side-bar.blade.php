@@ -124,14 +124,17 @@
                         </p>
                     </a>
                 </li>
+                @if (Session::get('status_user') == '1')
+                    
                 <li class="nav-item">
                     <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            User
+                            User 
                         </p>
                     </a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a href="{{ url('/settings-admin') }}" class="nav-link @yield('settings-admin')">
                         <i class="nav-icon fas fa-cog"></i>
@@ -145,4 +148,5 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+    
 </aside>

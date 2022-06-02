@@ -582,9 +582,9 @@
                             <div class="card-body">
                                 <!-- <h5 class="card-title title-news" style="font-weight: bold;">Midnight In Egypt</h5> -->
                                 <h5 class="card-title title-news" style="font-weight: bold;">
-                                    {{ $news_terbaru[0]->news_title_id }}</h5>
+                                    {{ $news_terbaru[0]->{'news_title_'.app()->getLocale()} }}</h5>
                                 <p class="news-time"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?>
-                                    <a href="{{ route('detailNews', ['id' => $news_terbaru[0]->id]) }}"
+                                    <a href="{{ route('detailNews', [app()->getLocale(),$news_terbaru[0]->id]) }}"
                                         class="main" style="float:right;color:black"><i
                                             class="fas fa-book-open"></i></a>
                                 </p>
@@ -619,7 +619,7 @@
                                                 <div class="card-body text-bottom">
                                                     <!-- <h5 class="card-title-lates card-title"> Stay Safe and Healthy</h5> -->
                                                     <h5 class="card-title-lates card-title">
-                                                        {{ $newss->news_title_id }}
+                                                        {{ $newss->{'news_title_'.app()->getLocale()} }}
                                                     </h5>
                                                     <p class="news-time-lates">
                                                         <?= date('M d, Y', strtotime($newss->news_date)) ?>
@@ -668,7 +668,7 @@
                                             <!-- <p class="news-popular-title">News</p> -->
                                             <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
                                             <p class="news-popular-title">{{ __('news.title4') }}</p>
-                                            <h5 class="card-title card-title-popular">{{ $newsst->news_title_id }}</h5>
+                                            <h5 class="card-title card-title-popular">{{ $newsst->{'news_title_'.app()->getLocale()} }}</h5>
                                             <p class="news-time-popular">
                                                 <?= date('M d, Y', strtotime($newsst->news_date)) ?>
                                                 <a href="{{ route('detailNews', ['id' => $newsst->id]) }}"
@@ -700,7 +700,7 @@
                                         <div class="col-6">
                                             <div class="card-body text-bottom" style="z-index:2;">
                                                 <p class="news-popular-title">News</p>
-                                                <h5 class="card-title card-title-popular">{{ $newsst->news_title_id }}
+                                                <h5 class="card-title card-title-popular">{{ $newsst->{'news_title_'.app()->getLocale()} }}
                                                 </h5>
                                                 <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
                                                 <p class="news-time-popular">

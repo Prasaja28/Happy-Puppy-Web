@@ -1,4 +1,4 @@
-@if(\Session::has('user_id'))
+@if(Session::has('user_id'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
