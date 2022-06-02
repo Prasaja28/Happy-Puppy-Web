@@ -96,7 +96,7 @@ div[name="detail-info"] img {
     object-fit: contain;
     display: flex;
 }
-.social-item {
+.social-items {
     display: block;
     padding: 0 .6rem;
 }
@@ -167,7 +167,7 @@ div[name="detail-info"] img {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .social-item {
+    .social-items {
         padding: .8rem 0;
         margin: auto;
     }

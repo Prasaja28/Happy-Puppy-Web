@@ -17,42 +17,42 @@
                     <div name="row-social-media" class="col-6">
                         <div class="media-wrapper justify-content-end">
                             @if (!empty($settings['url_facebook']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_facebook'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_facebook'] }}">
                                     <img name="facebook"
                                         src="{{ asset('img/icons/facebook.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_twitter']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_twitter'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_twitter'] }}">
                                     <img src="{{ asset('img/icons/twitter.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_instagram']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_instagram'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_instagram'] }}">
                                     <img name="instagram"
                                         src="{{ asset('img/icons/instagram.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_tiktok']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_tiktok'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_tiktok'] }}">
                                     <img name="tiktok" src="{{ asset('img/icons/tiktok.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_youtube']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_youtube'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_youtube'] }}">
                                     <img name="youtube"
                                         src="{{ asset('img/icons/youtube.png') }}">
                                 </a>
                             @endif
                             <div class="divider"><p>|</p></div>
                             @if (!empty($settings['url_apple']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_apple'] }}">
                                     <img name="apple"
                                         src="{{ asset('img/icons/apple.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_google_play']))
-                                <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
+                                <a target="_blank" class="social-items" href="{{ $settings['url_google_play'] }}">
                                     <img src="{{ asset('img/icons/google-play.png') }}">
                                 </a>
                             @endif
