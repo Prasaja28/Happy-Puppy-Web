@@ -6,11 +6,12 @@
     <style>
         .vl {
             border-left: 6px solid white;
-            min-height: 7vh;
+            min-height: 54vh;
             position: absolute;
             left: 50%;
             margin-left: -3px;
-            top: 8.1rem;
+            top: 153px;
+        }
         }
 
         @media (max-width:600px) {
@@ -73,7 +74,7 @@
 
                 @foreach ($profill as $key => $history)
                     <!-- // $bgColor[$key%3]
-                      // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
+                              // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
                     @if ($key % 2 == 0)
                         <div class="brand brand-history-right">
                             <div class="row justify-content-end">

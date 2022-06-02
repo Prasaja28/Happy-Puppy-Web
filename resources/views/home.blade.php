@@ -97,24 +97,10 @@
                         </a>
                     </li>
                 @endif
-                @if (!empty($settings['url_apple']))
-                    <li>
-                        <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
-                            <img name="apple" src="{{ asset('assets/img/icons/apple.png') }}">
-                        </a>
-                    </li>
-                @endif
                 @if (!empty($settings['url_whatsapp']))
                     <li>
                         <a target="_blank" class="social-item" href="{{ $settings['url_whatsapp'] }}">
                             <img src="{{ asset('assets/img/icons/whatsapp.png') }}">
-                        </a>
-                    </li>
-                @endif
-                @if (!empty($settings['url_google_play']))
-                    <li>
-                        <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
-                            <img src="{{ asset('assets/img/icons/google-play.png') }}">
                         </a>
                     </li>
                 @endif
@@ -131,6 +117,20 @@
                         <a target="_blank" class="social-item" href="{{ $settings['url_youtube'] }}">
                             <img src="{{ asset('assets/img/icons/youtube.png') }}"
                                 style="width: fit-content; margin-left:-31.5px">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_apple']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_apple'] }}">
+                            <img name="apple" src="{{ asset('assets/img/icons/apple.png') }}">
+                        </a>
+                    </li>
+                @endif
+                @if (!empty($settings['url_google_play']))
+                    <li>
+                        <a target="_blank" class="social-item" href="{{ $settings['url_google_play'] }}">
+                            <img src="{{ asset('assets/img/icons/google-play.png') }}">
                         </a>
                     </li>
                 @endif

@@ -39,6 +39,7 @@ use App\Models\Settings;
 Route::get('/', [LandingController::class, 'index']);
 
 Route::get('/dashboard', function () {
+    
     return view('admin.dashboard');
 });
 
@@ -170,6 +171,7 @@ Route::get('/keluhan-admin', [KeluhanController::class, 'index']);
 Route::get('/request-admin', [RequestLaguController::class, 'index']);
 
 //users
+
 Route::get('/users-admin', [UsersController::class, 'index']);
 Route::get('/users-admin/delete/{id}', [UsersController::class, 'destroy']);
 Route::post('/users-admin/store', [UsersController::class, 'store']);

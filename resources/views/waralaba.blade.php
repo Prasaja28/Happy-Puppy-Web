@@ -191,7 +191,6 @@
             }
 
             .card-header {
-                margin-top: -10px;
                 background-color: #85A4E1;
                 border-bottom: none;
                 margin-left: -24px;

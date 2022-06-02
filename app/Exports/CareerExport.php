@@ -45,10 +45,13 @@ class CareerExport implements FromCollection, WithStrictNullComparison, WithHead
         'careerform.other_expertise',
         'careerform.cv',
         'careerform.ijazah',
-        'careerform.linkedin',)
+        'careerform.linkedin',
+        'jobexpertise.*')
         ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
         ->join('provinces', 'careerform.place_birth', '=', 'provinces.id')
+        ->join('jobexpertise', 'careerform.id', '=', 'jobexpertise.careerform_id')
         ->where('careerform.id', $this->id)
+        ->where('jobexpertise.careerform_id', $this->id)
         ->get();
     }
     public function headings(): array
