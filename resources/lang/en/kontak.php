@@ -1,0 +1,20 @@
+<?php
+return [
+	'title1' => 'CONTACT',
+	'title2' => 'US',
+	'title3' => 'Management & Franchising: PT. Happy Puppy Empire',
+	'title4' => 'General Information : info@happypuppy.id',
+    'accordion1' => 'Contact',
+	'accordion2' => 'Song Request',
+	'accordion3' => 'Complaint',
+    'box1' => 'Name',
+	'box2' => 'Phone Number',
+	'box3' => 'Message',
+    'box4' => 'Request Song',
+    'box5' => 'Complaint',
+    'faq1' => 'What is family karaoke?',
+    'faq2' => 'Is Happy Puppy the family?',
+    'faq3' => 'Does Happy Puppy provide a female companion?',
+    'faq4' => 'Do Happy Puppy visitors have to be a family?',
+    'faq5' => 'Are visitors privacy guaranteed?',
+];

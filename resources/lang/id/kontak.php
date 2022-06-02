@@ -1,0 +1,20 @@
+<?php
+return [
+	'title1' => 'KONTAK',
+	'title2' => 'KAMI',
+	'title3' => 'Manajemen & Waralaba: PT. Imperium Happy Puppy',
+	'title4' => 'Informasi Umum : info@happypuppy.id',
+	'accordion1' => 'Kontak',
+	'accordion2' => 'Request Lagu',
+	'accordion3' => 'Keluhan',
+	'box1' => 'Nama',
+	'box2' => 'Telp.',
+	'box3' => 'Pesan',
+	'box4' => 'Request Lagu',
+    'box5' => 'Keluhan',
+    'faq1' => 'Apakah karaoke keluarga itu?',
+    'faq2' => 'Apakah Happy Puppy keluarga itu?',
+    'faq3' => 'Apakah Happy Puppy menyediakan pendamping wanita?',
+    'faq4' => 'Apakah pengunjung Happy Puppy harus sekeluarga?',
+    'faq5' => 'Apakah pengunjung terjamin privasinya?',
+];
