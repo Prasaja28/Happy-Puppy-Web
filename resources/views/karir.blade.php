@@ -187,21 +187,20 @@
 @section('konten')
     <div class="header1 d-flex">
         <div class="container d-flex header text-white py-5 align-items-end">
-            <h2 class="font-weight-bold">KARIR</h2>
+            <h2 class="font-weight-bold">{{ __('karir.title1') }}</h2>
         </div>
     </div>
     <br><br>
 
     <div class="container karir-dsc">
         <p class="lh-lg px-5">
-            HAPPY PUPPY memberikan kesempatan bagi semua pegawai untuk mengembangkan karir mulai dari level dasar sampai
-            mencapai level tertinggi melalui jenjang karir yang telah disusun dengan baik
+            {{ __('karir.desc1') }}
         </p>
     </div>
 
     <div class="lowongan p-5 mt-5">
         <div class="container">
-            <h6 class="font-weight-bold lowtext">LOWONGAN TERSEDIA</h6>
+            <h6 class="font-weight-bold lowtext">{{ __('karir.title2') }}</h6>
             <div class="grid-container">
                 <div class="grid-item waiter"><b id="item">Waiter</b></div>
                 <div class="grid-item"><b id="item">Cashier</b></div>
@@ -227,12 +226,12 @@
                             <th style="border-top: 0px; padding-left: 0px;">
                                 <input type="text" class="form-control"
                                     style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
-                                    placeholder="Pilih Pekerjaan">
+                                    placeholder="{{ __('karir.search1') }}">
                             </th>
                             <th style="border-top: 0px;">
                                 <input type="text" class="form-control"
                                     style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="lokasi"
-                                    placeholder="Pilih Lokasi">
+                                    placeholder="{{ __('karir.search2') }}">
                             </th>
                             <th style="border-top: 0px;">
                                 <button type="submit" class="btn"
@@ -253,7 +252,7 @@
                             <td>
                                 <a href="{{ route('karirForm', ['jobvacancy_id' => $j->id]) }}" type="button"
                                     class="btn btn-primary" id="apply"
-                                    style="font-size: 13px; height: 3rem; width:100%; margin-top:0rem; padding-top:0.75rem">APPLY</a>
+                                    style="font-size: 13px; height: 3rem; width:100%; margin-top:0rem; padding-top:0.75rem">{{ __('karir.button') }}</a>
                             </td>
                     @endforeach
                 </tbody>

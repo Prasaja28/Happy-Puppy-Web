@@ -561,13 +561,13 @@
     <!-- add konten in here -->
     <div class="header p-5">
         <div class="container" id="txt2" style="font-family: 'Poppins';">
-            <p>NEWS</p>
+            <p>{{ __('news.title1') }}</p>
         </div>
     </div>
     <div class="container-fluid">
         @if ($news_terbaru->count() > 0)
         <div class="container">
-            <h4 class="lates-title" style="font-weight: bold;">LATEST NEWS</h4>
+            <h4 class="lates-title" style="font-weight: bold;">{{ __('news.title2') }}</h4>
         </div>
         <div class="lates-news-list" style="z-index: 1;">
         </div>
@@ -642,7 +642,7 @@
         @if ($news_terlaris->count() > 0)
         <div class="popularNews" style="z-index:1;">
             <div class="container">
-                <h4 class="lates-title1" style="font-weight: bold;">POPULAR</h4>
+                <h4 class="lates-title1" style="font-weight: bold;">{{ __('news.title3') }}</h4>
             </div>
         </div>
         <div class="container popular-card-news" style="z-index:2;">
@@ -667,7 +667,7 @@
                                         <div class="card-body text-bottom" style="z-index:2;">
                                             <!-- <p class="news-popular-title">News</p> -->
                                             <!-- <h5 class="card-title card-title-popular">Card title</h5> -->
-                                            <p class="news-popular-title">News</p>
+                                            <p class="news-popular-title">{{ __('news.title4') }}</p>
                                             <h5 class="card-title card-title-popular">{{ $newsst->news_title_id }}</h5>
                                             <p class="news-time-popular">
                                                 <?= date('M d, Y', strtotime($newsst->news_date)) ?>
@@ -694,7 +694,6 @@
                                 <div class="card card-news-popular" style="z-index:2;">
                                     <div class="row no-gutters">
                                         <div class="col-6">
-                                            <!-- <img src="https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr08/1/1/25-crowd-pleasing-karaoke-songs-that-are-actually-2-25835-1398920438-12_dblbig.jpg" class="card-img-top card-img-popular" alt="..."> -->
                                             <img src="/uploads/{{ $newsst->thumbnail }}"
                                                 class="card-img-top card-img-popular" alt="...">
                                         </div>

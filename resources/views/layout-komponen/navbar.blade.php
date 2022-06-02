@@ -50,12 +50,12 @@
             </a>
 
             <div class="dropdown-menu" style="right: -20px; left: auto; background-color:#555251; font-family: 'Poppins';" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ url('/lokasi') }}">LOKASI</a>
-              <a class="dropdown-item" href="{{ url('/news') }}">BERITA</a>
-              <a class="dropdown-item" href="{{ url('/profil') }}">PROFIL</a>
-              <a class="dropdown-item" href="{{ url('/waralaba') }}">WARALABA</a>
-              <a class="dropdown-item" href="{{ url('/karir') }}">KARIR</a>
-              <a class="dropdown-item" href="{{ url('/kontak') }}">KONTAK KAMI</a>
+              <a class="dropdown-item" href="{{ url('/lokasi') }}">{{ __('navbar.loc') }}</a>
+              <a class="dropdown-item" href="{{ url('/news') }}">{{ __('navbar.news') }}</a>
+              <a class="dropdown-item" href="{{ url('/profil') }}">{{ __('navbar.profile') }}</a>
+              <a class="dropdown-item" href="{{ url('/waralaba') }}">{{ __('navbar.fran') }}</a>
+              <a class="dropdown-item" href="{{ url('/karir') }}">{{ __('navbar.career') }}</a>
+              <a class="dropdown-item" href="{{ url('/kontak') }}">{{ __('navbar.contact') }}</a>
             </div>
           </div>
         </div>
@@ -65,13 +65,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto mb-2 mb-md-0">
           <li class="nav-item pr-4">
-            <a class="nav-link @yield('navbar-lokasi')" href="{{ url('/lokasi') }}">LOKASI</a>
+            <a class="nav-link @yield('navbar-lokasi')" href="{{ url('/lokasi') }}">{{ __('navbar.loc') }}</a>
           </li>
           <li class="nav-item pr-4" >
-            <a class="nav-link @yield('navbar-news')" href="{{ url('/news') }}">BERITA</a>
+            <a class="nav-link @yield('navbar-news')" href="{{ url('/news') }}">{{ __('navbar.news') }}</a>
           </li>
           <li class="nav-item pr-4">
-            <a class="nav-link @yield('navbar-profile')" href="{{ url('/profil') }}">PROFIL</a>
+            <a class="nav-link @yield('navbar-profile')" href="{{ url('/profil') }}">{{ __('navbar.profile') }}</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -82,9 +82,9 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#555251;right: -70px;left: auto;">
-              <a class="dropdown-item" href="{{ url('/waralaba') }}">WARALABA</a>
-              <a class="dropdown-item" href="{{ url('/karir') }}">KARIR</a>
-              <a class="dropdown-item" href="{{ url('/kontak') }}">KONTAK KAMI</a>
+              <a class="dropdown-item" href="{{ url('/waralaba') }}">{{ __('navbar.fran') }}</a>
+              <a class="dropdown-item" href="{{ url('/karir') }}">{{ __('navbar.career') }}</a>
+              <a class="dropdown-item" href="{{ url('/kontak') }}">{{ __('navbar.contact') }}</a>
             </div>
           </li>
         </ul>
