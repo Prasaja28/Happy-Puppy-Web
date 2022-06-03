@@ -156,7 +156,8 @@
             font-size: 12px;
             margin-top: -15px;
             margin-bottom: 40px;
-            font-weight: bold font-family: 'Poppins';
+            font-weight: bold;
+            font-family: 'Poppins';
             z-index: 2;
         }
 

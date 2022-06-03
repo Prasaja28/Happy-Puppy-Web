@@ -273,7 +273,7 @@
             <div class="col-lg-7">
                 <ul class="nav mt-2" role="tablist">
                     <li class="nav-item">
-                        <a class="title-news1" role="tab" data-toggle="tab">POPULAR</a>
+                        <a class="title-news1" role="tab" data-toggle="tab">{{ __('news-detail.pop') }}</a>
                     </li>
                 </ul>
 
