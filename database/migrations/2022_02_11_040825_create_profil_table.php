@@ -16,7 +16,8 @@ class CreateProfilTable extends Migration
         Schema::create('profil', function (Blueprint $table) {
             $table->id();
             $table->year('year');
-            $table->text('content_history');
+            $table->text('content_history_id');
+            $table->text('content_history_en');
             $table->boolean('status');
             $table->timestamps();
         });
