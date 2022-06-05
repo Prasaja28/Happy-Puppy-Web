@@ -254,8 +254,8 @@
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="container">
-            <p>Form Pendaftaran</p>
-            <p style="font-weight: bold;">LOWONGAN</p>
+            <p>{{ __('karir-detail.title1') }}</p>
+            <p style="font-weight: bold;">{{ __('karir-detail.title2') }}</p>
         </div>
     </div><br>
 
@@ -276,7 +276,7 @@
         @endif
         <div class="back-grad">
             <div class="container bom">
-                <h5 style="margin-top: 10px;"><b>DATA PRIBADI</b></h5><br>
+                <h5 style="margin-top: 10px;"><b>{{ __('karir-detail.title3') }}</b></h5><br>
                 <div class="card" id="card1">
                     <div class="container">
                         <div class="row">
@@ -391,7 +391,7 @@
             @php $i=1 @endphp
             <br>
             <div class="container bom">
-                <h5 style="margin-top: 10px;" id="subTittle"><b>PENGALAMAN KERJA</b></h5><br>
+                <h5 style="margin-top: 10px;" id="subTittle"><b>{{ __('karir-detail.title4') }}</b></h5><br>
                 <div class="card" id="card2">
                     <div class="container">
                         <div class="row fieldGroup">
@@ -474,7 +474,7 @@
             <br><br>
 
             <div class="container bom" id="bakat">
-                <h5 style="margin-top: 10px;" id="subTittle"><b>BAKAT</b></h5><br>
+                <h5 style="margin-top: 10px;" id="subTittle"><b>{{ __('karir-detail.title5') }}</b></h5><br>
                 <div class="card" id="card3">
                     <div class="container">
                         <div class="row">

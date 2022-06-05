@@ -25,7 +25,7 @@ class NewsUserController extends Controller
         $news_terlaris = News::where('news_category','popular')
                         ->get();
         $news_terbaru = News::where('news_category','lates')->get();
-        return view('news',compact('news_terlaris','news_terbaru','settings'));
+        return view('news',compact('news_terlaris','news_terbaru','settings','locale'));
     }
 
     /**
@@ -35,6 +35,7 @@ class NewsUserController extends Controller
      */
     public function detailIndex($id)
     {
+        $locale = app()->getLocale();
         $settings = Settings::select('*')
         ->whereNotNull('value')
         ->get()
