@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-4 col-md-4">
                                     <p class="text-muted text-justify history-desc">
-                                        {{ $history->content_history }}
+                                        {{ $history->{'content_history_'.app()->getLocale()} }}
                                     </p>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-4 col-md-4 order-1">
                                     <p class="text-muted text-justify history-desc">
-                                        {{ $history->content_history }}
+                                        {{ $history->{'content_history_'.app()->getLocale()} }}
                                     </p>
                                 </div>
                             </div>

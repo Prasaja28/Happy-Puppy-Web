@@ -289,7 +289,7 @@
                                 <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}">
                                 <div class="card-body pb-0">
                                     <div class="card-title">
-                                        <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->news_title_id }}</h4>
+                                        <h4 class="font-weight-none pt-1 pt-md-3">{{ $news_terbaru[0]->{'news_title_'.app()->getLocale()} }}</h4>
                                         <div class="date d-flex justify-content-between align-items-center">
                                             <p class="text-date pt-2 pt-md-4 pb-0">
                                                 <?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?></p>

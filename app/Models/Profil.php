@@ -10,7 +10,7 @@ class Profil extends Model
     use HasFactory;
     protected $table = 'profil';
     protected $primaryKey = 'id';
-    protected $fillable = ['year','content_history','status','users_id'];
+    protected $fillable = ['year','content_history_id','content_history_en','status','users_id'];
     protected $guarded = [];
     public function users()
     {

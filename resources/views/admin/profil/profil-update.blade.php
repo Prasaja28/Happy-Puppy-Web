@@ -21,9 +21,18 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="artis">Keterangan :</label>
-                        <input type="text" class="form-control form-control-border @error('content_history') is-invalid @enderror" id="content_history" placeholder="Masukkan cerita di tahun ini" name="content_history" value="{{ $data->content_history }}" required>
-                        @error('content_history')
+                        <label for="artis">Keterangan (ID) :</label>
+                        <input type="text" class="form-control form-control-border @error('content_history_id') is-invalid @enderror" id="content_history" placeholder="Masukkan cerita di tahun ini" name="content_history_id" value="{{ $data->content_history }}" required>
+                        @error('content_history_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="artis">Keterangan (ID) :</label>
+                        <input type="text" class="form-control form-control-border @error('content_history_en') is-invalid @enderror" id="content_history" placeholder="Masukkan cerita di tahun ini" name="content_history_en" value="{{ $data->content_history }}" required>
+                        @error('content_history_en')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -29,7 +29,8 @@ class ProfilController extends Controller
     {
         Profil::create([
             'year' => $request->year,
-            'content_history' => $request->content_history,
+            'content_history_id' => $request->content_history_id,
+            'content_history_en' => $request->content_history_en,
             'users_id'=> $request->users_id,
             'status' => 1
         ]);
@@ -70,7 +71,8 @@ class ProfilController extends Controller
         Profil::where('id',$id)
         ->update([
             'year' => $request->year,
-            'content_history' => $request->content_history,
+            'content_history_id' => $request->content_history_id,
+            'content_history_en' => $request->content_history_en,
             'status' => $request->status,
             'users_id'=> $request->users_id
         ]);

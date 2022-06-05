@@ -43,7 +43,8 @@
                             <tr>
                               <th>No</th>
                               <th>Tahun</th>
-                              <th>Keterangan</th>
+                              <th>Keterangan_ID</th>
+                              <th>Keterangan_EN</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>
@@ -53,7 +54,8 @@
                               <tr>
                                   <td>{{ $loop->iteration }}</td>
                                   <td>{{ $data->year }}</td>
-                                  <td>{{ $data->content_history }}</td>
+                                  <td>{{ $data->content_history_id }}</td>
+                                  <td>{{ $data->content_history_en }}</td>
                                   @if($data->status == 1)
                                       <td>Aktif</td>
                                   @else
@@ -81,7 +83,8 @@
                             <tr>
                               <th>No</th>
                               <th>Tahun</th>
-                              <th>Keterangan</th>
+                              <th>Keterangan_ID</th>
+                              <th>Keterangan_EN</th>
                               <th>Status</th>
                               <th>Action</th>
                             </tr>

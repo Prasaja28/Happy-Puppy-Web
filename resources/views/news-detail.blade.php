@@ -277,14 +277,15 @@
                     </li>
                 </ul>
 
+
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="title-news2">{{ $news_detail[0]->news_title_id }}</div>
+                    <div class="title-news2">{{ $news_detail[0]->{'news_title_'.app()->getLocale()} }}</div>
 
                     <div class="news-time1">{{ $news_detail[0]->news_date }}</div>
 
                     <div class="news">
-                    {!! $news_detail[0]->news_content_id !!}
+                    {!! $news_detail[0]->{'news_content_'.app()->getLocale()} !!}
                     </div><br><br>
                     {{-- <div class="news">
                         Kami percaya akan masa depan usaha Karaoke Keluarga. Bernyanyi adalah anugrah hiburan alami yang
@@ -312,7 +313,7 @@
                                         <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
-                                                {{ $ntd->news_title_id }}
+                                                {{ $ntd->news_title_{'news_title_'.app()->getLocale()} }}
                                             </h5>
                                             <p class="news-time">
                                                 <?= date('M d, Y', strtotime($ntd->news_date)) ?>
