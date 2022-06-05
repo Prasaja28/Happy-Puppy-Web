@@ -19,4 +19,10 @@ class LocalizationController extends Controller
         session()->put('locale', $locale);
         return redirect()->route('detailNews', $id);
     }
+    public function langKar($jobvacancy_id, $locale)
+    {
+        App::setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->route('karirForm', $jobvacancy_id);
+    }
 }

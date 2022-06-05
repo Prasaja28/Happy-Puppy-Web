@@ -1,4 +1,4 @@
-@extends('layout-komponen.master')
+@extends('layout-komponen.masterNews')
 
 @section('title', 'News Detail')
 <!-- name title -->
@@ -343,7 +343,7 @@
                                         <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
-                                                {{ $ntd->news_title_id }}
+                                                {{ $ntd->news_title_{'news_title_'.app()->getLocale()} }}
                                             </h5>
                                             <p class="news-time">{{ $ntd->news_date }}
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"
@@ -360,6 +360,7 @@
             </div>
         </div>
     </div>
+    
 
 @endsection
 

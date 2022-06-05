@@ -585,7 +585,7 @@
                                 <h5 class="card-title title-news" style="font-weight: bold;">
                                     {{ $news_terbaru[0]->{'news_title_'.app()->getLocale()} }}</h5>
                                 <p class="news-time"><?= date('M d, Y', strtotime($news_terbaru[0]->news_date)) ?>
-                                    <a href="{{ route('detailNews', [app()->getLocale(),$news_terbaru[0]->id]) }}"
+                                    <a href="{{ route('detailNews', ['id'=>$news_terbaru[0]->id]) }}"
                                         class="main" style="float:right;color:black"><i
                                             class="fas fa-book-open"></i></a>
                                 </p>

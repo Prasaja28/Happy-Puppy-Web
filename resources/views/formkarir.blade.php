@@ -1,4 +1,4 @@
-@extends('layout-komponen.master')
+@extends('layout-komponen.masterKarir')
 
 @section('title', 'Form Karir')
 <!-- name title -->

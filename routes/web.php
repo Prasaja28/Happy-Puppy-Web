@@ -39,6 +39,7 @@ if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
 {
     Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'lang']);
     Route::get('news/detail/{id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'langDet']);
+    Route::get('formkarir/{jobvacancy_id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'langKar']);
     // Route::get('/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'lang']);
 }
 
