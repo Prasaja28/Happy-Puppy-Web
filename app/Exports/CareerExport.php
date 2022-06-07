@@ -46,7 +46,9 @@ class CareerExport implements FromCollection, WithStrictNullComparison, WithHead
         'careerform.cv',
         'careerform.ijazah',
         'careerform.linkedin',
-        'jobexpertise.*')
+        'jobexpertise.company_name as company_name',
+        'jobexpertise.position as position',
+        'jobexpertise.length_work as length_work',)
         ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
         ->join('provinces', 'careerform.place_birth', '=', 'provinces.id')
         ->join('jobexpertise', 'careerform.id', '=', 'jobexpertise.careerform_id')
@@ -81,6 +83,9 @@ class CareerExport implements FromCollection, WithStrictNullComparison, WithHead
                 'CV',
                 'Ijazah',
                 'Linkedin',
+                'Pengalaman Kerja',
+                'Jabatan',
+                'Lama Kerja'
             ],
             //if
             [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']

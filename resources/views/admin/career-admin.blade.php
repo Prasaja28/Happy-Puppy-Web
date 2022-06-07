@@ -86,7 +86,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($careers as $career)
+                                    @forelse ($careers as $career)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $career->name }}</td>
@@ -165,12 +165,11 @@
                                         {{-- @include(
                                             'admin.career-admin.users-admin-update'
                                         ) --}}
-                                    @endforeach
-                                    @if ($careers->count() == 0)
+                                    @empty
                                         <div class="alert alert-danger">
                                             Data Karier Belum Tersedia.
                                         </div>
-                                    @endif
+                                    @endforelse
                                 </tbody>
                                 <tfoot>
                                     <tr>

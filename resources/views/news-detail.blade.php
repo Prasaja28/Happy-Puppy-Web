@@ -313,7 +313,7 @@
                                         <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
-                                                {{ $ntd->news_title_{'news_title_'.app()->getLocale()} }}
+                                                {{ $ntd->{'news_title_'.app()->getLocale()} }}
                                             </h5>
                                             <p class="news-time">
                                                 <?= date('M d, Y', strtotime($ntd->news_date)) ?>
@@ -343,7 +343,7 @@
                                         <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">
-                                                {{ $ntd->news_title_{'news_title_'.app()->getLocale()} }}
+                                                {{ $ntd->{'news_title_'.app()->getLocale()} }}
                                             </h5>
                                             <p class="news-time">{{ $ntd->news_date }}
                                                 <a href="{{ route('detailNews', ['id' => $ntd->id]) }}"

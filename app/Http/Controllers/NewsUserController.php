@@ -45,6 +45,7 @@ class NewsUserController extends Controller
         $news_detail = News::select('*')
             ->where('id', '=', $id)
             ->get();
+            // dd($news_detail);
         $news_detail_terbaru = News::where('news_category', 'lates')
             ->where('id', '!=', $id)
             ->get();

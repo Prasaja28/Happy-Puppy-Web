@@ -431,10 +431,10 @@ class CareerController extends Controller
     }
     public function adminIndex()
     {
-        $careers = Career::select('careerform.*', 'name_job', 'location', 'provinces.name as name_place')
+        $careers = Career::select('careerform.*', 'name_job', 'location')
             ->join('jobvacancy', 'careerform.jobvacancy_id', '=', 'jobvacancy.id')
-            ->join('provinces', 'careerform.place_birth', '=', 'provinces.id')
             ->get();
+        // $careers = Career::all();
         return view('admin.career-admin', compact('careers'));
     }
     public function detail($id)
