@@ -12,7 +12,6 @@
             margin-left: -3px;
             top: 153px;
         }
-        }
 
         @media (max-width:600px) {
             .vl {
@@ -79,9 +78,9 @@
                                         class="{{ $bgColor[$key % 5] }} align-self-center d-flex justify-content-center rounded-circle">
                                         <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
                                     </div>
-                                    @if ($key != count($profill) - 1)
+                                    <!-- @if ($key != count($profill) - 1)
                                         <div class="vl"></div>
-                                    @endif
+                                    @endif -->
                                 </div>
                                 <div class="col-4 col-md-4">
                                     <p class="text-muted text-justify history-desc">
@@ -98,9 +97,9 @@
                                         class="{{ $bgColor[$key % 5] }} align-self-center d-flex justify-content-center rounded-circle">
                                         <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
                                     </div>
-                                    @if ($key != count($profill) - 1)
+                                    <!-- @if ($key != count($profill) - 1)
                                         <div class="vl"></div>
-                                    @endif
+                                    @endif -->
                                 </div>
                                 <div class="col-4 col-md-4 order-1">
                                     <p class="text-muted text-justify history-desc">

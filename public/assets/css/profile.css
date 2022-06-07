@@ -71,8 +71,8 @@ a:hover {
 }
 
 .history div[name="years"] {
-    width: 110px;
-    height: 78px;
+    min-width: 71px;
+    min-height: 68px;
     color: white;
     border: 4px solid white;
 }
