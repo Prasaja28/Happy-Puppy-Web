@@ -40,7 +40,7 @@
         }
 
         .back-grad {
-            height: 250px;
+            height: 100%;
             width: auto;
             background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
         }
@@ -54,7 +54,6 @@
         }
 
         #p1 {
-            margin-top: 50px;
             font-size: 15px;
             font-family: 'Poppins';
             font-weight: bold;
@@ -77,6 +76,7 @@
             background-color: #85A4E1;
             width: 30%;
             height: 300px;
+            margin-top: 20px;
         }
 
         .tab button {
@@ -168,6 +168,7 @@
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
+            margin-top: 20px;
         }
 
         .back2 {
@@ -250,22 +251,21 @@
             }
 
             .back-grad {
-                height: 81px;
+                height: 100%;
                 width: auto;
                 background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
             }
 
             .center {
                 margin: auto;
-                width: 290px;
-                height: 94px;
+                width: 80%;
+                height: 100%;
                 padding: 40px;
                 color: white;
                 background-color: #221E40;
             }
 
             #p1 {
-                margin-top: 50px;
                 font-size: 7px;
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: bold;

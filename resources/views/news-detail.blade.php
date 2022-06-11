@@ -159,6 +159,23 @@
             line-height: 28pt;
         }
 
+        #latest img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-height: 250px;
+            margin-bottom: 1rem;
+        }
+
+        #latest h5 {
+            font-size: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
         @media(max-width:600px) {
             .color-background {
                 background-image: linear-gradient(to right, #68a6fb, #f77a8b);
@@ -309,7 +326,7 @@
                                     }
                                 @endphp
                                 <div class="col-12 my-2">
-                                    <div class="card card-news">
+                                    <div class="card card-news" id="latest">
                                         <img src="/uploads/{{ $ntd->thumbnail }}" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title title-news">

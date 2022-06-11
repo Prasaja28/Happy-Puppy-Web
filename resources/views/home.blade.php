@@ -31,6 +31,14 @@
             z-index: 1;
         }
 
+        #latest img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-height: 250px;
+            margin-bottom: 1rem;
+        }
+
         .item a.itemClick::after {
             position: absolute;
             top: 0;
@@ -62,6 +70,16 @@
                 box-shadow: 4px 6px 10px rgb(0 0 0 / 8%);
                 height: 125px;
             }
+
+            #latest h4 {
+                font-size: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
         }
 
     </style>
@@ -285,7 +303,7 @@
                 <div class="row">
                     @if ($news_terbaru->count() > 0)
                         <div class="col-6">
-                            <div class="card border-0 rounded-0">
+                            <div class="card border-0 rounded-0" id="latest">
                                 <img src="/uploads/{{ $news_terbaru[0]->thumbnail }}">
                                 <div class="card-body pb-0">
                                     <div class="card-title">
@@ -304,7 +322,7 @@
     
                     @if ($news_terbaru->count() > 1)
                         <div class="col-6">
-                            <div class="card border-0 rounded-0">
+                            <div class="card border-0 rounded-0" id="latest">
                                 <img src="/uploads/{{ $news_terbaru[1]->thumbnail }}">
                                 <div class="card-body pb-0">
                                     <div class="card-title">
