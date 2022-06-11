@@ -40,13 +40,13 @@
                     </div>
                     <div class="form-group">
                         <label for="news_content_en">Content News (EN) :</label>
-                        <textarea id="summernote3" name="news_content_en" required>
+                        <textarea class="summernote3" name="news_content_en" required>
                         {{ $newss->news_content_en }}
                         </textarea>
                     </div>
                     <div class="form-group">
                         <label for="news_content_id">Content News (ID) :</label>
-                        <textarea id="summernote4" name="news_content_id" required>
+                        <textarea class="summernote4" name="news_content_id" required>
                         {{ $newss->news_content_id }}
                         </textarea>
                     </div>
@@ -90,10 +90,10 @@
                             id="status" name="status" required>
                             @if ($newss->status == 1)
                                 <option selected="Selected" value="1">Aktif</option>
-                                <option value="0">NoAkfit</option>
+                                <option value="0">Non Aktif</option>
                             @else
-                                <option selected="Selected" value="1">NoAktif</option>
-                                <option value="1">Akfit</option>
+                                <option selected="Selected" value="1">Non Aktif</option>
+                                <option value="1">Aktif</option>
                             @endif
                         </select>
                         @error('status')
