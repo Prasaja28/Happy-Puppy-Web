@@ -115,6 +115,9 @@
         .mob {
             width: 10%;
         }
+        .wmob{
+            width: 50%;
+        }
 
         @media (max-width: 600px) {
 
@@ -246,6 +249,9 @@
             #last_waralaba {
                 margin-top: -50px;
             }
+            .wmob{
+                width: 80%;
+            }
         }
 
     </style>
@@ -304,20 +310,20 @@
                                         value="{{ old('name') }}" placeholder="{{ __('karir-detail.placeholder_name') }}">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="gender"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger wmob" name="gender"
+                                        data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('karir-detail.placeholder_gender') }}</option>
                                         <option value="0">{{ __('karir-detail.placeholder_male') }}</option>
                                         <option value="1">{{ __('karir-detail.placeholder_female') }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" style="width: 50%" name="age"
+                                    <input type="number" class="form-control wmob" name="age"
                                         value="{{ old('age') }}" placeholder="{{ __('waralaba-form.placeholder_age') }}" min="1">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="last_education"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger wmob" name="last_education"
+                                        data-dropdown-css-class="select2-danger" >
                                         <option selected="selected">{{ __('waralaba-form.placeholder_education') }}</option>
                                         <option value="SMA">SMA</option>
                                         <option value="D3">D3</option>
@@ -348,9 +354,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="province" id="province"
+                                    <select class="form-control select2 select2-danger wmob" name="province" id="province"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -361,15 +367,15 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" name="home_phone"
+                                    <input type="text" class="form-control wmob"  name="home_phone"
                                         value="{{ old('home_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tr') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" name="official_phone"
+                                    <input type="text" class="form-control wmob"  name="official_phone"
                                         value="{{ old('official_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tk') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" name="mobile_phone"
+                                    <input type="text" class="form-control wmob"  name="mobile_phone"
                                         value="{{ old('mobile_phone') }}" placeholder="{{ __('karir-detail.placeholder_mp') }}">
                                 </div>
                                 <div class="form-group">
@@ -398,8 +404,8 @@
                                         value="{{ old('job') }}" placeholder="{{ __('waralaba-form.placeholder_work') }}">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="bussiness_field"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger wmob" name="bussiness_field"
+                                        data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_sector') }}</option>
                                         <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}</option>
                                         <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}</option>
@@ -408,7 +414,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="other" name="other"
+                                    <input type="text" class="form-control wmob" id="other" name="other"
                                         value="{{ old('other') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
@@ -422,7 +428,7 @@
                                         placeholder="{{ __('karir-detail.placeholder_position') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="other_2" name="other_2"
+                                    <input type="text" class="form-control wmob" id="other_2" name="other_2"
                                         value="{{ old('other_2') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                             </div>
@@ -445,7 +451,7 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_2" id="province_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -489,7 +495,7 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_3" id="province_3"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -497,16 +503,16 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="known_as_area"
+                                    <input type="text" class="form-control wmob"  id="known_as_area"
                                         value="{{ old('known_as_area') }}" name="known_as_area"
                                         placeholder="{{ __('waralaba-form.placeholder_kaa') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="other_3" name="other_3"
+                                    <input type="text" class="form-control wmob"  id="other_3" name="other_3"
                                         value="{{ old('other_3') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" style="width: 50%" id="building_area"
+                                    <input type="number" class="form-control wmob"  id="building_area"
                                         value="{{ old('building_area') }}" name="building_area"
                                         placeholder="{{ __('waralaba-form.placeholder_luas') }}" min="1">
                                 </div>
@@ -563,12 +569,12 @@
                                 </div>
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" style="width: 50%" id="front_road_width"
+                                    <input type="number" class="form-control wmob"  id="front_road_width"
                                         value="{{ old('front_road_width') }}" name="front_road_width"
                                         placeholder="{{ __('waralaba-form.placeholder_rw') }}" min="1">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 50%" id="front_road_traffic"
+                                    <input type="text" class="form-control wmob"  id="front_road_traffic"
                                         value="{{ old('front_road_traffic') }}" name="front_road_traffic"
                                         placeholder="{{ __('waralaba-form.placeholder_traffic') }}">
                                     <input type="hidden" name="status" id="status" value="0">
