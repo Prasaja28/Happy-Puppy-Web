@@ -108,6 +108,14 @@
             display: none;
         }
 
+        #apply {
+            font-size: 13px;
+            height: 3rem;
+            width:100%;
+            margin-top:0rem;
+            padding-top:0.75rem;
+        }
+
         /* @media(max-width:600px) {
                                             #txt1 {
                                                 font-size: 35px;
@@ -250,9 +258,7 @@
                                 <p style="font-size: 15px;">{{ $j->location }}</p>
                             </td>
                             <td>
-                                <a href="{{ route('karirForm', ['jobvacancy_id' => $j->id]) }}" type="button"
-                                    class="btn btn-primary" id="apply"
-                                    style="font-size: 13px; height: 3rem; width:100%; margin-top:0rem; padding-top:0.75rem">{{ __('karir.button') }}</a>
+                                <a href="{{ route('karirForm', ['jobvacancy_id' => $j->id]) }}" class="btn btn-primary" id="apply">{{ __('karir.button') }}</a>
                             </td>
                     @endforeach
                 </tbody>

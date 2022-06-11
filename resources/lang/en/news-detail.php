@@ -1,4 +1,4 @@
 <?php
 return [
-    'pop' => 'PIPULAR',
+    'pop' => 'POPULAR',
 ];
