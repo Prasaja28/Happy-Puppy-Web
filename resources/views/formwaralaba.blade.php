@@ -272,15 +272,15 @@
     <!-- add konten in here -->
     <div class="header p-5">
         <div id="txt1" class="containerr">
-            <p>Form Pendaftaran</p>
-            <p style="font-weight: bold;">WARALABA</p>
+            <p>{{ __('waralaba-form.title1') }}</p>
+            <p style="font-weight: bold;">{{ __('waralaba-form.title2') }}</p>
         </div>
     </div><br>
 
     <form id="regForm" action="{{ route('waralaba.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-12">
-            <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">Kembali</a>
+            <a id="prevBtn" onclick="nextPrev(-1)" style="color: #519FF8">{{ __('waralaba-form.back') }}</a>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -293,7 +293,7 @@
         @endif
         <div class="back-grad">
             <div class="container bom">
-                <h2 style="margin-top: 10px; font-family: 'Poppins';">DATA PRIBADI</h2><br>
+                <h2 style="margin-top: 10px; font-family: 'Poppins';">{{ __('waralaba-form.title3') }}</h2><br>
                 <div class="card" id="card1">
                     <div class="container">
                         <div class="row">
@@ -301,24 +301,24 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="nama" name="name"
-                                        value="{{ old('name') }}" placeholder="Nama">
+                                        value="{{ old('name') }}" placeholder="{{ __('karir-detail.placeholder_name') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="gender"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Jenis Kelamin</option>
-                                        <option value="0">Laki-Laki</option>
-                                        <option value="1">Perempuan</option>
+                                        <option selected="selected">{{ __('karir-detail.placeholder_gender') }}</option>
+                                        <option value="0">{{ __('karir-detail.placeholder_male') }}</option>
+                                        <option value="1">{{ __('karir-detail.placeholder_female') }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" name="age"
-                                        value="{{ old('age') }}" placeholder="Usia" min="1">
+                                        value="{{ old('age') }}" placeholder="{{ __('waralaba-form.placeholder_age') }}" min="1">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="last_education"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Pendidikan Terakhir</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_education') }}</option>
                                         <option value="SMA">SMA</option>
                                         <option value="D3">D3</option>
                                         <option value="S1/D4">S1/D4</option>
@@ -330,18 +330,18 @@
                                     <select class="form-control select2 select2-danger" name="marital"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Status</option>
-                                        <option value="0">Menikah</option>
-                                        <option value="1">Belum Menikah</option>
+                                        <option value="0">{{ __('karir-detail.placeholder_married') }}</option>
+                                        <option value="1">Single</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="official_address"
-                                        value="{{ old('official_address') }}" placeholder="Alamat">
+                                        value="{{ old('official_address') }}" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city" id="city"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>Kota</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             <option value="{{ $r->id }}">{{ $r->name }}</option>
                                         @endforeach
@@ -350,7 +350,7 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province" id="province"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>Provinsi</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -362,15 +362,15 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="home_phone"
-                                        value="{{ old('home_phone') }}" placeholder="Telp. rumah">
+                                        value="{{ old('home_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tr') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="official_phone"
-                                        value="{{ old('official_phone') }}" placeholder="Telp. kantor">
+                                        value="{{ old('official_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tk') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" name="mobile_phone"
-                                        value="{{ old('mobile_phone') }}" placeholder="No. Hp">
+                                        value="{{ old('mobile_phone') }}" placeholder="{{ __('karir-detail.placeholder_mp') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="email" id="email"
@@ -379,7 +379,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="email_confirm"
                                         value="{{ old('email_confirm') }}" name="email_confirm"
-                                        placeholder="Konfirmasi email">
+                                        placeholder="{{ __('waralaba-form.placeholder_confirm') }}">
                                 </div>
                             </div>
                         </div>
@@ -387,7 +387,7 @@
                 </div>
             </div><br><br>
             <div class="container bom">
-                <h2 style="font-family: 'Poppins';" id="subTittle">PEKERJAAN</h2><br>
+                <h2 style="font-family: 'Poppins';" id="subTittle">{{ __('waralaba-form.title4') }}</h2><br>
                 <div class="card" id="card2">
                     <div class="container">
                         <div class="row">
@@ -395,35 +395,35 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="job" id="job"
-                                        value="{{ old('job') }}" placeholder="Pekerjaan anda">
+                                        value="{{ old('job') }}" placeholder="{{ __('waralaba-form.placeholder_work') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="bussiness_field"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Bidang Usaha</option>
-                                        <option value="Bidang Pertanian">Bidang Pertanian</option>
-                                        <option value="Bidang Manufaktur">Bidang Manufaktur</option>
-                                        <option value="Bidang Konstruksi">Bidang Konstruksi</option>
-                                        <option value="Bidang Komunikasi">Bidang Komunikasi</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_sector') }}</option>
+                                        <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}</option>
+                                        <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}</option>
+                                        <option value="Bidang Konstruksi">{{ __('waralaba-form.placeholder_const') }}</option>
+                                        <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other" name="other"
-                                        value="{{ old('other') }}" placeholder="Lain-lain">
+                                        value="{{ old('other') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="company_name"
                                         value="{{ old('company_name') }}" name="company_name"
-                                        placeholder="Nama Perusahaan">
+                                        placeholder="{{ __('karir-detail.placeholder_company') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="postion_company"
                                         value="{{ old('postion_company') }}" name="postion_company"
-                                        placeholder="Jabatan anda">
+                                        placeholder="{{ __('karir-detail.placeholder_position') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other_2" name="other_2"
-                                        value="{{ old('other_2') }}" placeholder="Lain-lain">
+                                        value="{{ old('other_2') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                             </div>
 
@@ -431,12 +431,12 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_2"
-                                        value="{{ old('address_2') }}" name="address_2" placeholder="Alamat">
+                                        value="{{ old('address_2') }}" name="address_2" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city_2" id="city_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Kota</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             <option value="{{ $r->id }}">{{ $r->name }}</option>
                                         @endforeach
@@ -445,7 +445,7 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_2" id="province_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>Provinsi</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -457,8 +457,7 @@
                 </div>
             </div><br><br>
             <div class="container bom" id="last_waralaba">
-                <h2 style="font-family: 'Poppins';" id="subTittle">TEMPAT DIMINATI UNTUK
-                    WARALABA HAPPY PUPPY</h2><br>
+                <h2 style="font-family: 'Poppins';" id="subTittle">{{ __('waralaba-form.title5') }}</h2><br>
                 <div class="card" id="card3">
                     <div class="container">
                         <div class="row">
@@ -467,20 +466,21 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="status_penguasaan"
                                         id="status_penguasaan" data-dropdown-css-class="select2-danger" style="width: 80%;">
-                                        <option selected="selected">Status Penguasaan Tempat</option>
-                                        <option value="Lahan Pribadi">Lahan Pribadi</option>
-                                        <option value="Sewa">Sewa</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_spt') }}</option>
+                                        <option value="Lahan Pribadi">{{ __('waralaba-form.placeholder_spt_1') }}</option>
+                                        <option value="Sewa">{{ __('waralaba-form.placeholder_spt_2
+                                        ') }}</option>
                                         </option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_3"
-                                        value="{{ old('address_3') }}" name="address_3" placeholder="Alamat">
+                                        value="{{ old('address_3') }}" name="address_3" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" id="city_3" name="city_3"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected="selected">Kota</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             <option value="{{ $r->id }}">{{ $r->name }}</option>
                                         @endforeach
@@ -489,7 +489,7 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_3" id="province_3"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>Provinsi</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_province') }}</option>
                                         @foreach ($provincies as $p)
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -499,78 +499,78 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="known_as_area"
                                         value="{{ old('known_as_area') }}" name="known_as_area"
-                                        placeholder="Dikenal sebagai Daerah">
+                                        placeholder="{{ __('waralaba-form.placeholder_kaa') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="other_3" name="other_3"
-                                        value="{{ old('other_3') }}" placeholder="Lain-lain">
+                                        value="{{ old('other_3') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="building_area"
                                         value="{{ old('building_area') }}" name="building_area"
-                                        placeholder="Luas bangunan                          M" min="1">
+                                        placeholder="{{ __('waralaba-form.placeholder_luas') }}" min="1">
                                 </div>
                                 <br><br>
-                                <p style="font-weight: bold;">Usaha Tetangga Kiri:</p>
+                                <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_left') }}:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="left_business_name"
                                         value="{{ old('left_business_name') }}" name="left_business_name"
-                                        placeholder="Nama Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="left_business_field"
                                         value="{{ old('left_business_field') }}" name="left_business_field"
-                                        placeholder="Bidang Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
-                                <p style="font-weight: bold;">Usaha Tetangga Kanan:</p>
+                                <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_right') }}:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="right_business_name"
                                         value="{{ old('right_business_name') }}" name="right_business_name"
-                                        placeholder="Nama Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="right_business_field"
                                         value="{{ old('right_business_field') }}" name="right_business_field"
-                                        placeholder="Bidang Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <br>
-                                <p style="font-weight: bold;">Usaha Tetangga Belakang:</p>
+                                <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_back') }}:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="behind_business_name"
                                         value="{{ old('behind_business_name') }}" name="behind_business_name"
-                                        placeholder="Nama Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="behind_business_field"
                                         value="{{ old('behind_business_field') }}" name="behind_business_field"
-                                        placeholder="Bidang Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
-                                <p style="font-weight: bold;">Usaha Tetangga Depan:</p>
+                                <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_front') }}:</p>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="front_business_name"
                                         value="{{ old('front_business_name') }}" name="front_business_name"
-                                        placeholder="Nama Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="front_business_field"
                                         value="{{ old('front_business_field') }}" name="front_business_field"
-                                        placeholder="Bidang Usaha">
+                                        placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control" style="width: 50%" id="front_road_width"
                                         value="{{ old('front_road_width') }}" name="front_road_width"
-                                        placeholder="Lebar Jalan Depan" min="1">
+                                        placeholder="{{ __('waralaba-form.placeholder_rw') }}" min="1">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 50%" id="front_road_traffic"
                                         value="{{ old('front_road_traffic') }}" name="front_road_traffic"
-                                        placeholder="Lalu - Lintas Jalan Depan">
+                                        placeholder="{{ __('waralaba-form.placeholder_traffic') }}">
                                     <input type="hidden" name="status" id="status" value="0">
                                 </div>
 
@@ -580,44 +580,26 @@
                 </div>
                 <div class="card" style="background-color: #221E40;width: 100%;padding: 1rem;"
                     id="last_form_section">
-                    <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat,
-                        serta
-                        mempunyai
-                        kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir
-                        peminat
-                        waralaba<br> yang
-                        tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br>
-                        diisi
-                        secara lengkap. untuk
-                        mengisi formulir pendaftaran waralaba.</p>
+                    <p style="color: white;" id="lampiran">{{ __('waralaba-form.confirm1') }}</p>
                     <div class="form-group">
                         <select class="form-control select2 select2-danger mob" data-dropdown-css-class="select2-danger"
                             style="background-color: #221E40;color:white;" name="confirm_completenes_mob"
                             id="confirm_completenes">
-                            <option value="" selected disabled>Ya/Tidak</option>
-                            <option value="0">Ya</option>
-                            <option value="1">Tidak</option>
+                            <option value="" selected disabled>{{ __('waralaba-form.yes/no') }}</option>
+                            <option value="0">{{ __('waralaba-form.yes') }}</option>
+                            <option value="1">{{ __('waralaba-form.no') }}</option>
                             </option>
                         </select>
                     </div>
                     <br><br>
-                    <p style="color: white;">Sebelum anda mengirim pendaftaran waralaba ini, setujukah
-                        anda
-                        bahwa :<br><br> Anda
-                        dan keluarga langsung atau Pemilik dan Pengurus Perusahaan yang anda<br> wakili,
-                        tidak
-                        memiliki dan/atau
-                        menjadi Pengurus usaha Karaoke Keluarga/Rumah<br> Bernyanyi Keluarga lainnya,
-                        baik
-                        sekarang ataupun pada
-                        saat pendaftaran<br> waralaba ini diterima</p>
+                    <p style="color: white;">{{ __('waralaba-form.confirm2') }}</p>
                     <div class="form-group">
                         <select class="form-control select2 select2-danger mob" data-dropdown-css-class="select2-danger"
                             style=" background-color: #221E40; color:white;" name="confirm_register_mob"
                             id="confirm_register">
-                            <option value="" selected disabled>Ya/Tidak</option>
-                            <option value="0">Ya</option>
-                            <option value="1">Tidak</option>
+                            <option value="" selected disabled>{{ __('waralaba-form.yes/no') }}</option>
+                            <option value="0">{{ __('waralaba-form.yes') }}</option>
+                            <option value="1">{{ __('waralaba-form.no') }}</option>
                             </option>
                         </select>
                     </div>
@@ -634,32 +616,26 @@
         <div class="foots2">
             <div class="container" id="last_section_web">
                 <br><br>
-                <p style="color: white;" id="lampiran">Jika anda berminat serius, memenuhi syarat, serta mempunyai
-                    kemampuan<br> finansial untuk membiayai investasi, silahkan mengisi formulir peminat waralaba<br> yang
-                    tersedia secara lengkap. Kami hanya menerima dan memproses formulir yang<br> diisi secara lengkap. untuk
-                    mengisi formulir pendaftaran waralaba.</p>
+                <p style="color: white; width:65%;" id="lampiran">{{ __('waralaba-form.confirm1') }}.</p>
                 <div class="form-group">
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
                         style="width: 10%;background-color: #221E40;color:white;" name="confirm_completenes"
                         id="confirm_completenes">
-                        <option value="" selected disabled>Ya/Tidak</option>
-                        <option value="0">Ya</option>
-                        <option value="1">Tidak</option>
+                        <option value="" selected disabled>{{ __('waralaba-form.yes/no') }}</option>
+                        <option value="0">{{ __('waralaba-form.yes') }}</option>
+                        <option value="1">{{ __('waralaba-form.no') }}</option>
                         </option>
                     </select>
                 </div>
                 <br><br>
-                <p style="color: white;">Sebelum anda mengirim pendaftaran waralaba ini, setujukah anda bahwa :<br><br> Anda
-                    dan keluarga langsung atau Pemilik dan Pengurus Perusahaan yang anda<br> wakili, tidak memiliki dan/atau
-                    menjadi Pengurus usaha Karaoke Keluarga/Rumah<br> Bernyanyi Keluarga lainnya, baik sekarang ataupun pada
-                    saat pendaftaran<br> waralaba ini diterima</p>
+                <p style="color: white; width:65%;">{{ __('waralaba-form.confirm2') }}</p>
                 <div class="form-group">
                     <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
                         style="width: 10%; background-color: #221E40; color:white;" name="confirm_register"
                         id="confirm_register">
-                        <option value="" selected disabled>Ya/Tidak</option>
-                        <option value="0">Ya</option>
-                        <option value="1">Tidak</option>
+                        <option value="" selected disabled>{{ __('waralaba-form.yes/no') }}</option>
+                        <option value="0">{{ __('waralaba-form.yes') }}</option>
+                        <option value="1">{{ __('waralaba-form.no') }}</option>
                         </option>
                     </select>
                 </div>
