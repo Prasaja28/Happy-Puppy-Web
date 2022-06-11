@@ -6,4 +6,5 @@ return [
     'search1' => 'Choose Job',
 	'search2' => 'Choose Location',
     'button' => 'APPLY',
+    
 ];

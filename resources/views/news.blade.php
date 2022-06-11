@@ -248,14 +248,14 @@
             padding-right: 5vw;
         }
 
-        .card a.main {
+         a.main {
             color: #85baff;
             text-align: right;
             display: block;
             z-index: 1;
         }
 
-        .card a.main::after {
+         a.main::after {
             position: absolute;
             top: 0;
             left: 0;
@@ -613,7 +613,8 @@
                                     <div class="card card-news-lates" style="z-index:2;">
                                         <div class="row no-gutters">
                                             <!-- <img src="/img/berita1.jpg" class="col-4 card-img-lates" alt="..."> -->
-                                            <img src="/uploads/{{ $newss->thumbnail }}" class="col-4 card-img-lates"
+                                            <a href="{{ route('detailNews', ['id' => $newss->id]) }}" class="col-4 card-img-lates">
+                                            <img src="/uploads/{{ $newss->thumbnail }}" class="card-img-lates"
                                                 alt="...">
                                             </a>
                                             <div class="col-8">
