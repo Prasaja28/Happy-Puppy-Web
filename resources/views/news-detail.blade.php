@@ -266,6 +266,23 @@
                 text-align: left;
                 margin-left: -217px;
             }
+
+            #latest img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                max-height: 250px;
+                margin-bottom: 1rem;
+            }
+
+            #latest h5 {
+                font-size: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
         }
 
     </style>
