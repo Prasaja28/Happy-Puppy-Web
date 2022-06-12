@@ -89,7 +89,7 @@
                 <div class="col-6">
                     <div name="more-detail">
                         <div class="row justify-content-end">
-                            <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">{{ __('footer.button') }}</a>
+                            <a href="http://club.happypuppy.id/" class="btn btn-member rounded-0 text-white font-weight-bold">{{ __('footer.button') }}</a>
                         </div>
 
                         <div name="change-language" class="row justify-content-end my-5 my-md-3">
