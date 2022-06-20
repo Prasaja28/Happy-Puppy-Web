@@ -105,19 +105,18 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:2000',
+                'thumbnail'             => 'max:2000',
             ],
             [   
-                'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
-        //dd($request);
-        //dd($request->news_title_en);
         $path = null; 
+
             if($request->thumbnail)
             {
                 $file = $request->file('thumbnail');
@@ -125,6 +124,9 @@ class NewsController extends Controller
                 $path = 'img/news-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/' . $path), $fileName);
+            }else{
+                $fileName = $request->thumbnail2;
+            }    
            
             News::where('id',$id)
             ->update([
@@ -139,9 +141,9 @@ class NewsController extends Controller
                 'users_id' => $request->users_id
             ]);
             return redirect('/news-admin')->with('status','Data Berhasil Di update!!!'); 
-        }else{
-                return redirect('/news-admin')->with('status','Data Gagal Di update!!!');
-        }
+        // }else{
+        //         return redirect('/news-admin')->with('status','Data Gagal Di update!!!');
+        // }
     }
 
     /**

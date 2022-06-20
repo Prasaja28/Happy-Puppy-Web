@@ -731,11 +731,13 @@
                 $('#email_confirm').css('border-width', '1px');
                 $('#email_confirm').css('border-style', 'solid');
                 $('#email_confirm').css('border-radius', '5px');
+                $('#email_confirm').css('background-color', '#FFC0CB');
             } else {
                 $('#email_confirm').css('border-color', '#ced4da');
                 $('#email_confirm').css('border-width', '1px');
                 $('#email_confirm').css('border-style', 'solid');
                 $('#email_confirm').css('border-radius', '5px');
+                $('#email_confirm').css('background-color', 'white');
             }
         });
     </script>

@@ -106,10 +106,9 @@ class SonglistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:2000'
+                'thumbnail'             => 'max:2000'
             ],
             [   
-                'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
@@ -121,6 +120,9 @@ class SonglistController extends Controller
                 $path = 'img/songlist-img/';
                 //dd($path);
                 $file->move(public_path('/uploads/'. $path), $fileName);
+            }else{
+                $request->thumbnail = $request->thumbnail2;
+            }    
             
             Songlist::where('id',$id)
             ->update([
@@ -132,9 +134,9 @@ class SonglistController extends Controller
                 'users_id'=> $request->users_id
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 
-        }else{
-            return redirect('/songlist-admin')->with('status','Data Gagal Di update!!!');
-        }
+        // }else{
+        //     return redirect('/songlist-admin')->with('status','Data Gagal Di update!!!');
+        // }
     }
 
     /**
