@@ -104,6 +104,7 @@
                         <label for="citysub_id">Kecamatan :</label>
                         <select class="form-control " name="citysub_id" id="kecamatan" required="">
                             <option value="">(Pilih Kecamatan)</option>
+                            <option value="">Kosong</option>
 
                         </select>
 

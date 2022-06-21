@@ -165,6 +165,7 @@ class OutletWaralabaController extends Controller
         foreach ($kecamatan as $kecamatan) {
             echo "<option value=$kecamatan->id>$kecamatan->name</option>";
         }
+        echo "<option value= >Kosong</option>";
     }
     
 }

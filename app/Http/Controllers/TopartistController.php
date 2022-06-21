@@ -107,10 +107,9 @@ class TopartistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'required|max:2000'
+                'thumbnail'             => 'max:2000'
             ],
             [   
-                'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
@@ -133,22 +132,14 @@ class TopartistController extends Controller
                 return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!');
             }else{
                 $path = $request->thumbnail2;
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $destinationPath = public_path('/uploads/' . $path);
-                $file->move($destinationPath, $fileName);
                 Topartist::where('id',$id)
                 ->update([
-                    'thumbnail' => $path . $fileName,
                     'name' => $request->name,
                     'status' => $request->status,
                     'users_id' => $request->users_id
                 ]);
                 return redirect('/topartist-admin')->with('status','Data Berhasil Di update!!!');
             }
-            if($path != null){
-                return redirect('/topartist-admin')->with('status','Data Gagal Di update!!!');
-        } 
     }
 
     /**

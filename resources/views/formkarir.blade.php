@@ -469,7 +469,7 @@
                                 <br><br>
                                 <br><br><br>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" style="width: 80%" id="expected_salary"
+                                    <input type="text" class="form-control" style="width: 80%" id="expected_salary"
                                         value="{{ old('expected_salary') }}" name="expected_salary"
                                         placeholder="{{ __('karir-detail.placeholder_salary') }}" min="1">
                                 </div>
@@ -847,6 +847,15 @@
                     $(element).removeClass('is-invalid');
                 }
             });
+        });
+    </script>
+    <script>
+        //thousand number separator input expected_salary
+        $('#expected_salary').on('keyup', function() {
+            var value = $(this).val();
+            value = value.replace(/\D/g, '');
+            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            $(this).val(value);
         });
     </script>
 @endsection
