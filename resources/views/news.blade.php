@@ -8,7 +8,7 @@
     <style>
         .header {
             position: relative;
-            min-height: 50vh;
+            min-height: 30vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;

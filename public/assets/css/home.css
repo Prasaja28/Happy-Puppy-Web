@@ -107,8 +107,8 @@ div[name="artist"] {
 }
 
 div[name="artist"] img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
 }
 
@@ -266,6 +266,12 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
     section[name="outlet-search"] h4 {
         font-size: 28px;
         font-weight: 500;
+    }
+
+    div[name="artist"] img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
     }
 
     /* ********************************************************** */
