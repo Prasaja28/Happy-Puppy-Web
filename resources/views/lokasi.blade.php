@@ -90,7 +90,7 @@
     </div>
     <!-- end background home -->
     <!-- map indonesia -->
-    <div class="container p-5" style="">
+    <div class="container p-5">
     <h6 class="font-weight-bold  text-center cabang">{{ __('lokasi.desk1') }}</h6>
     <p class="text-center my-2 cabang-content">{{ __('lokasi.desk2') }}</p>
     <div class="map-indonesia text-center">

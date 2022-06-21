@@ -101,6 +101,12 @@
             border-radius: 20px;
         }
 
+        #no_ktp::-webkit-outer-spin-button,
+        #no_ktp::-webkit-inner-spin-button  {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         #subTittle {
             color: white;
         }

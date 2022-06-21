@@ -7,7 +7,7 @@
     <!-- Add tag css in here -->
     <style>
         .header1 {
-            min-height: 29vh;
+            min-height: 30vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;

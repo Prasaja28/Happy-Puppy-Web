@@ -90,6 +90,7 @@
                                                                     @enderror
                                                                 </fieldset>
                                                             </div>
+                                                            <!-- if buat membedakan code biasa dengan bg -->
                                                             <div class="form-group">
                                                                 <label for="value">Value :</label>
                                                                 <input type="text" class="form-control form-control-border"

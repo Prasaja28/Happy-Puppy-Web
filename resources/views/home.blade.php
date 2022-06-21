@@ -199,12 +199,13 @@
         <!-- ARTIST -->
         <div name="artist" class="container top-artis">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-center">
                         @if ($topartist->count() != 0)
                             @foreach ($topartist as $data)
                                 @if ($data->status == 1)
                                     <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
+                                    <p>{{$data->name}}</p>
                                 @endif
                             @endforeach
                         @endif

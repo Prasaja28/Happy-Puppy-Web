@@ -19,7 +19,7 @@ class LandingController extends Controller
     {
         $topartist = Topartist::select('*')
             ->orderBy('id', 'desc')
-            ->limit(4)
+            ->limit(5)
             ->get();
         $songlist_terlaris = Songlist::where('kategori_lagu', 'terlaris')
             ->limit(6)
