@@ -101,12 +101,6 @@
             border-radius: 20px;
         }
 
-        #no_ktp::-webkit-outer-spin-button,
-        #no_ktp::-webkit-inner-spin-button  {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
         #subTittle {
             color: white;
         }
@@ -114,12 +108,24 @@
         #lampiran {
             display: none;
         }
-       .mob{
-           width: 50%
-       }
-       .hw{
-           width: 25%;
-       }
+
+        .mob {
+            width: 50%
+        }
+
+        .hw {
+            width: 25%;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
 
         @media (max-width: 600px) {
             .header {
@@ -239,14 +245,15 @@
             #bakat {
                 margin-top: -85px;
             }
-            .mob{
+
+            .mob {
                 width: 80%
             }
-            .hw{
+
+            .hw {
                 width: 80%
             }
         }
-
     </style>
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -303,16 +310,17 @@
                                 <input type="hidden" class="form-control" name="careerform_id" value="">
                                 <div class="form-group">
                                     <label for=""></label>
-                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%" id=""
-                                        name="" placeholder="{{ $jobs[0]->name_job }}">
+                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%"
+                                        id="" name="" placeholder="{{ $jobs[0]->name_job }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%" id=""
-                                        name="" placeholder="{{ $jobs[0]->location }}">
+                                    <input type="text" class="form-control" disabled="disabled" style="width: 80%"
+                                        id="" name="" placeholder="{{ $jobs[0]->location }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="name" name="name"
-                                        value="{{ old('name') }}" placeholder="{{ __('karir-detail.placeholder_name') }}">
+                                    <input type="text" class="form-control" style="width: 80%" id="name"
+                                        name="name" value="{{ old('name') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_name') }}">
                                     <input type="hidden" class="form-control" style="width: 80%" id="jobvacancy_id"
                                         name="jobvacancy_id" value="{{ $jobs[0]->id }}">
                                 </div><br>
@@ -320,12 +328,45 @@
                                     <select class="form-control select2 select2-danger mob" name="formal_education"
                                         value="{{ old('formal_education') }}" id="formal_education"
                                         data-dropdown-css-class="select2-danger" required>
-                                        <option selected="selected" selected disabled>{{ __('karir-detail.placeholder_formal') }}</option>
-                                        <option value="SMA">SMA</option>
-                                        <option value="D3">D3</option>
-                                        <option value="S1/D4">S1/D4</option>
-                                        <option value="S2">S2</option>
-                                        <option value="S3">S3</option>
+                                        <option selected="selected" selected disabled>
+                                            {{ __('karir-detail.placeholder_formal') }}</option>
+                                        @if (old('formal_education') == 'SMA')
+                                            <option value="SMA" selected>SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'D3')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3" selected>D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S1/D4')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4" selected>S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S2')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2" selected>S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S3')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3" selected>S3</option>
+                                        @else
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @endif
                                     </select>
                                     @error('formal_education')
                                         <span class="invalid-feedback" role="alert">
@@ -334,11 +375,16 @@
                                     @enderror
                                 </div><br>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger mob" name="place_birth" id="place_birth"
-                                        value="{{ old('place_birth') }}" data-dropdown-css-class="select2-danger">
+                                    <select class="form-control select2 select2-danger mob" name="place_birth"
+                                        id="place_birth" value="{{ old('place_birth') }}"
+                                        data-dropdown-css-class="select2-danger">
                                         <option selected disabled>{{ __('karir-detail.placeholder_birth') }}</option>
                                         @foreach ($province as $p)
-                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @if ($p->id == old('place_birth'))
+                                                <option value="{{ $p->id }}" selected>{{ $p->name }}</option>
+                                            @else
+                                                <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div><br>
@@ -346,16 +392,19 @@
                                     <label><b>{{ __('karir-detail.placeholder_date') }}</b></label><br><br>
                                     <div class="input-group date mob">
                                         <input type="date" id="date_birth" name="date_birth"
-                                            value="{{ old('date_birth') }}" class="form-control datetimepicker-input" />
+                                            value="{{ old('date_birth') }}"
+                                            class="form-control datetimepicker-input" />
                                     </div>
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control hw" id="height" name="height"
-                                        value="{{ old('height') }}" placeholder="{{ __('karir-detail.placeholder_height') }}" min="1">
+                                        value="{{ old('height') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_height') }}" min="1">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="number" class="form-control hw" id="weight" name="weight"
-                                        value="{{ old('weight') }}" placeholder="{{ __('karir-detail.placeholder_weight') }}" min="1">
+                                        value="{{ old('weight') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_weight') }}" min="1">
                                 </div><br>
                             </div>
 
@@ -364,39 +413,67 @@
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger mob" id="gender" name="gender"
                                         value="{{ old('gender') }}" data-dropdown-css-class="select2-danger">
-                                        <option selected="selected" selected disabled>{{ __('karir-detail.placeholder_gender') }}</option>
-                                        <option value="Laki-Laki">{{ __('karir-detail.placeholder_male') }}</option>
-                                        <option value="Perempuan">{{ __('karir-detail.placeholder_female') }}</option>
+                                        <option selected="selected" selected disabled>
+                                            {{ __('karir-detail.placeholder_gender') }}</option>
+                                        @if (old('gender') == 'Laki-Laki')
+                                            <option selected value="Laki-Laki">{{ __('karir-detail.placeholder_male') }}
+                                            </option>
+                                            <option value="Perempuan">{{ __('karir-detail.placeholder_female') }}
+                                            </option>
+                                        @elseif(old('gender') == 'Perempuan')
+                                            <option value="Laki-Laki">{{ __('karir-detail.placeholder_male') }}</option>
+                                            <option selected value="Perempuan">
+                                                {{ __('karir-detail.placeholder_female') }}</option>
+                                        @else
+                                            <option value="Laki-Laki">{{ __('karir-detail.placeholder_male') }}</option>
+                                            <option value="Perempuan">{{ __('karir-detail.placeholder_female') }}
+                                            </option>
+                                        @endif
                                     </select>
                                 </div><br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger mob" id="status_marital"
                                         value="{{ old('status_marital') }}" name="status_marital"
                                         data-dropdown-css-class="select2-danger">
-                                        <option selected="selected" selected disabled>{{ __('karir-detail.placeholder_marital') }}</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Menikah">{{ __('karir-detail.placeholder_married') }}</option>
+                                        <option selected="selected" selected disabled>
+                                            {{ __('karir-detail.placeholder_marital') }}</option>
+                                        @if (old('status_marital') == 'Single')
+                                            <option selected value="Single">Single</option>
+                                            <option value="Menikah">{{ __('karir-detail.placeholder_married') }}
+                                            </option>
+                                        @elseif(old('status_marital') == 'Menikah')
+                                            <option value="Single">Single</option>
+                                            <option selected value="Menikah">
+                                                {{ __('karir-detail.placeholder_married') }}</option>
+                                        @else
+                                            <option value="Single">Single</option>
+                                            <option value="Menikah">{{ __('karir-detail.placeholder_married') }}
+                                            </option>
+                                        @endif
                                     </select>
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control mob" id="phone" name="phone"
-                                        value="{{ old('phone') }}" placeholder="{{ __('karir-detail.placeholder_Telp') }}">
+                                        value="{{ old('phone') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_Telp') }}">
                                 </div><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control mob" id="mobile_phone"
-                                        value="{{ old('mobile_phone') }}" name="mobile_phone" placeholder="{{ __('karir-detail.placeholder_mp') }}">
+                                        value="{{ old('mobile_phone') }}" name="mobile_phone"
+                                        placeholder="{{ __('karir-detail.placeholder_mp') }}">
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="email" name="email"
-                                        value="{{ old('email') }}" placeholder="Email">
+                                    <input type="text" class="form-control" style="width: 80%" id="email"
+                                        name="email" value="{{ old('email') }}" placeholder="Email">
                                 </div><br>
                                 <div class="form-group">
                                     <textarea class="form-control" rows="3" style="width: 80%" id="address" name="address"
-                                        placeholder="{{ __('karir-detail.placeholder_Alamat') }}"></textarea>
+                                        placeholder="{{ __('karir-detail.placeholder_Alamat') }}">{{ old('address') }}</textarea>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" style="width: 80%" id="no_ktp" name="no_ktp"
-                                        value="{{ old('no_ktp') }}" placeholder="No. KTP" min="0">
+                                    <input type="number" class="form-control" style="width: 80%" id="no_ktp"
+                                        name="no_ktp" value="{{ old('no_ktp') }}" placeholder="No. KTP"
+                                        min="0">
                                 </div><br>
                             </div>
                         </div>
@@ -417,11 +494,13 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" name="nama_perusahaan"
-                                        value="{{ old('nama_perusahaan') }}" placeholder="{{ __('karir-detail.placeholder_company') }}">
+                                        value="{{ old('nama_perusahaan') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_company') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control mob"  name="lama_kerja"
-                                        value="{{ old('lama_kerja') }}" placeholder="{{ __('karir-detail.placeholder_length') }}" min="1">
+                                    <input type="number" class="form-control mob" name="lama_kerja"
+                                        value="{{ old('lama_kerja') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_length') }}" min="1">
                                 </div>
                             </div>
 
@@ -430,7 +509,8 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 70%" name="jabatan"
-                                        value="{{ old('jabatan') }}" placeholder="{{ __('karir-detail.placeholder_position') }}">
+                                        value="{{ old('jabatan') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_position') }}">
                                 </div>
                             </div>
                             <br><br>
@@ -447,11 +527,12 @@
                                     <br>
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" name="id_je">
-                                        <input type="text" class="form-control" style="width: 80%" name="company_name[]"
+                                        <input type="text" class="form-control" style="width: 80%"
+                                            name="company_name[]"
                                             placeholder="{{ __('karir-detail.placeholder_company') }}">
                                     </div>
                                     <div class="form-group">
-                                        <input type="number" class="form-control mob"  name="length_work[]"
+                                        <input type="number" class="form-control mob" name="length_work[]"
                                             placeholder="{{ __('karir-detail.placeholder_length') }}" min="1">
                                     </div>
                                     <br>
@@ -460,7 +541,8 @@
                                     <br><br><br>
                                     <div class="form-group" id="pengalaman">
                                         <input type="text" class="form-control" style="width: 70%" id="inPeng"
-                                            name="position[]" placeholder="{{ __('karir-detail.placeholder_position') }}">
+                                            name="position[]"
+                                            placeholder="{{ __('karir-detail.placeholder_position') }}">
                                     </div>
                                 </div>
                                 <br>
@@ -498,7 +580,8 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="language"
-                                        value="{{ old('language') }}" name="language" placeholder="{{ __('karir-detail.placeholder_language') }}">
+                                        value="{{ old('language') }}" name="language"
+                                        placeholder="{{ __('karir-detail.placeholder_language') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="instrument_music"
@@ -511,7 +594,8 @@
                                 <br><br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="computer"
-                                        value="{{ old('computer') }}" name="computer" placeholder="{{ __('karir-detail.placeholder_komputer') }}">
+                                        value="{{ old('computer') }}" name="computer"
+                                        placeholder="{{ __('karir-detail.placeholder_komputer') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="other_expertise"
@@ -607,8 +691,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" style="width: 100%" id="linkedin" name="linkedin"
-                                    value="{{ old('linkedin') }}" placeholder="Copy Link Desk"><br>
+                                <input type="text" class="form-control" style="width: 100%" id="linkedin"
+                                    name="linkedin" value="{{ old('linkedin') }}" placeholder="Copy Link Desk"><br>
                                 <p>*jika ada</p>
                             </div>
                         </div>
@@ -639,6 +723,8 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -657,7 +743,8 @@
                         '</div>' + '</div>' +
                         "<hr style='border-top: 1.5px dashed #519FF8; color:transparent;'>";
                     $('body').find('.fieldGroupCopy:last').before(fieldHTML);
-                    $('body').find('.fieldGroupCopy:last').find('h6 b').text('{{ __('karir-detail.pengalaman_kerja') }} ' + (a++));
+                    $('body').find('.fieldGroupCopy:last').find('h6 b').text(
+                        '{{ __('karir-detail.pengalaman_kerja') }} ' + (a++));
                     //tambah height back 250 px saat ditambahkan
                     $('.back').css('height', $('.back').height() + 250);
                     //auto increment on h6 pengalaman kerja
@@ -864,4 +951,5 @@
             $(this).val(value);
         });
     </script>
+
 @endsection

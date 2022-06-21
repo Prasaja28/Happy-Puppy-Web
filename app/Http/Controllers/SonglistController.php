@@ -15,7 +15,9 @@ class SonglistController extends Controller
      */
     public function index()
     {
-        $songlist = Songlist::all();
+        $songlist = Songlist::select('*')
+        ->orderBy('id', 'desc')
+        ->get();
         return view('admin.songlist-admin.songlist-admin-index',compact('songlist'));
     }
 
@@ -126,7 +128,7 @@ class SonglistController extends Controller
             
             Songlist::where('id',$id)
             ->update([
-                'thumbnail' => $path . $fileName,
+                // 'thumbnail' => $path . $fileName,
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,

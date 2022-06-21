@@ -42,10 +42,10 @@
                         <select class="custom-select form-control-border  @error('kategori_lagu') is-invalid @enderror"
                             id="kategori_lagu" name="kategori_lagu" value="{{ $songlists->kategori_lagu }}" required>
                             @if ($songlists->kategori_lagu == 'terlaris')
-                                <option selected="Selected" value="">Lagu {{ $songlists->kategori_lagu }}</option>
+                                <option selected="Selected" value="terlaris">Lagu {{ $songlists->kategori_lagu }}</option>
                                 <option value="terbaru">Lagu Terbaru</option>
                             @else
-                                <option selected="Selected" value="{{ $songlists->kategori_lagu }}">Lagu
+                                <option selected="Selected" value="terbaru">Lagu
                                     {{ $songlists->kategori_lagu }}</option>
                                 <option value="terlaris">Lagu Terlaris</option>
                             @endif
