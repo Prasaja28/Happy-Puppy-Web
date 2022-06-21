@@ -158,7 +158,6 @@
     <!-- END -->
 
     <!-- OUTLET SEARCH  -->
-    <div class="container">
         <section name="outlet-search" class="mt-0">
             <div class="container-fluid text-white search-kota">
                 <!-- <h4 class="pt-5 text-center">Cari Outlet Terdekat</h4> -->
@@ -205,7 +204,7 @@
                             @foreach ($topartist as $data)
                                 @if ($data->status == 1)
                                     <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
-                                    <p>{{$data->name}}</p>
+                                    <!-- <p>{{$data->name}}</p> -->
                                 @endif
                             @endforeach
                         @endif
@@ -377,7 +376,6 @@
                 </div>
             </div>
         </section>
-    </div>
 @endsection
 
 
