@@ -140,9 +140,11 @@
                                 <p class="card-text text-center">
                                     {{ $o->address }}
                                     <br>
-                                    Tel. {{ $o->phone }}
+                                    Tel. <a href="tel:{{ $o->phone }}">{{ $o->phone }}</a>
                                     <br>
-                                    Fax. {{ $o->fax }}
+                                    @if (!empty($o->fax))
+                                        fax. {{ $o->fax }}
+                                    @endif
                                 </p>
                                 <center>
                                     @if (!empty($o->link_ig))

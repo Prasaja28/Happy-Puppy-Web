@@ -124,16 +124,14 @@
                 @if (!empty($settings['url_tiktok']))
                     <li>
                         <a target="_blank" class="social-item" href="{{ $settings['url_tiktok'] }}">
-                            <img src="{{ asset('assets/img/icons/tiktok.png') }}"
-                                style="width: fit-content; margin-left:-32.5px">
+                            <img src="{{ asset('assets/img/icons/tiktok.png') }}">
                         </a>
                     </li>
                 @endif
                 @if (!empty($settings['url_youtube']))
                     <li>
                         <a target="_blank" class="social-item" href="{{ $settings['url_youtube'] }}">
-                            <img src="{{ asset('assets/img/icons/youtube.png') }}"
-                                style="width: fit-content; margin-left:-31.5px">
+                            <img src="{{ asset('assets/img/icons/youtube.png') }}">
                         </a>
                     </li>
                 @endif
@@ -208,9 +206,6 @@
                         @foreach ($topartist as $data)
                             @if ($data->status == 1)
                                 <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
-                                <div class="row">
-                                    <p>{{ $data->name }}</p>
-                                </div>
                             @endif
                         @endforeach
                     @endif

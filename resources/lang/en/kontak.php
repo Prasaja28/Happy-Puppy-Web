@@ -12,6 +12,7 @@ return [
 	'box3' => 'Message',
     'box4' => 'Request Song',
     'box5' => 'Complaint',
+    'box6' => 'Select Outlet',
     'faq1' => 'What is family karaoke?',
     'faq2' => 'Is Happy Puppy the family?',
     'faq3' => 'Does Happy Puppy provide a female companion?',

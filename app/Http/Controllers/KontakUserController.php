@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kontak;
 use App\Models\Settings;
+use App\Models\Outlet;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -23,7 +24,8 @@ class KontakUserController extends Controller
         ->pluck('value','key')
         ->toArray();
         $kontakUser = Kontak::all();
-        return view('kontak',compact('kontakUser','settings'));
+        $outlet = Outlet::all();
+        return view('kontak',compact('kontakUser','settings','outlet'));
     }
 
     /**

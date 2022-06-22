@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Topartist;
 use App\Models\Songlist;
 use App\Models\News;
+use App\Models\User;
 use App\Models\Settings;
 
 class LandingController extends Controller
@@ -35,8 +36,9 @@ class LandingController extends Controller
             ->get()
             ->pluck('value','key')
             ->toArray();
+        $user = User::all();
         // dd($settings);
-        return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings'));
+        return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings' , 'user'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Keluhan;
+use App\Models\Outlet;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -16,7 +17,8 @@ class KeluhanUserController extends Controller
      */
     public function index()
     {
-        //
+        $outlet = Outlet::all();
+        return view('kontak',compact('outlet'));
     }
 
     /**

@@ -13,6 +13,10 @@
             top: 153px;
         }
 
+        .history-desc {
+            margin: 20%;
+        }
+
         @media (max-width:600px) {
             .vl {
                 border-left: 6px solid white;
@@ -28,7 +32,7 @@
             }
 
             .history-desc {
-                font-size: 6px;
+                font-size: 7px;
                 overflow-wrap: anywhere;
             }
         }
