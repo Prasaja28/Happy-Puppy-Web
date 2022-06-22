@@ -325,8 +325,18 @@
                                     <select class="form-control select2 select2-danger wmob" name="gender"
                                         data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('karir-detail.placeholder_gender') }}</option>
-                                        <option value="0">{{ __('karir-detail.placeholder_male') }}</option>
-                                        <option value="1">{{ __('karir-detail.placeholder_female') }}</option>
+                                        @if (old('gender') == 0)
+                                            <option selected value="0">{{ __('karir-detail.placeholder_male') }}
+                                            </option>
+                                            <option value="1">{{ __('karir-detail.placeholder_female') }}</option>
+                                        @elseif(old('gender') == 1)
+                                            <option value="0">{{ __('karir-detail.placeholder_male') }}</option>
+                                            <option selected value="1">{{ __('karir-detail.placeholder_female') }}
+                                            </option>
+                                        @else
+                                            <option value="0">{{ __('karir-detail.placeholder_male') }}</option>
+                                            <option value="1">{{ __('karir-detail.placeholder_female') }}</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -339,31 +349,31 @@
                                         data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_education') }}
                                         </option>
-                                        @if (old('formal_education') == 'SMA')
+                                        @if (old('last_education') == 'SMA')
                                             <option value="SMA" selected>SMA</option>
                                             <option value="D3">D3</option>
                                             <option value="S1/D4">S1/D4</option>
                                             <option value="S2">S2</option>
                                             <option value="S3">S3</option>
-                                        @elseif(old('formal_education') == 'D3')
+                                        @elseif(old('last_education') == 'D3')
                                             <option value="SMA">SMA</option>
                                             <option value="D3" selected>D3</option>
                                             <option value="S1/D4">S1/D4</option>
                                             <option value="S2">S2</option>
                                             <option value="S3">S3</option>
-                                        @elseif(old('formal_education') == 'S1/D4')
+                                        @elseif(old('last_education') == 'S1/D4')
                                             <option value="SMA">SMA</option>
                                             <option value="D3">D3</option>
                                             <option value="S1/D4" selected>S1/D4</option>
                                             <option value="S2">S2</option>
                                             <option value="S3">S3</option>
-                                        @elseif(old('formal_education') == 'S2')
+                                        @elseif(old('last_education') == 'S2')
                                             <option value="SMA">SMA</option>
                                             <option value="D3">D3</option>
                                             <option value="S1/D4">S1/D4</option>
                                             <option value="S2" selected>S2</option>
                                             <option value="S3">S3</option>
-                                        @elseif(old('formal_education') == 'S3')
+                                        @elseif(old('last_education') == 'S3')
                                             <option value="SMA">SMA</option>
                                             <option value="D3">D3</option>
                                             <option value="S1/D4">S1/D4</option>
@@ -635,7 +645,8 @@
                                         <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             @if (old('city_3') == $r->name)
-                                                <option selected value="{{ $r->name }}">{{ $r->name }}</option>
+                                                <option selected value="{{ $r->name }}">{{ $r->name }}
+                                                </option>
                                             @else
                                                 <option value="{{ $r->id }}">{{ $r->name }}</option>
                                             @endif

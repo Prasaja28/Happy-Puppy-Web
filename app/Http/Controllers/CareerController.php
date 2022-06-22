@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\CareerExport;
 
@@ -47,7 +48,9 @@ class CareerController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        // //remove dot in expected salary and convert to integer
+        // $test = $request(['expected_salary' => str_replace('.', '', $request->expected_salary)]);
+        // dd($test);
         // $jobvacancy_id = $request->jobvacancy_id;
         // $name_job = $request->name_job;
         // $location = $request->location;
@@ -161,7 +164,7 @@ class CareerController extends Controller
                 'email'                 => $request->email,
                 'address'               => $request->address,
                 'no_ktp'                => $request->no_ktp,
-                'expected_salary'       => $request->expected_salary,
+                'expected_salary'       => str_replace('.', '', $request->expected_salary),
                 'language'              => $request->language,
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
@@ -297,7 +300,7 @@ class CareerController extends Controller
                 'email'                 => $request->email,
                 'address'               => $request->address,
                 'no_ktp'                => $request->no_ktp,
-                'expected_salary'       => $request->expected_salary,
+                'expected_salary'       => str_replace('.', '', $request->expected_salary),
                 'language'              => $request->language,
                 'instrument_music'      => $request->instrument_music,
                 'computer'              => $request->computer,
@@ -415,6 +418,33 @@ class CareerController extends Controller
                 ]);
             } 
         }
+        $data = [
+            'id',
+            'name'                  => $request->name,
+            'formal_education'      => $request->formal_education,
+            'place_birth'           => $request->place_birth,
+            'date_birth'            => $request->date_birth,
+            'height'                => $request->height,
+            'weight'                => $request->weight,
+            'gender'                => $request->gender,
+            'status_marital'        => $request->status_marital,
+            'phone'                 => $request->phone,
+            'mobile_phone'          => $request->mobile_phone,
+            'email'                 => $request->email,
+            'address'               => $request->address,
+            'no_ktp'                => $request->no_ktp,
+            'expected_salary'       => $request->expected_salary,
+            'language'              => $request->language,
+            'instrument_music'      => $request->instrument_music,
+            'computer'              => $request->computer,
+            'other_expertise'       => $request->other_expertise,
+            'cv'                    => $path . $filename,
+            'ijazah'                => $path2 . $filename2,
+            'linkedin'              => $request->linkedin,
+            'created_at'            => date('Y-m-d H:i:s'),
+            'jobvacancy_id'         => $request->jobvacancy_id,
+        ];
+        Mail::send(new FormKarir($data));
     }
 
     /**

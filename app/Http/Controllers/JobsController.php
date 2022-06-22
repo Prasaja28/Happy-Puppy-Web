@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Career;
 use App\Models\Jobs;
 use App\Models\Settings;
+use App\Models\Outlet;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -25,6 +26,7 @@ class JobsController extends Controller
             ->orderBy('id', 'desc')
             ->limit(5)
             ->get();
+        
         return view('karir', compact('jobs', 'settings'));
     }
 
@@ -71,7 +73,11 @@ class JobsController extends Controller
     public function adminIndex()
     {
         $jobs = Jobs::all();
-        return view('admin.jobvacancy-admin.jobvacancy-admin-index', compact('jobs'));
+        $lokasi_outlet = Outlet::select('regencies.name as regency_name')
+            ->leftJoin('regencies', 'regencies.id', '=', 'outlet.city_id')
+            ->distinct()
+            ->get();
+        return view('admin.jobvacancy-admin.jobvacancy-admin-index', compact('jobs', 'lokasi_outlet'));
     }
 
     /**

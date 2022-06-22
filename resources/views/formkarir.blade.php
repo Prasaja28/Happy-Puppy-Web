@@ -944,10 +944,12 @@
     </script>
     <script>
         //thousand number separator input expected_salary
+
         $('#expected_salary').on('keyup', function() {
             var value = $(this).val();
             value = value.replace(/\D/g, '');
             value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            //remove dot in database
             $(this).val(value);
         });
     </script>

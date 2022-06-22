@@ -25,12 +25,27 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="role">Location :</label>
                         <input type="text"
                             class="form-control form-control-border @error('location') is-invalid @enderror"
                             id="location" placeholder="Location" name="location" value="{{ old('location') }}"
                             required>
+                        @error('location')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div> --}}
+                    <div class="form-group">
+                        <label for="role">Location :</label>
+                        <select class="form-control form-control-border @error('location') is-invalid @enderror"
+                            id="location" name="location" required>
+                            <option value="">Pilih Location</option>
+                            @foreach ($lokasi_outlet as $location)
+                                <option value="{{ $location->regency_name }}">{{ $location->regency_name }}</option>
+                            @endforeach
+                        </select>
                         @error('location')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -49,7 +64,8 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>
             <div class="modal-footer">

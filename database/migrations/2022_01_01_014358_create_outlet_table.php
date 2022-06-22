@@ -37,7 +37,8 @@ class CreateOutletTable extends Migration
             $table->foreign('citysub_id')
                 ->references('id')
                 ->on('districts')
-                ->onUpdate('cascade')->onDelete('restrict');        
+                ->onUpdate('cascade')->onDelete('restrict')
+                ->nullable();;        
         });
     }
 
