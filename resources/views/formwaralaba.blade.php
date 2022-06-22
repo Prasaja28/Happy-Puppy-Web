@@ -115,8 +115,19 @@
         .mob {
             width: 10%;
         }
-        .wmob{
+
+        .wmob {
             width: 50%;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
         }
 
         @media (max-width: 600px) {
@@ -249,11 +260,11 @@
             #last_waralaba {
                 margin-top: -50px;
             }
-            .wmob{
+
+            .wmob {
                 width: 80%;
             }
         }
-
     </style>
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -306,8 +317,9 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="nama" name="name"
-                                        value="{{ old('name') }}" placeholder="{{ __('karir-detail.placeholder_name') }}">
+                                    <input type="text" class="form-control" style="width: 80%" id="nama"
+                                        name="name" value="{{ old('name') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_name') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger wmob" name="gender"
@@ -319,46 +331,98 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control wmob" name="age"
-                                        value="{{ old('age') }}" placeholder="{{ __('waralaba-form.placeholder_age') }}" min="1">
+                                        value="{{ old('age') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_age') }}" min="1">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger wmob" name="last_education"
-                                        data-dropdown-css-class="select2-danger" >
-                                        <option selected="selected">{{ __('waralaba-form.placeholder_education') }}</option>
-                                        <option value="SMA">SMA</option>
-                                        <option value="D3">D3</option>
-                                        <option value="S1/D4">S1/D4</option>
-                                        <option value="S2">S2</option>
-                                        <option value="S3">S3</option>
+                                        data-dropdown-css-class="select2-danger">
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_education') }}
+                                        </option>
+                                        @if (old('formal_education') == 'SMA')
+                                            <option value="SMA" selected>SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'D3')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3" selected>D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S1/D4')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4" selected>S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S2')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2" selected>S2</option>
+                                            <option value="S3">S3</option>
+                                        @elseif(old('formal_education') == 'S3')
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3" selected>S3</option>
+                                        @else
+                                            <option value="SMA">SMA</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1/D4">S1/D4</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="marital"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">Status</option>
-                                        <option value="0">{{ __('karir-detail.placeholder_married') }}</option>
-                                        <option value="1">Single</option>
+                                        @if (old('marital') == '0')
+                                            <option selected value="0">{{ __('karir-detail.placeholder_married') }}
+                                            </option>
+                                            <option value="1">Single</option>
+                                        @elseif(old('marital') == '1')
+                                            <option value="0">{{ __('karir-detail.placeholder_married') }}</option>
+                                            <option selected value="1">Single</option>
+                                        @else
+                                            <option value="0">{{ __('karir-detail.placeholder_married') }}</option>
+                                            <option value="1">Single</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" name="official_address"
-                                        value="{{ old('official_address') }}" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        name="official_address" value="{{ old('official_address') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city" id="city"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
-                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @if (old('city') == $r->id)
+                                                <option selected value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @else
+                                                <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger wmob" name="province" id="province"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger wmob" name="province"
+                                        id="province" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
-                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @if (old('province') == $p->id)
+                                                <option selected value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @else
+                                                <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -367,20 +431,23 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  name="home_phone"
-                                        value="{{ old('home_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tr') }}">
+                                    <input type="text" class="form-control wmob" name="home_phone"
+                                        value="{{ old('home_phone') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_tr') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  name="official_phone"
-                                        value="{{ old('official_phone') }}" placeholder="{{ __('waralaba-form.placeholder_tk') }}">
+                                    <input type="text" class="form-control wmob" name="official_phone"
+                                        value="{{ old('official_phone') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_tk') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  name="mobile_phone"
-                                        value="{{ old('mobile_phone') }}" placeholder="{{ __('karir-detail.placeholder_mp') }}">
+                                    <input type="text" class="form-control wmob" name="mobile_phone"
+                                        value="{{ old('mobile_phone') }}"
+                                        placeholder="{{ __('karir-detail.placeholder_mp') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" name="email" id="email"
-                                        value="{{ old('email') }}" placeholder="Email">
+                                    <input type="text" class="form-control" style="width: 80%" name="email"
+                                        id="email" value="{{ old('email') }}" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="email_confirm"
@@ -400,22 +467,73 @@
                             <div class="col-md-6">
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" name="job" id="job"
-                                        value="{{ old('job') }}" placeholder="{{ __('waralaba-form.placeholder_work') }}">
+                                    <input type="text" class="form-control" style="width: 80%" name="job"
+                                        id="job" value="{{ old('job') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_work') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger wmob" name="bussiness_field"
                                         data-dropdown-css-class="select2-danger">
-                                        <option selected="selected">{{ __('waralaba-form.placeholder_sector') }}</option>
-                                        <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}</option>
-                                        <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}</option>
-                                        <option value="Bidang Konstruksi">{{ __('waralaba-form.placeholder_const') }}</option>
-                                        <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}</option>
+                                        <option selected="selected">{{ __('waralaba-form.placeholder_sector') }}
+                                        </option>
+                                        @if (old('bussiness_field') == 'Bidang Pertanian')
+                                            <option selected value="Bidang Pertanian">Bidang Pertanian</option>
+                                            <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}
+                                            </option>
+                                            <option value="Bidang Konstruksi">
+                                                {{ __('waralaba-form.placeholder_const') }}
+                                            </option>
+                                            <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}
+                                            </option>
+                                        @elseif(old('bussiness_field') == 'Bidang Manufaktur')
+                                            <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}
+                                            </option>
+                                            <option selected value="Bidang Manufaktur">
+                                                {{ __('waralaba-form.placeholder_manu') }}
+                                            </option>
+                                            <option value="Bidang Konstruksi">
+                                                {{ __('waralaba-form.placeholder_const') }}
+                                            </option>
+                                            <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}
+                                            </option>
+                                        @elseif(old('bussiness_field') == 'Bidang Konstruksi')
+                                            <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}
+                                            </option>
+                                            <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}
+                                            </option>
+                                            <option selected value="Bidang Konstruksi">
+                                                {{ __('waralaba-form.placeholder_const') }}
+                                            </option>
+                                            <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}
+                                            </option>
+                                        @elseif(old('bussiness_field') == 'Bidang Komunikasi')
+                                            <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}
+                                            </option>
+                                            <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}
+                                            </option>
+                                            <option value="Bidang Konstruksi">
+                                                {{ __('waralaba-form.placeholder_const') }}
+                                            </option>
+                                            <option selected value="Bidang Komunikasi">
+                                                {{ __('waralaba-form.placeholder_comu') }}
+                                            </option>
+                                        @else
+                                            <option value="Bidang Pertanian">{{ __('waralaba-form.placeholder_farm') }}
+                                            </option>
+                                            <option value="Bidang Manufaktur">{{ __('waralaba-form.placeholder_manu') }}
+                                            </option>
+                                            <option value="Bidang Konstruksi">
+                                                {{ __('waralaba-form.placeholder_const') }}
+                                            </option>
+                                            <option value="Bidang Komunikasi">{{ __('waralaba-form.placeholder_comu') }}
+                                            </option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control wmob" id="other" name="other"
-                                        value="{{ old('other') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
+                                        value="{{ old('other') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="company_name"
@@ -429,7 +547,8 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control wmob" id="other_2" name="other_2"
-                                        value="{{ old('other_2') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
+                                        value="{{ old('other_2') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                             </div>
 
@@ -437,14 +556,19 @@
                                 <br>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_2"
-                                        value="{{ old('address_2') }}" name="address_2" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
+                                        value="{{ old('address_2') }}" name="address_2"
+                                        placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="city_2" id="city_2"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
-                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @if (old('city_2') == $r->name)
+                                                <option selected value="{{ $r->name }}">{{ $r->name }}</option>
+                                            @else
+                                                <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -453,7 +577,11 @@
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
-                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @if (old('province_2') == $p->name)
+                                                <option selected value="{{ $p->name }}">{{ $p->name }}</option>
+                                            @else
+                                                <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -471,73 +599,106 @@
                                 <br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="status_penguasaan"
-                                        id="status_penguasaan" data-dropdown-css-class="select2-danger" style="width: 80%;">
+                                        id="status_penguasaan" data-dropdown-css-class="select2-danger"
+                                        style="width: 80%;">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_spt') }}</option>
-                                        <option value="Lahan Pribadi">{{ __('waralaba-form.placeholder_spt_1') }}</option>
-                                        <option value="Sewa">{{ __('waralaba-form.placeholder_spt_2
-                                        ') }}</option>
-                                        </option>
+                                        @if (old('status_penguasaan') == 'Lahan Pribadi')
+                                            <option selected value="Lahan Pribadi">
+                                                {{ __('waralaba-form.placeholder_spt') }}
+                                            </option>
+                                            <option value="Sewa">
+                                                {{ __('waralaba-form.placeholder_spt_2') }}
+                                            </option>
+                                        @elseif (old('status_penguasaan') == 'Sewa')
+                                            <option value="Lahan Pribadi">{{ __('waralaba-form.placeholder_spt_1') }}
+                                            </option>
+                                            <option selected value="Sewa">
+                                                {{ __('waralaba-form.placeholder_spt_2') }}
+                                            </option>
+                                        @else
+                                            <option value="Lahan Pribadi">{{ __('waralaba-form.placeholder_spt_1') }}
+                                            </option>
+                                            <option value="Sewa">
+                                                {{ __('waralaba-form.placeholder_spt_2') }}
+                                            </option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" style="width: 80%" id="address_3"
-                                        value="{{ old('address_3') }}" name="address_3" placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
+                                        value="{{ old('address_3') }}" name="address_3"
+                                        placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" id="city_3" name="city_3"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
-                                            <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @if (old('city_3') == $r->name)
+                                                <option selected value="{{ $r->name }}">{{ $r->name }}</option>
+                                            @else
+                                                <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="province_3" id="province_3"
                                         data-dropdown-css-class="select2-danger" style="width: 50%;">
-                                        <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
+                                        <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}
+                                        </option>
                                         @foreach ($provincies as $p)
-                                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @if (old('province_3') == $p->name)
+                                                <option selected value="{{ $p->name }}">{{ $p->name }}
+                                                </option>
+                                            @else
+                                                <option value="{{ $p->id }}">{{ $p->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  id="known_as_area"
+                                    <input type="text" class="form-control wmob" id="known_as_area"
                                         value="{{ old('known_as_area') }}" name="known_as_area"
                                         placeholder="{{ __('waralaba-form.placeholder_kaa') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  id="other_3" name="other_3"
-                                        value="{{ old('other_3') }}" placeholder="{{ __('waralaba-form.placeholder_other') }}">
+                                    <input type="text" class="form-control wmob" id="other_3" name="other_3"
+                                        value="{{ old('other_3') }}"
+                                        placeholder="{{ __('waralaba-form.placeholder_other') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control wmob"  id="building_area"
+                                    <input type="number" class="form-control wmob" id="building_area"
                                         value="{{ old('building_area') }}" name="building_area"
                                         placeholder="{{ __('waralaba-form.placeholder_luas') }}" min="1">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_left') }}:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="left_business_name"
-                                        value="{{ old('left_business_name') }}" name="left_business_name"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="left_business_name" value="{{ old('left_business_name') }}"
+                                        name="left_business_name"
                                         placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="left_business_field"
-                                        value="{{ old('left_business_field') }}" name="left_business_field"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="left_business_field" value="{{ old('left_business_field') }}"
+                                        name="left_business_field"
                                         placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_right') }}:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="right_business_name"
-                                        value="{{ old('right_business_name') }}" name="right_business_name"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="right_business_name" value="{{ old('right_business_name') }}"
+                                        name="right_business_name"
                                         placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="right_business_field"
-                                        value="{{ old('right_business_field') }}" name="right_business_field"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="right_business_field" value="{{ old('right_business_field') }}"
+                                        name="right_business_field"
                                         placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                             </div>
@@ -546,35 +707,39 @@
                                 <br>
                                 <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_back') }}:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="behind_business_name"
-                                        value="{{ old('behind_business_name') }}" name="behind_business_name"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="behind_business_name" value="{{ old('behind_business_name') }}"
+                                        name="behind_business_name"
                                         placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="behind_business_field"
-                                        value="{{ old('behind_business_field') }}" name="behind_business_field"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="behind_business_field" value="{{ old('behind_business_field') }}"
+                                        name="behind_business_field"
                                         placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
                                 <p style="font-weight: bold;">{{ __('waralaba-form.placeholder_front') }}:</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="front_business_name"
-                                        value="{{ old('front_business_name') }}" name="front_business_name"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="front_business_name" value="{{ old('front_business_name') }}"
+                                        name="front_business_name"
                                         placeholder="{{ __('waralaba-form.placeholder_sector_n') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="front_business_field"
-                                        value="{{ old('front_business_field') }}" name="front_business_field"
+                                    <input type="text" class="form-control" style="width: 80%"
+                                        id="front_business_field" value="{{ old('front_business_field') }}"
+                                        name="front_business_field"
                                         placeholder="{{ __('waralaba-form.placeholder_sector') }}">
                                 </div>
                                 <br><br>
                                 <div class="form-group">
-                                    <input type="number" class="form-control wmob"  id="front_road_width"
+                                    <input type="number" class="form-control wmob" id="front_road_width"
                                         value="{{ old('front_road_width') }}" name="front_road_width"
                                         placeholder="{{ __('waralaba-form.placeholder_rw') }}" min="1">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control wmob"  id="front_road_traffic"
+                                    <input type="text" class="form-control wmob" id="front_road_traffic"
                                         value="{{ old('front_road_traffic') }}" name="front_road_traffic"
                                         placeholder="{{ __('waralaba-form.placeholder_traffic') }}">
                                     <input type="hidden" name="status" id="status" value="0">
@@ -584,8 +749,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="background-color: #221E40;width: 100%;padding: 1rem;"
-                    id="last_form_section">
+                <div class="card" style="background-color: #221E40;width: 100%;padding: 1rem;" id="last_form_section">
                     <p style="color: white;" id="lampiran">{{ __('waralaba-form.confirm1') }}</p>
                     <div class="form-group">
                         <select class="form-control select2 select2-danger mob" data-dropdown-css-class="select2-danger"
