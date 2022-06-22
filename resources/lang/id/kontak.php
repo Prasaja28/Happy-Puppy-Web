@@ -12,6 +12,7 @@ return [
 	'box3' => 'Pesan',
 	'box4' => 'Request Lagu',
     'box5' => 'Keluhan',
+    'box6' => 'Pilih Outlet',
     'faq1' => 'Apakah karaoke keluarga itu?',
     'faq2' => 'Apakah Happy Puppy keluarga itu?',
     'faq3' => 'Apakah Happy Puppy menyediakan pendamping wanita?',

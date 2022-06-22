@@ -675,9 +675,13 @@
                             </div>
 
                             <div class="col-md-6">
-                                <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet"
-                                    name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" 
-                                    required>
+                                <!-- <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet" name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" required> -->
+                                <select name="outlet" class="form-control @error('outlet') is-invalid @enderror" value="{{ old('outlet') }}" required>
+                                    <option selected="Selected" value="" disabled>{{ __('kontak.box6') }}</option>
+                                    <?php foreach ($outlet as $value) { ?>
+                                    <?php echo '<option value="'.$value->name.'">'.$value->name.'</option>' ?>
+                                    <?php } ?>
+                                </select>
                                 @error('outlet')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
