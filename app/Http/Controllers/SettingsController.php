@@ -29,7 +29,7 @@ class SettingsController extends Controller
             $file = $request->file('value');
             $name = $file->getClientOriginalName();
             $path = 'img/settings-img/';
-            $file->move(assets_path($path), $name);
+            $file->move(storage_path($path), $name);
             
             $settings = Settings::find($request->id);
             $settings->value = $path . $name;

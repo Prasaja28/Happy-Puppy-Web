@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\CareerExport;
+use App\Mail\ContactMail;
 
 Carbon::setlocale(LC_ALL, 'IND');
 
@@ -408,7 +409,7 @@ class CareerController extends Controller
                 ]);
             } if ($request->no_ktp == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
-                    'message' => 'Berat badan tidak boleh kosong!',
+                    'message' => 'KTP tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
             } if ($request->expected_salary == null) {
@@ -444,7 +445,7 @@ class CareerController extends Controller
             'created_at'            => date('Y-m-d H:i:s'),
             'jobvacancy_id'         => $request->jobvacancy_id,
         ];
-        Mail::send(new FormKarir($data));
+        Mail::to('prasaja55@gmail.com')->send(new ContactMail($data));
     }
 
     /**
