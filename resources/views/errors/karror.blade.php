@@ -14,7 +14,7 @@
             -o-background-size: cover;
             background-size: cover;
             background-position: right;
-            background-image: url('/img/karir.png')
+
         }
 
         #txt1 {
@@ -110,73 +110,72 @@
         }
 
         /* @media(max-width:600px) {
-                                                                #txt1 {
-                                                                    font-size: 35px;
-                                                                    margin-bottom: -12rem;
-                                                                    margin-left: -5rem;
+                                                                    #txt1 {
+                                                                        font-size: 35px;
+                                                                        margin-bottom: -12rem;
+                                                                        margin-left: -5rem;
+                                                                    }
+
+                                                                    .table .tr-inputs th {
+                                                                        position: relative;
+                                                                        padding: 0;
+                                                                        padding-bottom: 1.2rem;
+                                                                        margin: 0 0 0.5rem 0;
+                                                                    }
+
+                                                                    .lowongan {
+                                                                        display: none;
+                                                                    }
+
+                                                                    h6 {
+                                                                        color: #ffffff;
+                                                                        margin-top: -75px;
+                                                                        font-size: 18px;
+                                                                    }
+
+                                                                    .table {
+                                                                        margin-left: -5.5rem;
+                                                                        margin-top: 4rem;
+                                                                    }
+
+
+                                                                    .grid-container {
+                                                                        margin-left: -107px;
+                                                                        display: grid;
+                                                                        column-gap: 10px;
+                                                                        row-gap: 15px;
+                                                                        grid-template-columns: 115px 115px 115px;
+                                                                        grid-template-rows: 105px 105px;
+                                                                        padding: 10px;
+
+                                                                    }
+
+                                                                    .grid-item {
+                                                                        ;
+                                                                        background-position: center;
+                                                                        background-repeat: no-repeat;
+                                                                        background-size: cover;
+                                                                        border: 1px solid rgba(0, 0, 0, 0.8);
+                                                                        padding: 55px 5px 10px 5px;
+                                                                    }
+
+                                                                    b#item {
+                                                                        font-size: 13px;
+                                                                        color: #ffffff;
+                                                                        margin-top: 5px;
+                                                                        margin-right: 5px;
+                                                                        border-bottom: 3px solid rgb(206, 135, 44);
+                                                                        padding-bottom: 2px;
+                                                                        position: absolute;
+                                                                        width: 5%;
+                                                                    }
                                                                 }
 
-                                                                .table .tr-inputs th {
-                                                                    position: relative;
-                                                                    padding: 0;
-                                                                    padding-bottom: 1.2rem;
-                                                                    margin: 0 0 0.5rem 0;
-                                                                }
-
-                                                                .lowongan {
-                                                                    display: none;
-                                                                }
-
-                                                                h6 {
-                                                                    color: #ffffff;
-                                                                    margin-top: -75px;
-                                                                    font-size: 18px;
-                                                                }
-
-                                                                .table {
-                                                                    margin-left: -5.5rem;
-                                                                    margin-top: 4rem;
-                                                                }
-
-
-                                                                .grid-container {
-                                                                    margin-left: -107px;
-                                                                    display: grid;
-                                                                    column-gap: 10px;
-                                                                    row-gap: 15px;
-                                                                    grid-template-columns: 115px 115px 115px;
-                                                                    grid-template-rows: 105px 105px;
-                                                                    padding: 10px;
-
-                                                                }
-
-                                                                .grid-item {
-                                                                    background-image: url('/img/karir.png');
-                                                                    background-position: center;
-                                                                    background-repeat: no-repeat;
-                                                                    background-size: cover;
-                                                                    border: 1px solid rgba(0, 0, 0, 0.8);
-                                                                    padding: 55px 5px 10px 5px;
-                                                                }
-
-                                                                b#item {
-                                                                    font-size: 13px;
-                                                                    color: #ffffff;
-                                                                    margin-top: 5px;
-                                                                    margin-right: 5px;
-                                                                    border-bottom: 3px solid rgb(206, 135, 44);
-                                                                    padding-bottom: 2px;
-                                                                    position: absolute;
-                                                                    width: 5%;
-                                                                }
-                                                            }
-
-                                                            @media(max-width:320px) {
-                                                                #filter {
-                                                                    margin-left: 2rem;
-                                                                }
-                                                            } */
-
+                                                                @media(max-width:320px) {
+                                                                    #filter {
+                                                                        margin-left: 2rem;
+                                                                    }
+                                                                } */
     </style>
     <!-- Google Fonts -->
     <link
@@ -186,7 +185,7 @@
 @endsection
 @section('navbar-profile', 'active')
 @section('konten')
-    <div class="header1 d-flex">
+    <div class="header1 d-flex" style="background-image: url('{{ $settings['banner_karir'] }}')">
         <div class="container d-flex header text-white py-5 align-items-end">
             <h2 class="font-weight-bold">KARIR</h2>
         </div>
@@ -207,10 +206,10 @@
             </div>
         </div>
     </div>
-    
+
     <div class="content" style="margin-left: 1rem;">
     </div>
-    
+
     <br>
     <div class="container" id="filter">
         <div class="table px-2 px-lg-5" style="margin-top: -4.6rem;">
@@ -221,22 +220,23 @@
                             @csrf
                             <th style="border-top: 0px; padding-left: 0px;">
                                 <input type="text" class="form-control"
-                                style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
+                                    style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="nama_job"
                                     placeholder="Pilih Pekerjaan">
-                                </th>
+                            </th>
                             <th style="border-top: 0px;">
                                 <input type="text" class="form-control"
                                     style="font-size: 15px; height: 3rem; box-shadow: 2px 2px #EFEDED;" name="lokasi"
                                     placeholder="Pilih Lokasi">
-                                </th>
-                                <th style="border-top: 0px;">
-                                    <button type="submit" class="btn"
+                            </th>
+                            <th style="border-top: 0px;">
+                                <button type="submit" class="btn"
                                     style="font-size: 13px; height: 3rem;"><b>Filter</b></button>
                             </th>
                         </form>
                     </tr>
                 </thead>
-                <p class="text-warning" style="margin-top: -86px">Search Result for '{{$nama_job}}' at '{{$lokasi}}'</p>
+                <p class="text-warning" style="margin-top: -86px">Search Result for '{{ $nama_job }}' at
+                    '{{ $lokasi }}'</p>
             </table>
             <center>
                 <h4>Data Tidak itemukan</h4>
@@ -249,7 +249,7 @@
         style="text-transform:uppercase; margin-left:125px; height: 2.3rem;"><b>APPLY NOW</b></a>
     </div> --}}
     <br>
-    @endsection
+@endsection
 
 
 @section('js-internal')

@@ -15,7 +15,7 @@
             -o-background-size: cover;
             background-size: cover;
             background-position: rightl;
-            background-image: url('/img/waralaba.png')
+            
         }
 
         .tablinks {
@@ -166,7 +166,7 @@
                 -o-background-size: cover;
                 background-size: cover;
                 background-position: rightl;
-                background-image: url('/img/waralaba.png')
+                
             }
 
             #txt1 {
@@ -285,7 +285,7 @@
 
 @section('konten')
     <!-- add konten in here -->
-    <div class="header p-5">
+    <div class="header p-5" style="background-image: url('{{ $settings['banner_waralaba'] }}')">
         <div id="txt1" class="container">
             <p>{{ __('waralaba.title1') }}</p>
         </div>

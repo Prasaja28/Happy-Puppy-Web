@@ -16,9 +16,9 @@
             -o-background-size: cover;
             background-size: cover;
             background-position: rightl;
-            background-image: url('/img/kontak.png')
         }
-        .form-area{
+
+        .form-area {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -28,6 +28,7 @@
             margin-bottom: 16px;
             resize: vertical;
         }
+
         .header #kont {
             color: white;
             position: absolute;
@@ -101,7 +102,7 @@
         /* Change background color of buttons on hover */
         .tab button:hover {
             /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
-            -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+                    -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
             background-color: #85A4E1;
             background-image: url('/img/Rectangle.png');
             background-size: cover;
@@ -112,7 +113,7 @@
         /* Create an active/current "tab button" class */
         .tab button.active {
             /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
-            -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+                    -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
             background-color: #85A4E1;
             background-image: url('/img/Rectangle.png');
             background-size: cover;
@@ -236,7 +237,6 @@
                 -o-background-size: cover;
                 background-size: cover;
                 background-position: rightl;
-                background-image: url('/img/kontak.png')
             }
 
             .header #kont {
@@ -296,7 +296,7 @@
             /* Change background color of buttons on hover */
             .tab button:hover {
                 /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
-            -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+                    -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
                 background-color: #85A4E1;
                 background-image: url('/img/Rectangle.png');
                 background-size: cover;
@@ -307,7 +307,7 @@
             /* Create an active/current "tab button" class */
             .tab button.active {
                 /* background: -webkit-linear-gradient(-60deg,  transparent 205px, #85A4E1 205px),
-            -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
+                    -webkit-linear-gradient(60deg,  transparent 205px, #85A4E1 205px); */
                 background-color: #85A4E1;
                 background-image: url('/img/Rectangle.png');
                 background-size: cover;
@@ -461,13 +461,12 @@
                 color: #fff;
             }
         }
-
     </style>
 @endsection
 
 @section('konten')
     <!-- add konten in here -->
-    <div class="header p-5">
+    <div class="header p-5" style="background-image: url('{{ $settings['banner_kontak'] }}')">
         <p id="kont">{{ __('kontak.title1') }}</p>
         <p id="kami">{{ __('kontak.title2') }}</p>
     </div>
@@ -476,7 +475,9 @@
             <div class="row" style="font-family: 'Poppins';">
                 <br>
                 <div class="col-4 d-flex" id="p1">{{ __('kontak.title3') }}</div><br>
-                <div class="col-8 pt-4 pt-lg-0 content" data-aos="fade-left" id="p11">JL. H.R. Mohammad No. 73B Lt. II<br>Surabaya 60226 - Indonesia<br>Tel. (031)734-3388<br>Fax. (031)734-2911<br><br>{{ __('kontak.title4') }}</div><br>
+                <div class="col-8 pt-4 pt-lg-0 content" data-aos="fade-left" id="p11">JL. H.R. Mohammad No. 73B Lt.
+                    II<br>Surabaya 60226 - Indonesia<br>Tel. (031)734-3388<br>Fax.
+                    (031)734-2911<br><br>{{ __('kontak.title4') }}</div><br>
             </div>
         </div>
     </div>
@@ -492,20 +493,22 @@
                 </div>
             @endif
             @if (session()->has('message'))
-            <div class="alert alert-{{ session('alert') }} alert-has-icon  alert-dismissible fade show mx-1 justify-content-center" role="alert">
-                {{-- <div class="alert-icon"><i class="far fa-lightbulb"></i></div> --}}
-                <div class="alert-body">
-                    <button class="close" data-dismiss="alert" aria-label="close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="alert-title">{{ session('title') }}</span>
-                    </button>
-                    <span class="alert-text">{{ session('message') }}</span>
+                <div class="alert alert-{{ session('alert') }} alert-has-icon  alert-dismissible fade show mx-1 justify-content-center"
+                    role="alert">
+                    {{-- <div class="alert-icon"><i class="far fa-lightbulb"></i></div> --}}
+                    <div class="alert-body">
+                        <button class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="alert-title">{{ session('title') }}</span>
+                        </button>
+                        <span class="alert-text">{{ session('message') }}</span>
+                    </div>
                 </div>
-            </div>
-        @endif
+            @endif
             <div class="tab">
                 <!-- <div class="tablinks" style="background-image: url('/img/Rectangle.png')" onclick="openCity(event, 'kontak')" id="defaultOpen">Kontak</div> -->
-                <button class="tablinks" onclick="openCity(event, 'kontak')" id="defaultOpen">{{ __('kontak.accordion1') }}</button><br>
+                <button class="tablinks" onclick="openCity(event, 'kontak')"
+                    id="defaultOpen">{{ __('kontak.accordion1') }}</button><br>
                 <button class="tablinks" onclick="openCity(event, 'Request')">{{ __('kontak.accordion2') }}</button><br>
                 <button class="tablinks" onclick="openCity(event, 'keluhan')">{{ __('kontak.accordion3') }}</button>
             </div>
@@ -516,8 +519,9 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                    name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                    id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                    value="{{ old('name') }}" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -525,24 +529,26 @@
                                 @enderror
 
                                 <input class="form-control @error('member_id') is-invalid @enderror" type="text"
-                                    id="member_id" name="member_id" placeholder="Member ID" value="{{ old('member_id') }}"
-                                    required>
+                                    id="member_id" name="member_id" placeholder="Member ID"
+                                    value="{{ old('member_id') }}" required>
                                 @error('member_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                    name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                    id="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                                    required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                    name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                    id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                    value="{{ old('phone') }}" required>
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -551,9 +557,8 @@
                             </div>
 
                             <div class="col-md-6">
-                                <textarea class="form-area" type="text" rows="6"
-                                    id="complaint" name="complaint" placeholder="{{ __('kontak.box3') }}" value="{{ old('complaint') }}"
-                                    required></textarea>
+                                <textarea class="form-area" type="text" rows="6" id="complaint" name="complaint"
+                                    placeholder="{{ __('kontak.box3') }}" value="{{ old('complaint') }}" required></textarea>
                                 @error('complaint')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -564,7 +569,7 @@
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                 </div>
 
-                                
+
                                 <input style="background-color:#0275d8" type="submit" value="Submit">
                             </div>
                         </div>
@@ -578,8 +583,9 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                    name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                    id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                    value="{{ old('name') }}" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -595,16 +601,18 @@
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                    name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                    id="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                                    required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                    name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                    id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                    value="{{ old('phone') }}" required>
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -613,9 +621,8 @@
                             </div>
 
                             <div class="col-md-6">
-                                <textarea class="form-area" type="text" id="request" rows="6"
-                                    name="request" placeholder="{{ __('kontak.box4') }}" value="{{ old('request') }}" 
-                                    required></textarea>
+                                <textarea class="form-area" type="text" id="request" rows="6" name="request"
+                                    placeholder="{{ __('kontak.box4') }}" value="{{ old('request') }}" required></textarea>
                                 @error('request')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -626,7 +633,7 @@
                                     <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                 </div>
 
-                                
+
                                 <input style="background-color:#0275d8" type="submit" value="Submit">
                             </div>
                         </div>
@@ -640,8 +647,9 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                    name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                    id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                    value="{{ old('name') }}" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -657,16 +665,18 @@
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                    name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                    id="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                                    required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                    name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                    id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                    value="{{ old('phone') }}" required>
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -676,10 +686,12 @@
 
                             <div class="col-md-6">
                                 <!-- <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet" name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" required> -->
-                                <select name="outlet" class="form-control @error('outlet') is-invalid @enderror" value="{{ old('outlet') }}" required>
-                                    <option selected="Selected" value="" disabled>{{ __('kontak.box6') }}</option>
+                                <select name="outlet" class="form-control @error('outlet') is-invalid @enderror"
+                                    value="{{ old('outlet') }}" required>
+                                    <option selected="Selected" value="" disabled>{{ __('kontak.box6') }}
+                                    </option>
                                     <?php foreach ($outlet as $value) { ?>
-                                    <?php echo '<option value="'.$value->name.'">'.$value->name.'</option>' ?>
+                                    <?php echo '<option value="' . $value->name . '">' . $value->name . '</option>'; ?>
                                     <?php } ?>
                                 </select>
                                 @error('outlet')
@@ -688,9 +700,8 @@
                                     </span>
                                 @enderror
 
-                                <textarea class="form-area" rows="4" type="text" id="keluhan"
-                                    name="keluhan" placeholder="{{ __('kontak.box5') }}" value="{{ old('keluhan') }}" 
-                                    required></textarea>
+                                <textarea class="form-area" rows="4" type="text" id="keluhan" name="keluhan"
+                                    placeholder="{{ __('kontak.box5') }}" value="{{ old('keluhan') }}" required></textarea>
                                 @error('keluhan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -715,37 +726,40 @@
                     <h2 class="accordionItemHeading">{{ __('kontak.accordion1') }}</h2>
                     <div id="kontak" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
-                             <form action="{{ url('/kontak/store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/kontak/store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                            name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                            id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                            value="{{ old('name') }}" required>
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
-                                            id="member_id" name="member_id" placeholder="Member ID" value="{{ old('member_id') }}"
-                                            required>
+                                        <input class="form-control @error('member_id') is-invalid @enderror"
+                                            type="text" id="member_id" name="member_id" placeholder="Member ID"
+                                            value="{{ old('member_id') }}" required>
                                         @error('member_id')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                            id="email" name="email" placeholder="Email"
+                                            value="{{ old('email') }}" required>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                            name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                            id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                            value="{{ old('phone') }}" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -754,7 +768,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <textarea class="form-area" type="text" rows="6" id="complaint" name="complaint" placeholder="{{ __('kontak.box3') }}" value="{{ old('complaint') }}" required></textarea>
+                                        <textarea class="form-area" type="text" rows="6" id="complaint" name="complaint"
+                                            placeholder="{{ __('kontak.box3') }}" value="{{ old('complaint') }}" required></textarea>
                                         @error('complaint')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -765,7 +780,7 @@
                                             <div class="col-md-6"> {!! htmlFormSnippet() !!} </div>
                                         </div>
 
-                                        
+
                                         <input style="background-color:#0275d8" type="submit" value="Submit">
                                     </div>
                                 </div>
@@ -779,19 +794,20 @@
                     <div id="Request" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
                             <form action="{{ url('/request/store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                                @csrf
                                 <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                            name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                            id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                            value="{{ old('name') }}" required>
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
-                                            id="member_id" name="member_id" placeholder="Member ID"
+                                        <input class="form-control @error('member_id') is-invalid @enderror"
+                                            type="text" id="member_id" name="member_id" placeholder="Member ID"
                                             value="{{ old('member_id') }}" required>
                                         @error('member_id')
                                             <span class="invalid-feedback" role="alert">
@@ -799,16 +815,18 @@
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                            id="email" name="email" placeholder="Email"
+                                            value="{{ old('email') }}" required>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                            name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                            id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                            value="{{ old('phone') }}" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -817,7 +835,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <textarea class="form-area" type="text" rows="6" id="request" name="request" placeholder="{{ __('kontak.box4') }}" value="{{ old('request') }}" required></textarea>
+                                        <textarea class="form-area" type="text" rows="6" id="request" name="request"
+                                            placeholder="{{ __('kontak.box4') }}" value="{{ old('request') }}" required></textarea>
                                         @error('request')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -842,19 +861,20 @@
                     <div id="keluhan" class="accordionItemContent">
                         <div class="container" id="form1" style="font-family: 'Poppins';">
                             <form action="{{ url('/keluhan/store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                                @csrf
                                 <div class="row" style="overflow: hidden;">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('name') is-invalid @enderror" type="text" id="name"
-                                            name="name" placeholder="{{ __('kontak.box1') }}" value="{{ old('name') }}" required>
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                            id="name" name="name" placeholder="{{ __('kontak.box1') }}"
+                                            value="{{ old('name') }}" required>
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('member_id') is-invalid @enderror" type="text"
-                                            id="member_id" name="member_id" placeholder="Member ID"
+                                        <input class="form-control @error('member_id') is-invalid @enderror"
+                                            type="text" id="member_id" name="member_id" placeholder="Member ID"
                                             value="{{ old('member_id') }}" required>
                                         @error('member_id')
                                             <span class="invalid-feedback" role="alert">
@@ -862,16 +882,18 @@
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('email') is-invalid @enderror" type="text" id="email"
-                                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                        <input class="form-control @error('email') is-invalid @enderror" type="text"
+                                            id="email" name="email" placeholder="Email"
+                                            value="{{ old('email') }}" required>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <input class="form-control @error('phone') is-invalid @enderror" type="text" id="phone"
-                                            name="phone" placeholder="{{ __('kontak.box2') }}" value="{{ old('phone') }}" required>
+                                        <input class="form-control @error('phone') is-invalid @enderror" type="text"
+                                            id="phone" name="phone" placeholder="{{ __('kontak.box2') }}"
+                                            value="{{ old('phone') }}" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -880,15 +902,17 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <input class="form-control @error('outlet') is-invalid @enderror" type="text" id="outlet"
-                                            name="outlet" placeholder="Outlet" value="{{ old('outlet') }}" required></input>
+                                        <input class="form-control @error('outlet') is-invalid @enderror" type="text"
+                                            id="outlet" name="outlet" placeholder="Outlet"
+                                            value="{{ old('outlet') }}" required></input>
                                         @error('outlet')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
 
-                                        <textarea class="form-area" type="text" rows="6" id="keluhan" name="keluhan" placeholder="{{ __('kontak.box5') }}" value="{{ old('keluhan') }}" required></textarea>
+                                        <textarea class="form-area" type="text" rows="6" id="keluhan" name="keluhan"
+                                            placeholder="{{ __('kontak.box5') }}" value="{{ old('keluhan') }}" required></textarea>
                                         @error('keluhan')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

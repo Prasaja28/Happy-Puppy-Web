@@ -117,8 +117,8 @@
             width: 25%;
         }
 
-        #no_ktp::-webkit-outer-spin-button,
-        #no_ktp::-webkit-inner-spin-button {
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
@@ -557,7 +557,9 @@
                                 <br><br>
                                 <br><br><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="width: 80%" id="expected_salary" value="{{ old('expected_salary') }}" name="expected_salary" placeholder="{{ __('karir-detail.placeholder_salary') }}" min="1">
+                                    <input type="text" class="form-control" style="width: 80%" id="expected_salary"
+                                        value="{{ old('expected_salary') }}" name="expected_salary"
+                                        placeholder="{{ __('karir-detail.placeholder_salary') }}" min="1">
                                 </div>
                                 <br><br><br>
                             </div>
@@ -947,7 +949,6 @@
             var value = $(this).val();
             value = value.replace(/\D/g, '');
             value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-            //remove dot in database
             $(this).val(value);
         });
     </script>

@@ -36,13 +36,12 @@
                 overflow-wrap: anywhere;
             }
         }
-
     </style>
 @section('navbar-profile', 'active')
 @section('konten')
 
 
-    <div class="header container-fluid">
+    <div class="header container-fluid" style="background-image: url('{{ $settings['banner_profile'] }}')">
         <div class="container">
             <h2>{{ __('profil.title1') }}</h2>
             <h1>{{ __('profil.title2') }}</h1>
@@ -73,7 +72,7 @@
 
                 @foreach ($profill as $key => $history)
                     <!-- // $bgColor[$key%3]
-                              // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
+                                      // 0-n, 0%3, 1%31, 2%32, 3%3 0, 4%3 1, 5%3 2 -->
                     @if ($key % 2 == 0)
                         <div class="brand brand-history-right">
                             <div class="row justify-content-end">
@@ -83,12 +82,12 @@
                                         <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
                                     </div>
                                     <!-- @if ($key != count($profill) - 1)
-                                        <div class="vl"></div>
-                                    @endif -->
+    <div class="vl"></div>
+    @endif -->
                                 </div>
                                 <div class="col-4 col-md-4">
                                     <p class="text-muted text-justify history-desc">
-                                        {{ $history->{'content_history_'.app()->getLocale()} }}
+                                        {{ $history->{'content_history_' . app()->getLocale()} }}
                                     </p>
                                 </div>
                             </div>
@@ -102,12 +101,12 @@
                                         <h4 class="align-self-center font-weight-bold">{{ $history->year }}</h4>
                                     </div>
                                     <!-- @if ($key != count($profill) - 1)
-                                        <div class="vl"></div>
-                                    @endif -->
+    <div class="vl"></div>
+    @endif -->
                                 </div>
                                 <div class="col-4 col-md-4 order-1">
                                     <p class="text-muted text-justify history-desc">
-                                        {{ $history->{'content_history_'.app()->getLocale()} }}
+                                        {{ $history->{'content_history_' . app()->getLocale()} }}
                                     </p>
                                 </div>
                             </div>

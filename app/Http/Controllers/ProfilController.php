@@ -11,7 +11,7 @@ class ProfilController extends Controller
     public function index()
     {
         $profil = Profil::select('*')
-            ->sortable()
+            ->orderBy('id', 'desc')
             ->get();
         return view('admin.profil.profil-index',compact('profil'));
     }

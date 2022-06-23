@@ -287,7 +287,7 @@
         @endif
     </center>
     <!-- add konten in here -->
-    <div class="header p-5">
+    <div class="header p-5" style="background-image: url('{{ $settings['banner_form_waralaba'] }}')">
         <div id="txt1" class="containerr">
             <p>{{ __('waralaba-form.title1') }}</p>
             <p style="font-weight: bold;">{{ __('waralaba-form.title2') }}</p>

@@ -17,7 +17,7 @@
             font-family: 'Poppins';
             background-position: rightl;
             /* background-image: url('https://3.bp.blogspot.com/-h3x7o8PdjHI/V9Z7h_d61HI/AAAAAAAAJCM/962SQDbRGQoQMqYn3vacC3gUjDYVgZ24gCLcB/w1200-h630-p-k-no-nu/Kredit-Handphone-Di-Surabaya-Tanpa-Kartu-Kartu-Kredit.jpg') */
-            background-image: url('/img/mapsindo.png')
+
         }
 
         .search-result {
@@ -105,14 +105,13 @@
                 min-height: 50px;
             }
         }
-
     </style>
 @endsection
 @section('navbar-news', 'active')
 @section('konten')
     <!-- add konten in here -->
     <!-- background Home -->
-    <div class="header ">
+    <div class="header" style="background-image: url('{{ $settings['banner_lokasi'] }}')">
         <div class="container-fluid blur-color text-white p-5">
             <!-- <h2 class="mt-5 font-weight-bold">Surabaya</h2> -->
             <h2 class="mt-5 font-weight-bold">{{ $keyword }}</h2>

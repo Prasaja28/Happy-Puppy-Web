@@ -57,11 +57,11 @@ class SettingSeeder extends Seeder
         ]);
         Settings::create([
             'key' => 'banner_home',
-            'value' => 'https://happypuppy.id/images/banner-home.jpg',
+            'value' => 'img/settings-img/home.png',
         ]);
         Settings::create([
             'key' => 'banner_karir',
-            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+            'value' => 'img/settings-img/karir.png',
         ]);
         Settings::create([
             'key' => 'banner_waralaba',
@@ -69,19 +69,31 @@ class SettingSeeder extends Seeder
         ]);
         Settings::create([
             'key' => 'banner_profile',
-            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+            'value' => 'img/settings-img/PROFILE.png',
         ]);
         Settings::create([
             'key' => 'banner_lokasi',
-            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+            'value' => 'img/settings-img/lokasi.png',
         ]);
         Settings::create([
             'key' => 'banner_berita',
-            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+            'value' => 'img/settings-img/lokasi.png',
         ]);
         Settings::create([
             'key' => 'banner_kontak',
-            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+            'value' => 'img/settings-img/kontak.png',
+        ]);
+        Settings::create([
+            'key' => 'banner_lokasi_not_found',
+            'value' =>'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_form_karir',
+            'value' =>'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_form_waralaba',
+            'value' =>'https://happypuppy.id/images/banner-home-mobile.jpg',
         ]);
     }
 }
