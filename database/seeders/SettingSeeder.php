@@ -51,5 +51,37 @@ class SettingSeeder extends Seeder
             'key' => 'url_youtube',
             'value' => 'https://youtube.com',
         ]);
+        Settings::create([
+            'key' => 'url_linkedin',
+            'value' => 'https://linkedin.com',
+        ]);
+        Settings::create([
+            'key' => 'banner_home',
+            'value' => 'https://happypuppy.id/images/banner-home.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_karir',
+            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_waralaba',
+            'value' => 'https://happypuppy.id/images/banner-home.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_profile',
+            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_lokasi',
+            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_berita',
+            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
+        Settings::create([
+            'key' => 'banner_kontak',
+            'value' => 'https://happypuppy.id/images/banner-home-mobile.jpg',
+        ]);
     }
 }

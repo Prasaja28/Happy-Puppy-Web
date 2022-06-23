@@ -87,7 +87,7 @@
 @section('konten')
 
     {{-- HERO IMAGE WITH COMPRESSING CODE :) --}}
-    <div class="jumbotron text-white">
+    <div class="jumbotron text-white" style="background-image: url('{{ $settings['banner_home'] }}')">
         <div class="hero-title-container">
             <h1>MIDNIGHT
                 <div>DISCOUNT 50%</div>
@@ -151,6 +151,16 @@
                 @endif
             </ul>
         </div>
+    @endif
+    {{-- //if count > 8 then hide them --}}
+    @if (count($settings) > 8)
+        @foreach ($settings as $key => $value)
+            @if ($key > 8)
+                <script>
+                    document.getElementsByName('social-media')[0].style.display = 'none';
+                </script>
+            @endif
+        @endforeach
     @endif
     <!-- END -->
 

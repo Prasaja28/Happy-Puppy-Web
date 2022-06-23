@@ -93,10 +93,34 @@
                                                             <!-- if buat membedakan code biasa dengan bg -->
                                                             <div class="form-group">
                                                                 <label for="value">Value :</label>
-                                                                <input type="text" class="form-control form-control-border"
-                                                                    id="value" placeholder="value" name="value"
-                                                                    value="{{ $users->value }}">
-
+                                                                @for ($i = 9; $i < $settings->count(); $i++)
+                                                                    @if ($users->key == $settings[$i]->key)
+                                                                        <input type="file"
+                                                                            class="form-control form-control-border @error('value') is-invalid @enderror"
+                                                                            id="value" placeholder="Value"
+                                                                            name="value" value="{{ $users->value }}"
+                                                                            required>
+                                                                        @error('value')
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                        @enderror
+                                                                    @endif
+                                                                @endfor
+                                                                @for ($i = 0; $i < 9; $i++)
+                                                                    @if ($users->key == $settings[$i]->key)
+                                                                        <input type="text"
+                                                                            class="form-control form-control-border @error('value') is-invalid @enderror"
+                                                                            id="value" placeholder="Value"
+                                                                            name="value" value="{{ $users->value }}"
+                                                                            required>
+                                                                        @error('value')
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                        @enderror
+                                                                    @endif
+                                                                @endfor
                                                             </div>
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </form>

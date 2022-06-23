@@ -10,7 +10,9 @@ class ProfilController extends Controller
 {
     public function index()
     {
-        $profil = Profil::all();
+        $profil = Profil::select('*')
+            ->sortable()
+            ->get();
         return view('admin.profil.profil-index',compact('profil'));
     }
 

@@ -18,8 +18,7 @@
                         <div class="media-wrapper justify-content-end">
                             @if (!empty($settings['url_facebook']))
                                 <a target="_blank" class="social-items" href="{{ $settings['url_facebook'] }}">
-                                    <img name="facebook"
-                                        src="{{ asset('img/icons/facebook.png') }}">
+                                    <img name="facebook" src="{{ asset('img/icons/facebook.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_twitter']))
@@ -29,8 +28,7 @@
                             @endif
                             @if (!empty($settings['url_instagram']))
                                 <a target="_blank" class="social-items" href="{{ $settings['url_instagram'] }}">
-                                    <img name="instagram"
-                                        src="{{ asset('img/icons/instagram.png') }}">
+                                    <img name="instagram" src="{{ asset('img/icons/instagram.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_tiktok']))
@@ -40,15 +38,15 @@
                             @endif
                             @if (!empty($settings['url_youtube']))
                                 <a target="_blank" class="social-items" href="{{ $settings['url_youtube'] }}">
-                                    <img name="youtube"
-                                        src="{{ asset('img/icons/youtube.png') }}">
+                                    <img name="youtube" src="{{ asset('img/icons/youtube.png') }}">
                                 </a>
                             @endif
-                            <div class="divider"><p>|</p></div>
+                            <div class="divider">
+                                <p>|</p>
+                            </div>
                             @if (!empty($settings['url_apple']))
                                 <a target="_blank" class="social-items" href="{{ $settings['url_apple'] }}">
-                                    <img name="apple"
-                                        src="{{ asset('img/icons/apple.png') }}">
+                                    <img name="apple" src="{{ asset('img/icons/apple.png') }}">
                                 </a>
                             @endif
                             @if (!empty($settings['url_google_play']))
@@ -58,6 +56,15 @@
                             @endif
                         </div>
                     </div>
+                @endif
+                @if (count($settings) > 8)
+                    @foreach ($settings as $key => $value)
+                        @if ($key > 8)
+                            <script>
+                                document.getElementsByName('social-media')[0].style.display = 'none';
+                            </script>
+                        @endif
+                    @endforeach
                 @endif
             </div>
 
@@ -89,12 +96,13 @@
                 <div class="col-6">
                     <div name="more-detail">
                         <div class="row justify-content-end">
-                            <a href="#" class="btn btn-member rounded-0 text-white font-weight-bold">{{ __('footer.button') }}</a>
+                            <a href="#"
+                                class="btn btn-member rounded-0 text-white font-weight-bold">{{ __('footer.button') }}</a>
                         </div>
 
                         <div name="change-language" class="row justify-content-end my-5 my-md-3">
-                            <a href="{{$news_detail[0]->id}}/lang/id">INA |</a>
-                            <a href="{{$news_detail[0]->id}}/lang/en" class="pl-1">ENG</a>
+                            <a href="{{ $news_detail[0]->id }}/lang/id">INA |</a>
+                            <a href="{{ $news_detail[0]->id }}/lang/en" class="pl-1">ENG</a>
                         </div>
                     </div>
                 </div>

@@ -433,7 +433,7 @@ class CareerController extends Controller
             'email'                 => $request->email,
             'address'               => $request->address,
             'no_ktp'                => $request->no_ktp,
-            'expected_salary'       => $request->expected_salary,
+            'expected_salary'       => str_replace(',', '', $request->expected_salary),
             'language'              => $request->language,
             'instrument_music'      => $request->instrument_music,
             'computer'              => $request->computer,

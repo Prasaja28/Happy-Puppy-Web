@@ -25,10 +25,23 @@ class SettingsController extends Controller
      */
     public function update(Request $request)
     {
-        $settings = Settings::find($request->id);
+        if($request->hasFile('value')){
+            $file = $request->file('value');
+            $name = $file->getClientOriginalName();
+            $path = 'img/settings-img/';
+            $file->move(assets_path($path), $name);
+            
+            $settings = Settings::find($request->id);
+            $settings->value = $path . $name;
+            $settings->save();
+            return redirect()->back()->with('success', 'Berhasil mengubah gambar');
+        } else{
+            $settings = Settings::find($request->id);
         $settings->value = $request->value;
         $settings->save();
         return redirect()->back();
+        }
+        
     }
 
     /**

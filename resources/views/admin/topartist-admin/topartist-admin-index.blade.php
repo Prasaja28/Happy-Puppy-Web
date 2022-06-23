@@ -38,6 +38,7 @@
                                         <th>Log User</th>
                                         <th>Status</th>
                                         <th>Action</th>
+                                        <th>Urutan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,13 +70,9 @@
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
-                                        @include(
-                                            'admin.topartist-admin.topartist-admin-delete'
-                                        )
+                                        @include('admin.topartist-admin.topartist-admin-delete')
                                         <!-- Model Update -->
-                                        @include(
-                                            'admin.topartist-admin.topartist-admin-update'
-                                        )
+                                        @include('admin.topartist-admin.topartist-admin-update')
 
                                     @empty
                                         <div class="alert alert-danger">
@@ -91,6 +88,7 @@
                                         <th>Log User</th>
                                         <th>Status</th>
                                         <th>Action</th>
+                                        <th>Urutan</th>
                                     </tr>
                                 </tfoot>
                             </table>
