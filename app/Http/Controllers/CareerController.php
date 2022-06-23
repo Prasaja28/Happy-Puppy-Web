@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-use illuminate\Support\Facades\Mail;
+use Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\CareerExport;
 use App\Mail\ContactMail;
+use PhpParser\Node\Stmt\TryCatch;
 
 Carbon::setlocale(LC_ALL, 'IND');
 
@@ -151,7 +152,6 @@ class CareerController extends Controller
                 ]);
             } 
             $data = [
-                'id',
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
                 'place_birth'           => $request->place_birth,
@@ -204,10 +204,10 @@ class CareerController extends Controller
                 // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
-                'message' => 'Fromulir Berhasil Dikirim!',
-                'alert' => 'success'
-            ]);
+            // return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+            //     'message' => 'Fromulir Berhasil Dikirim!',
+            //     'alert' => 'success'
+            // ]);
         } elseif ($request->hasFile('cv_mob') && $request->hasFile('ijazah_mob')) {
             $file = $request->file('cv_mob');
             $file2 = $request->file('ijazah_mob');
@@ -287,7 +287,6 @@ class CareerController extends Controller
                 ]);
             } 
             $data = [
-                'id',
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
                 'place_birth'           => $request->place_birth,
@@ -342,11 +341,13 @@ class CareerController extends Controller
                 // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
-            return redirect('/formkarir/' . $request->jobvacancy_id)->with([
-                'message' => 'Fromulir Berhasil Dikirim!',
-                'alert' => 'success'
-            ]);
         } else {
+            $file = $request->file('cv_mob');
+            $file2 = $request->file('ijazah_mob');
+            $filename = $file->getClientOriginalName();
+            $filename2 = $file2->getClientOriginalName();
+            $path = 'cv' . '/';
+            $path2 = 'ijazah' . '/';
             if ($request->name == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Nama tidak boleh kosong!',
@@ -418,35 +419,54 @@ class CareerController extends Controller
                     'alert' => 'danger'
                 ]);
             } 
+            $data = [
+                'name'                  => $request->name,
+                'formal_education'      => $request->formal_education,
+                'place_birth'           => $request->place_birth,
+                'date_birth'            => $request->date_birth,
+                'height'                => $request->height,
+                'weight'                => $request->weight,
+                'gender'                => $request->gender,
+                'status_marital'        => $request->status_marital,
+                'phone'                 => $request->phone,
+                'mobile_phone'          => $request->mobile_phone,
+                'email'                 => $request->email,
+                'address'               => $request->address,
+                'no_ktp'                => $request->no_ktp,
+                'expected_salary'       => str_replace(',', '', $request->expected_salary),
+                'language'              => $request->language,
+                'instrument_music'      => $request->instrument_music,
+                'computer'              => $request->computer,
+                'other_expertise'       => $request->other_expertise,
+                'cv'                    => $path . $filename,
+                'ijazah'                => $path2 . $filename2,
+                'linkedin'              => $request->linkedin,
+                'created_at'            => date('Y-m-d H:i:s'),
+                'jobvacancy_id'         => $request->jobvacancy_id,
+            ];
         }
-        $data = [
-            'id',
-            'name'                  => $request->name,
-            'formal_education'      => $request->formal_education,
-            'place_birth'           => $request->place_birth,
-            'date_birth'            => $request->date_birth,
-            'height'                => $request->height,
-            'weight'                => $request->weight,
-            'gender'                => $request->gender,
-            'status_marital'        => $request->status_marital,
-            'phone'                 => $request->phone,
-            'mobile_phone'          => $request->mobile_phone,
-            'email'                 => $request->email,
-            'address'               => $request->address,
-            'no_ktp'                => $request->no_ktp,
-            'expected_salary'       => str_replace(',', '', $request->expected_salary),
-            'language'              => $request->language,
-            'instrument_music'      => $request->instrument_music,
-            'computer'              => $request->computer,
-            'other_expertise'       => $request->other_expertise,
-            'cv'                    => $path . $filename,
-            'ijazah'                => $path2 . $filename2,
-            'linkedin'              => $request->linkedin,
-            'created_at'            => date('Y-m-d H:i:s'),
-            'jobvacancy_id'         => $request->jobvacancy_id,
-        ];
-        Mail::to('prasaja55@gmail.com')->send(new ContactMail($data));
+        // Mail::to('prasajakuy@gmail.com')->send(new ContactMail($data));
+        $jobsName = Jobs::find($request->jobvacancy_id);
+        Mail::to('job@happypuppy.id')->send(new ContactMail([
+                        'name' => $request->name,
+                        'jobvacancy_id' => $jobsName->name_job
+                        ]));
+        return redirect('/formkarir/' . $request->jobvacancy_id)->with([
+            'message' => 'Fromulir Berhasil Dikirim!',
+            'alert' => 'success'
+        ]);
     }
+
+    // public function testEmail() {
+    //     try {
+    //         Mail::to('prasajakuy@gmail.com')->send(new ContactMail([
+    //             'name' => "budi",
+    //             'jobvacancy_id' => 123
+    //             ]));
+    //     } catch (\Throwable $th) {
+    //         throw $th;
+    //     }
+    // }
 
     /**
      * Remove the specified resource from storage.

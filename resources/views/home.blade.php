@@ -215,7 +215,10 @@
                     @if ($topartist->count() != 0)
                         @foreach ($topartist as $data)
                             @if ($data->status == 1)
+                            <div class="d-flex flex-column">
                                 <img class="img-thumbnail mr-4 mr-md-5" src="/uploads/{{ $data->thumbnail }}">
+                                <p>{{$data->name}}</p>
+                            </div>
                             @endif
                         @endforeach
                     @endif
