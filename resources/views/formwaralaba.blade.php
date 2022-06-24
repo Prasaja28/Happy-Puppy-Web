@@ -9,7 +9,7 @@
     <style>
         .header {
             position: relative;
-            min-height: 50vh;
+            min-height: 30vh;
             background: no-repeat center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -323,7 +323,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger wmob" name="gender"
-                                        data-dropdown-css-class="select2-danger">
+                                    value="{{ old('gender') }}" data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('karir-detail.placeholder_gender') }}</option>
                                         @if (old('gender') == 0)
                                             <option selected value="0">{{ __('karir-detail.placeholder_male') }}
@@ -345,7 +345,7 @@
                                         placeholder="{{ __('waralaba-form.placeholder_age') }}" min="1">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger wmob" name="last_education"
+                                    <select class="form-control select2 select2-danger wmob" value="{{ old('last_education') }}" name="last_education"
                                         data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_education') }}
                                         </option>
@@ -390,7 +390,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="marital"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                        data-dropdown-css-class="select2-danger" style="width: 50%;" value="{{ old('martial') }}">
                                         <option selected="selected">Status</option>
                                         @if (old('marital') == '0')
                                             <option selected value="0">{{ __('karir-detail.placeholder_married') }}
@@ -411,8 +411,7 @@
                                         placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="city" id="city"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" name="city" id="city" data-dropdown-css-class="select2-danger" value="{{ old('regencies') }}" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             @if (old('city') == $r->id)
@@ -424,8 +423,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger wmob" name="province"
-                                        id="province" data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger wmob" name="province" value="{{ old('provincies') }}" id="province" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
                                             @if (old('province') == $p->id)
@@ -482,8 +480,7 @@
                                         placeholder="{{ __('waralaba-form.placeholder_work') }}">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger wmob" name="bussiness_field"
-                                        data-dropdown-css-class="select2-danger">
+                                    <select class="form-control select2 select2-danger wmob" name="bussiness_field" value="{{ old('bussiness_field') }}" data-dropdown-css-class="select2-danger">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_sector') }}
                                         </option>
                                         @if (old('bussiness_field') == 'Bidang Pertanian')
@@ -583,8 +580,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="province_2" id="province_2"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" name="province_2" id="province_2" value="{{ old('provincies') }}" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}</option>
                                         @foreach ($provincies as $p)
                                             @if (old('province_2') == $p->name)
@@ -609,7 +605,7 @@
                                 <br>
                                 <div class="form-group">
                                     <select class="form-control select2 select2-danger" name="status_penguasaan"
-                                        id="status_penguasaan" data-dropdown-css-class="select2-danger"
+                                        id="status_penguasaan" value="{{ old('status_penguasaan') }}" data-dropdown-css-class="select2-danger"
                                         style="width: 80%;">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_spt') }}</option>
                                         @if (old('status_penguasaan') == 'Lahan Pribadi')
@@ -640,8 +636,7 @@
                                         placeholder="{{ __('karir-detail.placeholder_Alamat') }}">
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" id="city_3" name="city_3"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" id="city_3" name="city_3" value="{{ old('regencies') }}" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected="selected">{{ __('waralaba-form.placeholder_kota') }}</option>
                                         @foreach ($regencies as $r)
                                             @if (old('city_3') == $r->name)
@@ -654,8 +649,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control select2 select2-danger" name="province_3" id="province_3"
-                                        data-dropdown-css-class="select2-danger" style="width: 50%;">
+                                    <select class="form-control select2 select2-danger" name="province_3" id="province_3" value="{{ old('provincies') }}" data-dropdown-css-class="select2-danger" style="width: 50%;">
                                         <option selected disabled>{{ __('waralaba-form.placeholder_provinsi') }}
                                         </option>
                                         @foreach ($provincies as $p)

@@ -6,9 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Career;
 
-class ContactMail extends Mailable
+class ContactMail1 extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,8 +29,8 @@ class ContactMail extends Mailable
     public function build()
     {
         $emailUser = 'prasaja55@gmail.com';
-        return $this->view('email-karir')
-                    ->subject('Pendaftar Baru Karir')
+        return $this->view('email-waralaba')
+                    ->subject('Pendaftar Baru Waralaba')
                     ->from($emailUser,'System')
                     ->with('data',$this->data);
     }

@@ -45,6 +45,7 @@ if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
 
 //Home User
 Route::get('/', [LandingController::class, 'index']);
+Route::get('/test', [CareerController::class, 'testEmail']);
 
 Route::get('/dashboard', function () {
     
