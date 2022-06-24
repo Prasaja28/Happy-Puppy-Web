@@ -23,8 +23,11 @@ class NewsUserController extends Controller
         ->toArray();
         // $usernews = News::all();
         $news_terlaris = News::where('news_category','popular')
+                        ->orderBy('news_date', 'desc')
                         ->get();
-        $news_terbaru = News::where('news_category','lates')->get();
+        $news_terbaru = News::where('news_category','lates')
+                        ->orderBy('news_date', 'desc')
+                        ->get();
         return view('news',compact('news_terlaris','news_terbaru','settings','locale'));
     }
 
