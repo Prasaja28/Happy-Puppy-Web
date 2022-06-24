@@ -144,6 +144,8 @@
                                     @if (!empty($o->fax))
                                         fax. {{ $o->fax }}
                                     @endif
+                                    <br>
+                                    {{ $o->email }}
                                 </p>
                                 <center>
                                     @if (!empty($o->link_ig))

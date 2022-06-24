@@ -241,7 +241,7 @@ class WaralabaController extends Controller
         // dd($request->all());
         if ($request->confirm_completenes != null && $request->confirm_completenes != null) {
 
-            Mail::to('job@happypuppy.id')->send(new ContactMail1([
+            Mail::to('info@happypuppy.id')->send(new ContactMail1([
                 'name' => $request->name,
                 ]));
           
@@ -296,7 +296,7 @@ class WaralabaController extends Controller
             $waralaba->status = 0;
             $waralaba->save();
 
-            Mail::to('job@happypuppy.id')->send(new ContactMail1([
+            Mail::to('info@happypuppy.id')->send(new ContactMail1([
                 'name' => $request->name,
                 ]));
 

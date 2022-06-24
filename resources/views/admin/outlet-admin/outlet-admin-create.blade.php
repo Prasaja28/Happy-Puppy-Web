@@ -55,6 +55,16 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="fax">E-Mail :</label>
+                        <input type="text" class="form-control form-control-border @error('email') is-invalid @enderror"
+                            id="email" placeholder="E-Mail" name="email" value="{{ old('email') }}" required>
+                        @error('address')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="link_ig">Link IG :</label>
                         <input type="text"
                             class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig"

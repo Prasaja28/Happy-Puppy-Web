@@ -66,6 +66,7 @@
                                         <th>Alamat Outlet</th>
                                         <th>Nomor Telepon</th>
                                         <th>Nomor Fax</th>
+                                        <th>E-Mail</th>
                                         <th>Link IG</th>
                                         <th>Link Lainnya</th>
                                         <th>Users ID</th>
@@ -87,6 +88,7 @@
                                             <td>{{ $outlet->address }}</td>
                                             <td>{{ $outlet->phone }}</td>
                                             <td>{{ $outlet->fax }}</td>
+                                            <td>{{ $outlet->email }}</td>
                                             <td>{{ $outlet->link_ig }}</td>
                                             <td>{{ $outlet->link_2 }}</td>
                                             <td>{{ $outlet->users_id }}</td>
@@ -126,6 +128,7 @@
                                         <th>Alamat Outlet</th>
                                         <th>Nomor Telepon</th>
                                         <th>Nomor Fax</th>
+                                        <th>E-Mail</th>
                                         <th>Link IG</th>
                                         <th>Link Lainnya</th>
                                         <th>Users ID</th>
