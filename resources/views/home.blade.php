@@ -48,6 +48,13 @@
             content: ' ';
         }
 
+        .top-artis .d-flex p{        
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 46px;
+            text-align: center;
+        }
+
         @media (max-width:600px) {
 
             /* pembenahan buat card news */
@@ -80,6 +87,13 @@
                 -webkit-box-orient: vertical;
             }
 
+            .top-artis .d-flex p {
+                font-size: 10px;
+                font-weight: bold;
+                line-height: 25px;
+                text-align: center;
+            }
+
         }
     </style>
 @endsection
@@ -88,12 +102,6 @@
 
     {{-- HERO IMAGE WITH COMPRESSING CODE :) --}}
     <div class="jumbotron text-white" style="background-image: url('{{ $settings['banner_home'] }}')">
-        <div class="hero-title-container">
-            <h1>MIDNIGHT
-                <div>DISCOUNT 50%</div>
-            </h1>
-            <p>ON SATURDAY NIGHT</p>
-        </div>
     </div>
 
     {{-- SOCIAL MEDIA --}}

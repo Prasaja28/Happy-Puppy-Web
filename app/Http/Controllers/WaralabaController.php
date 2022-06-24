@@ -9,6 +9,8 @@ use App\Models\Regency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Mail;
+use App\Mail\ContactMail1;
 
 class WaralabaController extends Controller
 {
@@ -238,6 +240,10 @@ class WaralabaController extends Controller
         }
         // dd($request->all());
         if ($request->confirm_completenes != null && $request->confirm_completenes != null) {
+
+            Mail::to('job@happypuppy.id')->send(new ContactMail1([
+                'name' => $request->name,
+                ]));
           
             Waralaba::create($request->all());
             return back()->with([
@@ -289,6 +295,10 @@ class WaralabaController extends Controller
             $waralaba->confirm_register = $request->confirm_register_mob;
             $waralaba->status = 0;
             $waralaba->save();
+
+            Mail::to('job@happypuppy.id')->send(new ContactMail1([
+                'name' => $request->name,
+                ]));
 
             return back()->with([
                 'message' => 'Fromulir Berhasil Dikirim!',
