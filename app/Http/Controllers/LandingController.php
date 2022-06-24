@@ -29,6 +29,7 @@ class LandingController extends Controller
             ->limit(6)
             ->get();
         $news_terbaru = News::where('news_category', 'lates')
+            ->orderBy('news_date', 'desc')
             ->limit(6)
             ->get();
         $settings = Settings::select('*')
