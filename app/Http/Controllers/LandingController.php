@@ -23,6 +23,7 @@ class LandingController extends Controller
             ->limit(5)
             ->get();
         $songlist_terlaris = Songlist::where('kategori_lagu', 'terlaris')
+            ->orderBy('urutan', 'asc')
             ->limit(6)
             ->get();
         $songlist_terbaru = Songlist::where('kategori_lagu', 'terbaru')

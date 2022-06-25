@@ -16,7 +16,7 @@ class SonglistController extends Controller
     public function index()
     {
         $songlist = Songlist::select('*')
-        ->orderBy('id', 'desc')
+        ->orderBy('urutan', 'asc')
         ->get();
         return view('admin.songlist-admin.songlist-admin-index',compact('songlist'));
     }
@@ -80,9 +80,17 @@ class SonglistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function checkid()
     {
-        //
+        $user = DB::table('songlist')->where('urutan', Input::get('urutan'));
+        if($user->count() > 0)
+        {
+            return response()->json(false);
+        }
+        else
+        {
+            return response()->json(true);
+        }
     }
 
     /**
@@ -108,7 +116,8 @@ class SonglistController extends Controller
         $this->validate(
             $request, 
             [   
-                'thumbnail'             => 'max:2000'
+                'thumbnail'             => 'max:2000',
+                'urutan'                => 'required|unique:songlist,urutan,'.$id,
             ],
             [   
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
@@ -133,6 +142,7 @@ class SonglistController extends Controller
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
                 'status' => $request->status,
+                'urutan' => $request->urutan,
                 'users_id'=> $request->users_id
             ]);
             return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 

@@ -41,6 +41,7 @@
                                         <th>Kategori Lagu</th>
                                         <th>Log User</th>
                                         <th>Status</th>
+                                        <th>Urutan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -63,7 +64,7 @@
                                             @else
                                                 <td>NonAktif</td>
                                             @endif
-
+                                            <td>{{ $songlists->urutan }}</td>
                                             <td class="text-center">
                                                 @if ($songlists->status == 1)
                                                     <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
@@ -76,13 +77,9 @@
                                             </td>
                                         </tr>
                                         <!-- Model Delete -->
-                                        @include(
-                                            'admin.songlist-admin.songlist-admin-delete'
-                                        )
+                                        @include('admin.songlist-admin.songlist-admin-delete')
                                         <!-- Model Update -->
-                                        @include(
-                                            'admin.songlist-admin.songlist-admin-update'
-                                        )
+                                        @include('admin.songlist-admin.songlist-admin-update')
 
                                     @empty
                                         <div class="alert alert-danger">
@@ -99,6 +96,7 @@
                                         <th>Kategori Lagu</th>
                                         <th>Log User</th>
                                         <th>Status</th>
+                                        <th>Urutan</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -150,6 +148,28 @@
                 "lengthChange": false,
                 "autoWidth": true,
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+    <script>
+        //validate urutan if already exist return message
+        $(document).ready(function() {
+            $('#urutan').on('keyup', function() {
+                var urutan = $(this).val();
+                $.ajax({
+                    type: 'get',
+                    url: '{{ URL::to('/admin/songlist-admin/validate') }}',
+                    data: {
+                        'urutan': urutan
+                    },
+                    success: function(data) {
+                        if (data == 'false') {
+                            $('#urutan').val('');
+                            $('#urutan').focus();
+                            $('#urutan').attr('placeholder', 'Urutan Sudah Ada');
+                        }
+                    }
+                });
+            });
         });
     </script>
 @endsection

@@ -28,9 +28,9 @@
                     </div>
                     <div class="form-group">
                         <label for="artist">Artist :</label>
-                        <input type="text" class="form-control form-control-border @error('artis') is-invalid @enderror"
-                            id="artist" placeholder="Name Artis" name="artist" value="{{ $songlists->artist }}"
-                            required>
+                        <input type="text"
+                            class="form-control form-control-border @error('artis') is-invalid @enderror" id="artist"
+                            placeholder="Name Artis" name="artist" value="{{ $songlists->artist }}" required>
                         @error('artist')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -42,7 +42,8 @@
                         <select class="custom-select form-control-border  @error('kategori_lagu') is-invalid @enderror"
                             id="kategori_lagu" name="kategori_lagu" value="{{ $songlists->kategori_lagu }}" required>
                             @if ($songlists->kategori_lagu == 'terlaris')
-                                <option selected="Selected" value="terlaris">Lagu {{ $songlists->kategori_lagu }}</option>
+                                <option selected="Selected" value="terlaris">Lagu {{ $songlists->kategori_lagu }}
+                                </option>
                                 <option value="terbaru">Lagu Terbaru</option>
                             @else
                                 <option selected="Selected" value="terbaru">Lagu
@@ -80,6 +81,17 @@
                             @endif
                         </select>
                         @error('status')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="urutan">Urutan :</label>
+                        <input type="number"
+                            class="form-control form-control-border @error('urutan') is-invalid @enderror"
+                            id="urutan" placeholder="Ururtan" name="urutan">{{ $songlists->urutan }}</input>
+                        @error('urutan')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

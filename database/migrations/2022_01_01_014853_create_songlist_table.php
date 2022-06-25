@@ -20,6 +20,7 @@ class CreateSonglistTable extends Migration
             $table->string('thumbnail');
             $table->string('kategori_lagu',20);
             $table->boolean('status');
+            $table->integer('urutan')->nullable();
             $table->timestamps();
         });
     }
