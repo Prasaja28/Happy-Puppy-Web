@@ -23,6 +23,7 @@ class CreateOutletTable extends Migration
             $table->string('address');
             $table->string('phone',15);
             $table->string('fax',15);
+            $table->string('email',30);
             $table->text('link_ig');
             $table->text('link_2');
             $table->timestamps();

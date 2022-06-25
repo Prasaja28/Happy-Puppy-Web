@@ -139,7 +139,7 @@
                     <a href="{{ url('/settings-admin') }}" class="nav-link @yield('settings-admin')">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
-                            Settings Social Media
+                            Settings
                         </p>
                     </a>
                 </li>

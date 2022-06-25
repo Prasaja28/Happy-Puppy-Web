@@ -1,6 +1,6 @@
 @extends('admin/layout-komponen/master')
 
-@section('title', 'Setting Social Media')
+@section('title', 'Settings')
 
 @section('css')
     <!-- css internal place -->
@@ -28,7 +28,7 @@
                 <div class="col-md-12 my-2">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Social Media</h3>
+                            <h3 class="card-title">Data Setting Admin</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body px-4">
