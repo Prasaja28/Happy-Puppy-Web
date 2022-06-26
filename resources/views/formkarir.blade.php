@@ -729,10 +729,7 @@
     <script>
         $(document).ready(function() {
             // membatasi jumlah inputan
-            var maxGroup = 5;
-
-
-
+            var maxGroup = 5; 
             var a = 3;
             //melakukan proses multiple input 
             $(".addRow").click(function() {

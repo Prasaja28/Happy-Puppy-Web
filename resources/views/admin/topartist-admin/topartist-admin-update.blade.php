@@ -16,8 +16,9 @@
                     @csrf
                     <div class="form-group">
                         <label for="name">Artist :</label>
-                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror"
-                            id="artis" placeholder="Name Artis" name="name" value="{{ $topartists->name }}" required>
+                        <input type="text"
+                            class="form-control form-control-border @error('name') is-invalid @enderror" id="artis"
+                            placeholder="Name Artis" name="name" value="{{ $topartists->name }}" required>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
