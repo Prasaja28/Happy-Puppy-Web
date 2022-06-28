@@ -14,7 +14,8 @@
         <!-- SidebarSearch Form -->
         <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                    aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
                         <i class="fas fa-search fa-fw"></i>
@@ -24,7 +25,8 @@
         </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -125,15 +127,14 @@
                     </a>
                 </li>
                 @if (Session::get('status_user') == '1')
-                    
-                <li class="nav-item">
-                    <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            User 
-                        </p>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                User
+                            </p>
+                        </a>
+                    </li>
                 @endif
                 <li class="nav-item">
                     <a href="{{ url('/settings-admin') }}" class="nav-link @yield('settings-admin')">
@@ -148,5 +149,5 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-    
+
 </aside>

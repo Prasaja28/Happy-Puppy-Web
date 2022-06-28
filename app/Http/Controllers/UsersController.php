@@ -46,17 +46,26 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => 'required|string|min:3|max:50',
-            'email' => 'required|string|min:8|unique:users|max:50',
+            'email' => 'required|string|min:8|max:50',
             'password' => 'required|string|confirmed|min:8|max:32'
         ]);
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'roles_id' => $request->role,
-            //'password' => Hash::make($request->password),
-            'password' => $request->password,
-            'status' => 1
-        ]);
+        for($i=0;$i<count($request->role);$i++){
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->roles_id = $request->role[$i];
+            $user->status = 1;
+            $user->save();
+        }
+        // User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'roles_id' => $request->role,
+        //     //'password' => Hash::make($request->password),
+        //     'password' => $request->password,
+        //     'status' => 1
+        // ]);
         return redirect('/users-admin')->with('status','Data Berhasil Ditambahkan!!!');
     }
 
