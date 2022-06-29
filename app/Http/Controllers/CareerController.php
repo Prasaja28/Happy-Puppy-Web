@@ -34,7 +34,7 @@ class CareerController extends Controller
         $settings = Settings::select('*')
             ->whereNotNull('value')
             ->get()
-            ->pluck('value','key')
+            ->pluck('value', 'key')
             ->toArray();
         $jobs = Jobs::select('id', 'name_job', 'location')
             ->where('jobvacancy.id', '=', $jobvacancy_id)
@@ -60,11 +60,11 @@ class CareerController extends Controller
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
- 
+
         if ($validator->fails()) {
             return back()
-            ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
-            ->withInput();     
+                ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
+                ->withInput();
         }
         // if ($request->email_confirm != $request->email) {
         //     return back()->with([
@@ -85,72 +85,85 @@ class CareerController extends Controller
                     'message' => 'Nama tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->formal_education == null) {
+            }
+            if ($request->formal_education == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Pendidikan Formal tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->place_birth == null) {
+            }
+            if ($request->place_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tempat Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->date_birth == null) {
+            }
+            if ($request->date_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tanggal Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->height == null) {
+            }
+            if ($request->height == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tinggi badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->weight == null) {
+            }
+            if ($request->weight == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Berat badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->gender == null) {
+            }
+            if ($request->gender == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Jenis Kelamin tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->status_marital == null) {
+            }
+            if ($request->status_marital == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Status Marital tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->phone == null) {
+            }
+            if ($request->phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Telp tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->mobile_phone == null) {
+            }
+            if ($request->mobile_phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'No. HP tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->email == null) {
+            }
+            if ($request->email == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Email tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->address == null) {
+            }
+            if ($request->address == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Alamat tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->no_ktp == null) {
+            }
+            if ($request->no_ktp == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Berat badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->expected_salary == null) {
+            }
+            if ($request->expected_salary == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Gaji yang Diharapkan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } 
+            }
             $data = [
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
@@ -220,72 +233,85 @@ class CareerController extends Controller
                     'message' => 'Nama tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->formal_education == null) {
+            }
+            if ($request->formal_education == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Pendidikan Formal tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->place_birth == null) {
+            }
+            if ($request->place_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tempat Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->date_birth == null) {
+            }
+            if ($request->date_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tanggal Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->height == null) {
+            }
+            if ($request->height == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tinggi badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->weight == null) {
+            }
+            if ($request->weight == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Berat badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->gender == null) {
+            }
+            if ($request->gender == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Jenis Kelamin tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->status_marital == null) {
+            }
+            if ($request->status_marital == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Status Marital tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->phone == null) {
+            }
+            if ($request->phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Telp tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->mobile_phone == null) {
+            }
+            if ($request->mobile_phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'No. HP tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->email == null) {
+            }
+            if ($request->email == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Email tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->address == null) {
+            }
+            if ($request->address == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Alamat tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->no_ktp == null) {
+            }
+            if ($request->no_ktp == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Berat badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->expected_salary == null) {
+            }
+            if ($request->expected_salary == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Gaji yang Diharapkan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } 
+            }
             $data = [
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
@@ -311,12 +337,12 @@ class CareerController extends Controller
                 'created_at'            => date('Y-m-d H:i:s'),
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
-            
+
             $destinationPath = public_path('/uploads/' . $path);
             $destinationPath2 = public_path('/uploads/' . $path2);
             $file->move($destinationPath, $filename);
             $file2->move($destinationPath2, $filename2);
-            
+
 
             $careerform_id = Career::create($data);
             $jobeks = new JobsEkspertise();
@@ -353,72 +379,85 @@ class CareerController extends Controller
                     'message' => 'Nama tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->formal_education == null) {
+            }
+            if ($request->formal_education == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Pendidikan Formal tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->place_birth == null) {
+            }
+            if ($request->place_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tempat Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->date_birth == null) {
+            }
+            if ($request->date_birth == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tanggal Lahir tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->height == null) {
+            }
+            if ($request->height == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Tinggi badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->weight == null) {
+            }
+            if ($request->weight == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Berat badan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->gender == null) {
+            }
+            if ($request->gender == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Jenis Kelamin tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->status_marital == null) {
+            }
+            if ($request->status_marital == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Status Marital tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->phone == null) {
+            }
+            if ($request->phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Telp tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->mobile_phone == null) {
+            }
+            if ($request->mobile_phone == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'No. HP tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->email == null) {
+            }
+            if ($request->email == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Email tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->address == null) {
+            }
+            if ($request->address == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Alamat tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->no_ktp == null) {
+            }
+            if ($request->no_ktp == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'KTP tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } if ($request->expected_salary == null) {
+            }
+            if ($request->expected_salary == null) {
                 return redirect('/formkarir/' . $request->jobvacancy_id)->withInput()->with([
                     'message' => 'Gaji yang Diharapkan tidak boleh kosong!',
                     'alert' => 'danger'
                 ]);
-            } 
+            }
             $data = [
                 'name'                  => $request->name,
                 'formal_education'      => $request->formal_education,
@@ -447,22 +486,23 @@ class CareerController extends Controller
         }
         // Mail::to('prasajakuy@gmail.com')->send(new ContactMail($data));
         $jobsName = Jobs::find($request->jobvacancy_id);
-        Mail::to('job@happypuppy.id')->send(new ContactMail([
-                        'name' => $request->name,
-                        'jobvacancy_id' => $jobsName->name_job
-                        ]));
+        Mail::to(config('mail.to_address1'))->send(new ContactMail([
+            'name' => $request->name,
+            'jobvacancy_id' => $jobsName->name_job
+        ]));
         return redirect('/formkarir/' . $request->jobvacancy_id)->with([
             'message' => 'Fromulir Berhasil Dikirim!',
             'alert' => 'success'
         ]);
     }
 
-    // public function testEmail() {
+    // public function testEmail()
+    // {
     //     try {
-    //         Mail::to('prasajakuy@gmail.com')->send(new ContactMail([
+    //         Mail::to(config('mail.to_address1'))->send(new ContactMail([
     //             'name' => "budi",
     //             'jobvacancy_id' => 123
-    //             ]));
+    //         ]));
     //     } catch (\Throwable $th) {
     //         throw $th;
     //     }
@@ -502,7 +542,7 @@ class CareerController extends Controller
     }
     public function Export(Request $request)
     {
-        
+
         return Excel::download(new CareerExport($request->id), 'Data Pelamar.xlsx');
     }
 }

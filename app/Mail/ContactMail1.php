@@ -28,10 +28,9 @@ class ContactMail1 extends Mailable
      */
     public function build()
     {
-        $emailUser = 'prasaja55@gmail.com';
         return $this->view('email-waralaba')
-                    ->subject('Pendaftar Baru Waralaba')
-                    ->from($emailUser,'System')
-                    ->with('data',$this->data);
+            ->subject('Pendaftar Baru Waralaba')
+            ->from(config('mail.from.address'))
+            ->with('data', $this->data);
     }
 }

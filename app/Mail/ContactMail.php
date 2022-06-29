@@ -29,10 +29,9 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        $emailUser = 'prasaja55@gmail.com';
         return $this->view('email-karir')
-                    ->subject('Pendaftar Baru Karir')
-                    ->from($emailUser,'System')
-                    ->with('data',$this->data);
+            ->subject('Pendaftar Baru Karir')
+            ->from(config('mail.from.address'))
+            ->with('data', $this->data);
     }
 }
