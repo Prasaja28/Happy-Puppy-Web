@@ -17,15 +17,15 @@ class CreateOutletTable extends Migration
             $table->id();
             $table->char('province_id', 2);
             $table->char('city_id', 4);
-            $table->char('citysub_id', 7);
+            $table->char('citysub_id', 7)->nullable();
             $table->string('thumbnail');
             $table->string('name',50);
             $table->string('address');
             $table->string('phone',15);
-            $table->string('fax',15);
+            $table->string('fax',15)->nullable();
             $table->string('email',30);
             $table->text('link_ig');
-            $table->text('link_2');
+            $table->text('link_2')->nullable();
             $table->timestamps();
             $table->foreign('province_id')
                 ->references('id')

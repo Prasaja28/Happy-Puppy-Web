@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\RoleUser;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -43,21 +44,27 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        // dd(count($request->input('role')));
         $request->validate([
             'name' => 'required|string|min:3|max:50',
-            'email' => 'required|string|min:8|max:50',
+            'email' => 'required|string|min:8|max:50|unique:users',
             'password' => 'required|string|confirmed|min:8|max:32'
         ]);
-        for ($i = 0; $i < count($request->role); $i++) {
-            $user = new User;
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = $request->password;
-            $user->roles_id = $request->role[$i];
-            $user->status = 1;
-            $user->save();
-        }
 
+        $users = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            // 'roles_id' => $request->role,
+            'password' => bcrypt($request->password),
+            'status' => 1
+        ]);
+        $hak = $request->input('role');
+        for ($i = 0; $i < count($hak); $i++) {
+            $role = RoleUser::create([
+                'roles_id' => $hak[$i],
+                'users_id' => $users->id
+            ]);
+        }
         return redirect('/users-admin')->with('status', 'Data Berhasil Ditambahkan!!!');
     }
 
@@ -67,9 +74,14 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detailIndex($id)
     {
-        //
+        $role = RoleUser::select('roles.name', 'roles_users.id as id')
+            ->join('roles', 'roles.id', '=', 'roles_users.roles_id')
+            ->where('users_id', $id)
+            ->get();
+        $roles = Role::where('status', 1)->get();
+        return view('admin.users-admin.detail.detail-users', compact('role', 'roles'));
     }
 
     /**
@@ -78,9 +90,27 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editDetail(Request $request, $id)
     {
-        //
+
+        $role = RoleUser::find($id);
+        $role->roles_id = $request->role_id;
+        $role->save();
+        return redirect('/users-admin')->with('status', 'Data Berhasil Diubah!!!');
+    }
+    public function addDetail(Request $request, $id)
+    {
+        $role = RoleUser::create([
+            'roles_id' => $request->role_id,
+            'users_id' => $id
+        ]);
+        return redirect('/users-admin')->with('status', 'Data Berhasil Ditambahkan!!!');
+    }
+    public function deleteDetail($id)
+    {
+        $role = RoleUser::find($id);
+        $role->delete();
+        return redirect('/users-admin')->with('status', 'Data Berhasil Dihapus!!!');
     }
 
     /**

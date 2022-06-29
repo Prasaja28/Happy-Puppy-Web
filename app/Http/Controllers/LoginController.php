@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Session;
+use Hash;
 class LoginController extends Controller
 {
     public function index()
@@ -14,13 +15,12 @@ class LoginController extends Controller
     public function login(Request $request){
         $request->validate([
             'email' => 'required|string|min:8|max:50',
-            'password' => 'required|string|min:8|max:32'
+            'password' => 'required|string|min:8'
         ]);
         $email = $request->email;
-        $password = $request->password;
         $user = User::where('email',$email)->where('status',1)->first();
 		if($user){
-			if($user->password == $password){
+			if(Hash::check($request->password, $user->password)){
                     Session::put('username', $user->name);
                     Session::put('user_id', $user->id);
                     Session::put('status_user', $user->roles_id);

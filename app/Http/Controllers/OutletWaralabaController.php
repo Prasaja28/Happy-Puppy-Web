@@ -20,10 +20,11 @@ class OutletWaralabaController extends Controller
             'districts.name as district_name',
             'provinces.name as province_name'
         )
-            ->join('regencies', 'outlet.city_id', '=', 'regencies.id')
-            ->join('districts', 'outlet.citysub_id', '=', 'districts.id')
-            ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
-            ->get();
+            ->leftjoin('regencies', 'outlet.city_id', '=', 'regencies.id')
+            ->leftjoin('districts', 'outlet.citysub_id', '=', 'districts.id')
+            ->leftjoin('provinces', 'outlet.province_id', '=', 'provinces.id')
+            ->paginate(10);
+
         $province = DB::table('provinces')->orderBy('name', 'asc')->get();
         $city = DB::table('regencies')
             ->orderBy('name', 'asc')->get();
@@ -47,9 +48,11 @@ class OutletWaralabaController extends Controller
             $file = $request->file('thumbnail');
             $fileName = $file->getClientOriginalName();
             $path = 'img/outlet-img/';
+            //dd($path);
             $file->move(public_path('/uploads/' . $path), $fileName);
         }
 
+        // dd($request->jenis_dokumen);
         Outlet::create([
             'thumbnail' => $path . $fileName,
             'name' => $request->name,

@@ -21,23 +21,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="role">Role :</label>
-                        <select class="custom-select form-control-border  @error('role') is-invalid @enderror" id="role" name="role" required>
-                            <option selected="Selected" value="{{ $users->roles_id }}">{{ $users->role->name }}</option>
-                            @foreach($role as $roles)
-                                @if($roles->id == $users->roles_id)
-                                @else
-                                    <option value="{{ $roles->id }}">{{ $roles->name }}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                        @error('role')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                    
                     <div class="form-group">
                         <label for="email">Email :</label>
                         <input type="email" class="form-control form-control-border @error('email') is-invalid @enderror" id="artis" placeholder="Email User" name="email" value="{{ $users->email }}" required>

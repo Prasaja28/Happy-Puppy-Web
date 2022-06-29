@@ -1,4 +1,4 @@
-@if (Session::get('status_user') == '1')
+
     @extends('admin/layout-komponen/master')
 
     @section('title', 'Users')
@@ -33,16 +33,16 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body px-4">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Tambah
-                                    Data</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"
+                                 >Tambah Data</button>
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
-                                            <th>Role</th>
                                             <th>Email</th>
                                             <th>Status</th>
+                                            <th>Detail Role</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -51,7 +51,6 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $users->name }}</td>
-                                                <td>{{ $users->role->name }}</td>
                                                 <td>{{ $users->email }}</td>
                                                 @if ($users->status == 1)
                                                     <td>Aktif</td>
@@ -59,12 +58,16 @@
                                                     <td>NonAktif</td>
                                                 @endif
                                                 <td class="text-center">
+                                                <a href="{{ route('users.detail', ['id' => $users->id]) }}" 
+                                                class="btn btn-success" >Lihat</a>
+                                                </td>
+                                                <td class="text-center">
                                                     @if ($users->status == 1)
                                                         <button class="btn btn-danger" alt="Hapus" data-toggle="modal"
                                                             data-target="#delete{{ $users->id }}"><i
                                                                 class="fas fa-trash-alt"></i></i></button>
                                                     @endif
-                                                    <button class="btn btn-success" alt="Edit" data-toggle="modal"
+                                                     <button class="btn btn-success" alt="Edit" data-toggle="modal"
                                                         data-target="#edit{{ $users->id }}"><i
                                                             class="fas fa-pen-square"></i></button>
                                                 </td>
@@ -83,9 +86,9 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
-                                            <th>Role</th>
                                             <th>Email</th>
                                             <th>Status</th>
+                                            <th>Detail Role</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -133,6 +136,3 @@
             });
         </script>
     @endsection
-@else
-    @include('admin.nologin')
-@endif
