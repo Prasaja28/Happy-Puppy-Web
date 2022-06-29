@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Songlist;
 use Session;
 use File;
+
 class SonglistController extends Controller
 {
     /**
@@ -16,9 +17,9 @@ class SonglistController extends Controller
     public function index()
     {
         $songlist = Songlist::select('*')
-        ->orderBy('urutan', 'asc')
-        ->get();
-        return view('admin.songlist-admin.songlist-admin-index',compact('songlist'));
+            ->orderBy('urutan', 'asc')
+            ->get();
+        return view('admin.songlist-admin.songlist-admin-index', compact('songlist'));
     }
 
     /**
@@ -40,37 +41,33 @@ class SonglistController extends Controller
     public function store(Request $request)
     {
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'required|max:2000',
             ],
-            [   
+            [
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
-        //dd($request->news_title_en);
-        $path = null; 
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $path = 'img/songlist-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/' . $path), $fileName);
-            
-            // dd($request->jenis_dokumen);
+        $path = null;
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $path = 'img/songlist-img/';
+            $file->move(public_path('/uploads/' . $path), $fileName);
+
             Songlist::create([
                 'thumbnail' => $path . $fileName,
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
-                'users_id'=> $request->users_id,
+                'users_id' => $request->users_id,
                 'status' => 1
             ]);
-            return redirect('/songlist-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+            return redirect('/songlist-admin')->with('status', 'Data Berhasil Di Simpan!!!');
         } else {
-            return redirect('/songlist-admin')->with('status','Data Gagal Di Simpan!!!');
+            return redirect('/songlist-admin')->with('status', 'Data Gagal Di Simpan!!!');
         }
     }
 
@@ -83,12 +80,9 @@ class SonglistController extends Controller
     public function checkid()
     {
         $user = DB::table('songlist')->where('urutan', Input::get('urutan'));
-        if($user->count() > 0)
-        {
+        if ($user->count() > 0) {
             return response()->json(false);
-        }
-        else
-        {
+        } else {
             return response()->json(true);
         }
     }
@@ -114,41 +108,35 @@ class SonglistController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'max:2000',
-                'urutan'                => 'required|unique:songlist,urutan,'.$id,
+                'urutan'                => 'required|unique:songlist,urutan,' . $id,
             ],
-            [   
+            [
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
-        $path = null; 
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $path = 'img/songlist-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/'. $path), $fileName);
-            }else{
-                $request->thumbnail = $request->thumbnail2;
-            }    
-            
-            Songlist::where('id',$id)
+        $path = null;
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $path = 'img/songlist-img/';
+            $file->move(public_path('/uploads/' . $path), $fileName);
+        } else {
+            $request->thumbnail = $request->thumbnail2;
+        }
+
+        Songlist::where('id', $id)
             ->update([
-                // 'thumbnail' => $path . $fileName,
                 'title_song' => $request->title_song,
                 'kategori_lagu' => $request->kategori_lagu,
                 'artist' => $request->artist,
                 'status' => $request->status,
                 'urutan' => $request->urutan,
-                'users_id'=> $request->users_id
+                'users_id' => $request->users_id
             ]);
-            return redirect('/songlist-admin')->with('status','Data Berhasil Di update!!!'); 
-        // }else{
-        //     return redirect('/songlist-admin')->with('status','Data Gagal Di update!!!');
-        // }
+        return redirect('/songlist-admin')->with('status', 'Data Berhasil Di update!!!');
     }
 
     /**
@@ -159,13 +147,13 @@ class SonglistController extends Controller
      */
     public function destroy($id)
     {
-       $songlist = Songlist::where('id',$id)->first();
-       $path = public_path('uploads/'.$songlist->thumbnail);
+        $songlist = Songlist::where('id', $id)->first();
+        $path = public_path('uploads/' . $songlist->thumbnail);
 
-         if(File::exists($path)){
+        if (File::exists($path)) {
             File::delete($path);
-         }
-         $songlist->delete();
-        return redirect('/songlist-admin')->with('status','Data Berhasil Di Hapus!!!');
+        }
+        $songlist->delete();
+        return redirect('/songlist-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
 }

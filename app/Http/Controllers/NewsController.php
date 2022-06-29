@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use Session;
 use File;
+
 class NewsController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        return view('admin.news.news-index',compact('news'));
+        return view('admin.news.news-index', compact('news'));
     }
 
     /**
@@ -38,24 +39,21 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'required|max:2000'
             ],
-            [   
+            [
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB'
             ]
         );
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $path = 'img/news-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/'.$path), $fileName);
-            
-            // dd($request->jenis_dokumen);
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $path = 'img/news-img/';
+            $file->move(public_path('/uploads/' . $path), $fileName);
+
             News::create([
                 'thumbnail' => $path . $fileName,
                 'news_title_en' => $request->news_title_en,
@@ -67,10 +65,9 @@ class NewsController extends Controller
                 'users_id' => $request->users_id,
                 'status' => 1
             ]);
-            // dd($test);
-            return redirect('/news-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+            return redirect('/news-admin')->with('status', 'Data Berhasil Di Simpan!!!');
         } else {
-            return redirect('/news-admin')->with('status','Data Gagal Di Simpan!!!'); 
+            return redirect('/news-admin')->with('status', 'Data Gagal Di Simpan!!!');
         }
     }
 
@@ -107,30 +104,28 @@ class NewsController extends Controller
     {
         // dd($request->all());
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'max:2000',
             ],
-            [   
+            [
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
-        $path = null; 
+        $path = null;
 
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = time().'.'.$file->getClientOriginalName();
-                $path = 'img/news-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/' . $path), $fileName);
-            }else{
-                $fileName = $request->thumbnail2;
-            }    
-           
-            News::where('id',$id)
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = time() . '.' . $file->getClientOriginalName();
+            $path = 'img/news-img/';
+            $file->move(public_path('/uploads/' . $path), $fileName);
+        } else {
+            $fileName = $request->thumbnail2;
+        }
+
+        News::where('id', $id)
             ->update([
-                'thumbnail' => $path . $fileName ,
+                'thumbnail' => $path . $fileName,
                 'news_title_en' => $request->news_title_en,
                 'news_title_id' => $request->news_title_id,
                 'news_content_en' => $request->news_content_en,
@@ -140,10 +135,7 @@ class NewsController extends Controller
                 'status' => $request->status,
                 'users_id' => $request->users_id
             ]);
-            return redirect('/news-admin')->with('status','Data Berhasil Di update!!!'); 
-        // }else{
-        //         return redirect('/news-admin')->with('status','Data Gagal Di update!!!');
-        // }
+        return redirect('/news-admin')->with('status', 'Data Berhasil Di update!!!');
     }
 
     /**
@@ -154,13 +146,13 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $news = News::where('id',$id)->first();
-        $path = public_path('uploads/'.$news->thumbnail);
+        $news = News::where('id', $id)->first();
+        $path = public_path('uploads/' . $news->thumbnail);
 
-        if(File::exists($path)) {
+        if (File::exists($path)) {
             File::delete($path);
         }
         $news->delete();
-        return redirect('/news-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        return redirect('/news-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
 }

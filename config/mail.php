@@ -14,6 +14,8 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
+    'to_address1' => env('TO_ADDRESS1', null),
+    'to_address2' => env('TO_ADDRESS2', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +94,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', null),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 

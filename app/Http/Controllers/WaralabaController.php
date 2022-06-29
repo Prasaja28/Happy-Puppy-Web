@@ -23,11 +23,11 @@ class WaralabaController extends Controller
     {
 
         $waralaba = Waralaba::from("waralabaregister as w")
-        ->leftjoin('provinces as p1', 'p1.id', '=', 'w.province')
-        ->leftJoin('provinces as p2', 'p2.id', '=', 'w.province_2')
-        ->leftJoin('provinces as p3', 'p3.id', '=', 'w.province_3')
-        ->select('w.*','p1.name as province_name_1', 'p2.name as province_name_2', 'p3.name as province_name_3')
-        ->get();
+            ->leftjoin('provinces as p1', 'p1.id', '=', 'w.province')
+            ->leftJoin('provinces as p2', 'p2.id', '=', 'w.province_2')
+            ->leftJoin('provinces as p3', 'p3.id', '=', 'w.province_3')
+            ->select('w.*', 'p1.name as province_name_1', 'p2.name as province_name_2', 'p3.name as province_name_3')
+            ->get();
         return view('admin.waralaba-admin', compact('waralaba'));
     }
 
@@ -40,11 +40,10 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
- 
+
         if ($validator->fails()) {
             return redirect('/form-waralaba')
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
@@ -55,202 +54,234 @@ class WaralabaController extends Controller
                 'message' => 'Email Tidak Sesuai!',
                 'alert' => 'danger'
             ]);
-        } if ($request->name == null){
+        }
+        if ($request->name == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->official_address == null){
+        }
+        if ($request->official_address == null) {
             return back()->withInput()->with([
                 'message' => 'Alamat Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->home_phone == null){
+        }
+        if ($request->home_phone == null) {
             return back()->withInput()->with([
                 'message' => 'Nomor Telepon Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->province == null){
+        }
+        if ($request->province == null) {
             return back()->withInput()->with([
                 'message' => 'Provinsi Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->city == null){
+        }
+        if ($request->city == null) {
             return back()->withInput()->with([
                 'message' => 'Kabupaten/Kota Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->age == null){
+        }
+        if ($request->age == null) {
             return back()->withInput()->with([
                 'message' => 'Usia Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->last_education == null){
+        }
+        if ($request->last_education == null) {
             return back()->withInput()->with([
                 'message' => 'Pendidikan Terakhir Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->marital == null){
+        }
+        if ($request->marital == null) {
             return back()->withInput()->with([
                 'message' => 'Status Pernikahan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request-> official_phone == null){
+        }
+        if ($request->official_phone == null) {
             return back()->withInput()->with([
                 'message' => 'Nomor Telepon Bekerja Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->mobile_phone == null){
+        }
+        if ($request->mobile_phone == null) {
             return back()->withInput()->with([
                 'message' => 'Nomor Telepon Seluler Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->job == null){
+        }
+        if ($request->job == null) {
             return back()->withInput()->with([
                 'message' => 'Pekerjaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->bussiness_field == null){
+        }
+        if ($request->bussiness_field == null) {
             return back()->withInput()->with([
                 'message' => 'Sektor Pekerjaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } 
-         if ($request->email == null){
+        }
+        if ($request->email == null) {
             return back()->withInput()->with([
                 'message' => 'Email Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if($request->company_name == null){
-                return back()->withInput()->with([
-                    'message' => 'Nama Perusahaan Tidak Boleh Kosong!',
-                    'alert' => 'danger'
+        }
+        if ($request->company_name == null) {
+            return back()->withInput()->with([
+                'message' => 'Nama Perusahaan Tidak Boleh Kosong!',
+                'alert' => 'danger'
             ]);
-        }   if ($request->postion_company == null){
+        }
+        if ($request->postion_company == null) {
             return back()->withInput()->with([
                 'message' => 'Jabatan Di Perusahaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->address_2 == null){
+        }
+        if ($request->address_2 == null) {
             return back()->withInput()->with([
                 'message' => 'Alamat Perusahaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
         }
-            if($request->address_3 == null){
-                return back()->withInput()->with([
-                    'message' => 'Alamat Waralaba Tidak Boleh Kosong!',
-                    'alert' => 'danger'
+        if ($request->address_3 == null) {
+            return back()->withInput()->with([
+                'message' => 'Alamat Waralaba Tidak Boleh Kosong!',
+                'alert' => 'danger'
             ]);
-        }   if ($request->province_2 == null){
+        }
+        if ($request->province_2 == null) {
             return back()->withInput()->with([
                 'message' => 'Provinsi Perusahaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->city_2 == null){
+        }
+        if ($request->city_2 == null) {
             return back()->withInput()->with([
                 'message' => 'Kabupaten/Kota Perusahaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->province_3 == null){
+        }
+        if ($request->province_3 == null) {
             return back()->withInput()->with([
                 'message' => 'Provinsi Waralaba Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->city_3 == null){
+        }
+        if ($request->city_3 == null) {
             return back()->withInput()->with([
                 'message' => 'Kabupaten/Kota Waralaba Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->status_penguasaan == null){
+        }
+        if ($request->status_penguasaan == null) {
             return back()->withInput()->with([
                 'message' => 'Status Penguasaan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->known_as_area == null){
+        }
+        if ($request->known_as_area == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Area Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if($request->building_area == null){
-                return back()->withInput()->with([
-                    'message' => 'Luas Bangunan Tidak Boleh Kosong!',
-                    'alert' => 'danger'
+        }
+        if ($request->building_area == null) {
+            return back()->withInput()->with([
+                'message' => 'Luas Bangunan Tidak Boleh Kosong!',
+                'alert' => 'danger'
             ]);
-        }   if ($request->left_business_name == null){
+        }
+        if ($request->left_business_name == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Usaha Tetangga Kiri Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        }   if ($request->right_business_name == null){
+        }
+        if ($request->right_business_name == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Usaha Tetangga Kanan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->front_business_name == null){
+        }
+        if ($request->front_business_name == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Usaha Depan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->behind_business_name == null){
+        }
+        if ($request->behind_business_name == null) {
             return back()->withInput()->with([
                 'message' => 'Nama Usaha Belakang Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->left_business_field == null){
+        }
+        if ($request->left_business_field == null) {
             return back()->withInput()->with([
                 'message' => 'Bidang Usaha Tetangga Kiri Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->right_business_field == null){
+        }
+        if ($request->right_business_field == null) {
             return back()->withInput()->with([
                 'message' => 'Bidang Usaha Tetangga Kanan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->front_business_field == null){
+        }
+        if ($request->front_business_field == null) {
             return back()->withInput()->with([
                 'message' => 'Bidang Usaha Depan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->behind_business_field == null){
+        }
+        if ($request->behind_business_field == null) {
             return back()->withInput()->with([
                 'message' => 'Bidang Usaha Belakang Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->front_road_width == null){
+        }
+        if ($request->front_road_width == null) {
             return back()->withInput()->with([
                 'message' => 'Lebar Jalan Depan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->front_road_traffic == null){
+        }
+        if ($request->front_road_traffic == null) {
             return back()->withInput()->with([
                 'message' => 'Lalu Lintas Jalan Depan Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
-        } if ($request->confirm_completenes == null){
-            return back()->withInput()->with([
-                'message' => 'Konfirmasi Tidak Boleh Kosong!',
-                'alert' => 'danger'
-            ]);
-        }   if ($request->confirm_completenes == null){
+        }
+        if ($request->confirm_completenes == null) {
             return back()->withInput()->with([
                 'message' => 'Konfirmasi Tidak Boleh Kosong!',
                 'alert' => 'danger'
             ]);
         }
-        // dd($request->all());
+        if ($request->confirm_completenes == null) {
+            return back()->withInput()->with([
+                'message' => 'Konfirmasi Tidak Boleh Kosong!',
+                'alert' => 'danger'
+            ]);
+        }
         if ($request->confirm_completenes != null && $request->confirm_completenes != null) {
 
-            Mail::to('info@happypuppy.id')->send(new ContactMail1([
+            Mail::to(config('mail.to_address2'))->send(new ContactMail1([
                 'name' => $request->name,
-                ]));
-          
+            ]));
+
             Waralaba::create($request->all());
             return back()->with([
                 'message' => 'Fromulir Berhasil Dikirim!',
                 'alert' => 'success'
             ]);
-            
         } elseif ($request->confirm_completenes_mob != null && $request->confirm_completenes_mob != null) {
             $waralaba = new Waralaba();
             $waralaba->name = $request->name;
@@ -296,9 +327,9 @@ class WaralabaController extends Controller
             $waralaba->status = 0;
             $waralaba->save();
 
-            Mail::to('info@happypuppy.id')->send(new ContactMail1([
+            Mail::to(config('mail.to_address2'))->send(new ContactMail1([
                 'name' => $request->name,
-                ]));
+            ]));
 
             return back()->with([
                 'message' => 'Fromulir Berhasil Dikirim!',
@@ -324,20 +355,19 @@ class WaralabaController extends Controller
         $settings = Settings::select('*')
             ->whereNotNull('value')
             ->get()
-            ->pluck('value','key')
+            ->pluck('value', 'key')
             ->toArray();
         $provincies = Province::select('*')
-        ->orderBy('name', 'asc')
-        ->get();
+            ->orderBy('name', 'asc')
+            ->get();
         $regencies = Regency::select('*')
-        ->orderBy('name', 'asc')
-        ->get();
-        return view('formwaralaba',compact('settings','provincies','regencies'));
+            ->orderBy('name', 'asc')
+            ->get();
+        return view('formwaralaba', compact('settings', 'provincies', 'regencies'));
     }
     public function GetKota($id)
     {
-        $regencies = Regency::where('province_id',$id)->pluck('name');
+        $regencies = Regency::where('province_id', $id)->pluck('name');
         return response()->json($regencies);
     }
-    
 }

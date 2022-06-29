@@ -17,18 +17,17 @@ class NewsUserController extends Controller
     {
         $locale = app()->getLocale();
         $settings = Settings::select('*')
-        ->whereNotNull('value')
-        ->get()
-        ->pluck('value','key')
-        ->toArray();
-        // $usernews = News::all();
-        $news_terlaris = News::where('news_category','popular')
-                        ->orderBy('news_date', 'desc')
-                        ->get();
-        $news_terbaru = News::where('news_category','lates')
-                        ->orderBy('news_date', 'desc')
-                        ->get();
-        return view('news',compact('news_terlaris','news_terbaru','settings','locale'));
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value', 'key')
+            ->toArray();
+        $news_terlaris = News::where('news_category', 'popular')
+            ->orderBy('news_date', 'desc')
+            ->get();
+        $news_terbaru = News::where('news_category', 'lates')
+            ->orderBy('news_date', 'desc')
+            ->get();
+        return view('news', compact('news_terlaris', 'news_terbaru', 'settings', 'locale'));
     }
 
     /**
@@ -40,19 +39,17 @@ class NewsUserController extends Controller
     {
         $locale = app()->getLocale();
         $settings = Settings::select('*')
-        ->whereNotNull('value')
-        ->get()
-        ->pluck('value','key')
-        ->toArray();
-        // dd($id);
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value', 'key')
+            ->toArray();
         $news_detail = News::select('*')
             ->where('id', '=', $id)
             ->get();
-            // dd($news_detail);
         $news_detail_terbaru = News::where('news_category', 'lates')
             ->where('id', '!=', $id)
             ->get();
-        return view('news-detail', compact('news_detail', 'news_detail_terbaru', 'settings','locale'));
+        return view('news-detail', compact('news_detail', 'news_detail_terbaru', 'settings', 'locale'));
     }
 
     /**
@@ -65,16 +62,13 @@ class NewsUserController extends Controller
     {
         $locale = App()->getLocale();
         $settings = Settings::select('*')
-        ->whereNotNull('value')
-        ->get()
-        ->pluck('value','key')
-        ->toArray();
-        $news_terlaris = News::where('news_title',$locale)->
-                        where('news_category','popular')->
-                        where('news_content_',$locale)->
-                        get();
-        $news_terbaru = News::where('news_category','lates')->get();
-        return view('translate',compact('news_terlaris','news_terbaru','settings'));
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value', 'key')
+            ->toArray();
+        $news_terlaris = News::where('news_title', $locale)->where('news_category', 'popular')->where('news_content_', $locale)->get();
+        $news_terbaru = News::where('news_category', 'lates')->get();
+        return view('translate', compact('news_terlaris', 'news_terbaru', 'settings'));
     }
 
     /**
