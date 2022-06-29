@@ -1,4 +1,4 @@
-@if (Session::get('status_user') == '1' || Session::get('status_user') == '4')
+
     @extends('admin/layout-komponen/master')
 
     @section('title', 'Song List')
@@ -174,6 +174,3 @@
             });
         </script>
     @endsection
-@else
-    @include('admin.nologin')
-@endif

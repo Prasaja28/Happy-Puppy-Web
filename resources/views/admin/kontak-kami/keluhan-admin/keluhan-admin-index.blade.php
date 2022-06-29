@@ -1,4 +1,4 @@
-@if (Session::get('status_user') == '1' || Session::get('status_user') == '9')
+
     @extends('admin/layout-komponen/master')
 
     @section('title', 'Keluhan')
@@ -141,6 +141,3 @@
             });
         </script>
     @endsection
-@else
-    @include('admin.nologin')
-@endif

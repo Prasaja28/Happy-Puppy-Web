@@ -58,7 +58,7 @@ class OutletWaralabaController extends Controller
                 'address' => $request->address,
                 'phone' => $request->phone,
                 'fax'=> $request->fax,
-                'fax'=> $request->email,
+                'email'=> $request->email,
                 'link_ig'=> $request->link_ig,
                 'link_2'=> $request->link_2,
                 'users_id'=> $request->users_id,

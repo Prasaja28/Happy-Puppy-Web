@@ -185,6 +185,10 @@ Route::get('/users-admin', [UsersController::class, 'index']);
 Route::get('/users-admin/delete/{id}', [UsersController::class, 'destroy']);
 Route::post('/users-admin/store', [UsersController::class, 'store']);
 Route::put('/users-admin/update/{id}', [UsersController::class, 'update']);
+Route::get('/users-admin/{id}', [UsersController::class, 'detailIndex'])->name('users.detail');
+Route::get('/users-admin/detail-delete/{id}', [UsersController::class, 'deleteDetail'])->name('users.delete');
+Route::post('/users-admin/detail-edit/{id}', [UsersController::class, 'editDetail'])->name('users.edit');
+Route::post('/users-admin/detail-add/{id}', [UsersController::class, 'addDetail'])->name('users.store');
 
 //jobvacancy
 Route::get('/jobvacancy-admin', [JobsController::class, 'adminIndex']);

@@ -1,4 +1,4 @@
-@if (Session::get('status_user') == '1' || Session::get('status_user') == '5')
+
     @extends('admin/layout-komponen/master')
 
     @section('title', 'Top Artist')
@@ -148,6 +148,3 @@
             //sort data  if urutan already exist, then hide the option
         </script>
     @endsection
-@else
-    @include('admin.nologin')
-@endif
