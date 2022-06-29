@@ -175,7 +175,7 @@
                             <div class="card-body">
                                 <h5 class="card-title text-center font-weight-bold">{{ $o->outlet_name }}</h5>
                                 <p class="card-text text-center">
-                                    {{ $o->address }}
+                                    {{ $o->address }},{{$o->district_name}} , {{ $o->regency_name }}, {{ $o->province_name }}
                                     <br>
                                     Tel. {{ $o->phone }}
                                     <br>
