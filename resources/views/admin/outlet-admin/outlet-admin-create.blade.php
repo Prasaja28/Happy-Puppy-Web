@@ -46,13 +46,9 @@
                     </div>
                     <div class="form-group">
                         <label for="fax">Nomor Fax :</label>
-                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror"
-                            id="fax" placeholder="Nomor Fax" name="fax" value="{{ old('fax') }}" required>
-                        @error('address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        <input type="text" class="form-control form-control-border"
+                            id="fax" placeholder="Nomor Fax" name="fax" value="{{ old('fax') }}">
+                       
                     </div>
                     <div class="form-group">
                         <label for="fax">E-Mail :</label>
@@ -78,13 +74,8 @@
                     <div class="form-group">
                         <label for="link_2">Link Lainnya :</label>
                         <input type="text"
-                            class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2"
-                            placeholder="Link Lainnya" name="link_2" value="{{ old('link_2') }}" required>
-                        @error('link_2')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                            class="form-control form-control-border" id="link_2"
+                            placeholder="Link Lainnya" name="link_2" value="{{ old('link_2') }}" >
                     </div>
                     <div class="form-group">
                         <label for="province_id">Provinsi :</label>
@@ -112,12 +103,10 @@
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control " name="citysub_id" id="kecamatan" required="">
+                        <select class="form-control " name="citysub_id" id="kecamatan">
                             <option value="">(Pilih Kecamatan)</option>
                             <option value="">Kosong</option>
-
                         </select>
-
                     </div>
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"
