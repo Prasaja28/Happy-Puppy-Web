@@ -179,6 +179,8 @@
                                     <br>
                                     Tel. {{ $o->phone }}
                                     <br>
+                                    {{$o->city_id}}
+                                    <br>
                                     @if (!empty($o->fax))
                                     fax. {{ $o->fax }}
                                     @endif

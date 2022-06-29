@@ -1,6 +1,5 @@
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg letupdate" id="edit{{ $outlet->id }}" role=" dialog"
-    aria-labelledby="outletupdate" aria-hidden="true" data-to>
+<div class="modal fade bd-example-modal-lg letupdate" id="edit{{ $outlet->id }}" role=" dialog" aria-labelledby="outletupdate" aria-hidden="true" data-to>
     <div class="modal-dialog modal-lg" role="document" id="modaledit">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,140 +9,122 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/outlet-admin/update/' . $outlet->id) }}" method="post"
-                    enctype="multipart/form-data">
+                <form action="{{ url('/outlet-admin/update/' . $outlet->id) }}" method="post" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="form-group">
                         <label for="name">Nama Outlet :</label>
-                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror"
-                            id="name" placeholder="Nama Outlet" name="name" value="{{ $outlet->name }}" required>
+                        <input type="text" class="form-control form-control-border @error('name') is-invalid @enderror" id="name" placeholder="Nama Outlet" name="name" value="{{ $outlet->name }}" required>
                         @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="address">Alamat Outlet :</label>
-                        <input type="text"
-                            class="form-control form-control-border @error('address') is-invalid @enderror" id="artis"
-                            placeholder="Alamat Outlet" name="address" value="{{ $outlet->address }}" required>
+                        <input type="text" class="form-control form-control-border @error('address') is-invalid @enderror" id="artis" placeholder="Alamat Outlet" name="address" value="{{ $outlet->address }}" required>
                         @error('address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="phone">Nomor Telepon :</label>
-                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror"
-                            id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlet->phone }}" required>
+                        <input type="text" class="form-control form-control-border @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telepon" name="phone" value="{{ $outlet->phone }}" required>
                         @error('phone')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="fax">Nomor Fax :</label>
-                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror"
-                            id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlet->fax }}" required>
+                        <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{ $outlet->fax }}">
                         @error('fax')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="fax">E-Mail :</label>
-                        <input type="text" class="form-control form-control-border @error('email') is-invalid @enderror"
-                            id="email" placeholder="E-Mail" name="email" value="{{ $outlet->email }}" required>
+                        <input type="text" class="form-control form-control-border @error('email') is-invalid @enderror" id="email" placeholder="E-Mail" name="email" value="{{ $outlet->email }}" required>
                         @error('fax')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="link_ig">Link IG :</label>
-                        <input type="text"
-                            class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig"
-                            placeholder="Link IG" name="link_ig" value="{{ $outlet->link_ig }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_ig') is-invalid @enderror" id="link_ig" placeholder="Link IG" name="link_ig" value="{{ $outlet->link_ig }}" required>
                         @error('link_ig')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="link_2">Link Lainnya :</label>
-                        <input type="text"
-                            class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2"
-                            placeholder="Link Lainnya" name="link_2" value="{{ $outlet->link_2 }}" required>
+                        <input type="text" class="form-control form-control-border @error('link_2') is-invalid @enderror" id="link_2" placeholder="Link Lainnya" name="link_2" value="{{ $outlet->link_2 }}">
                         @error('link_2')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="edit_province_id">Provinsi :</label>
-                        <select class="form-control js-example-basic-single" name="province_id" id="province_id"
-                            required="" data-dependent="city_id">
+                        <select class="form-control js-example-basic-single" name="province_id" id="province_id" required="" data-dependent="city_id">
                             <option value="{{ $outlet->province_id }}">{{ $outlet->province_name }}</option>
                             @foreach ($province as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                            <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
                         </select>
                         @error('province_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="edit_city_id">Kota :</label>
-                        <select class="form-control js-example-basic-single" name="city_id" id="city_id" required=""
-                            data-dependent="citysub_id">
+                        <select class="form-control js-example-basic-single" name="city_id" id="city_id" required="" data-dependent="citysub_id">
                             <option value="{{ $outlet->city_id }}">{{ $outlet->regency_name }}</option>
                             @foreach ($city as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                            <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
                         </select>
                         @error('city_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="citysub_id">Kecamatan :</label>
-                        <select class="form-control js-example-basic-single" name="citysub_id" id="citysub_id"
-                            required="">
+                        <select class="form-control js-example-basic-single" name="citysub_id" id="citysub_id" required="">
                             <option value="{{ $outlet->citysub_id }}">{{ $outlet->district_name }}</option>
                             @foreach ($citysub as $data)
-                                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                            <option value="{{ $data->id }}">{{ $data->name }}</option>
                             @endforeach
                         </select>
                         @error('citysub_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="item form-group" style="margin-right:-40px;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                            style="text-align:left; margin-right: -100px;">Thumbnail Outlet</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align:left; margin-right: -100px;">Thumbnail Outlet</label>
                         <div class="col-md-9 col-sm-6 col-xs-12" style="margin-left:60px;">
-                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg"
-                                value="{{ $outlet->thumbnail }}">
-                            <img src="/uploads/{{ $outlet->thumbnail }}" alt="Tidak Ada gambar"
-                                style="width:100px; height:100px; margin-top:10px;">
+                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg" value="{{ $outlet->thumbnail2 }}">
+                            <img src="/uploads/{{ $outlet->thumbnail2 }}" alt="Tidak Ada gambar" style="width:100px; height:100px; margin-top:10px;">
                         </div>
                     </div>
-                    <input type="hidden" class="form-control form-control-border" id="users_id" name="users_id"
-                        value="{{ Session::get('user_id') }}" required>
+                    <input type="hidden" class="form-control form-control-border" id="users_id" name="users_id" value="{{ Session::get('user_id') }}" required>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
 

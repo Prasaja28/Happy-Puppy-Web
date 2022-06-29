@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Outlet;
@@ -13,161 +14,159 @@ class OutletWaralabaController extends Controller
 {
     public function index()
     {
-        $outlet = Outlet::select('outlet.*', 
-        'regencies.name as regency_name', 
-        'districts.name as district_name', 
-        'provinces.name as province_name')
+        $outlet = Outlet::select(
+            'outlet.*',
+            'regencies.name as regency_name',
+            'districts.name as district_name',
+            'provinces.name as province_name'
+        )
             ->join('regencies', 'outlet.city_id', '=', 'regencies.id')
             ->join('districts', 'outlet.citysub_id', '=', 'districts.id')
             ->join('provinces', 'outlet.province_id', '=', 'provinces.id')
             ->get();
-        $province = DB::table('provinces')->orderBy('name', 'asc')->get(); 
+        $province = DB::table('provinces')->orderBy('name', 'asc')->get();
         $city = DB::table('regencies')
-        ->orderBy('name', 'asc')->get();
+            ->orderBy('name', 'asc')->get();
         $citysub = DB::table('districts')->orderBy('name', 'asc')->get();
-        return view('admin.outlet-admin.outlet-admin-index',compact('outlet','province','city','citysub'));
+        return view('admin.outlet-admin.outlet-admin-index', compact('outlet', 'province', 'city', 'citysub'));
         // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
     public function store(Request $request)
     {
         // dd($request->all());
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'required|max:2000'
             ],
-            [   
+            [
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2000',
             ]
         );
-        $path = null; 
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $path = 'img/outlet-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/'. $path), $fileName);
-            }
-            
-            // dd($request->jenis_dokumen);
-            Outlet::create([
-                'thumbnail' => $path . $fileName,
-                'name' => $request->name,
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'fax'=> $request->fax,
-                'fax'=> $request->email,
-                'link_ig'=> $request->link_ig,
-                'link_2'=> $request->link_2,
-                'users_id'=> $request->users_id,
-                'province_id'=> $request->province_id,
-                'city_id'=> $request->city_id,
-                'citysub_id'=> $request->citysub_id,
-                'status' => 1
-            ]);
-            
-            return redirect('/outlet-admin')->with('status','Data Berhasil Di Simpan!!!'); 
+        $path = null;
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $path = 'img/outlet-img/';
+            //dd($path);
+            $file->move(public_path('/uploads/' . $path), $fileName);
+        }
+
+        // dd($request->jenis_dokumen);
+        Outlet::create([
+            'thumbnail' => $path . $fileName,
+            'name' => $request->name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'fax' => $request->fax,
+            'email' => $request->email,
+            'link_ig' => $request->link_ig,
+            'link_2' => $request->link_2,
+            'users_id' => $request->users_id,
+            'province_id' => $request->province_id,
+            'city_id' => $request->city_id,
+            'citysub_id' => $request->citysub_id,
+            'status' => 1
+        ]);
+
+        return redirect('/outlet-admin')->with('status', 'Data Berhasil Di Simpan!!!');
     }
 
     public function update(Request $request, $id)
     {
         // dd($request->all());
         $this->validate(
-            $request, 
-            [   
+            $request,
+            [
                 'thumbnail'             => 'required|max:2000',
             ],
-            [   
+            [
                 'thumbnail.required'    => 'Gambar tidak boleh kosong',
                 'thumbnail.max'      => 'Gambar tidak boleh lebih dari 2 MB',
             ]
         );
-        $path = null; 
-            if($request->thumbnail)
-            {
-                $file = $request->file('thumbnail');
-                $fileName = $file->getClientOriginalName();
-                $path = 'img/outlet-img/';
-                //dd($path);
-                $file->move(public_path('/uploads/'. $path), $fileName);
-            }
-            else { 
-                $path = $request->thumbnail2;
-            }
-            Outlet::where('id',$id)
+        $path = null;
+        if ($request->thumbnail) {
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $path = 'img/outlet-img/';
+            //dd($path);
+            $file->move(public_path('/uploads/' . $path), $fileName);
+        } else {
+            $path = $request->thumbnail2;
+        }
+        Outlet::where('id', $id)
             ->update([
                 'thumbnail' => $path . $fileName,
                 'name' => $request->name,
                 'address' => $request->address,
                 'phone' => $request->phone,
-                'fax'=> $request->fax,
-                'fax'=> $request->email,
-                'link_ig'=> $request->link_ig,
-                'link_2'=> $request->link_2,
-                'users_id'=> $request->users_id,
-                'province_id'=> $request->province_id,
-                'city_id'=> $request->city_id,
-                'citysub_id'=> $request->citysub_id
+                'fax' => $request->fax,
+                'email' => $request->email,
+                'link_ig' => $request->link_ig,
+                'link_2' => $request->link_2,
+                'users_id' => $request->users_id,
+                'province_id' => $request->province_id,
+                'city_id' => $request->city_id,
+                'citysub_id' => $request->citysub_id
             ]);
-            return redirect('/outlet-admin')->with('status','Data Berhasil Di update!!!'); 
+        return redirect('/outlet-admin')->with('status', 'Data Berhasil Di update!!!');
     }
 
     public function destroy($id)
     {
-       $outlet = Outlet::find($id);
-       $path = public_path('uploads/'. $outlet->thumbnail);
-       if (File::exists($path)) {
-           File::delete($path);
-       }
-         $outlet->delete();
-        return redirect('/outlet-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        $outlet = Outlet::find($id);
+        $path = public_path('uploads/' . $outlet->thumbnail);
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+        $outlet->delete();
+        return redirect('/outlet-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
 
     public function search(Request $request)
     {
         $settings = Settings::select('*')
-        ->whereNotNull('value')
-        ->get()
-        ->pluck('value','key')
-        ->toArray();
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value', 'key')
+            ->toArray();
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
             ->select('o.*', 'c.name', 'o.name as outlet_name')
-            ->where('o.name', 'like', '%'.$keyword.'%' )
-            ->orWhere('c.name', 'like', '%'.$keyword.'%' )
-            ->leftJoin('regencies as c', 'c.id', '=' , "o.city_id")
+            ->where('o.name', 'like', '%' . $keyword . '%')
+            ->orWhere('c.name', 'like', '%' . $keyword . '%')
+            ->leftJoin('regencies as c', 'c.id', '=', "o.city_id")
             ->get();
         if ($outlet->count() == 0) {
             return view('/lokasi-not-found', compact('settings'));
         }
-        
+
         return view('lokasi-outlet', compact('outlet', 'keyword', 'settings'));
     }
     public function getKotaById(Request $request)
     {
         $province_id = $request->province_id;
         $kota = DB::table('regencies')
-        ->where('province_id', $province_id)
-        ->orderBy('name', 'asc')
-        ->get();
+            ->where('province_id', $province_id)
+            ->orderBy('name', 'asc')
+            ->get();
         foreach ($kota as $kota) {
             echo "<option value=$kota->id>$kota->name</option>";
         }
     }
-   
+
     public function getKecamatanById(Request $request)
     {
         $city_id = $request->city_id;
         $kecamatan = DB::table('districts')
-        ->where('regency_id', $city_id)
-        ->orderBy('name', 'asc')
-        ->get();
+            ->where('regency_id', $city_id)
+            ->orderBy('name', 'asc')
+            ->get();
         foreach ($kecamatan as $kecamatan) {
             echo "<option value=$kecamatan->id>$kecamatan->name</option>";
         }
         echo "<option value= >Kosong</option>";
     }
-    
 }
