@@ -135,10 +135,12 @@ class OutletWaralabaController extends Controller
         ->toArray();
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
-            ->select('o.*', 'c.name', 'o.name as outlet_name')
+            ->select('o.*', 'c.name as regency_name', 'o.name as outlet_name', 'p.name as province_name', 'd.name as district_name')
             ->where('o.name', 'like', '%'.$keyword.'%' )
             ->orWhere('c.name', 'like', '%'.$keyword.'%' )
             ->leftJoin('regencies as c', 'c.id', '=' , "o.city_id")
+            ->leftJoin('provinces as p', 'p.id', '=' , "o.province_id")
+            ->leftJoin('districts as d', 'd.id', '=' , "o.citysub_id")
             ->get();
         if ($outlet->count() == 0) {
             return view('/lokasi-not-found', compact('settings'));
