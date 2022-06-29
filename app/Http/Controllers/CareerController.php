@@ -50,12 +50,6 @@ class CareerController extends Controller
 
     public function store(Request $request)
     {
-        // //remove dot in expected salary and convert to integer
-        // $test = $request(['expected_salary' => str_replace('.', '', $request->expected_salary)]);
-        // dd($test);
-        // $jobvacancy_id = $request->jobvacancy_id;
-        // $name_job = $request->name_job;
-        // $location = $request->location;
 
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
@@ -66,12 +60,6 @@ class CareerController extends Controller
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
                 ->withInput();
         }
-        // if ($request->email_confirm != $request->email) {
-        //     return back()->with([
-        //         'message' => 'Email Tidak Sesuai!',
-        //         'alert' => 'warning'
-        //     ]);
-        // }
 
         if ($request->hasFile('cv') && $request->hasFile('ijazah')) {
             $file = $request->file('cv');
@@ -201,7 +189,6 @@ class CareerController extends Controller
             $jobeks->company_name = $request->nama_perusahaan;
             $jobeks->length_work = $request->lama_kerja;
             $jobeks->position = $request->jabatan;
-            // dd($jobeks);
             $jobeks->save();
 
             $company_name = $request->company_name;
@@ -214,13 +201,8 @@ class CareerController extends Controller
                     'position' => $position[$i],
                     'careerform_id' => $careerform_id->id,
                 ];
-                // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
-            // return redirect('/formkarir/' . $request->jobvacancy_id)->with([
-            //     'message' => 'Fromulir Berhasil Dikirim!',
-            //     'alert' => 'success'
-            // ]);
         } elseif ($request->hasFile('cv_mob') && $request->hasFile('ijazah_mob')) {
             $file = $request->file('cv_mob');
             $file2 = $request->file('ijazah_mob');
@@ -351,7 +333,6 @@ class CareerController extends Controller
             $jobeks->company_name = $request->nama_perusahaan;
             $jobeks->length_work = $request->lama_kerja;
             $jobeks->position = $request->jabatan;
-            // dd($jobeks);
             $jobeks->save();
 
             $company_name = $request->company_name;
@@ -364,7 +345,6 @@ class CareerController extends Controller
                     'position' => $position[$i],
                     'careerform_id' => $careerform_id->id,
                 ];
-                // dd($data);
                 DB::table('jobexpertise')->insert($data);
             }
         } else {
@@ -484,7 +464,7 @@ class CareerController extends Controller
                 'jobvacancy_id'         => $request->jobvacancy_id,
             ];
         }
-        // Mail::to('prasajakuy@gmail.com')->send(new ContactMail($data));
+
         $jobsName = Jobs::find($request->jobvacancy_id);
         Mail::to(config('mail.to_address1'))->send(new ContactMail([
             'name' => $request->name,
@@ -495,18 +475,6 @@ class CareerController extends Controller
             'alert' => 'success'
         ]);
     }
-
-    // public function testEmail()
-    // {
-    //     try {
-    //         Mail::to(config('mail.to_address1'))->send(new ContactMail([
-    //             'name' => "budi",
-    //             'jobvacancy_id' => 123
-    //         ]));
-    //     } catch (\Throwable $th) {
-    //         throw $th;
-    //     }
-    // }
 
     /**
      * Remove the specified resource from storage.

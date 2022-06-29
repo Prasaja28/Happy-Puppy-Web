@@ -29,11 +29,9 @@ class OutletWaralabaController extends Controller
             ->orderBy('name', 'asc')->get();
         $citysub = DB::table('districts')->orderBy('name', 'asc')->get();
         return view('admin.outlet-admin.outlet-admin-index', compact('outlet', 'province', 'city', 'citysub'));
-        // return view('admin.outlet-admin.outlet-admin-index')->with('outlet', $outlet);
     }
     public function store(Request $request)
     {
-        // dd($request->all());
         $this->validate(
             $request,
             [
@@ -49,11 +47,9 @@ class OutletWaralabaController extends Controller
             $file = $request->file('thumbnail');
             $fileName = $file->getClientOriginalName();
             $path = 'img/outlet-img/';
-            //dd($path);
             $file->move(public_path('/uploads/' . $path), $fileName);
         }
 
-        // dd($request->jenis_dokumen);
         Outlet::create([
             'thumbnail' => $path . $fileName,
             'name' => $request->name,
@@ -75,7 +71,6 @@ class OutletWaralabaController extends Controller
 
     public function update(Request $request, $id)
     {
-        // dd($request->all());
         $this->validate(
             $request,
             [
@@ -91,7 +86,6 @@ class OutletWaralabaController extends Controller
             $file = $request->file('thumbnail');
             $fileName = $file->getClientOriginalName();
             $path = 'img/outlet-img/';
-            //dd($path);
             $file->move(public_path('/uploads/' . $path), $fileName);
         } else {
             $path = $request->thumbnail2;

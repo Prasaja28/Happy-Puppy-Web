@@ -40,7 +40,6 @@ class WaralabaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
@@ -272,7 +271,6 @@ class WaralabaController extends Controller
                 'alert' => 'danger'
             ]);
         }
-        // dd($request->all());
         if ($request->confirm_completenes != null && $request->confirm_completenes != null) {
 
             Mail::to(config('mail.to_address2'))->send(new ContactMail1([

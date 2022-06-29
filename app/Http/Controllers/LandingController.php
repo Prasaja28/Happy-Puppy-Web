@@ -36,11 +36,10 @@ class LandingController extends Controller
         $settings = Settings::select('*')
             ->whereNotNull('value')
             ->get()
-            ->pluck('value','key')
+            ->pluck('value', 'key')
             ->toArray();
         $user = User::all();
-        // dd($settings);
-        return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings' , 'user'));
+        return view('home', compact('topartist', 'songlist_terlaris', 'songlist_terbaru', 'news_terbaru', 'settings', 'user'));
     }
 
     /**
@@ -50,7 +49,6 @@ class LandingController extends Controller
      */
     public function detailIndex($id)
     {
-        // dd($id);
         $news_detail = News::select('*')
             ->where('id', '=', $id)
             ->get();

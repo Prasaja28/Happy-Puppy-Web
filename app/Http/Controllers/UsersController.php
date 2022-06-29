@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+
 class UsersController extends Controller
 {
     /**
@@ -17,13 +18,11 @@ class UsersController extends Controller
     {
         if (User::select('roles_id')->where('roles_id', '=', '1')->count() > 0) {
             $user = User::all();
-            $role = Role::where('status',1)->get();
-            return view('admin.users-admin.users-admin-index',compact('user','role'));
-        }elseif (User::select('roles_id')->where('roles_id', '=', '2')->count() > 0) {
-            return view('admin.dashboard')->with('message','Anda tidak memiliki akses ke halaman ini');
+            $role = Role::where('status', 1)->get();
+            return view('admin.users-admin.users-admin-index', compact('user', 'role'));
+        } elseif (User::select('roles_id')->where('roles_id', '=', '2')->count() > 0) {
+            return view('admin.dashboard')->with('message', 'Anda tidak memiliki akses ke halaman ini');
         }
-            
-        
     }
 
     /**
@@ -49,7 +48,7 @@ class UsersController extends Controller
             'email' => 'required|string|min:8|max:50',
             'password' => 'required|string|confirmed|min:8|max:32'
         ]);
-        for($i=0;$i<count($request->role);$i++){
+        for ($i = 0; $i < count($request->role); $i++) {
             $user = new User;
             $user->name = $request->name;
             $user->email = $request->email;
@@ -58,15 +57,8 @@ class UsersController extends Controller
             $user->status = 1;
             $user->save();
         }
-        // User::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'roles_id' => $request->role,
-        //     //'password' => Hash::make($request->password),
-        //     'password' => $request->password,
-        //     'status' => 1
-        // ]);
-        return redirect('/users-admin')->with('status','Data Berhasil Ditambahkan!!!');
+
+        return redirect('/users-admin')->with('status', 'Data Berhasil Ditambahkan!!!');
     }
 
     /**
@@ -100,30 +92,29 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->get();
-        if($user[0]->email == $request->email){
+        $user = User::where('id', $id)->get();
+        if ($user[0]->email == $request->email) {
             $request->validate([
                 'name' => 'required|string|min:3|max:50',
                 'email' => 'required|string|min:8|max:50',
                 'password' => 'required|string|confirmed|min:8|max:32'
             ]);
-        }else{
+        } else {
             $request->validate([
                 'name' => 'required|string|min:3|max:50',
                 'email' => 'required|string|min:8|unique:users|max:50',
                 'password' => 'required|string|confirmed|min:8|max:32'
             ]);
         }
-        $user = User::where('id',$id)
-        ->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'roles_id' => $request->role,
-            //'password' => Hash::make($request->password),
-            'password' => $request->password,
-            'status' => $request->status
-        ]);
-        return redirect('/users-admin')->with('status','Data Berhasil Di Update!!!');
+        $user = User::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'roles_id' => $request->role,
+                'password' => $request->password,
+                'status' => $request->status
+            ]);
+        return redirect('/users-admin')->with('status', 'Data Berhasil Di Update!!!');
     }
 
     /**
@@ -134,10 +125,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::where('id',$id)
-        ->update([
-            'status'=>0
-        ]);
-        return redirect('/users-admin')->with('status','Data Berhasil Di Hapus!!!');
+        User::where('id', $id)
+            ->update([
+                'status' => 0
+            ]);
+        return redirect('/users-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
 }
