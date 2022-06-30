@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\RoleUser;
 use Session;
 use Hash;
 class LoginController extends Controller
@@ -19,11 +20,18 @@ class LoginController extends Controller
         ]);
         $email = $request->email;
         $user = User::where('email',$email)->where('status',1)->first();
+        $role = RoleUser::select('roles_id')
+                ->where('users_id',$user->id)
+                ->get()
+                ->toArray();
+                // dd($role);
 		if($user){
 			if(Hash::check($request->password, $user->password)){
                     Session::put('username', $user->name);
                     Session::put('user_id', $user->id);
-                    Session::put('status_user', $user->roles_id);
+                    // Session::put('roles', ['roles_id' => $role[0]['roles_id']]);
+                    Session::put('roles', $role);
+                    // dd(Session::get('roles'));
                     Session::put('email', $user->email);
                     Session::put('/login',TRUE);
                     return redirect('/dashboard');

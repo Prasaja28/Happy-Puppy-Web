@@ -1,3 +1,6 @@
+@if(Session::has('roles'))
+@for($i = 0; $i < count(Session::get('roles')); $i++)
+    @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 13)
 @extends('admin/layout-komponen/master')
 
 @section('title', 'Waralaba')
@@ -300,3 +303,8 @@
         });
     </script>
 @endsection
+@endif
+    @endfor
+    @else
+@include('admin.nologin')
+@endif
