@@ -32,8 +32,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password">Password :</label>
-                        <input type="password" class="form-control form-control-border @error('password') is-invalid @enderror" id="artis" placeholder="Password User" name="password" value="{{ $users->password }}" required>
+                        <label for="password">Password New:</label>
+                        <input type="password" class="form-control form-control-border @error('password') is-invalid @enderror" id="artis" placeholder="Password User" name="password"  required>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

@@ -40,11 +40,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(count($request->input('role')));
+        // dd($request->all());
         $request->validate([
             'name' => 'required|string|min:3|max:50',
             'email' => 'required|string|min:8|max:50|unique:users',
-            'password' => 'required|string|confirmed|min:8|max:32'
+            'password' => 'required|string|confirmed|min:8'
         ]);
 
         $users = User::create([
@@ -125,13 +125,13 @@ class UsersController extends Controller
             $request->validate([
                 'name' => 'required|string|min:3|max:50',
                 'email' => 'required|string|min:8|max:50',
-                'password' => 'required|string|confirmed|min:8|max:32'
+                'password' => 'required|string|confirmed|min:8'
             ]);
         } else {
             $request->validate([
                 'name' => 'required|string|min:3|max:50',
                 'email' => 'required|string|min:8|unique:users|max:50',
-                'password' => 'required|string|confirmed|min:8|max:32'
+                'password' => 'required|string|confirmed|min:8'
             ]);
         }
         $user = User::where('id', $id)
@@ -139,7 +139,7 @@ class UsersController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'roles_id' => $request->role,
-                'password' => $request->password,
+                'password' => bcrypt($request->password),
                 'status' => $request->status
             ]);
         return redirect('/users-admin')->with('status', 'Data Berhasil Di Update!!!');
