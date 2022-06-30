@@ -29,7 +29,6 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                 <li class="nav-item">
                     <a href="{{ url('/dashboard') }}" class="nav-link @yield('dashboard')">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -38,111 +37,141 @@
                         </p>
                     </a>
                 </li>
-                
-                <li class="nav-item">
-                    <a href="{{ url('/news-admin') }}" class="nav-link @yield('news-admin')">
-                        <i class="nav-icon far fa-newspaper"></i>
-                        <p>
-                            News
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/songlist-admin') }}" class="nav-link @yield('songlist-admin')">
-                        <i class="nav-icon fas fa-music"></i>
-                        <p>
-                            Song List
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/topartist-admin') }}" class="nav-link @yield('topartist-admin')">
-                        <i class="nav-icon fas fa-street-view"></i>
-                        <p>
-                            Top Artist
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/outlet-admin') }}" class="nav-link @yield('outlet-admin')">
-                        <i class="nav-icon fa fa-building-o"></i>
-                        <p>
-                            Outlet
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/profil-admin') }}" class="nav-link @yield('profil-admin')">
-                        <i class="nav-icon fa fa-history"></i>
-                        <p>
-                            Profil
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/kontak-admin') }}" class="nav-link @yield('kontak-admin')">
-                        <i class="nav-icon fa fa-phone"></i>
-                        <p>
-                            Kontak (Pesan)
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/keluhan-admin') }}" class="nav-link @yield('keluhan-admin')">
-                        <i class="nav-icon fas fa-exclamation"></i>
-                        <p>
-                            Keluhan
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/request-admin') }}" class="nav-link @yield('request-admin')">
-                        <i class="nav-icon fas fa-music"></i>
-                        <p>
-                            Request Lagu
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/career-admin') }}" class="nav-link @yield('career-admin')">
-                        <i class="nav-icon fas fa-book-open"></i>
-                        <p>
-                            Karir
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/jobvacancy-admin') }}" class="nav-link @yield('jobvacancy-admin')">
-                        <i class="nav-icon fas fa-address-card"></i>
-                        <p>
-                            Jobvacancy
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/waralaba-admin') }}" class="nav-link @yield('waralaba-admin')">
-                        <i class="nav-icon fas fa-archway"></i>
-                        <p>
-                            Waralaba
-                        </p>
-                    </a>
-                </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                User
-                            </p>
-                        </a>
-                    </li>
-                <li class="nav-item">
-                    <a href="{{ url('/settings-admin') }}" class="nav-link @yield('settings-admin')">
-                        <i class="nav-icon fas fa-cog"></i>
-                        <p>
-                            Settings
-                        </p>
-                    </a>
-                </li>
+                @if(Session::has('roles'))
+                    @for($i = 0; $i < count(Session::get('roles')); $i++)
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 3)
+                            <li class="nav-item">
+                                <a href="{{ url('/news-admin') }}" class="nav-link @yield('news-admin')">
+                                    <i class="nav-icon far fa-newspaper"></i>
+                                    <p>
+                                        News
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 4)
+                            <li class="nav-item">
+                                <a href="{{ url('/songlist-admin') }}" class="nav-link @yield('songlist-admin')">
+                                <i class="nav-icon fas fa-music"></i>
+                                    <p>
+                                        Song List
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 5)
+                            <li class="nav-item">
+                                <a href="{{ url('/topartist-admin') }}" class="nav-link @yield('topartist-admin')">
+                                    <i class="nav-icon fas fa-street-view"></i>
+                                    <p>
+                                        Top Artist
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 6)
+                            <li class="nav-item">
+                                <a href="{{ url('/outlet-admin') }}" class="nav-link @yield('outlet-admin')">
+                                <i class="nav-icon fa fa-building-o"></i>
+                                    <p>
+                                        Outlet
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 7)
+                            <li class="nav-item">
+                                <a href="{{ url('/profil-admin') }}" class="nav-link @yield('profil-admin')">
+                                <i class="nav-icon fa fa-history"></i>
+                                    <p>
+                                        Profil
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 8)
+                            <li class="nav-item">
+                                <a href="{{ url('/kontak-admin') }}" class="nav-link @yield('kontak-admin')">
+                                <i class="nav-icon fa fa-phone"></i>
+                                    <p>
+                                        Kontak (Pesan)
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 9)
+                            <li class="nav-item">
+                                <a href="{{ url('/keluhan-admin') }}" class="nav-link @yield('keluhan-admin')">
+                                <i class="nav-icon fas fa-exclamation"></i>
+                                    <p>
+                                        Keluhan
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 10)
+                       <li class="nav-item">
+                            <a href="{{ url('/request-admin') }}" class="nav-link @yield('request-admin')">
+                                <i class="nav-icon fas fa-music"></i>
+                                <p>
+                                    Request Lagu
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 11)
+                        <li class="nav-item">
+                            <a href="{{ url('/career-admin') }}" class="nav-link @yield('career-admin')">
+                                <i class="nav-icon fas fa-book-open"></i>
+                                <p>
+                                    Karir
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 12)
+                        <li class="nav-item">
+                            <a href="{{ url('/jobvacancy-admin') }}" class="nav-link @yield('jobvacancy-admin')">
+                                <i class="nav-icon fas fa-address-card"></i>
+                                <p>
+                                    Jobvacancy
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 13)
+                        <li class="nav-item">
+                            <a href="{{ url('/waralaba-admin') }}" class="nav-link @yield('waralaba-admin')">
+                                <i class="nav-icon fas fa-archway"></i>
+                                <p>
+                                    Waralaba
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1 || session('roles')[$i]['roles_id'] == 14)
+                        <li class="nav-item">
+                            <a href="{{ url('/settings-admin') }}" class="nav-link @yield('settings-admin')">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Settings
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if(session('roles')[$i]['roles_id'] == 1)
+                        <li class="nav-item">
+                            <a href="{{ url('/users-admin') }}" class="nav-link @yield('users-admin')">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    User
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                    @endfor
+                @endif
+                 
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
