@@ -14,10 +14,10 @@
                     
                     @csrf
                     <div class="form-group">
-                        <label for="role_id">Role :</label>
-                        
-                        <select class="custom-select form-control-border  @error('role_id') is-invalid @enderror"
-                            id="role_id" name="role_id" required>
+                        <label for="roles_id">Role :</label>
+                        <input type="hidden" name="users_id" value="{{$users->users}}">
+                        <select class="custom-select form-control-border  @error('roles_id') is-invalid @enderror"
+                            id="roles_id" name="roles_id" required>
                             @foreach ($roles as $role)
                                     <option value="{{ $role->id }}">{{ $role->name }}</option>
                             @endforeach

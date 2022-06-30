@@ -33,7 +33,7 @@
                         <!-- /.card-header -->
                         <div class="card-body px-4">
                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"
-                           style="display:none;">Tambah Data</button>
+                           >Tambah Data</button>
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
