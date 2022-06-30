@@ -76,8 +76,9 @@ class UsersController extends Controller
      */
     public function detailIndex($id)
     {
-        $role = RoleUser::select('roles.name', 'roles_users.id as id')
+        $role = RoleUser::select('roles.name', 'roles_users.id as id','users.id as users')
             ->join('roles', 'roles.id', '=', 'roles_users.roles_id')
+            ->join('users', 'users.id', '=', 'roles_users.users_id')
             ->where('users_id', $id)
             ->get();
         $roles = Role::where('status', 1)->get();
@@ -98,11 +99,12 @@ class UsersController extends Controller
         $role->save();
         return redirect('/users-admin')->with('status', 'Data Berhasil Diubah!!!');
     }
-    public function addDetail(Request $request, $id)
+    public function addDetail(Request $request)
     {
-        $role = RoleUser::create([
-            'roles_id' => $request->role_id,
-            'users_id' => $id
+        // dd($request->all());
+        RoleUser::create([
+            'roles_id' => $request->roles_id,
+            'users_id' => $request->users_id
         ]);
         return redirect('/users-admin')->with('status', 'Data Berhasil Ditambahkan!!!');
     }
