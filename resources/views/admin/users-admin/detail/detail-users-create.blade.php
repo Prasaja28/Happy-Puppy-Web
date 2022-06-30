@@ -15,6 +15,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="role_id">Role :</label>
+                        
                         <select class="custom-select form-control-border  @error('role_id') is-invalid @enderror"
                             id="role_id" name="role_id" required>
                             @foreach ($roles as $role)
