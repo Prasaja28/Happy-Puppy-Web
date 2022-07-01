@@ -18,17 +18,7 @@ class KeluhanUserController extends Controller
     public function index()
     {
         $outlet = Outlet::all();
-        return view('kontak',compact('outlet'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('kontak', compact('outlet'));
     }
 
     /**
@@ -42,7 +32,7 @@ class KeluhanUserController extends Controller
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
- 
+
         if ($validator->fails()) {
             return redirect('/kontak')
                 ->withErrors($validator)
@@ -59,51 +49,7 @@ class KeluhanUserController extends Controller
         ]);
         return redirect('/kontak')->with([
             'message' => 'Data Berhasil Dikirim!',
-            'alert' => 'success']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            'alert' => 'success'
+        ]);
     }
 }

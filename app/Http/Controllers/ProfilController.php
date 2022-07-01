@@ -13,12 +13,7 @@ class ProfilController extends Controller
         $profil = Profil::select('*')
             ->orderBy('id', 'desc')
             ->get();
-        return view('admin.profil.profil-index',compact('profil'));
-    }
-
-    public function create()
-    {
-        //
+        return view('admin.profil.profil-index', compact('profil'));
     }
 
     /**
@@ -33,32 +28,10 @@ class ProfilController extends Controller
             'year' => $request->year,
             'content_history_id' => $request->content_history_id,
             'content_history_en' => $request->content_history_en,
-            'users_id'=> $request->users_id,
+            'users_id' => $request->users_id,
             'status' => 1
         ]);
-        return redirect('/profil-admin')->with('status','Data Berhasil Di Simpan!!!'); 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect('/profil-admin')->with('status', 'Data Berhasil Di Simpan!!!');
     }
 
     /**
@@ -70,15 +43,15 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Profil::where('id',$id)
-        ->update([
-            'year' => $request->year,
-            'content_history_id' => $request->content_history_id,
-            'content_history_en' => $request->content_history_en,
-            'status' => $request->status,
-            'users_id'=> $request->users_id
-        ]);
-        return redirect('/profil-admin')->with('status','Data Berhasil Di update!!!'); 
+        Profil::where('id', $id)
+            ->update([
+                'year' => $request->year,
+                'content_history_id' => $request->content_history_id,
+                'content_history_en' => $request->content_history_en,
+                'status' => $request->status,
+                'users_id' => $request->users_id
+            ]);
+        return redirect('/profil-admin')->with('status', 'Data Berhasil Di update!!!');
     }
 
     /**
@@ -89,8 +62,7 @@ class ProfilController extends Controller
      */
     public function destroy($id)
     {
-        Profil::where('id',$id)->delete();
-        return redirect('/profil-admin')->with('status','Data Berhasil Di Hapus!!!'); 
+        Profil::where('id', $id)->delete();
+        return redirect('/profil-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
-
 }

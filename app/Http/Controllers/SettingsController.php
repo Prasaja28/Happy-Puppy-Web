@@ -25,67 +25,21 @@ class SettingsController extends Controller
      */
     public function update(Request $request)
     {
-        if($request->hasFile('value')){
+        if ($request->hasFile('value')) {
             $file = $request->file('value');
             $name = $file->getClientOriginalName();
             $path = 'img/settings-img/';
             $file->move($path, $name);
-            
+
             $settings = Settings::find($request->id);
             $settings->value = $path . $name;
             $settings->save();
             return redirect()->back()->with('success', 'Berhasil mengubah gambar');
-        } else{
+        } else {
             $settings = Settings::find($request->id);
-        $settings->value = $request->value;
-        $settings->save();
-        return redirect()->back();
+            $settings->value = $request->value;
+            $settings->save();
+            return redirect()->back();
         }
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Settings $settings)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Settings $settings)
-    {
-        //
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Settings $settings)
-    {
-        //
     }
 }
