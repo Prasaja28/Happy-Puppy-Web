@@ -35,11 +35,10 @@ use App\Models\Settings;
 |
 */
 
-if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
-{
-    Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'lang']);
-    Route::get('news/detail/{id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'langDet']);
-    Route::get('formkarir/{jobvacancy_id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'langKar']);
+if (file_exists(app_path('Http/Controllers/LocalizationController.php'))) {
+    Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'lang']);
+    Route::get('news/detail/{id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'langDet']);
+    Route::get('formkarir/{jobvacancy_id}/lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'langKar']);
     // Route::get('/lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'lang']);
 }
 
@@ -48,7 +47,7 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('/test', [CareerController::class, 'testEmail']);
 
 Route::get('/dashboard', function () {
-    
+
     return view('admin.dashboard');
 });
 
@@ -60,30 +59,30 @@ Route::get('/profil', [ProfilUserController::class, 'index']);
 
 Route::get('/daftar-lagu', function () {
     $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('daftar-lagu',compact('settings'));
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value', 'key')
+        ->toArray();
+    return view('daftar-lagu', compact('settings'));
 });
 Route::get('/lokasi', function () {
     $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('lokasi',compact('settings'));
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value', 'key')
+        ->toArray();
+    return view('lokasi', compact('settings'));
 });
 // Route::get('/karir', function () {
 //     return view('karir');
 // });
 Route::get('/waralaba', function () {
     $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('waralaba',compact('settings'));
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value', 'key')
+        ->toArray();
+    return view('waralaba', compact('settings'));
 });
 // Route::get('/kontak', function () {
 //     return view('kontak');
@@ -93,19 +92,19 @@ Route::get('/waralaba', function () {
 // });
 Route::get('/lokasi-not-found', function () {
     $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('lokasi-not-found',compact('settings'));
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value', 'key')
+        ->toArray();
+    return view('lokasi-not-found', compact('settings'));
 });
 Route::get('/lokasi-outlet', function () {
     $settings = Settings::select('*')
-    ->whereNotNull('value')
-    ->get()
-    ->pluck('value','key')
-    ->toArray();
-    return view('lokasi-outlet',compact('settings'));
+        ->whereNotNull('value')
+        ->get()
+        ->pluck('value', 'key')
+        ->toArray();
+    return view('lokasi-outlet', compact('settings'));
 });
 
 
@@ -142,6 +141,7 @@ Route::put('/outlet-admin/update/{id}', [OutletWaralabaController::class, 'updat
 Route::get('/search', [OutletWaralabaController::class, 'search'])->name('search');
 Route::post('/getKotaById', [OutletWaralabaController::class, 'getKotaById'])->name('getKotaById');
 Route::post('/getKecamatanById', [OutletWaralabaController::class, 'getKecamatanById'])->name('getKecamatanById');
+Route::get('/getOutlet', [OutletWaralabaController::class, "getOutlet"])->name('getOutlet');
 
 //Karir
 Route::get('/career-admin', [CareerController::class, 'adminIndex'])->name('career-admin');
@@ -154,7 +154,7 @@ Route::get('/career-admin/{id}', [CareerController::class, 'detail'])->name('car
 Route::get('/file-export/{id?}', [CareerController::class, 'Export'])->name('file-export');
 
 //waralaba
-Route::get('/form-waralaba',[WaralabaController::class, 'form'])->name('formwaralaba');
+Route::get('/form-waralaba', [WaralabaController::class, 'form'])->name('formwaralaba');
 Route::get('/getKota/{id}', [WaralabaController::class, 'GetKota']);
 Route::get('/form-waralaba/store', [WaralabaController::class, 'store'])->name('waralaba.store');
 
