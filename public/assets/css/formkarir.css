@@ -1,0 +1,248 @@
+
+        .header {
+            position: relative;
+            min-height: 30vh;
+            background: no-repeat center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: right;
+            background-image: url('/img/formwaralaba.png')
+        }
+
+        #txt1 {
+            color: white;
+            position: absolute;
+            bottom: 0;
+            text-align: justify;
+            margin: 0;
+            font-size: 40px;
+            padding-left: 5%;
+        }
+
+        hr {
+            width: 99%;
+        }
+
+        .back-grad {
+            height: 550px;
+            width: auto;
+            background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+        }
+
+        #p1 {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        #p2 {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .back {
+            height: 1450px;
+            overflow: hidden;
+            width: auto;
+            background-color: #85A4E1;
+        }
+
+        .container {
+            font-family: 'Poppins';
+        }
+
+        #card1 {
+            margin-top: 6px;
+        }
+
+        .foots {
+            height: 50px;
+            width: auto;
+            background-color: #ffff;
+        }
+
+        .footser {
+            height: auto;
+            width: auto;
+            background-color: #ffff;
+        }
+
+        .form-control {
+            border: none;
+            border-bottom: 1px solid #000;
+            background: none;
+            padding: 5px;
+            width: 50%;
+            transition: .2s;
+        }
+
+        .foots2 {
+            height: 800px;
+            width: auto;
+            background-color: #221E40;
+        }
+
+        .btn {
+            color: white;
+            background-color: #221E40;
+            font-family: 'Poppins';
+            font-size: 13px;
+            width: 10%;
+            border-radius: 20px;
+        }
+
+        #subTittle {
+            color: white;
+        }
+
+        #lampiran {
+            display: none;
+        }
+
+        .mob {
+            width: 50%
+        }
+
+        .hw {
+            width: 25%;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                position: relative;
+                min-height: 20vh;
+                background: no-repeat center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: right;
+                background-image: url('/img/formwaralaba.png')
+            }
+
+            #txt1 {
+                color: white;
+                position: absolute;
+                bottom: 0;
+                text-align: justify;
+                margin: 0;
+                font-size: 20px;
+                margin-left: -51px;
+            }
+
+            .back-grad {
+                height: 245px;
+                width: auto;
+                background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+            }
+
+            #p1 {
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+
+            #p2 {
+                font-size: 13px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .back {
+                height: 1200px;
+                width: auto;
+                background-color: #85A4E1;
+            }
+
+            #card1 {
+                margin-top: 6px;
+            }
+
+            #card2 {
+                margin-top: 6px;
+            }
+
+            #card3 {
+                margin-top: 6px;
+            }
+
+            .foots {
+                height: 300px;
+                width: auto;
+                display: none;
+                background-color: #ffff;
+            }
+
+            .foots2 {
+                height: 800px;
+                width: auto;
+                display: none;
+                background-color: #221E40;
+            }
+
+            .btn {
+                color: white;
+                background-color: #221E40;
+                font-family: 'Poppins';
+                font-size: 13px;
+                width: 35%;
+                border-radius: 15px;
+                margin-left: 32%;
+                margin-top: 45px;
+            }
+
+            .footser {
+                display: none;
+            }
+
+            #myBtn {
+                display: flex;
+                justify-content: center;
+                font-size: 15px;
+                margin-top: -50%;
+            }
+
+            .bom {
+                display: none;
+            }
+
+            #Btnsubmit {
+                display: none;
+            }
+
+            #buttoon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #subTittle {
+                color: #000;
+            }
+
+            #lampiran {
+                display: inline-block;
+            }
+
+            #bakat {
+                margin-top: -85px;
+            }
+
+            .mob {
+                width: 80%
+            }
+
+            .hw {
+                width: 80%
+            }
+        }
