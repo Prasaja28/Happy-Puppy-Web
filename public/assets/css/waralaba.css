@@ -1,0 +1,274 @@
+
+        .header {
+            position: relative;
+            min-height: 30vh;
+            background: no-repeat center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: rightl;
+            
+        }
+
+        .tablinks {
+            display: block;
+            background-color: inherit;
+            color: white;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 100px;
+            border-bottom-left-radius: 20px;
+            font-family: 'Poppins';
+        }
+
+        #txt1 {
+            color: white;
+            position: absolute;
+            bottom: 0;
+            text-align: justify;
+            margin: 0;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Poppins';
+            padding-left: 6%;
+        }
+
+        .back-grad {
+            width: auto;
+            background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+        }
+
+        .center {
+            margin: auto;
+            /* margin-left: 145px; */
+            margin-top: 49px;
+            width: 80%;
+            padding: 5%;
+            color: white;
+            background-color: #221E40;
+        }
+
+        #p1 {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: 'Poppins';
+        }
+
+        #p2 {
+            font-size: 20px;
+            line-height: 2.5rem;
+            font-family: 'Poppins';
+        }
+
+        .back {
+            width: auto;
+            background-color: #85A4E1;
+            font-family: 'Poppins';
+            padding: 0% 5% 5% 5%;
+        }
+
+        .btnss.collapsed {
+            background-color: #85A4E1;
+            background-image: none;
+        }
+
+        #accordion .card {
+            background-color: #85A4E1;
+        }
+
+        .card-header {
+            margin-top: 0.5rem;
+            background-color: #85A4E1;
+            border-bottom: none;
+        }
+
+        .card-header .btnss {
+            color: white;
+            font-size: 20px;
+            /* background-color: #85A4E1; */
+            font-family: 'Poppins';
+            font-weight: bold;
+            border-bottom: none;
+            cursor: pointer;
+        }
+
+        .btnss {
+            background-image: url('/img/Rectangle.png');
+            background-repeat: no-repeat;
+            background-size: 40rem 7rem;
+            background-position: left;
+            background-color: #85A4E1;
+            border: transparent;
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        .card-body {
+            background-color: white;
+            border-bottom: none;
+            border-radius: 1em;
+            margin-left: 20px;
+        }
+
+        .collapsed,
+        .accordion {
+            background-color: #85A4E1;
+            color: white;
+        }
+
+
+
+        #text-acc {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-weight: bold;
+            font-family: 'Poppins';
+        }
+
+        #txt-foot {
+            font-size: 18px;
+            color: white;
+            font-family: 'Poppins';
+            margin-top: 45px;
+        }
+
+        #txt-foot .btn {
+            color: white;
+            background-color: #221E40;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                position: relative;
+                min-height: 20vh;
+                background: no-repeat center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: rightl;
+                
+            }
+
+            #txt1 {
+                color: white;
+                margin: 0;
+                font-size: 20px;
+                margin-left: -48px;
+            }
+
+            .back-grad {
+                width: auto;
+                background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #85A4E1 50%, #85A4E1 100%);
+            }
+
+            .center {
+                margin: auto;
+                margin-top: 50px;
+                width: 85%;
+                padding: 5%;
+                color: white;
+                background-color: #221E40;
+            }
+
+            .card-header {
+                background-color: #85A4E1;
+                border-bottom: none;
+                margin-left: -24px;
+            }
+
+            .card-header .btnss {
+                color: white;
+                background-color: #85A4E1;
+                font-family: 'Poppins';
+                font-weight: bold;
+                border-bottom: none;
+                font-size: 15px;
+                margin-top: 10px;
+            }
+
+            .card-body {
+                background-color: white;
+                border-bottom: none;
+                border-radius: 1em;
+                font-size: 14px;
+                margin-left: -5px;
+            }
+
+            #p1 {
+                font-size: 20px;
+                font-family: 'Poppins';
+                font-weight: bold;
+            }
+
+            #p2 {
+                font-size: 13px;
+                font-family: 'Poppins';
+                line-height: normal;
+            }
+
+            .back {
+                width: auto;
+                background-color: #85A4E1;
+                padding: 10%;
+            }
+
+            .accordion {
+                background-color: #85A4E1;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 10px;
+                transition: 0.4s;
+            }
+
+            .active,
+            .accordion:hover {
+                background-color: #221E40;
+            }
+
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+            }
+
+            #text-acc {
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+                font-weight: bold;
+            }
+
+            #txt-foot {
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+                margin-top: 50px;
+            }
+
+            #txt-foot .btn {
+                color: white;
+                background-color: #221E40;
+                font-size: 13px;
+            }
+        }
+
+    

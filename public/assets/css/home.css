@@ -472,3 +472,93 @@ section[name="next-news"] div[name="item"]:nth-child(3) {
         height: 30px;
     }
 }
+
+    .card a.clickArea {
+        color: #85baff;
+        text-align: right;
+        display: block;
+        z-index: 1;
+    }
+
+    .card a.clickArea::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: ' ';
+    }
+
+    .item a.itemClick {
+        color: #85baff;
+        text-align: right;
+        display: block;
+        z-index: 1;
+    }
+
+    #latest img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        max-height: 250px;
+        margin-bottom: 1rem;
+    }
+
+    .item a.itemClick::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: ' ';
+    }
+
+    .top-artis .d-flex p {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 46px;
+        text-align: center;
+    }
+
+    @media (max-width:600px) {
+
+        /* pembenahan buat card news */
+        section[name="next-news"] div[name="item"] img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        section[name="next-news"] div[name="item"] h4 {
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        section[name="next-news"] div[name="item"] {
+            box-shadow: 4px 6px 10px rgb(0 0 0 / 8%);
+            height: 125px;
+        }
+
+        #latest h4 {
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .top-artis .d-flex p {
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 25px;
+            text-align: center;
+        }
+
+    }
+
+    

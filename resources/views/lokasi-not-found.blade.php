@@ -4,47 +4,12 @@
 <!-- name title -->
 
 @section('css-internal')
-    <!-- Add tag css in here -->
-    <style>
-        .header {
-            min-height: 650px;
-            background: no-repeat center scroll;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            background-position: rightl;
-        }
 
-        .color-background {
-            background-image: linear-gradient(to right, #68a6fb, #f77a8b);
-            min-height: 650px;
-            position: relative;
-            opacity: 0.6;
-        }
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/lokasi-not.css') }}">
 
-        h1 {
-            padding-top: 250px;
-            padding-left: 200px;
-            font-size: 60px
-        }
 
-        h4 {
-            padding-left: 200px;
-        }
-
-        @media (max-width: 576px) {
-            h1 {
-                padding-top: 250px;
-                padding-left: 70px;
-                font-size: 60px
-            }
-
-            h4 {
-                padding-left: 70px;
-            }
-        }
-    </style>
 @endsection
 @section('navbar-news', 'active')
 @section('konten')

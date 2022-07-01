@@ -3,40 +3,7 @@
 @section('css-internal')
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
     <!-- css garis penghubung -->
-    <style>
-        .vl {
-            border-left: 6px solid white;
-            min-height: 54vh;
-            position: absolute;
-            left: 50%;
-            margin-left: -3px;
-            top: 153px;
-        }
-
-        .history-desc {
-            margin: 20%;
-        }
-
-        @media (max-width:600px) {
-            .vl {
-                border-left: 6px solid white;
-                min-height: 5vh;
-                position: absolute;
-                left: 50%;
-                margin-left: -3px;
-                top: 110;
-            }
-
-            .history div[name="years"] h4 {
-                font-size: 13px;
-            }
-
-            .history-desc {
-                font-size: 7px;
-                overflow-wrap: anywhere;
-            }
-        }
-    </style>
+  
 @section('navbar-profile', 'active')
 @section('konten')
 

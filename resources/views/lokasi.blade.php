@@ -4,93 +4,12 @@
 <!-- name title -->
 
 @section('css-internal')
-    <!-- Add tag css in here -->
-    <style>
-        .header {
-            min-height: 30vh;
-            background: no-repeat center scroll;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            z-index: -1;
-            background-position: right;
 
-        }
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/lokasi.css') }}">
 
-        .cabang {
-            font-size: 24px;
-            font-family: 'Poppins';
-        }
 
-        .cabang-content {
-            font-size: 18px;
-            font-family: 'Poppins';
-        }
-
-        .map-indonesia {
-            min-height: 40vh;
-            /* background-image: url('/img/map-indonesia.png') */
-        }
-
-        .search-kota {
-            background-color: #221E40;
-        }
-
-        .btn-search {
-            font-weight: 300;
-            border-radius: 50px;
-            margin-top: -30px;
-            margin-bottom: 50px;
-            font-family: 'Poppins';
-        }
-
-        .background-bottom {
-            background-image: linear-gradient(to right, #68a6fb, #f77a8b);
-            z-index: -1;
-            min-height: 300px;
-            margin-top: -100px;
-            position: relative;
-        }
-
-        #butt {
-            margin-top: 45px;
-        }
-
-        @media (max-width: 576px) {
-            .cabang {
-                font-size: 15px;
-            }
-
-            .cabang-content {
-                font-size: 12px;
-            }
-
-            .btn-search {
-                font-weight: 300;
-                border-radius: 50px;
-                margin-top: -30px;
-                margin-bottom: 50px;
-                font-size: 12px;
-                font-family: 'Poppins';
-            }
-
-            .map-indonesia {
-                min-height: 8vh;
-                /* background-image: url('/img/map-indonesia.png') */
-            }
-
-            .background-bottom {
-                background-image: linear-gradient(to right, #68a6fb, #f77a8b);
-                z-index: -1;
-                min-height: 200px;
-                margin-top: -100px;
-                position: relative;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @endsection
 @section('navbar-lokasi', 'active')
 @section('konten')

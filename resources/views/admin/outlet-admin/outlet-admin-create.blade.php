@@ -41,17 +41,8 @@
                     </div>
                     <div class="form-group">
                         <label for="fax">Nomor Fax :</label>
-                        <<<<<<< HEAD <input type="text" class="form-control form-control-border @error('fax') is-invalid @enderror" id="fax" placeholder="Nomor Fax" name="fax" value="{{ old('fax') }}">
-                            @error('address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                            =======
-                            <input type="text" class="form-control form-control-border" id="fax" placeholder="Nomor Fax" name="fax" value="{{ old('fax') }}">
-
-                            >>>>>>> feature_role
-                    </div>
+                        <input type="text" class="form-control form-control-border" id="fax" placeholder="Nomor Fax" name="fax" value="{{ old('fax') }}">
+                     </div>
                     <div class="form-group">
                         <label for="fax">E-Mail :</label>
                         <input type="text" class="form-control form-control-border @error('email') is-invalid @enderror" id="email" placeholder="E-Mail" name="email" value="{{ old('email') }}" required>
