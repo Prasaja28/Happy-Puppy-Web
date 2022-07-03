@@ -19,23 +19,13 @@ class KontakUserController extends Controller
     public function index()
     {
         $settings = Settings::select('*')
-        ->whereNotNull('value')
-        ->get()
-        ->pluck('value','key')
-        ->toArray();
+            ->whereNotNull('value')
+            ->get()
+            ->pluck('value', 'key')
+            ->toArray();
         $kontakUser = Kontak::all();
         $outlet = Outlet::all();
-        return view('kontak',compact('kontakUser','settings','outlet'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
+        return view('kontak', compact('kontakUser', 'settings', 'outlet'));
     }
 
     /**
@@ -49,7 +39,7 @@ class KontakUserController extends Controller
         $validator = Validator::make($request->all(), [
             'g-recaptcha-response' => 'recaptcha',
         ]);
- 
+
         if ($validator->fails()) {
             return redirect('/kontak')
                 ->withErrors("Lakukan Recaptcha Terlebih Dahulu Untuk Melanjutkan!!")
@@ -65,51 +55,7 @@ class KontakUserController extends Controller
         ]);
         return redirect('/kontak')->with([
             'message' => 'Data Berhasil Dikirim!',
-            'alert' => 'success']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            'alert' => 'success'
+        ]);
     }
 }

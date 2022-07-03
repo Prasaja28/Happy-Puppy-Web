@@ -31,7 +31,6 @@ class WaralabaController extends Controller
         return view('admin.waralaba-admin', compact('waralaba'));
     }
 
-
     /**
      * Store a newly created resource in storage.
      *

@@ -23,7 +23,7 @@ class OutletWaralabaController extends Controller
             ->leftjoin('regencies', 'outlet.city_id', '=', 'regencies.id')
             ->leftjoin('districts', 'outlet.citysub_id', '=', 'districts.id')
             ->leftjoin('provinces', 'outlet.province_id', '=', 'provinces.id')
-            ->paginate(10);
+            ->paginate();
 
         $province = DB::table('provinces')->orderBy('name', 'asc')->get();
         $city = DB::table('regencies')
@@ -122,6 +122,60 @@ class OutletWaralabaController extends Controller
         return redirect('/outlet-admin')->with('status', 'Data Berhasil Di Hapus!!!');
     }
 
+    public function getOutlet(Request $request)
+    {
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // total number of rows per page
+
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+
+        // Total records
+        $totalRecords = Outlet::select('count(*) as allcount')->count();
+        $totalRecordswithFilter = Outlet::select('count(*) as allcount')->where('name', 'like', '%' . $searchValue . '%')->count();
+
+        // Get records, also we have included search filter as well
+        $records = Outlet::orderBy($columnName, $columnSortOrder)
+            ->where('oultet.name', 'like', '%' . $searchValue . '%')
+            ->orWhere('outlet.address', 'like', '%' . $searchValue . '%')
+            ->orWhere('outlet.email', 'like', '%' . $searchValue . '%')
+            ->orWhere('outlet.phone', 'like', '%' . $searchValue . '%')
+            ->select('outlet.*')
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();
+
+        $data_arr = array();
+
+        foreach ($records as $record) {
+
+            $data_arr[] = array(
+                "id" => $record->id,
+                "name" => $record->name,
+                'email' => $record->email,
+                'address' => $record->address,
+                'phone' => $record->phone,
+            );
+        }
+
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr,
+        );
+
+        echo json_encode($response);
+    }
+
     public function search(Request $request)
     {
         $settings = Settings::select('*')
@@ -132,11 +186,11 @@ class OutletWaralabaController extends Controller
         $keyword = $request->keyword;
         $outlet = Outlet::from('outlet as o')
             ->select('o.*', 'c.name as regency_name', 'o.name as outlet_name', 'p.name as province_name', 'd.name as district_name')
-            ->where('o.name', 'like', '%'.$keyword.'%' )
-            ->orWhere('c.name', 'like', '%'.$keyword.'%' )
-            ->leftJoin('regencies as c', 'c.id', '=' , "o.city_id")
-            ->leftJoin('provinces as p', 'p.id', '=' , "o.province_id")
-            ->leftJoin('districts as d', 'd.id', '=' , "o.citysub_id")
+            ->where('o.name', 'like', '%' . $keyword . '%')
+            ->orWhere('c.name', 'like', '%' . $keyword . '%')
+            ->leftJoin('regencies as c', 'c.id', '=', "o.city_id")
+            ->leftJoin('provinces as p', 'p.id', '=', "o.province_id")
+            ->leftJoin('districts as d', 'd.id', '=', "o.citysub_id")
             ->get();
         if ($outlet->count() == 0) {
             return view('/lokasi-not-found', compact('settings'));
