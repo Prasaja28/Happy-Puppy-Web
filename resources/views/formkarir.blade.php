@@ -29,7 +29,7 @@
     </center>
 
     <!-- add konten in here -->
-    <div class="header p-5" >
+    <div class="header p-5" style="background-image: url('../{{ $settings['banner_form_karir'] }}')">
         <div id="txt1" class="container">
             <p>{{ __('karir-detail.title1') }}</p>
             <p style="font-weight: bold;">{{ __('karir-detail.title2') }}</p>
